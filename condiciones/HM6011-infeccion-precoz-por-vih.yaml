@@ -1,0 +1,111 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:25027143 (Wood 2014, JAMA), metaanálisis de 16 estudios con
+# 24 745 pacientes y 1253 casos. Transcritos del abstract.
+#
+# La conclusión importa más que cualquier cociente y va por delante: la utilidad
+# de la exploración para detectar o descartar la infección precoz es LIMITADA, y
+# eso es precisamente lo que justifica el cribado sistemático. Ningún hallazgo
+# baja de 0.5 en negativo; ni siquiera la ausencia de todos ellos descarta.
+#
+# Se define como los primeros 6 meses tras la infección.
+
+id: 'HM:6011'
+tipo: condicion
+clase: enfermedad
+termino: Infección precoz por VIH
+termino_en: Early HIV infection
+sinonimos: [primoinfección por VIH, infección aguda por VIH]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # depende por completo de la población cribada
+factores_riesgo: []
+
+signos:
+  # ─── síntomas referidos por el paciente ─────────────────────────────────────
+  - concepto: 'HM:3039'    # Úlceras genitales
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.4
+      ic95: [2.5, 12]
+      ref: 'pmid:25027143'
+    decision: el síntoma que más aumenta la probabilidad
+
+  - concepto: 'HM:0803'    # Pérdida de peso
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.7
+      ic95: [2.1, 7.2]
+      ref: 'pmid:25027143'
+
+  - concepto: 'HM:0302'    # Vómitos
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.6
+      ic95: [2.5, 8.0]
+      ref: 'pmid:25027143'
+
+  - concepto: 'HM:3040'    # Adenopatías referidas por el paciente
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.6
+      ic95: [1.3, 8.0]
+      ref: 'pmid:25027143'
+    decision: >-
+      nótese que el síntoma referido pesa MÁS que el signo hallado en la
+      exploración, que tiene LR 3.1
+
+  - concepto: 'HM:0101'    # Fiebre
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_negativo:
+      valor: 0.74
+      ic95: [0.64, 0.84]
+      ref: 'pmid:25027143'
+    decision: >-
+      su ausencia reduce la probabilidad muy poco; no sirve para descartar
+
+  # ─── signo de exploración ───────────────────────────────────────────────────
+  - concepto: 'HM:0607'    # Adenopatías
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.1
+      ic95: [1.0, 5.2]
+      ref: 'pmid:25027143'
+    lr_negativo:
+      valor: 0.70
+      ic95: [0.49, 0.92]
+      ref: 'pmid:25027143'
+    decision: >-
+      el signo exploratorio más útil, y aun así modesto. El extremo inferior de
+      su intervalo toca 1.0, es decir, es compatible con no aportar nada.
+
+reglas:
+  - nombre: Ausencia de todo hallazgo
+    componentes: ['HM:3039', 'HM:0803', 'HM:0302', 'HM:3040', 'HM:0101', 'HM:0607']
+    criterio: ninguno de los hallazgos considerados presente
+    lr_negativo: 0.47
+    ic95: [0.38, 0.58]
+    ref: 'pmid:25027143'
+    decision: >-
+      ni siquiera no encontrar NADA descarta la infección: la probabilidad baja
+      a menos de la mitad, no a cero
+    nota: >-
+      calculado sobre estudios que consideraban combinaciones de 4 a 17
+      hallazgos posibles
+
+conclusion_de_la_fuente: >-
+  La utilidad limitada de la exploración clínica para detectar o descartar la
+  infección precoz por VIH subraya la importancia del cribado sistemático en
+  adultos.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:25027143, no del texto completo.

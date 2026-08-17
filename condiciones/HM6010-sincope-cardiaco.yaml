@@ -1,0 +1,174 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:31237649 (Albassam 2019, JAMA), 11 estudios y 4317
+# pacientes. Transcritos del abstract.
+#
+# PARTICULARIDAD de este registro: varios hallazgos tienen un LR POSITIVO menor
+# que 1. No es una errata ni un LR negativo mal etiquetado: son hallazgos cuya
+# PRESENCIA argumenta en contra del origen cardíaco. Sentir frío antes de
+# desmayarse, tener cefalea o no recordar lo previo apuntan a síncope vasovagal,
+# no a arritmia. El campo se llama lr_positivo porque mide la presencia del
+# hallazgo; que su valor sea 0.16 es el dato clínico, no un error de signo.
+
+id: 'HM:6010'
+tipo: condicion
+clase: sindrome
+termino: Síncope cardíaco
+termino_en: Cardiac syncope
+sinonimos: [síncope de origen cardíaco, síncope arrítmico]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # la fuente no publica prevalencia global
+factores_riesgo: []
+
+signos:
+  # ─── aumentan la probabilidad ───────────────────────────────────────────────
+  - concepto: 'HM:3032'    # Fibrilación o flutter auricular
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.13
+    ic95_sensibilidad: [0.06, 0.20]
+    especificidad: 0.98
+    ic95_especificidad: [0.96, 1.00]
+    lr_positivo:
+      valor: 7.3
+      ic95: [2.4, 22]
+      ref: 'pmid:31237649'
+    decision: el antecedente que más desplaza hacia el origen cardíaco
+
+  - concepto: 'HM:3034'    # Cianosis presenciada durante el episodio
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.08
+    ic95_sensibilidad: [0.02, 0.14]
+    especificidad: 0.99
+    ic95_especificidad: [0.98, 1.00]
+    lr_positivo:
+      valor: 6.2
+      ic95: [1.6, 24]
+      ref: 'pmid:31237649'
+    decision: >-
+      rarísima pero casi definitiva cuando la hay: especificidad del 99%.
+      Depende de que alguien presenciara el episodio.
+
+  - concepto: 'HM:3033'    # Cardiopatía estructural grave conocida
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      rango: [3.3, 4.8]
+      ref: 'pmid:31237649'
+      nota: rango entre 2 estudios; sensibilidad 0.35-0.51, especificidad 0.84-0.93
+    decision: antecedente que apoya con fuerza moderada
+
+  - concepto: 'HM:3031'    # Primer síncope a los 35 años o más
+    rol: prueba_sensible
+    estado_lr: medido
+    sensibilidad: 0.91
+    ic95_sensibilidad: [0.85, 0.97]
+    especificidad: 0.72
+    ic95_especificidad: [0.66, 0.78]
+    lr_positivo:
+      valor: 3.3
+      ic95: [2.6, 4.1]
+      ref: 'pmid:31237649'
+    lr_negativo:
+      valor: 0.13
+      ic95: [0.06, 0.25]
+      ref: 'pmid:31237649'
+      nota: >-
+        la fuente lo expresa como el cociente de la edad menor de 35 años, que
+        es el negativo de este hallazgo
+    decision: >-
+      el dato más útil para DESCARTAR: un primer síncope antes de los 35
+      prácticamente excluye el origen cardíaco
+
+  # ─── su presencia argumenta EN CONTRA ───────────────────────────────────────
+  - concepto: 'HM:3035'    # Cambio de humor o preocupación prodrómica
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.02
+    especificidad: 0.76
+    lr_positivo:
+      valor: 0.09
+      ic95: [0.02, 0.38]
+      ref: 'pmid:31237649'
+    decision: su presencia aleja del origen cardíaco y orienta a vasovagal
+
+  - concepto: 'HM:3036'    # Sensación de frío previa
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.02
+    especificidad: 0.89
+    lr_positivo:
+      valor: 0.16
+      ic95: [0.06, 0.64]
+      ref: 'pmid:31237649'
+    decision: pródromo vegetativo; su presencia aleja del origen cardíaco
+
+  - concepto: 'HM:0207'    # Cefalea
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.03
+    especificidad: 0.80
+    lr_positivo:
+      valor: 0.17
+      ic95: [0.06, 0.55]
+      ref: 'pmid:31237649'
+    decision: su presencia aleja del origen cardíaco
+
+  - concepto: 'HM:3037'    # Cambio de humor tras el síncope
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.03
+    especificidad: 0.83
+    lr_positivo:
+      valor: 0.21
+      ic95: [0.06, 0.65]
+      ref: 'pmid:31237649'
+    decision: su presencia aleja del origen cardíaco
+
+  - concepto: 'HM:3038'    # Amnesia de la conducta previa
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.05
+    especificidad: 0.82
+    lr_positivo:
+      valor: 0.25
+      ic95: [0.09, 0.69]
+      ref: 'pmid:31237649'
+    decision: su presencia aleja del origen cardíaco
+
+  - concepto: 'HM:0505'    # Síncope
+    rol: manifestacion
+    estado_lr: no_medible
+    motivo: >-
+      es el motivo de consulta que define la población estudiada; la pregunta no
+      es si hubo síncope sino si fue cardíaco
+
+escalas:
+  - nombre: EGSYS
+    componentes_declarados: seis variables clínicas, electrocardiograma incluido
+    tramos:
+      - rango: menor de 3
+        lr_negativo_rango: [0.12, 0.17]
+        ref: 'pmid:31237649'
+        nota: >-
+          rango entre 2 estudios que la validaron de forma prospectiva;
+          sensibilidad 0.89-0.91, especificidad 0.69-0.73
+    decision: una puntuación menor de 3 es lo que mejor descarta el origen cardíaco
+
+pendiente:
+  - >-
+    Los biomarcadores cardíacos muestran exactitud prometedora según la fuente,
+    pero sus umbrales diagnósticos aún requieren validación. No se registran.
+
+conclusion_de_la_fuente: >-
+  La exploración clínica, con el electrocardiograma dentro de puntuaciones
+  multivariable, puede identificar con precisión a los pacientes con y sin
+  síncope cardíaco.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:31237649, no del texto completo.

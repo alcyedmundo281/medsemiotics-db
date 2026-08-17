@@ -1,0 +1,136 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:31846019 (Metcalfe 2019, JAMA), 6 estudios con 1110
+# pacientes y 1324 caderas, de las que 509 (38%) mostraban artrosis radiográfica.
+# Transcritos del abstract.
+#
+# Patrón de referencia: radiografía simple. Conviene tenerlo presente, porque la
+# artrosis radiográfica y la artrosis sintomática no son lo mismo: estos
+# cocientes predicen lo que se verá en la placa, no cuánto duele.
+
+id: 'HM:6012'
+tipo: condicion
+clase: enfermedad
+termino: Artrosis de cadera
+termino_en: Hip osteoarthritis
+sinonimos: [coxartrosis, osteoartritis de cadera]
+
+codigos: {snomed: null, cie10: null}
+
+# «the affected hip showed radiographic evidence of OA in 34% of cases»
+probabilidad_base:
+  valor: 0.34
+  poblacion: >-
+    pacientes que consultan en atención primaria por dolor de cadera o inguinal
+  ref: 'pmid:31846019'
+
+factores_riesgo: []
+
+signos:
+  # ─── maniobras exploratorias: lo más útil ───────────────────────────────────
+  - concepto: 'HM:3041'    # Dolor posterior al ponerse en cuclillas
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.24
+    especificidad: 0.96
+    lr_positivo:
+      valor: 6.1
+      ic95: [1.3, 29]
+      ref: 'pmid:31846019'
+    decision: >-
+      el cociente más alto, pero con intervalo muy ancho: el extremo inferior
+      roza el 1.3, casi irrelevante
+
+  - concepto: 'HM:3042'    # Dolor inguinal a la abducción o aducción pasiva
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.33
+    especificidad: 0.94
+    lr_positivo:
+      valor: 5.7
+      ic95: [1.6, 20]
+      ref: 'pmid:31846019'
+
+  - concepto: 'HM:3043'    # Debilidad de los abductores
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.44
+    especificidad: 0.90
+    lr_positivo:
+      valor: 4.5
+      ic95: [2.4, 8.4]
+      ref: 'pmid:31846019'
+    decision: >-
+      intervalo más estrecho que los anteriores; en la práctica, más fiable pese
+      a un cociente algo menor
+
+  - concepto: 'HM:3044'    # Aducción pasiva disminuida
+    rol: prueba_sensible
+    estado_lr: medido
+    sensibilidad: 0.80
+    especificidad: 0.81
+    lr_positivo:
+      valor: 4.2
+      ic95: [3.0, 6.0]
+      ref: 'pmid:31846019'
+    lr_negativo:
+      valor: 0.25
+      ic95: [0.11, 0.54]
+      ref: 'pmid:31846019'
+      nota: >-
+        la fuente lo expresa como el valor de encontrar una aducción pasiva
+        NORMAL, que es el cociente negativo de este hallazgo
+    decision: >-
+      el hallazgo más equilibrado y el único que sirve en los dos sentidos: su
+      presencia apoya y su normalidad es lo que mejor descarta
+
+  - concepto: 'HM:3045'    # Rotación interna disminuida
+    rol: prueba_sensible
+    estado_lr: medido
+    sensibilidad: 0.66
+    especificidad: 0.79
+    lr_positivo:
+      valor: 3.2
+      ic95: [1.7, 6.0]
+      ref: 'pmid:31846019'
+
+  # ─── anamnesis: todas con el mismo cociente ─────────────────────────────────
+  - concepto: 'HM:3046'    # Dolor al subir escaleras o cuestas
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.1
+      ic95: [1.1, 3.8]
+      ref: 'pmid:31846019'
+      nota: >-
+        la fuente agrupa tres datos de anamnesis con idéntico cociente de 2.1;
+        el intervalo citado es el más ancho de los tres
+
+  - concepto: 'HM:3047'    # Antecedente familiar de artrosis
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.1
+      ic95: [1.1, 3.8]
+      ref: 'pmid:31846019'
+      nota: mismo cociente agrupado que el dolor al subir escaleras
+
+  - concepto: 'HM:3048'    # Antecedente personal de artrosis de rodilla
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.1
+      ic95: [1.1, 3.8]
+      ref: 'pmid:31846019'
+      nota: mismo cociente agrupado que el dolor al subir escaleras
+
+conclusion_de_la_fuente: >-
+  Pruebas sencillas de movilidad de la cadera, observando si aparece dolor
+  durante el movimiento, distinguen a los pacientes con más probabilidad de
+  tener artrosis en la radiografía. Una combinación de hallazgos detecta con
+  eficiencia a quienes tienen artrosis grave.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:31846019, no del texto completo.

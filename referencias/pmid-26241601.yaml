@@ -1,0 +1,38 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:26241601'
+clave_bibtex: spoont2015
+tipo: articulo
+titulo: 'Does This Patient Have Posttraumatic Stress Disorder?: Rational Clinical Examination Systematic Review'
+autores:
+  - Spoont MR
+  - Williams JW Jr
+  - Kehle-Forbes S
+  - Nieuwsma JA
+  - Mann-Wrobel MC
+  - Gross R
+publicacion: JAMA
+anio: 2015
+volumen: 314
+paginas: 501-10
+
+identificadores:
+  pmid: 26241601
+  doi: 10.1001/jama.2015.7877
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  errata: 'JAMA. 2016 Jan 5;315(1):90. doi: 10.1001/jama.2015.16955.'
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - >-
+      Registrada SIN usar. Su abstract da dos cocientes distintos para el mismo
+      instrumento y el mismo punto de corte: LR+ 6.9 y LR+ 8.49 para el
+      PC-PTSD, ambos descritos como el umbral del Department of Veterans
+      Affairs. La errata de JAMA 2016;315(1):90 podría corregir justamente eso.
+      No transcribir hasta cotejar con la corrección.

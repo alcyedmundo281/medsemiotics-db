@@ -1,0 +1,16 @@
+id: 'HM:3033'
+tipo: concepto
+semantica: trastorno
+termino: Cardiopatía estructural grave conocida
+sinonimos:
+  - cardiopatía estructural severa
+padre: 'HM:1000'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el síncope cardíaco o la infección precoz por VIH.

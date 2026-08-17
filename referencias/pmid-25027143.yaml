@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:25027143'
+clave_bibtex: wood2014
+tipo: articulo
+titulo: 'Does this adult patient have early HIV infection?: The Rational Clinical Examination systematic review'
+autores:
+  - Wood E
+  - Kerr T
+  - Rowell G
+  - Montaner JS
+  - Phillips P
+  - Korthuis PT
+  - Simel DL
+publicacion: JAMA
+anio: 2014
+volumen: 312
+paginas: 278-85
+
+identificadores:
+  pmid: 25027143
+  doi: 10.1001/jama.2014.5954
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

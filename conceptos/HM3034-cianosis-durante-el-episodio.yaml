@@ -1,0 +1,16 @@
+id: 'HM:3034'
+tipo: concepto
+semantica: hallazgo
+termino: Cianosis presenciada durante el episodio
+sinonimos:
+  - cianosis presenciada
+padre: 'HM:0606'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el síncope cardíaco. Se separa de HM:0606 Cianosis porque lo que tiene valor es haberla presenciado DURANTE el episodio, no encontrarla después.

@@ -1,15 +1,15 @@
-id: 'HM:3030'
+id: 'HM:3036'
 tipo: concepto
 semantica: hallazgo
-termino: Hipertrofia amigdalina
-sinonimos: [amígdalas aumentadas de tamaño, hipertrofia de amígdalas]
-padre: 'HM:0600'
+termino: Sensación de frío previa al síncope
+sinonimos:
+  - frío prodrómico
+padre: 'HM:0500'
 codigos: {snomed: null, icd10: null, hpo: null}
+
 significante: null
 significado: null
 falsos_positivos: []
-procedencia:
-  fuente: Acuñado al modelar la faringitis estreptocócica.
 
 procedencia:
   fuente: >-

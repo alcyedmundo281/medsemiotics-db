@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:31237649'
+clave_bibtex: albassam2019
+tipo: articulo
+titulo: 'Did This Patient Have Cardiac Syncope?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Albassam OT
+  - Redelmeier RJ
+  - Shadowitz S
+  - Husain AM
+  - Simel D
+  - Etchells EE
+publicacion: JAMA
+anio: 2019
+volumen: 321
+paginas: 2448-2457
+
+identificadores:
+  pmid: 31237649
+  doi: 10.1001/jama.2019.8001
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

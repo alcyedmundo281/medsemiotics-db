@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:31846019'
+clave_bibtex: metcalfe2019
+tipo: articulo
+titulo: 'Does This Patient Have Hip Osteoarthritis?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Metcalfe D
+  - Perry DC
+  - Claireaux HA
+  - Simel DL
+  - Zogg CK
+  - Costa ML
+publicacion: JAMA
+anio: 2019
+volumen: 322
+paginas: 2323-2333
+
+identificadores:
+  pmid: 31846019
+  doi: 10.1001/jama.2019.19413
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'
