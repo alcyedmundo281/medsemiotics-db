@@ -1,0 +1,16 @@
+# Concepto del índice. Acuñado al modelar HM:6004 (meningitis aguda).
+
+id: 'HM:3005'
+tipo: concepto
+semantica: hallazgo
+termino: Rigidez de nuca
+sinonimos: [rigidez nucal, nuca rígida, meningismo]
+padre: 'HM:0500'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la meningitis aguda del adulto.

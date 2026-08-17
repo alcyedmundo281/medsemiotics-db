@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+
+id: 'pmid:10411200'
+clave_bibtex: attia1999
+tipo: articulo
+titulo: 'The rational clinical examination. Does this adult patient have acute meningitis?'
+autores:
+  - Attia J
+  - Hatala R
+  - Cook DJ
+  - Wong JG
+publicacion: JAMA
+anio: 1999
+volumen: 282
+paginas: 175-81
+
+identificadores:
+  pmid: 10411200
+  doi: 10.1001/jama.282.2.175
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false

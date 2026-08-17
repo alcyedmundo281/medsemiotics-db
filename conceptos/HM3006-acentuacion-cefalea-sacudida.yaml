@@ -1,0 +1,20 @@
+# Concepto del índice. Acuñado al modelar HM:6004 (meningitis aguda).
+# Maniobra: el paciente gira la cabeza horizontalmente 2-3 veces por segundo;
+# es positiva si empeora la cefalea.
+
+id: 'HM:3006'
+tipo: concepto
+semantica: hallazgo
+termino: Acentuación de la cefalea con la sacudida cefálica
+sinonimos: [jolt accentuation, acentuación con sacudida, signo de la sacudida]
+padre: 'HM:0500'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la meningitis aguda. La fuente lo evalúa solo en
+    pacientes que ya tienen fiebre y cefalea.

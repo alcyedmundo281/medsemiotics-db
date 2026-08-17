@@ -1,0 +1,23 @@
+# Concepto del índice. Acuñado al modelar HM:6005.
+
+id: 'HM:3010'
+tipo: concepto
+semantica: hallazgo
+termino: Cociente colesterol pleural/sérico elevado
+sinonimos: [ratio colesterol pleura-suero]
+padre: 'HM:0700'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Colesterol pleural / colesterol sérico
+  direccion: alto
+  corte_superior: 0.3
+  unidad: cociente
+  ref: 'pmid:24938565'
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar el derrame pleural exudativo.

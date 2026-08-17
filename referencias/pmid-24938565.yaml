@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+
+id: 'pmid:24938565'
+clave_bibtex: wilcox2014
+tipo: articulo
+titulo: 'Does this patient have an exudative pleural effusion? The Rational Clinical Examination systematic review'
+autores:
+  - Wilcox ME
+  - Chong CA
+  - Stanbrook MB
+  - Tricco AC
+  - Wong C
+  - Straus SE
+publicacion: JAMA
+anio: 2014
+volumen: 311
+paginas: 2422-31
+
+identificadores:
+  pmid: 24938565
+  doi: 10.1001/jama.2014.5552
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false

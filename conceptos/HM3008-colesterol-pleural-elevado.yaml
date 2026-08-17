@@ -1,0 +1,23 @@
+# Concepto del índice. Acuñado al modelar HM:6005.
+
+id: 'HM:3008'
+tipo: concepto
+semantica: hallazgo
+termino: Colesterol elevado en líquido pleural
+sinonimos: [colesterol pleural alto]
+padre: 'HM:0700'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Colesterol en líquido pleural
+  direccion: alto
+  corte_superior: 55
+  unidad: mg/dL
+  ref: 'pmid:24938565'
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar el derrame pleural exudativo.

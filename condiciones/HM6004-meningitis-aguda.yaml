@@ -1,0 +1,108 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Datos de pmid:10411200 (Attia 1999, JAMA), revisión sistemática de la serie
+# Rational Clinical Examination sobre 10 estudios en adultos.
+#
+# Advertencia que la propia fuente hace y conviene no perder: «many of the signs
+# and symptoms of meningitis have been inadequately studied». Solo una arista
+# tiene par de cocientes publicado. Las demás traen sensibilidad sin
+# especificidad, con lo que el LR no es calculable a partir del abstract: van
+# como no_medido con el dato disponible anotado.
+
+id: 'HM:6004'
+tipo: condicion
+clase: enfermedad
+termino: Meningitis aguda
+termino_en: Acute meningitis
+sinonimos: [meningitis bacteriana aguda, meningitis vírica aguda]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # pendiente: la fuente no publica prevalencia
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3006'    # Acentuación de la cefalea con la sacudida cefálica
+    rol: prueba_sensible
+    estado_lr: medido
+    sensibilidad: 1.00
+    especificidad: 0.54
+    lr_positivo:
+      valor: 2.2
+      ref: 'pmid:10411200'
+      poblacion: pacientes que ya presentan fiebre y cefalea
+    lr_negativo:
+      valor: 0.0
+      ref: 'pmid:10411200'
+      poblacion: pacientes que ya presentan fiebre y cefalea
+      nota: >-
+        un LR− de 0 procede de una sensibilidad del 100% en la serie estudiada.
+        Tratarlo como certeza absoluta sería un error de lectura: es el
+        resultado de una muestra, no una imposibilidad.
+    decision: >-
+      maniobra adjunta útil en quien ya tiene fiebre y cefalea; su negatividad
+      es lo que más ayuda
+
+  - concepto: 'HM:0207'    # Cefalea
+    rol: manifestacion
+    estado_lr: no_medido
+    sensibilidad: 0.50
+    ic95_sensibilidad: [0.32, 0.68]
+    motivo: >-
+      la fuente publica sensibilidad agrupada pero no especificidad, así que el
+      cociente no es calculable desde el abstract
+
+  - concepto: 'HM:0301'    # Náuseas
+    rol: manifestacion
+    estado_lr: no_medido
+    sensibilidad: 0.30
+    ic95_sensibilidad: [0.22, 0.38]
+    motivo: sensibilidad agrupada sin especificidad; LR no calculable
+
+  - concepto: 'HM:0302'    # Vómitos
+    rol: manifestacion
+    estado_lr: no_medido
+    sensibilidad: 0.30
+    ic95_sensibilidad: [0.22, 0.38]
+    motivo: la fuente agrupa náuseas y vómitos en una sola estimación
+
+  # La tríada clásica: su fuerza está en la AUSENCIA de las tres a la vez.
+  - concepto: 'HM:0101'    # Fiebre
+    rol: prueba_sensible
+    estado_lr: no_medido
+    motivo: >-
+      forma parte de la tríada fiebre + rigidez de nuca + alteración del estado
+      mental, cuya presencia de al menos uno tiene sensibilidad del 99-100%. La
+      fuente no desglosa el cociente de cada componente por separado.
+
+  - concepto: 'HM:3005'    # Rigidez de nuca
+    rol: prueba_sensible
+    estado_lr: no_medido
+    motivo: componente de la tríada; la fuente no publica su cociente aislado
+
+  - concepto: 'HM:0501'    # Alteración del nivel de conciencia
+    rol: prueba_sensible
+    estado_lr: no_medido
+    motivo: componente de la tríada; la fuente no publica su cociente aislado
+
+# La regla de exclusión que sí sostiene la fuente, y que no cabe en una arista
+# suelta porque es una combinación.
+reglas:
+  - nombre: Ausencia de la tríada clásica
+    componentes: ['HM:0101', 'HM:3005', 'HM:0501']
+    criterio: ninguno de los tres presente
+    sensibilidad_de_la_presencia: [0.99, 1.00]
+    ref: 'pmid:10411200'
+    decision: >-
+      la ausencia simultánea de fiebre, rigidez de nuca y alteración del estado
+      mental descarta la meningitis en la práctica
+    advertencia: >-
+      la fuente matiza que ante alto riesgo clínico hay que ir directamente a la
+      punción lumbar, sin apoyarse en la exploración
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:10411200, no del texto completo. El signo de Kernig lo evaluó un solo
+    estudio y el de Brudzinski ninguno posterior al original, por lo que no se
+    crean sus conceptos hasta tener datos que registrar.

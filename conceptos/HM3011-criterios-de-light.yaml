@@ -1,0 +1,25 @@
+# Concepto del índice. Acuñado al modelar HM:6005.
+# Compuesto, no hallazgo simple: se cumple si se da CUALQUIERA de los tres.
+# Su valor está en la ausencia de los tres a la vez, que descarta el exudado.
+
+id: 'HM:3011'
+tipo: concepto
+semantica: agrupacion
+termino: Criterios de Light
+sinonimos: [criterio de Light]
+padre: 'HM:0700'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+componentes:
+  - proteínas pleurales / proteínas séricas > 0.5
+  - LDH pleural / LDH sérica > 0.6
+  - LDH pleural > dos tercios del límite alto de la LDH sérica
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el derrame pleural exudativo. Los tres componentes se
+    transcriben de pmid:24938565.

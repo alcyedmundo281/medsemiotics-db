@@ -1,0 +1,78 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:24938565 (Wilcox 2014, JAMA), revisión sistemática de la
+# serie Rational Clinical Examination sobre 48 estudios. Transcritos del
+# abstract; donde la fuente da un rango entre estudios se guarda el rango.
+#
+# Población: adultos sometidos a toracocentesis por derrame pleural. Nótese que
+# la pregunta no es «¿hay derrame?» sino «¿este derrame es exudado?»: todas las
+# aristas son pruebas sobre el líquido ya obtenido, no de exploración física.
+
+id: 'HM:6005'
+tipo: condicion
+clase: sindrome
+termino: Derrame pleural exudativo
+termino_en: Exudative pleural effusion
+sinonimos: [exudado pleural, derrame pleural tipo exudado]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # pendiente: depende por completo del contexto clínico
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3008'    # Colesterol elevado en líquido pleural
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      rango: [7.1, 250]
+      umbral: colesterol pleural > 55 mg/dL
+      ref: 'pmid:24938565'
+      nota: >-
+        rango entre estudios, muy amplio. El extremo superior refleja series
+        pequeñas; conviene leerlo como «desplaza mucho», no como un valor.
+    decision: el indicador aislado más potente para clasificar el derrame
+
+  - concepto: 'HM:3009'    # LDH elevada en líquido pleural
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 18
+      ic95: [6.8, 46]
+      umbral: LDH pleural > 200 U/L
+      ref: 'pmid:24938565'
+    decision: confirma exudado con un intervalo estrecho y reproducible
+
+  - concepto: 'HM:3010'    # Cociente colesterol pleural/sérico
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 14
+      ic95: [5.5, 38]
+      umbral: cociente > 0.3
+      ref: 'pmid:24938565'
+    decision: alternativa al colesterol absoluto cuando se dispone del sérico
+
+  - concepto: 'HM:3011'    # Criterios de Light
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_negativo:
+      valor: 0.04
+      ic95: [0.02, 0.11]
+      umbral: ausencia de los tres criterios
+      ref: 'pmid:24938565'
+    decision: >-
+      su valor está en el negativo: si no se cumple ninguno de los tres, el
+      exudado queda prácticamente descartado
+
+  - concepto: 'HM:3007'    # Derrame pleural
+    rol: manifestacion
+    estado_lr: no_medible
+    motivo: >-
+      es la condición previa, no una prueba: sin derrame no hay nada que
+      clasificar como exudado o trasudado
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:24938565, no del texto completo.

@@ -137,6 +137,10 @@ for f, d in condiciones.items():
                 err(f, f'{campo} de «{c}» no declara ni «valor» ni «rango»')
             if isinstance(valor, (int, float)) and valor > 100:
                 avi(f, f'{campo} de «{c}» = {valor}: por encima de 100 casi siempre es errata')
+            # El extremo de un rango merece el mismo escrutinio que un valor
+            # suelto: un LR de 250 es casi siempre una serie diminuta.
+            if isinstance(rango, list) and any(isinstance(v, (int, float)) and v > 100 for v in rango):
+                avi(f, f'{campo} de «{c}» llega a {max(rango)}: revisa si el extremo del rango es real')
 
         # Los tramos llevan su propia procedencia: un umbral distinto es una
         # medición distinta, y sin ref quedaría fuera de la regla dura.
@@ -156,6 +160,22 @@ for f, d in condiciones.items():
             err(f, 'signo de alarma sin «concepto»')
         elif c not in ids_concepto:
             err(f, f'signo de alarma apunta a concepto inexistente: {c}')
+
+    # Las reglas combinan varios conceptos en un criterio que no cabe en una
+    # arista suelta —la tríada de la meningitis, los criterios de Light—. Sus
+    # componentes y su procedencia se validan igual que todo lo demás.
+    for r in (d.get('reglas') or []):
+        nombre = r.get('nombre', '?')
+        if not r.get('ref'):
+            err(f, f'regla «{nombre}» sin «ref»')
+        elif r['ref'] not in ids_ref:
+            err(f, f'regla «{nombre}» cita «{r["ref"]}», que no está en referencias/')
+        comp = r.get('componentes') or []
+        if not comp:
+            err(f, f'regla «{nombre}» sin «componentes»')
+        for c in comp:
+            if c not in ids_concepto:
+                err(f, f'regla «{nombre}» apunta a concepto inexistente: {c}')
 
 # ── referencias ───────────────────────────────────────────────────────────────
 
@@ -178,12 +198,27 @@ print(f'referencias  {len(referencias):5}   verificadas: {sum(1 for d in referen
 sin_triada = sum(1 for d in conceptos.values() if not d.get('significante'))
 print(f'\n⚠ {sin_triada} conceptos sin significante   (se rellenan al migrar biosemiotics)')
 
-if avisos:
-    print(f'\n--- avisos ({len(avisos)}) ---')
-    for a in avisos[:15]:
+# El backlog conocido —conceptos sin tríada, umbrales heredados sin fuente— es
+# ruido de fondo previsible y se resume. Lo demás exige mirarlo: un aviso sobre
+# un cociente sospechoso sepultado bajo 147 rutinarios es un aviso que nadie ve.
+RUTINA = ('sin significante', 'umbral sin procedencia')
+rutina = [a for a in avisos if any(r in a for r in RUTINA)]
+atencion = [a for a in avisos if a not in rutina]
+
+if atencion:
+    print(f'\n--- REVISAR ({len(atencion)}) ---')
+    for a in atencion:
         print(f'  {a}')
-    if len(avisos) > 15:
-        print(f'  … y {len(avisos) - 15} más')
+
+if rutina:
+    print(f'\n--- backlog conocido ({len(rutina)}) ---')
+    resumen = {}
+    for a in rutina:
+        for r in RUTINA:
+            if r in a:
+                resumen[r] = resumen.get(r, 0) + 1
+    for r, n in sorted(resumen.items(), key=lambda x: -x[1]):
+        print(f'  {n:4}  {r}')
 
 if errores:
     print(f'\n--- ERRORES ({len(errores)}) ---')

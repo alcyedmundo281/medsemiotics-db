@@ -1,0 +1,23 @@
+# Concepto del índice. Acuñado al modelar HM:6005.
+
+id: 'HM:3009'
+tipo: concepto
+semantica: hallazgo
+termino: LDH elevada en líquido pleural
+sinonimos: [lactato deshidrogenasa pleural elevada, LDH pleural alta]
+padre: 'HM:0730'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: LDH en líquido pleural
+  direccion: alto
+  corte_superior: 200
+  unidad: U/L
+  ref: 'pmid:24938565'
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar el derrame pleural exudativo.
