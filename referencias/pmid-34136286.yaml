@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:34136286"
+clave_bibtex: skulec2021
+tipo: articulo
+titulo: "Lung Point Sign in Ultrasound Diagnostics of Pneumothorax: Imitations and Variants"
+autores:
+  - Skulec R
+  - Parizek T
+  - David M
+  - Matousek V
+  - Cerny V
+publicacion: Emerg Med Int
+anio: 2021
+volumen: 2021
+paginas: 6897946
+
+identificadores:
+  pmid: 34136286
+  doi: 10.1155/2021/6897946
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

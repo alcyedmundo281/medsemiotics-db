@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:27942791"
+clave_bibtex: cho2017
+tipo: articulo
+titulo: "Accuracy and precision of a new portable ultrasound scanner, the Biocon-700, in residual urine volume measurement"
+autores:
+  - Cho MK
+  - Noh EJ
+  - Kim CH
+publicacion: Int Urogynecol J
+anio: 2017
+volumen: 28
+paginas: "1057--1061"
+
+identificadores:
+  pmid: 27942791
+  doi: "10.1007/s00192-016-3224-0"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

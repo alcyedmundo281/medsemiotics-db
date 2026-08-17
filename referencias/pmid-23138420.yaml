@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:23138420"
+clave_bibtex: pomero2013
+tipo: articulo
+titulo: "Accuracy of emergency physician-performed ultrasonography in the diagnosis of deep-vein thrombosis: a systematic review and meta-analysis"
+autores:
+  - Pomero F
+  - Dentali F
+  - Borretta V
+  - Bonzini M
+  - Melchio R
+  - Douketis JD
+  - Fenoglio LM
+publicacion: Thromb Haemost
+anio: 2013
+volumen: 109
+paginas: "137--45"
+
+identificadores:
+  pmid: 23138420
+  doi: "10.1160/TH12-07-0473"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

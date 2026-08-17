@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:29228764"
+clave_bibtex: ibitoye2018
+tipo: articulo
+titulo: "Ultrasonographic quantification of pleural effusion: comparison of four formulae"
+autores:
+  - Ibitoye BO
+  - Idowu BM
+  - Ogunrombi AB
+  - Afolabi BI
+publicacion: Ultrasonography
+anio: 2018
+volumen: 37
+paginas: "254--260"
+
+identificadores:
+  pmid: 29228764
+  doi: 10.14366/usg.17050
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

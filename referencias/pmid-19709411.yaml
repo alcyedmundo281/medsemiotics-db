@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:19709411"
+clave_bibtex: ginghina2009
+tipo: articulo
+titulo: "Respiratory maneuvers in echocardiography: a review of clinical applications"
+autores:
+  - Ginghina C
+  - Beladan CC
+  - Iancu M
+  - Calin A
+  - Popescu BA
+publicacion: Cardiovasc Ultrasound
+anio: 2009
+volumen: 7
+paginas: 42
+
+identificadores:
+  pmid: 19709411
+  doi: "10.1186/1476-7120-7-42"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

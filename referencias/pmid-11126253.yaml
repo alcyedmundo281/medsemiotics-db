@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:11126253"
+clave_bibtex: lichtenstein2000
+tipo: articulo
+titulo: "The \"lung point\": an ultrasound sign specific to pneumothorax"
+autores:
+  - Lichtenstein D
+  - Mezière G
+  - Biderman P
+  - Gepner A
+publicacion: Intensive Care Med
+anio: 2000
+volumen: 26
+paginas: "1434--40"
+
+identificadores:
+  pmid: 11126253
+  doi: 10.1007/s001340000627
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

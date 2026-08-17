@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:16432674"
+clave_bibtex: balik2006
+tipo: articulo
+titulo: Ultrasound estimation of volume of pleural fluid in mechanically ventilated patients
+autores:
+  - Balik M
+  - Plasil P
+  - Waldauf P
+  - Pazout J
+  - Fric M
+  - Otahal M
+  - Pachl J
+publicacion: Intensive Care Med
+anio: 2006
+volumen: 32
+paginas: 318
+
+identificadores:
+  pmid: 16432674
+  doi: "10.1007/s00134-005-0024-2"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:24860676"
+clave_bibtex: shafiq2011
+tipo: articulo
+titulo: McConnell Sign in a Patient with Massive Acute Pulmonary Embolism
+autores:
+  - Shafiq Q
+  - Assaly R
+  - Kanjwal Y
+publicacion: Case Rep Cardiol
+anio: 2011
+volumen: 2011
+paginas: 201097
+
+identificadores:
+  pmid: 24860676
+  doi: 10.1155/2011/201097
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

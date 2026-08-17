@@ -1,0 +1,56 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:24951446"
+clave_bibtex: via2014
+tipo: articulo
+titulo: "International evidence-based recommendations for focused cardiac ultrasound"
+autores:
+  - Via G
+  - Hussain A
+  - Wells M
+  - Reardon R
+  - ElBarbary M
+  - Noble VE
+  - Tsung JW
+  - Neskovic AN
+  - Price S
+  - "Oren-Grinberg A"
+  - Liteplo A
+  - Cordioli R
+  - Naqvi N
+  - Rola P
+  - Poelaert J
+  - Guliĉ TG
+  - Sloth E
+  - Labovitz A
+  - Kimura B
+  - Breitkreutz R
+  - Masani N
+  - Bowra J
+  - Talmor D
+  - Guarracino F
+  - Goudie A
+  - Xiaoting W
+  - Chawla R
+  - Galderisi M
+  - Blaivas M
+  - Petrovic T
+  - Storti E
+  - Neri L
+  - Melniker L
+publicacion: J Am Soc Echocardiogr
+anio: 2014
+volumen: 27
+paginas: "683.e1--683.e33"
+
+identificadores:
+  pmid: 24951446
+  doi: 10.1016/j.echo.2014.05.001
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

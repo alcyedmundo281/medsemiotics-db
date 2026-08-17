@@ -1,0 +1,25 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:40032047"
+clave_bibtex: fernandezprada2025
+tipo: articulo
+titulo: "Application of bladder ultrasound to reduce urinary catheterization in patients suspected of acute urinary retention: A systematic review"
+autores:
+  - "Fernández-Prada I"
+  - "Ballesteros-Peña S"
+publicacion: Enferm Clin (Engl Ed)
+anio: 2025
+volumen: 35
+paginas: 502163
+
+identificadores:
+  pmid: 40032047
+  doi: 10.1016/j.enfcle.2025.502163
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

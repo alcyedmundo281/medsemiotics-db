@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:32337606"
+clave_bibtex: rodriguezlima2020
+tipo: articulo
+titulo: "Real-time ultrasound-guided thoracentesis in the intensive care unit: prevalence of mechanical complications"
+autores:
+  - Rodriguez Lima DR
+  - Yepes AF
+  - Birchenall Jiménez CI
+  - Mercado Díaz MA
+  - Pinilla Rojas DI
+publicacion: Ultrasound J
+anio: 2020
+volumen: 12
+paginas: 25
+
+identificadores:
+  pmid: 32337606
+  doi: "10.1186/s13089-020-00172-9"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

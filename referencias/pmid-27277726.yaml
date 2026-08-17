@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:27277726"
+clave_bibtex: sato2006
+tipo: articulo
+titulo: Analysis of posterior echoes using reconstructed vertical ultrasound images
+autores:
+  - Sato M
+  - Ishida H
+  - Konno K
+  - Komatsuda T
+  - Furukawa K
+  - Yamada M
+  - Yagisawa H
+  - Yoshida Y
+  - Watanabe S
+publicacion: J Med Ultrason (2001)
+anio: 2006
+volumen: 33
+paginas: "85--90"
+
+identificadores:
+  pmid: 27277726
+  doi: "10.1007/s10396-005-0078-3"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

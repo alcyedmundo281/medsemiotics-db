@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:12201931"
+clave_bibtex: hvarness2002
+tipo: articulo
+titulo: "Urinary bladder volume measurements: comparison of three ultrasound calculation methods"
+autores:
+  - Hvarness H
+  - Skjoldbye B
+  - Jakobsen H
+publicacion: Scand J Urol Nephrol
+anio: 2002
+volumen: 36
+paginas: "177--81"
+
+identificadores:
+  pmid: 12201931
+  doi: 10.1080/003655902320131839
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:23760156"
+clave_bibtex: beraud2013
+tipo: articulo
+titulo: "Focused transthoracic echocardiography during critical care medicine training: curriculum implementation and evaluation of proficiency*"
+autores:
+  - Beraud AS
+  - Rizk NW
+  - Pearl RG
+  - Liang DH
+  - Patterson AJ
+publicacion: Crit Care Med
+anio: 2013
+volumen: 41
+paginas: "e179--81"
+
+identificadores:
+  pmid: 23760156
+  doi: 10.1097/CCM.0b013e31828e9240
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:7587439"
+clave_bibtex: lichtenstein1995
+tipo: articulo
+titulo: A bedside ultrasound sign ruling out pneumothorax in the critically ill. Lung sliding
+autores:
+  - Lichtenstein DA
+  - Menu Y
+publicacion: Chest
+anio: 1995
+volumen: 108
+paginas: "1345--8"
+
+identificadores:
+  pmid: 7587439
+  doi: 10.1378/chest.108.5.1345
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - 'CrossRef tiene «Critically III» por «Critically Ill»: errata del registro DOI'

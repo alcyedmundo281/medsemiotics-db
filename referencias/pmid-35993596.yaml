@@ -1,0 +1,44 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:35993596"
+clave_bibtex: demi2023
+tipo: articulo
+titulo: New International Guidelines and Consensus on the Use of Lung Ultrasound
+autores:
+  - Demi L
+  - Wolfram F
+  - Klersy C
+  - De Silvestri A
+  - Ferretti VV
+  - Muller M
+  - Miller D
+  - Feletti F
+  - Wełnicki M
+  - Buda N
+  - Skoczylas A
+  - Pomiecko A
+  - Damjanovic D
+  - Olszewski R
+  - Kirkpatrick AW
+  - Breitkreutz R
+  - Mathis G
+  - Soldati G
+  - Smargiassi A
+  - Inchingolo R
+  - Perrone T
+publicacion: J Ultrasound Med
+anio: 2023
+volumen: 42
+paginas: "309--344"
+
+identificadores:
+  pmid: 35993596
+  doi: 10.1002/jum.16088
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

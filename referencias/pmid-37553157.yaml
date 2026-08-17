@@ -1,0 +1,45 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:37553157"
+clave_bibtex: roberts2023
+tipo: articulo
+titulo: British Thoracic Society Guideline for pleural disease
+autores:
+  - Roberts ME
+  - Rahman NM
+  - Maskell NA
+  - Bibby AC
+  - Blyth KG
+  - Corcoran JP
+  - Edey A
+  - Evison M
+  - de Fonseka D
+  - Hallifax R
+  - Harden S
+  - Lawrie I
+  - Lim E
+  - McCracken D
+  - Mercer R
+  - Mishra EK
+  - Nicholson AG
+  - Noorzad F
+  - Opstad KS
+  - Parsonage M
+  - Stanton AE
+  - Walker S
+publicacion: Thorax
+anio: 2023
+volumen: 78
+paginas: "1143--1156"
+
+identificadores:
+  pmid: 37553157
+  doi: "10.1136/thorax-2023-220304"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

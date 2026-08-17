@@ -1,0 +1,33 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:32885137"
+clave_bibtex: zander2020
+tipo: articulo
+titulo: "Ultrasound Image Optimization (\"Knobology\"): B-Mode"
+autores:
+  - Zander D
+  - Hüske S
+  - Hoffmann B
+  - Cui XW
+  - Dong Y
+  - Lim A
+  - Jenssen C
+  - Löwe A
+  - Koch JBH
+  - Dietrich CF
+publicacion: Ultrasound Int Open
+anio: 2020
+volumen: 6
+paginas: "E14--E24"
+
+identificadores:
+  pmid: 32885137
+  doi: "10.1055/a-1223-1134"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:11146014"
+clave_bibtex: rosen2001
+tipo: articulo
+titulo: Ultrasonography by emergency physicians in patients with suspected cholecystitis
+autores:
+  - Rosen CL
+  - Brown DF
+  - Chang Y
+  - Moore C
+  - Averill NJ
+  - Arkoff LJ
+  - McCabe CJ
+  - Wolfe RE
+publicacion: Am J Emerg Med
+anio: 2001
+volumen: 19
+paginas: "32--6"
+
+identificadores:
+  pmid: 11146014
+  doi: 10.1053/ajem.2001.20028
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

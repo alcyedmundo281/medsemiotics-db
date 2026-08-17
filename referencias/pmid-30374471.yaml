@@ -1,0 +1,25 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:30374471"
+clave_bibtex: teichgraeber2018
+tipo: articulo
+titulo: Sonographic Bedside Quantification of Pleural Effusion Compared to Computed Tomography Volumetry in ICU Patients
+autores:
+  - Teichgräber UK
+  - Hackbarth J
+publicacion: Ultrasound Int Open
+anio: 2018
+volumen: 4
+paginas: "E131--E135"
+
+identificadores:
+  pmid: 30374471
+  doi: "10.1055/a-0747-6416"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

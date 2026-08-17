@@ -1,0 +1,24 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:17446771"
+clave_bibtex: aldrich2007
+tipo: articulo
+titulo: Basic physics of ultrasound imaging
+autores:
+  - Aldrich JE
+publicacion: Crit Care Med
+anio: 2007
+volumen: 35
+paginas: "S131--7"
+
+identificadores:
+  pmid: 17446771
+  doi: 10.1097/01.CCM.0000260624.99430.22
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

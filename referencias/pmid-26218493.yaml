@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:26218493"
+clave_bibtex: soni2015
+tipo: articulo
+titulo: Ultrasound in the diagnosis and management of pleural effusions
+autores:
+  - Soni NJ
+  - Franco R
+  - Velez MI
+  - Schnobrich D
+  - Dancel R
+  - Restrepo MI
+  - Mayo PH
+publicacion: J Hosp Med
+anio: 2015
+volumen: 10
+paginas: "811--6"
+
+identificadores:
+  pmid: 26218493
+  doi: 10.1002/jhm.2434
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,37 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:35220634"
+clave_bibtex: fernando2022
+tipo: articulo
+titulo: "Accuracy of presenting symptoms, physical examination, and imaging for diagnosis of ruptured abdominal aortic aneurysm: Systematic review and meta-analysis"
+autores:
+  - Fernando SM
+  - Tran A
+  - Cheng W
+  - Rochwerg B
+  - Strauss SA
+  - Mutter E
+  - McIsaac DI
+  - Kyeremanteng K
+  - Kubelik D
+  - Jetty P
+  - Nagpal SK
+  - Thiruganasambandamoorthy V
+  - Roberts DJ
+  - Perry JJ
+publicacion: Acad Emerg Med
+anio: 2022
+volumen: 29
+paginas: "486--496"
+
+identificadores:
+  pmid: 35220634
+  doi: 10.1111/acem.14475
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

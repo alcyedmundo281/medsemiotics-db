@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:35696801"
+clave_bibtex: alerhand2022
+tipo: articulo
+titulo: "Pericardial tamponade: A comprehensive emergency medicine and echocardiography review"
+autores:
+  - Alerhand S
+  - Adrian RJ
+  - Long B
+  - Avila J
+publicacion: Am J Emerg Med
+anio: 2022
+volumen: 58
+paginas: "159--174"
+
+identificadores:
+  pmid: 35696801
+  doi: 10.1016/j.ajem.2022.05.001
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true

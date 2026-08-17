@@ -1,0 +1,51 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:22392031"
+clave_bibtex: volpicelli2012
+tipo: articulo
+titulo: "International evidence-based recommendations for point-of-care lung ultrasound"
+autores:
+  - Volpicelli G
+  - Elbarbary M
+  - Blaivas M
+  - Lichtenstein DA
+  - Mathis G
+  - Kirkpatrick AW
+  - Melniker L
+  - Gargani L
+  - Noble VE
+  - Via G
+  - Dean A
+  - Tsung JW
+  - Soldati G
+  - Copetti R
+  - Bouhemad B
+  - Reissig A
+  - Agricola E
+  - Rouby JJ
+  - Arbelot C
+  - Liteplo A
+  - Sargsyan A
+  - Silva F
+  - Hoppmann R
+  - Breitkreutz R
+  - Seibel A
+  - Neri L
+  - Storti E
+  - Petrovic T
+publicacion: Intensive Care Med
+anio: 2012
+volumen: 38
+paginas: "577--91"
+
+identificadores:
+  pmid: 22392031
+  doi: "10.1007/s00134-012-2513-4"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:20651174"
+clave_bibtex: beland2010
+tipo: articulo
+titulo: "Renal cortical thickness measured at ultrasound: is it better than renal length as an indicator of renal function in chronic kidney disease?"
+autores:
+  - Beland MD
+  - Walle NL
+  - Machan JT
+  - Cronan JJ
+publicacion: AJR Am J Roentgenol
+anio: 2010
+volumen: 195
+paginas: "W146--9"
+
+identificadores:
+  pmid: 20651174
+  doi: 10.2214/AJR.09.4104
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

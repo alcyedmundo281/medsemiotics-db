@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:1580016"
+clave_bibtex: pye1992
+tipo: articulo
+titulo: Adaptive time gain compensation for ultrasonic imaging
+autores:
+  - Pye SD
+  - Wild SR
+  - McDicken WN
+publicacion: Ultrasound Med Biol
+anio: 1992
+volumen: 18
+paginas: "205--12"
+
+identificadores:
+  pmid: 1580016
+  doi: "10.1016/0301-5629(92)90131-S"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

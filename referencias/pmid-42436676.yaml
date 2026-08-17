@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:42436676"
+clave_bibtex: christiaans2026
+tipo: articulo
+titulo: "Postvoid Residual Thresholds Used to Define Chronic Urinary Retention: A Systematic Review"
+autores:
+  - Christiaans CHH
+  - de Klerk J
+  - van Velsen AK
+  - Blok BFM
+publicacion: Eur Urol Open Sci
+anio: 2026
+volumen: 90
+paginas: "84--91"
+
+identificadores:
+  pmid: 42436676
+  doi: 10.1016/j.euros.2026.06.010
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

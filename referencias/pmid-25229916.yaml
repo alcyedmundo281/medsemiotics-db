@@ -1,0 +1,51 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:25229916"
+clave_bibtex: smithbindman2014
+tipo: articulo
+titulo: Ultrasonography versus computed tomography for suspected nephrolithiasis
+autores:
+  - "Smith-Bindman R"
+  - Aubin C
+  - Bailitz J
+  - Bengiamin RN
+  - Camargo CA Jr
+  - Corbo J
+  - Dean AJ
+  - Goldstein RB
+  - Griffey RT
+  - Jay GD
+  - Kang TL
+  - Kriesel DR
+  - Ma OJ
+  - Mallin M
+  - Manson W
+  - Melnikow J
+  - Miglioretti DL
+  - Miller SK
+  - Mills LD
+  - Miner JR
+  - Moghadassi M
+  - Noble VE
+  - Press GM
+  - Stoller ML
+  - Valencia VE
+  - Wang J
+  - Wang RC
+  - Cummings SR
+publicacion: N Engl J Med
+anio: 2014
+volumen: 371
+paginas: "1100--10"
+
+identificadores:
+  pmid: 25229916
+  doi: 10.1056/NEJMoa1404446
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:8416654"
+clave_bibtex: emamian1993
+tipo: articulo
+titulo: "Kidney dimensions at sonography: correlation with age, sex, and habitus in 665 adult volunteers"
+autores:
+  - Emamian SA
+  - Nielsen MB
+  - Pedersen JF
+  - Ytte L
+publicacion: AJR Am J Roentgenol
+anio: 1993
+volumen: 160
+paginas: "83--6"
+
+identificadores:
+  pmid: 8416654
+  doi: 10.2214/ajr.160.1.8416654
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

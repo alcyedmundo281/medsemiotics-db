@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:36671890"
+clave_bibtex: he2022
+tipo: articulo
+titulo: "Piezoelectric Micromachined Ultrasound Transducer Technology: Recent Advances and Applications"
+autores:
+  - He Y
+  - Wan H
+  - Jiang X
+  - Peng C
+publicacion: Biosensors (Basel)
+anio: 2022
+volumen: 13
+paginas: 55
+
+identificadores:
+  pmid: 36671890
+  doi: 10.3390/bios13010055
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

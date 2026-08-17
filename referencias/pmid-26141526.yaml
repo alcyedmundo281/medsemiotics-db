@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:26141526"
+clave_bibtex: cole2015
+tipo: articulo
+titulo: "Defining the real-world reproducibility of visual grading of left ventricular function and visual estimation of left ventricular ejection fraction: impact of image quality, experience and accreditation"
+autores:
+  - Cole GD
+  - Dhutia NM
+  - "Shun-Shin MJ"
+  - Willson K
+  - Harrison J
+  - Raphael CE
+  - Zolgharni M
+  - Mayet J
+  - Francis DP
+publicacion: Int J Cardiovasc Imaging
+anio: 2015
+volumen: 31
+paginas: "1303--14"
+
+identificadores:
+  pmid: 26141526
+  doi: "10.1007/s10554-015-0659-1"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

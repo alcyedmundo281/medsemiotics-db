@@ -1,0 +1,24 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:17710357"
+clave_bibtex: guntheroth2007
+tipo: articulo
+titulo: "Sensitivity and specificity of echocardiographic evidence of tamponade: implications for ventricular interdependence and pulsus paradoxus"
+autores:
+  - Guntheroth WG
+publicacion: Pediatr Cardiol
+anio: 2007
+volumen: 28
+paginas: "358--362"
+
+identificadores:
+  pmid: 17710357
+  doi: "10.1007/s00246-005-0807-9"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

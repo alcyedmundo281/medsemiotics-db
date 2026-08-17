@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:34654586"
+clave_bibtex: bahl2021
+tipo: articulo
+titulo: "Left Ventricular Ejection Fraction Assessment by Emergency Physician-Performed Bedside Echocardiography: A Prospective Comparative Evaluation of Multiple Modalities"
+autores:
+  - Bahl A
+  - Johnson S
+  - Altwail M
+  - Brackney A
+  - Xiao J
+  - Price J
+  - Shotkin P
+  - Chen NW
+publicacion: J Emerg Med
+anio: 2021
+volumen: 61
+paginas: "711--719"
+
+identificadores:
+  pmid: 34654586
+  doi: 10.1016/j.jemermed.2021.09.009
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

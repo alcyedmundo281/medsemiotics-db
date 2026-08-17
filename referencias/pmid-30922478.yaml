@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:30922478"
+clave_bibtex: sanz2019
+tipo: articulo
+titulo: "Anatomy, Function, and Dysfunction of the Right Ventricle: JACC State-of-the-Art Review"
+autores:
+  - Sanz J
+  - "Sánchez-Quintana D"
+  - Bossone E
+  - Bogaard HJ
+  - Naeije R
+publicacion: J Am Coll Cardiol
+anio: 2019
+volumen: 73
+paginas: "1463--1482"
+
+identificadores:
+  pmid: 30922478
+  doi: 10.1016/j.jacc.2018.12.076
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - "CrossRef registra solo el título principal, sin el subtítulo"

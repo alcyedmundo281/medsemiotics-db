@@ -1,0 +1,41 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:26320112"
+clave_bibtex: adler2015
+tipo: articulo
+titulo: 2015 ESC Guidelines for the diagnosis and management of pericardial diseases
+autores:
+  - Adler Y
+  - Charron P
+  - Imazio M
+  - Badano L
+  - "Barón-Esquivias G"
+  - Bogaert J
+  - Brucato A
+  - Gueret P
+  - Klingel K
+  - Lionis C
+  - Maisch B
+  - Mayosi B
+  - Pavie A
+  - Ristić AD
+  - Sabaté Tenas M
+  - Seferovic P
+  - Swedberg K
+  - Tomkowski W
+publicacion: Eur Heart J
+anio: 2015
+volumen: 36
+paginas: "2921--2964"
+
+identificadores:
+  pmid: 26320112
+  doi: 10.1093/eurheartj/ehv318
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

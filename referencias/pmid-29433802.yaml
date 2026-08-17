@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:29433802"
+clave_bibtex: staub2018
+tipo: articulo
+titulo: "Chest ultrasonography for the emergency diagnosis of traumatic pneumothorax and haemothorax: A systematic review and meta-analysis"
+autores:
+  - Staub LJ
+  - Biscaro RRM
+  - Kaszubowski E
+  - Maurici R
+publicacion: Injury
+anio: 2018
+volumen: 49
+paginas: "457--466"
+
+identificadores:
+  pmid: 29433802
+  doi: 10.1016/j.injury.2018.01.033
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

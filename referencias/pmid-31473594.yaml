@@ -1,0 +1,46 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:31473594"
+clave_bibtex: konstantinides2019
+tipo: articulo
+titulo: 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (ERS)
+autores:
+  - Konstantinides SV
+  - Meyer G
+  - Becattini C
+  - Bueno H
+  - Geersing GJ
+  - Harjola VP
+  - Huisman MV
+  - Humbert M
+  - Jennings CS
+  - Jiménez D
+  - Kucher N
+  - Lang IM
+  - Lankeit M
+  - Lorusso R
+  - Mazzolai L
+  - Meneveau N
+  - Ní Áinle F
+  - Prandoni P
+  - Pruszczyk P
+  - Righini M
+  - Torbicki A
+  - Van Belle E
+  - Zamorano JL
+publicacion: Eur Respir J
+anio: 2019
+volumen: 54
+paginas: 1901647
+
+identificadores:
+  pmid: 31473594
+  doi: "10.1183/13993003.01647-2019"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

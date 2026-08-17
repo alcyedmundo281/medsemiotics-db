@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:28495379"
+clave_bibtex: fields2017
+tipo: articulo
+titulo: "Transthoracic Echocardiography for Diagnosing Pulmonary Embolism: A Systematic Review and Meta-Analysis"
+autores:
+  - Fields JM
+  - Davis J
+  - Girson L
+  - Au A
+  - Potts J
+  - Morgan CJ
+  - Vetter I
+  - Riesenberg LA
+publicacion: J Am Soc Echocardiogr
+anio: 2017
+volumen: 30
+paginas: "714--723"
+
+identificadores:
+  pmid: 28495379
+  doi: 10.1016/j.echo.2017.03.004
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

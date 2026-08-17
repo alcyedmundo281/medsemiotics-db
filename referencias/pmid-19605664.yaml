@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:19605664"
+clave_bibtex: feldman2009
+tipo: articulo
+titulo: US artifacts
+autores:
+  - Feldman MK
+  - Katyal S
+  - Blackwood MS
+publicacion: Radiographics
+anio: 2009
+volumen: 29
+paginas: "1179--89"
+
+identificadores:
+  pmid: 19605664
+  doi: 10.1148/rg.294085199
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

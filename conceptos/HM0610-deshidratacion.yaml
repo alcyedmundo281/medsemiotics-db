@@ -1,0 +1,25 @@
+# Concepto del índice. Sembrado desde el vocabulario semilla de holonmed.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:0610'
+tipo: concepto
+semantica: hallazgo
+termino: Deshidratación
+sinonimos:
+  - signos de deshidratación
+  - mucosas secas
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: vocabulario_semilla holonmed v1.3.0
+  nota: >-
+    Relicenciado a CC0 por el autor para su uso como índice compartido.
+    El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.

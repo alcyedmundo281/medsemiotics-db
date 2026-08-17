@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:23800191"
+clave_bibtex: floerchinger2013
+tipo: articulo
+titulo: "Delayed cardiac tamponade after open heart surgery - is supplemental CT imaging reasonable?"
+autores:
+  - Floerchinger B
+  - Camboni D
+  - Schopka S
+  - Kolat P
+  - Hilker M
+  - Schmid C
+publicacion: J Cardiothorac Surg
+anio: 2013
+volumen: 8
+paginas: 158
+
+identificadores:
+  pmid: 23800191
+  doi: "10.1186/1749-8090-8-158"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,38 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:37450604"
+clave_bibtex: gargani2023
+tipo: articulo
+titulo: "Lung ultrasound in acute and chronic heart failure: a clinical consensus statement of the European Association of Cardiovascular Imaging (EACVI)"
+autores:
+  - Gargani L
+  - Girerd N
+  - Platz E
+  - Pellicori P
+  - Stankovic I
+  - Palazzuoli A
+  - Pivetta E
+  - Miglioranza MH
+  - "Soliman-Aboumarie H"
+  - Agricola E
+  - Volpicelli G
+  - Price S
+  - Donal E
+  - Cosyns B
+  - Neskovic AN
+publicacion: Eur Heart J Cardiovasc Imaging
+anio: 2023
+volumen: 24
+paginas: "1569--1582"
+
+identificadores:
+  pmid: 37450604
+  doi: 10.1093/ehjci/jead169
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

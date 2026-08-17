@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:12853678"
+clave_bibtex: hangiandreou2003
+tipo: articulo
+titulo: "AAPM/RSNA physics tutorial for residents. Topics in US: B-mode US: basic concepts and new technology"
+autores:
+  - Hangiandreou NJ
+publicacion: Radiographics
+anio: 2003
+volumen: 23
+paginas: "1019--33"
+
+identificadores:
+  pmid: 12853678
+  doi: 10.1148/rg.234035034
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - "CrossRef registra solo el título principal, sin el subtítulo"

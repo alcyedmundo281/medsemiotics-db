@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:15882665"
+clave_bibtex: gudmundsson2005
+tipo: articulo
+titulo: Visually estimated left ventricular ejection fraction by echocardiography is closely correlated with formal quantitative methods
+autores:
+  - Gudmundsson P
+  - Rydberg E
+  - Winter R
+  - Willenheimer R
+publicacion: Int J Cardiol
+anio: 2005
+volumen: 101
+paginas: "209--12"
+
+identificadores:
+  pmid: 15882665
+  doi: 10.1016/j.ijcard.2004.03.027
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

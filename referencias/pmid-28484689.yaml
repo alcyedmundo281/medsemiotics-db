@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:28484689"
+clave_bibtex: perezcasares2017
+tipo: articulo
+titulo: Echocardiographic Evaluation of Pericardial Effusion and Cardiac Tamponade
+autores:
+  - "Pérez-Casares A"
+  - Cesar S
+  - "Brunet-Garcia L"
+  - "Sanchez-de-Toledo J"
+publicacion: Front Pediatr
+anio: 2017
+volumen: 5
+paginas: 79
+
+identificadores:
+  pmid: 28484689
+  doi: 10.3389/fped.2017.00079
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:24458082"
+clave_bibtex: oneill2014
+tipo: articulo
+titulo: "Renal relevant radiology: use of ultrasound in kidney disease and nephrology procedures"
+autores:
+  - "O'Neill WC"
+publicacion: Clin J Am Soc Nephrol
+anio: 2014
+volumen: 9
+paginas: "373--81"
+
+identificadores:
+  pmid: 24458082
+  doi: 10.2215/CJN.03170313
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - "CrossRef registra solo el título principal, sin el subtítulo"

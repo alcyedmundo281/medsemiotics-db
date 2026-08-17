@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:14557855"
+clave_bibtex: lichtenstein2003
+tipo: articulo
+titulo: "The \"lung pulse\": an early ultrasound sign of complete atelectasis"
+autores:
+  - Lichtenstein DA
+  - Lascols N
+  - Prin S
+  - Mezière G
+publicacion: Intensive Care Med
+anio: 2003
+volumen: 29
+paginas: "2187--2192"
+
+identificadores:
+  pmid: 14557855
+  doi: "10.1007/s00134-003-1930-9"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -1,0 +1,25 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:18403664"
+clave_bibtex: lichtenstein2008
+tipo: articulo
+titulo: "Relevance of lung ultrasound in the diagnosis of acute respiratory failure: the BLUE protocol"
+autores:
+  - Lichtenstein DA
+  - Mezière GA
+publicacion: Chest
+anio: 2008
+volumen: 134
+paginas: "117--25"
+
+identificadores:
+  pmid: 18403664
+  doi: "10.1378/chest.07-2800"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

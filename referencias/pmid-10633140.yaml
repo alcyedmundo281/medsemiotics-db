@@ -1,0 +1,24 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:10633140"
+clave_bibtex: kossoff2000
+tipo: articulo
+titulo: Basic physics and imaging characteristics of ultrasound
+autores:
+  - Kossoff G
+publicacion: World J Surg
+anio: 2000
+volumen: 24
+paginas: "134--42"
+
+identificadores:
+  pmid: 10633140
+  doi: 10.1007/s002689910026
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

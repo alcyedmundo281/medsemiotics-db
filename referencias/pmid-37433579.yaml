@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:37433579"
+clave_bibtex: asciak2023
+tipo: articulo
+titulo: British Thoracic Society Clinical Statement on pleural procedures
+autores:
+  - Asciak R
+  - Bedawi EO
+  - Bhatnagar R
+  - Clive AO
+  - Hassan M
+  - Lloyd H
+  - Reddy R
+  - Roberts H
+  - Rahman NM
+publicacion: Thorax
+anio: 2023
+volumen: 78
+paginas: "s43--s68"
+
+identificadores:
+  pmid: 37433579
+  doi: "10.1136/thorax-2022-219371"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

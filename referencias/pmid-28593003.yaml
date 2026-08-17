@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:28593003"
+clave_bibtex: farsi2017
+tipo: articulo
+titulo: Focused cardiac ultrasound (FOCUS) by emergency medicine residents in patients with suspected cardiovascular diseases
+autores:
+  - Farsi D
+  - Hajsadeghi S
+  - Hajighanbari MJ
+  - Mofidi M
+  - Hafezimoghadam P
+  - Rezai M
+  - Mahshidfar B
+  - Abiri S
+  - Abbasi S
+publicacion: J Ultrasound
+anio: 2017
+volumen: 20
+paginas: "133--138"
+
+identificadores:
+  pmid: 28593003
+  doi: "10.1007/s40477-017-0246-5"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

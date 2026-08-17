@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:31145304"
+clave_bibtex: lee2019
+tipo: articulo
+titulo: "Comparison of 2-point and 3-point point-of-care ultrasound techniques for deep vein thrombosis at the emergency department: A meta-analysis"
+autores:
+  - Lee JH
+  - Lee SH
+  - Yun SJ
+publicacion: Medicine (Baltimore)
+anio: 2019
+volumen: 98
+paginas: e15791
+
+identificadores:
+  pmid: 31145304
+  doi: 10.1097/MD.0000000000015791
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

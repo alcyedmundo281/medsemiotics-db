@@ -1,0 +1,24 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:17092547"
+clave_bibtex: jensen2007
+tipo: articulo
+titulo: Medical ultrasound imaging
+autores:
+  - Jensen JA
+publicacion: Prog Biophys Mol Biol
+anio: 2007
+volumen: 93
+paginas: "153--65"
+
+identificadores:
+  pmid: 17092547
+  doi: 10.1016/j.pbiomolbio.2006.07.025
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

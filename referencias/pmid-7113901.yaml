@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:7113901"
+clave_bibtex: rich1982
+tipo: articulo
+titulo: "Determination of left ventricular ejection fraction by visual estimation during real-time two-dimensional echocardiography"
+autores:
+  - Rich S
+  - Sheikh A
+  - Gallastegui J
+  - Kondos GT
+  - Mason T
+  - Lam W
+publicacion: Am Heart J
+anio: 1982
+volumen: 104
+paginas: "603--6"
+
+identificadores:
+  pmid: 7113901
+  doi: "10.1016/0002-8703(82)90233-2"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

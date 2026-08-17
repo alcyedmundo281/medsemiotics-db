@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:22090745"
+clave_bibtex: abuzidan2011
+tipo: articulo
+titulo: Clinical ultrasound physics
+autores:
+  - "Abu-Zidan FM"
+  - Hefny AF
+  - Corr P
+publicacion: J Emerg Trauma Shock
+anio: 2011
+volumen: 4
+paginas: "501--3"
+
+identificadores:
+  pmid: 22090745
+  doi: "10.4103/0974-2700.86646"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

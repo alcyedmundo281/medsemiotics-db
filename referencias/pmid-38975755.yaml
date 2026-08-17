@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:38975755"
+clave_bibtex: turk2024
+tipo: articulo
+titulo: "Point-of-Care Kidney and Genitourinary Ultrasound in Adults: Image Acquisition"
+autores:
+  - Turk M
+  - Catanese B
+  - Lefler B
+  - Sparks MA
+  - Bronshteyn YS
+  - Bowman A
+publicacion: J Vis Exp
+anio: 2024
+
+identificadores:
+  pmid: 38975755
+  doi: 10.3791/66802
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

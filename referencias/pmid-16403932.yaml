@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:16403932"
+clave_bibtex: wells2006
+tipo: articulo
+titulo: "Does this patient have deep vein thrombosis?"
+autores:
+  - Wells PS
+  - Owen C
+  - Doucette S
+  - Fergusson D
+  - Tran H
+publicacion: JAMA
+anio: 2006
+volumen: 295
+paginas: "199--207"
+
+identificadores:
+  pmid: 16403932
+  doi: 10.1001/jama.295.2.199
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

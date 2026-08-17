@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:28123617"
+clave_bibtex: stolz2017
+tipo: articulo
+titulo: Clinical and historical features of emergency department patients with pericardial effusions
+autores:
+  - Stolz L
+  - Valenzuela J
+  - "Situ-LaCasse E"
+  - Stolz U
+  - Hawbaker N
+  - Thompson M
+  - Adhikari S
+publicacion: World J Emerg Med
+anio: 2017
+volumen: 8
+paginas: "29--33"
+
+identificadores:
+  pmid: 28123617
+  doi: "10.5847/wjem.j.1920-8642.2017.01.005"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

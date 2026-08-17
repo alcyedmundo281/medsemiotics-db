@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:35527112"
+clave_bibtex: duggan2022
+tipo: articulo
+titulo: "Optimizing Lung Ultrasound: The Effect of Depth, Gain and Focal Position on Sonographic B-Lines"
+autores:
+  - Duggan NM
+  - Goldsmith AJ
+  - Al Saud AA
+  - Ma IWY
+  - Shokoohi H
+  - Liteplo AS
+publicacion: Ultrasound Med Biol
+anio: 2022
+volumen: 48
+paginas: "1509--1517"
+
+identificadores:
+  pmid: 35527112
+  doi: 10.1016/j.ultrasmedbio.2022.03.015
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

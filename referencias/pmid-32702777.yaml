@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:32702777"
+clave_bibtex: chan2020
+tipo: articulo
+titulo: Chest ultrasonography versus supine chest radiography for diagnosis of pneumothorax in trauma patients in the emergency department
+autores:
+  - Chan KK
+  - Joo DA
+  - McRae AD
+  - Takwoingi Y
+  - Premji ZA
+  - Lang E
+  - Wakai A
+publicacion: Cochrane Database Syst Rev
+anio: 2020
+volumen: 7
+paginas: CD013031
+
+identificadores:
+  pmid: 32702777
+  doi: 10.1002/14651858.CD013031.pub2
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

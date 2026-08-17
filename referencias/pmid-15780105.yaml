@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:15780105"
+clave_bibtex: moghazi2005
+tipo: articulo
+titulo: Correlation of renal histopathology with sonographic findings
+autores:
+  - Moghazi S
+  - Jones E
+  - Schroepple J
+  - Arya K
+  - McClellan W
+  - Hennigar RA
+  - "O'Neill WC"
+publicacion: Kidney Int
+anio: 2005
+volumen: 67
+paginas: "1515--20"
+
+identificadores:
+  pmid: 15780105
+  doi: "10.1111/j.1523-1755.2005.00230.x"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

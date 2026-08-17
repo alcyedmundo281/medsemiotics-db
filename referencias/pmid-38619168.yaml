@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:38619168"
+clave_bibtex: nunan2024
+tipo: articulo
+titulo: Point of Care Ultrasound Bladder Volume Calculation on the Acute Medical Unit
+autores:
+  - Nunan J
+  - Lister T
+  - Howgill H
+  - Parreno MMM
+  - Brown G
+  - Walden A
+publicacion: Acute Med
+anio: 2024
+volumen: 23
+paginas: "37--42"
+
+identificadores:
+  pmid: 38619168
+  doi: 10.52964/AMJA.0970
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

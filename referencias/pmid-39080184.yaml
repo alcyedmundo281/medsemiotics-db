@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:39080184"
+clave_bibtex: zaki2024
+tipo: articulo
+titulo: "Deep venous thrombosis (DVT) diagnostics: gleaning insights from point-of-care ultrasound (PoCUS) techniques in emergencies: a systematic review and meta-analysis"
+autores:
+  - Zaki HA
+  - Albaroudi B
+  - Shaban EE
+  - Elgassim M
+  - Almarri ND
+  - Basharat K
+  - Shaban A
+publicacion: Ultrasound J
+anio: 2024
+volumen: 16
+paginas: 37
+
+identificadores:
+  pmid: 39080184
+  doi: "10.1186/s13089-024-00378-1"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

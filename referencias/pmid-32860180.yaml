@@ -1,0 +1,39 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:32860180"
+clave_bibtex: mandoli2021
+tipo: articulo
+titulo: "Cor pulmonale: the role of traditional and advanced echocardiography in the acute and chronic settings"
+autores:
+  - Mandoli GE
+  - Sciaccaluga C
+  - Bandera F
+  - Cameli P
+  - Esposito R
+  - "D'Andrea A"
+  - Evola V
+  - Sorrentino R
+  - Malagoli A
+  - Sisti N
+  - Nistor D
+  - Santoro C
+  - Bargagli E
+  - Mondillo S
+  - Galderisi M
+  - Cameli M
+publicacion: Heart Fail Rev
+anio: 2021
+volumen: 26
+paginas: "263--275"
+
+identificadores:
+  pmid: 32860180
+  doi: "10.1007/s10741-020-10014-4"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

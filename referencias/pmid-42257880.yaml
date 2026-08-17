@@ -1,0 +1,46 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:42257880"
+clave_bibtex: volpicelli2026
+tipo: articulo
+titulo: "International evidence-based recommendations for point-of-care lung ultrasound : 2025 focused update of the 2012 recommendations"
+autores:
+  - Volpicelli G
+  - Gargani L
+  - Zieleskiewicz L
+  - Tuinman PR
+  - Kimura BJ
+  - Zisis G
+  - Vaona A
+  - Coiro S
+  - Araujo GN
+  - Noble V
+  - Laursen CB
+  - Bouhemad B
+  - Silva S
+  - Nogué R
+  - Zanobetti M
+  - Chiumello DA
+  - Mathis G
+  - Nazerian P
+  - Pivetta E
+  - Xirouchaki N
+  - Zoccali C
+  - "Carreras-Mora J"
+  - Oveland NP
+publicacion: Intensive Care Med
+anio: 2026
+volumen: 52
+paginas: "1415--1446"
+
+identificadores:
+  pmid: 42257880
+  doi: "10.1007/s00134-026-08487-2"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

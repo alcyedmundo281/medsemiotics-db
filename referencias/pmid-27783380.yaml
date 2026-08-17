@@ -1,0 +1,25 @@
+# Registro de referencia del índice. Generado desde refs.bib de biosemiotics.
+# La verificación contrasta el PMID contra PubMed: no se escribe a mano.
+
+id: "pmid:27783380"
+clave_bibtex: blanco2016
+tipo: articulo
+titulo: "Common pitfalls in point-of-care ultrasound: a practical guide for emergency and critical care physicians"
+autores:
+  - Blanco P
+  - Volpicelli G
+publicacion: Crit Ultrasound J
+anio: 2016
+volumen: 8
+paginas: 15
+
+identificadores:
+  pmid: 27783380
+  doi: "10.1186/s13089-016-0052-x"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-08-17"
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
