@@ -21,5 +21,8 @@ verificacion:
   pubmed: true
   fecha: "2026-08-17"
   retractado: false
+  errata: 'Chest. 2013 Aug;144(2):721'
   crossref: true
   crossref_titulo_coincide: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras antes de citarla'

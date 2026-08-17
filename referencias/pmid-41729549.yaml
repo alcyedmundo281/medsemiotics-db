@@ -1,0 +1,38 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:41729549'
+clave_bibtex: drum2026
+tipo: articulo
+titulo: 'Does This Patient Have Volume Overload?: The Rational Clinical Examination'
+autores:
+  - Drum B
+  - La Course B
+  - Kelly M
+  - York A
+  - Worrall E
+  - Martins J
+  - Johnson S
+  - Liles EA Jr
+publicacion: JAMA
+anio: 2026
+volumen: 335
+paginas: 1159-1168
+
+identificadores:
+  pmid: 41729549
+  doi: 10.1001/jama.2026.0446
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  errata: 'JAMA. 2026 Jun 30. doi: 10.1001/jama.2026.9987.'
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - >-
+      Se registra deliberadamente SIN usarla. Era el candidato más rico de la
+      serie (12 cocientes) y la errata se detectó antes de transcribir nada.
+      No citar hasta cotejar con la corrección.

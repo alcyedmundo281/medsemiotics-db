@@ -205,6 +205,22 @@ for f, d in condiciones.items():
 
     barre(d)
 
+# Qué referencias sostienen de verdad un dato. Una errata en algo que nadie
+# cita todavía es un aviso; en algo que ya sostiene un cociente, es un error.
+refs_citadas = set()
+for _d in list(condiciones.values()) + list(conceptos.values()):
+    def _rec(n):
+        if isinstance(n, dict):
+            for k, v in n.items():
+                if k == 'ref' and isinstance(v, str):
+                    refs_citadas.add(v)
+                else:
+                    _rec(v)
+        elif isinstance(n, list):
+            for v in n:
+                _rec(v)
+    _rec(_d)
+
 # ── referencias ───────────────────────────────────────────────────────────────
 
 for f, d in referencias.items():
@@ -216,6 +232,15 @@ for f, d in referencias.items():
         avi(f, 'no verificada contra PubMed')
     if v.get('retractado'):
         errores.append(f'{f}: RETRACTADA — ninguna arista puede citarla')
+    # Una errata no retracta el artículo, pero puede haber cambiado justo la
+    # cifra que citamos. Si nadie la cita todavía es solo un aviso; si ya está
+    # sosteniendo un cociente, hay que ir a comprobarla.
+    if v.get('errata'):
+        if d.get('id') in refs_citadas:
+            errores.append(f'{f}: tiene ERRATA y sostiene un cociente en uso — '
+                           f'verifica la cifra contra la corrección: {v["errata"]}')
+        else:
+            avi(f, f'tiene errata publicada ({v["errata"]}); aún no la cita nadie')
 
 # ── informe ───────────────────────────────────────────────────────────────────
 

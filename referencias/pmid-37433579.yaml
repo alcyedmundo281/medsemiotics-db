@@ -28,5 +28,8 @@ verificacion:
   pubmed: true
   fecha: "2026-08-17"
   retractado: false
+  errata: 'Thorax. 2026 May 14;81(6):e2'
   crossref: true
   crossref_titulo_coincide: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras antes de citarla'
