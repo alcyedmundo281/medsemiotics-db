@@ -1,0 +1,46 @@
+# Condición del índice. Los códigos HM: son permanentes.
+# Las aristas nacen con estado_lr: no_medido — la relación existe aunque nadie
+# haya publicado su cociente. No se inventa ningún LR.
+
+id: 'HM:6002'
+tipo: condicion
+clase: sindrome
+termino: Síndrome de intestino irritable
+termino_en: Irritable bowel syndrome
+sinonimos:
+  - colon irritable
+  - SII
+  - intestino irritable
+
+codigos:
+  snomed: null
+  cie10: null    # pendiente: se declara solo con verificación, no de memoria
+
+probabilidad_base: null    # pendiente: prevalencia con fuente
+factores_riesgo: []
+
+# Signos que lo manifiestan. Solo se enlazan conceptos existentes en el índice.
+signos:
+  - concepto: 'HM:0201'    # Dolor abdominal
+    rol: manifestacion
+    estado_lr: no_medido
+  - concepto: 'HM:0303'    # Diarrea
+    rol: manifestacion
+    estado_lr: no_medido
+  - concepto: 'HM:0304'    # Estreñimiento
+    rol: manifestacion
+    estado_lr: no_medido
+
+# Es un diagnóstico clínico por criterios, sin prueba confirmatoria: su valor
+# depende de que NO haya signos de alarma. Los que siguen apuntan a otra cosa y
+# obligan a estudiar antes de etiquetar.
+signos_de_alarma:
+  - concepto: 'HM:0310'    # Melena
+  - concepto: 'HM:0803'    # Pérdida de peso
+  - concepto: 'HM:0101'    # Fiebre
+  - concepto: 'HM:0711'    # Anemia
+
+procedencia:
+  fuente: >-
+    Acuñada al publicarse gastroenterologia/sindrome-intestino-irritable.html en
+    medsemiotics. No figura en el temario de partida.

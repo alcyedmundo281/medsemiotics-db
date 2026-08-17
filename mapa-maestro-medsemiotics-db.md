@@ -77,10 +77,26 @@ nombres paralelo.**
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
 | **`HM:30xx`–`HM:59xx`** | **libre: signos nuevos del temario** | 0 de ~2900 |
-| **`HM:60xx`–`HM:79xx`** | **libre: condiciones (síndromes y enfermedades)** | 0 de ~2000 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **2** de ~3000 |
 
 Los códigos son **permanentes**: una vez publicados, otros sistemas los citan.
 No se reutilizan ni se renumeran.
+
+El bloque de condiciones se amplió de `79xx` a `89xx` antes de acuñar el primero:
+el temario aporta ~510 condiciones y el rango anterior dejaba poco margen para
+crecer con orden. Ampliar es gratis antes del primer código e imposible después.
+
+### Condiciones acuñadas
+
+| Código | Condición | Origen |
+|---|---|---|
+| `HM:6001` | Hepatitis viral aguda | página publicada en medsemiotics |
+| `HM:6002` | Síndrome de intestino irritable | página publicada en medsemiotics |
+
+Ninguna de las dos está en el temario: se publicaron por delante de él. Es el
+patrón ya observado en gastroenterología —faltan también cirrosis, colitis
+ulcerosa, pancreatitis y *H. pylori*—, y confirma que el temario es hoja de ruta
+parcial, no censo de lo que debe existir.
 
 ---
 

@@ -117,6 +117,17 @@ for f, d in condiciones.items():
             if isinstance(valor, (int, float)) and valor > 100:
                 avi(f, f'{campo} de «{c}» = {valor}: por encima de 100 casi siempre es errata')
 
+    # Los signos de alarma apuntan fuera de la condición: son los que obligan a
+    # estudiar antes de etiquetar. Se validan igual que las aristas — una
+    # referencia rota aquí desaparece en silencio, que es el peor fallo posible
+    # en el bloque que existe para frenar un diagnóstico precipitado.
+    for s in (d.get('signos_de_alarma') or []):
+        c = s.get('concepto')
+        if not c:
+            err(f, 'signo de alarma sin «concepto»')
+        elif c not in ids_concepto:
+            err(f, f'signo de alarma apunta a concepto inexistente: {c}')
+
 # ── referencias ───────────────────────────────────────────────────────────────
 
 for f, d in referencias.items():
