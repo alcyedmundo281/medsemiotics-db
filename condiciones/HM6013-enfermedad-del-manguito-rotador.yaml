@@ -1,0 +1,85 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:23982370 (Hermans 2013, JAMA), metaanálisis de 28 estudios
+# de los que solo 5 alcanzaron calidad de nivel 1-2. Transcritos del abstract.
+#
+# LÍMITE que la fuente declara y conviene no perder: todas las maniobras las
+# realizaron ESPECIALISTAS sobre pacientes ya derivados, y ningún hallazgo se
+# evaluó en más de 3 estudios. La generalización a población no derivada es
+# desconocida. En atención primaria estos cocientes probablemente valgan menos.
+#
+# Se separa de HM:6014 (rotura completa) porque la fuente mide contra dos
+# dianas distintas: la enfermedad del manguito y la rotura de espesor completo
+# no son lo mismo, y las pruebas útiles difieren.
+
+id: 'HM:6013'
+tipo: condicion
+clase: enfermedad
+termino: Enfermedad del manguito rotador
+termino_en: Rotator cuff disease
+sinonimos: [patología del manguito rotador, tendinopatía del manguito]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  rango: [0.33, 0.81]
+  poblacion: >-
+    pacientes derivados a especialista por dolor de hombro, en los estudios de
+    calidad nivel 1-2
+  ref: 'pmid:23982370'
+  nota: >-
+    rango tan amplio que la previa hay que tomarla del contexto propio, no de
+    aquí
+
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3055'    # Arco doloroso
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.7
+      ic95: [1.9, 7.0]
+      ref: 'pmid:23982370'
+    lr_negativo:
+      valor: 0.36
+      ic95: [0.23, 0.54]
+      ref: 'pmid:23982370'
+    decision: >-
+      la única prueba de provocación de dolor con cociente positivo por encima
+      de 2, y la que mejor descarta cuando es normal
+
+  - concepto: 'HM:3058'    # Signo del brazo caído
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.3
+      ic95: [1.0, 11]
+      ref: 'pmid:23982370'
+    decision: >-
+      puede ayudar a identificar la enfermedad, pero su intervalo toca 1.0: es
+      compatible con no aportar nada
+
+  - concepto: 'HM:3059'    # Dolor de hombro
+    rol: manifestacion
+    estado_lr: no_medible
+    motivo: >-
+      es el motivo de consulta que define la población estudiada, no una prueba
+      dentro de ella
+
+pendiente:
+  - >-
+    La conclusión menciona la prueba de resistencia a la rotación externa entre
+    las más precisas para la enfermedad, pero el abstract no publica su
+    cociente. Requiere el texto completo.
+
+conclusion_de_la_fuente: >-
+  El arco doloroso positivo y la prueba de resistencia a la rotación externa
+  fueron los hallazgos más precisos para detectar la enfermedad del manguito.
+  Como todas las maniobras las realizaron especialistas, se desconoce hasta qué
+  punto los resultados se generalizan a población no derivada.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:23982370, no del texto completo.

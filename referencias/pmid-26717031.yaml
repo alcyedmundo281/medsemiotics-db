@@ -1,0 +1,36 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:26717031'
+clave_bibtex: easter2015
+tipo: articulo
+titulo: 'Will Neuroimaging Reveal a Severe Intracranial Injury in This Adult With Minor Head Trauma?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Easter JS
+  - Haukoos JS
+  - Meehan WP
+  - Novack V
+  - Edlow JA
+publicacion: JAMA
+anio: 2015
+volumen: 314
+paginas: 2672-81
+
+identificadores:
+  pmid: 26717031
+  doi: 10.1001/jama.2015.16316
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  errata: 'JAMA. 2017 May 16;317(19):2021. doi: 10.1001/jama.2017.5136.'
+  errata_corrige: Data Error.
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'
+    - >-
+      Registrada SIN usar. La errata se titula «Data Error» y afecta a un artículo
+      del que solo puedo leer el abstract; no hay forma de saber qué cifra cambió.

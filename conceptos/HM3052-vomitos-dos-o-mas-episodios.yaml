@@ -1,0 +1,14 @@
+id: 'HM:3052'
+tipo: concepto
+semantica: hallazgo
+termino: Vómitos en dos o más episodios
+padre: 'HM:0302'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el traumatismo craneal leve. El número de episodios es lo que discrimina, no el vómito aislado.

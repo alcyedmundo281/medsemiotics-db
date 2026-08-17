@@ -28,11 +28,12 @@ verificacion:
   fecha: 2026-08-17
   retractado: false
   errata: 'JAMA. 2026 Jun 30. doi: 10.1001/jama.2026.9987.'
+  errata_corrige: Incorrect Data in Rational Clinical Examination Article.
   crossref: true
   crossref_titulo_coincide: false
   notas:
     - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'
     - >-
-      Se registra deliberadamente SIN usarla. Era el candidato más rico de la
-      serie (12 cocientes) y la errata se detectó antes de transcribir nada.
-      No citar hasta cotejar con la corrección.
+      Registrada SIN usar. Era el candidato más rico de la serie con 12 cocientes,
+      y la errata se titula «Incorrect Data in Rational Clinical Examination Article».

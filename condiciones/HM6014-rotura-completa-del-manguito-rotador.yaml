@@ -1,0 +1,60 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:23982370 (Hermans 2013, JAMA). Transcritos del abstract.
+#
+# Se separa de HM:6013 porque la fuente mide contra dos dianas distintas. Las
+# pruebas de lag son precisas para la ROTURA DE ESPESOR COMPLETO, no para la
+# enfermedad del manguito en general. Fundirlas habría atribuido a un
+# diagnóstico cocientes medidos contra otro.
+#
+# Mismo límite que HM:6013: maniobras hechas por especialistas sobre pacientes
+# derivados; la generalización a población no derivada es desconocida.
+
+id: 'HM:6014'
+tipo: condicion
+clase: enfermedad
+termino: Rotura completa del manguito rotador
+termino_en: Full-thickness rotator cuff tear
+sinonimos: [rotura de espesor completo del manguito, desgarro transmural del manguito]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # la fuente no la publica para esta diana
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3056'    # Signo de lag de rotación externa
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 7.2
+      ic95: [1.7, 31]
+      ref: 'pmid:23982370'
+    decision: >-
+      el cociente más alto para la rotura completa, con intervalo muy ancho
+
+  - concepto: 'HM:3057'    # Signo de lag de rotación interna
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.6
+      ic95: [2.6, 12]
+      ref: 'pmid:23982370'
+    lr_negativo:
+      valor: 0.04
+      ic95: [0.0, 0.58]
+      ref: 'pmid:23982370'
+    decision: >-
+      sirve en ambos sentidos y su normalidad es lo más preciso para descartar
+      la rotura completa. Ojo con el extremo inferior del intervalo: llega a 0,
+      lo que refleja series pequeñas, no certeza absoluta.
+
+conclusion_de_la_fuente: >-
+  La presencia de un signo de lag positivo, de rotación externa o interna, fue
+  lo más preciso para diagnosticar la rotura de espesor completo del manguito
+  rotador.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:23982370, no del texto completo.

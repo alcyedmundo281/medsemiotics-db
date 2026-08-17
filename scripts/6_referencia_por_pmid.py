@@ -64,9 +64,38 @@ retractado = any('retract' in t.lower() for t in (d.get('pubtype') or [])) \
 m_err = re.search(r'Erratum in[:\s]+(.*?doi:\s*\S+|.{0,90}?\.)', bruto, re.S)
 errata = ' '.join(m_err.group(1).split()) if m_err else None
 
+
+def titulo_errata(cita):
+    """Qué corrige la errata, no solo dónde está.
+
+    La diferencia importa: «Data Error» o «Value Errors in Tables and Abstract»
+    invalidan las cifras; una corrección de afiliación de autor no. Sin el
+    título habría que abrir cada una a mano para saber si descartar el artículo.
+    """
+    m = re.search(r'doi:\s*(\S+?)\.?$', cita or '')
+    if not m:
+        return None
+    try:
+        u = EUTILS + 'esearch.fcgi?' + urllib.parse.urlencode(
+            {'db': 'pubmed', 'term': m.group(1) + '[DOI]', 'retmode': 'json'})
+        with urllib.request.urlopen(u, timeout=45) as r:
+            ids = json.load(r)['esearchresult']['idlist']
+        if not ids:
+            return None
+        t = efetch(ids[0])
+        partes = [p.strip() for p in t.split('\n\n') if p.strip()]
+        return ' '.join(partes[1].split())[:90] if len(partes) > 1 else None
+    except Exception:
+        return None
+
+
+err_titulo = titulo_errata(errata) if errata else None
+
 print(f'PubMed  {d["title"][:74]}')
 print(f'  {d.get("source")}  {d.get("pubdate")}  doi {doi}')
 print(f'  retractado: {retractado}   errata: {errata or "no"}')
+if err_titulo:
+    print(f'  la errata corrige: {err_titulo}')
 
 cr_ok, igual = False, False
 try:
@@ -103,11 +132,16 @@ L += [f'publicacion: {esc(d.get("source", ""))}',
       f'  retractado: {"true" if retractado else "false"}']
 if errata:
     L.append(f'  errata: {esc(errata)}')
+    if err_titulo:
+        L.append(f'  errata_corrige: {esc(err_titulo)}')
 L += [f'  crossref: {"true" if cr_ok else "false"}',
       f'  crossref_titulo_coincide: {"true" if igual else "false"}']
 if errata:
+    grave = err_titulo and re.search(r'data|value|error|incorrect', err_titulo, re.I)
     L += ['  notas:',
           "    - 'Tiene errata publicada: comprobar las cifras contra la corrección'"]
+    if grave:
+        L.append("    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'")
 elif not igual and cr_ok:
     L += ['  notas:',
           "    - 'CrossRef registra un título distinto; PubMed es la autoridad'"]

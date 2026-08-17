@@ -26,13 +26,14 @@ verificacion:
   fecha: 2026-08-17
   retractado: false
   errata: 'JAMA. 2016 Jan 5;315(1):90. doi: 10.1001/jama.2015.16955.'
+  errata_corrige: Value Errors in Tables and Abstract.
   crossref: true
   crossref_titulo_coincide: false
   notas:
     - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'
     - >-
-      Registrada SIN usar. Su abstract da dos cocientes distintos para el mismo
-      instrumento y el mismo punto de corte: LR+ 6.9 y LR+ 8.49 para el
-      PC-PTSD, ambos descritos como el umbral del Department of Veterans
-      Affairs. La errata de JAMA 2016;315(1):90 podría corregir justamente eso.
-      No transcribir hasta cotejar con la corrección.
+      Registrada SIN usar. La errata se titula «Value Errors in Tables and Abstract»,
+      es decir, afecta justo a la parte de la que se transcribe. Coincide con que su
+      abstract dé dos cocientes distintos para el mismo instrumento y umbral:
+      LR+ 6.9 y 8.49 para el PC-PTSD.
