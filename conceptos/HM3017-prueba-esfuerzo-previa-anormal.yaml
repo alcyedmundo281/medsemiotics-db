@@ -1,0 +1,18 @@
+# Concepto del índice. Acuñado al modelar HM:6007.
+# No es un hallazgo actual sino un antecedente; se registra como tal porque la
+# fuente lo mide con la misma metodología que los signos.
+
+id: 'HM:3017'
+tipo: concepto
+semantica: hallazgo
+termino: Prueba de esfuerzo previa anormal
+sinonimos: [ergometría previa positiva, prueba de esfuerzo patológica previa]
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar el síndrome coronario agudo.

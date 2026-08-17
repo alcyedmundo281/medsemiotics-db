@@ -1,0 +1,144 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:26547467 (Fanaroff 2015, JAMA), revisión sistemática de 58
+# estudios prospectivos en urgencias. Transcritos del abstract.
+#
+# La conclusión de la fuente es el dato más importante del registro y va antes
+# que cualquier cociente: la anamnesis, la exploración y el electrocardiograma
+# POR SÍ SOLOS no confirman ni descartan el síndrome coronario agudo. Los
+# cocientes de abajo son reales pero modestos; ninguno decide. Lo que aporta
+# información diagnóstica es la escala de riesgo que incorpora la troponina.
+#
+# Patrón de referencia: diagnóstico hospitalario final de SCA o evento
+# cardiovascular en las seis semanas siguientes.
+# Población: pacientes que acuden a urgencias con dolor torácico.
+
+id: 'HM:6007'
+tipo: condicion
+clase: sindrome
+termino: Síndrome coronario agudo
+termino_en: Acute coronary syndrome
+sinonimos: [SCA, angina inestable e infarto]
+
+codigos: {snomed: null, cie10: null}
+
+# «About 10% of patients with acute chest pain are ultimately diagnosed with ACS»
+probabilidad_base:
+  valor: 0.10
+  poblacion: pacientes que acuden a urgencias con dolor torácico agudo
+  ref: 'pmid:26547467'
+
+factores_riesgo: []
+
+signos:
+  # --- electrocardiograma: los cocientes más altos de la exploración inicial ---
+  - concepto: 'HM:3015'    # Descenso del segmento ST
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.95
+    lr_positivo:
+      valor: 5.3
+      ic95: [2.1, 8.6]
+      ref: 'pmid:26547467'
+    decision: el hallazgo aislado más útil, pero insuficiente para confirmar
+
+  - concepto: 'HM:3016'    # Signos de isquemia en el ECG
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.91
+    lr_positivo:
+      valor: 3.6
+      ic95: [1.6, 5.7]
+      ref: 'pmid:26547467'
+    decision: categoría más amplia que el descenso del ST y con menos peso
+
+  # --- antecedentes y exploración ---
+  - concepto: 'HM:3017'    # Prueba de esfuerzo previa anormal
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.96
+    lr_positivo:
+      valor: 3.1
+      ic95: [2.0, 4.7]
+      ref: 'pmid:26547467'
+    decision: antecedente, no hallazgo actual; desplaza poco
+
+  - concepto: 'HM:3018'    # Enfermedad arterial periférica
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.97
+    lr_positivo:
+      valor: 2.7
+      ic95: [1.5, 4.8]
+      ref: 'pmid:26547467'
+    decision: factor de riesgo con cociente propio, modesto
+
+  - concepto: 'HM:3014'    # Dolor irradiado a ambos brazos
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.96
+    lr_positivo:
+      valor: 2.6
+      ic95: [1.8, 3.7]
+      ref: 'pmid:26547467'
+    decision: >-
+      alta especificidad pero cociente bajo: cuando aparece apoya, y su ausencia
+      no dice nada
+
+  - concepto: 'HM:0206'    # Dolor torácico
+    rol: manifestacion
+    estado_lr: no_medible
+    motivo: >-
+      es el motivo de consulta que define la población estudiada, no una prueba
+      dentro de ella
+
+# Las escalas no son signos: son instrumentos que combinan varios elementos y se
+# leen por tramos. Son lo único de esta revisión que desplaza la probabilidad de
+# forma decisiva, y lo hacen porque incorporan la troponina.
+escalas:
+  - nombre: HEART
+    componentes_declarados: >-
+      anamnesis, electrocardiograma, edad, factores de riesgo y primera troponina
+    tramos:
+      - rango: 7 a 10 (riesgo alto)
+        lr_positivo: 13
+        ic95: [7.0, 24]
+        ref: 'pmid:26547467'
+      - rango: 0 a 3 (riesgo bajo)
+        lr_negativo: 0.20
+        ic95: [0.13, 0.30]
+        ref: 'pmid:26547467'
+    decision: >-
+      el instrumento más potente en ambos sentidos: confirma en el tramo alto y
+      descarta en el bajo
+
+  - nombre: TIMI
+    tramos:
+      - rango: 5 a 7 (riesgo alto)
+        lr_positivo: 6.8
+        ic95: [5.2, 8.9]
+        ref: 'pmid:26547467'
+      - rango: 0 a 1 (riesgo bajo)
+        lr_negativo: 0.31
+        ic95: [0.23, 0.43]
+        ref: 'pmid:26547467'
+
+  - nombre: >-
+      Algoritmo de la Heart Foundation of Australia y la Cardiac Society of
+      Australia and New Zealand
+    tramos:
+      - rango: riesgo bajo a intermedio
+        lr_negativo: 0.24
+        ic95: [0.19, 0.31]
+        ref: 'pmid:26547467'
+
+conclusion_de_la_fuente: >-
+  Entre los pacientes con sospecha de SCA en urgencias, la anamnesis, la
+  exploración física y el electrocardiograma por sí solos no confirmaron ni
+  excluyeron el diagnóstico. Las escalas HEART o TIMI, que incorporan la primera
+  troponina, aportaron más información diagnóstica.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:26547467, no del texto completo.

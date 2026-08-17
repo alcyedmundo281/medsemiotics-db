@@ -1,0 +1,17 @@
+# Concepto del índice. Acuñado al modelar HM:6007.
+# Categoría más amplia que el descenso del ST: cualquier signo de isquemia.
+
+id: 'HM:3016'
+tipo: concepto
+semantica: agrupacion
+termino: Signos de isquemia en el electrocardiograma
+sinonimos: [isquemia en ECG, cambios isquémicos electrocardiográficos]
+padre: 'HM:0500'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar el síndrome coronario agudo.

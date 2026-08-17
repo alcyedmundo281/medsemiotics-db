@@ -1,0 +1,18 @@
+# Concepto del índice. Acuñado al modelar HM:6007.
+
+id: 'HM:3018'
+tipo: concepto
+semantica: trastorno
+termino: Enfermedad arterial periférica
+sinonimos: [arteriopatía periférica, claudicación intermitente]
+padre: 'HM:1000'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el síndrome coronario agudo, donde consta como factor
+    de riesgo con cociente propio.

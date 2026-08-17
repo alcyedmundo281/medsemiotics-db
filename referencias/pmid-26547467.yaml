@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+
+id: 'pmid:26547467'
+clave_bibtex: fanaroff2015
+tipo: articulo
+titulo: 'Does This Patient With Chest Pain Have Acute Coronary Syndrome?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Fanaroff AC
+  - Rymer JA
+  - Goldstein SA
+  - Simel DL
+  - Newby LK
+publicacion: JAMA
+anio: 2015
+volumen: 314
+paginas: 1955-65
+
+identificadores:
+  pmid: 26547467
+  doi: 10.1001/jama.2015.12735
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
