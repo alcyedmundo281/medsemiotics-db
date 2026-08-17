@@ -1,0 +1,20 @@
+# Concepto del índice. Acuñado al modelar HM:6006.
+# No es un hallazgo de la condición: es un modificador que degrada la
+# sensibilidad de la exploración.
+
+id: 'HM:3013'
+tipo: concepto
+semantica: hallazgo
+termino: Obesidad abdominal
+sinonimos: [adiposidad abdominal, perímetro abdominal aumentado]
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el aneurisma de aorta abdominal, donde consta como
+    factor que reduce la sensibilidad de la palpación.

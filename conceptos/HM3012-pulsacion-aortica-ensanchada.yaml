@@ -1,0 +1,25 @@
+# Concepto del índice. Acuñado al modelar HM:6006 (aneurisma de aorta abdominal).
+# Maniobra: palpación abdominal dirigida a medir la anchura de la pulsación
+# aórtica, no a percibir «una masa que late». La distinción importa: es la
+# medida de la anchura lo único con valor demostrado.
+
+id: 'HM:3012'
+tipo: concepto
+semantica: hallazgo
+termino: Pulsación aórtica ensanchada a la palpación
+sinonimos:
+  - masa abdominal pulsátil
+  - pulsación aórtica ampliada
+  - aorta palpable ensanchada
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el aneurisma de aorta abdominal. La fuente
+    (pmid:9892455) subraya que la palpación es la única maniobra con valor
+    demostrado y que no se ha descrito que precipite la rotura.

@@ -1,0 +1,24 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+
+id: 'pmid:9892455'
+clave_bibtex: lederle1999
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have abdominal aortic aneurysm?'
+autores:
+  - Lederle FA
+  - Simel DL
+publicacion: JAMA
+anio: 1999
+volumen: 281
+paginas: 77-82
+
+identificadores:
+  pmid: 9892455
+  doi: 10.1001/jama.281.1.77
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false

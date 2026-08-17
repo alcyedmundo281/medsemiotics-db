@@ -1,0 +1,89 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:9892455 (Lederle 1999, JAMA), agrupando 15 estudios de
+# cribado con palpación y ecografía en pacientes sin diagnóstico previo.
+# Transcritos del abstract.
+#
+# ATENCIÓN al leer los tramos: aquí el umbral NO gradúa el hallazgo, como en la
+# linfocitosis atípica, sino que redefine la CONDICIÓN. «LR+ 12.0» y «LR+ 15.6»
+# no son dos intensidades de la misma palpación: son la misma maniobra evaluada
+# contra dos diagnósticos distintos, aneurisma ≥3 cm y aneurisma ≥4 cm. Elegir
+# el tramo equivocado desplaza la probabilidad de otra cosa.
+
+id: 'HM:6006'
+tipo: condicion
+clase: enfermedad
+termino: Aneurisma de aorta abdominal
+termino_en: Abdominal aortic aneurysm
+sinonimos: [AAA, aneurisma aórtico abdominal]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # depende del cribado; la fuente no publica previa general
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3012'    # Pulsación aórtica ensanchada a la palpación
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 12.0
+      ic95: [7.4, 19.5]
+      umbral_condicion: aneurisma de 3.0 cm o mayor
+      ref: 'pmid:9892455'
+    lr_negativo:
+      valor: 0.72
+      ic95: [0.65, 0.81]
+      umbral_condicion: aneurisma de 3.0 cm o mayor
+      ref: 'pmid:9892455'
+    decision: >-
+      la palpación positiva desplaza con fuerza hacia el diagnóstico, pero la
+      negativa apenas descarta: un LR− de 0.72 deja la probabilidad casi intacta
+    advertencia: >-
+      no puede usarse para excluir el aneurisma, y menos si la rotura entra en
+      el diferencial. La fuente lo dice de forma explícita.
+    tramos:
+      - umbral_condicion: aneurisma de 3.0 cm o mayor
+        lr_positivo: 12.0
+        ic95: [7.4, 19.5]
+        lr_negativo: 0.72
+        ic95_negativo: [0.65, 0.81]
+        ref: 'pmid:9892455'
+      - umbral_condicion: aneurisma de 4.0 cm o mayor
+        lr_positivo: 15.6
+        ic95: [8.6, 28.5]
+        lr_negativo: 0.51
+        ic95_negativo: [0.38, 0.67]
+        ref: 'pmid:9892455'
+
+    # La sensibilidad crece con el diámetro (P<.001). Es la razón de que la
+    # maniobra sirva para detectar lo que se operaría y no para descartar.
+    sensibilidad_por_diametro:
+      - diametro: 3.0 a 3.9 cm
+        sensibilidad: 0.29
+        ref: 'pmid:9892455'
+      - diametro: 4.0 a 4.9 cm
+        sensibilidad: 0.50
+        ref: 'pmid:9892455'
+      - diametro: 5.0 cm o mayor
+        sensibilidad: 0.76
+        ref: 'pmid:9892455'
+
+modificadores:
+  - concepto: 'HM:3013'    # Obesidad abdominal
+    efecto: reduce la sensibilidad de la palpación
+    ref: 'pmid:9892455'
+    nota: la fuente lo respalda con datos limitados
+
+notas_de_uso:
+  - >-
+    Valor predictivo positivo de la palpación para aneurisma de 3.0 cm o mayor
+    en estas series: 43%.
+  - >-
+    No se ha descrito que la palpación precipite la rotura.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:9892455, no del texto completo. El signo está además publicado como
+    contenido educativo en biosemiotics.

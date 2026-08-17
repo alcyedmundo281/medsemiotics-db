@@ -177,6 +177,29 @@ for f, d in condiciones.items():
             if c not in ids_concepto:
                 err(f, f'regla «{nombre}» apunta a concepto inexistente: {c}')
 
+    # Barrido recursivo. Cada condición nueva ha traído su propio bloque
+    # —tramos, reglas, modificadores, sensibilidad_por_diametro— y perseguirlos
+    # uno a uno garantiza que el siguiente entre sin vigilancia. Esta pasada
+    # recorre el árbol entero: mire donde mire, un «ref» tiene que resolver y un
+    # «concepto» tiene que existir.
+    def barre(nodo, ruta=''):
+        if isinstance(nodo, dict):
+            for k, v in nodo.items():
+                aqui = f'{ruta}.{k}' if ruta else k
+                if k == 'ref' and isinstance(v, str):
+                    if v not in ids_ref:
+                        err(f, f'«{aqui}» cita «{v}», que no está en referencias/')
+                elif k == 'concepto' and isinstance(v, str):
+                    if v not in ids_concepto:
+                        err(f, f'«{aqui}» apunta a concepto inexistente: {v}')
+                else:
+                    barre(v, aqui)
+        elif isinstance(nodo, list):
+            for i, v in enumerate(nodo):
+                barre(v, f'{ruta}[{i}]')
+
+    barre(d)
+
 # ── referencias ───────────────────────────────────────────────────────────────
 
 for f, d in referencias.items():
