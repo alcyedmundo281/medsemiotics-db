@@ -1,0 +1,138 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Todos los cocientes proceden de pmid:27115266 (Ebell 2016, JAMA), revisión
+# sistemática de la serie Rational Clinical Examination. Están transcritos
+# literalmente del abstract: donde la fuente da un rango entre estudios se
+# guarda el rango, no su punto medio. Inventar una media que la fuente no
+# calculó sería fabricar precisión.
+#
+# Población de todas las estimaciones: adolescentes y adultos que consultan
+# por odinofagia.
+
+id: 'HM:6003'
+tipo: condicion
+clase: enfermedad
+termino: Mononucleosis infecciosa
+termino_en: Infectious mononucleosis
+sinonimos:
+  - mononucleosis
+  - enfermedad del beso
+  - infección aguda por virus de Epstein-Barr
+
+codigos:
+  snomed: null
+  cie10: null    # pendiente: se declara solo con verificación
+
+# «approximately 1 in 13 patients presenting with sore throat has mononucleosis»
+# entre los 16 y 20 años. Fuera de ese grupo la previa es menor.
+probabilidad_base:
+  valor: 0.077
+  poblacion: pacientes de 16 a 20 años que consultan por odinofagia
+  ref: 'pmid:27115266'
+
+factores_riesgo:
+  - factor: Edad entre 5 y 25 años
+    ref: 'pmid:27115266'
+    nota: máxima frecuencia entre los 16 y 20 años
+
+signos:
+  # --- exploración física ---
+  - concepto: 'HM:3001'    # Adenopatía cervical posterior
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.87
+    lr_positivo:
+      valor: 3.1
+      ic95: [1.6, 5.9]
+      ref: 'pmid:27115266'
+    decision: aumenta la probabilidad; por sí sola no confirma
+
+  - concepto: 'HM:3002'    # Adenopatía inguinal o axilar
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      rango: [3.0, 3.1]
+      ref: 'pmid:27115266'
+      nota: rango entre estudios; la fuente no da estimación resumida
+    decision: aumenta la probabilidad de forma similar a la cervical posterior
+
+  - concepto: 'HM:3003'    # Petequias en paladar
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.95
+    lr_positivo:
+      valor: 5.3
+      ic95: [2.1, 13]
+      ref: 'pmid:27115266'
+    decision: el hallazgo exploratorio que más aumenta la probabilidad
+
+  - concepto: 'HM:0603'    # Esplenomegalia
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      rango: [1.9, 6.6]
+      ref: 'pmid:27115266'
+      nota: >-
+        rango entre estudios, con especificidad de 0.71 a 0.99. La amplitud
+        refleja lo mucho que depende del explorador.
+    decision: apoya el diagnóstico y condiciona el consejo de evitar deporte de contacto
+
+  - concepto: 'HM:0607'    # Adenopatías (cualquier localización)
+    rol: prueba_sensible
+    estado_lr: medido
+    sensibilidad: 0.91
+    lr_negativo:
+      rango: [0.23, 0.44]
+      ref: 'pmid:27115266'
+      nota: >-
+        la fuente lo expresa como el LR positivo de la AUSENCIA de adenopatías,
+        que es el cociente negativo del hallazgo.
+    decision: su ausencia reduce la probabilidad; es el hallazgo que más descarta
+
+  # --- síntomas: sensibles pero no discriminan ---
+  - concepto: 'HM:0211'    # Odinofagia
+    rol: manifestacion
+    estado_lr: sin_efecto
+    sensibilidad: 0.81
+    motivo: >-
+      «symptoms are of limited value»: sensible (0.81-0.83) pero inespecífico.
+      La fuente no publica cociente porque no discrimina.
+
+  - concepto: 'HM:0801'    # Astenia
+    rol: manifestacion
+    estado_lr: sin_efecto
+    motivo: sensible (0.81-0.83) pero inespecífico; la fuente no publica cociente
+
+  # --- laboratorio: el cociente depende del tramo ---
+  - concepto: 'HM:3004'    # Linfocitosis atípica
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 11.4
+      ic95: [2.7, 35]
+      umbral: linfocitos atípicos ≥ 10%
+      ref: 'pmid:27115266'
+    decision: a partir del 10% ya desplaza la probabilidad con fuerza
+    tramos:
+      - umbral: linfocitos atípicos ≥ 10%
+        lr_positivo: 11.4
+        ic95: [2.7, 35]
+        ref: 'pmid:27115266'
+      - umbral: linfocitos atípicos ≥ 20%
+        lr_positivo: 26
+        ic95: [9.6, 68]
+        ref: 'pmid:27115266'
+      - umbral: linfocitos atípicos ≥ 40%
+        lr_positivo: 50
+        ic95: [38, 64]
+        ref: 'pmid:27115266'
+      - umbral: linfocitos > 50% y atípicos > 10%
+        lr_positivo: 54
+        ic95: [8.4, 189]
+        especificidad: 0.99
+        ref: 'pmid:27115266'
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar las primeras aristas con cociente verificado. Todos los
+    valores salen del abstract de pmid:27115266, no del texto completo.

@@ -20,10 +20,17 @@ probabilidad_base: null    # pendiente: prevalencia con fuente
 factores_riesgo: []
 
 # Signos que la manifiestan. Solo se enlazan conceptos existentes en el índice.
+#
+# Nota sobre por qué varias aristas son no_medible: el diagnóstico de hepatitis
+# viral aguda se hace por serología (anti-VHA IgM, HBsAg), y la elevación de
+# transaminasas junto con la ictericia forman parte de su definición de caso.
+# Medir su cociente contra un patrón de referencia que ya los contiene es sesgo
+# de incorporación. No falta literatura: el número no puede existir.
 signos:
   - concepto: 'HM:0305'    # Ictericia
     rol: manifestacion
-    estado_lr: no_medido
+    estado_lr: no_medible
+    motivo: forma parte de la definición de caso; sesgo de incorporación
   - concepto: 'HM:0306'    # Coluria
     rol: manifestacion
     estado_lr: no_medido
@@ -32,10 +39,12 @@ signos:
     estado_lr: no_medido
   - concepto: 'HM:0733'    # Elevación de transaminasas
     rol: prueba_sensible
-    estado_lr: no_medido
+    estado_lr: no_medible
+    motivo: forma parte de la definición de caso; sesgo de incorporación
   - concepto: 'HM:0745'    # Hiperbilirrubinemia
     rol: apoyo
-    estado_lr: no_medido
+    estado_lr: no_medible
+    motivo: forma parte de la definición de caso; sesgo de incorporación
   - concepto: 'HM:0203'    # Dolor en hipocondrio derecho
     rol: apoyo
     estado_lr: no_medido

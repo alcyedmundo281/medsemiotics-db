@@ -1,0 +1,23 @@
+# Concepto del índice. Acuñado al modelar HM:6003 (mononucleosis infecciosa).
+# El umbral no es único: el cociente cambia con el porcentaje, así que las
+# aristas lo declaran por tramos en lugar de fijar un corte aquí.
+
+id: 'HM:3004'
+tipo: concepto
+semantica: hallazgo
+termino: Linfocitosis atípica
+sinonimos:
+  - linfocitos atípicos
+  - células de Downey
+padre: 'HM:0710'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la mononucleosis infecciosa.

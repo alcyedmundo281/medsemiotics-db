@@ -19,7 +19,12 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SEMANTICAS = {'raiz', 'agrupacion', 'hallazgo', 'trastorno', 'procedimiento'}
 CLASES = {'sindrome', 'enfermedad'}
 ROLES = {'manifestacion', 'prueba_sensible', 'prueba_especifica', 'apoyo', 'imagen'}
-ESTADOS_LR = {'medido', 'no_medido', 'sin_efecto'}
+# no_medible: el hallazgo forma parte de la definición de caso de la condición,
+# así que medir su cociente sería sesgo de incorporación —se compara contra un
+# patrón de referencia que ya lo contiene—. No es que falte literatura: no puede
+# existir. holonmed necesita distinguirlo de no_medido, que sí puede llegar
+# mañana en un pull request.
+ESTADOS_LR = {'medido', 'no_medido', 'sin_efecto', 'no_medible'}
 
 errores, avisos = [], []
 
@@ -102,6 +107,17 @@ for f, d in condiciones.items():
         estado = s.get('estado_lr')
         if estado and estado not in ESTADOS_LR:
             err(f, f'estado_lr «{estado}» fuera de la taxonomía')
+        # Declarar algo inmedible obliga a decir por qué: si no, es
+        # indistinguible de rendirse ante una búsqueda que salió vacía.
+        if estado == 'no_medible' and not s.get('motivo'):
+            err(f, f'«{c}» marcado no_medible sin «motivo»')
+        if estado == 'no_medible' and (s.get('lr_positivo') or s.get('lr_negativo')):
+            err(f, f'«{c}» es no_medible pero trae un LR')
+        # Declararlo medido y no traer cociente deja la arista en un limbo que
+        # holonmed no sabe interpretar.
+        if estado == 'medido' and not (s.get('lr_positivo') or s.get('lr_negativo')):
+            err(f, f'«{c}» está marcado medido pero no trae ningún LR')
+
         for campo in ('lr_positivo', 'lr_negativo'):
             lr = s.get(campo)
             if not lr:
@@ -114,8 +130,21 @@ for f, d in condiciones.items():
             elif ref not in ids_ref:
                 err(f, f'{campo} de «{c}» cita «{ref}», que no está en referencias/')
             valor = lr.get('valor') if isinstance(lr, dict) else lr
+            rango = lr.get('rango') if isinstance(lr, dict) else None
+            # Cuando la fuente da un rango entre estudios se guarda el rango: no
+            # se promedia. Pero algo tiene que haber.
+            if valor is None and not rango:
+                err(f, f'{campo} de «{c}» no declara ni «valor» ni «rango»')
             if isinstance(valor, (int, float)) and valor > 100:
                 avi(f, f'{campo} de «{c}» = {valor}: por encima de 100 casi siempre es errata')
+
+        # Los tramos llevan su propia procedencia: un umbral distinto es una
+        # medición distinta, y sin ref quedaría fuera de la regla dura.
+        for t in (s.get('tramos') or []):
+            if not t.get('ref'):
+                err(f, f'tramo «{t.get("umbral", "?")}» de «{c}» sin «ref»')
+            elif t['ref'] not in ids_ref:
+                err(f, f'tramo «{t.get("umbral", "?")}» de «{c}» cita «{t["ref"]}», que no está en referencias/')
 
     # Los signos de alarma apuntan fuera de la condición: son los que obligan a
     # estudiar antes de etiquetar. Se validan igual que las aristas — una

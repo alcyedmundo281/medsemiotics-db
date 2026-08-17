@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+
+id: 'pmid:27115266'
+clave_bibtex: ebell2016
+tipo: articulo
+titulo: 'Does This Patient Have Infectious Mononucleosis?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Ebell MH
+  - Call M
+  - Shinholser J
+  - Gardner J
+publicacion: JAMA
+anio: 2016
+volumen: 315
+paginas: 1502-9
+
+identificadores:
+  pmid: 27115266
+  doi: 10.1001/jama.2016.2111
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra solo el título principal, sin el subtítulo de la serie'

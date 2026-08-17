@@ -1,0 +1,21 @@
+# Concepto del índice. Acuñado al modelar HM:6003 (mononucleosis infecciosa).
+
+id: 'HM:3002'
+tipo: concepto
+semantica: hallazgo
+termino: Adenopatía inguinal o axilar
+sinonimos:
+  - adenopatía inguinal
+  - adenopatía axilar
+padre: 'HM:0607'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la mononucleosis infecciosa.
