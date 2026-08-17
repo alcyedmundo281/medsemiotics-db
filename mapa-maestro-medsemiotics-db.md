@@ -57,11 +57,18 @@ Los cinco de holonmed, sin inventar taxonomía nueva:
 - **`imagen`** — hallazgo de imagen
 
 ### `estado_lr`
-`medido` · `no_medido` · `sin_efecto`
+`medido` · `no_medido` · `sin_efecto` · `no_medible`
 
 La distinción no es cosmética: *no medido* y *medido con LR 1.0* son cosas
 distintas, y holonmed necesita saber si ignorar la arista o tratarla como
 neutra.
+
+**`no_medible`** se añadió al chocar con la hepatitis viral aguda: cuando el
+hallazgo forma parte de la definición de caso, medir su cociente sería sesgo de
+incorporación y el número no puede existir. No es que falte literatura. Un
+`no_medido` puede llegar mañana en un pull request; un `no_medible` no llegará
+nunca, y tratarlo como pendiente deja la ficha eternamente incompleta.
+Declararlo obliga a dar `motivo`.
 
 ---
 
@@ -76,8 +83,8 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 118 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **libre: signos nuevos del temario** | 0 de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **2** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos del temario** | **30** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **9** de ~3000 |
 
 Los códigos son **permanentes**: una vez publicados, otros sistemas los citan.
 No se reutilizan ni se renumeran.
@@ -88,15 +95,28 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 
 ### Condiciones acuñadas
 
-| Código | Condición | Origen |
-|---|---|---|
-| `HM:6001` | Hepatitis viral aguda | página publicada en medsemiotics |
-| `HM:6002` | Síndrome de intestino irritable | página publicada en medsemiotics |
+| Código | Condición | Aristas con cociente | Fuente |
+|---|---|---|---|
+| `HM:6001` | Hepatitis viral aguda | 0 | — |
+| `HM:6002` | Síndrome de intestino irritable | 0 | — |
+| `HM:6003` | Mononucleosis infecciosa | 6 | `pmid:27115266` |
+| `HM:6004` | Meningitis aguda | 1 | `pmid:10411200` |
+| `HM:6005` | Derrame pleural exudativo | 4 | `pmid:24938565` |
+| `HM:6006` | Aneurisma de aorta abdominal | 2 | `pmid:9892455` |
+| `HM:6007` | Síndrome coronario agudo | 5 + 3 escalas | `pmid:26547467` |
+| `HM:6008` | Hipovolemia | 3 | `pmid:10086438` |
+| `HM:6009` | Faringitis estreptocócica | 6 | `pmid:11147989` |
 
-Ninguna de las dos está en el temario: se publicaron por delante de él. Es el
-patrón ya observado en gastroenterología —faltan también cirrosis, colitis
-ulcerosa, pancreatitis y *H. pylori*—, y confirma que el temario es hoja de ruta
-parcial, no censo de lo que debe existir.
+Las dos primeras se acuñaron al publicarse sus páginas en medsemiotics y **no
+figuran en el temario**: se publicaron por delante de él. Es el patrón ya
+observado en gastroenterología —faltan también cirrosis, colitis ulcerosa,
+pancreatitis y *H. pylori*—, y confirma que el temario es hoja de ruta parcial,
+no censo de lo que debe existir.
+
+Las siete restantes se eligieron al revés: por tener cociente publicado y
+verificable. Ese criterio tiene un límite conocido —la serie *Rational Clinical
+Examination* anterior a 1999 no tiene abstract en PubMed, así que ascitis y
+esplenomegalia quedaron fuera pese a ser signos ya publicados en biosemiotics—.
 
 ---
 
@@ -106,37 +126,69 @@ parcial, no censo de lo que debe existir.
 
 | Fuente | Aporta | Cantidad | Estado |
 |---|---|---|---|
-| `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | listo |
+| `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
+| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **7 fuentes** | ✅ 25 aristas medidas |
 | 14 signos de biosemiotics | significante, significado, umbral, falsos positivos | **14** | listo, requiere normalizar |
 | 14 conceptos de biosemiotics | física y artefactos, grafo de prerrequisitos | **14** | listo |
-| Skills de holonmed | aristas con LR y fuente | **7 aristas** | listo |
-| Skills de holonmed | parámetros de laboratorio con corte | **21** | listo |
+| Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
+| Skills de holonmed | parámetros de laboratorio con corte | **19** únicos | ✅ incrustados en su concepto |
 | Temario DeGowin | términos con tipo SIGN/SYNDROME/DISEASE | **1113** | 991 limpios · 122 a revisar |
+
+### El temario completo está versionado
+
+Los **1113 términos** no viven en este documento: viven en
+[`datos/temario.csv`](datos/temario.csv), con su tipo, su estado, el motivo de
+revisión y las variantes que se fusionaron. El cruce contra el vocabulario
+semilla está en [`datos/casamiento.csv`](datos/casamiento.csv), también con las
+1113 filas y una columna `decision` en blanco para confirmarlas a mano.
+
+Ninguno de los dos se toca al avanzar por oleadas. La oleada en curso consume el
+temario, no lo consume ni lo reduce: el listado completo sigue ahí desde el
+primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 ### Cobertura por capa
 
-| Capa | Poblado | Fuente | Falta |
-|---|---|---|---|
-| **Referencias** | 74 | biosemiotics | — |
-| **Conceptos** | ~150 | semilla + biosemiotics | ~450 signos del temario |
-| **Condiciones** | 1 | holonmed | ~514 síndromes y enfermedades |
-| **Aristas con LR** | **7** | holonmed | prácticamente todo |
+| Capa | Poblado | Falta |
+|---|---|---|
+| **Referencias** | 81 | las que traiga cada condición nueva |
+| **Conceptos** | 166 | ~450 signos del temario |
+| **Condiciones** | 9 | ~505 síndromes y enfermedades |
+| **Aristas con cociente** | **25** | prácticamente todo |
 
-**El cuello de botella está a la vista: hay 7 aristas con LR.** Es la capa que
-da sentido al índice —el consejo del experto que mueve la probabilidad— y la
-que menos material heredado tiene. Todo lo demás se siembra; esto se escribe.
+**El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
+al índice —el consejo del experto que mueve la probabilidad— y la única que no
+se siembra: se escribe, una arista cada vez, leyendo literatura.
+
+Nueve condiciones han costado nueve fuentes verificadas. A ese ritmo, las ~505
+que faltan no son un sprint sino el trabajo de fondo del proyecto.
 
 ---
 
 ## 5. Oleadas de población
 
-### OLEADA 0 — cimientos *(sin decisiones pendientes)*
-Se puede hacer hoy, no depende de nada.
+### OLEADA 0 — cimientos ✅ *completada*
 
 - [x] **74 referencias** desde `refs.bib`, con PMID y DOI verificados
-- [ ] **136 conceptos** desde el vocabulario semilla
-- [ ] **21 parámetros de laboratorio** desde las skills de holonmed
+- [x] **136 conceptos** desde el vocabulario semilla
+- [x] **19 umbrales de laboratorio** desde las skills de holonmed
+
+Salieron 19 y no 21: la amilasa y la lipasa aparecían en dos skills distintas.
+Los umbrales no viven en un directorio propio sino dentro del concepto que
+definen, porque un punto de corte es propiedad del hallazgo, no una entidad.
+
+### OLEADA 1.5 — condiciones con cociente publicado *(en curso, fuera de orden)*
+
+Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
+serie *Rational Clinical Examination* con abstract en PubMed son una veta
+acotada y verificable, y convenía agotarla mientras estaba localizada.
+
+- [x] 7 condiciones con **27 aristas medidas** y 8 referencias nuevas
+- [ ] resto de la serie sin revisar: apnea del sueño, embarazo ectópico,
+      disfunción tiroidea, osteoartritis de cadera, consumo de alcohol
+- [ ] pendientes de **texto completo**: ascitis y esplenomegalia (sin abstract),
+      las tres reglas de predicción de la faringitis, y el extremo del rango
+      7.1–250 del colesterol pleural
 
 ### OLEADA 1 — lo que ya está escrito y revisado
 Migrar lo que biosemiotics y holonmed tienen validado.

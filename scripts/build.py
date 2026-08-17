@@ -88,7 +88,10 @@ for i, n in vistos.items():
 
 # ── condiciones y aristas ─────────────────────────────────────────────────────
 
-n_aristas = n_con_lr = 0
+# Dos métricas distintas que conviene no confundir: una arista puede traer LR+
+# y LR− a la vez, así que el número de cocientes es mayor que el de aristas que
+# tienen alguno.
+n_aristas = n_con_lr = n_aristas_con_lr = 0
 for f, d in condiciones.items():
     for req in ('id', 'tipo', 'clase', 'termino'):
         if not d.get(req):
@@ -97,6 +100,8 @@ for f, d in condiciones.items():
         err(f, f'clase «{d.get("clase")}» fuera de la taxonomía')
     for s in (d.get('signos') or []):
         n_aristas += 1
+        if s.get('lr_positivo') or s.get('lr_negativo'):
+            n_aristas_con_lr += 1
         c = s.get('concepto')
         if not c:
             err(f, 'arista sin «concepto»')
@@ -215,7 +220,7 @@ for f, d in referencias.items():
 # ── informe ───────────────────────────────────────────────────────────────────
 
 print(f'conceptos    {len(conceptos):5}   con umbral: {sum(1 for d in conceptos.values() if d.get("umbral"))}')
-print(f'condiciones  {len(condiciones):5}   aristas: {n_aristas}   con LR: {n_con_lr}')
+print(f'condiciones  {len(condiciones):5}   aristas: {n_aristas}   con cociente: {n_aristas_con_lr}   valores de LR: {n_con_lr}')
 print(f'referencias  {len(referencias):5}   verificadas: {sum(1 for d in referencias.values() if (d.get("verificacion") or {}).get("pubmed"))}')
 
 sin_triada = sum(1 for d in conceptos.values() if not d.get('significante'))
