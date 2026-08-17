@@ -1,0 +1,25 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+
+id: 'pmid:10086438'
+clave_bibtex: mcgee1999
+tipo: articulo
+titulo: 'The rational clinical examination. Is this patient hypovolemic?'
+autores:
+  - McGee S
+  - Abernethy WB 3rd
+  - Simel DL
+publicacion: JAMA
+anio: 1999
+volumen: 281
+paginas: 1022-9
+
+identificadores:
+  pmid: 10086438
+  doi: 10.1001/jama.281.11.1022
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-17
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false

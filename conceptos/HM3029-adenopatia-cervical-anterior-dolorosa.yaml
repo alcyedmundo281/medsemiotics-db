@@ -1,0 +1,15 @@
+id: 'HM:3029'
+tipo: concepto
+semantica: hallazgo
+termino: Adenopatía cervical anterior dolorosa
+sinonimos: [ganglios cervicales anteriores dolorosos, adenitis cervical anterior]
+padre: 'HM:0607'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: >-
+    Acuñado al modelar la faringitis estreptocócica. Nótese el contraste con
+    HM:3001, la adenopatía cervical POSTERIOR, que orienta a mononucleosis: la
+    localización cambia el diagnóstico al que apunta.

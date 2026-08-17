@@ -1,0 +1,18 @@
+id: 'HM:3020'
+tipo: concepto
+semantica: hallazgo
+termino: Incremento postural del pulso
+sinonimos: [aumento ortostático de la frecuencia cardíaca]
+padre: 'HM:0104'
+codigos: {snomed: null, icd10: null, hpo: null}
+umbral:
+  parametro: Incremento de la frecuencia cardíaca al incorporarse
+  direccion: alto
+  corte_superior: 30
+  unidad: latidos por minuto
+  ref: 'pmid:10086438'
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar la hipovolemia por pérdida sanguínea.

@@ -1,0 +1,12 @@
+id: 'HM:3021'
+tipo: concepto
+semantica: hallazgo
+termino: Axila seca
+sinonimos: [ausencia de sudoración axilar]
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar la hipovolemia por pérdidas digestivas.

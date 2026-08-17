@@ -1,0 +1,14 @@
+id: 'HM:3027'
+tipo: concepto
+semantica: hallazgo
+termino: Exudado faríngeo
+sinonimos: [exudado en faringe]
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: >-
+    Acuñado al modelar la faringitis estreptocócica. La fuente lo distingue del
+    exudado amigdalino y les asigna cocientes distintos.

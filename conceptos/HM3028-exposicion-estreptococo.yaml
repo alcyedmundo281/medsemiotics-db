@@ -1,0 +1,18 @@
+id: 'HM:3028'
+tipo: concepto
+semantica: hallazgo
+termino: Exposición reciente a faringitis estreptocócica
+sinonimos: [contacto con caso de estreptococo]
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+umbral:
+  parametro: Ventana de exposición
+  direccion: alto
+  corte_superior: 14
+  unidad: días previos
+  ref: 'pmid:11147989'
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar la faringitis estreptocócica.

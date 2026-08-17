@@ -1,0 +1,15 @@
+id: 'HM:3019'
+tipo: concepto
+semantica: hallazgo
+termino: Mareo postural intenso
+sinonimos: [mareo ortostático severo, mareo que impide la bipedestación]
+padre: 'HM:0500'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: >-
+    Acuñado al modelar la hipovolemia. La fuente lo define de forma operativa:
+    tan intenso que impide medir las constantes en bipedestación. El mareo
+    postural LEVE no tiene valor demostrado y es concepto distinto.

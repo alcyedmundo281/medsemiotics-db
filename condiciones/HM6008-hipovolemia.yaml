@@ -1,0 +1,137 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Datos de pmid:10086438 (McGee 1999, JAMA). Transcritos del abstract.
+#
+# ATENCIÓN: la fuente estudia DOS poblaciones que no son intercambiables, y los
+# hallazgos útiles son distintos en cada una. Aplicar un cociente de una a la
+# otra es el error que este registro trata de impedir:
+#
+#   · pérdida sanguínea      — 10 estudios de flebotomía de hasta 1150 mL
+#   · pérdidas digestivas    — 4 estudios en urgencias por vómitos, diarrea o
+#                              descenso de la ingesta
+#
+# Cada arista declara a cuál pertenece.
+
+id: 'HM:6008'
+tipo: condicion
+clase: sindrome
+termino: Hipovolemia
+termino_en: Hypovolemia
+sinonimos: [depleción de volumen, hipovolemia aguda]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # la fuente no publica prevalencia
+factores_riesgo: []
+
+signos:
+  # ─── población: pérdida sanguínea ───────────────────────────────────────────
+  - concepto: 'HM:3019'    # Mareo postural intenso
+    rol: prueba_especifica
+    estado_lr: no_medido
+    poblacion: adultos con sospecha de pérdida sanguínea
+    especificidad: 0.98
+    ic95_especificidad: [0.97, 0.99]
+    sensibilidad_por_gravedad:
+      - perdida: moderada
+        sensibilidad: 0.22
+        ic95: [0.06, 0.48]
+        ref: 'pmid:10086438'
+      - perdida: grande
+        sensibilidad: 0.97
+        ic95: [0.91, 1.00]
+        ref: 'pmid:10086438'
+    motivo: >-
+      la fuente publica sensibilidad y especificidad pero no el cociente. Es
+      derivable por aritmética, pero no se anota como medido porque el autor no
+      lo calculó: la forma de agrupar entre estudios cambia el resultado.
+    nota: >-
+      la fuente lo evalúa junto con el incremento postural del pulso como un
+      solo hallazgo compuesto: basta con que esté presente uno de los dos.
+    decision: >-
+      su presencia apoya con fuerza la pérdida grande; su ausencia no descarta
+      una pérdida moderada
+
+  - concepto: 'HM:3020'    # Incremento postural del pulso ≥30 lpm
+    rol: prueba_especifica
+    estado_lr: no_medido
+    poblacion: adultos con sospecha de pérdida sanguínea
+    especificidad: 0.98
+    ic95_especificidad: [0.97, 0.99]
+    motivo: >-
+      componente del hallazgo compuesto con el mareo postural intenso; la fuente
+      no publica cociente aislado
+    ref: 'pmid:10086438'
+
+  - concepto: 'HM:0109'    # Hipotensión arterial
+    rol: apoyo
+    estado_lr: no_medido
+    poblacion: adultos con sospecha de pérdida sanguínea
+    sensibilidad: 0.33
+    ic95_sensibilidad: [0.21, 0.47]
+    ref: 'pmid:10086438'
+    motivo: la fuente publica sensibilidad sin especificidad
+    advertencia: >-
+      la hipotensión en decúbito y la taquicardia FALTAN con frecuencia incluso
+      tras perder 1150 mL. Su ausencia no tranquiliza.
+
+  # ─── población: pérdidas digestivas ─────────────────────────────────────────
+  - concepto: 'HM:3021'    # Axila seca
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: pacientes con vómitos, diarrea o descenso de la ingesta
+    lr_positivo:
+      valor: 2.8
+      ic95: [1.4, 5.4]
+      ref: 'pmid:10086438'
+    decision: apoya el diagnóstico, con fuerza modesta
+
+  - concepto: 'HM:3022'    # Mucosas húmedas
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: pacientes con vómitos, diarrea o descenso de la ingesta
+    lr_negativo:
+      valor: 0.3
+      ic95: [0.1, 0.6]
+      ref: 'pmid:10086438'
+    decision: >-
+      su PRESENCIA argumenta en contra de la hipovolemia. Es el hallazgo
+      invertido: lo que ayuda es encontrarlo, no echarlo en falta.
+
+  - concepto: 'HM:3023'    # Lengua sin surcos longitudinales
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: pacientes con vómitos, diarrea o descenso de la ingesta
+    lr_negativo:
+      valor: 0.3
+      ic95: [0.1, 0.6]
+      ref: 'pmid:10086438'
+    decision: igual que las mucosas húmedas, su presencia argumenta en contra
+
+  # ─── sin valor demostrado: se registran para que no se reinventen ───────────
+  - concepto: 'HM:3024'    # Relleno capilar prolongado
+    rol: apoyo
+    estado_lr: sin_efecto
+    poblacion: adultos
+    motivo: la fuente concluye que no tiene valor diagnóstico demostrado en adultos
+    ref: 'pmid:10086438'
+
+  - concepto: 'HM:3025'    # Turgencia cutánea disminuida
+    rol: apoyo
+    estado_lr: sin_efecto
+    poblacion: adultos
+    motivo: la fuente concluye que no tiene valor diagnóstico demostrado en adultos
+    ref: 'pmid:10086438'
+
+conclusion_de_la_fuente: >-
+  Para diagnosticar hipovolemia por pérdida sanguínea hace falta un incremento
+  postural del pulso de 30 latidos por minuto o más, o un mareo postural
+  intenso, aunque ambos faltan a menudo tras pérdidas moderadas. En pacientes
+  con vómitos, diarrea o descenso de la ingesta pocos hallazgos han demostrado
+  utilidad, y conviene medir electrolitos, urea y creatinina cuando se necesita
+  certeza diagnóstica.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:10086438, no del texto completo.

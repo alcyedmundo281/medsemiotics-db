@@ -1,0 +1,109 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:11147989 (Ebell 2000, JAMA), síntesis de 9 estudios
+# prospectivos y ciegos con cultivo faríngeo como patrón de referencia.
+# Transcritos del abstract, que no publica intervalos de confianza para estos
+# valores: los campos ic95 quedan ausentes en lugar de inventados.
+#
+# La conclusión pesa más que los números: ningún elemento aislado de la
+# anamnesis ni de la exploración basta para confirmar ni descartar. Los
+# cocientes que siguen van de 1.9 a 3.4 en positivo y de 0.60 a 0.74 en
+# negativo, es decir, todos desplazan poco.
+
+id: 'HM:6009'
+tipo: condicion
+clase: enfermedad
+termino: Faringitis estreptocócica
+termino_en: Streptococcal pharyngitis
+sinonimos:
+  - faringoamigdalitis estreptocócica
+  - faringitis por estreptococo del grupo A
+  - strep throat
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # la fuente no publica prevalencia
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3026'    # Exudado amigdalino
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.4
+      ref: 'pmid:11147989'
+      nota: la fuente no publica intervalo de confianza en el abstract
+    decision: el hallazgo aislado más útil, y aun así insuficiente por sí solo
+
+  - concepto: 'HM:3027'    # Exudado faríngeo
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.1
+      ref: 'pmid:11147989'
+      nota: la fuente no publica intervalo de confianza en el abstract
+    decision: apoya menos que el exudado amigdalino, del que se distingue
+
+  - concepto: 'HM:3028'    # Exposición reciente a faringitis estreptocócica
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 1.9
+      ref: 'pmid:11147989'
+      nota: exposición en las dos semanas previas; sin intervalo en el abstract
+    decision: dato de anamnesis con peso escaso
+
+  - concepto: 'HM:3029'    # Adenopatía cervical anterior dolorosa
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_negativo:
+      valor: 0.60
+      ref: 'pmid:11147989'
+      nota: la fuente no publica intervalo de confianza en el abstract
+    decision: >-
+      su ausencia es lo que más reduce la probabilidad, y aun así la deja en
+      más de la mitad de la previa
+
+  - concepto: 'HM:3030'    # Hipertrofia amigdalina
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_negativo:
+      valor: 0.63
+      ref: 'pmid:11147989'
+      nota: la fuente no publica intervalo de confianza en el abstract
+    decision: su ausencia reduce poco la probabilidad
+
+  - concepto: 'HM:0211'    # Odinofagia
+    rol: manifestacion
+    estado_lr: no_medible
+    motivo: >-
+      es el motivo de consulta que define la población estudiada, no una prueba
+      dentro de ella
+
+# El exudado, tomado como categoría única, tiene su propio cociente negativo.
+reglas:
+  - nombre: Ausencia de exudado
+    componentes: ['HM:3026', 'HM:3027']
+    criterio: ausencia de exudado amigdalino o faríngeo
+    lr_negativo: 0.74
+    ref: 'pmid:11147989'
+    decision: >-
+      su ausencia apenas modifica la probabilidad; no sirve para descartar
+
+conclusion_de_la_fuente: >-
+  Ningún elemento aislado de la anamnesis o de la exploración física es lo
+  bastante preciso para excluir ni para diagnosticar la faringitis
+  estreptocócica. Una regla de predicción clínica bien validada sí resulta útil
+  y ayuda al médico a usar de forma más informada las pruebas rápidas de
+  antígeno y el cultivo faríngeo.
+
+pendiente:
+  - >-
+    La fuente describe tres reglas de predicción clínica validadas, para
+    población adulta y pediátrica, pero el abstract no las nombra ni las
+    cuantifica. Registrarlas exige el texto completo.
+
+procedencia:
+  fuente: >-
+    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
+    pmid:11147989, no del texto completo.

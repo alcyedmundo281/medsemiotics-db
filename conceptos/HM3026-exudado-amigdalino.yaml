@@ -1,0 +1,12 @@
+id: 'HM:3026'
+tipo: concepto
+semantica: hallazgo
+termino: Exudado amigdalino
+sinonimos: [placas amigdalinas, exudado en amígdalas]
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar la faringitis estreptocócica.
