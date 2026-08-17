@@ -17,9 +17,14 @@ mensaje que la nombra.
 | `BIOSEMIOTICS_REFS` | `refs.bib` | repo `biosemiotics` |
 | `HOLONMED_VOCABULARIO` | `vocabulario_semilla.json` | repo `holonmed`, `backend/data/` |
 | `HOLONMED_SKILLS` | directorio de protocolos `.md` | repo `holonmed`, `backend/skills/` |
-| `TAXONOMIA_JSONL` | taxonomía de partida, con `term` y `type` | fuente privada |
+| `TAXONOMIA_JSONL` | taxonomía de partida, con `term` y `type` | **ya no existe** — ver abajo |
 
-**De `TAXONOMIA_JSONL` solo se leen los campos `term` y `type`.** Las
+> **El archivo de origen se eliminó en agosto de 2026**, por decisión del autor y
+> por sus derechos. `3_temario_desde_taxonomia.py` se conserva porque documenta
+> cómo se obtuvo `datos/temario.csv`, pero **no puede volver a ejecutarse**. El
+> temario es ya la fuente: si un término necesita corrección, se corrige ahí.
+
+**De `TAXONOMIA_JSONL` solo se leían los campos `term` y `type`.** Las
 definiciones son texto de un manual con derechos y no se copian, no se derivan y
 no entran en ningún registro. Un listado de nombres de enfermedades no es
 material protegible; su texto sí.

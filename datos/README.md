@@ -8,6 +8,11 @@ son el material del que saldrán.
 1113 términos con su tipo (`SIGN` / `SYNDROME` / `DISEASE`), extraídos de la
 taxonomía de partida. Solo términos: ninguna definición del original.
 
+**Este archivo es ahora la fuente, no una copia.** El `.jsonl` del que salió se
+eliminó en agosto de 2026 por sus derechos de autor, así que el temario no se
+puede regenerar ni cotejar contra el original. Los 122 términos marcados para
+revisar se reparan con criterio clínico, no volviendo a la fuente.
+
 - `estado = ok` — 991 términos limpios
 - `estado = revisar` — 122 con marcas de corte del extractor
 
