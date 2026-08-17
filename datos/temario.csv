@@ -1,0 +1,1114 @@
+﻿tipo,termino,estado,motivo,variantes,n_registros
+DISEASE,Acne Vulgaris,ok,,,1
+DISEASE,Actinic Keratosis,ok,,,2
+DISEASE,Acute Leukemias,ok,,,1
+DISEASE,Asteatotic Eczema,ok,,,1
+DISEASE,Atopic Dermatitis,ok,,,1
+DISEASE,Basal Cell Carcinoma,ok,,,1
+DISEASE,Behçet Syndrome,ok,,,1
+DISEASE,Bullous,revisar,calificador suelto: falta el sustantivo,,1
+DISEASE,Bullous Pemphigoid,ok,,,1
+DISEASE,Candidiasis,ok,,,1
+DISEASE,Carcinoma of the Male Breast,ok,,,1
+DISEASE,Cat-Scratch Disease,ok,,,1
+DISEASE,Chronic Localized,ok,,,2
+DISEASE,Chronic Localized Cervical,ok,,,1
+DISEASE,Chronic Lymphocytic Leukemia,ok,,,3
+DISEASE,Chronic Myelogenous Leukemia,ok,,,1
+DISEASE,Contact Dermatitis,ok,,,1
+DISEASE,Cushing Disease,ok,,,1
+DISEASE,Dengue,ok,,,1
+DISEASE,Dermatitis Herpetiformis,ok,,,1
+DISEASE,Diabetes,ok,,,1
+DISEASE,Diabetes Mellitus Type 1,ok,,,1
+DISEASE,Diabetes Mellitus Type 2,ok,,,1
+DISEASE,Dyshidrotic Eczema,ok,,,1
+DISEASE,Eczema-Dermatitis,ok,,,1
+DISEASE,Epithelial Carcinoma,ok,,,1
+DISEASE,Erysipeloid,ok,,,1
+DISEASE,Erythema Migrans-Lyme Disease,ok,,,1
+DISEASE,Essential Thrombocytosis,ok,,,1
+DISEASE,Facial Pain-Herpes Zoster,ok,,,1
+DISEASE,Genital White Patches-Lichen Sclerosis,ok,,,1
+DISEASE,Granuloma Annulare,ok,,,1
+DISEASE,Graves Disease (Diffuse Toxic Goiter),ok,,,1
+DISEASE,Graves' Ophthalmopathy,ok,,,1
+DISEASE,Hereditary Epidermolysis Bullosa,ok,,,1
+DISEASE,Herpes Simplex,ok,,,1
+DISEASE,HIV and AIDS,ok,,,1
+DISEASE,HIV Infection,revisar,llevaba otra frase pegada,,2
+DISEASE,Hodgkin Disease,ok,,,1
+DISEASE,Impetigo,ok,,,1
+DISEASE,Irregular Spongy Tumor-Cavernous,ok,,,1
+DISEASE,Kaposi Sarcoma (KS),ok,,,1
+DISEASE,Keratoacanthoma,ok,,,1
+DISEASE,Lichen Planus,ok,,,2
+DISEASE,Lung Cancer,ok,,,2
+DISEASE,Lyme Disease,revisar,llevaba otra frase pegada,,2
+DISEASE,Malaria,ok,,,1
+DISEASE,Malignant Hyperthermia,ok,,,1
+DISEASE,Malignant Melanoma,ok,,,2
+DISEASE,Medullary Carcinoma,ok,,,1
+DISEASE,Meningococcemia,ok,,,1
+DISEASE,Midline Granuloma,ok,,,1
+DISEASE,Multiple Myeloma,revisar,llevaba otra frase pegada,,4
+DISEASE,Myelofibrosis (Myeloid Metaplasia),ok,,,1
+DISEASE,Neurofibromatosis (NF),ok,,,1
+DISEASE,Non-Hodgkin Lymphoma,ok,,,1
+DISEASE,Nummular Eczema,ok,,,1
+DISEASE,Papular Eczema,ok,,,1
+DISEASE,Paroxysmal Nocturnal Hemoglobinuria,ok,,,1
+DISEASE,Pediculosis-Lice,ok,,,1
+DISEASE,Pemphigus vulgaris,ok,,,1
+DISEASE,Pernicious Anemia and Vitamin B12,ok,,,1
+DISEASE,Pityriasis Rosea,ok,,,1
+DISEASE,Polycythemia Vera,ok,,,1
+DISEASE,Porphyrias,ok,,,1
+DISEASE,Primary,revisar,calificador suelto: falta el sustantivo,,1
+DISEASE,Pseudoxanthoma Elasticum,ok,,,1
+DISEASE,Psoriasis,ok,,,1
+DISEASE,Punctate Red,ok,,,1
+DISEASE,Punctate Red Macules-Hereditary Hemorrhagic,ok,,,2
+DISEASE,Rabies,ok,,,1
+DISEASE,Rheumatic Fever,ok,,,1
+DISEASE,Rocky Mountain Spotted Fever,revisar,cortado: acababa en conector,,2
+DISEASE,Rosacea,ok,,,1
+DISEASE,Scabies,ok,,,1
+DISEASE,Scarlet Fever,ok,,,1
+DISEASE,Scurvy,ok,,,1
+DISEASE,Scurvy. is a vasculopathy that may be confused with vasculitis,revisar,"parece frase, no título; paréntesis sobrante",,1
+DISEASE,Seborrheic Dermatitis,ok,,,1
+DISEASE,Sickle Cell Disease,ok,,,1
+DISEASE,Sporotrichosis,ok,,,1
+DISEASE,Squamous Cell Carcinoma,ok,,,1
+DISEASE,Superficial Fungal Infections,ok,,,1
+DISEASE,Thrombotic,ok,,,1
+DISEASE,Tinea Versicolor (Pityriasis Versicolor),ok,,,1
+DISEASE,Tuberculosis,ok,,,1
+DISEASE,Tuberous Sclerosis,ok,,,1
+DISEASE,Typhoid Fever,ok,,,1
+DISEASE,Varicella-Zoster,revisar,llevaba otra frase pegada,,3
+DISEASE,Variola-Smallpox,ok,,,1
+DISEASE,Verrucous Papules-Warts,ok,,,1
+DISEASE,von Willebrand Disease,ok,,,1
+DISEASE,Waldenström Macroglobulinemia,ok,,,1
+DISEASE,Wegener's Granulomatosis,ok,,,1
+DISEASE,ẞ-Thalassemia Major,ok,,,1
+DISEASE,ẞ-Thalassemia Minor,ok,,,1
+SIGN,Abdominal Bruits,ok,,,1
+SIGN,Abdominal Pain with Percussion,ok,,,1
+SIGN,Abdominal Pain with Percussion and suggests the presence of peritoneal,revisar,"parece frase, no título; paréntesis sobrante",,1
+SIGN,Abdominal Wall Mass-Nodular Umbilicus,ok,,,1
+SIGN,Abnormal,revisar,calificador suelto: falta el sustantivo,,1
+SIGN,Abnormal Balance,revisar,llevaba otra frase pegada,,1
+SIGN,Abnormal Corneal Reflex,ok,,,1
+SIGN,Abnormal Hearing-Auditory Nerve,revisar,paréntesis sin cerrar,,1
+SIGN,Abnormal Nail,ok,,,1
+SIGN,Abnormal Pain Sensation,ok,,,1
+SIGN,Abnormal Pupils,ok,,,1
+SIGN,"Abnormal Pupils, Facial Nerve Signs",ok,,,1
+SIGN,Abnormal Sonorous Percussion,ok,,,1
+SIGN,Abnormalities of Gaze,revisar,llevaba otra frase pegada,,1
+SIGN,Abnormalities of the Thoracic Spine,ok,,,1
+SIGN,Abscess of the Greater Vestibular Gland,ok,,,1
+SIGN,"Absent Pulses, Pulseless Disease",ok,,,1
+SIGN,Acanthosis Nigricans,ok,,,1
+SIGN,Accelerated Linear Growth,ok,,,1
+SIGN,Acquired Diffuse Brown Skin-Melanism,ok,,,1
+SIGN,Acquired Diffuse Yellow Skin,ok,,,2
+SIGN,Acquired Nasal Deformities,ok,,,1
+SIGN,Actinic Keratoses,ok,,,1
+SIGN,Actinic Keratosis,ok,,,1
+SIGN,Acute Cervical,ok,,,1
+SIGN,Acute Pain with Skin Pallor and Coolness,ok,,,1
+SIGN,Acute Pericarditis,ok,,,2
+SIGN,Acute Urethritis,ok,,,2
+SIGN,Adnexal,ok,,,1
+SIGN,Adnexal Mass-Pelvic Inflammatory Disease,revisar,paréntesis sin cerrar,,2
+SIGN,Adnexal Tenderness,ok,,,1
+SIGN,Alopecia,ok,,,1
+SIGN,Altered Normal Reflexes,ok,,,1
+SIGN,Ambiguous Genitalia-Intersexuality,ok,,,1
+SIGN,Amnesia,ok,,,1
+SIGN,Amphoric Breathing,ok,,,1
+SIGN,Anal Stricture,ok,,,1
+SIGN,Angioedema,ok,,,1
+SIGN,Anosmia,ok,,,3
+SIGN,Anosmia-Olfactory Nerve (CN I),ok,,,1
+SIGN,Anterior Knee Pain,ok,,,1
+SIGN,Anuria and Oliguria,ok,,,1
+SIGN,Aortic Insufficiency,revisar,paréntesis sin cerrar,,1
+SIGN,Aortic Valve Sclerosis,ok,,,1
+SIGN,Aphthous Ulcer (Canker Sore),ok,,,1
+SIGN,Apical Impulse,ok,,,1
+SIGN,Arcus Senilis,ok,,,1
+SIGN,Argyll Robertson Pupil,ok,,,1
+SIGN,Arterial Murmur or Bruit,ok,,,1
+SIGN,Arterial Occlusion,ok,,,1
+SIGN,Arteriolar Sclerosis,ok,,,1
+SIGN,Ascites,revisar,llevaba otra frase pegada,,4
+SIGN,Asterixis,ok,,,1
+SIGN,Atheroembolic Disease,ok,,,1
+SIGN,Austin Flint Murmur,ok,,,1
+SIGN,Basal Systolic Murmurs-Benign Murmurs,ok,,,1
+SIGN,Behçet's Syndrome,ok,,,1
+SIGN,Bigeminy (Coupled Rhythm),ok,,,1
+SIGN,Bilateral Visual Field Defects-Hemianopsia,ok,,,1
+SIGN,Bladder/Bowel Function,ok,,,1
+SIGN,Bleeding Gums,ok,,,1
+SIGN,Blood Pressure Regulation,ok,,,2
+SIGN,Bloody Sputum: Hemoptysis,ok,,,1
+SIGN,Blue-Grey Color,ok,,,1
+SIGN,Bounding or Collapsing Pulse,revisar,paréntesis sin cerrar,,1
+SIGN,Breast Masses,ok,,,1
+SIGN,Breast Tenderness,ok,,,1
+SIGN,Breast Tenderness for a discussion of common breast masses,revisar,"parece frase, no título",,1
+SIGN,Breath Odor,ok,,,1
+SIGN,Bronchial Breathing (Tubular Breathing),ok,,,1
+SIGN,Bronchovesicular Breathing,ok,,,1
+SIGN,Buccal,ok,,,1
+SIGN,Buccal Pigmentation-Addison Disease,ok,,,1
+SIGN,Bulimia,ok,,,1
+SIGN,Cancer Chemotherapy-Mucositis,ok,,,1
+SIGN,"Cannon ""a"" Waves-AV Asynchrony",ok,,,1
+SIGN,Carbuncle,ok,,,1
+SIGN,Carcinoma,ok,,,2
+SIGN,Carcinoma of the Lip,ok,,,1
+SIGN,Carcinoma of the Penis,ok,,,1
+SIGN,Carotenemia,ok,,,1
+SIGN,Cataract,ok,,,1
+SIGN,Catatonia,ok,,,1
+SIGN,Cerebrospinal Rhinorrhea,ok,,,1
+SIGN,Cerumen Impaction,ok,,,1
+SIGN,Cheilosis (Angular Stomatitis),ok,,,1
+SIGN,Chest,revisar,cortado: acababa en conector,,1
+SIGN,Chest and Respiratory Pain,revisar,cortado: acababa en conector,,1
+SIGN,Chest and Respiratory Pain with Tenderness,ok,,,1
+SIGN,Chest Pain with Dysesthesia-Herpes,ok,,,1
+SIGN,Cicatricial Pemphigoid,ok,,,1
+SIGN,Clubbing of the Fingers,ok,,,1
+SIGN,Coarctation of Aorta,ok,,,1
+SIGN,Coarctation of the Aorta,revisar,cortado: acababa en conector,,2
+SIGN,Coccygeal Sinus (Pilonidal Sinus),revisar,llevaba otra frase pegada; paréntesis sobrante,Coccygeal Sinus (Pilonidal Sinus,2
+SIGN,Comitant Strabismus,ok,,,1
+SIGN,Conduction,ok,,,1
+SIGN,Conductive,ok,,,1
+SIGN,Condyloma Acuminatum,revisar,paréntesis sin cerrar,,1
+SIGN,Condyloma Latum,ok,,,1
+SIGN,Conjugate Failure of Lateral Gaze,ok,,,1
+SIGN,Conjugate Failure of Vertical Gaze,ok,,,1
+SIGN,Conjunctival Edema-Chemosis,ok,,,1
+SIGN,Conjunctival Injection,ok,,,1
+SIGN,Conjunctivitis,ok,,,1
+SIGN,Continuous Murmur,ok,,,1
+SIGN,Costovertebral Tenderness,ok,,,1
+SIGN,"Coupled Rhythm: Bigeminy, Trigeminy",ok,,,1
+SIGN,Crackles (Rales),ok,,,1
+SIGN,Crepitus,ok,,,1
+SIGN,Cutaneous Hyperesthesia and Allodynia,ok,,,1
+SIGN,Cutaneous Scars and Striae,ok,,,1
+SIGN,Cyanosis,ok,,,3
+SIGN,Cysts,ok,,,1
+SIGN,Dacryoadenitis,ok,,,1
+SIGN,Dacryocystitis,ok,,,1
+SIGN,Decreased or Absent Peristaltic Sounds,ok,,,1
+SIGN,Decreased Respiratory Rate-Bradypnea,ok,,,1
+SIGN,Decreased Skin Elasticity,ok,,,1
+SIGN,Decreased Skin Turgor-Extracellular Fluid,ok,,,1
+SIGN,Deep Breathing-Hyperpnea,revisar,paréntesis sin cerrar,,1
+SIGN,Deficits of Arm Abduction,ok,,,1
+SIGN,Deformed Foot,ok,,,1
+SIGN,Deformity of the Second to Fifth Toes,ok,,,1
+SIGN,Dental Ulcer,ok,,,1
+SIGN,Dependent Rubor and Coldness-Chronic,ok,,,1
+SIGN,Depressed Abdomen-Scaphoid Abdomen,ok,,,1
+SIGN,Dermatitis,ok,,,1
+SIGN,Dermatofibroma,ok,,,1
+SIGN,Dermatographia,ok,,,1
+SIGN,Deviated Septum,ok,,,1
+SIGN,Diastolic Snap-Mitral Opening Snap,ok,,,1
+SIGN,Diastolic Sound-Pericardial Knock,ok,,,1
+SIGN,Digital Infection,ok,,,1
+SIGN,Diminished Local Excursion of the Thorax,ok,,,1
+SIGN,Diminished or Absent Vocal Fremitus,ok,,,1
+SIGN,Diminished Venous Pressure,ok,,,1
+SIGN,Direct Tenderness,ok,,,1
+SIGN,Discharge from the Ear-Otorrhea,ok,,,1
+SIGN,Discharge-Endocervicitis,ok,,,1
+SIGN,Discolored Urine,ok,,,3
+SIGN,Discolored Urine and The Elbow and Fig,ok,,,1
+SIGN,"Disk Edema-Papillitis, Optic Neuritis",ok,,,1
+SIGN,Disk Pallor-Optic Atrophy,ok,,,1
+SIGN,Disorders of Speech,revisar,llevaba otra frase pegada,,2
+SIGN,Distended Abdomen,ok,,,1
+SIGN,Dry Mouth-Xerostomia,ok,,,1
+SIGN,Dry Skin-Xerosis and Anhydrosis,ok,,,1
+SIGN,Dry Tongue with Longitudinal Furrows,ok,,,1
+SIGN,Dullness,revisar,cortado: acababa en conector,,2
+SIGN,Dullness and Diminished Vibrations,ok,,,2
+SIGN,Dullness and Diminished Vibrations-Pleural Fluid,revisar,llevaba otra frase pegada,,2
+SIGN,Dullness with Accentuated,ok,,,1
+SIGN,Dullness with Accentuated Vibration,ok,,,3
+SIGN,Dullness with Accentuated Vibration-Pneumonia with Small,ok,,,1
+SIGN,Dupuytren Contracture (Palmar Fibrosis),ok,,,1
+SIGN,Dysarthria,ok,,,1
+SIGN,Dysdiadochokinesis,ok,,,1
+SIGN,Dyskinesia,ok,,,1
+SIGN,Dysphagia-Glossopharyngeal (CN IX),ok,,,1
+SIGN,Dyspnea (Shortness of Breath),ok,,,1
+SIGN,Dyssynergia and Dysmetria,ok,,,1
+SIGN,Earlobe Crease,ok,,,1
+SIGN,Earlobe Nodule: Gouty Tophus,ok,,,1
+SIGN,Ecchymoses on Abdomen and Flanks,revisar,paréntesis sin cerrar,,1
+SIGN,Edema,ok,,,1
+SIGN,Elbow Pain,ok,,,1
+SIGN,Elevated Central Venous Pressure (CVP),ok,,,1
+SIGN,Engorged Veins,ok,,,1
+SIGN,Enlarged Adult Skull-Paget Disease,ok,,,1
+SIGN,Enlarged Area of Cardiac Dullness,ok,,,1
+SIGN,Enlarged Delphian Lymph Nodes,ok,,,1
+SIGN,Enlarged Salivary Glands,ok,,,1
+SIGN,Enophthalmos,ok,,,1
+SIGN,Epicanthal Fold-Down Syndrome,ok,,,1
+SIGN,Epistaxis (Nosebleed),ok,,,1
+SIGN,Erythema,ok,,,1
+SIGN,Exophthalmos (Ocular Proptosis),ok,,,1
+SIGN,External Hordeolum (Sty),ok,,,1
+SIGN,External Otitis,ok,,,1
+SIGN,Facial Weakness and Paralysis,ok,,,1
+SIGN,Failure of Convergence,ok,,,1
+SIGN,Failure of Lid Closure-Paralysis,revisar,cortado: acababa en conector,,1
+SIGN,Failure of Lid Opening-Ptosis of the Lid,ok,,,1
+SIGN,Fasciculation,ok,,Fasciculations,2
+SIGN,Fecal Impaction,ok,,,1
+SIGN,Femoral Nerve Sign,ok,,,1
+SIGN,Finger Deformity,ok,,,1
+SIGN,Finger Swelling,ok,,,1
+SIGN,Fingernail Signs,ok,,,1
+SIGN,First and Second Heart Sounds,ok,,,1
+SIGN,First Heart Sound-Onset of Ventricular,ok,,,1
+SIGN,Fissure in Ano,ok,,,1
+SIGN,Fistula in Ano,ok,,,1
+SIGN,Fixation of the Trachea,ok,,,1
+SIGN,Fluctuant Scalp Masses-Hematoma,ok,,,1
+SIGN,Forearm Deformity,ok,,,1
+SIGN,Forearm Pain and Weakness-Flexor,ok,,,1
+SIGN,Frothy Sputum-Pulmonary Edema,ok,,,1
+SIGN,Gait Ataxia,ok,,,1
+SIGN,Gangrene,ok,,,1
+SIGN,Generalized Erythroderma,ok,,,1
+SIGN,Generalized Lymphadenopathy,ok,,,1
+SIGN,Generalized Penile Swelling,ok,,,1
+SIGN,Genital Lesion with Satellite Nodes,ok,,,1
+SIGN,Genital Ulcer,ok,,,2
+SIGN,"Giant ""a"" Waves-Tricuspid Stenosis",ok,,,1
+SIGN,Gingival Hyperplasia,ok,,,1
+SIGN,Glans-Balanitis,ok,,,1
+SIGN,Glaucoma,ok,,,1
+SIGN,Graying of the Hair,ok,,,1
+SIGN,Grouped Beats and Dropped Beats,ok,,,1
+SIGN,Hairy Leukoplakia,ok,,,1
+SIGN,Hand Infections,ok,,,1
+SIGN,Hard Corn,ok,,,1
+SIGN,Heart Murmurs,ok,,,1
+SIGN,Hematoma,ok,,,1
+SIGN,Hemoptysis,ok,,,1
+SIGN,Hemorrhoids,ok,,,1
+SIGN,Hepatojugular Reflux and Kussmaul Sign,ok,,,1
+SIGN,Hiccup,ok,,,1
+SIGN,Hirsutism and Hypertrichosis,ok,,,2
+SIGN,Hoarseness,ok,,,1
+SIGN,Hoarseness-Vagus Nerve (CN X),ok,,,1
+SIGN,Horner's Syndrome,ok,,,1
+SIGN,Human Papilloma Virus-Warts,ok,,,1
+SIGN,Hydropneumothorax,ok,,,1
+SIGN,Hyperemia of the Globe and Ciliary Flush,ok,,,1
+SIGN,Hyperemic Conjunctiva with Calcification,ok,,,1
+SIGN,Hyperpigmentation,ok,,,1
+SIGN,Hypertensive Retinopathy,ok,,,1
+SIGN,Hyperthermia,ok,,,1
+SIGN,Hyperthyroidism,ok,,,1
+SIGN,Hypertonia,ok,,,1
+SIGN,Hypertrophic Obstructive Cardiomyopathy,ok,,,1
+SIGN,Hypertrophic scars and keloids,ok,,,1
+SIGN,Hypopigmentation and Depigmentation,ok,,,1
+SIGN,Hypopyon,ok,,,1
+SIGN,Hypothenar Wasting,ok,,,1
+SIGN,Hypothyroidism,ok,,,1
+SIGN,Hypotonia,ok,,,1
+SIGN,Inability to Close the Jaw-TMJ Dislocation,ok,,,1
+SIGN,Increased Cup-to-Disk Ratio-Glaucoma,ok,,,1
+SIGN,Increased Joint Mobility,ok,,,1
+SIGN,Increased Peristaltic Sounds,ok,,,1
+SIGN,Increased Respiratory Rate-Tachypnea,ok,,,1
+SIGN,Increased Vocal Fremitus,ok,,,1
+SIGN,Inequality of BP in Arms,ok,,,1
+SIGN,Inequality of Pulses,ok,,,1
+SIGN,Infectious Spondylitis,ok,,,1
+SIGN,Inoculation,ok,,,1
+SIGN,Inspiratory Convergence of Costal Margins,ok,,,1
+SIGN,Inspiratory Retraction of Interspaces,ok,,,1
+SIGN,Instability of Station,ok,,,2
+SIGN,Internal Hordeolum and Meibomian Cyst,ok,,,1
+SIGN,Internuclear,revisar,calificador suelto: falta el sustantivo,,1
+SIGN,Internuclear Ophthalmoplegia,ok,,,1
+SIGN,Interosseous Wasting,ok,,,1
+SIGN,Intertrigo,ok,,,1
+SIGN,Intradermal Hemorrhage,ok,,,2
+SIGN,Intraocular Pressure Changes,ok,,,1
+SIGN,Ischial Tuberosity Pain and Ischiogluteal,ok,,,1
+SIGN,Jaundice,ok,,,2
+SIGN,"Jaundice (Icterus, Bilirubinemia)",ok,,,1
+SIGN,"Jaundice, conjugated bilirubin infiltrates all",revisar,"parece frase, no título; paréntesis sobrante",,1
+SIGN,Jaw Weakness and Spasm,ok,,,1
+SIGN,Kayser-Fleischer Ring-Wilson Disease,ok,,,1
+SIGN,Knee Pain and Recurrent Locking-Loose,ok,,,1
+SIGN,Knee Swelling,ok,,,1
+SIGN,Koplik Spots (Measles),ok,,,1
+SIGN,Labial,ok,,,1
+SIGN,Labial Vesicles-Herpes Simplex,revisar,paréntesis sin cerrar,,1
+SIGN,Lacrimation,ok,,,1
+SIGN,"Large ""v"" Waves in the Venous Pulse-TR",revisar,cortado: acababa en conector; llevaba otra frase pegada,,4
+SIGN,Large Hands,revisar,llevaba otra frase pegada; paréntesis sobrante,,2
+SIGN,Laryngeal Edema,ok,,,1
+SIGN,Laryngeal Neoplasm,ok,,,1
+SIGN,Lateral Cervical Masses,ok,,,1
+SIGN,Lateral Deviation of the Great Toe-Hallux,ok,,,1
+SIGN,Lateral Deviations of the Trachea,ok,,,1
+SIGN,Lens Subluxation and Dislocation,ok,,,1
+SIGN,Leukoplakia,revisar,llevaba otra frase pegada,,5
+SIGN,Lichen Planus,ok,,,1
+SIGN,Lichen Simplex Chronicus,ok,,,1
+SIGN,Lid Edema,ok,,,1
+SIGN,Lid Eversion-Ectropion,ok,,,1
+SIGN,Lid Hemorrhage,ok,,,1
+SIGN,Lid Inversion-Entropion,ok,,,1
+SIGN,Lid Lag-Hyperthyroidism,ok,,,1
+SIGN,Lid Scaling and Redness-Blepharitis,ok,,,1
+SIGN,Limited Jaw Opening-Trismus,ok,,,2
+SIGN,Limited Lingual Protrusion-Carcinoma,ok,,,1
+SIGN,Lingual,ok,,,1
+SIGN,Lip Chancre,ok,,,1
+SIGN,Localized Bulging of the Thorax During,ok,,,1
+SIGN,Localized Thickening of Palmar Fascia,ok,,,1
+SIGN,"Long, Slender Hands-Spider Fingers",ok,,,1
+SIGN,Loss,revisar,cortado: acababa en conector,,1
+SIGN,Loss of Height,ok,,,1
+SIGN,Loss of Position and Vibration Sense,ok,,,1
+SIGN,Lost Associated Movements (Synkinesia),ok,,,1
+SIGN,Low Back Pain with Spinal Indentation,ok,,,1
+SIGN,Lusterless Cornea-Superficial Keratitis,ok,,,1
+SIGN,Lymphadenopathy,ok,,,1
+SIGN,Maldescended Testis-Cryptorchidism,ok,,,1
+SIGN,Malignant Melanoma,ok,,,1
+SIGN,Mass in the Femoral Triangle,ok,,,1
+SIGN,Mastoid Pain and Tenderness-Mastoiditis,ok,,,1
+SIGN,Meatal Stricture,ok,,,1
+SIGN,Medial Knee Pain-Anserine Bursitis,ok,,,1
+SIGN,Median,ok,,,1
+SIGN,Median Nerve Paralysis-Incomplete Flexion of Thumb,revisar,cortado: acababa en conector,,2
+SIGN,Mediastinal Crunch (Hamman Sign),ok,,,1
+SIGN,Meningitis,ok,,,1
+SIGN,Metatarsal Pain,ok,,,1
+SIGN,Mid or Late Systolic Click-Mitral Valve,ok,,,1
+SIGN,Midline Cervical Mass-Thyroglossal Cysts,ok,,,1
+SIGN,Mitral Regurgitation (MR),ok,,,1
+SIGN,Mitral Stenosis,ok,,,1
+SIGN,Mitral Valve Prolapse-Midsystolic Click,revisar,cortado: acababa en conector,,1
+SIGN,Monocular Field Defects-Optic Nerve,revisar,cortado: acababa en conector,,1
+SIGN,Mucous Patches (Condyloma Latum),ok,,,1
+SIGN,Muscle Contracture,ok,,,1
+SIGN,Muscle Cramps-Dystonias,ok,,,1
+SIGN,Muscle Hypertrophy,ok,,,1
+SIGN,Muscle Masses,ok,,,1
+SIGN,Muscle Tenderness,ok,,,1
+SIGN,Muscular Wasting,ok,,,1
+SIGN,Myelinated Nerve Fibers,ok,,,1
+SIGN,Myoclonus,ok,,,1
+SIGN,Myotonia,ok,,,1
+SIGN,Nail Pitting,ok,,,1
+SIGN,Narrowed Pulse Pressure,ok,,,1
+SIGN,Nasal Discharge-Acute Suppurative,ok,,,1
+SIGN,Nasal Discharge-Chronic Suppurative,ok,,,1
+SIGN,Nasal Polyps,ok,,,1
+SIGN,Neck Pain,ok,,,1
+SIGN,Necrotizing Ulcerative Stomatitis,revisar,paréntesis sin cerrar,,1
+SIGN,Nevi-Moles,ok,,,1
+SIGN,Nipple Discharge,revisar,llevaba otra frase pegada; paréntesis sobrante,,2
+SIGN,Nodular Vessels-Polyarteritis Nodosa,ok,,,1
+SIGN,Nodules in Finger Pads,ok,,,1
+SIGN,Noisy Joints,ok,,,1
+SIGN,Non-tender Intra-scrotal Swelling,ok,,,1
+SIGN,Non-tender Prostate Enlargement,ok,,,1
+SIGN,Nontender Testicular Swelling-Neoplasm,ok,,,1
+SIGN,Normal and Abnormal Hand Posture,ok,,,1
+SIGN,Normal Arterial Pulse,ok,,,1
+SIGN,Normal Breath Sounds-Vesicular Breathing,ok,,,1
+SIGN,Normal Dullness in the Lateral Decubitus,ok,,,1
+SIGN,Normal Pupillary Reaction,ok,,,1
+SIGN,Normally Colored Stools with Positive,ok,,,1
+SIGN,Notched Teeth-Hutchinson Teeth,ok,,,1
+SIGN,Nystagmus,ok,,,1
+SIGN,"Oral Vesicles, Blisters and Ulcers",ok,,,1
+SIGN,Orthostatic (Postural) Hypotension,ok,,,1
+SIGN,Orthostatic Tachycardia,ok,,,1
+SIGN,Ovarian Cyst,ok,,,1
+SIGN,Ovarian Mass,ok,,,1
+SIGN,Pain and Limping-Chronic Hip Dislocation,ok,,,1
+SIGN,Pain in the Heel,ok,,,1
+SIGN,Pain in the Hip,ok,,,1
+SIGN,Pain in the Upper Arm,ok,,,1
+SIGN,Pain in Ulnar Side of Hand-Ulnar Tunnel,ok,,,1
+SIGN,Painful Nodules in Shoulder Muscles,ok,,,1
+SIGN,Painful Palmar Swelling-Fracture of,revisar,cortado: acababa en conector,,1
+SIGN,Painful Swelling of,revisar,cortado: acababa en conector,,1
+SIGN,"Painless Limping-Osteonecrosis, Aseptic",ok,,,1
+SIGN,Painless Nodules Near Joints or Tendons,ok,,,1
+SIGN,Painless Nodules on the Interphalangeal,ok,,,1
+SIGN,Painless Unilateral Knee Deformity,ok,,,1
+SIGN,Pallor,revisar,cortado: acababa en conector,,4
+SIGN,"Pallor, but this blanches with pressure",revisar,"parece frase, no título; paréntesis sobrante",,1
+SIGN,Palmar Erythema,ok,,,1
+SIGN,Palpable Pleural Friction Rub,ok,,,1
+SIGN,Palpable Purpura-Vasculitis,ok,,,1
+SIGN,Papilledema,ok,,,1
+SIGN,Parotid Tumors,ok,,,1
+SIGN,Patent Ductus Arteriosus,ok,,,1
+SIGN,Pelvic Floor Relaxation,ok,,,1
+SIGN,Perforated Septum,ok,,,1
+SIGN,Perforated TM,ok,,,1
+SIGN,Pericardial Friction Rub,ok,,,1
+SIGN,Periodic,ok,,,1
+SIGN,Periodontitis,ok,,,1
+SIGN,Periorbital Masses-Mucocele and Pyocele,ok,,,1
+SIGN,Peritoneal Friction Rub,ok,,,1
+SIGN,Physiologic Elevated Temperature-Fever,ok,,,1
+SIGN,Pinna Neoplasms,ok,,,1
+SIGN,Plantar Wart (Verruca Pedis or Plantaris),ok,,,1
+SIGN,Plastic Induration of the Penis,revisar,paréntesis sin cerrar,,1
+SIGN,Plateau Pulse (Pulsus Tardus),ok,,,1
+SIGN,Positive Past Pointing Test,ok,,,1
+SIGN,Postcardiotomy Syndrome,ok,,,1
+SIGN,Posterior Lingual Mass-Lingual Thyroid,revisar,paréntesis sobrante,,2
+SIGN,Posttraumatic Ankle Pain,ok,,,1
+SIGN,Posttraumatic Calf Pain,ok,,,1
+SIGN,Posttraumatic Elbow Pain,ok,,,1
+SIGN,Posttraumatic Hip Pain,ok,,,1
+SIGN,Posttraumatic Knee Pain,ok,,,1
+SIGN,Posttraumatic Leg and Calf Pain,ok,,,1
+SIGN,Posttraumatic Mid-Back Pain,ok,,,1
+SIGN,Posttraumatic Neck Pain,ok,,,1
+SIGN,Posttraumatic Patellar Pain,ok,,,1
+SIGN,Prepuce-Phimosis,ok,,,1
+SIGN,Priapism,ok,,,1
+SIGN,Pseudopapilledema-Drusen Bodies,ok,,,1
+SIGN,Pterygium,ok,,,1
+SIGN,Pulmonic Regurgitation,ok,,,2
+SIGN,Pulseless Femoral,ok,,,1
+SIGN,Pulsus Alternans,ok,,,1
+SIGN,Pulsus Paradoxus,ok,,,1
+SIGN,Purulent Sputum,ok,,,1
+SIGN,Radial,revisar,calificador suelto: falta el sustantivo,,1
+SIGN,Rebound Tenderness (Blumberg Sign),ok,,,1
+SIGN,Rectal Prolapse,ok,,,1
+SIGN,Red or Bulging,ok,,,1
+SIGN,Red or Bulging TM,revisar,paréntesis sobrante,,5
+SIGN,Red Sclera-Scleritis and Episcleritis,ok,,,1
+SIGN,Relative Afferent Pupillary Defect,revisar,paréntesis sin cerrar,,2
+SIGN,Relaxed Sphincter-Lacerated Anal Muscles,ok,,,1
+SIGN,Resistance to Palpation-Abdominal Masses,ok,,,1
+SIGN,Resistance to Palpation-Involuntary,ok,,,1
+SIGN,Resistance to Palpation-Voluntary Rigidity,ok,,,1
+SIGN,Resonance,revisar,cortado: acababa en conector,,1
+SIGN,Resonance or Hyperresonance-Closed,ok,,,1
+SIGN,Resonance or Hyperresonance-Closed Pneumothorax,revisar,llevaba otra frase pegada,,2
+SIGN,Resonance or Hyperresonance-Open,ok,,,1
+SIGN,Resonance or Hyperresonance-Tension,ok,,,1
+SIGN,Restriction of All Shoulder Motions,ok,,,1
+SIGN,Restriction of All Shoulder Motions-Trauma and Arthritis,ok,,,1
+SIGN,Restriction of Motion,ok,,,1
+SIGN,Reticular Pattern-Livedo Reticularis,ok,,,1
+SIGN,Retinal Detachment,ok,,,1
+SIGN,Retinal Hemorrhage,ok,,,1
+SIGN,Retinal Spots,ok,,,1
+SIGN,Retracted TM,ok,,,1
+SIGN,Retropharyngeal Abscess,ok,,,1
+SIGN,Rhonchus,revisar,llevaba otra frase pegada; paréntesis sobrante,,3
+SIGN,Right Ventricular Impulse,revisar,cortado: acababa en conector,,2
+SIGN,Romberg Sign,ok,,,1
+SIGN,Rubs,ok,,,1
+SIGN,Rubs (Pleural Friction Rub),ok,,,1
+SIGN,Rubs (Pleural Friction Rub)) and Pericardial Rub (,ok,,,1
+SIGN,Sacral Pain,ok,,,1
+SIGN,Scalp Wounds,ok,,,1
+SIGN,Scars,ok,,,2
+SIGN,Sciatic Nerve Signs,ok,,,1
+SIGN,Scrotal Carcinoma,ok,,,1
+SIGN,Scrotal Edema,ok,,,1
+SIGN,Scrotal Gangrene,ok,,,1
+SIGN,Seborrheic Keratoses,ok,,,1
+SIGN,Second Heart Sound-Onset of Ventricular,ok,,,1
+SIGN,Sentinel Node (Virchow Node),ok,,,1
+SIGN,Septal Abscess,ok,,,1
+SIGN,Septal Hematoma,ok,,,1
+SIGN,Septic Thrombophlebitis of the Internal,ok,,,2
+SIGN,Shallow Abdominal Cavity,ok,,,1
+SIGN,Shallow Breathing-Hypopnea,ok,,,1
+SIGN,Shifted Borders of Cardiac Dullness,ok,,,1
+SIGN,Short Stature,ok,,,1
+SIGN,Shortened Palpebral Fissures-Fetal Alcohol,ok,,,1
+SIGN,Shortness,revisar,cortado: acababa en conector,,1
+SIGN,Shortness of Breath-Dyspnea,ok,,,4
+SIGN,Shoulder Weakness,ok,,,1
+SIGN,Sialorrhea (Ptyalism),ok,,,1
+SIGN,Signs of Meningeal Irritation,ok,,,1
+SIGN,Sinusitis and Ocular Palsies-Cavernous,ok,,,1
+SIGN,Sinusitis and Periorbital Edema-Orbital,ok,,,1
+SIGN,Sinusitis and Periorbital Edema-Periorbital,ok,,,1
+SIGN,"Skin Abscess-Furuncle, Carbuncle",ok,,,1
+SIGN,Skin or Nipple Retraction,ok,,,1
+SIGN,Skin Pallor and Coldness-Chronic Arterial,ok,,,1
+SIGN,Skin Tags (Acrochordons),ok,,,1
+SIGN,Small Testes-Atrophy,ok,,,1
+SIGN,Smooth Tongue-Glossitis,ok,,,1
+SIGN,Snoring,ok,,,1
+SIGN,Soft Corn,ok,,,1
+SIGN,Softening (Hegar Sign),ok,,,1
+SIGN,Spasticity,ok,,,1
+SIGN,Spondyloarthritis,ok,,,1
+SIGN,Stasis Dermatitis,revisar,llevaba otra frase pegada,,2
+SIGN,Stellate Figure-Arterial Spider,revisar,paréntesis sin cerrar,,1
+SIGN,Stereotypic Behaviors,ok,,,1
+SIGN,Sternocleidomastoid and Trapezius,ok,,,1
+SIGN,Sternocleidomastoid and Trapezius Weakness,revisar,cortado: acababa en conector,,1
+SIGN,Stevens-Johnson Syndrome,ok,,,1
+SIGN,Stiff Neck,ok,,,1
+SIGN,Stiffened Great Toe-Hallux Rigidus,ok,,,1
+SIGN,Striae,ok,,,1
+SIGN,Stridor,ok,,,2
+SIGN,Subacute Localized,ok,,,1
+SIGN,Subconjunctival Hemorrhage,ok,,,1
+SIGN,Subconjunctival Vessels,ok,,,1
+SIGN,Subcutaneous and Mediastinal Emphysema and Esophageal,ok,,,1
+SIGN,Subcutaneous Crepitus,ok,,,1
+SIGN,Sublingual Mass-Carcinoma,ok,,,1
+SIGN,Subungual,ok,,,2
+SIGN,Subungual Hemorrhage,ok,,,1
+SIGN,Sudden Onset of Loud Systolic Murmurs,ok,,,1
+SIGN,Superficial Thrombophlebitis,ok,,,1
+SIGN,Surgical And Traumatic Scars,ok,,,1
+SIGN,Sweet Syndrome,ok,,,1
+SIGN,Swelling of the Ankle Joint-Joint Effusion,ok,,,1
+SIGN,Swelling of the Cheek,ok,,,1
+SIGN,Swelling of the Dorsum,ok,,,1
+SIGN,Swelling of the Elbow,ok,,,1
+SIGN,Swelling of the Wrist,ok,,,1
+SIGN,Swollen Gums-Scurvy,ok,,,1
+SIGN,Tactile Extinction Test,ok,,,1
+SIGN,Tattoos,ok,,,1
+SIGN,Tender,ok,,,1
+SIGN,Tender Points,ok,,,1
+SIGN,Tender Points-Fibromyalgia,ok,,,2
+SIGN,Tender Prostatic Enlargement,ok,,,1
+SIGN,Tender Prostatic Enlargement-Acute,ok,,,2
+SIGN,Tender Prostatic Enlargement-Acute Prostatitis,ok,,,1
+SIGN,Tender Testicular Swelling-Acute Orchitis,ok,,,1
+SIGN,Tender Testicular Swelling-Testicular,ok,,,1
+SIGN,Tender Thyroid-Subacute Thyroiditis,revisar,cortado: acababa en conector,,1
+SIGN,Tenderness,ok,,,1
+SIGN,Tenderness-Endometritis,ok,,,1
+SIGN,Tetany,ok,,,1
+SIGN,Thenar Wasting,ok,,,1
+SIGN,Thickening of Skin-Callus,ok,,,1
+SIGN,Thrills,ok,,,1
+SIGN,"Thrush, Candidiasis",ok,,,1
+SIGN,Thyroid Bruit,ok,,,1
+SIGN,Thyroid Enlargement: Goiter,ok,,,1
+SIGN,Tics,ok,,,2
+SIGN,Tight Skin-Sclerodactyly,ok,,,1
+SIGN,Tight Sphincter-Apprehension,ok,,,1
+SIGN,Tight Sphincter-Fissure in Ano,ok,,,1
+SIGN,Tongue Deviation and Wasting,ok,,,1
+SIGN,Tongue Enlargement,ok,,,2
+SIGN,Tonic Pupil (Adie Pupil),ok,,,1
+SIGN,Tonsillar Enlargement-Hyperplasia,ok,,,1
+SIGN,Tracheal Displacement from Goiter,ok,,,1
+SIGN,Transverse Furrow in Nail Plate-Beau Line,ok,,,1
+SIGN,Tremors,ok,,,2
+SIGN,Tricuspid Regurgitation (TR),ok,,,1
+SIGN,Tricuspid Stenosis,ok,,,1
+SIGN,Trigger Points-Myofascial Pain,ok,,,1
+SIGN,Triple Rhythms and Gallops,ok,,,1
+SIGN,Trophic Disturbances,ok,,,1
+SIGN,Tubal Mass-Ectopic Pregnancy,ok,,,1
+SIGN,Twice Peaking (Dicrotic) Pulses,ok,,,1
+SIGN,Tympanitic Percussion-Tympanites,ok,,,1
+SIGN,Ulcer,ok,,,2
+SIGN,Ulcer of the Sole-Perforating Neurotrophic,ok,,,1
+SIGN,Ulnar Nerve Paralysis-Adductor Weakness,ok,,,1
+SIGN,Unequal Pupils-Anisocoria,ok,,,1
+SIGN,Unilateral Miosis-Horner Syndrome,ok,,,1
+SIGN,Unreactive Pupil-Pupillary Paralysis,ok,,,1
+SIGN,Urethral Discharge,ok,,,2
+SIGN,Urethral Meatus Abnormalities,ok,,,1
+SIGN,Urethral Stricture,ok,,,1
+SIGN,Urticaria,ok,,,1
+SIGN,Uterine Enlargement-Leiomyoma (Fibroid),ok,,,1
+SIGN,Uterine Enlargement-Neoplasm of,revisar,cortado: acababa en conector,,1
+SIGN,Uterine Enlargement-Pregnancy,ok,,,1
+SIGN,Uvula Edema,ok,,,1
+SIGN,Vaginal,ok,,,1
+SIGN,Vaginal Discharge and Vaginitis,ok,,,1
+SIGN,Vaginal Ulcers,ok,,,1
+SIGN,Valvular Aortic Stenosis,ok,,,2
+SIGN,Valvular Pulmonic Stenosis,ok,,,1
+SIGN,Varying Squint Angle-Noncomitant,ok,,,1
+SIGN,Venous Engorgement,ok,,,1
+SIGN,Venous Hum,ok,,,1
+SIGN,Venous Occlusion,ok,,,1
+SIGN,Ventricular Septal Defect,ok,,,1
+SIGN,Vesicles on the TM,ok,,,1
+SIGN,Vestibule Folliculitis,ok,,,1
+SIGN,Vestibule Furunculosis,ok,,,1
+SIGN,Violaceous Lids,ok,,,1
+SIGN,Visible Peristalsis,ok,,,1
+SIGN,Visible Pulsations,ok,,,1
+SIGN,Visual Field Loss-Optic Nerve (CN II),ok,,,1
+SIGN,Vitiligo,ok,,,1
+SIGN,Voice Sounds,ok,,,1
+SIGN,Vulvar Inflammation-Vulvitis,ok,,,1
+SIGN,Vulvar Rash,ok,,,1
+SIGN,"Vulvar Swelling, Masses, and Growths",ok,,,1
+SIGN,Weak Elbow Flexion,ok,,,1
+SIGN,"Weakness-Muscle Paralysis, Paresis",revisar,cortado: acababa en conector,,1
+SIGN,Weight Gain,ok,,,1
+SIGN,"Weight Gain, but more commonly the exact",revisar,"parece frase, no título; paréntesis sobrante",,1
+SIGN,Weight Loss,ok,,,1
+SIGN,Wheezes,ok,,,1
+SIGN,Wide Stance,ok,,,1
+SIGN,Widened Palpebral Fissures,ok,,,1
+SIGN,Widened Pulse Pressure,ok,,,1
+SIGN,Xanthomas,ok,,,1
+SIGN,Xerostomia,ok,,,1
+SIGN,"Xerostomia, Sjögren Syndrome",ok,,,1
+SIGN,Yellow Lid Plaques-Xanthelasma,ok,,,1
+SIGN,Yellow Sclera-Icterus and Fat,ok,,,1
+SYNDROME,(Osteitis Fibrosa Cystica),ok,,,1
+SYNDROME,Abdominal,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Abdominal Pain,ok,,,2
+SYNDROME,Abdominal Pain and Pallor,revisar,llevaba otra frase pegada,,2
+SYNDROME,Abdominal Pain and Pallor-Follicular,ok,,,1
+SYNDROME,Abdominal Pain and Pallor-Follicular and Corpus Luteum,ok,,,1
+SYNDROME,Abdominal Pain and Pallor-Follicular and Corpus Luteum Hemorrhage,ok,,,2
+SYNDROME,Abdominal Wall Pain Syndromes,ok,,,1
+SYNDROME,Aberrant Right Subclavian Artery,ok,,,1
+SYNDROME,Abnormal Body,ok,,,1
+SYNDROME,Abnormal Body Proportions: Marfan,ok,,,1
+SYNDROME,Abuse and Neglect,ok,,,1
+SYNDROME,Acrocyanosis,ok,,,1
+SYNDROME,Acromegaly and Gigantism,ok,,,3
+SYNDROME,Acute,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Acute Abdominal Pain,ok,,,1
+SYNDROME,Acute Abdominal Pain-Acute,ok,,,1
+SYNDROME,Acute Abdominal Pain-Acute Peritonitis,revisar,paréntesis sobrante,,2
+SYNDROME,"Acute Abdominal Pain-Acute Peritonitis, 499-502; and Pelvic Pain",ok,,,1
+SYNDROME,Acute Bloody Diarrhea,ok,,,1
+SYNDROME,Acute Bronchitis,ok,,,1
+SYNDROME,Acute Coronary Syndromes: Unstable,ok,,,1
+SYNDROME,Acute Epigastric Pain,ok,,,1
+SYNDROME,Acute External Otitis,ok,,,1
+SYNDROME,Acute Extremity Artery Obstruction,ok,,,1
+SYNDROME,Acute Hepatic Vein Thrombosis,ok,,,1
+SYNDROME,Acute Laryngeal Obstruction,ok,,,1
+SYNDROME,Acute Laryngitis,ok,,,1
+SYNDROME,Acute LLQ Pain,ok,,,1
+SYNDROME,Acute LUQ Pain,ok,,,1
+SYNDROME,Acute Mastoiditis,ok,,,1
+SYNDROME,Acute Nonbloody Diarrhea,ok,,,1
+SYNDROME,Acute Otitis Media,revisar,cortado: acababa en conector,,1
+SYNDROME,Acute Otitis Media with Effusion,ok,,,2
+SYNDROME,Acute Otitis Media with Effusion (Serous Otitis Media),ok,,,1
+SYNDROME,Acute Pharyngitis,ok,,,1
+SYNDROME,Acute Renal,ok,,,2
+SYNDROME,Acute Renal Failure,ok,,,1
+SYNDROME,Acute Renal Failure and Chapter 12,ok,,,1
+SYNDROME,Acute RLQ Pain,ok,,,2
+SYNDROME,Acute RUQ Pain,revisar,cortado: acababa en conector,,3
+SYNDROME,Acute Suppurative Otitis Media,ok,,,1
+SYNDROME,Acute Suprapubic Pain,ok,,,1
+SYNDROME,Adjustment Disorders,ok,,,1
+SYNDROME,Alcohol-Related Illness,ok,,,2
+SYNDROME,Alexia and Agraphia,ok,,,1
+SYNDROME,Alopecia Areata,ok,,,1
+SYNDROME,Amyloidosis,ok,,,1
+SYNDROME,Amyotrophic Lateral Sclerosis,ok,,,1
+SYNDROME,Anaphylactic Shock,ok,,,1
+SYNDROME,Anemia,ok,,,1
+SYNDROME,Angina Pectoris,ok,,,1
+SYNDROME,Anterior Ischemic Optic,ok,,,1
+SYNDROME,Anterior Ischemic Optic Neuropathy (AION,revisar,llevaba otra frase pegada; paréntesis sobrante,,1
+SYNDROME,Antiphospholipid Syndrome,ok,,,1
+SYNDROME,Aortic Dissection,ok,,,1
+SYNDROME,Arterial Aneurysms,ok,,,1
+SYNDROME,Arteriovenous Fistula: Acquired,revisar,llevaba otra frase pegada,,3
+SYNDROME,Arthritis-Inflammatory,ok,,,1
+SYNDROME,Aspiration Pneumonia,ok,,,1
+SYNDROME,Asthma,ok,,,1
+SYNDROME,Atheroembolic Disease,revisar,paréntesis sobrante,,3
+SYNDROME,Atrial Fibrillation,ok,,,1
+SYNDROME,Atrial Flutter,ok,,,1
+SYNDROME,Autonomic Neuropathy,ok,,,1
+SYNDROME,Autosensitization Dermatitis,ok,,,1
+SYNDROME,Bacterial Meningitis,ok,,,2
+SYNDROME,Benign,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Benign Prostatic Hyperplasia,ok,,,2
+SYNDROME,Body Piercing,ok,,,1
+SYNDROME,Bony Nodules (Occupational),ok,,,3
+SYNDROME,Bony Swellings,ok,,,1
+SYNDROME,Botulism,ok,,,1
+SYNDROME,Breast Mass,ok,,,1
+SYNDROME,Calciphylaxis,ok,,,1
+SYNDROME,Cardiac Dilatation,ok,,,1
+SYNDROME,Cardiac Hypertrophy,ok,,,1
+SYNDROME,Carotodynia,ok,,,1
+SYNDROME,Cavernous Sinus Thrombosis,ok,,,1
+SYNDROME,Cellulitis,ok,,,1
+SYNDROME,Chronic,revisar,calificador suelto: falta el sustantivo,,3
+SYNDROME,Chronic Abdominal Pain,ok,,,1
+SYNDROME,Chronic Bronchitis,ok,,,1
+SYNDROME,Chronic Constant Diarrhea,ok,,,1
+SYNDROME,Chronic Cough,ok,,,1
+SYNDROME,Chronic Daily Headache,ok,,,1
+SYNDROME,Chronic Diarrhea,revisar,cortado: acababa en conector,,2
+SYNDROME,Chronic Diarrhea and Malabsorption,ok,,,1
+SYNDROME,Chronic Epigastric Pain,ok,,,1
+SYNDROME,Chronic External Otitis,ok,,,1
+SYNDROME,Chronic Fatigue Syndrome,ok,,,1
+SYNDROME,Chronic Intermittent Diarrhea,ok,,,2
+SYNDROME,Chronic Kidney,ok,,,1
+SYNDROME,Chronic Kidney Disease and Chronic,ok,,,1
+SYNDROME,Chronic Kidney Disease and Chronic Renal Failure,ok,,,1
+SYNDROME,Chronic Laryngitis,ok,,,1
+SYNDROME,Chronic Painless Enlargement of,revisar,cortado: acababa en conector,,1
+SYNDROME,Chronic Portal Vein Obstruction,ok,,,1
+SYNDROME,Chronic Prostatitis,ok,,,1
+SYNDROME,Chronic RUQ,ok,,,1
+SYNDROME,Chronic RUQ Pain,ok,,,1
+SYNDROME,Chronic Suppurative Otitis Media,ok,,,1
+SYNDROME,Chronic Vegetative State,ok,,,1
+SYNDROME,Cluster Headache,ok,,,1
+SYNDROME,Coarctation of the Aorta,ok,,,1
+SYNDROME,Coma,ok,,,1
+SYNDROME,Common Variable Immunodeficiency,ok,,,1
+SYNDROME,Compartment Syndrome,revisar,llevaba otra frase pegada,,2
+SYNDROME,Complex Regional Pain Syndrome,ok,,,2
+SYNDROME,Compression Neuropathies,ok,,,1
+SYNDROME,Congenital Heart Disease,ok,,,1
+SYNDROME,Congestive Heart Failure (CHF),ok,,,1
+SYNDROME,Constrictive Pericarditis,ok,,,1
+SYNDROME,Corticosteroid Excess,ok,,,1
+SYNDROME,Cutaneous Nevi-Moles,ok,,,2
+SYNDROME,Cutaneous T-Cell Lymphoma,ok,,,1
+SYNDROME,Death,ok,,,1
+SYNDROME,Deep Vein Thrombosis (DVT),ok,,,1
+SYNDROME,Delirium,ok,,,2
+SYNDROME,Dementia,ok,,,1
+SYNDROME,Depression,ok,,,1
+SYNDROME,Dermatomyositis,ok,,,1
+SYNDROME,Difficulty Swallowing,ok,,,1
+SYNDROME,Difficulty Swallowing-Dysphagia,ok,,,2
+SYNDROME,Digital Gangrene,ok,,,1
+SYNDROME,Disorders of Language,ok,,,1
+SYNDROME,Disseminated,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Dizziness,ok,,,2
+SYNDROME,Down Syndrome,ok,,,1
+SYNDROME,Dysthymia,ok,,,1
+SYNDROME,Dystonias,ok,,,3
+SYNDROME,Eating Disorders,ok,,,1
+SYNDROME,Ectopic Pregnancy,ok,,,2
+SYNDROME,Emphysema,ok,,,1
+SYNDROME,Endemic North American Fever,ok,,,1
+SYNDROME,Endemic North American Fever Syndromes,revisar,llevaba otra frase pegada,,2
+SYNDROME,Endocarditis (NBTE),ok,,,1
+SYNDROME,Endometrial Cancer,ok,,,1
+SYNDROME,Endometriosis,ok,,,1
+SYNDROME,Epidural Hematoma,ok,,,1
+SYNDROME,Epidural Spinal Cord Compression,ok,,,1
+SYNDROME,Epigastric Hernia,revisar,paréntesis sin cerrar,,1
+SYNDROME,Epigastric Masses,ok,,,1
+SYNDROME,Erectile Dysfunction: Impotence,ok,,,1
+SYNDROME,Erysipelas,ok,,,2
+SYNDROME,Erythema Multiforme,ok,,,1
+SYNDROME,Erythema Nodosum,revisar,llevaba otra frase pegada,,2
+SYNDROME,Erythrocytosis-Polycythemia,ok,,,1
+SYNDROME,Esophageal,revisar,calificador suelto: falta el sustantivo,,2
+SYNDROME,Esophageal Pain,revisar,cortado: acababa en conector,,1
+SYNDROME,Esophageal Pain and Dysphagia,ok,,,2
+SYNDROME,Facial,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Facial Pain-Acute Suppurative,ok,,,1
+SYNDROME,Facial Pain-Trigeminal Neuralgia,revisar,paréntesis sin cerrar,,2
+SYNDROME,Facial Pain-Trigeminal Neuralgia (Tic Douloureux),ok,,,1
+SYNDROME,Factitious Disorders,revisar,llevaba otra frase pegada,,3
+SYNDROME,Fecal Incontinence,ok,,,1
+SYNDROME,Fever in Returning Travelers,ok,,,1
+SYNDROME,Fever of Unknown Origin (FUO),ok,,,1
+SYNDROME,Fibromyalgia,ok,,,1
+SYNDROME,Folliculitis,ok,,,1
+SYNDROME,Fractures,ok,,,1
+SYNDROME,Galactorrhea,ok,,,1
+SYNDROME,Gastric Distention,ok,,,1
+SYNDROME,Generalized,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Generalized Anxiety Disorder,ok,,,1
+SYNDROME,Generalized Seizure,ok,,,1
+SYNDROME,Giant Cell Arteritis,ok,,,1
+SYNDROME,Glaucoma,ok,,,1
+SYNDROME,Goiter,ok,,,1
+SYNDROME,Growth Retardation-Cystic Fibrosis,ok,,,1
+SYNDROME,Gynecomastia,ok,,,1
+SYNDROME,Hashimoto Thyroiditis,ok,,,1
+SYNDROME,Headache,ok,,,2
+SYNDROME,Headache Present on Awakening,ok,,,1
+SYNDROME,Hearing Loss,ok,,,2
+SYNDROME,Heat Exhaustion (Heat Prostration),ok,,,1
+SYNDROME,Heat Stroke,ok,,,1
+SYNDROME,Hematuria,ok,,,1
+SYNDROME,Hemisection of the Spinal Cord,ok,,,1
+SYNDROME,Hemorrhagic Stroke: See Headache,ok,,,1
+SYNDROME,Hepatopulmonary Syndrome,ok,,,1
+SYNDROME,Hepatopulmonary Syndrome seen in patients,revisar,"cortado: acababa en conector; parece frase, no título; paréntesis sobrante",,1
+SYNDROME,Herniated Intervertebral Disk,ok,,,1
+SYNDROME,Hidradenitis Suppurative,ok,,,1
+SYNDROME,HIV and AIDS,ok,,,1
+SYNDROME,Homelessness,ok,,,1
+SYNDROME,Horner Syndrome,ok,,,1
+SYNDROME,Hyperparathyroidism,ok,,,2
+SYNDROME,Hypersensitivity Pneumonitis,ok,,,1
+SYNDROME,Hypertension,ok,,,1
+SYNDROME,Hyperthyroidism,revisar,llevaba otra frase pegada; paréntesis sobrante,,4
+SYNDROME,Hypertrophic Cardiomyopathy,ok,,,1
+SYNDROME,Hypoglycemia,ok,,,2
+SYNDROME,"Hypomania, Mania, Bipolar",ok,,,1
+SYNDROME,Hypoparathyroidism,ok,,,1
+SYNDROME,Hypopituitarism,ok,,,1
+SYNDROME,Hypotension,ok,,,1
+SYNDROME,Hypothermia,ok,,,1
+SYNDROME,Hypothyroidism,ok,,,1
+SYNDROME,Ichthyosis,ok,,,1
+SYNDROME,Illiteracy,ok,,,1
+SYNDROME,Immune Thrombocytopenic Purpura,ok,,,1
+SYNDROME,Impulse Control Disorders,ok,,,1
+SYNDROME,Incisional Hernia,ok,,,1
+SYNDROME,Infectious Exanthems,revisar,paréntesis sobrante,,2
+SYNDROME,Infective Endocarditis,ok,,,1
+SYNDROME,Infertility,ok,,,1
+SYNDROME,Inguinal Hernia,ok,,Inguinal Hernias,2
+SYNDROME,Institutionalization,ok,,,1
+SYNDROME,Insufficiency,ok,,,1
+SYNDROME,Interstitial Cystitis,ok,,,1
+SYNDROME,Interstitial Lung Disease,ok,,,1
+SYNDROME,Interstitial Nephritis,ok,,,1
+SYNDROME,Intracerebral Hemorrhage,ok,,,1
+SYNDROME,Irregular Breathing-Sleep,ok,,,1
+SYNDROME,Irregular Breathing-Sleep Apnea,revisar,llevaba otra frase pegada; paréntesis sobrante,,5
+SYNDROME,Ischemic Stroke,ok,,,1
+SYNDROME,Isolated Systolic Hypertension,ok,,,1
+SYNDROME,Isolation,ok,,,1
+SYNDROME,IVC Obstruction,ok,,,1
+SYNDROME,Klinefelter Syndrome,ok,,,2
+SYNDROME,Laryngeal Dyspnea,ok,,,2
+SYNDROME,LLQ Masses,revisar,paréntesis sobrante,,2
+SYNDROME,LLQ Masses occurs primarily in children,revisar,"parece frase, no título; paréntesis sobrante",,1
+SYNDROME,Loin Pain,ok,,,1
+SYNDROME,Loin Pain-Hematuria Syndrome-IgA,ok,,,1
+SYNDROME,"Loin Pain-Hematuria Syndrome-IgA Nephropathy, for further discussion",revisar,"parece frase, no título",,1
+SYNDROME,Loss of Balance and Falls,ok,,,1
+SYNDROME,Lumbosacral Strain,ok,,,1
+SYNDROME,Lung Abscess,revisar,llevaba otra frase pegada,,3
+SYNDROME,"Lung Abscess, acute dissection of the thoracic",revisar,"parece frase, no título; paréntesis sobrante",,1
+SYNDROME,Lupus Erythematosus,ok,,,1
+SYNDROME,Lymphedema,ok,,,1
+SYNDROME,Malignant (Necrotizing) External,ok,,,1
+SYNDROME,Malignant Hypertension,ok,,,1
+SYNDROME,Marfan Syndrome,revisar,llevaba otra frase pegada,,2
+SYNDROME,Mass Above the Inguinal Ligament,ok,,,1
+SYNDROME,Mediastinal Emphysema,ok,,,2
+SYNDROME,Mediastinal Tumors,ok,,,3
+SYNDROME,Menstrual Disorders,ok,,,1
+SYNDROME,Metabolic Syndrome,ok,,,1
+SYNDROME,Metastasis to Bone,ok,,,1
+SYNDROME,Metastatic Cancer,ok,,,1
+SYNDROME,Migraine,ok,,,1
+SYNDROME,Mild Cognitive Impairment,ok,,,1
+SYNDROME,Minimally Conscious State,ok,,,1
+SYNDROME,Monarticular Arthritis,ok,,,1
+SYNDROME,Multiple Sclerosis,ok,,,1
+SYNDROME,Myasthenia Gravis,revisar,llevaba otra frase pegada,,2
+SYNDROME,Myiasis,ok,,,1
+SYNDROME,Myofascial Pain Syndrome,ok,,,1
+SYNDROME,Myofascial Pain Syndrome may antedate other,revisar,"parece frase, no título; paréntesis sobrante",,1
+SYNDROME,Narcolepsy,ok,,,1
+SYNDROME,Necrotizing Soft-Tissue Infection,ok,,Necrotizing Soft-Tissue Infections,2
+SYNDROME,Neuroleptic Malignant Syndrome,ok,,,1
+SYNDROME,Neuropathy (AION),ok,,,1
+SYNDROME,Neurosyphilis,ok,,,1
+SYNDROME,Noisy Tympanites with Colic,revisar,cortado: acababa en conector,,1
+SYNDROME,Numb Chin Syndrome,revisar,paréntesis sobrante,,2
+SYNDROME,Obesity,ok,,,1
+SYNDROME,Obsessive-Compulsive Disorder,revisar,llevaba otra frase pegada,,1
+SYNDROME,Oligoarthritis and Polyarthritis,ok,,,1
+SYNDROME,Orbital Cellulitis,revisar,llevaba otra frase pegada; paréntesis sobrante,,6
+SYNDROME,Orbital Cellulitis and Fig. 7-41D are present without obvious,revisar,"parece frase, no título; paréntesis sobrante",,1
+SYNDROME,Osteogenesis Imperfecta,ok,,,1
+SYNDROME,Osteomalacia,ok,,,1
+SYNDROME,Osteomyelitis,ok,,,1
+SYNDROME,Osteoporosis,ok,,,1
+SYNDROME,Other Abdominal Masses,ok,,,2
+SYNDROME,Other Abdominal Masses. Hernias are protrusions,revisar,"cortado: acababa en conector; parece frase, no título; paréntesis sobrante",,1
+SYNDROME,Ovarian Cancer,ok,,,1
+SYNDROME,Ovarian Cysts,revisar,llevaba otra frase pegada,,2
+SYNDROME,Ovarian Torsion,ok,,,1
+SYNDROME,Paget Disease,ok,,,1
+SYNDROME,Panniculitis,ok,,,1
+SYNDROME,Paradoxical Vocal Cord Motion,ok,,,1
+SYNDROME,Paranasal Sinusitis,ok,,,1
+SYNDROME,Paraparesis,ok,,,1
+SYNDROME,Parkinson's Disease,revisar,cortado: acababa en conector,,1
+SYNDROME,Paroxysmal,ok,,,2
+SYNDROME,"Paroxysmal Flushing, Blanching",revisar,cortado: acababa en conector,,1
+SYNDROME,Paroxysmal Supraventricular (Atrial),ok,,,1
+SYNDROME,Partial Seizures,ok,,,1
+SYNDROME,Patients with Red Eye,revisar,paréntesis sobrante,,3
+SYNDROME,"Patients with Red Eye, and Plate 17",ok,,,1
+SYNDROME,"Patients with Red Eye, Keratoconjunctivitis sicca",ok,,,1
+SYNDROME,Pericardial Tamponade,ok,,,1
+SYNDROME,Periorbital Abscess,ok,,,1
+SYNDROME,Peripheral Neuropathy,ok,,,1
+SYNDROME,Pleural Effusion,ok,,,1
+SYNDROME,Pleuritis and Pleurisy,ok,,,1
+SYNDROME,Pneumonia,ok,,,1
+SYNDROME,Pneumothorax,ok,,,2
+SYNDROME,Poliomyelitis and West Nile,ok,,,1
+SYNDROME,Polymyalgia Rheumatica,ok,,,1
+SYNDROME,Posterior Column Disease,ok,,,1
+SYNDROME,Postherpetic Neuralgia,ok,,,1
+SYNDROME,Postpartum Thyroiditis,ok,,,1
+SYNDROME,Premature Beats,ok,,,1
+SYNDROME,Proctalgia Fugax,ok,,,1
+SYNDROME,Prolactinoma,ok,,,1
+SYNDROME,Prolonged Grieving,ok,,,1
+SYNDROME,Prostate Cancer,ok,,,1
+SYNDROME,Psychosis,ok,,,3
+SYNDROME,Psychosis: Schizophrenia,ok,,,1
+SYNDROME,Pulmonary Artery Embolism,revisar,cortado: acababa en conector,,1
+SYNDROME,Pulmonary Edema,ok,,,2
+SYNDROME,Pulmonary Embolism,ok,,,1
+SYNDROME,Pulmonary-Renal Syndromes,ok,,,1
+SYNDROME,"Purpura, Abdominal Pain",revisar,cortado: acababa en conector,,1
+SYNDROME,Pyoderma Gangrenosum,ok,,,1
+SYNDROME,Quadriparesis,ok,,,1
+SYNDROME,Raynaud,ok,,,1
+SYNDROME,Raynaud Disease and Phenomenon,ok,,,2
+SYNDROME,Raynaud Disease and Phenomenon for,revisar,cortado: acababa en conector,,1
+SYNDROME,Reactive Arthritis (Reiter Syndrome),ok,,,1
+SYNDROME,Recurrent Abdominal,ok,,,1
+SYNDROME,Recurrent Abdominal Pain,ok,,,1
+SYNDROME,Recurring Inflammation-Relapsing,ok,,,1
+SYNDROME,Red Burning,ok,,,1
+SYNDROME,Restless Legs Syndrome,ok,,,1
+SYNDROME,Restrictive Cardiomyopathy,ok,,,1
+SYNDROME,Rhinosinusitis,ok,,,1
+SYNDROME,Rickesttsial,ok,,,1
+SYNDROME,RLQ Masses,ok,,,1
+SYNDROME,Ruptured Ectopic Pregnancy,ok,,,1
+SYNDROME,RUQ Mass,ok,,,1
+SYNDROME,RUQ Mass for a discussion of renal enlargement,revisar,"parece frase, no título",,1
+SYNDROME,Salivary Calculus-Sialolithiasis,ok,,,1
+SYNDROME,Sarcoidosis,ok,,,3
+SYNDROME,Sciatica,ok,,,3
+SYNDROME,Scleroderma,ok,,,1
+SYNDROME,Secondary Generalized Seizure,ok,,,1
+SYNDROME,Seizures,ok,,,1
+SYNDROME,Septic Shock,ok,,,1
+SYNDROME,Serum Sickness,ok,,,1
+SYNDROME,Severe Acute Respiratory Syndrome,ok,,,1
+SYNDROME,Sexually Transmitted Infections,ok,,,2
+SYNDROME,Silent Tympanites without Colic,revisar,cortado: acababa en conector,,1
+SYNDROME,Sinus Rhythm with Second-Degree,ok,,,1
+SYNDROME,Sinusitis and Ocular Palsies,ok,,,1
+SYNDROME,Sinusitis and Ocular Palsies-Cavernous Sinus,ok,,,1
+SYNDROME,Sinusitis and Ocular Palsies-Cavernous Sinus Thrombosis,ok,,,1
+SYNDROME,Six-Dermatome Pain,ok,,,1
+SYNDROME,Six-Dermatome Pain with Dysphagia,ok,,,1
+SYNDROME,Six-Dermatome Pain-Esophageal,ok,,,1
+SYNDROME,Sjögren,ok,,,1
+SYNDROME,Sleep-Disordered,ok,,,1
+SYNDROME,Solitary Thyroid Nodule,ok,,,2
+SYNDROME,Somatoform and Related,ok,,,1
+SYNDROME,Spider Bites,ok,,,1
+SYNDROME,Spinal Stenosis,ok,,,1
+SYNDROME,Splenomegaly,ok,,,1
+SYNDROME,Spondylitis,ok,,,1
+SYNDROME,Spontaneous Esophageal Rupture,ok,,,1
+SYNDROME,Strangulated Hernia,ok,,,1
+SYNDROME,Subarachnoid Hemorrhage,ok,,,1
+SYNDROME,Subdural Hematoma,ok,,,1
+SYNDROME,Subphrenic,revisar,calificador suelto: falta el sustantivo,,1
+SYNDROME,Subphrenic Diseases,ok,,,1
+SYNDROME,Sudden Cardiac,ok,,,1
+SYNDROME,Sudden Cardiac Death-Cardiac,ok,,,1
+SYNDROME,Sudden Unexplained Death,revisar,cortado: acababa en conector,,1
+SYNDROME,Sudden Visual Loss,revisar,llevaba otra frase pegada; paréntesis sobrante,,3
+SYNDROME,Suicide,ok,,,1
+SYNDROME,Suppurative Lymphadenopathy,ok,,,1
+SYNDROME,Suppurative Paranasal,ok,,,1
+SYNDROME,Suppurative Paranasal Sinusitis,revisar,llevaba otra frase pegada,,4
+SYNDROME,Suprapubic and Pelvic Masses,ok,,,1
+SYNDROME,SVC Obstruction-SVC Syndrome,ok,,,1
+SYNDROME,Swimmer's Eruption,ok,,,1
+SYNDROME,Syncope,ok,,,1
+SYNDROME,Syndrome-Reflex,ok,,,1
+SYNDROME,Syphilis,ok,,,2
+SYNDROME,Syringomyelia and Chiari,ok,,,1
+SYNDROME,Tension-Type Headache,ok,,,1
+SYNDROME,Tetanus,ok,,,1
+SYNDROME,Third-Degree (Complete) AV Block,ok,,,1
+SYNDROME,Thoracic Outlet Syndromes,ok,,,1
+SYNDROME,Thromboangiitis Obliterans,revisar,paréntesis sin cerrar,,1
+SYNDROME,Thromboangiitis Obliterans (Buerger Disease) for further,revisar,"parece frase, no título",,1
+SYNDROME,Thrombocytopenia,ok,,,1
+SYNDROME,Thrombocytosis,ok,,,1
+SYNDROME,Thrombophilia,ok,,,1
+SYNDROME,Thrombosis of the Axillary Vein,ok,,,1
+SYNDROME,Thunderclap Headache,ok,,,1
+SYNDROME,Thyroiditis,ok,,,2
+SYNDROME,TMJ Pain,ok,,,4
+SYNDROME,Torticollis (Wryneck),ok,,,1
+SYNDROME,Torticollis (Wryneck). for discussion of goiters and thyroid nodules,revisar,"parece frase, no título",,1
+SYNDROME,Tourette Syndrome,ok,,,1
+SYNDROME,Toxic Shock Syndrome,ok,,,1
+SYNDROME,Tracheal or Bronchial Obstruction,ok,,,1
+SYNDROME,Traction,ok,,,1
+SYNDROME,Transient Ischemic Attack,ok,,,1
+SYNDROME,Transient Weakness of Ocular,ok,,,1
+SYNDROME,Transient Weakness of Ocular Muscles,ok,,,1
+SYNDROME,Trigeminal Neuralgia-Tic,ok,,,1
+SYNDROME,Ulceroglandular Syndromes,ok,,,1
+SYNDROME,Umbilical Hernia,ok,,,1
+SYNDROME,Urethritis,ok,,,1
+SYNDROME,Urinary Incontinence,ok,,,1
+SYNDROME,Urinary Retention,ok,,,1
+SYNDROME,Urinary Tract Infection,revisar,llevaba otra frase pegada,,2
+SYNDROME,Uroepithelial Cancer,revisar,paréntesis sin cerrar,,1
+SYNDROME,Urolithiasis,ok,,,1
+SYNDROME,Uveal Tract Inflammation-Uveitis,ok,,,1
+SYNDROME,Valvular Heart Disease,ok,,,1
+SYNDROME,Varicose Veins,ok,,,1
+SYNDROME,Vascular Disease,ok,,,1
+SYNDROME,Vasculitis,ok,,,1
+SYNDROME,Venous Stasis,ok,,,1
+SYNDROME,Ventricular Fibrillation (VF),ok,,,1
+SYNDROME,Ventricular Tachycardia (VT),ok,,,1
+SYNDROME,Vertigo,ok,,,3
+SYNDROME,Visceral Enlargement,ok,,,1
+SYNDROME,Vitamin D Deficiency,ok,,,1
+SYNDROME,Warfarin Skin Necrosis-Protein C,ok,,,1
