@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:12776965'
+clave_bibtex: holten2003
+tipo: articulo
+titulo: 'Diagnosing the patient with abdominal pain and altered bowel habits: is it irritable bowel syndrome?'
+autores:
+  - Holten KB
+  - Wetherington A
+  - Bankston L
+publicacion: Am Fam Physician
+anio: 2003
+volumen: 67
+paginas: 2157-62
+
+identificadores:
+  pmid: 12776965
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-20
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'

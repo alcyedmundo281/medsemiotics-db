@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:25083055'
+clave_bibtex: bellini2014
+tipo: articulo
+titulo: 'Irritable bowel syndrome: a disease still searching for pathogenesis, diagnosis and therapy'
+autores:
+  - Bellini M
+  - Gambaccini D
+  - Stasi C
+  - Urbano MT
+  - Marchi S
+  - Usai-Satta P
+publicacion: World J Gastroenterol
+anio: 2014
+volumen: 20
+paginas: 8807-20
+
+identificadores:
+  pmid: 25083055
+  doi: 10.3748/wjg.v20.i27.8807
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-20
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'el DOI no resuelve en CrossRef (HTTP Error 404: Not Found); PubMed sí lo registra'

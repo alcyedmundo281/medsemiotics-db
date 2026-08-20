@@ -97,15 +97,26 @@ print(f'  retractado: {retractado}   errata: {errata or "no"}')
 if err_titulo:
     print(f'  la errata corrige: {err_titulo}')
 
-cr_ok, igual = False, False
+# Sin DOI no hay nada que resolver. Consultar CrossRef con una cadena vacía
+# devuelve algo y el registro acababa diciendo «crossref: true» sobre un DOI
+# que no existe: una verificación falsa es peor que ninguna.
+cr_ok, igual, cr_nota = False, False, None
+if not doi:
+    cr_nota = 'sin DOI en PubMed: la verificación CrossRef no aplica'
+    print(f'  CrossRef: omitido ({cr_nota})')
 try:
+    if not doi:
+        raise ValueError('sin doi')
     m = crossref(doi)
     cr_ok = True
     t_cr = (m.get('title') or [''])[0]
     norm = lambda s: re.sub(r'[^a-z0-9]', '', (s or '').lower())
     igual = norm(t_cr)[:60] == norm(d['title'])[:60]
     print(f'  CrossRef resuelve: sí   título coincide: {igual}')
+except ValueError:
+    pass
 except Exception as e:
+    cr_nota = f'el DOI no resuelve en CrossRef ({str(e)[:40]}); PubMed sí lo registra'
     print(f'  CrossRef: {str(e)[:60]}')
 
 L = ['# Registro de referencia del índice. Verificado contra PubMed y CrossRef.',
@@ -124,7 +135,7 @@ L += [f'publicacion: {esc(d.get("source", ""))}',
       '',
       'identificadores:',
       f'  pmid: {PMID}',
-      f'  doi: {esc(doi)}',
+      f'  doi: {esc(doi) if doi else "null"}',
       '',
       'verificacion:',
       '  pubmed: true',
@@ -142,6 +153,8 @@ if errata:
           "    - 'Tiene errata publicada: comprobar las cifras contra la corrección'"]
     if grave:
         L.append("    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'")
+elif cr_nota:
+    L += ['  notas:', f'    - {esc(cr_nota)}']
 elif not igual and cr_ok:
     L += ['  notas:',
           "    - 'CrossRef registra un título distinto; PubMed es la autoridad'"]

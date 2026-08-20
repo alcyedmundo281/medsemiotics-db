@@ -1,0 +1,41 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:26474316'
+clave_bibtex: postuma2015
+tipo: articulo
+titulo: 'MDS clinical diagnostic criteria for Parkinson''s disease'
+autores:
+  - Postuma RB
+  - Berg D
+  - Stern M
+  - Poewe W
+  - Olanow CW
+  - Oertel W
+  - Obeso J
+  - Marek K
+  - Litvan I
+  - Lang AE
+  - Halliday G
+  - Goetz CG
+  - Gasser T
+  - Dubois B
+  - Chan P
+  - Bloem BR
+  - Adler CH
+  - Deuschl G
+publicacion: Mov Disord
+anio: 2015
+volumen: 30
+paginas: 1591-601
+
+identificadores:
+  pmid: 26474316
+  doi: 10.1002/mds.26424
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-20
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -86,6 +86,57 @@ for i, n in vistos.items():
     if n > 1:
         errores.append(f'id duplicado: {i} en {n} archivos')
 
+# ── el eje `efecto`: qué papel juega el hallazgo en un criterio contado ───────
+# Añadido al abrir el eje. Sin esto, las tres claves nuevas entran sin vigilancia
+# y la regla que las gobierna vive solo en la documentación, que es justo lo que
+# el eje existe para evitar: que la tabla decida y no el juicio de quien puebla.
+EFECTOS = ('apoya', 'bandera_roja', 'excluye')
+DISPARA = ('presente', 'ausente')
+SOSTIENES = ('discriminacion_medida', 'consenso_con_afirmacion',
+             'consenso_de_lista', 'mecanismo')
+# Una bandera roja empuja hacia la explicación múltiple. Hacerlo sobre la mera
+# pertenencia a una lista es multiplicar hipótesis sin necesidad.
+AUTORIZAN_BANDERA = ('discriminacion_medida', 'consenso_con_afirmacion')
+
+
+def revisa_efecto(f, s, donde):
+    c = s.get('concepto', '?')
+    ef = s.get('efecto')
+    ds = s.get('dispara_si')
+    so = s.get('sostiene')
+    if ef is not None and ef not in EFECTOS:
+        err(f, f'{donde} «{c}»: efecto «{ef}» fuera de la taxonomía')
+    if ds is not None and ds not in DISPARA:
+        err(f, f'{donde} «{c}»: dispara_si «{ds}» fuera de la taxonomía')
+    if so is not None and so not in SOSTIENES:
+        err(f, f'{donde} «{c}»: sostiene «{so}» fuera de la taxonomía')
+    if ef in ('bandera_roja', 'excluye') and not so:
+        err(f, f'{donde} «{c}»: efecto «{ef}» exige declarar «sostiene»')
+    if ef == 'bandera_roja' and so and so not in AUTORIZAN_BANDERA:
+        err(f, f'{donde} «{c}»: «{so}» no autoriza una bandera roja '
+               f'(solo {" o ".join(AUTORIZAN_BANDERA)})')
+    # La regla dura. mecanismo no puede exigir ref: no hay PMID que diga que un
+    # paciente sin apéndice no puede tener apendicitis.
+    if so == 'mecanismo':
+        if not s.get('motivo'):
+            err(f, f'{donde} «{c}»: sostiene «mecanismo» exige «motivo» en prosa')
+    elif so and not s.get('ref'):
+        err(f, f'{donde} «{c}»: sostiene «{so}» exige «ref» resoluble')
+    # Un OR de regresión no es una propiedad del hallazgo: depende de qué
+    # covariables entraron. Si el motor bayesiano lo leyera como cociente, lo
+    # multiplicaría.
+    for campo in ('lr_positivo', 'lr_negativo'):
+        v = s.get(campo)
+        if isinstance(v, dict) and 'odds_ratio' in v:
+            err(f, f'{donde} «{c}»: odds_ratio dentro de {campo}; va en campo aparte')
+    orr = s.get('odds_ratio')
+    if isinstance(orr, dict):
+        if not orr.get('ref'):
+            err(f, f'{donde} «{c}»: odds_ratio sin «ref»')
+        if not orr.get('covariables'):
+            err(f, f'{donde} «{c}»: odds_ratio sin «covariables»; sin ellas no significa nada')
+
+
 # ── condiciones y aristas ─────────────────────────────────────────────────────
 
 # Dos métricas distintas que conviene no confundir: una arista puede traer LR+
@@ -100,6 +151,7 @@ for f, d in condiciones.items():
         err(f, f'clase «{d.get("clase")}» fuera de la taxonomía')
     for s in (d.get('signos') or []):
         n_aristas += 1
+        revisa_efecto(f, s, 'arista')
         if s.get('lr_positivo') or s.get('lr_negativo'):
             n_aristas_con_lr += 1
         c = s.get('concepto')
@@ -160,6 +212,7 @@ for f, d in condiciones.items():
     # referencia rota aquí desaparece en silencio, que es el peor fallo posible
     # en el bloque que existe para frenar un diagnóstico precipitado.
     for s in (d.get('signos_de_alarma') or []):
+        revisa_efecto(f, s, 'signo de alarma')
         c = s.get('concepto')
         if not c:
             err(f, 'signo de alarma sin «concepto»')
@@ -202,6 +255,13 @@ for f, d in condiciones.items():
         elif isinstance(nodo, list):
             for i, v in enumerate(nodo):
                 barre(v, f'{ruta}[{i}]')
+
+    bal = d.get('balance')
+    if isinstance(bal, dict) and not bal.get('ref'):
+        err(f, 'balance sin «ref»: los enteros los fija el panel, no se derivan')
+    nuc = d.get('nucleo')
+    if isinstance(nuc, dict) and not nuc.get('ref'):
+        err(f, 'nucleo sin «ref»')
 
     barre(d)
 

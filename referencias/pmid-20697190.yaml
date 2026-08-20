@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:20697190'
+clave_bibtex: park2010
+tipo: articulo
+titulo: '[Diagnosis of irritable bowel syndrome: a systematic review]'
+autores:
+  - Park JH
+  - Byeon JS
+  - Shin WG
+  - Yoon YH
+  - Cheon JH
+  - Lee KJ
+  - Park J
+publicacion: Korean J Gastroenterol
+anio: 2010
+volumen: 55
+paginas: 308-15
+
+identificadores:
+  pmid: 20697190
+  doi: 10.4166/kjg.2010.55.5.308
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-20
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

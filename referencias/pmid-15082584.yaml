@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:15082584'
+clave_bibtex: hammer2004
+tipo: articulo
+titulo: Diagnostic yield of alarm features in irritable bowel syndrome and functional dyspepsia
+autores:
+  - Hammer J
+  - Eslick GD
+  - Howell SC
+  - Altiparmak E
+  - Talley NJ
+publicacion: Gut
+anio: 2004
+volumen: 53
+paginas: 666-72
+
+identificadores:
+  pmid: 15082584
+  doi: 10.1136/gut.2003.021857
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-20
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

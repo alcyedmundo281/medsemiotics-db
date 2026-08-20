@@ -34,11 +34,92 @@ signos:
 # Es un diagnóstico clínico por criterios, sin prueba confirmatoria: su valor
 # depende de que NO haya signos de alarma. Los que siguen apuntan a otra cosa y
 # obligan a estudiar antes de etiquetar.
+#
+# CURADOS contra PubMed el 20/08/2026. Cuatro entradas con solo «concepto» eran
+# la forma que tiene el conocimiento sin curar: alguien supo que importaban y
+# nunca registró por qué ni de dónde. De los cuatro solo se emiten DOS. Que dos
+# no salgan es el resultado correcto de la regla, no un fallo de ella.
 signos_de_alarma:
-  - concepto: 'HM:0310'    # Melena
-  - concepto: 'HM:0803'    # Pérdida de peso
-  - concepto: 'HM:0101'    # Fiebre
   - concepto: 'HM:0711'    # Anemia
+    efecto: bandera_roja
+    dispara_si: presente
+    estado_lr: no_medido
+    sostiene: consenso_con_afirmacion
+    ref: 'pmid:20697190'
+    nota: >-
+      Park afirma que la anemia, pese a su sensibilidad pobre para enfermedad
+      orgánica, ofrece muy buena especificidad. No publica cifras: ninguna
+      sensibilidad, especificidad, OR ni cociente acompaña a esa frase, así que
+      se queda en consenso_con_afirmacion y no sube a discriminacion_medida.
+      Solo subiría si alguien lee el texto completo, que está en coreano y no
+      tiene versión en PMC. Registrado para que el próximo no repita la búsqueda.
+
+  - concepto: 'HM:0803'    # Pérdida de peso
+    efecto: bandera_roja
+    dispara_si: presente
+    estado_lr: no_medido
+    sostiene: consenso_con_afirmacion
+    ref: 'pmid:20697190'
+    nota: >-
+      Misma afirmación de Park y mismas condiciones que la anemia: buena
+      especificidad para enfermedad orgánica, sin cifras publicadas.
+
+# ── NO se emiten, y aquí está por qué ────────────────────────────────────────
+# Sin esta razón escrita, el próximo que pase las vuelve a añadir. Esa es la
+# mitad del valor de haber curado.
+no_emitidos:
+  - concepto: 'HM:0101'    # Fiebre
+    motivo: >-
+      Solo la sostiene consenso_de_lista: aparece en enumeraciones de síntomas
+      de alarma sin que ninguna reseña mida su poder discriminativo. Y una
+      fiebre en un paciente con síntomas de intestino irritable no CONTRADICE
+      el diagnóstico: simplemente no es de su territorio. Obliga a explicar la
+      fiebre, no a abandonar la hipótesis. Declararla bandera roja afirmaría
+      algo más fuerte de lo que consta.
+    nota: >-
+      No hace falta la bandera para que se vea: una fiebre validada que ningún
+      signo del protocolo declara cae en el resto no simbolizado, baja el
+      acoplamiento y aparece en la indagación.
+
+  - concepto: 'HM:0310'    # Melena
+    motivo: >-
+      La evidencia disponible es de OTRO hallazgo. Hammer midió sangre en el
+      papel higiénico, que es sangrado bajo; la melena es sangre digerida, de
+      origen alto. Atribuirle ese dato daría una cita que resuelve y habla de
+      otra cosa.
+    nota: >-
+      Por eso se acuñó HM:3060 «Hematoquecia», que es el concepto que Hammer sí
+      midió. Su arista tampoco se emite: ver la discrepancia más abajo.
+
+# ── Discrepancia entre fuentes, sin resolver ─────────────────────────────────
+discrepancias:
+  - concepto: 'HM:3060'    # Hematoquecia
+    resumen: >-
+      Las dos fuentes se contradicen sobre este mismo hallazgo.
+    a_favor:
+      ref: 'pmid:15082584'
+      dice: >-
+        Hammer 2004, regresión logística sobre 568 pacientes: la sangre en el
+        papel higiénico discrimina enfermedad orgánica baja frente a intestino
+        irritable, con OR 2.7 (IC95% 1.4-5.1), p=0.002.
+    en_contra:
+      ref: 'pmid:20697190'
+      dice: >-
+        Park 2010, revisión sistemática: las alarm features como el sangrado
+        rectal aportan poco valor discriminativo.
+    decision: >-
+      No se emite la arista. Ante dos fuentes que se contradicen no se afirma un
+      poder discriminativo, que es lo consistente con la parsimonia que ya dejó
+      fuera a la fiebre. El hallazgo se recogerá igualmente como resto no
+      simbolizado, así que no desaparece: solo no se le atribuye una fuerza que
+      no consta.
+    para_reabrirla: >-
+      Habría que leer el texto completo de Hammer (PMC1774043 está disponible) y
+      comprobar que su modelo y su población coinciden con los de esta
+      condición. Si se emitiera, el OR va en campo aparte y NUNCA dentro de
+      lr_positivo, con sus covariables leídas del texto completo —el modelo
+      incluye edad de inicio, sexo y criterios de Manning—, porque sin esa lista
+      un OR de regresión no significa nada.
 
 procedencia:
   fuente: >-

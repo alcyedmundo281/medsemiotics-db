@@ -70,6 +70,108 @@ incorporación y el número no puede existir. No es que falte literatura. Un
 nunca, y tratarlo como pendiente deja la ficha eternamente incompleta.
 Declararlo obliga a dar `motivo`.
 
+### `efecto` de la arista — el eje nuevo
+
+`apoya` *(por defecto)* · `bandera_roja` · `excluye`
+
+### `dispara_si`
+
+`presente` *(por defecto)* · `ausente`
+
+### `sostiene` — qué clase de evidencia respalda la arista
+
+`discriminacion_medida` · `consenso_con_afirmacion` · `consenso_de_lista` ·
+`mecanismo`
+
+Los valores por defecto reproducen exactamente el comportamiento anterior, así
+que una arista sin estas claves se comporta como siempre. Las catorce
+condiciones existentes no se tocan.
+
+#### Por qué `rol` no puede cargar con esto
+
+Son ejes **ortogonales**. `rol` dice en qué dirección mueve la probabilidad;
+`efecto` dice qué papel juega dentro de un criterio contado. Una
+`prueba_especifica` puede ser un apoyo, y una apendicectomía previa no es un rol
+en absoluto: no es una prueba, no tiene cociente, y sin embargo decide.
+`estado_lr` tampoco sirve: sus cuatro valores dicen si el cociente existe, no
+con qué polaridad dispara el signo.
+
+#### Regla dura, dependiente de `sostiene`
+
+| `sostiene` | exige |
+|---|---|
+| `discriminacion_medida` | `ref` resoluble |
+| `consenso_con_afirmacion` | `ref` resoluble |
+| `consenso_de_lista` | `ref` resoluble |
+| `mecanismo` | `motivo` en prosa. **No puede exigir `ref`** |
+
+`mecanismo` no pide cita, y no es una laguna: **no hay ni habrá un PMID que diga
+que un paciente sin apéndice no puede tener apendicitis.** Con la regla anterior
+—«toda exclusión exige `ref`»— el ejemplo insignia del propio motor de veredicto
+no podría emitirse nunca. Es el precedente exacto de `no_medible`, que exige
+`motivo` porque no hay cociente que citar. Y pone el freno donde hace falta:
+`mecanismo` es el valor que **hay que justificar por escrito**, no la puerta
+trasera por la que entra lo que carece de estudio.
+
+#### Qué autoriza una bandera roja
+
+**Autorizan `discriminacion_medida` y `consenso_con_afirmacion`.
+`consenso_de_lista` NO.** `mecanismo` autoriza `excluye`.
+
+El criterio es la **parsimonia: la explicación única supera a la múltiple.** Una
+bandera roja empuja hacia la explicación múltiple —obliga a un apoyo extra, o
+tumba el diagnóstico— y hacer eso sobre la mera pertenencia a una lista es
+multiplicar hipótesis sin necesidad.
+
+El argumento fino, que es el que decide: una fiebre en un paciente con síntomas
+de intestino irritable **no contradice** el diagnóstico, simplemente no es de su
+territorio. Obliga a explicar la fiebre, no a abandonar la hipótesis. Declararla
+bandera roja afirma algo más fuerte —que argumenta *en contra*— y eso es
+exactamente lo que ninguna reseña mide.
+
+**La tensión, registrada.** Las banderas rojas de los criterios MDS son también
+items de consenso: el panel las declara sin medirlas una por una, y son
+contrarrestables precisamente porque ninguna decide sola. La postura contraria
+es defendible. Lo que inclina la decisión es que MDS declara su lista **como
+criterio**, con su nombre y su panel detrás, mientras que una reseña que enumera
+síntomas de alarma no compromete a nadie a nada.
+
+#### `nucleo` y `balance` — claves de la condición, no de la arista
+
+Van al primer nivel porque no son propiedades de una arista sino precondiciones
+sobre varias:
+
+```yaml
+nucleo:
+  requiere: ['HM:xxxx']                      # todos
+  y_al_menos_uno_de: ['HM:yyyy', 'HM:zzzz']  # al menos uno
+  ref: 'pmid:26474316'
+
+balance:
+  ref: 'pmid:26474316'
+  establecida: {apoyos_minimos: 2, banderas_maximas: 0}
+  probable:    {contrapeso: 1, banderas_maximas: 2}
+```
+
+**`balance` exige `ref`.** Los enteros los fija el panel que redacta el
+criterio; el sistema no los deriva.
+
+#### `odds_ratio`, campo aparte
+
+Nunca dentro de `lr_positivo` ni `lr_negativo`, y con las covariables
+declaradas:
+
+```yaml
+odds_ratio: {valor: 2.7, ic95: [1.4, 5.1], ref: 'pmid:15082584',
+             covariables: 'edad de inicio, sexo, criterios de Manning'}
+```
+
+Un OR de regresión logística depende de qué otras covariables entraron en el
+modelo, así que **ni siquiera es una propiedad del hallazgo**. Si el motor
+bayesiano pudiera leerlo por accidente, lo multiplicaría como si fuera un
+cociente.
+
+
 ---
 
 ## 3. Convención de identificadores
@@ -271,5 +373,12 @@ literatura, una arista cada vez, y es la única que no se puede acelerar.
 - **Identificador canónico de las referencias.** Hoy `pmid:`. Si el índice debe
   admitir guías, libros y documentos de sociedades —que CrossRef sí cubre—,
   hace falta un identificador propio para lo que no tiene PMID.
+
+**Resuelto el 20/08/2026 — el DOI no es obligatorio.** `build.py` exige `id`,
+`titulo`, `identificadores` y `verificacion`; el DOI nunca estuvo entre ellos.
+Que las 88 primeras referencias lo tuvieran era casualidad, no regla. Holten
+2003 (`pmid:12776965`) entra sin DOI porque PubMed no le asigna ninguno, con
+`doi: null` y la nota de por qué. El eje `efecto` ya no está en esta sección:
+se documentó en la §2 el mismo día.
 - **Directorio de referencias plano o por año.** 74 en plano funciona; a partir
   de unos miles conviene particionar.
