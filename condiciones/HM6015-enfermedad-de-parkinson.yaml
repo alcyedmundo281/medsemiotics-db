@@ -1,0 +1,85 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Criterios diagnósticos MDS 2015 (pmid:26474316). Es la primera condición que
+# estrena `nucleo` y `balance`.
+#
+# QUÉ SE VERIFICÓ Y QUÉ NO, que aquí importa especialmente:
+#
+# El abstract confirma la ESTRUCTURA con literalidad suficiente: el
+# parkinsonismo motor es el rasgo central, «defined as bradykinesia plus rest
+# tremor or rigidity»; sobre él actúan tres categorías —exclusión absoluta,
+# banderas rojas que deben contrarrestarse con criterios de apoyo adicionales, y
+# criterios de apoyo—; y se delimitan dos niveles de certeza, establecida
+# (maximiza especificidad) y probable (equilibra sensibilidad y especificidad).
+#
+# El abstract NO publica los ENTEROS del balance. Proceden de las tablas del
+# texto completo. Quedan declarados aquí porque son de MDS y de nadie más —el
+# sistema no los deriva—, pero conviene saber que su verificación es de otra
+# clase que la de la estructura: quien los revise necesita el artículo completo,
+# no el resumen.
+
+id: 'HM:6015'
+tipo: condicion
+clase: enfermedad
+termino: Enfermedad de Parkinson
+termino_en: Parkinson's disease
+sinonimos:
+  - parkinson
+  - EP
+  - enfermedad de Parkinson idiopática
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null    # los criterios MDS no publican prevalencia
+factores_riesgo: []
+
+# Parkinsonismo motor: bradicinesia obligatoria, más temblor de reposo O rigidez.
+# Sin esto no se evalúa ningún nivel de certeza.
+nucleo:
+  requiere: ['HM:3061']                      # Bradicinesia
+  y_al_menos_uno_de: ['HM:3062', 'HM:3063']  # Temblor de reposo · Rigidez
+  ref: 'pmid:26474316'
+
+# Los niveles van del MÁS ESTRICTO al MÁS LAXO, y ese orden es semántico:
+# el motor recorre la lista y se queda con el primero que se satisface, así que
+# invertirlos rebajaría de grado un diagnóstico en silencio.
+balance:
+  ref: 'pmid:26474316'
+  establecida: {apoyos_minimos: 2, banderas_maximas: 0}
+  probable:    {contrapeso: 1, banderas_maximas: 2}
+
+signos:
+  - concepto: 'HM:3061'    # Bradicinesia
+    rol: manifestacion
+    efecto: apoya
+    estado_lr: no_medible
+    motivo: >-
+      forma parte de la definición de parkinsonismo motor, que es el patrón de
+      referencia del propio criterio: sesgo de incorporación
+
+  - concepto: 'HM:3062'    # Temblor de reposo
+    rol: manifestacion
+    efecto: apoya
+    estado_lr: no_medible
+    motivo: componente del núcleo; sesgo de incorporación
+
+  - concepto: 'HM:3063'    # Rigidez parkinsoniana
+    rol: manifestacion
+    efecto: apoya
+    estado_lr: no_medible
+    motivo: componente del núcleo; sesgo de incorporación
+
+pendiente:
+  - >-
+    Los criterios de apoyo y las banderas rojas de MDS no se pueblan en este
+    ciclo. Cuando se hagan, les corresponde `consenso_con_afirmacion` y no
+    `consenso_de_lista`: MDS las declara COMO CRITERIO, con su panel detrás y
+    con una mecánica de contrapeso explícita, que es justo lo que una reseña que
+    enumera síntomas de alarma no hace. Esa distinción es la que dejó fuera a la
+    fiebre en HM:6002 y hay que justificarla por escrito, no darla por obvia.
+
+procedencia:
+  fuente: >-
+    Acuñada para estrenar `nucleo` y `balance`. Estructura verificada contra el
+    abstract de pmid:26474316; enteros del balance procedentes de las tablas del
+    texto completo.

@@ -86,6 +86,67 @@ for i, n in vistos.items():
     if n > 1:
         errores.append(f'id duplicado: {i} en {n} archivos')
 
+# ── nucleo y balance ─────────────────────────────────────────────────────────
+# Claves del balance que NO son un nivel de certeza. Lista blanca a propósito:
+# la alternativa —descartar lo que no parezca nivel— convierte en grado de
+# certeza cualquier clave nueva que lleve un diccionario, y un nivel de más hace
+# el criterio MÁS PERMISIVO. Es el mismo animal que el `tipo` sin lista blanca.
+BALANCE_META = ('ref', 'nota', 'fuente')
+
+
+def revisa_nucleo(f, d, ids_concepto):
+    nuc = d.get('nucleo')
+    if not isinstance(nuc, dict):
+        return
+    if not nuc.get('ref'):
+        err(f, 'nucleo sin «ref»')
+    vistos = 0
+    for campo in ('requiere', 'y_al_menos_uno_de'):
+        for c in (nuc.get(campo) or []):
+            vistos += 1
+            # Un código colgado aquí no produce un error visible: produce un
+            # núcleo que NUNCA se satisface, y por tanto un diagnóstico que no
+            # alcanza ningún nivel de certeza jamás, en silencio.
+            if c not in ids_concepto:
+                err(f, f'nucleo.{campo} apunta a concepto inexistente: {c}')
+    if not vistos:
+        err(f, 'nucleo declarado pero vacío: no exige nada')
+
+
+def revisa_balance(f, d):
+    bal = d.get('balance')
+    if not isinstance(bal, dict):
+        return
+    if not bal.get('ref'):
+        err(f, 'balance sin «ref»: los enteros los fija el panel, no se derivan')
+
+    niveles = []
+    for nombre, regla in bal.items():
+        if nombre in BALANCE_META:
+            continue
+        if not isinstance(regla, dict):
+            err(f, f'balance.«{nombre}» no es un nivel ni una clave conocida')
+            continue
+        for k, v in regla.items():
+            if not isinstance(v, int) or isinstance(v, bool) or v < 0:
+                err(f, f'balance.{nombre}.{k} = {v!r}: debe ser entero ≥ 0')
+        niveles.append((nombre, regla))
+
+    # El orden es SEMÁNTICO: el motor recorre los niveles y se queda con el
+    # primero que se satisface. Si «probable» va antes que «establecida», un
+    # caso que cumple establecida sale rebajado de grado sin que falle nada.
+    for (n1, r1), (n2, r2) in zip(niveles, niveles[1:]):
+        a1, a2 = r1.get('apoyos_minimos', 0), r2.get('apoyos_minimos', 0)
+        b1, b2 = r1.get('banderas_maximas', 0), r2.get('banderas_maximas', 0)
+        if not (isinstance(a1, int) and isinstance(a2, int)
+                and isinstance(b1, int) and isinstance(b2, int)):
+            continue
+        if a2 > a1 or b2 < b1:
+            err(f, f'balance: «{n1}» y «{n2}» están en orden incorrecto. Los '
+                   f'niveles van del más estricto al más laxo, porque el motor '
+                   f'se queda con el primero que se satisface')
+
+
 # ── el eje `efecto`: qué papel juega el hallazgo en un criterio contado ───────
 # Añadido al abrir el eje. Sin esto, las tres claves nuevas entran sin vigilancia
 # y la regla que las gobierna vive solo en la documentación, que es justo lo que
@@ -256,12 +317,8 @@ for f, d in condiciones.items():
             for i, v in enumerate(nodo):
                 barre(v, f'{ruta}[{i}]')
 
-    bal = d.get('balance')
-    if isinstance(bal, dict) and not bal.get('ref'):
-        err(f, 'balance sin «ref»: los enteros los fija el panel, no se derivan')
-    nuc = d.get('nucleo')
-    if isinstance(nuc, dict) and not nuc.get('ref'):
-        err(f, 'nucleo sin «ref»')
+    revisa_nucleo(f, d, ids_concepto)
+    revisa_balance(f, d)
 
     barre(d)
 

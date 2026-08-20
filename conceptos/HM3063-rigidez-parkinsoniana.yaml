@@ -1,0 +1,27 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# NO confundir con HM:3005 «Rigidez de nuca», que es meníngea. Son hallazgos
+# distintos con exploración, significado y territorio distintos; reutilizar
+# aquel habría sido atribuir a este una evidencia que habla de otra cosa.
+
+id: 'HM:3063'
+tipo: concepto
+semantica: hallazgo
+termino: Rigidez parkinsoniana
+termino_en: Rigidity
+sinonimos:
+  - rigidez en rueda dentada
+  - rigidez plástica
+  - hipertonía plástica
+padre: 'HM:0500'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+contrasta_con: ['HM:3005']
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la enfermedad de Parkinson.
