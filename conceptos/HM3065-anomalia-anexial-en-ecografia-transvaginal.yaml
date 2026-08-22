@@ -1,0 +1,23 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3065'
+tipo: concepto
+semantica: hallazgo
+termino: Anomalía anexial en ecografía transvaginal
+termino_en: Adnexal abnormality on transvaginal sonography
+sinonimos:
+  - alteración anexial ecográfica
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el embarazo ectópico. Más amplio que HM:3064: incluye
+    cualquier anomalía anexial, no solo una masa con útero vacío. Se separa
+    porque la fuente publica su cociente en el otro sentido —el valor de NO
+    encontrar nada— y mezclarlos atribuiría a un hallazgo un número que se midió
+    sobre otro.

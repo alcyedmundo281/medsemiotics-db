@@ -1,0 +1,25 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Cuelga de la raíz porque el vocabulario semilla no tiene agrupación
+# ginecológica, y acuñar una es decisión de taxonomía, no de poblado. Sigue el
+# precedente de HM:3017, HM:3028, HM:3047 y HM:3053.
+
+id: 'HM:3069'
+tipo: concepto
+semantica: hallazgo
+termino: Sangrado vaginal en la gestación precoz
+termino_en: Vaginal bleeding in early pregnancy
+sinonimos:
+  - metrorragia del primer trimestre
+  - sangrado vaginal del primer trimestre
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el embarazo ectópico, donde es uno de los dos motivos de
+    consulta que definen la población estudiada.
