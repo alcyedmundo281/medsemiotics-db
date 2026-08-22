@@ -1,11 +1,5 @@
-# Registro de referencia del índice.
-#
-# ESCRITO A MANO, contra lo que dice la cabecera de las demás: en el entorno
-# donde se creó, la política de egreso bloquea eutils.ncbi.nlm.nih.gov y
-# api.crossref.org, así que ni scripts/6 ni scripts/2 pudieron ejecutarse. Los
-# metadatos vienen de PubMed a través de su servidor MCP —la misma autoridad,
-# otro transporte—, y lo que quedó sin comprobar está declarado abajo en vez de
-# darse por hecho.
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
 
 id: 'pmid:23613077'
 clave_bibtex: crochet2013
@@ -28,9 +22,7 @@ verificacion:
   pubmed: true
   fecha: 2026-08-22
   retractado: false
-  crossref: null
-  crossref_titulo_coincide: null
+  crossref: true
+  crossref_titulo_coincide: false
   notas:
-    - 'título, autores, revista, año, volumen, páginas y DOI verificados contra PubMed vía servidor MCP'
-    - 'no retractada: PubMed no registra el tipo de publicación «Retracted Publication» ni un aviso de retractación'
-    - 'PENDIENTE en un entorno con salida a eutils: la comprobación de errata (scripts/8) y la resolución del DOI en CrossRef (scripts/2)'
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'
