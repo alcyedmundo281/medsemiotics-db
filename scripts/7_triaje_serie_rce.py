@@ -11,7 +11,8 @@ SALIDA = pathlib.Path(os.environ.get('TMP_TRABAJO', '.')) / 'rce'
 SALIDA.mkdir(exist_ok=True)
 
 YA_HECHOS = {'27115266', '10411200', '24938565', '9892455', '26547467',
-             '10086438', '11147989'}
+             '10086438', '11147989', '31237649', '25027143', '31846019',
+             '23982370'}
 
 
 def esearch():

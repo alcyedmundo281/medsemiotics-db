@@ -182,11 +182,15 @@ nombres paralelo.**
 | Bloque | Contenido | Ocupado |
 |---|---|---|
 | `HM:0001` | raíz «Hallazgo clínico» | 1 |
-| `HM:01xx`–`HM:09xx` | hallazgos por sistema | 118 |
+| `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos del temario** | **30** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **9** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **63** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **15** de ~3000 |
+
+Los 63 del bloque nuevo no salieron del temario, pese al nombre que llevaba
+antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
+íntegro y sin consumir.
 
 Los códigos son **permanentes**: una vez publicados, otros sistemas los citan.
 No se reutilizan ni se renumeran.
@@ -204,10 +208,20 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6003` | Mononucleosis infecciosa | 6 | `pmid:27115266` |
 | `HM:6004` | Meningitis aguda | 1 | `pmid:10411200` |
 | `HM:6005` | Derrame pleural exudativo | 4 | `pmid:24938565` |
-| `HM:6006` | Aneurisma de aorta abdominal | 2 | `pmid:9892455` |
+| `HM:6006` | Aneurisma de aorta abdominal | 1 (2 tramos) | `pmid:9892455` |
 | `HM:6007` | Síndrome coronario agudo | 5 + 3 escalas | `pmid:26547467` |
 | `HM:6008` | Hipovolemia | 3 | `pmid:10086438` |
-| `HM:6009` | Faringitis estreptocócica | 6 | `pmid:11147989` |
+| `HM:6009` | Faringitis estreptocócica | 5 | `pmid:11147989` |
+| `HM:6010` | Síncope cardíaco | 9 + 1 escala | `pmid:31237649` |
+| `HM:6011` | Infección precoz por VIH | 6 | `pmid:25027143` |
+| `HM:6012` | Artrosis de cadera | 8 | `pmid:31846019` |
+| `HM:6013` | Enfermedad del manguito rotador | 2 | `pmid:23982370` |
+| `HM:6014` | Rotura completa del manguito rotador | 2 | `pmid:23982370` |
+| `HM:6015` | Enfermedad de Parkinson | 0 (`nucleo` + `balance`) | `pmid:26474316` |
+
+La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
+—la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
+contra una condición distinta.
 
 Las dos primeras se acuñaron al publicarse sus páginas en medsemiotics y **no
 figuran en el temario**: se publicaron por delante de él. Es el patrón ya
@@ -215,10 +229,15 @@ observado en gastroenterología —faltan también cirrosis, colitis ulcerosa,
 pancreatitis y *H. pylori*—, y confirma que el temario es hoja de ruta parcial,
 no censo de lo que debe existir.
 
-Las siete restantes se eligieron al revés: por tener cociente publicado y
-verificable. Ese criterio tiene un límite conocido —la serie *Rational Clinical
-Examination* anterior a 1999 no tiene abstract en PubMed, así que ascitis y
-esplenomegalia quedaron fuera pese a ser signos ya publicados en biosemiotics—.
+Las doce siguientes (`HM:6003`–`HM:6014`) se eligieron al revés: por tener
+cociente publicado y verificable en la serie *Rational Clinical Examination*.
+Ese criterio tiene un límite conocido —la serie anterior a 1999 no tiene
+abstract en PubMed, así que ascitis y esplenomegalia quedaron fuera pese a ser
+signos ya publicados en biosemiotics—.
+
+`HM:6015` entró por otra razón y rompe el patrón a propósito: no aporta ningún
+cociente, sino la estructura de `nucleo` y `balance` que ninguna condición
+anterior necesitaba.
 
 ---
 
@@ -230,7 +249,7 @@ esplenomegalia quedaron fuera pese a ser signos ya publicados en biosemiotics—
 |---|---|---|---|
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
-| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **7 fuentes** | ✅ 25 aristas medidas |
+| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **11 fuentes** | ✅ 52 aristas medidas |
 | 14 signos de biosemiotics | significante, significado, umbral, falsos positivos | **14** | listo, requiere normalizar |
 | 14 conceptos de biosemiotics | física y artefactos, grafo de prerrequisitos | **14** | listo |
 | Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
@@ -253,17 +272,17 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 81 | las que traiga cada condición nueva |
-| **Conceptos** | 166 | ~450 signos del temario |
-| **Condiciones** | 9 | ~505 síndromes y enfermedades |
-| **Aristas con cociente** | **25** | prácticamente todo |
+| **Referencias** | 93 | las que traiga cada condición nueva |
+| **Conceptos** | 199 | ~450 signos del temario |
+| **Condiciones** | 15 | ~500 síndromes y enfermedades |
+| **Aristas con cociente** | **52** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
 se siembra: se escribe, una arista cada vez, leyendo literatura.
 
-Nueve condiciones han costado nueve fuentes verificadas. A ese ritmo, las ~505
-que faltan no son un sprint sino el trabajo de fondo del proyecto.
+Quince condiciones han costado catorce fuentes verificadas. A ese ritmo, las
+~500 que faltan no son un sprint sino el trabajo de fondo del proyecto.
 
 ---
 
@@ -285,9 +304,20 @@ Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
 serie *Rational Clinical Examination* con abstract en PubMed son una veta
 acotada y verificable, y convenía agotarla mientras estaba localizada.
 
-- [x] 7 condiciones con **27 aristas medidas** y 8 referencias nuevas
-- [ ] resto de la serie sin revisar: apnea del sueño, embarazo ectópico,
-      disfunción tiroidea, osteoartritis de cadera, consumo de alcohol
+- [x] 12 condiciones (`HM:6003`–`HM:6014`) con **52 aristas medidas** sobre 11
+      fuentes de la serie
+- [x] osteoartritis de cadera → `HM:6012`, con 8 aristas de `pmid:31846019`
+- [ ] resto de la serie sin revisar. La búsqueda `"rational clinical
+      examination"[Title] AND JAMA[Journal]` devuelve **59 registros**, así que
+      la veta es bastante más ancha de lo que decía la lista anterior. Entre los
+      revisados con cociente extraíble del abstract: embarazo ectópico, apnea
+      del sueño, conjuntivitis bacteriana, neumonía infantil, glaucoma de ángulo
+      abierto, luxación de cadera del lactante, intubación difícil, conmoción
+      infantil, maltrato físico infantil, hipertensión secundaria del niño,
+      síndrome de abstinencia alcohólica grave y trastorno por consumo de
+      alcohol. Quedan fuera por medir escalas y no signos: ansiedad y pánico,
+      obstrucción del tracto urinario inferior, mal de altura. Sin revisar
+      todavía, la disfunción tiroidea y el grueso de la serie anterior a 2013
 - [ ] pendientes de **texto completo**: ascitis y esplenomegalia (sin abstract),
       las tres reglas de predicción de la faringitis, y el extremo del rango
       7.1–250 del colesterol pleural
@@ -353,10 +383,10 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias              74              74
-conceptos               ~150            ~750
-condiciones               1             ~515
-aristas con LR            7               7
+referencias              93              93
+conceptos               199            ~800
+condiciones              15             ~515
+aristas con cociente     52              52
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres
