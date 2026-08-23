@@ -31,11 +31,62 @@ medsemiotics-db/
 ├── conceptos/*.yaml                 ← signos y hallazgos
 ├── condiciones/*.yaml               ← síndromes y enfermedades, con sus LR
 ├── referencias/*.yaml               ← artículos con PMID y DOI
-└── scripts/build.py                 ← valida; no modifica nada
+├── scripts/build.py                 ← valida; no modifica nada
+├── scripts/libro.py                 ← genera build/libro.tex y build/refs.bib
+├── scripts/epub.py                  ← genera build/indice.epub
+├── scripts/paquete_latex.py         ← empaqueta la fuente LuaLaTeX en un ZIP
+└── build/                           ← GENERADO, no se versiona (ver .gitignore)
 ```
 
-No hay `build/` porque no hay salidas derivadas todavía. Cuando las haya
-—index.json, JSON-LD—, serán generadas y no se editarán a mano.
+## Compilar el libro (`build/libro.tex`)
+
+Una fuente, tres salidas más: `scripts/libro.py`, `scripts/epub.py` y
+`scripts/paquete_latex.py` leen el mismo índice que valida `build.py` y no
+modifican ningún registro. No hay prosa que inventar: tipografían los hechos
+que ya están en el YAML —términos, sinónimos, umbrales, cocientes con su
+intervalo, y el `decision`/`advertencia`/`motivo` que cada arista ya trae—.
+Un campo que el índice traiga y estos scripts no sepan tipografiar aborta la
+generación en vez de perderse en silencio; añadirlo al renderizador es parte
+del mismo cambio que lo introduce en el índice.
+
+El compilador correcto es **LuaLaTeX, no pdflatex** (misma razón que
+biosemiotics, sin relación de código: fontspec deja escribir símbolos Unicode
+tal cual si algún registro los trae, sin parchear glifo por glifo). A
+diferencia de biosemiotics, aquí no hay imágenes, así que el preámbulo no cita
+`graphicx`/`float`/`adjustbox`.
+
+```bash
+python scripts/build.py          # primero: valida
+python scripts/libro.py          # escribe build/libro.tex y build/refs.bib
+cd build
+lualatex -halt-on-error -interaction=nonstopmode libro.tex
+biber libro
+lualatex -halt-on-error -interaction=nonstopmode libro.tex
+lualatex -halt-on-error -interaction=nonstopmode libro.tex   # segunda pasada: referencias cruzadas
+```
+
+**Paquetes LaTeX requeridos**: `fontspec`, `babel` (spanish), `biblatex`+
+`biber`, `longtable`, `array`, `hyperref`. En Debian/Ubuntu,
+`texlive-latex-recommended` + `texlive-latex-extra` + `texlive-lang-spanish` +
+`texlive-luatex` + `biber` cubren todo.
+
+## Compilar el EPUB (`build/indice.epub`) y el paquete LaTeX
+
+```bash
+python scripts/epub.py --salida build/indice.epub
+python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
+```
+
+Requiere Pandoc además de PyYAML. El workflow
+`.github/workflows/libro.yml` reproduce este contrato completo —validación,
+LuaLaTeX/Biber, EPUBCheck— en cada push o PR que toque `conceptos/`,
+`condiciones/`, `referencias/` o los tres scripts, y publica `libro.pdf`,
+`libro.tex`, `indice.epub` y el ZIP como artifacts (90 días) o, en un release,
+como assets adjuntos. `workflow_dispatch` queda como recuperación manual.
+
+`refs.bib` se deriva de `referencias/*.yaml` en cada corrida —no se versiona—
+y usa `clave_bibtex` como clave de cita, el mismo campo que ya citan hoy las
+fichas de biosemiotics.
 
 ## Lo primero al arrancar una sesión
 

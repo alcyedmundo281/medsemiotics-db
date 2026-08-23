@@ -81,6 +81,26 @@ for f, d in conceptos.items():
             avi(f, 'umbral sin procedencia (ref)')
     if not d.get('significante'):
         avi(f, 'sin significante')
+    # Una figura sin crédito, licencia o archivo real no es una figura: es una
+    # atribución inventada o una compilación que falla más tarde en libro.py.
+    # No se omiten imágenes ni se infiere su procedencia.
+    for i, medio in enumerate(d.get('medios') or [], 1):
+        if medio.get('tipo') != 'imagen':
+            continue
+        REQ_MEDIO = ('descripcion', 'credito', 'fuente', 'fuente_url',
+                     'licencia_img', 'licencia_url', 'archivo_local')
+        faltantes = [c for c in REQ_MEDIO if not medio.get(c)]
+        if faltantes:
+            err(f, f'medio {i}: faltan {", ".join(faltantes)}')
+            continue
+        ruta = (RAIZ / medio['archivo_local']).resolve()
+        try:
+            ruta.relative_to(RAIZ.resolve())
+        except ValueError:
+            err(f, f'medio {i}: archivo_local apunta fuera del repositorio')
+            continue
+        if not ruta.is_file():
+            err(f, f'medio {i}: no existe {medio["archivo_local"]}')
 
 for i, n in vistos.items():
     if n > 1:

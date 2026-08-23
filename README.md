@@ -19,6 +19,8 @@ vive en cada cliente.
 conceptos/     signos y hallazgos: identidad, sinónimos, jerarquía, umbrales
 condiciones/   síndromes y enfermedades, con sus aristas ponderadas (LR)
 referencias/   artículos con PMID y DOI verificados
+scripts/       build.py valida; libro.py/epub.py/paquete_latex.py generan
+build/         GENERADO (libro.pdf, indice.epub, ZIP LaTeX) — no se versiona
 ```
 
 La tríada del proyecto queda repartida así:
@@ -52,6 +54,23 @@ python scripts/build.py
 ```
 
 Valida todos los registros y reporta qué falta. No modifica nada.
+
+## Salidas derivadas
+
+Una fuente, tres salidas: un libro en LuaLaTeX/PDF, un EPUB3 y un ZIP con la
+fuente LaTeX autocontenida. Ninguna añade prosa — tipografían los mismos
+hechos que ya están en el YAML.
+
+```bash
+python scripts/libro.py          # build/libro.tex y build/refs.bib
+python scripts/epub.py --salida build/indice.epub
+python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
+```
+
+Ver `CLAUDE.md` para el comando de compilación con LuaLaTeX+Biber y los
+paquetes que requiere. `.github/workflows/libro.yml` reproduce todo el
+contrato en CI y publica los artifacts en cada push a `main` y en cada
+release.
 
 ## Reglas duras
 
