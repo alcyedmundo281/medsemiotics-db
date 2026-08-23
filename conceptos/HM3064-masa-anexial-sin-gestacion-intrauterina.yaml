@@ -1,0 +1,23 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3064'
+tipo: concepto
+semantica: hallazgo
+termino: Masa anexial sin gestación intrauterina en ecografía transvaginal
+termino_en: Adnexal mass with no intrauterine pregnancy on transvaginal sonography
+sinonimos:
+  - masa anexial ecográfica sin saco gestacional intrauterino
+  - masa anexial con útero vacío
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el embarazo ectópico. Es un hallazgo compuesto y se
+    acuña como tal porque así se midió: el cociente pertenece a la masa anexial
+    VISTA CON EL ÚTERO VACÍO, no a la masa anexial por su cuenta. Separado de
+    HM:3065, que es la anomalía anexial sin más y trae otro cociente.

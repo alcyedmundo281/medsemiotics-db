@@ -1,0 +1,152 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:23613077 (Crochet 2013, JAMA), 14 estudios con 12 101
+# gestantes que consultaron por dolor abdominal o sangrado vaginal en la
+# gestación precoz. Transcritos del abstract.
+#
+# Patrón de referencia doble y poco habitual: visualización quirúrgica directa
+# del ectópico, o seguimiento clínico de TODOS los embarazos hasta demostrar que
+# no se escapó ninguno. Lo segundo es lo que sostiene el cociente negativo: sin
+# seguimiento completo, los ectópicos no operados desaparecen del denominador y
+# el LR− sale mejor de lo que es.
+#
+# LA ANAMNESIS NO DISCRIMINA, y conviene leerlo antes que cualquier cifra:
+# «all components of the patient history had a positive likelihood ratio less
+# than 1.5». Ni los factores de riesgo clásicos. Lo que decide es la ecografía
+# transvaginal, y después la exploración bimanual.
+#
+# EL LR+ DE 111 DISPARA UN AVISO DE build.py Y ESTÁ BIEN QUE LO HAGA. La cifra
+# es la publicada y está verificada contra el abstract, pero su intervalo va de
+# 12 a 1028: dos órdenes de magnitud. El aviso queda en pie a propósito, porque
+# un cociente de tres cifras merece que alguien lo mire cada vez, y quien lo
+# mire encontrará aquí por qué se aceptó.
+
+id: 'HM:6016'
+tipo: condicion
+clase: enfermedad
+termino: Embarazo ectópico
+termino_en: Ectopic pregnancy
+sinonimos: [gestación ectópica, embarazo extrauterino, embarazo tubárico]
+
+codigos: {snomed: null, cie10: null}
+
+# La fuente no publica prevalencia del ectópico en la población estudiada.
+probabilidad_base: null
+factores_riesgo: []
+
+signos:
+  # ─── ecografía transvaginal: lo único que decide ────────────────────────────
+  - concepto: 'HM:3064'    # Masa anexial sin gestación intrauterina en ecografía transvaginal
+    rol: imagen
+    estado_lr: medido
+    poblacion: >-
+      gestantes con dolor abdominal o sangrado vaginal en la gestación precoz
+      (n = 6885)
+    lr_positivo:
+      valor: 111
+      ic95: [12, 1028]
+      ref: 'pmid:23613077'
+    decision: >-
+      el hallazgo que confirma. Con el útero vacío, una masa anexial mueve la
+      probabilidad más que todo lo demás junto
+    advertencia: >-
+      el intervalo de confianza abarca de 12 a 1028. La dirección es
+      inequívoca; la magnitud exacta, no. Tratar el 111 como un número fino es
+      leer en la cifra una precisión que el estudio no tiene
+
+  - concepto: 'HM:3065'    # Anomalía anexial en ecografía transvaginal
+    rol: imagen
+    estado_lr: medido
+    poblacion: >-
+      gestantes con dolor abdominal o sangrado vaginal en la gestación precoz
+      (n = 6885)
+    lr_negativo:
+      valor: 0.12
+      ic95: [0.03, 0.55]
+      ref: 'pmid:23613077'
+      nota: >-
+        la fuente lo expresa como el valor de NO encontrar anomalías anexiales,
+        que es el cociente negativo de este hallazgo
+    decision: >-
+      la exploración anexial normal es lo que más baja la probabilidad, y es la
+      otra mitad de por qué la ecografía transvaginal manda aquí
+
+  # ─── exploración bimanual ───────────────────────────────────────────────────
+  - concepto: 'HM:3066'    # Dolor a la movilización cervical
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: >-
+      gestantes con dolor abdominal o sangrado vaginal en la gestación precoz
+      (n = 1435)
+    lr_positivo:
+      valor: 4.9
+      ic95: [1.7, 14]
+      ref: 'pmid:23613077'
+
+  - concepto: 'HM:3067'    # Masa anexial en la exploración bimanual
+    rol: apoyo
+    estado_lr: medido
+    poblacion: >-
+      gestantes con dolor abdominal o sangrado vaginal en la gestación precoz
+      (n = 1378)
+    lr_positivo:
+      valor: 2.4
+      ic95: [1.6, 3.7]
+      ref: 'pmid:23613077'
+    decision: >-
+      la misma masa vista en la ecografía vale 111 y palpada vale 2.4. No es
+      incoherencia: son dos pruebas distintas sobre el mismo órgano
+
+  - concepto: 'HM:3068'    # Dolor a la palpación anexial
+    rol: apoyo
+    estado_lr: medido
+    poblacion: >-
+      gestantes con dolor abdominal o sangrado vaginal en la gestación precoz
+      (n = 1435)
+    lr_positivo:
+      valor: 1.9
+      ic95: [1.0, 3.5]
+      ref: 'pmid:23613077'
+    advertencia: >-
+      el extremo inferior del intervalo toca 1.0: compatible con no aportar nada
+
+  # ─── motivos de consulta: definen la población, no la discriminan ───────────
+  - concepto: 'HM:0201'    # Dolor abdominal
+    rol: manifestacion
+    estado_lr: no_medido
+    ref: 'pmid:23613077'
+    motivo: >-
+      es criterio de entrada del estudio, así que dentro de esa población no hay
+      contraste que medir. La fuente sí acota la anamnesis entera: ningún
+      componente pasa de un LR+ de 1.5
+
+  - concepto: 'HM:3069'    # Sangrado vaginal en la gestación precoz
+    rol: manifestacion
+    estado_lr: no_medido
+    ref: 'pmid:23613077'
+    motivo: >-
+      el otro criterio de entrada, con la misma acotación: ningún componente de
+      la anamnesis alcanza un LR+ de 1.5
+
+pendiente:
+  - >-
+    La hCG sérica cuantitativa no entra como arista. La fuente es explícita en
+    que los estudios existentes NO establecen un valor único diagnóstico de
+    ectópico, y un umbral inventado aquí sería exactamente lo que este
+    repositorio no admite. Entrará cuando haya una fuente que lo mida, y
+    probablemente como tramos y no como cifra suelta.
+  - >-
+    La cinética de la hCG seriada tampoco entra, y aquí ni siquiera hay
+    afirmación de la fuente en que apoyarse: el abstract se pronuncia sobre un
+    valor aislado, no sobre el patrón de ascenso. Requiere otra fuente.
+
+conclusion_de_la_fuente: >-
+  La ecografía transvaginal es la mejor prueba diagnóstica aislada para evaluar
+  a una mujer con sospecha de embarazo ectópico. La presencia de dolor abdominal
+  o sangrado vaginal en la gestación precoz debe llevar a solicitar una
+  ecografía transvaginal y una hCG sérica cuantitativa.
+
+procedencia:
+  fuente: >-
+    Acuñada al seguir la veta de la serie Rational Clinical Examination. Valores
+    del abstract de pmid:23613077, no del texto completo.
