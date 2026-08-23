@@ -11,6 +11,11 @@
       "orcid": "0000-0002-9742-375X"
     }
   ],
+  "communities": [
+    {
+      "identifier": "powersemiotics"
+    }
+  ],
   "keywords": [
     "semiótica clínica",
     "medicina basada en evidencia",
