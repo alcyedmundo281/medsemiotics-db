@@ -185,10 +185,10 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **69** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **16** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **71** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **17** de ~3000 |
 
-Los 69 del bloque nuevo no salieron del temario, pese al nombre que llevaba
+Los 71 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
 íntegro y sin consumir.
 
@@ -219,6 +219,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6014` | Rotura completa del manguito rotador | 2 | `pmid:23982370` |
 | `HM:6015` | Enfermedad de Parkinson | 0 (`nucleo` + `balance`) | `pmid:26474316` |
 | `HM:6016` | Embarazo ectópico | 5 | `pmid:23613077` |
+| `HM:6017` | Conjuntivitis bacteriana | 2 | `pmid:35699701` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -250,7 +251,7 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 |---|---|---|---|
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
-| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **12 fuentes** | ✅ 57 aristas medidas |
+| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **13 fuentes** | ✅ 59 aristas medidas |
 | 14 signos de biosemiotics | significante, significado, umbral, falsos positivos | **14** | listo, requiere normalizar |
 | 14 conceptos de biosemiotics | física y artefactos, grafo de prerrequisitos | **14** | listo |
 | Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
@@ -273,17 +274,17 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 94 | las que traiga cada condición nueva |
-| **Conceptos** | 205 | ~450 signos del temario |
-| **Condiciones** | 16 | ~500 síndromes y enfermedades |
-| **Aristas con cociente** | **57** | prácticamente todo |
+| **Referencias** | 95 | las que traiga cada condición nueva |
+| **Conceptos** | 207 | ~450 signos del temario |
+| **Condiciones** | 17 | ~500 síndromes y enfermedades |
+| **Aristas con cociente** | **59** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
 se siembra: se escribe, una arista cada vez, leyendo literatura.
 
-Dieciséis condiciones han costado quince fuentes verificadas. A ese ritmo, las
-~500 que faltan no son un sprint sino el trabajo de fondo del proyecto.
+Diecisiete condiciones han costado dieciséis fuentes verificadas. A ese ritmo,
+las ~500 que faltan no son un sprint sino el trabajo de fondo del proyecto.
 
 ---
 
@@ -305,14 +306,21 @@ Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
 serie *Rational Clinical Examination* con abstract en PubMed son una veta
 acotada y verificable, y convenía agotarla mientras estaba localizada.
 
-- [x] 13 condiciones con **57 aristas medidas** sobre 12 fuentes de la serie
+- [x] 14 condiciones con **59 aristas medidas** sobre 13 fuentes de la serie
 - [x] osteoartritis de cadera → `HM:6012`, con 8 aristas de `pmid:31846019`
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
+- [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
+      La fuente compara viral contra bacteriana, no enfermedad contra salud:
+      solo se emiten los cocientes que el abstract da a favor de bacteriana
+      (secreción mucopurulenta, otitis media). Los que da a favor de viral
+      (faringitis, adenopatía preauricular, contacto con ojo rojo) no se
+      invierten —esa aritmética no la sostiene el abstract— y quedan
+      declarados en `pendiente` para una futura «Conjuntivitis viral»
 - [ ] resto de la serie sin revisar. La búsqueda `"rational clinical
       examination"[Title] AND JAMA[Journal]` devuelve **59 registros**, así que
       la veta es bastante más ancha de lo que decía la lista anterior. Entre los
       revisados con cociente extraíble del abstract: apnea
-      del sueño, conjuntivitis bacteriana, neumonía infantil, glaucoma de ángulo
+      del sueño, neumonía infantil, glaucoma de ángulo
       abierto, luxación de cadera del lactante, intubación difícil, conmoción
       infantil, maltrato físico infantil, hipertensión secundaria del niño,
       síndrome de abstinencia alcohólica grave y trastorno por consumo de
@@ -384,10 +392,10 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias              94              94
-conceptos               205            ~800
-condiciones              16             ~515
-aristas con cociente     57              57
+referencias              95              95
+conceptos               207            ~800
+condiciones              17             ~515
+aristas con cociente     59              59
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

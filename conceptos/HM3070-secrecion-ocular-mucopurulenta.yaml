@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6017 (conjuntivitis bacteriana).
+
+id: 'HM:3070'
+tipo: concepto
+semantica: hallazgo
+termino: Secreción ocular mucopurulenta
+sinonimos: [secreción purulenta ocular, descarga mucopurulenta conjuntival]
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la conjuntivitis bacteriana. La fuente lo describe como
+    el hallazgo ocular con mayor sensibilidad para etiología bacteriana, no el
+    de mayor especificidad.

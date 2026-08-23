@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6017 (conjuntivitis bacteriana).
+
+id: 'HM:3071'
+tipo: concepto
+semantica: hallazgo
+termino: Otitis media concomitante
+sinonimos: [síndrome otitis-conjuntivitis, otitis media asociada a conjuntivitis]
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la conjuntivitis bacteriana. Es el hallazgo con mayor
+    especificidad de la revisión, aunque con sensibilidad baja: su ausencia no
+    descarta la etiología bacteriana.

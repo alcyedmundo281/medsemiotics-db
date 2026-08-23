@@ -1,0 +1,26 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:35699701'
+clave_bibtex: johnson2022
+tipo: articulo
+titulo: 'Does This Patient With Acute Infectious Conjunctivitis Have a Bacterial Infection?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Johnson D
+  - Liu D
+  - Simel D
+publicacion: JAMA
+anio: 2022
+volumen: 327
+paginas: 2231-2237
+
+identificadores:
+  pmid: 35699701
+  doi: 10.1001/jama.2022.7687
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-22
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
