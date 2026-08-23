@@ -1,0 +1,47 @@
+# Metadatos de citación. GitHub los lee y muestra un botón "Cite this
+# repository"; Zenodo los usa para rellenar el registro del DOI.
+#
+# Al publicar un release, añade aquí el campo `doi:` con el DOI de concepto
+# que devuelva Zenodo (el que apunta siempre a la última versión). Ver
+# docs/PUBLICAR.md de holonmed para el procedimiento exacto: la integración
+# GitHub→Zenodo debe activarse ANTES del primer release, o el primer DOI
+# queda huérfano de la integración automática.
+
+cff-version: 1.2.0
+title: >-
+  medsemiotics-db: índice de conocimiento clínico verificado
+message: Si usas este índice en un trabajo académico, por favor cítalo.
+type: dataset
+
+authors:
+  - given-names: Alcy Edmundo
+    family-names: Torres Guerrero
+    email: alcy.torres@powersemiotics.com
+    orcid: 'https://orcid.org/0000-0002-9742-375X'
+    affiliation: Power Semiotics
+
+repository-code: 'https://github.com/alcyedmundo281/medsemiotics-db'
+url: 'https://github.com/alcyedmundo281/medsemiotics-db'
+license: CC0-1.0
+version: 0.1.0
+
+abstract: >-
+  Índice de conocimiento clínico verificado: conceptos, condiciones y
+  referencias en YAML, con PMID y DOI comprobados. Proveedor, no
+  publicador —sin prosa ni material didáctico—: de él se sirven holonmed
+  para validar hallazgos y razonar, biosemiotics para su atlas de POCUS, y
+  medsemiotics para su plataforma educativa. Cada cociente de verosimilitud
+  declara su población, su intervalo de confianza y su referencia
+  verificada contra PubMed. El mismo índice se compila en un libro
+  LaTeX/PDF, un EPUB3 y un paquete LuaLaTeX autocontenido.
+
+keywords:
+  - semiótica clínica
+  - medicina basada en evidencia
+  - razón de verosimilitud
+  - likelihood ratio
+  - PubMed
+  - vocabulario controlado
+  - datos clínicos abiertos
+  - recursos educativos abiertos
+  - español

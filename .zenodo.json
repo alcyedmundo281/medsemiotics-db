@@ -1,0 +1,46 @@
+{
+  "title": "medsemiotics-db — índice de conocimiento clínico verificado",
+  "description": "<p>&Iacute;ndice de conocimiento cl&iacute;nico verificado: conceptos, condiciones y referencias en YAML, con PMID y DOI comprobados. <strong>Proveedor, no publicador</strong> &mdash;no contiene prosa ni material did&aacute;ctico&mdash;: de &eacute;l se sirven <a href=\"https://github.com/alcyedmundo281/holonmed\">holonmed</a> para validar hallazgos y razonar, <a href=\"https://github.com/alcyedmundo281/biosemiotics\">biosemiotics</a> para su atlas de POCUS, y <a href=\"https://github.com/alcyedmundo281/medsemiotics\">medsemiotics</a> para su plataforma educativa.</p><p>La arquitectura es la de PubMed y PMC: aqu&iacute; vive el &iacute;ndice, el texto completo vive en cada cliente. Cada cociente de verosimilitud (LR) declara su poblaci&oacute;n, su intervalo de confianza y su referencia; ning&uacute;n LR entra sin una cita que resuelva contra PubMed.</p><p>El mismo &iacute;ndice se compila, de una sola fuente, en un libro LaTeX/PDF, un EPUB3 y un paquete LuaLaTeX autocontenido &mdash;sin a&ntilde;adir prosa: solo tipografiando los hechos que ya est&aacute;n en el YAML.</p><p><strong>Aviso:</strong> material de referencia t&eacute;cnica. No sustituye el juicio cl&iacute;nico ni la valoraci&oacute;n presencial del paciente.</p>",
+  "upload_type": "dataset",
+  "language": "spa",
+  "access_right": "open",
+  "license": "cc0-1.0",
+  "creators": [
+    {
+      "name": "Torres Guerrero, Alcy Edmundo",
+      "orcid": "0000-0002-9742-375X"
+    }
+  ],
+  "keywords": [
+    "semiótica clínica",
+    "medicina basada en evidencia",
+    "razón de verosimilitud",
+    "likelihood ratio",
+    "PubMed",
+    "vocabulario controlado",
+    "datos clínicos abiertos",
+    "recursos educativos abiertos",
+    "español"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/alcyedmundo281/holonmed",
+      "relation": "isSourceOf",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/alcyedmundo281/biosemiotics",
+      "relation": "isSourceOf",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/alcyedmundo281/medsemiotics",
+      "relation": "isSourceOf",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Plataforma independiente. El contenido no implica aval ni representación de ninguna institución sanitaria."
+}
