@@ -1,0 +1,143 @@
+name: Libro, EPUB y fuente LuaLaTeX
+
+# Valida el índice y genera sus tres salidas derivadas —build/libro.pdf,
+# build/indice.epub y el ZIP con la fuente LuaLaTeX autocontenida— cuando
+# cambia main. Los binarios no viven en git: cada ejecución los publica como
+# artifact descargable, y los releases además los reciben como assets.
+#
+# CONTRATO CON scripts/libro.py Y scripts/epub.py
+# Este workflow define la interfaz que deben cumplir los generadores:
+#   · scripts/libro.py escribe build/libro.tex y build/refs.bib
+#   · scripts/epub.py se invoca como `python scripts/epub.py --salida <ruta>`
+#   · scripts/paquete_latex.py se invoca como `python scripts/paquete_latex.py --salida <ruta>`
+#   · los tres salen con código != 0 si algo falló, incluida su propia validación
+# Ninguno modifica el índice: scripts/build.py sigue siendo la única autoridad
+# de validación y corre primero. Si algún generador cambia de toolchain, hay
+# que actualizar el paso «Instalar dependencias del sistema» de aquí abajo.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'conceptos/**'
+      - 'condiciones/**'
+      - 'referencias/**'
+      - 'scripts/build.py'
+      - 'scripts/libro.py'
+      - 'scripts/epub.py'
+      - 'scripts/paquete_latex.py'
+      - '.github/workflows/libro.yml'
+  pull_request:
+    paths:
+      - 'conceptos/**'
+      - 'condiciones/**'
+      - 'referencias/**'
+      - 'scripts/build.py'
+      - 'scripts/libro.py'
+      - 'scripts/epub.py'
+      - 'scripts/paquete_latex.py'
+      - '.github/workflows/libro.yml'
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # necesario para adjuntar el asset al release
+
+concurrency:
+  group: libro-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  libro:
+    name: Validar y generar libro, EPUB y fuente LuaLaTeX
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Instalar dependencias de Python
+        run: pip install pyyaml
+
+      - name: Validar el índice
+        # La única autoridad de validación. Los generadores de más abajo
+        # confían en que esto ya pasó y no repiten sus reglas enteras.
+        run: python scripts/build.py
+
+      - name: Instalar dependencias del sistema
+        # Pandoc genera el EPUB; LuaLaTeX + Biber compilan el libro. El índice
+        # no tiene imágenes, así que no hace falta nada de graphicx/adjustbox.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            pandoc fonts-freefont-ttf default-jre-headless biber \
+            texlive-latex-recommended texlive-latex-extra \
+            texlive-bibtex-extra texlive-lang-spanish texlive-luatex
+          echo "pandoc: $(pandoc --version | head -1)"
+          echo "lualatex: $(lualatex --version | head -1)"
+
+      - name: Instalar epubcheck
+        run: |
+          VER=5.1.0
+          curl -fsSL -o /tmp/epubcheck.zip \
+            "https://github.com/w3c/epubcheck/releases/download/v${VER}/epubcheck-${VER}.zip"
+          unzip -q /tmp/epubcheck.zip -d /opt
+          echo "EPUBCHECK_JAR=/opt/epubcheck-${VER}/epubcheck.jar" >> "$GITHUB_ENV"
+
+      - name: Generar libro.tex y refs.bib
+        run: python scripts/libro.py
+
+      - name: Compilar el libro con LuaLaTeX
+        working-directory: build
+        run: |
+          lualatex -halt-on-error -interaction=nonstopmode libro.tex
+          biber libro
+          lualatex -halt-on-error -interaction=nonstopmode libro.tex
+          lualatex -halt-on-error -interaction=nonstopmode libro.tex
+          test -s libro.pdf || { echo "::error::No se generó build/libro.pdf"; exit 1; }
+
+      - name: Empaquetar fuente LuaLaTeX
+        run: |
+          python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
+          test -s build/medsemiotics-db-latex.zip || { echo "::error::No se generó el ZIP LaTeX"; exit 1; }
+
+      - name: Generar el ePub
+        run: python scripts/epub.py --salida build/indice.epub
+
+      - name: Comprobar que el artefacto es real
+        # Un ePub de pocos KB casi siempre significa "se generó vacío".
+        run: |
+          test -f build/indice.epub || { echo "::error::No se generó build/indice.epub"; exit 1; }
+          BYTES=$(stat -c%s build/indice.epub)
+          echo "Tamaño: $((BYTES / 1024)) KB"
+          if [ "$BYTES" -lt 20480 ]; then
+            echo "::error::build/indice.epub pesa $((BYTES / 1024)) KB: sospechosamente vacío."
+            exit 1
+          fi
+
+      - name: Validar con epubcheck
+        run: java -jar "$EPUBCHECK_JAR" build/indice.epub
+
+      - name: Adjuntar al release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release upload "${{ github.event.release.tag_name }}"
+          build/indice.epub build/libro.tex build/libro.pdf
+          build/medsemiotics-db-latex.zip --clobber
+
+      - name: Publicar derivados como artifact
+        if: github.event_name != 'release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: libro-epub-latex
+          path: |
+            build/indice.epub
+            build/libro.tex
+            build/libro.pdf
+            build/medsemiotics-db-latex.zip
+          retention-days: 90
