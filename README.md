@@ -1,5 +1,7 @@
 # medsemiotics-db
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22064424.svg)](https://doi.org/10.5281/zenodo.22064424)
+
 **Índice de conocimiento clínico verificado.** Conceptos, condiciones y
 referencias en YAML, con PMID y DOI comprobados. Sin prosa, sin presentación,
 sin didáctica.

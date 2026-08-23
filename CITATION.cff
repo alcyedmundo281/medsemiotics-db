@@ -24,6 +24,18 @@ repository-code: 'https://github.com/alcyedmundo281/medsemiotics-db'
 url: 'https://github.com/alcyedmundo281/medsemiotics-db'
 license: CC0-1.0
 version: 0.1.0
+date-released: '2026-08-23'
+
+# DOI de concepto: resuelve siempre a la última versión publicada.
+doi: 10.5281/zenodo.22064424
+
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22064424
+    description: DOI de concepto, apunta a todas las versiones
+  - type: doi
+    value: 10.5281/zenodo.22064425
+    description: DOI de la versión v0.1.0
 
 abstract: >-
   Índice de conocimiento clínico verificado: conceptos, condiciones y
