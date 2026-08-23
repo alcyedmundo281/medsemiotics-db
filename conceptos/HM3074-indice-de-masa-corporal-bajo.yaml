@@ -1,0 +1,30 @@
+# Concepto del índice. Acuñado al modelar HM:6018 (apnea obstructiva del sueño).
+#
+# El umbral entra sin `ref` propia: la fuente no lo publica como corte
+# aislado, solo como parte de la regla combinada «ronquido leve + IMC <26»,
+# cuya referencia va en esa regla (ver condiciones/HM6018).
+
+id: 'HM:3074'
+tipo: concepto
+semantica: hallazgo
+termino: Índice de masa corporal bajo
+termino_en: Low body mass index
+sinonimos: [IMC bajo, IMC menor de 26]
+padre: 'HM:0100'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Índice de masa corporal
+  direccion: bajo
+  corte_inferior: 26
+  ref: null   # el corte solo se usa dentro de una regla combinada; ver arriba
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la apnea obstructiva del sueño. El punto de corte de
+    26 solo tiene sentido combinado con «ronquido leve»; no es un umbral
+    general de bajo peso.

@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6018 (apnea obstructiva del sueño).
+
+id: 'HM:3073'
+tipo: concepto
+semantica: hallazgo
+termino: Ronquido
+termino_en: Snoring
+sinonimos: [roncar durante el sueño]
+padre: 'HM:0400'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la apnea obstructiva del sueño. Frecuente en la
+    enfermedad pero, aislado, sin valor discriminativo según la fuente.

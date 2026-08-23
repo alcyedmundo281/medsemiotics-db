@@ -185,10 +185,10 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **71** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **17** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **74** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **18** de ~3000 |
 
-Los 71 del bloque nuevo no salieron del temario, pese al nombre que llevaba
+Los 74 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
 íntegro y sin consumir.
 
@@ -220,6 +220,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6015` | Enfermedad de Parkinson | 0 (`nucleo` + `balance`) | `pmid:26474316` |
 | `HM:6016` | Embarazo ectópico | 5 | `pmid:23613077` |
 | `HM:6017` | Conjuntivitis bacteriana | 2 | `pmid:35699701` |
+| `HM:6018` | Apnea obstructiva del sueño | 2 | `pmid:23989984` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -251,7 +252,7 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 |---|---|---|---|
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
-| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **13 fuentes** | ✅ 59 aristas medidas |
+| Serie *Rational Clinical Examination* | revisiones con cociente publicado | **14 fuentes** | ✅ 61 aristas medidas |
 | 14 signos de biosemiotics | significante, significado, umbral, falsos positivos | **14** | listo, requiere normalizar |
 | 14 conceptos de biosemiotics | física y artefactos, grafo de prerrequisitos | **14** | listo |
 | Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
@@ -274,16 +275,16 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 95 | las que traiga cada condición nueva |
-| **Conceptos** | 207 | ~450 signos del temario |
-| **Condiciones** | 17 | ~500 síndromes y enfermedades |
-| **Aristas con cociente** | **59** | prácticamente todo |
+| **Referencias** | 97 | las que traiga cada condición nueva |
+| **Conceptos** | 210 | ~450 signos del temario |
+| **Condiciones** | 18 | ~500 síndromes y enfermedades |
+| **Aristas con cociente** | **61** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
 se siembra: se escribe, una arista cada vez, leyendo literatura.
 
-Diecisiete condiciones han costado dieciséis fuentes verificadas. A ese ritmo,
+Dieciocho condiciones han costado diecisiete fuentes verificadas. A ese ritmo,
 las ~500 que faltan no son un sprint sino el trabajo de fondo del proyecto.
 
 ---
@@ -306,7 +307,7 @@ Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
 serie *Rational Clinical Examination* con abstract en PubMed son una veta
 acotada y verificable, y convenía agotarla mientras estaba localizada.
 
-- [x] 14 condiciones con **59 aristas medidas** sobre 13 fuentes de la serie
+- [x] 15 condiciones con **61 aristas medidas** sobre 14 fuentes de la serie
 - [x] osteoartritis de cadera → `HM:6012`, con 8 aristas de `pmid:31846019`
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
 - [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
@@ -316,11 +317,25 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
       (faringitis, adenopatía preauricular, contacto con ojo rojo) no se
       invierten —esa aritmética no la sostiene el abstract— y quedan
       declarados en `pendiente` para una futura «Conjuntivitis viral»
+- [x] apnea obstructiva del sueño → `HM:6018`, con 2 aristas de
+      `pmid:23989984`. La fuente publica además un cociente combinado
+      («ronquido leve + IMC <26», LR− 0.07) que no se activa: `reglas` está
+      pensado para criterios con nombre propio pendientes de decisión
+      (cuántos componentes exigir), no para una combinación de dos hallazgos
+      con cociente ya publicado. Queda en `pendiente` hasta que el esquema
+      tenga un lugar propio para cocientes combinados de dos conceptos
+- [!] **neumonía infantil descartada por ahora**: `pmid:28763554` (JAMA 2017,
+      la revisión vigente) tiene una errata —«Incorrect Statistical Measures
+      and Typographical Errors»— cuyo texto completo está bloqueado tanto en
+      JAMA (403) como en PMC (`PMC12507477` no permite descarga del XML
+      completo, solo metadatos). No se puede confirmar si las cifras del
+      abstract sobreviven a la corrección, así que no se cita. La referencia
+      queda creada (`referencias/pmid-28763554.yaml`) para que quien consiga
+      leer la corrección complete esto sin repetir la búsqueda
 - [ ] resto de la serie sin revisar. La búsqueda `"rational clinical
       examination"[Title] AND JAMA[Journal]` devuelve **59 registros**, así que
       la veta es bastante más ancha de lo que decía la lista anterior. Entre los
-      revisados con cociente extraíble del abstract: apnea
-      del sueño, neumonía infantil, glaucoma de ángulo
+      revisados con cociente extraíble del abstract: glaucoma de ángulo
       abierto, luxación de cadera del lactante, intubación difícil, conmoción
       infantil, maltrato físico infantil, hipertensión secundaria del niño,
       síndrome de abstinencia alcohólica grave y trastorno por consumo de
@@ -392,10 +407,10 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias              95              95
-conceptos               207            ~800
-condiciones              17             ~515
-aristas con cociente     59              59
+referencias              97              97
+conceptos               210            ~800
+condiciones              18             ~515
+aristas con cociente     61              61
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

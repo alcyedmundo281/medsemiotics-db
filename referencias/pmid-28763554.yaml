@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:28763554'
+clave_bibtex: shah2017
+tipo: articulo
+titulo: 'Does This Child Have Pneumonia?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Shah SN
+  - Bachur RG
+  - Simel DL
+  - Neuman MI
+publicacion: JAMA
+anio: 2017
+volumen: 318
+paginas: 462-471
+
+identificadores:
+  pmid: 28763554
+  doi: 10.1001/jama.2017.9039
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-23
+  retractado: false
+  errata: 'JAMA. 2017 Oct 3;318(13):1284. doi: 10.1001/jama.2017.13624.'
+  errata_corrige: Incorrect Data in the Statistical Methods Section.
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'

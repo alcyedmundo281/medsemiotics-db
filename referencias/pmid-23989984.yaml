@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:23989984'
+clave_bibtex: myers2013
+tipo: articulo
+titulo: 'Does this patient have obstructive sleep apnea?: The Rational Clinical Examination systematic review'
+autores:
+  - Myers KA
+  - Mrkobrada M
+  - Simel DL
+publicacion: JAMA
+anio: 2013
+volumen: 310
+paginas: 731-41
+
+identificadores:
+  pmid: 23989984
+  doi: 10.1001/jama.2013.276185
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-23
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

@@ -1,0 +1,84 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:23989984 (Myers 2013, JAMA), revisión de 42 estudios con
+# polisomnografía nocturna completa como patrón de referencia. Transcritos
+# del abstract.
+#
+# LA PREVALENCIA NO ES UN NÚMERO: va de 2% en cribado comunitario a 90% en
+# pacientes ya derivados a evaluación del sueño, y cambia además con el
+# umbral de índice de apnea-hipopnea (IAH) elegido y con si la definición
+# exige síntomas. Quien puebla un protocolo con esto tiene que fijar su
+# propia previa, no promediar el rango.
+
+id: 'HM:6018'
+tipo: condicion
+clase: enfermedad
+termino: Apnea obstructiva del sueño
+termino_en: Obstructive sleep apnea
+sinonimos: [SAOS, apnea del sueño]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  rango: [0.02, 0.90]
+  poblacion: >-
+    2%-14% en cribado comunitario, 21%-90% en pacientes derivados a
+    evaluación del sueño; varía además con el umbral de IAH usado (≥5/h:
+    14%; ≥15/h: 6%; ≥5/h con síntomas: 2%-4%)
+  ref: 'pmid:23989984'
+  nota: >-
+    tres variables mueven este número a la vez —tipo de población, umbral de
+    IAH, y si exige síntomas—, así que no hay una previa única que citar sin
+    fijar las tres
+
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3072'    # Ahogo o jadeo nocturno
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.3
+      ic95: [2.1, 4.6]
+      umbral_condicion: IAH ≥10/h
+      ref: 'pmid:23989984'
+    decision: >-
+      la observación aislada más útil de la revisión para identificar apnea
+      obstructiva del sueño
+
+  - concepto: 'HM:3073'    # Ronquido
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 1.1
+      ic95: [1.0, 1.1]
+      ref: 'pmid:23989984'
+    decision: >-
+      frecuente en la enfermedad, pero el cociente pegado a 1.0 significa que
+      no sirve para establecer el diagnóstico por sí solo
+    advertencia: >-
+      un hallazgo casi universal en la sospecha clínica que, precisamente por
+      serlo, no discrimina nada
+
+pendiente:
+  - >-
+    La fuente publica un cociente combinado real que este índice no
+    estructura todavía: «ronquido leve y IMC menor de 26» tiene LR− 0.07
+    (IC95% 0.03-0.19) para descartar apnea moderada o grave (IAH ≥15/h). No
+    es una arista de un solo concepto —combina HM:3073 con un umbral de
+    HM:3074— y `reglas` está pensado para criterios con nombre propio
+    pendientes de activar, no para una combinación con cociente ya
+    publicado. Se declara aquí en vez de forzarla en un campo que no la
+    describe bien; entrará estructurada cuando el esquema tenga un lugar
+    para cocientes combinados de dos hallazgos.
+
+conclusion_de_la_fuente: >-
+  El ahogo o jadeo nocturno es el indicador clínico aislado más fiable de
+  apnea obstructiva del sueño; el ronquido, en cambio, es poco específico. La
+  exploración clínica es útil para seleccionar a quién derivar a pruebas
+  diagnósticas definitivas.
+
+procedencia:
+  fuente: >-
+    Acuñada al retomar la serie Rational Clinical Examination (oleada 1.5).
+    Valores del abstract de pmid:23989984, no del texto completo.
