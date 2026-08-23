@@ -12,6 +12,19 @@ significante: null
 significado: null
 falsos_positivos: []
 
+medios:
+  - tipo: imagen
+    id: "wikimedia:ST_segment_elevation_and_depression.jpg"
+    descripcion: >-
+      Trazado electrocardiográfico esquemático mostrando elevación y descenso
+      del segmento ST frente al trazado normal
+    credito: PeaBrainC
+    fuente: Wikimedia Commons
+    fuente_url: "https://commons.wikimedia.org/wiki/File:ST_segment_elevation_and_depression.jpg"
+    licencia_img: CC BY-SA 4.0
+    licencia_url: "https://creativecommons.org/licenses/by-sa/4.0/"
+    archivo_local: "assets/img/descenso-segmento-st.jpg"
+
 procedencia:
   fuente: >-
     Acuñado al modelar el síndrome coronario agudo. Es el hallazgo

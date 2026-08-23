@@ -19,5 +19,17 @@ significante: null
 significado: null
 falsos_positivos: []
 
+medios:
+  - tipo: imagen
+    id: "wikimedia:Atypical_lymphocytes_2.jpg"
+    descripcion: >-
+      Frotis de sangre periférica con linfocitos atípicos (células de Downey)
+    credito: Dr Erhabor Osaro
+    fuente: Wikimedia Commons
+    fuente_url: "https://commons.wikimedia.org/wiki/File:Atypical_lymphocytes_2.jpg"
+    licencia_img: CC BY-SA 3.0
+    licencia_url: "https://creativecommons.org/licenses/by-sa/3.0/"
+    archivo_local: "assets/img/linfocitosis-atipica.jpg"
+
 procedencia:
   fuente: Acuñado al modelar la mononucleosis infecciosa.

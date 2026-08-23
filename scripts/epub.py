@@ -134,6 +134,30 @@ def filas_signo_md(indice: "motor.Indice", arista: dict, donde: str) -> tuple[li
     return lineas, notas
 
 
+def figura_markdown(medio: dict) -> str:
+    pie = (
+        f"{medio['descripcion']}. {medio['credito']}. "
+        f"[{medio['fuente']}]({medio['fuente_url']}). "
+        f"[{medio['licencia_img']}]({medio['licencia_url']})."
+    )
+    return f"![{pie}]({medio['archivo_local']})"
+
+
+def figuras_de_condicion_md(indice: "motor.Indice", signos: list[dict], donde: str) -> list[str]:
+    partes: list[str] = []
+    vistos: set[str] = set()
+    for arista in signos:
+        cid = str(arista.get("concepto") or "")
+        if not cid or cid in vistos:
+            continue
+        concepto = motor.resolver_concepto(indice, cid, donde)
+        medio = motor.imagen_de_concepto(indice, concepto, f"{donde} ({concepto.get('termino')})")
+        if medio:
+            vistos.add(cid)
+            partes += [figura_markdown(medio), ""]
+    return partes
+
+
 def seccion_condicion_md(indice: "motor.Indice", archivo: str, condicion: dict) -> list[str]:
     termino = condicion.get("termino") or archivo
     donde = f"{archivo} ({termino})"
@@ -173,6 +197,7 @@ def seccion_condicion_md(indice: "motor.Indice", archivo: str, condicion: dict) 
         partes.append("")
         partes += notas_todas
         partes.append("")
+        partes += figuras_de_condicion_md(indice, condicion["signos"], donde)
 
     alarmas = condicion.get("signos_de_alarma") or []
     if alarmas:
@@ -312,7 +337,7 @@ def estilo(path: Path) -> None:
     )
 
 
-def validar_epub(path: Path, indice: "motor.Indice") -> str:
+def validar_epub(path: Path, indice: "motor.Indice", figuras: int) -> str:
     if not path.is_file() or path.stat().st_size < 20 * 1024:
         raise motor.ErrorGeneracion("el EPUB no existe o es sospechosamente pequeño")
     with zipfile.ZipFile(path) as zf:
@@ -336,7 +361,15 @@ def validar_epub(path: Path, indice: "motor.Indice") -> str:
         fallos = [nombre for nombre, correcto in comprobaciones.items() if not correcto]
         if fallos:
             raise motor.ErrorGeneracion("validación editorial EPUB fallida: " + ", ".join(fallos))
-    return f"contenedor EPUB3 válido ({len(indice.condiciones_por_archivo)} condiciones, {len(indice.conceptos)} conceptos)"
+        imagenes = [n for n in nombres if n.lower().endswith((".png", ".jpg", ".jpeg", ".svg", ".webp"))]
+        if len(imagenes) < figuras:
+            raise motor.ErrorGeneracion(
+                f"faltan imágenes incrustadas: esperadas al menos {figuras}, halladas {len(imagenes)}"
+            )
+    return (
+        f"contenedor EPUB3 válido ({len(indice.condiciones_por_archivo)} condiciones, "
+        f"{len(indice.conceptos)} conceptos, {figuras} figuras)"
+    )
 
 
 def main() -> int:
@@ -362,7 +395,9 @@ def main() -> int:
         trabajo = Path(temporal)
         md = trabajo / "indice.md"
         css = trabajo / "epub.css"
-        md.write_text(manuscrito(indice, version), encoding="utf-8")
+        texto_manuscrito = manuscrito(indice, version)
+        figuras = texto_manuscrito.count("\n![")
+        md.write_text(texto_manuscrito, encoding="utf-8")
         estilo(css)
         temporal_epub = trabajo / "indice.epub"
         comando = [
@@ -371,6 +406,7 @@ def main() -> int:
             f"--output={temporal_epub}",
             "--toc", "--toc-depth=2",
             f"--css={css}",
+            f"--resource-path={raiz}",
             f"--metadata=title:{TITULO}",
             f"--metadata=subtitle:{SUBTITULO}",
             f"--metadata=author:{AUTOR}",
@@ -379,12 +415,13 @@ def main() -> int:
             f"--metadata=rights:{LICENCIA}",
         ]
         subprocess.run(comando, cwd=raiz, check=True)
-        validacion = validar_epub(temporal_epub, indice)
+        validacion = validar_epub(temporal_epub, indice, figuras)
         os.replace(temporal_epub, salida)
 
     print(f"✓ Conceptos: {len(indice.conceptos)}")
     print(f"✓ Condiciones: {len(indice.condiciones_por_archivo)}")
     print(f"✓ Referencias: {len(indice.referencias)}")
+    print(f"✓ Figuras: {figuras}")
     print(f"✓ Versión: {version} · fecha: {date.today().isoformat()}")
     print(f"✓ Tamaño: {salida.stat().st_size:,} bytes")
     print(f"✓ Validación interna: {validacion}")

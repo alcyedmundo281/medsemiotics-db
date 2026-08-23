@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 import tempfile
 import zipfile
@@ -30,8 +31,23 @@ lualatex -halt-on-error -interaction=nonstopmode libro.tex
 ```
 
 Requiere LuaLaTeX, Biber, la fuente FreeSerif, y los paquetes babel-spanish,
-biblatex, longtable, array, hyperref.
+biblatex, longtable, array, graphicx, float, adjustbox, hyperref.
 """
+
+RE_INCLUDEGRAPHICS = re.compile(r"\\includegraphics\[[^\]]*\]\{([^}]+)\}")
+
+
+def imagenes_referenciadas(tex: Path, raiz: Path) -> list[Path]:
+    """Cada `\\includegraphics` de libro.tex, resuelto desde build/ (de donde
+    compila) — no desde la raíz del repositorio."""
+    build_dir = tex.parent
+    rutas = []
+    for m in RE_INCLUDEGRAPHICS.finditer(tex.read_text(encoding="utf-8")):
+        ruta = (build_dir / m.group(1)).resolve()
+        if not ruta.is_file():
+            raise RuntimeError(f"libro.tex referencia una imagen que no existe: {m.group(1)}")
+        rutas.append(ruta)
+    return rutas
 
 
 def crear_paquete(raiz: Path, salida: Path) -> tuple[int, int]:
@@ -44,6 +60,7 @@ def crear_paquete(raiz: Path, salida: Path) -> tuple[int, int]:
             "faltan componentes del paquete (ejecuta scripts/libro.py primero): "
             + ", ".join(str(p.relative_to(raiz)) for p in faltantes)
         )
+    imagenes = imagenes_referenciadas(tex, raiz)
 
     salida.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
@@ -51,7 +68,7 @@ def crear_paquete(raiz: Path, salida: Path) -> tuple[int, int]:
     ) as temporal:
         temporal_path = Path(temporal.name)
     try:
-        archivos = [tex, bib]
+        archivos = [tex, bib] + imagenes
         with zipfile.ZipFile(
             temporal_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
         ) as zf:

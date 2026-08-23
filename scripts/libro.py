@@ -10,9 +10,12 @@ generación en vez de imprimir un hueco.
 
 Se compila con LuaLaTeX, no pdflatex, por la misma razón que biosemiotics (su
 plantilla de calidad, sin relación de código): fontspec deja escribir ≥, →, ±
-tal cual si algún registro los trae, sin parchear glifo por glifo. A
-diferencia de biosemiotics, el índice no tiene imágenes, así que el preámbulo
-no carga graphicx/float/adjustbox.
+tal cual si algún registro los trae, sin parchear glifo por glifo.
+
+Las figuras viven en `conceptos/*.yaml` bajo `medios`, con el mismo esquema
+que exige biosemiotics: descripción, crédito, fuente y su URL, licencia y su
+URL, y `archivo_local`. Sin alguno de esos datos, o sin el archivo, la
+generación aborta — no se omiten imágenes ni se infiere su atribución.
 
     python scripts/build.py          # primero: valida
     python scripts/libro.py          # luego: escribe build/libro.tex y refs.bib
@@ -150,6 +153,86 @@ def resolver_concepto(indice: Indice, cid, donde: str) -> dict:
     if not concepto:
         raise ErrorGeneracion(f"{donde}: apunta a concepto inexistente «{cid}»")
     return concepto
+
+
+# ── Imágenes ──────────────────────────────────────────────────────────────
+
+REQUERIDOS_IMAGEN = (
+    "descripcion", "credito", "fuente", "fuente_url", "licencia_img",
+    "licencia_url", "archivo_local",
+)
+
+DPI_IMPRESION = 150
+
+
+def _dims_px(path: Path):
+    """(ancho, alto) en píxeles leyendo solo la cabecera. Sin Pillow: la CI
+    corre esto con solo PyYAML instalado."""
+    try:
+        with path.open("rb") as f:
+            head = f.read(24)
+            if head[:8] == b"\x89PNG\r\n\x1a\n":
+                import struct
+                return struct.unpack(">II", head[16:24])
+            if head[:2] == b"\xff\xd8":
+                import struct
+                f.seek(2)
+                b = f.read(1)
+                while b:
+                    while b == b"\xff":
+                        b = f.read(1)
+                    if b[0] in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7,
+                                0xC9, 0xCA, 0xCB):
+                        f.read(3)
+                        h, w = struct.unpack(">HH", f.read(4))
+                        return w, h
+                    seg = struct.unpack(">H", f.read(2))[0]
+                    f.seek(seg - 2, 1)
+                    b = f.read(1)
+    except Exception:
+        pass
+    return None
+
+
+def imagen_de_concepto(indice: Indice, concepto: dict, donde: str) -> dict | None:
+    """La primera imagen válida de un concepto, o aborta si trae `medios` con
+    metadatos incompletos. build.py ya lo valida; esto repite el mínimo que
+    libro.py necesita para no tipografiar una figura sin atribución."""
+    for i, medio in enumerate(concepto.get("medios") or [], 1):
+        if medio.get("tipo") != "imagen":
+            continue
+        faltantes = [c for c in REQUERIDOS_IMAGEN if not medio.get(c)]
+        if faltantes:
+            raise ErrorGeneracion(f"{donde}: medio {i} sin {', '.join(faltantes)}")
+        ruta = (indice.raiz / medio["archivo_local"]).resolve()
+        if not ruta.is_file():
+            raise ErrorGeneracion(f"{donde}: no existe {medio['archivo_local']}")
+        return medio
+    return None
+
+
+def figura_latex(indice: Indice, medio: dict) -> str:
+    ruta = (indice.raiz / medio["archivo_local"]).resolve()
+    relativa = ruta.relative_to(indice.raiz.resolve())
+    credito = escape_latex(
+        ". ".join(p for p in (medio["credito"], medio["fuente"], medio["licencia_img"]) if p) + "."
+    )
+    desc = escape_latex(medio["descripcion"])
+    dims = _dims_px(ruta)
+    if dims:
+        ancho_in = dims[0] / DPI_IMPRESION
+        spec = (rf"width={ancho_in:.2f}in,max width=0.85\textwidth,"
+                r"max height=0.4\textheight,keepaspectratio")
+    else:
+        spec = r"width=0.85\textwidth,height=0.4\textheight,keepaspectratio"
+    # libro.tex se compila dentro de build/, de ahí el '../'.
+    return "\n".join([
+        r"\begin{figure}[H]",
+        r"  \centering",
+        rf"  \includegraphics[{spec}]{{../{relativa.as_posix()}}}",
+        rf"  \caption{{{desc} \textit{{Fuente: {credito}}}}}",
+        r"\end{figure}",
+    ])
 
 
 # ── BibTeX ────────────────────────────────────────────────────────────────
@@ -441,6 +524,24 @@ def filas_de_signo(
     return filas, notas
 
 
+def figuras_de_condicion(indice: Indice, signos: list[dict], donde: str) -> list[str]:
+    """Una figura por cada concepto ilustrado entre los signos de la
+    condición, en el orden en que aparecen y sin repetir el mismo concepto
+    dos veces."""
+    L: list[str] = []
+    vistos: set[str] = set()
+    for arista in signos:
+        cid = str(arista.get("concepto") or "")
+        if not cid or cid in vistos:
+            continue
+        concepto = resolver_concepto(indice, cid, donde)
+        medio = imagen_de_concepto(indice, concepto, f"{donde} ({concepto.get('termino')})")
+        if medio:
+            vistos.add(cid)
+            L.append(figura_latex(indice, medio))
+    return L
+
+
 def tabla_signos(indice: Indice, signos: list[dict], donde: str) -> list[str]:
     L = [
         r"\begin{longtable}{p{4.2cm}p{2cm}p{5cm}p{1.2cm}}",
@@ -697,6 +798,7 @@ def capitulo_condicion(indice: Indice, archivo: str, condicion: dict) -> list[st
     if condicion.get("signos"):
         L.append(r"\paragraph{Signos.}")
         L += tabla_signos(indice, condicion["signos"], donde)
+        L += figuras_de_condicion(indice, condicion["signos"], donde)
 
     L += bloque_signos_de_alarma(indice, condicion, donde)
     L += bloque_reglas(indice, condicion, donde)
@@ -755,6 +857,9 @@ def build_latex(indice: Indice, autor: str = AUTOR) -> str:
         r"\usepackage[spanish]{babel}",
         r"\usepackage{longtable}",
         r"\usepackage{array}",
+        r"\usepackage{graphicx}",
+        r"\usepackage{float}",
+        r"\usepackage[export]{adjustbox}",  # habilita 'max width' en includegraphics
         r"\usepackage[hidelinks]{hyperref}",
         r"\usepackage[backend=biber,style=numeric]{biblatex}",
         r"\addbibresource{refs.bib}",
