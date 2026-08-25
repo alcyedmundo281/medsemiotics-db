@@ -12,6 +12,17 @@ significante: null
 significado: null
 falsos_positivos: []
 
+medios:
+  - tipo: imagen
+    id: "wikimedia:Swollen_eye_with_conjunctivitis.jpg"
+    descripcion: "Eritema conjuntival y secreción purulenta copiosa en frotis y fondo de saco, hallazgo de alta especificidad para conjuntivitis bacteriana"
+    credito: "Tanalai"
+    fuente: "Wikimedia Commons"
+    fuente_url: "https://commons.wikimedia.org/wiki/File:Swollen_eye_with_conjunctivitis.jpg"
+    licencia_img: "CC BY 3.0"
+    licencia_url: "https://creativecommons.org/licenses/by/3.0/"
+    archivo_local: "assets/img/secrecion-ocular-mucopurulenta.jpg"
+
 procedencia:
   fuente: >-
     Acuñado al modelar la conjuntivitis bacteriana. La fuente lo describe como

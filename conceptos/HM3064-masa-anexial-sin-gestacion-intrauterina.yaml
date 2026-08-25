@@ -15,6 +15,17 @@ significante: null
 significado: null
 falsos_positivos: []
 
+medios:
+  - tipo: imagen
+    id: "wikimedia:Ectopic_pregnancy.JPG"
+    descripcion: "Ecografía transvaginal que demuestra masa anexial compatible con saco gestacional ectópico extrauterino"
+    credito: "X.Compagnion"
+    fuente: "Wikimedia Commons"
+    fuente_url: "https://commons.wikimedia.org/wiki/File:Ectopic_pregnancy.JPG"
+    licencia_img: "Public domain"
+    licencia_url: "https://creativecommons.org/publicdomain/mark/1.0/"
+    archivo_local: "assets/img/masa-anexial-sin-gestacion-intrauterina.jpg"
+
 procedencia:
   fuente: >-
     Acuñado al modelar el embarazo ectópico. Es un hallazgo compuesto y se

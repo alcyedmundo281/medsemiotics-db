@@ -13,6 +13,17 @@ significante: null
 significado: null
 falsos_positivos: []
 
+medios:
+  - tipo: imagen
+    id: "wikimedia:Obstruction_ventilation_apnée_sommeil.svg"
+    descripcion: "Diagrama sagital del colapso y obstrucción de la vía aérea faríngea durante un episodio de apnea obstructiva del sueño"
+    credito: "Habib M'henni"
+    fuente: "Wikimedia Commons"
+    fuente_url: "https://commons.wikimedia.org/wiki/File:Obstruction_ventilation_apn%C3%A9e_sommeil.svg"
+    licencia_img: "Public domain"
+    licencia_url: "https://creativecommons.org/publicdomain/mark/1.0/"
+    archivo_local: "assets/img/ahogo-o-jadeo-nocturno.svg"
+
 procedencia:
   fuente: >-
     Acuñado al modelar la apnea obstructiva del sueño. La fuente lo describe
