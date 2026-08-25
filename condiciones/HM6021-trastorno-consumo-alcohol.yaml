@@ -1,0 +1,110 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:38592385 (Keyes 2024, JAMA RCE), 35 estudios con 79 633
+# participantes evaluados para trastorno por consumo de alcohol según criterios DSM-5.
+#
+# Un AUDIT ≥ 8 aumenta la probabilidad de trastorno por consumo de alcohol con un
+# LR+ global de 6.5 (IC 95%: 3.9-11), con mayor rendimiento en mujeres (LR+ 6.9,
+# IC 95%: 3.9-12) que en hombres (LR+ 3.8, IC 95%: 2.6-5.5).
+#
+# Un AUDIT < 8 reduce la probabilidad de forma similar en ambos sexos (LR- 0.33,
+# IC 95%: 0.20-0.52).
+#
+# En el postparto inmediato (primeras 48 h), un AUDIT ≥ 4 eleva la probabilidad
+# (LR+ 6.4, IC 95%: 5.1-8.0), mientras que un TWEAK o T-ACE < 2 la descarta casi
+# por completo (LR- 0.05, IC 95%: 0.01-0.20).
+
+id: HM:6021
+tipo: condicion
+clase: enfermedad
+termino: Trastorno por consumo de alcohol
+termino_en: Alcohol use disorder
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=trastorno-consumo-alcohol-audit-audit-c"
+sinonimos:
+  - alcoholismo
+  - dependencia del alcohol
+  - abuso de alcohol
+  - consumo perjudicial de alcohol
+
+codigos:
+  snomed: null
+  cie10: null
+
+probabilidad_base: null
+
+factores_riesgo:
+  - factor: Antecedente familiar de trastorno por consumo de sustancias
+  - factor: Inicio precoz del consumo de alcohol en la adolescencia
+  - factor: Trastornos psiquiátricos comórbidos (depresión, ansiedad)
+
+signos:
+  - concepto: 'HM:3083'
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: adultos evaluados con cuestionario AUDIT frente a criterios diagnósticos DSM-5 (n = 79 633)
+    lr_positivo:
+      valor: 6.5
+      ic95: [3.9, 11]
+      ref: pmid:38592385
+      nota: "en mujeres el LR+ es 6.9 (IC 95%: 3.9-12); en hombres es 3.8 (IC 95%: 2.6-5.5)"
+    decision: >-
+      AUDIT ≥ 8: el instrumento estándar de cribado. Con LR+ de 6.5 global (6.9
+      en mujeres y 3.8 en hombres), confirma alta probabilidad de trastorno por
+      consumo de alcohol según DSM-5 y exige intervención breve o derivación.
+
+  - concepto: 'HM:3085'
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: adultos evaluados con AUDIT
+    lr_negativo:
+      valor: 0.33
+      ic95: [0.20, 0.52]
+      ref: pmid:38592385
+    decision: >-
+      AUDIT < 8: reduce la probabilidad de trastorno por consumo de alcohol
+      (LR- 0.33) de forma consistente en mujeres y hombres.
+
+  - concepto: 'HM:3084'
+    rol: apoyo
+    estado_lr: medido
+    poblacion: adultos en atención primaria
+    lr_positivo:
+      rango: [1.8, 2.0]
+      ref: pmid:38592385
+      nota: "hombres LR+ 1.8 (IC 95%: 1.5-2.2); mujeres LR+ 2.0 (IC 95%: 1.8-2.3)"
+    decision: >-
+      AUDIT-C positivo (hombres ≥4, mujeres ≥3): útil para detectar consumo excesivo
+      de riesgo rápido, pero modesto para confirmar trastorno por consumo formal (LR+ ~1.9).
+
+  - concepto: 'HM:3086'
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: mujeres puérperas evaluadas en las primeras 48 horas postparto
+    lr_positivo:
+      valor: 6.4
+      ic95: [5.1, 8.0]
+      ref: pmid:38592385
+    decision: >-
+      AUDIT ≥ 4 en postparto: identifica eficazmente a puérperas con alta probabilidad
+      de trastorno por consumo de alcohol (LR+ 6.4).
+
+  - concepto: 'HM:3087'
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: mujeres puérperas evaluadas en las primeras 48 horas postparto
+    lr_negativo:
+      valor: 0.05
+      ic95: [0.01, 0.20]
+      ref: pmid:38592385
+    decision: >-
+      TWEAK o T-ACE < 2 en postparto: excelente poder de exclusión (LR- 0.05),
+      descartando prácticamente el trastorno en esta población.
+
+conclusion_de_la_fuente: >-
+  El cuestionario AUDIT (≥ 8) es la herramienta más útil para identificar trastorno por
+  consumo de alcohol según el DSM-5 en adultos (LR+ 6.5; LR- 0.33). El AUDIT-C es adecuado
+  para consumo de riesgo. En el postparto inmediato, el AUDIT ≥ 4 confirma (LR+ 6.4) y
+  las herramientas TWEAK/T-ACE < 2 descartan con gran exactitud (LR- 0.05).
+
+procedencia:
+  fuente: Acuñado a partir de pmid:38592385 (Keyes 2024, JAMA RCE).

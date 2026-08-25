@@ -1,0 +1,31 @@
+id: HM:3083
+tipo: concepto
+semantica: hallazgo
+termino: Cuestionario AUDIT con puntuación ≥ 8
+termino_en: AUDIT score ≥ 8
+sinonimos:
+- test de identificación de trastornos por consumo de alcohol positivo
+- puntuación AUDIT igual o mayor a 8 puntos
+padre: HM:0600
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar el trastorno por consumo de alcohol (HM:6021).
+medios:
+- tipo: imagen
+  id: wikimedia:NIH_standard_drink_comparison-es.png
+  descripcion: Definición y equivalencias de una bebida estándar (14 g de alcohol)
+    según el NIAAA para la aplicación e interpretación del cuestionario AUDIT
+  credito: 'http://www.niaaa.nih.gov/alcohol-health/overview-alcohol-consumption/what-standard-drink
+
+    De la traducción: Ortisa'
+  fuente: Wikimedia Commons
+  fuente_url: https://commons.wikimedia.org/wiki/File:NIH_standard_drink_comparison-es.png
+  licencia_img: CC BY-SA 4.0
+  licencia_url: https://creativecommons.org/licenses/by-sa/4.0
+  archivo_local: assets/img/cuestionario-audit-puntuacion-8-o-mas.png

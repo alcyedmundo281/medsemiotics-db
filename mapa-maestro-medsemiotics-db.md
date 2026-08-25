@@ -223,6 +223,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6018` | Apnea obstructiva del sueño | 2 | `pmid:23989984` |
 | `HM:6019` | Luxación de cadera en el lactante | 3 | `pmid:38619828` |
 | `HM:6020` | Intubación difícil | 5 | `pmid:30721300` |
+| `HM:6021` | Trastorno por consumo de alcohol | 5 | `pmid:38592385` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -340,16 +341,18 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
 - [x] intubación difícil → `HM:6020`, con 5 aristas de `pmid:30721300` (mordida
       del labio superior clase 3: LR+ 14; distancia hiodomentoniana corta: LR+
       6.4; retrognatia: LR+ 6.0; Wilson: LR+ 9.1; Mallampati ≥3: LR+ 4.1).
+- [x] trastorno por consumo de alcohol → `HM:6021`, con 5 aristas de
+      `pmid:38592385` (AUDIT ≥ 8: LR+ 6.5 global, mujeres 6.9, hombres 3.8;
+      AUDIT < 8: LR- 0.33; postparto AUDIT ≥ 4: LR+ 6.4, TWEAK/T-ACE < 2: LR- 0.05).
 - [ ] resto de la serie sin revisar. La búsqueda `"rational clinical
       examination"[Title] AND JAMA[Journal]` devuelve **59 registros**, así que
       la veta es bastante más ancha de lo que decía la lista anterior. Entre los
       revisados con cociente extraíble del abstract: glaucoma de ángulo
       abierto, conmoción infantil, maltrato físico infantil, hipertensión
-      secundaria del niño, síndrome de abstinencia alcohólica grave y trastorno
-      por consumo de alcohol. Quedan fuera por medir escalas y no signos:
-      ansiedad y pánico, obstrucción del tracto urinario inferior, mal de
-      altura. Sin revisar todavía, la disfunción tiroidea y el grueso de la
-      serie anterior a 2013
+      secundaria del niño y síndrome de abstinencia alcohólica grave. Quedan
+      fuera por medir escalas y no signos: ansiedad y pánico, obstrucción del
+      tracto urinario inferior, mal de altura. Sin revisar todavía, la
+      disfunción tiroidea y el grueso de la serie anterior a 2013
 - [ ] pendientes de **texto completo**: ascitis y esplenomegalia (sin abstract),
       las tres reglas de predicción de la faringitis, y el extremo del rango
       7.1–250 del colesterol pleural
