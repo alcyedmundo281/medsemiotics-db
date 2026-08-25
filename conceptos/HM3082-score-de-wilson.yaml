@@ -1,0 +1,18 @@
+# Concepto del índice. Acuñado al modelar HM:6020 (intubación difícil).
+
+id: 'HM:3082'
+tipo: concepto
+semantica: hallazgo
+termino: Score de Wilson de riesgo aumentado
+termino_en: High Wilson risk score
+sinonimos:
+  - escala de Wilson para vía aérea difícil
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la intubación endotraqueal difícil (HM:6020).

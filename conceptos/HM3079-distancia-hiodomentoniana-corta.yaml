@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6020 (intubación difícil).
+
+id: 'HM:3079'
+tipo: concepto
+semantica: hallazgo
+termino: Distancia hiodomentoniana o tiromentoniana corta
+termino_en: Short hyomental or thyromental distance
+sinonimos:
+  - distancia tiromentoniana reducida
+  - distancia hiodomentoniana menor de 3 a 5.5 cm
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la intubación endotraqueal difícil (HM:6020).

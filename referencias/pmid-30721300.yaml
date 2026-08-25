@@ -1,0 +1,36 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:30721300'
+clave_bibtex: detsky2019
+tipo: articulo
+titulo: 'Will This Patient Be Difficult to Intubate?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Detsky ME
+  - Jivraj N
+  - Adhikari NK
+  - Friedrich JO
+  - Pinto R
+  - Simel DL
+  - Wijeysundera DN
+  - Scales DC
+publicacion: JAMA
+anio: 2019
+volumen: 321
+paginas: 493-503
+
+identificadores:
+  pmid: 30721300
+  doi: 10.1001/jama.2018.21413
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-25
+  retractado: false
+  errata: 'JAMA. 2020 Mar 24;323(12):1194. doi: 10.1001/jama.2020.2069.'
+  errata_corrige: Incorrect Percentage.
+  errata_verificada: true
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'Errata comprobada: corrigió un porcentaje en el texto narrativo de discusión (p. 496). Los cocientes de verosimilitud (tabla y abstract) están intactos y verificados.'

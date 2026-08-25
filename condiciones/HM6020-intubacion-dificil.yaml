@@ -1,0 +1,117 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:30721300 (Detsky 2019, JAMA RCE), 62 estudios con 33 559
+# pacientes adultos evaluados antes de intubación endotraqueal quirúrgica o en urgencias.
+#
+# Incidencia base de intubación difícil: 10% (IC 95%: 8.2%-12%).
+#
+# El test de mordida del labio superior (clase 3) es el hallazgo individual con
+# mayor rendimiento confirmatorio (LR+ 14, especificidad 96%), elevando la
+# probabilidad pretest de 10% a más de 60%.
+#
+# La distancia hiodomentoniana corta (LR+ 6.4), la retrognatia (LR+ 6.0), el
+# score de Wilson (LR+ 9.1) y la escala de Mallampati modificada ≥ 3 (LR+ 4.1)
+# incrementan significativamente la sospecha.
+#
+# NINGÚN HALLAZGO FÍSICO AISLADO DESCARTA LA INTUBACIÓN DIFÍCIL (los LR-
+# oscilan entre 0.40 y 0.70).
+
+id: HM:6020
+tipo: condicion
+clase: sindrome
+termino: Intubación difícil
+termino_en: Difficult endotracheal intubation
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=intubacion-dificil-mallampati-mordida-labio"
+sinonimos:
+  - vía aérea difícil
+  - intubación orotraqueal dificultosa
+  - laringoscopia difícil
+
+codigos:
+  snomed: null
+  cie10: null
+
+probabilidad_base:
+  valor: 0.10
+  poblacion: pacientes adultos quirúrgicos generales candidatos a intubación (n = 33 559 en 62 estudios)
+  ref: pmid:30721300
+
+factores_riesgo:
+  - factor: Obesidad con IMC elevado
+  - factor: Movilidad cervical limitada o artropatía cervical
+  - factor: Antecedente personal de intubación difícil
+
+signos:
+  - concepto: 'HM:3078'
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.96
+    poblacion: pacientes quirúrgicos adultos (n = 33 559)
+    lr_positivo:
+      valor: 14
+      ic95: [8.9, 22]
+      ref: pmid:30721300
+    decision: >-
+      Test de mordida del labio superior clase 3: el predictor físico individual
+      más potente. Con LR+ 14 y especificidad del 96%, eleva la probabilidad
+      postest de 10% a más de 60%.
+
+  - concepto: 'HM:3079'
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.97
+    poblacion: pacientes quirúrgicos adultos
+    lr_positivo:
+      valor: 6.4
+      ic95: [4.1, 10]
+      ref: pmid:30721300
+    decision: >-
+      Distancia hiodomentoniana o tiromentoniana corta (<3 a 5.5 cm): alta especificidad
+      (97%) con LR+ 6.4.
+
+  - concepto: 'HM:3080'
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.98
+    poblacion: pacientes quirúrgicos adultos
+    lr_positivo:
+      valor: 6.0
+      ic95: [3.1, 11]
+      ref: pmid:30721300
+    decision: >-
+      Retrognatia (mandíbula <9 cm): especificidad del 98% con LR+ 6.0.
+
+  - concepto: 'HM:3082'
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.95
+    poblacion: pacientes quirúrgicos adultos
+    lr_positivo:
+      valor: 9.1
+      ic95: [5.1, 16]
+      ref: pmid:30721300
+    decision: >-
+      Score de Wilson de riesgo aumentado: combinación de 5 factores anatómicos
+      con LR+ 9.1 y especificidad del 95%.
+
+  - concepto: 'HM:3081'
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.87
+    poblacion: pacientes quirúrgicos adultos
+    lr_positivo:
+      valor: 4.1
+      ic95: [3.0, 5.6]
+      ref: pmid:30721300
+    decision: >-
+      Escala de Mallampati modificada (clase 3 o 4): el test más difundido;
+      aporta un LR+ de 4.1 pero con especificidad moderada (87%).
+
+conclusion_de_la_fuente: >-
+  Varios hallazgos de exploración física simple permiten identificar a pacientes con
+  alta probabilidad de intubación difícil (especialmente el test de mordida del labio
+  superior, LR+ 14), pero ningún hallazgo clínico permite excluir de forma fiable una
+  vía aérea difícil.
+
+procedencia:
+  fuente: Acuñado a partir de pmid:30721300 (Detsky 2019, JAMA RCE).

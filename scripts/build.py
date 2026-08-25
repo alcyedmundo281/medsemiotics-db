@@ -374,8 +374,11 @@ for f, d in referencias.items():
     # sosteniendo un cociente, hay que ir a comprobarla.
     if v.get('errata'):
         if d.get('id') in refs_citadas:
-            errores.append(f'{f}: tiene ERRATA y sostiene un cociente en uso — '
-                           f'verifica la cifra contra la corrección: {v["errata"]}')
+            if not v.get('errata_verificada'):
+                errores.append(f'{f}: tiene ERRATA y sostiene un cociente en uso — '
+                               f'verifica la cifra contra la corrección: {v["errata"]}')
+            else:
+                avi(f, f'tiene errata publicada cotejada y verificada ({v["errata"]})')
         else:
             avi(f, f'tiene errata publicada ({v["errata"]}); aún no la cita nadie')
 

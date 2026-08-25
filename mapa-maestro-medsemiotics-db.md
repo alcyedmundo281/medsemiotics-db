@@ -222,6 +222,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6017` | Conjuntivitis bacteriana | 2 | `pmid:35699701` |
 | `HM:6018` | Apnea obstructiva del sueño | 2 | `pmid:23989984` |
 | `HM:6019` | Luxación de cadera en el lactante | 3 | `pmid:38619828` |
+| `HM:6020` | Intubación difícil | 5 | `pmid:30721300` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -336,15 +337,18 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
 - [x] luxación de cadera en el lactante → `HM:6019`, con 3 aristas de
       `pmid:38619828` (Barlow y Ortolani: LR+ 52; abducción limitada y click
       como apoyos no discriminativos).
+- [x] intubación difícil → `HM:6020`, con 5 aristas de `pmid:30721300` (mordida
+      del labio superior clase 3: LR+ 14; distancia hiodomentoniana corta: LR+
+      6.4; retrognatia: LR+ 6.0; Wilson: LR+ 9.1; Mallampati ≥3: LR+ 4.1).
 - [ ] resto de la serie sin revisar. La búsqueda `"rational clinical
       examination"[Title] AND JAMA[Journal]` devuelve **59 registros**, así que
       la veta es bastante más ancha de lo que decía la lista anterior. Entre los
       revisados con cociente extraíble del abstract: glaucoma de ángulo
-      abierto, intubación difícil, conmoción infantil, maltrato físico infantil,
-      hipertensión secundaria del niño, síndrome de abstinencia alcohólica grave
-      y trastorno por consumo de alcohol. Quedan fuera por medir escalas y no
-      signos: ansiedad y pánico, obstrucción del tracto urinario inferior, mal
-      de altura. Sin revisar todavía, la disfunción tiroidea y el grueso de la
+      abierto, conmoción infantil, maltrato físico infantil, hipertensión
+      secundaria del niño, síndrome de abstinencia alcohólica grave y trastorno
+      por consumo de alcohol. Quedan fuera por medir escalas y no signos:
+      ansiedad y pánico, obstrucción del tracto urinario inferior, mal de
+      altura. Sin revisar todavía, la disfunción tiroidea y el grueso de la
       serie anterior a 2013
 - [ ] pendientes de **texto completo**: ascitis y esplenomegalia (sin abstract),
       las tres reglas de predicción de la faringitis, y el extremo del rango

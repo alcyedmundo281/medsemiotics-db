@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6020 (intubación difícil).
+
+id: 'HM:3078'
+tipo: concepto
+semantica: hallazgo
+termino: Test de mordida del labio superior clase 3
+termino_en: Upper lip bite test class 3
+sinonimos:
+  - prueba de la mordida del labio superior grado 3
+  - incapacidad de los incisivos inferiores para alcanzar el labio superior
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la intubación endotraqueal difícil (HM:6020).
