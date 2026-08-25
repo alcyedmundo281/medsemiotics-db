@@ -94,6 +94,33 @@ confirma a mano en la columna `decision`. Incluye guardas que bloquean pares que
 un motor de similitud confunde y un clínico jamás: `lipasemia`/`lipemia`,
 `natremia`/`potasemia`, `hiper`/`hipo`.
 
+## Motores de Medios y Publicación
+
+### `incorporar_medio.py` — descarga e incorpora medios de Wikimedia Commons
+```bash
+python scripts/incorporar_medio.py --archivo "File:Nombre_En_Commons.jpg" --entidad "HM:3064" --descripcion "Descripción clínica del hallazgo"
+```
+- Descarga la imagen a resolución completa a `assets/img/<slug>.<ext>`.
+- Extrae artista, licencia Creative Commons y URL de la fuente.
+- Añade el bloque estructurado `medios:` al YAML del concepto o condición.
+- **Sincronización Frontend automática:** Si detecta el repositorio `medsemiotics` (frontend), actualiza automáticamente la URL de la miniatura (`featured_image`), licencia y fuente en `assets/data/blog-index.json` y `assets/data/posts/<slug>.json`.
+
+### `auditar_medios.py` — auditoría y verificación SHA-1 de licencias
+```bash
+python scripts/auditar_medios.py
+python scripts/auditar_medios.py --escribir   # completa URLs canónicas faltantes
+```
+- Calcula el hash SHA-1 de cada archivo local contra la API de Wikimedia Commons.
+- Valida la presencia de los 7 campos obligatorios de atribución.
+- Normaliza las URLs canónicas de licencias Creative Commons.
+
+### `libro.py` / `epub.py` / `paquete_latex.py` — compilación tipográfica y digital
+```bash
+python scripts/libro.py          # compila build/libro.tex y build/refs.bib
+python scripts/epub.py           # compila libro electrónico EPUB vía Pandoc
+python scripts/paquete_latex.py  # genera build/medsemiotics-db-latex.zip
+```
+
 ## Orden
 
 ```
@@ -101,6 +128,8 @@ un motor de similitud confunde y un clínico jamás: `lipasemia`/`lipemia`,
 3            temario extraído
 4            conceptos sembrados
 5            casamiento propuesto  →  revisión humana  →  acuñar códigos nuevos
+incorporar_medio.py  →  auditar_medios.py  →  build.py  →  libro.py / epub.py
 ```
 
 `build.py` después de cualquiera de ellos.
+
