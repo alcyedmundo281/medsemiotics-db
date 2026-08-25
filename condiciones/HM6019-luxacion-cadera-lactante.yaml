@@ -1,0 +1,105 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:38619828 (Tidwell 2024, JAMA RCE), 9 estudios con lactantes
+# de 3 meses o menores evaluados con examen clínico y ecografía diagnóstica
+# (método de Graf como estándar de referencia).
+#
+# Prevalencia en cribado: 0.94% (n = 37 859 caderas).
+# Las maniobras de Barlow y Ortolani combinadas (provocar luxación posterior y
+# reducirla con abducción) alcanzan una especificidad de 99.1% y un LR+ de 52
+# (IC 95%: 21-127), pero su sensibilidad es del 46% (LR- 0.55), por lo que una
+# exploración negativa NO descarta la displasia.
+#
+# La limitación de la abducción (LR+ 3.6, IC 95%: 0.72-18) y el chasquido o
+# click articular aislado (LR+ 1.6, IC 95%: 0.91-2.8) no tienen utilidad
+# diagnóstica concluyente.
+
+id: HM:6019
+tipo: condicion
+clase: enfermedad
+termino: Luxación de cadera en el lactante
+termino_en: Dislocated hip in infants
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=luxacion-cadera-lactante-barlow-ortolani"
+sinonimos:
+  - displasia del desarrollo de la cadera
+  - luxación congénita de cadera
+  - displasia de cadera del lactante
+
+codigos:
+  snomed: null
+  cie10: null
+
+probabilidad_base:
+  valor: 0.0094
+  poblacion: lactantes de 3 meses o menores cribados con examen clínico y ecografía (n = 37 859 caderas)
+  ref: pmid:38619828
+
+factores_riesgo:
+  - factor: Presentación podálica al nacer
+  - factor: Sexo femenino
+  - factor: Antecedente familiar de displasia de cadera
+
+signos:
+  - concepto: 'HM:3075'
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.46
+    especificidad: 0.991
+    poblacion: lactantes de 3 meses o menores (n = 44 827 caderas en 8 estudios)
+    lr_positivo:
+      valor: 52
+      ic95: [21, 127]
+      ref: pmid:38619828
+    lr_negativo:
+      valor: 0.55
+      ic95: [0.37, 0.82]
+      ref: pmid:38619828
+    decision: >-
+      Maniobras de Barlow y Ortolani positivas: el signo que confirma la luxación
+      inestable. Cuando es positiva eleva la probabilidad pretest de 0.94% a más
+      del 33% (LR+ 52); su negatividad no descarta la displasia (LR- 0.55).
+
+  - concepto: 'HM:3076'
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.13
+    especificidad: 0.97
+    poblacion: lactantes de 3 meses o menores (n = 22 472 caderas en 3 estudios)
+    lr_positivo:
+      valor: 3.6
+      ic95: [0.72, 18]
+      ref: pmid:38619828
+    lr_negativo:
+      valor: 0.91
+      ic95: [0.76, 1.1]
+      ref: pmid:38619828
+    decision: >-
+      Limitación de la abducción: no concluyente por sí sola en menores de 3 meses;
+      el intervalo de confianza abarca el 1.0 y la sensibilidad es de apenas 13%.
+
+  - concepto: 'HM:3077'
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.13
+    especificidad: 0.92
+    poblacion: lactantes de 3 meses o menores (n = 13 096 caderas en 1 estudio)
+    lr_positivo:
+      valor: 1.6
+      ic95: [0.91, 2.8]
+      ref: pmid:38619828
+    lr_negativo:
+      valor: 0.95
+      ic95: [0.88, 1.0]
+      ref: pmid:38619828
+    decision: >-
+      Chasquido o click articular aislado: hallazgo inespecífico sin valor discriminativo
+      para luxación o displasia (el intervalo cruza el neutro).
+
+conclusion_de_la_fuente: >-
+  En lactantes evaluados para displasia del desarrollo de la cadera, la prevalencia
+  de luxación es de 0.94%. Las maniobras de Barlow y Ortolani positivas son el
+  hallazgo más fuertemente asociado (LR+ 52). La abducción limitada o el chasquido
+  aislado carecen de utilidad diagnóstica clara.
+
+procedencia:
+  fuente: Acuñado a partir de pmid:38619828 (Tidwell 2024, JAMA RCE).

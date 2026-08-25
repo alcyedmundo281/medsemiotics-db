@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6019 (luxación de cadera en el lactante).
+
+id: 'HM:3076'
+tipo: concepto
+semantica: hallazgo
+termino: Limitación de la abducción de la cadera en el lactante
+termino_en: Limited hip abduction in infants
+sinonimos:
+  - abducción limitada de cadera
+  - asimetría de abducción de cadera en lactante
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la luxación de cadera en el lactante (HM:6019).

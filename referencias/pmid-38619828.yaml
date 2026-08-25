@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:38619828'
+clave_bibtex: tidwell2024
+tipo: articulo
+titulo: 'Does This Infant Have a Dislocated Hip?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Singh A
+  - Wade RG
+  - Metcalfe D
+  - Perry DC
+publicacion: JAMA
+anio: 2024
+volumen: 331
+paginas: 1576-1585
+
+identificadores:
+  pmid: 38619828
+  doi: 10.1001/jama.2024.2404
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-25
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

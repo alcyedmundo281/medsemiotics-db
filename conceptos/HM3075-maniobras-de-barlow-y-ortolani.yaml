@@ -1,0 +1,30 @@
+id: HM:3075
+tipo: concepto
+semantica: hallazgo
+termino: Maniobras de Barlow y Ortolani positivas
+termino_en: Positive Barlow and Ortolani maneuvers
+sinonimos:
+- maniobra de Barlow positiva
+- maniobra de Ortolani positiva
+- signo de luxación y reducción de cadera
+padre: HM:0600
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar la luxación de cadera en el lactante (HM:6019).
+medios:
+- tipo: imagen
+  id: wikimedia:Ultrasound_measuring_the_developmental_dysplasia_of_right_hip.jpg
+  descripcion: Ecografía coronal de cadera en lactante que evalúa los ángulos alfa
+    y beta para diagnóstico de displasia y luxación del desarrollo
+  credito: Cerevisae
+  fuente: Wikimedia Commons
+  fuente_url: https://commons.wikimedia.org/wiki/File:Ultrasound_measuring_the_developmental_dysplasia_of_right_hip.jpg
+  licencia_img: CC BY-SA 4.0
+  licencia_url: https://creativecommons.org/licenses/by-sa/4.0
+  archivo_local: assets/img/maniobras-de-barlow-y-ortolani.jpg
