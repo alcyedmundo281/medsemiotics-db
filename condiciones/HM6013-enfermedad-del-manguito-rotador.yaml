@@ -17,6 +17,7 @@ tipo: condicion
 clase: enfermedad
 termino: Enfermedad del manguito rotador
 termino_en: Rotator cuff disease
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=enfermedad-del-manguito-rotador-precision-semiotica"
 sinonimos: [patología del manguito rotador, tendinopatía del manguito]
 
 codigos: {snomed: null, cie10: null}

@@ -1,0 +1,12 @@
+# Plantilla estándar para declarar medios y figuras en el ecosistema
+# Cada figura debe declarar todos estos campos para ser aceptada por los motores.
+
+tipo: imagen
+id: "wikimedia:ejemplo_diagnostico.jpg"
+descripcion: "Descripción clínica y pedagógica del hallazgo o diagrama"
+credito: "Autor / Fotógrafo / Creador"
+fuente: "Wikimedia Commons"
+fuente_url: "https://commons.wikimedia.org/wiki/File:..."
+licencia_img: "CC BY 4.0"
+licencia_url: "https://creativecommons.org/licenses/by/4.0/"
+archivo_local: "assets/img/ejemplo_diagnostico.jpg"

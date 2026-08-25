@@ -29,12 +29,15 @@ medsemiotics-db/
 ├── CLAUDE.md                        ← este archivo
 ├── mapa-maestro-medsemiotics-db.md  ← QUÉ poblar y en qué orden (léelo siempre)
 ├── conceptos/*.yaml                 ← signos y hallazgos
-├── condiciones/*.yaml               ← síndromes y enfermedades, con sus LR
+├── condiciones/*.yaml               ← síndromes y enfermedades, con sus LR y URLs
 ├── referencias/*.yaml               ← artículos con PMID y DOI
 ├── scripts/build.py                 ← valida; no modifica nada
 ├── scripts/libro.py                 ← genera build/libro.tex y build/refs.bib
 ├── scripts/epub.py                  ← genera build/indice.epub
 ├── scripts/paquete_latex.py         ← empaqueta la fuente LuaLaTeX en un ZIP
+├── scripts/auditar_medios.py        ← verifica SHA-1 y licencias CC contra Wikimedia
+├── scripts/incorporar_medio.py      ← descarga e incorpora imágenes con atribución completa
+├── assets/                          ← plantillas e imágenes locales
 └── build/                           ← GENERADO, no se versiona (ver .gitignore)
 ```
 
@@ -51,9 +54,7 @@ del mismo cambio que lo introduce en el índice.
 
 El compilador correcto es **LuaLaTeX, no pdflatex** (misma razón que
 biosemiotics, sin relación de código: fontspec deja escribir símbolos Unicode
-tal cual si algún registro los trae, sin parchear glifo por glifo). A
-diferencia de biosemiotics, aquí no hay imágenes, así que el preámbulo no cita
-`graphicx`/`float`/`adjustbox`.
+tal cual si algún registro los trae, sin parchear glifo por glifo).
 
 ```bash
 python scripts/build.py          # primero: valida
@@ -66,7 +67,7 @@ lualatex -halt-on-error -interaction=nonstopmode libro.tex   # segunda pasada: r
 ```
 
 **Paquetes LaTeX requeridos**: `fontspec`, `babel` (spanish), `biblatex`+
-`biber`, `longtable`, `array`, `hyperref`. En Debian/Ubuntu,
+`biber`, `longtable`, `array`, `hyperref`, `graphicx`, `float`, `adjustbox`. En Debian/Ubuntu,
 `texlive-latex-recommended` + `texlive-latex-extra` + `texlive-lang-spanish` +
 `texlive-luatex` + `biber` cubren todo.
 
@@ -80,7 +81,7 @@ python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
 Requiere Pandoc además de PyYAML. El workflow
 `.github/workflows/libro.yml` reproduce este contrato completo —validación,
 LuaLaTeX/Biber, EPUBCheck— en cada push o PR que toque `conceptos/`,
-`condiciones/`, `referencias/` o los tres scripts, y publica `libro.pdf`,
+`condiciones/`, `referencias/` o los scripts, y publica `libro.pdf`,
 `libro.tex`, `indice.epub` y el ZIP como artifacts (90 días) o, en un release,
 como assets adjuntos. `workflow_dispatch` queda como recuperación manual.
 

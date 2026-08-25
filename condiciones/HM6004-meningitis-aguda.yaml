@@ -14,6 +14,7 @@ tipo: condicion
 clase: enfermedad
 termino: Meningitis aguda
 termino_en: Acute meningitis
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=meningitis-aguda-sacudida-cefalica"
 sinonimos: [meningitis bacteriana aguda, meningitis vírica aguda]
 
 codigos: {snomed: null, cie10: null}

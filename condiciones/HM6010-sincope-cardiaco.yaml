@@ -15,6 +15,7 @@ tipo: condicion
 clase: sindrome
 termino: Síncope cardíaco
 termino_en: Cardiac syncope
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=sincope-cardiaco-vs-vasovagal-anamnesis"
 sinonimos: [síncope de origen cardíaco, síncope arrítmico]
 
 codigos: {snomed: null, cie10: null}

@@ -15,6 +15,7 @@ tipo: condicion
 clase: enfermedad
 termino: Infección precoz por VIH
 termino_en: Early HIV infection
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=infeccion-precoz-por-vih-precision-semiotica"
 sinonimos: [primoinfección por VIH, infección aguda por VIH]
 
 codigos: {snomed: null, cie10: null}

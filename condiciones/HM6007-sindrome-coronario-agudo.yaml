@@ -18,6 +18,7 @@ tipo: condicion
 clase: sindrome
 termino: Síndrome coronario agudo
 termino_en: Acute coronary syndrome
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=sindrome-coronario-agudo-dolor-toracico-ecg"
 sinonimos: [SCA, angina inestable e infarto]
 
 codigos: {snomed: null, cie10: null}

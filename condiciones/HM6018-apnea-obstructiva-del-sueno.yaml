@@ -15,6 +15,7 @@ tipo: condicion
 clase: enfermedad
 termino: Apnea obstructiva del sueño
 termino_en: Obstructive sleep apnea
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=apnea-obstructiva-del-sueno-precision-semiotica"
 sinonimos: [SAOS, apnea del sueño]
 
 codigos: {snomed: null, cie10: null}

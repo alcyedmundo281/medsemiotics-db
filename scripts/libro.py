@@ -778,6 +778,7 @@ CAMPOS_CONOCIDOS = {
     # Declarativamente honestos, pero no clínicos: se tipografían igual con el
     # renderizador genérico para no perderlos.
     "no_emitidos", "discrepancias", "modificadores", "notas_de_uso",
+    "url", "medios",
 }
 
 
@@ -790,6 +791,8 @@ def capitulo_condicion(indice: Indice, archivo: str, condicion: dict) -> list[st
         L.append(rf"\emph{{{escape_latex(condicion['termino_en'])}}}")
     if condicion.get("sinonimos"):
         L.append(escape_latex("Sinónimos: " + ", ".join(condicion["sinonimos"])) + ".")
+    if condicion.get("url"):
+        L.append(rf"\textbf{{Artículo interactivo:}} \url{{{condicion['url']}}}")
 
     L += bloque_probabilidad_base(indice, condicion, donde)
     L += bloque_factores_riesgo(condicion)
