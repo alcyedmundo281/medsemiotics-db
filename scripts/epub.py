@@ -13,6 +13,7 @@ el resto de las reglas de integridad.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import shutil
 import subprocess
@@ -97,6 +98,22 @@ def entrada_concepto_md(cid: str, concepto: dict) -> str:
 def seccion_vocabulario(indice: "motor.Indice") -> list[str]:
     partes = ["# Vocabulario", ""]
     ubicados: set[str] = set()
+    ilustrados_en_condiciones = {
+        str(signo.get("concepto"))
+        for condicion in indice.condiciones_por_archivo.values()
+        for signo in condicion.get("signos") or []
+    }
+
+    def entrada(cid: str) -> list[str]:
+        concepto = indice.concepto(cid)
+        lineas = ["- " + entrada_concepto_md(cid, concepto)]
+        # Los conceptos sin aristas también conservan todas sus imágenes.
+        if cid not in ilustrados_en_condiciones:
+            figuras = figuras_de_registro_md(indice, concepto, cid)
+            if figuras:
+                lineas += [""] + figuras
+        return lineas
+
     for raiz_id, titulo in motor.GRUPOS_VOCABULARIO:
         hijos = sorted(
             (cid for cid, c in indice.conceptos.items() if c.get("padre") == raiz_id and cid != raiz_id),
@@ -110,14 +127,14 @@ def seccion_vocabulario(indice: "motor.Indice") -> list[str]:
             continue
         for cid in hijos:
             ubicados.add(cid)
-            partes.append("- " + entrada_concepto_md(cid, indice.concepto(cid)))
+            partes += entrada(cid)
         partes.append("")
 
     huerfanos = sorted((cid for cid in indice.conceptos if cid not in ubicados), key=lambda cid: indice.termino(cid))
     if huerfanos:
         partes += ["## Otros conceptos", ""]
         for cid in huerfanos:
-            partes.append("- " + entrada_concepto_md(cid, indice.conceptos[cid]))
+            partes += entrada(cid)
         partes.append("")
     return partes
 
@@ -143,6 +160,32 @@ def figura_markdown(medio: dict) -> str:
     return f"![{pie}]({medio['archivo_local']})"
 
 
+def imagenes_de_registro(indice: "motor.Indice", registro: dict, donde: str) -> list[dict]:
+    """Todas las imágenes declaradas, con archivo y atribución completos."""
+    imagenes = []
+    for i, medio in enumerate(registro.get("medios") or [], 1):
+        if medio.get("tipo") != "imagen":
+            continue
+        faltantes = [c for c in motor.REQUERIDOS_IMAGEN if not medio.get(c)]
+        if faltantes:
+            raise motor.ErrorGeneracion(f"{donde}: medio {i} sin {', '.join(faltantes)}")
+        ruta = (indice.raiz / medio["archivo_local"]).resolve()
+        if not ruta.is_relative_to(indice.raiz.resolve()):
+            raise motor.ErrorGeneracion(f"{donde}: medio {i} apunta fuera del repositorio")
+        if not ruta.is_file():
+            raise motor.ErrorGeneracion(f"{donde}: no existe {medio['archivo_local']}")
+        imagenes.append(medio)
+    return imagenes
+
+
+def figuras_de_registro_md(indice: "motor.Indice", registro: dict, donde: str) -> list[str]:
+    return [
+        linea
+        for medio in imagenes_de_registro(indice, registro, donde)
+        for linea in (figura_markdown(medio), "")
+    ]
+
+
 def figuras_de_condicion_md(indice: "motor.Indice", signos: list[dict], donde: str) -> list[str]:
     partes: list[str] = []
     vistos: set[str] = set()
@@ -151,10 +194,8 @@ def figuras_de_condicion_md(indice: "motor.Indice", signos: list[dict], donde: s
         if not cid or cid in vistos:
             continue
         concepto = motor.resolver_concepto(indice, cid, donde)
-        medio = motor.imagen_de_concepto(indice, concepto, f"{donde} ({concepto.get('termino')})")
-        if medio:
-            vistos.add(cid)
-            partes += [figura_markdown(medio), ""]
+        vistos.add(cid)
+        partes += figuras_de_registro_md(indice, concepto, f"{donde} ({concepto.get('termino')})")
     return partes
 
 
@@ -166,6 +207,7 @@ def seccion_condicion_md(indice: "motor.Indice", archivo: str, condicion: dict) 
         partes += [f"*{condicion['termino_en']}*", ""]
     if condicion.get("sinonimos"):
         partes += ["Sinónimos: " + ", ".join(condicion["sinonimos"]) + ".", ""]
+    partes += figuras_de_registro_md(indice, condicion, donde)
 
     base = condicion.get("probabilidad_base")
     if base is not None:
@@ -361,10 +403,21 @@ def validar_epub(path: Path, indice: "motor.Indice", figuras: int) -> str:
         fallos = [nombre for nombre, correcto in comprobaciones.items() if not correcto]
         if fallos:
             raise motor.ErrorGeneracion("validación editorial EPUB fallida: " + ", ".join(fallos))
-        imagenes = [n for n in nombres if n.lower().endswith((".png", ".jpg", ".jpeg", ".svg", ".webp"))]
-        if len(imagenes) < figuras:
+        # Pandoc puede reutilizar un recurso que se ilustra varias veces.
+        # Comprobar contenido contra el índice detecta omisiones aunque el
+        # manuscrito haya olvidado una figura o haya otras imágenes de sobra.
+        imagenes = [n for n in nombres if n.lower().endswith((".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"))]
+        incrustadas = {hashlib.sha256(zf.read(n)).digest() for n in imagenes}
+        faltantes = set()
+        for registros in (indice.conceptos, indice.condiciones_por_archivo):
+            for rid, registro in registros.items():
+                for medio in imagenes_de_registro(indice, registro, rid):
+                    ruta = indice.raiz / medio["archivo_local"]
+                    if hashlib.sha256(ruta.read_bytes()).digest() not in incrustadas:
+                        faltantes.add(medio["archivo_local"])
+        if faltantes:
             raise motor.ErrorGeneracion(
-                f"faltan imágenes incrustadas: esperadas al menos {figuras}, halladas {len(imagenes)}"
+                "faltan imágenes incrustadas: " + ", ".join(sorted(faltantes))
             )
     return (
         f"contenedor EPUB3 válido ({len(indice.condiciones_por_archivo)} condiciones, "

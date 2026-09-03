@@ -121,6 +121,17 @@ python scripts/epub.py           # compila libro electrónico EPUB vía Pandoc
 python scripts/paquete_latex.py  # genera build/medsemiotics-db-latex.zip
 ```
 
+El EPUB incluye todas las imágenes declaradas en `medios` de conceptos y
+condiciones, con sus créditos y licencias. Las de conceptos asociados a
+condiciones se ilustran allí; las de conceptos sin esas aristas aparecen en
+el vocabulario. La validación coteja los archivos incrustados contra el índice
+por contenido, también cuando una misma imagen se utiliza varias veces.
+
+Regresión de cobertura de imágenes (sin Pandoc):
+```bash
+python -m unittest discover -s scripts/tests
+```
+
 ## Orden
 
 ```

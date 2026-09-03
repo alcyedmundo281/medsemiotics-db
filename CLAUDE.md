@@ -78,7 +78,9 @@ python scripts/epub.py --salida build/indice.epub
 python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
 ```
 
-Requiere Pandoc además de PyYAML. El workflow
+Requiere Pandoc **3.1.11** además de PyYAML. CI instala el paquete oficial de
+esa versión, verificada con las figuras SVG, en vez de la versión de `apt`.
+El workflow
 `.github/workflows/libro.yml` reproduce este contrato completo —validación,
 LuaLaTeX/Biber, EPUBCheck— en cada push o PR que toque `conceptos/`,
 `condiciones/`, `referencias/` o los scripts, y publica `libro.pdf`,
