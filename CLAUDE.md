@@ -71,6 +71,10 @@ lualatex -halt-on-error -interaction=nonstopmode libro.tex   # segunda pasada: r
 `texlive-latex-recommended` + `texlive-latex-extra` + `texlive-lang-spanish` +
 `texlive-luatex` + `biber` cubren todo.
 
+Las figuras SVG requieren además `rsvg-convert` (`librsvg2-bin`). `libro.py`
+genera sus PDF vectoriales en `build/figuras/` y el ZIP LaTeX los incluye.
+El EPUB conserva los SVG originales.
+
 ## Compilar el EPUB (`build/indice.epub`) y el paquete LaTeX
 
 ```bash
