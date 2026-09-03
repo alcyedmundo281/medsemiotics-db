@@ -114,22 +114,55 @@ python scripts/auditar_medios.py --escribir   # completa URLs canónicas faltant
 - Valida la presencia de los 7 campos obligatorios de atribución.
 - Normaliza las URLs canónicas de licencias Creative Commons.
 
-### `libro.py` / `epub.py` / `paquete_latex.py` — compilación tipográfica y digital
+### `banco.py` — carga el índice y extrae sus datos
+No se ejecuta: lo importan los cuatro de abajo. Aquí no se tipografía ninguna
+salida. Antes este código vivía dentro de `libro.py` y `epub.py` lo importaba
+como «motor», de modo que el generador de LaTeX era a la vez la biblioteca de
+todos.
+
+### `qmd.py` — proyecta el índice a un proyecto Quarto
 ```bash
-python scripts/libro.py          # compila build/libro.tex y build/refs.bib
-python scripts/epub.py           # compila libro electrónico EPUB vía Pandoc
-python scripts/paquete_latex.py  # genera build/medsemiotics-db-latex.zip
+python scripts/qmd.py            # escribe build/quarto/ entero
 ```
+Un `_quarto.yml` más un capítulo `.qmd` por parte, con las imágenes copiadas
+dentro para que el directorio sea autocontenido. Es el manuscrito único del que
+salen las tres ediciones; sustituye al LaTeX a mano de `libro.py` y al
+ensamblado Markdown propio de `epub.py`, que ya habían divergido.
 
-El EPUB incluye todas las imágenes declaradas en `medios` de conceptos y
-condiciones, con sus créditos y licencias. Las de conceptos asociados a
-condiciones se ilustran allí; las de conceptos sin esas aristas aparecen en
-el vocabulario. La validación coteja los archivos incrustados contra el índice
-por contenido, también cuando una misma imagen se utiliza varias veces.
+**Un campo del índice que este script no sepa tipografiar aborta la
+generación.** Añadirlo aquí es parte del mismo cambio que lo introduce en el
+índice.
 
-Regresión de cobertura de imágenes (sin Pandoc):
+### `libro.py` / `epub.py` / `paquete_latex.py` — las tres ediciones
 ```bash
-python -m unittest discover -s scripts/tests
+python scripts/epub.py  --salida build/indice.epub   # EPUB3 (quarto, o pandoc)
+python scripts/libro.py --salida build/libro.pdf     # PDF + build/quarto/libro.tex
+python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
+```
+Ninguno ensambla: eligen motor, renderizan `build/quarto/` y validan. En este
+orden — cada uno reescribe el proyecto entero, y el ZIP necesita el `libro.tex`
+que deja el PDF.
+
+### `verificar_publicacion.py` — URLs y figuras, en la fuente y en los derivados
+```bash
+python scripts/verificar_publicacion.py
+python scripts/verificar_publicacion.py --id HM:6001 --url "https://..." --comprobar-web
+python scripts/verificar_publicacion.py --verificar-derivados --epub build/indice.epub
+```
+Comprueba que cada condición publicada enlace al dominio público sin duplicar
+URL, que toda imagen tenga sus siete campos de atribución y su archivo, y
+—con `--verificar-derivados`— que unas y otras hayan llegado de verdad al
+`libro.tex`, al libro aplanado y al contenedor EPUB (por SHA-256 del archivo y
+por su enlace desde XHTML). Incluye todos los medios de conceptos y condiciones.
+`--pdf build/libro.pdf` comprueba además códigos y enlaces del PDF final con
+`pypdf`. CI fija Quarto 1.5.57 y Pandoc 3.1.11, valida ambos EPUB y compila el
+ZIP descomprimido fuera del checkout.
+Un enlace roto o una figura ausente no rompen ninguna compilación: producen un
+libro válido que apunta a una página que no existe.
+
+Regresiones del manuscrito único y de la cobertura de imágenes:
+```bash
+python -m unittest discover -s scripts/tests -v
 ```
 
 ## Orden
@@ -139,7 +172,8 @@ python -m unittest discover -s scripts/tests
 3            temario extraído
 4            conceptos sembrados
 5            casamiento propuesto  →  revisión humana  →  acuñar códigos nuevos
-incorporar_medio.py  →  auditar_medios.py  →  build.py  →  libro.py / epub.py
+incorporar_medio.py  →  auditar_medios.py  →  build.py
+build.py  →  epub.py  →  libro.py  →  paquete_latex.py  →  verificar_publicacion.py
 ```
 
 `build.py` después de cualquiera de ellos.
