@@ -28,6 +28,8 @@ generación aborta — no se omiten imágenes ni se infiere su atribución.
 from __future__ import annotations
 
 import argparse
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -214,6 +216,24 @@ def imagen_de_concepto(indice: Indice, concepto: dict, donde: str) -> dict | Non
 def figura_latex(indice: Indice, medio: dict) -> str:
     ruta = (indice.raiz / medio["archivo_local"]).resolve()
     relativa = ruta.relative_to(indice.raiz.resolve())
+    if ruta.suffix.lower() == ".svg":
+        conversor = shutil.which("rsvg-convert")
+        if not conversor:
+            raise ErrorGeneracion("las figuras SVG requieren rsvg-convert (paquete librsvg2-bin)")
+        # PDF vectorial derivado: graphicx no admite SVG. El ZIP LaTeX recoge
+        # este archivo desde includegraphics; el EPUB conserva el original.
+        destino = indice.raiz / "build" / "figuras" / relativa.with_suffix(".svg.pdf")
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            subprocess.run(
+                [conversor, "--format=pdf", "--output", str(destino), str(ruta)],
+                check=True, capture_output=True, text=True,
+            )
+        except (OSError, subprocess.CalledProcessError) as exc:
+            raise ErrorGeneracion(f"no se pudo convertir {relativa}: {exc}") from exc
+        if not destino.is_file() or destino.stat().st_size == 0:
+            raise ErrorGeneracion(f"no se generó el PDF de {relativa}")
+        relativa = destino.relative_to(indice.raiz.resolve())
     credito = escape_latex(
         ". ".join(p for p in (medio["credito"], medio["fuente"], medio["licencia_img"]) if p) + "."
     )

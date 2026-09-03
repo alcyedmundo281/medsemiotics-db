@@ -25,6 +25,7 @@ on:
       - 'scripts/build.py'
       - 'scripts/libro.py'
       - 'scripts/epub.py'
+      - 'scripts/tests/**'
       - 'scripts/paquete_latex.py'
       - '.github/workflows/libro.yml'
   pull_request:
@@ -35,6 +36,7 @@ on:
       - 'scripts/build.py'
       - 'scripts/libro.py'
       - 'scripts/epub.py'
+      - 'scripts/tests/**'
       - 'scripts/paquete_latex.py'
       - '.github/workflows/libro.yml'
   release:
@@ -62,22 +64,34 @@ jobs:
       - name: Instalar dependencias de Python
         run: pip install pyyaml
 
+      - name: Comprobar cobertura de imágenes EPUB
+        run: python -m unittest discover -s scripts/tests
+
       - name: Validar el índice
         # La única autoridad de validación. Los generadores de más abajo
         # confían en que esto ya pasó y no repiten sus reglas enteras.
         run: python scripts/build.py
 
       - name: Instalar dependencias del sistema
-        # Pandoc genera el EPUB; LuaLaTeX + Biber compilan el libro. El índice
-        # no tiene imágenes, así que no hace falta nada de graphicx/adjustbox.
+        # LuaLaTeX + Biber compilan el libro. Pandoc se instala por separado
+        # con la versión que se verificó localmente con las figuras SVG.
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
-            pandoc fonts-freefont-ttf default-jre-headless biber \
+            fonts-freefont-ttf default-jre-headless biber librsvg2-bin \
             texlive-latex-recommended texlive-latex-extra \
             texlive-bibtex-extra texlive-lang-spanish texlive-luatex
-          echo "pandoc: $(pandoc --version | head -1)"
           echo "lualatex: $(lualatex --version | head -1)"
+
+      - name: Instalar Pandoc 3.1.11
+        env:
+          PANDOC_VERSION: '3.1.11'
+        run: |
+          curl -fsSL --retry 3 -o "$RUNNER_TEMP/pandoc.deb" \
+            "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb"
+          sudo dpkg -i "$RUNNER_TEMP/pandoc.deb"
+          pandoc --version
+          test "$(pandoc --version | head -n 1)" = "pandoc ${PANDOC_VERSION}"
 
       - name: Instalar epubcheck
         run: |
