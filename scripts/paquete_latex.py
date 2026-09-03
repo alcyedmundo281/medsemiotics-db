@@ -1,80 +1,77 @@
 #!/usr/bin/env python3
-"""Empaqueta una fuente LuaLaTeX autocontenida del libro, con su bibliografía."""
+"""Empaqueta la fuente LuaLaTeX autocontenida del libro.
 
+Empaqueta el proyecto Quarto entero (`build/quarto/`), que es donde `qmd.py`
+deja los capítulos y Quarto deja `libro.tex`, junto a las imágenes ya copiadas
+y a `refs.bib`. Antes se armaba a mano con el `build/libro.tex` del generador
+propio más las imágenes del árbol `assets/`, y el `.tex` traía rutas
+`../assets/...` que solo resolvían compilando desde `build/`. Ahora el ZIP es
+autocontenido por construcción: se descomprime y compila donde sea.
+"""
 from __future__ import annotations
 
 import argparse
 import os
-import re
 import sys
 import tempfile
 import zipfile
 from pathlib import Path
 
 if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 
 INSTRUCCIONES = """# Fuente LuaLaTeX de medsemiotics-db
 
-Este paquete conserva la estructura de rutas esperada por `build/libro.tex`
-(la bibliografía vive junto a él, no en la raíz: aquí no hay un `refs.bib`
-versionado — se deriva de `referencias/*.yaml` con `scripts/libro.py`).
+El paquete es autocontenido: `libro.tex` referencia las imágenes por su ruta
+relativa (`assets/img/...`) dentro de este mismo directorio.
 
 ```bash
-cd build
-lualatex -halt-on-error -interaction=nonstopmode libro.tex
-biber libro
 lualatex -halt-on-error -interaction=nonstopmode libro.tex
 lualatex -halt-on-error -interaction=nonstopmode libro.tex
 ```
 
-Requiere LuaLaTeX, Biber, la fuente FreeSerif, y los paquetes babel-spanish,
-biblatex, longtable, array, graphicx, float, adjustbox, hyperref.
+Requiere LuaLaTeX y FreeSerif. El índice escribe símbolos Unicode
+estructurales (≥ ≤ → ±) y el preámbulo los compone con fontspec: **no compila
+con pdflatex**. **Biber no hace falta**: la bibliografía va ya resuelta y
+numerada en el texto, no por biblatex. `refs.bib` viaja igual porque es el
+archivo que otros proyectos citan por su `clave_bibtex`.
+
+`libro.tex` lo genera Quarto desde el proyecto de `build/quarto/`; no se edita
+a mano. Para regenerarlo: `python scripts/libro.py --salida build/libro.pdf`.
 """
 
-RE_INCLUDEGRAPHICS = re.compile(r"\\includegraphics\[[^\]]*\]\{([^}]+)\}")
 
-
-def imagenes_referenciadas(tex: Path, raiz: Path) -> list[Path]:
-    """Cada `\\includegraphics` de libro.tex, resuelto desde build/ (de donde
-    compila) — no desde la raíz del repositorio."""
-    build_dir = tex.parent
-    rutas = []
-    for m in RE_INCLUDEGRAPHICS.finditer(tex.read_text(encoding="utf-8")):
-        ruta = (build_dir / m.group(1)).resolve()
-        if not ruta.is_file():
-            raise RuntimeError(f"libro.tex referencia una imagen que no existe: {m.group(1)}")
-        rutas.append(ruta)
-    return rutas
-
-
-def crear_paquete(raiz: Path, salida: Path) -> tuple[int, int]:
+def crear_paquete(raiz: Path, salida: Path):
     raiz = raiz.resolve()
-    tex = raiz / "build" / "libro.tex"
-    bib = raiz / "build" / "refs.bib"
-    faltantes = [p for p in (tex, bib) if not p.exists()]
-    if faltantes:
+    proyecto = raiz / "build" / "quarto"
+    tex = proyecto / "libro.tex"
+    if not tex.is_file():
         raise RuntimeError(
-            "faltan componentes del paquete (ejecuta scripts/libro.py primero): "
-            + ", ".join(str(p.relative_to(raiz)) for p in faltantes)
+            f"falta {tex.relative_to(raiz)}: genera el libro con "
+            "`python scripts/libro.py --salida build/libro.pdf` antes de empaquetar"
         )
-    imagenes = imagenes_referenciadas(tex, raiz)
 
     salida.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
-        prefix="medsemiotics-db-latex-", suffix=".zip", dir=salida.parent, delete=False
+        prefix="medsemiotics-db-latex-", suffix=".zip", dir=salida.parent,
+        delete=False,
     ) as temporal:
         temporal_path = Path(temporal.name)
     try:
-        archivos = [tex, bib] + imagenes
+        # Todo el proyecto salvo lo que Quarto deja como salida: el PDF pesa y
+        # se publica aparte, y `_salida/` no forma parte de la fuente.
+        archivos = sorted(
+            p for p in proyecto.rglob("*")
+            if p.is_file() and "_salida" not in p.relative_to(proyecto).parts
+        )
         with zipfile.ZipFile(
             temporal_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
         ) as zf:
             prefijo = Path("medsemiotics-db-latex")
             for archivo in archivos:
-                zf.write(archivo, (prefijo / archivo.relative_to(raiz)).as_posix())
+                zf.write(archivo, (prefijo / archivo.relative_to(proyecto)).as_posix())
             zf.writestr((prefijo / "COMPILAR.md").as_posix(), INSTRUCCIONES)
 
         with zipfile.ZipFile(temporal_path) as zf:
@@ -83,13 +80,15 @@ def crear_paquete(raiz: Path, salida: Path) -> tuple[int, int]:
                 raise RuntimeError(f"entrada ZIP corrupta: {error}")
             nombres = set(zf.namelist())
             esperados = {
-                "medsemiotics-db-latex/build/libro.tex",
-                "medsemiotics-db-latex/build/refs.bib",
+                "medsemiotics-db-latex/libro.tex",
+                "medsemiotics-db-latex/refs.bib",
                 "medsemiotics-db-latex/COMPILAR.md",
             }
             if not esperados.issubset(nombres):
                 raise RuntimeError("el ZIP no conserva la estructura compilable")
         os.replace(temporal_path, salida)
+        # El temporal nace en 0600; el ZIP es un asset que otros descargan.
+        os.chmod(salida, 0o644)
     finally:
         temporal_path.unlink(missing_ok=True)
 
@@ -116,5 +115,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except (OSError, RuntimeError, zipfile.BadZipFile) as exc:
-        print(f"ERROR PAQUETE LATEX: {exc}")
+        print(f"ERROR PAQUETE LATEX: {exc}", file=sys.stderr)
         raise SystemExit(1)
