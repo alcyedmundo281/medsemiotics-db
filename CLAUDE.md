@@ -32,68 +32,145 @@ medsemiotics-db/
 ├── condiciones/*.yaml               ← síndromes y enfermedades, con sus LR y URLs
 ├── referencias/*.yaml               ← artículos con PMID y DOI
 ├── scripts/build.py                 ← valida; no modifica nada
-├── scripts/libro.py                 ← genera build/libro.tex y build/refs.bib
-├── scripts/epub.py                  ← genera build/indice.epub
-├── scripts/paquete_latex.py         ← empaqueta la fuente LuaLaTeX en un ZIP
+├── scripts/banco.py                 ← carga el índice y extrae sus datos (sin tipografiar)
+├── scripts/qmd.py                   ← proyecta el índice a un proyecto Quarto en build/quarto/
+├── scripts/libro.py                 ← renderiza el PDF desde ese proyecto
+├── scripts/epub.py                  ← renderiza el EPUB desde ese proyecto
+├── scripts/paquete_latex.py         ← empaqueta build/quarto/ en un ZIP autocontenido
+├── scripts/verificar_publicacion.py ← URLs públicas y figuras, en la fuente y en los derivados
 ├── scripts/auditar_medios.py        ← verifica SHA-1 y licencias CC contra Wikimedia
 ├── scripts/incorporar_medio.py      ← descarga e incorpora imágenes con atribución completa
 ├── assets/                          ← plantillas e imágenes locales
 └── build/                           ← GENERADO, no se versiona (ver .gitignore)
+    └── quarto/                      ← el proyecto Quarto: capítulos .qmd + libro.tex + imágenes
 ```
 
-## Compilar el libro (`build/libro.tex`)
+## Una fuente, un manuscrito, tres ediciones
 
-Una fuente, tres salidas más: `scripts/libro.py`, `scripts/epub.py` y
-`scripts/paquete_latex.py` leen el mismo índice que valida `build.py` y no
-modifican ningún registro. No hay prosa que inventar: tipografían los hechos
-que ya están en el YAML —términos, sinónimos, umbrales, cocientes con su
-intervalo, y el `decision`/`advertencia`/`motivo` que cada arista ya trae—.
-Un campo que el índice traiga y estos scripts no sepan tipografiar aborta la
-generación en vez de perderse en silencio; añadirlo al renderizador es parte
-del mismo cambio que lo introduce en el índice.
+`scripts/qmd.py` proyecta el índice a un **proyecto Quarto book** en
+`build/quarto/`: un `_quarto.yml` más un capítulo `.qmd` por parte (Vocabulario,
+Enfermedades, Síndromes) y las imágenes copiadas dentro. De ese único árbol
+salen el EPUB, el PDF y el HTML. `libro.py` y `epub.py` ya no ensamblan nada:
+eligen motor, renderizan y validan.
+
+**Por qué se hizo así.** Antes había dos renderizadores del mismo contenido
+—unas 900 líneas de LaTeX a mano en `libro.py` y un ensamblado Markdown propio
+en `epub.py`— que había que mantener sincronizados a mano. Ya habían divergido:
+el EPUB no tipografiaba `nucleo` ni `balance`, así que el núcleo diagnóstico de
+las condiciones que lo declaran no aparecía en el libro electrónico y nadie lo
+notó. Si dos salidas difieren en contenido, es un fallo de `qmd.py`, no una
+variante editorial aceptable.
+
+Sigue sin haber prosa que inventar: se tipografían los hechos que ya están en el
+YAML —términos, sinónimos, umbrales, cocientes con su intervalo, y el
+`decision`/`advertencia`/`motivo` que cada arista ya trae—. **Un campo que el
+índice traiga y `qmd.py` no sepa tipografiar aborta la generación** en vez de
+perderse en silencio; añadirlo al renderizador es parte del mismo cambio que lo
+introduce en el índice.
+
+Las citas **no** pasan por citeproc ni por biblatex: `banco.Citas` las numera en
+orden de aparición y emite la referencia con el estilo de la casa, con PMID y
+DOI como enlaces. Por eso la columna «Fuente» de la tabla de signos lleva `[3]`
+y no la cita entera, cada condición cierra con sus propias fuentes, y la
+bibliografía final separa lo que el libro cita de lo que el índice trae sin
+citar todavía.
+
+### El pipeline completo, en este orden
+
+```bash
+python scripts/build.py                                    # primero: valida el índice
+python scripts/epub.py  --salida build/indice.epub         # EPUB (motor quarto, o pandoc)
+python scripts/libro.py --salida build/libro.pdf           # PDF + build/quarto/libro.tex
+python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
+python scripts/verificar_publicacion.py --verificar-derivados --epub build/indice.epub
+```
+
+**El orden no es decorativo.** Cada generador reescribe `build/quarto/` entero,
+y `libro.tex` solo existe después de renderizar el PDF: por eso el empaquetado y
+la verificación de derivados van al final. Los dos abortan si falta, así que el
+error es ruidoso, pero es evitable.
+
+### El PDF
 
 El compilador correcto es **LuaLaTeX, no pdflatex** (misma razón que
-biosemiotics, sin relación de código: fontspec deja escribir símbolos Unicode
-tal cual si algún registro los trae, sin parchear glifo por glifo).
+biosemiotics, sin relación de código: fontspec deja escribir ≥ ≤ → ± tal cual si
+algún registro los trae, sin parchear glifo por glifo). `_quarto.yml` lo fija
+con `pdf-engine: lualatex` y `mainfont: FreeSerif`, la fuente disponible que
+cubre esos glifos sin fallback silencioso.
+
+**La fuente LaTeX es un entregable, no un intermedio.** `keep-tex` la deja en
+**`build/quarto/libro.tex`** —no en `build/libro.tex`, que ya no existe— junto a
+las imágenes que `qmd.py` copió al proyecto. Ese directorio compila tal cual,
+sin depender del checkout, y es lo que empaqueta `paquete_latex.py`:
 
 ```bash
-python scripts/build.py          # primero: valida
-python scripts/libro.py          # escribe build/libro.tex y build/refs.bib
-cd build
+cd build/quarto
 lualatex -halt-on-error -interaction=nonstopmode libro.tex
-biber libro
-lualatex -halt-on-error -interaction=nonstopmode libro.tex
-lualatex -halt-on-error -interaction=nonstopmode libro.tex   # segunda pasada: referencias cruzadas
 ```
 
-**Paquetes LaTeX requeridos**: `fontspec`, `babel` (spanish), `biblatex`+
-`biber`, `longtable`, `array`, `hyperref`, `graphicx`, `float`, `adjustbox`. En Debian/Ubuntu,
-`texlive-latex-recommended` + `texlive-latex-extra` + `texlive-lang-spanish` +
-`texlive-luatex` + `biber` cubren todo.
+**Dependencias de sistema:** `texlive-latex-recommended`, `texlive-latex-extra`,
+`texlive-lang-spanish`, `texlive-luatex`, `fonts-freefont-ttf` y
+**`librsvg2-bin`**. Este último no es opcional: dos figuras del índice son SVG y
+LaTeX no incluye SVG, así que Quarto las convierte con `rsvg-convert` o aborta
+el PDF; rasteriza además la portada, que Kindle no admite en SVG. **`biber` ya
+no hace falta**: el `.tex` de Quarto no usa biblatex.
 
-## Compilar el EPUB (`build/indice.epub`) y el paquete LaTeX
+### El EPUB
+
+`epub.py` prefiere `quarto` y cae a `pandoc` sobre `build/quarto/libro-plano.md`
+—el mismo libro aplanado, escrito concatenando los MISMOS capítulos— cuando
+Quarto no está instalado. Fuerza uno u otro con `--motor quarto|pandoc`.
+
+El respaldo usa el lector `markdown` de pandoc, no `gfm`. Con `gfm` se perdían
+tres cosas a la vez: los atributos `{#sec-...}` se filtraban como texto al
+índice, las listas de definiciones del vocabulario se aplanaban a párrafos
+sueltos, y el pie de figura se reducía a un `alt=` de texto plano —`gfm` acepta
+`implicit_figures` pero la ignora—, con lo que los enlaces de crédito y licencia
+de cada imagen desaparecían del contenedor sin que fallara nada.
+
+**No uses la clave `part:` de Quarto.** Su escritor de EPUB no emite páginas
+divisorias de parte. Por eso `_quarto.yml` lleva una lista plana de capítulos y
+la parte es el capítulo del libro. Tampoco declares `identifier` ni `rights`
+bajo `book:`: no son propiedades válidas de ese esquema, y al nivel superior
+Quarto las pasa a pandoc *además* del `epub-metadata.xml`, dejando dos
+`dc:identifier` en el OPF.
+
+El DOI, el ORCID, la licencia y las materias del contenedor salen de
+**`CITATION.cff`**, que ya es la autoridad para GitHub y para Zenodo. No se
+copian a mano en ningún `.py`.
+
+`refs.bib` se deriva de `referencias/*.yaml` en cada corrida —no se versiona— y
+viaja dentro del paquete LaTeX aunque el libro ya no use biblatex: es el archivo
+que citan por `clave_bibtex` las fichas de biosemiotics.
+
+### Verificar la publicación
 
 ```bash
-python scripts/epub.py --salida build/indice.epub
-python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
+python scripts/verificar_publicacion.py                    # URLs y figuras del índice
+python scripts/verificar_publicacion.py --id HM:6001 --url "https://..." --comprobar-web
+python scripts/verificar_publicacion.py --verificar-derivados --epub build/indice.epub
 ```
 
-Requiere Pandoc además de PyYAML. El workflow
-`.github/workflows/libro.yml` reproduce este contrato completo —validación,
-LuaLaTeX/Biber, EPUBCheck— en cada push o PR que toque `conceptos/`,
-`condiciones/`, `referencias/` o los scripts, y publica `libro.pdf`,
-`libro.tex`, `indice.epub` y el ZIP como artifacts (90 días) o, en un release,
-como assets adjuntos. `workflow_dispatch` queda como recuperación manual.
+Un enlace mal escrito o una figura que se quedó fuera del contenedor no rompen
+ninguna compilación: sale un libro perfectamente válido que apunta a una página
+que no existe o publica una imagen sin su crédito. Esto lo convierte en un fallo
+ruidoso. `--comprobar-web` es opcional a propósito, para que un fallo transitorio
+de red no vuelva inestable la integridad local.
 
-`refs.bib` se deriva de `referencias/*.yaml` en cada corrida —no se versiona—
-y usa `clave_bibtex` como clave de cita, el mismo campo que ya citan hoy las
-fichas de biosemiotics.
+El workflow `.github/workflows/libro.yml` reproduce este contrato completo
+—validación, EPUB por los dos motores, LuaLaTeX, EPUBCheck y verificación de
+derivados— en cada push o PR que toque el índice, `CITATION.cff` o los scripts, y
+publica `libro.pdf`, `libro.tex`, `indice.epub` y el ZIP como artifacts (90 días)
+o, en un release, como assets adjuntos. `workflow_dispatch` queda como
+recuperación manual.
 
 ## Lo primero al arrancar una sesión
 
 1. `git status` y reporta el estado.
 2. Lee `mapa-maestro-medsemiotics-db.md` y di **qué oleada toca**.
 3. `python scripts/build.py` y reporta las alertas actuales.
+4. `python scripts/verificar_publicacion.py` (sin `--verificar-derivados`: no
+   necesita el libro compilado) y reporta si alguna URL o figura está rota.
 
 ## Reglas duras (no se rompen nunca)
 

@@ -1,19 +1,28 @@
 name: Libro, EPUB y fuente LuaLaTeX
 
-# Valida el índice y genera sus tres salidas derivadas —build/libro.pdf,
-# build/indice.epub y el ZIP con la fuente LuaLaTeX autocontenida— cuando
-# cambia main. Los binarios no viven en git: cada ejecución los publica como
-# artifact descargable, y los releases además los reciben como assets.
+# Valida el índice y genera sus salidas derivadas —build/indice.epub,
+# build/libro.pdf, build/quarto/libro.tex y el ZIP con la fuente LuaLaTeX
+# autocontenida— cuando cambia main. Los binarios no viven en git: cada
+# ejecución los publica como artifact descargable, y los releases además los
+# reciben como assets.
 #
-# CONTRATO CON scripts/libro.py Y scripts/epub.py
-# Este workflow define la interfaz que deben cumplir los generadores:
-#   · scripts/libro.py escribe build/libro.tex y build/refs.bib
-#   · scripts/epub.py se invoca como `python scripts/epub.py --salida <ruta>`
-#   · scripts/paquete_latex.py se invoca como `python scripts/paquete_latex.py --salida <ruta>`
-#   · los tres salen con código != 0 si algo falló, incluida su propia validación
+# CONTRATO CON LOS GENERADORES
+# Una sola fuente, un solo manuscrito. `scripts/qmd.py` proyecta el índice a un
+# proyecto Quarto book en build/quarto/, y de ese árbol salen las tres
+# ediciones:
+#   · scripts/epub.py  --salida <ruta> [--motor quarto|pandoc]
+#   · scripts/libro.py --salida <ruta>            (PDF, deja build/quarto/libro.tex)
+#   · scripts/paquete_latex.py --salida <ruta>    (empaqueta build/quarto/)
+#   · scripts/verificar_publicacion.py --verificar-derivados --epub <ruta>
+#   · todos salen con código != 0 si algo falló, incluida su propia validación
 # Ninguno modifica el índice: scripts/build.py sigue siendo la única autoridad
-# de validación y corre primero. Si algún generador cambia de toolchain, hay
-# que actualizar el paso «Instalar dependencias del sistema» de aquí abajo.
+# de validación y corre primero.
+#
+# EL ORDEN DE LOS PASOS NO ES DECORATIVO
+# Cada generador REESCRIBE build/quarto/ entero. `libro.py` va después del ePub
+# porque es el que deja `libro.tex` dentro del proyecto, y el empaquetado y la
+# verificación de derivados van al final porque leen ese `.tex`. Invertirlos no
+# produce un fallo silencioso —ambos abortan si falta— pero sí un fallo evitable.
 
 on:
   push:
@@ -22,20 +31,30 @@ on:
       - 'conceptos/**'
       - 'condiciones/**'
       - 'referencias/**'
+      - 'assets/**'
+      - 'CITATION.cff'
       - 'scripts/build.py'
+      - 'scripts/banco.py'
+      - 'scripts/qmd.py'
       - 'scripts/libro.py'
       - 'scripts/epub.py'
       - 'scripts/paquete_latex.py'
+      - 'scripts/verificar_publicacion.py'
       - '.github/workflows/libro.yml'
   pull_request:
     paths:
       - 'conceptos/**'
       - 'condiciones/**'
       - 'referencias/**'
+      - 'assets/**'
+      - 'CITATION.cff'
       - 'scripts/build.py'
+      - 'scripts/banco.py'
+      - 'scripts/qmd.py'
       - 'scripts/libro.py'
       - 'scripts/epub.py'
       - 'scripts/paquete_latex.py'
+      - 'scripts/verificar_publicacion.py'
       - '.github/workflows/libro.yml'
   release:
     types: [published]
@@ -68,16 +87,29 @@ jobs:
         run: python scripts/build.py
 
       - name: Instalar dependencias del sistema
-        # Pandoc genera el EPUB; LuaLaTeX + Biber compilan el libro. El índice
-        # no tiene imágenes, así que no hace falta nada de graphicx/adjustbox.
+        # Quarto renderiza las tres ediciones; pandoc queda instalado a
+        # propósito para poder ejercitar el motor de respaldo. LuaLaTeX compila
+        # el PDF: `biber` y `texlive-bibtex-extra` ya NO hacen falta, porque el
+        # .tex de Quarto no usa biblatex —la bibliografía se emite ya resuelta
+        # y numerada en orden de aparición—.
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
-            pandoc fonts-freefont-ttf default-jre-headless biber \
+            pandoc fonts-freefont-ttf default-jre-headless librsvg2-bin \
             texlive-latex-recommended texlive-latex-extra \
-            texlive-bibtex-extra texlive-lang-spanish texlive-luatex
+            texlive-lang-spanish texlive-luatex
           echo "pandoc: $(pandoc --version | head -1)"
+          # rsvg-convert no es opcional: dos figuras del índice son SVG y LaTeX
+          # no incluye SVG, así que Quarto las convierte con esta herramienta o
+          # aborta el PDF. Rasteriza además la portada, que Kindle no admite en
+          # SVG.
+          echo "rsvg-convert: $(rsvg-convert --version)"
           echo "lualatex: $(lualatex --version | head -1)"
+
+      - name: Instalar Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.5.57
 
       - name: Instalar epubcheck
         run: |
@@ -87,25 +119,36 @@ jobs:
           unzip -q /tmp/epubcheck.zip -d /opt
           echo "EPUBCHECK_JAR=/opt/epubcheck-${VER}/epubcheck.jar" >> "$GITHUB_ENV"
 
-      - name: Generar libro.tex y refs.bib
-        run: python scripts/libro.py
+      - name: Generar el ePub
+        run: python scripts/epub.py --salida build/indice.epub --motor quarto
 
-      - name: Compilar el libro con LuaLaTeX
-        working-directory: build
+      - name: Comprobar el motor de respaldo
+        # El respaldo con pandoc lee `build/quarto/libro-plano.md`, que qmd.py
+        # escribe concatenando LOS MISMOS capítulos. Si esta edición deja de
+        # pasar la validación mientras la de Quarto la pasa, las dos han
+        # divergido: es un fallo de qmd.py, no una variante aceptable. No se
+        # publica: solo se comprueba.
+        run: python scripts/epub.py --salida build/control-pandoc.epub --motor pandoc
+
+      - name: Compilar el libro en PDF
+        # Mismo proyecto Quarto que el ePub: el libro impreso y el electrónico
+        # no pueden divergir. `keep-tex` deja build/quarto/libro.tex junto a las
+        # imágenes ya copiadas, que es lo que empaqueta el ZIP.
         run: |
-          lualatex -halt-on-error -interaction=nonstopmode libro.tex
-          biber libro
-          lualatex -halt-on-error -interaction=nonstopmode libro.tex
-          lualatex -halt-on-error -interaction=nonstopmode libro.tex
-          test -s libro.pdf || { echo "::error::No se generó build/libro.pdf"; exit 1; }
+          python scripts/libro.py --salida build/libro.pdf
+          test -s build/libro.pdf || { echo "::error::No se generó build/libro.pdf"; exit 1; }
 
-      - name: Empaquetar fuente LuaLaTeX
+      - name: Empaquetar la fuente LuaLaTeX autocontenida
         run: |
           python scripts/paquete_latex.py --salida build/medsemiotics-db-latex.zip
           test -s build/medsemiotics-db-latex.zip || { echo "::error::No se generó el ZIP LaTeX"; exit 1; }
 
-      - name: Generar el ePub
-        run: python scripts/epub.py --salida build/indice.epub
+      - name: Verificar coherencia de publicación
+        # Va después del libro: comprueba build/quarto/libro.tex, que solo
+        # existe una vez renderizado el PDF. Valida las URLs públicas de cada
+        # condición y que cada figura declarada en `archivo_local` haya llegado
+        # de verdad al LaTeX y al contenedor EPUB.
+        run: python scripts/verificar_publicacion.py --verificar-derivados --epub build/indice.epub
 
       - name: Comprobar que el artefacto es real
         # Un ePub de pocos KB casi siempre significa "se generó vacío".
@@ -127,7 +170,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: >-
           gh release upload "${{ github.event.release.tag_name }}"
-          build/indice.epub build/libro.tex build/libro.pdf
+          build/indice.epub build/quarto/libro.tex build/libro.pdf
           build/medsemiotics-db-latex.zip --clobber
 
       - name: Publicar derivados como artifact
@@ -137,7 +180,7 @@ jobs:
           name: libro-epub-latex
           path: |
             build/indice.epub
-            build/libro.tex
+            build/quarto/libro.tex
             build/libro.pdf
             build/medsemiotics-db-latex.zip
           retention-days: 90
