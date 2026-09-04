@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3119'
+tipo: concepto
+semantica: hallazgo
+termino: Dolor a la palpación de la interlínea articular de la rodilla
+termino_en: Joint line tenderness of the knee
+sinonimos:
+  - hipersensibilidad en interlínea femorotibial
+  - dolor en línea articular medial o lateral
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar lesión meniscal de rodilla (pmid:11585485).

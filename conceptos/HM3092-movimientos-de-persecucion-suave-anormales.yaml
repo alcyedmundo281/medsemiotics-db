@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3092'
+tipo: concepto
+semantica: hallazgo
+termino: Movimientos de persecución ocular suave anormales
+termino_en: Abnormal smooth pursuits
+sinonimos:
+  - seguimiento ocular entrecortado
+  - persecución ocular sacádica
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al poblar la condición de conmoción cerebral pediátrica (pmid:41941197).

@@ -1,0 +1,95 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:23677315 (Hollands 2013, JAMA Rational Clinical Examination).
+# Población: cribado poblacional de adultos evaluados para GPAA.
+
+id: 'HM:6019'
+tipo: condicion
+clase: enfermedad
+termino: Glaucoma primario de ángulo abierto
+termino_en: Primary open-angle glaucoma
+sinonimos:
+  - GPAA
+  - POAG
+  - glaucoma crónico simple
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.026
+  ic95: [0.021, 0.031]
+  poblacion: población general adulta en estudios de alta calidad metodológica
+  ref: 'pmid:23677315'
+
+factores_riesgo:
+  - concepto: 'HM:3079'    # Alta miopía
+    rol: apoyo
+    estado_lr: medido
+    odds_ratio:
+      valor: 5.7
+      ic95: [3.1, 11]
+      ref: 'pmid:23677315'
+    decision: fuerte asociación como factor de riesgo
+
+  - concepto: 'HM:3080'    # Antecedente familiar de glaucoma
+    rol: apoyo
+    estado_lr: medido
+    odds_ratio:
+      valor: 3.3
+      ic95: [2.0, 5.6]
+      ref: 'pmid:23677315'
+    decision: factor de riesgo mayor
+
+signos:
+  - concepto: 'HM:3075'    # Relación copa-disco (CDR) >= 0.7
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 14
+      ic95: [5.3, 39]
+      ref: 'pmid:23677315'
+    decision: el hallazgo individual del examen de papila que más aumenta la probabilidad
+
+  - concepto: 'HM:3078'    # PIO elevada (>= 22 mmHg)
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 13
+      ic95: [8.2, 17]
+      ref: 'pmid:23677315'
+    lr_negativo:
+      valor: 0.65
+      ic95: [0.55, 0.76]
+      ref: 'pmid:23677315'
+    decision: PIO >= 22 aumenta marcadamente el riesgo pero PIO normal no descarta
+
+  - concepto: 'HM:3077'    # Hemorragia en astilla del disco óptico
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 12
+      ic95: [2.9, 48]
+      ref: 'pmid:23677315'
+    lr_negativo:
+      valor: 0.94
+      ic95: [0.83, 0.98]
+      ref: 'pmid:23677315'
+    decision: altamente sugestiva cuando está presente, pero su ausencia no descarta
+
+  - concepto: 'HM:3076'    # Asimetría de CDR >= 0.3
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 7.3
+      ic95: [3.3, 16]
+      ref: 'pmid:23677315'
+    decision: signo relevante de daño asimétrico del nervio óptico
+
+conclusion_de_la_fuente: >-
+  Los hallazgos de aumento de la relación copa-disco (CDR), asimetría de CDR,
+  hemorragia del disco y PIO elevada, junto con los antecedentes familiares y alta
+  miopía, aumentan sustancialmente el riesgo de GPAA, pero su ausencia no lo
+  descarta. El examen oftalmológico formal es la vía más precisa de diagnóstico.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:23677315).

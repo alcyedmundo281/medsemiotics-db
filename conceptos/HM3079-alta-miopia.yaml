@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3079'
+tipo: concepto
+semantica: hallazgo
+termino: Alta miopía
+termino_en: High myopia
+sinonimos:
+  - miopía magna
+  - miopía de 6 o más dioptrías
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar factores de riesgo de glaucoma de ángulo abierto (pmid:23677315).

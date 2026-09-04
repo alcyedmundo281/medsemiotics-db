@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3130'
+tipo: concepto
+semantica: hallazgo
+termino: Dolor torácico pleurítico
+termino_en: Pleuritic chest pain
+sinonimos:
+  - dolor torácico en puntada de costado
+  - dolor que empeora con la inspiración profunda o la tos
+padre: 'HM:0206'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar diagnóstico diferencial de infarto de miocardio (pmid:9786377).

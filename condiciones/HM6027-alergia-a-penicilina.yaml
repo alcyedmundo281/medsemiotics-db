@@ -1,0 +1,50 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:11368703 (Salkind 2001, JAMA Rational Clinical Examination).
+# Población: pacientes que refieren antecedentes o sospecha de hipersensibilidad a betalactámicos.
+
+id: 'HM:6027'
+tipo: condicion
+clase: enfermedad
+termino: Alergia a penicilina
+termino_en: Penicillin allergy
+sinonimos:
+  - hipersensibilidad a penicilina mediada por IgE
+  - reacción alérgica a betalactámicos
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.15
+  ic95: [0.10, 0.20]
+  poblacion: pacientes que autorreportan antecedentes de alergia a penicilina confirmados por pruebas cutáneas
+  ref: 'pmid:11368703'
+
+signos:
+  - concepto: 'HM:3123'    # Prueba cutánea a determinantes de penicilina
+    rol: prueba_especifica
+    estado_lr: no_medible
+    motivo: es el estándar de referencia (gold standard) contra el que se calculan los cocientes de la historia clínica
+    decision: el patrón de referencia para hipersensibilidad mediada por IgE; la negatividad descarta anafilaxia con seguridad casi absoluta
+
+  - concepto: 'HM:3122'    # Antecedente referido de alergia
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 1.9
+      ic95: [1.5, 2.5]
+      ref: 'pmid:11368703'
+    lr_negativo:
+      valor: 0.5
+      ic95: [0.4, 0.6]
+      ref: 'pmid:11368703'
+    decision: el autorreporte de alergia tiene muy baja exactitud discriminativa (LR+ 1.9); solo un 10-20% son verdaderos alérgicos
+
+conclusion_de_la_fuente: >-
+  Solo el 10% al 20% de los pacientes que refieren antecedentes de alergia a la
+  penicilina son verdaderamente alérgicos al evaluarse mediante pruebas cutáneas.
+  La historia clínica referida desplaza poco la probabilidad (LR+ 1.9), mientras
+  que una prueba cutánea negativa descarta con seguridad secuelas graves.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:11368703).

@@ -1,0 +1,119 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:9786377 (Panju 1998, JAMA Rational Clinical Examination).
+# Población: pacientes que acuden con dolor torácico agudo evaluados para IAM.
+
+id: 'HM:6029'
+tipo: condicion
+clase: enfermedad
+termino: Infarto agudo de miocardio
+termino_en: Acute myocardial infarction
+sinonimos:
+  - IAM
+  - ataque cardíaco
+  - infarto de miocardio
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3127'    # Elevación nueva del segmento ST
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 22.0
+      ic95: [5.7, 53.9]
+      ref: 'pmid:9786377'
+    decision: el hallazgo electrocardiográfico individual más potente para confirmar IAM con indicación de reperfusión
+
+  - concepto: 'HM:3128'    # Nueva onda Q
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 11.0
+      ic95: [5.3, 24.8]
+      ref: 'pmid:9786377'
+    decision: signo electrocardiográfico de necrosis miocárdica transmisible
+
+  - concepto: 'HM:3014'    # Dolor irradiado a ambos brazos
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 7.1
+      ic95: [3.5, 14.2]
+      ref: 'pmid:9786377'
+    decision: el síntoma de irradiación dolorosa con mayor rendimiento discriminativo positivo
+
+  - concepto: 'HM:3129'    # Tercer tono (R3)
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.2
+      ic95: [1.6, 6.5]
+      ref: 'pmid:9786377'
+    decision: signo auscultatorio de disfunción ventricular izquierda aguda
+
+  - concepto: 'HM:0109'    # Hipotensión arterial
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.1
+      ic95: [1.6, 6.2]
+      ref: 'pmid:9786377'
+    decision: marcador hemodinámico de compromiso miocárdico o shock cardiogénico
+
+  - concepto: 'HM:3130'    # Dolor pleurítico
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 0.2
+      ic95: [0.1, 0.4]
+      ref: 'pmid:9786377'
+    efecto: excluye
+    sostiene: discriminacion_medida
+    ref: 'pmid:9786377'
+    decision: las características pleuríticas reducen fuertemente la probabilidad de IAM (LR 0.2)
+
+  - concepto: 'HM:3131'    # Dolor reproducible a la palpación
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 0.3
+      ic95: [0.2, 0.4]
+      ref: 'pmid:9786377'
+    efecto: excluye
+    sostiene: discriminacion_medida
+    ref: 'pmid:9786377'
+    decision: el dolor reproducible a la presión de la pared torácica orienta a causa osteomuscular
+
+  - concepto: 'HM:3132'    # Dolor punzante o cortante
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 0.3
+      ic95: [0.1, 0.6]
+      ref: 'pmid:9786377'
+    efecto: excluye
+    sostiene: discriminacion_medida
+    ref: 'pmid:9786377'
+    decision: el dolor punzante desplaza fuertemente la probabilidad en contra de IAM
+
+  - concepto: 'HM:3133'    # Dolor posicional
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 0.3
+      ic95: [0.1, 0.7]
+      ref: 'pmid:9786377'
+    efecto: excluye
+    sostiene: discriminacion_medida
+    ref: 'pmid:9786377'
+    decision: la modificación postural del dolor aleja la sospecha de isquemia coronaria aguda
+
+conclusion_de_la_fuente: >-
+  La anamnesis dirigida, la exploración física y el ECG son fundamentales para evaluar
+  a pacientes con dolor torácico agudo. La nueva elevación del ST (LR+ 22.0) y la
+  irradiación a ambos brazos (LR+ 7.1) confirman fuertemente el IAM, mientras que
+  el dolor pleurítico, posicional o reproducible a la palpación lo hacen muy improbable (LR 0.2-0.3).
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:9786377).

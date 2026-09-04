@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:38592385'
+clave_bibtex: wood2024
+tipo: articulo
+titulo: 'Does This Patient Have Alcohol Use Disorder?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Wood E
+  - Pan J
+  - Cui Z
+  - Bach P
+  - Dennis B
+  - Nolan S
+  - Socias ME
+publicacion: JAMA
+anio: 2024
+volumen: 331
+paginas: 1215-1224
+
+identificadores:
+  pmid: 38592385
+  doi: 10.1001/jama.2024.3101
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

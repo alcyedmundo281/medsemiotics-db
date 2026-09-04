@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3104'
+tipo: concepto
+semantica: hallazgo
+termino: Peso menor o igual al percentil 10 para edad y sexo
+termino_en: Weight in 10th percentile or lower for age and sex
+sinonimos:
+  - bajo peso en niño con hipertensión
+  - ausencia de sobrepeso en hipertensión pediátrica
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al poblar hipertensión secundaria pediátrica (pmid:36976276).

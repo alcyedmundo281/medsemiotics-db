@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3093'
+tipo: concepto
+semantica: hallazgo
+termino: Sacadas oculares anormales
+termino_en: Abnormal saccades
+sinonimos:
+  - movimientos sacádicos lentos o imprecisos
+  - dismetría sacádica
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al poblar la condición de conmoción cerebral pediátrica (pmid:41941197).

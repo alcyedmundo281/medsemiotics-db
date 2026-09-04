@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3134'
+tipo: concepto
+semantica: hallazgo
+termino: Cuestionario GAD-7 positivo
+termino_en: Positive GAD-7 screening score
+sinonimos:
+  - escala de ansiedad generalizada de 7 ítems mayor o igual a 10
+  - cribado positivo para TAG en atención primaria
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar trastorno de ansiedad generalizada (pmid:25058220).

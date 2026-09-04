@@ -1,0 +1,101 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:36976276 (Nugent 2023, JAMA Rational Clinical Examination).
+# Población: niños y adolescentes (<= 21 años) con hipertensión arterial diagnosticada.
+
+id: 'HM:6023'
+tipo: condicion
+clase: sindrome
+termino: Hipertensión arterial secundaria pediátrica
+termino_en: Pediatric secondary hypertension
+sinonimos:
+  - hipertensión secundaria en niños y adolescentes
+  - HTA secundaria en pediatría
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.09
+  ic95: [0.045, 0.150]
+  poblacion: niños y adolescentes hipertensos en consultas de atención primaria o cribado escolar
+  ref: 'pmid:36976276'
+
+signos:
+  - concepto: 'HM:3107'    # Microalbuminuria
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.13
+    especificidad: 0.99
+    lr_positivo:
+      valor: 13
+      ic95: [3.1, 53]
+      ref: 'pmid:36976276'
+    decision: alta especificidad (0.99) y el mayor cociente para causa secundaria renal/vascular
+
+  - concepto: 'HM:3109'    # Carga tensional en MAPA
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.40
+    especificidad: 0.82
+    lr_positivo:
+      valor: 4.8
+      ic95: [1.2, 20]
+      ref: 'pmid:36976276'
+    decision: sobrecarga tensional combinada diurna y nocturna apoya fuertemente causa secundaria
+
+  - concepto: 'HM:3103'    # Antecedente familiar de hipertensión secundaria
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.46
+    especificidad: 0.90
+    lr_positivo:
+      valor: 4.7
+      ic95: [2.9, 7.6]
+      ref: 'pmid:36976276'
+    decision: antecedente de mayor peso orientador hacia nefropatía o endocrinopatía hereditaria
+
+  - concepto: 'HM:3104'    # Peso <= percentil 10
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.27
+    especificidad: 0.94
+    lr_positivo:
+      valor: 4.5
+      ic95: [1.2, 18]
+      ref: 'pmid:36976276'
+    decision: el niño delgado o con bajo peso con HTA tiene mayor probabilidad de causa secundaria
+
+  - concepto: 'HM:3108'    # Ácido úrico <= 5.5
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.6
+      ic95: [2.1, 6.3]
+      ref: 'pmid:36976276'
+    decision: a diferencia de la HTA esencial asociada al síndrome metabólico, la secundaria cursa con uricemia normal-baja
+
+  - concepto: 'HM:3105'    # Prematuridad
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.5
+      ic95: [2.3, 2.8]
+      ref: 'pmid:36976276'
+    decision: factor de riesgo neonatal de nefropatía o estenosis de arteria renal
+
+  - concepto: 'HM:3106'    # Edad <= 6 años
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.4
+      ic95: [2.2, 2.6]
+      ref: 'pmid:36976276'
+    decision: la edad temprana incrementa la probabilidad pre-test de etiología secundaria
+
+conclusion_de_la_fuente: >-
+  Los antecedentes familiares de HTA secundaria, edad temprana (<= 6 años), menor peso
+  corporal y sobrecarga tensional en MAPA de 24 horas aumentan significativamente la
+  probabilidad de hipertensión secundaria, mientras que la obesidad favorece la primaria.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:36976276).

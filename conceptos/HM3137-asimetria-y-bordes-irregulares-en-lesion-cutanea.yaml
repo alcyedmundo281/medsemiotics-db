@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3137'
+tipo: concepto
+semantica: hallazgo
+termino: Asimetría y bordes irregulares en lesión cutánea
+termino_en: Asymmetry and border irregularity of skin lesion
+sinonimos:
+  - lesión pigmentada asimétrica
+  - bordes festoneados o mal delimitados
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar melanoma cutáneo (pmid:9496989).

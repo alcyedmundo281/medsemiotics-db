@@ -1,0 +1,57 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:10376577 (Choudhry 1999, JAMA Rational Clinical Examination).
+# Población: adultos evaluados por sospecha de valvulopatía aórtica.
+
+id: 'HM:6025'
+tipo: condicion
+clase: enfermedad
+termino: Insuficiencia aórtica
+termino_en: Aortic regurgitation
+sinonimos:
+  - regurgitación aórtica
+  - incompetencia valvular aórtica
+  - IAo
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3113'    # Soplo diastólico precoz
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 8.8
+      ic95: [2.8, 32.0]
+      ref: 'pmid:10376577'
+    lr_negativo:
+      valor: 0.2
+      ic95: [0.1, 0.3]
+      ref: 'pmid:10376577'
+    decision: el hallazgo físico más potente tanto para confirmar (LR+ 8.8) como para descartar (LR- 0.2) insuficiencia aórtica
+
+  - concepto: 'HM:3115'    # Oclusión arterial transitoria
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 8.4
+      ic95: [1.3, 81.0]
+      ref: 'pmid:10376577'
+    lr_negativo:
+      valor: 0.3
+      ic95: [0.1, 0.8]
+      ref: 'pmid:10376577'
+    decision: maniobra de provocación hemodinámica que refuerza el soplo auscultatorio
+
+  - concepto: 'HM:3114'    # Presión de pulso amplia
+    rol: apoyo
+    estado_lr: no_medido
+    motivo: los signos periféricos clásicos (Corrigan, de Musset, etc.) tienen baja sensibilidad y especificidad aislada en estudios de calidad
+
+conclusion_de_la_fuente: >-
+  La presencia de un soplo diastólico precoz en la auscultación realizada por
+  cardiólogo es el hallazgo más útil para confirmar insuficiencia aórtica (LR+ 8.8-32.0)
+  y su ausencia para descartarla (LR- 0.1-0.2). La mayoría de los signos periféricos
+  clásicos presentan un rendimiento diagnóstico modesto.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:10376577).

@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:25058220'
+clave_bibtex: herr2014
+tipo: articulo
+titulo: 'Does this patient have generalized anxiety or panic disorder?: The Rational Clinical Examination systematic review'
+autores:
+  - Herr NR
+  - Williams JW Jr
+  - Benjamin S
+  - McDuffie J
+publicacion: JAMA
+anio: 2014
+volumen: 312
+paginas: 78-84
+
+identificadores:
+  pmid: 25058220
+  doi: 10.1001/jama.2014.5950
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

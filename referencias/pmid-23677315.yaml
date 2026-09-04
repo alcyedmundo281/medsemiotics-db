@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:23677315'
+clave_bibtex: hollands2013
+tipo: articulo
+titulo: 'Do findings on routine examination identify patients at risk for primary open-angle glaucoma? The rational clinical examination systematic review'
+autores:
+  - Hollands H
+  - Johnson D
+  - Hollands S
+  - Simel DL
+  - Jinapriya D
+  - Sharma S
+publicacion: JAMA
+anio: 2013
+volumen: 309
+paginas: 2035-42
+
+identificadores:
+  pmid: 23677315
+  doi: 10.1001/jama.2013.5099
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

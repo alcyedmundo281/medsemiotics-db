@@ -1,0 +1,34 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:36976276'
+clave_bibtex: wuhl2023
+tipo: articulo
+titulo: 'Does This Child With High Blood Pressure Have Secondary Hypertension?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Nugent JT
+  - Jiang K
+  - Funaro MC
+  - Saran I
+  - Young C
+  - Ghazi L
+  - Bakhoum CY
+  - Wilson FP
+  - Greenberg JH
+publicacion: JAMA
+anio: 2023
+volumen: 329
+paginas: 1012-1021
+
+identificadores:
+  pmid: 36976276
+  doi: 10.1001/jama.2023.3184
+
+verificacion:
+  pubmed: true
+  fecha: 2026-08-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

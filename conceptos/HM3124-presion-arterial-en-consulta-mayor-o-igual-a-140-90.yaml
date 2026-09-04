@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3124'
+tipo: concepto
+semantica: hallazgo
+termino: Presión arterial oscilométrica en consulta mayor o igual a 140/90 mmHg
+termino_en: Office oscillometric BP 140/90 mm Hg or greater
+sinonimos:
+  - presión arterial clínica elevada en consulta
+  - PA en consulta mayor o igual a 140/90
+padre: 'HM:0108'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar hipertensión arterial en adultos (pmid:34313682).

@@ -7,3 +7,7 @@ Thumbs.db
 # Generado por scripts/libro.py, scripts/epub.py y scripts/paquete_latex.py.
 # Una fuente, muchas salidas: nada de esto se versiona.
 build/
+
+# Datos temporales de triaje y consultas
+rce/
+

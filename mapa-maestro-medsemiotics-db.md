@@ -221,6 +221,21 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6016` | Embarazo ectópico | 5 | `pmid:23613077` |
 | `HM:6017` | Conjuntivitis bacteriana | 2 | `pmid:35699701` |
 | `HM:6018` | Apnea obstructiva del sueño | 2 | `pmid:23989984` |
+| `HM:6019` | Glaucoma primario de ángulo abierto | 4 | `pmid:23677315` |
+| `HM:6020` | Displasia o luxación de cadera del lactante | 3 | `pmid:38619828` |
+| `HM:6021` | Conmoción cerebral pediátrica | 8 | `pmid:41941197` |
+| `HM:6022` | Maltrato físico infantil | 7 | `pmid:40257808` |
+| `HM:6023` | Hipertensión arterial secundaria pediátrica | 7 | `pmid:36976276` |
+| `HM:6024` | Trastorno por consumo de alcohol | 3 | `pmid:38592385` |
+| `HM:6025` | Insuficiencia aórtica | 3 | `pmid:10376577` |
+| `HM:6026` | Rotura del ligamento cruzado anterior | 3 | `pmid:11585485` |
+| `HM:6027` | Alergia a penicilina | 2 | `pmid:11368703` |
+| `HM:6028` | Hipertensión arterial en adultos | 2 | `pmid:34313682` |
+| `HM:6029` | Infarto agudo de miocardio | 9 | `pmid:9786377` |
+| `HM:6030` | Trastorno de ansiedad generalizada | 1 | `pmid:25058220` |
+| `HM:6031` | Trastorno de pánico | 1 | `pmid:25058220` |
+| `HM:6032` | Melanoma cutáneo | 3 | `pmid:9496989` |
+| `HM:6033` | Cáncer de mama | 2 | `pmid:10517431` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -275,16 +290,16 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 97 | las que traiga cada condición nueva |
-| **Conceptos** | 210 | ~450 signos del temario |
-| **Condiciones** | 18 | ~500 síndromes y enfermedades |
-| **Aristas con cociente** | **61** | prácticamente todo |
+| **Referencias** | 113 | las que traiga cada condición nueva |
+| **Conceptos** | 276 | ~420 signos del temario |
+| **Condiciones** | 33 | ~480 síndromes y enfermedades |
+| **Aristas con cociente** | **115** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
 se siembra: se escribe, una arista cada vez, leyendo literatura.
 
-Dieciocho condiciones han costado diecisiete fuentes verificadas. A ese ritmo,
+Treinta y tres condiciones han costado treinta y dos fuentes verificadas. A ese ritmo,
 las ~500 que faltan no son un sprint sino el trabajo de fondo del proyecto.
 
 ---
@@ -307,41 +322,31 @@ Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
 serie *Rational Clinical Examination* con abstract en PubMed son una veta
 acotada y verificable, y convenía agotarla mientras estaba localizada.
 
-- [x] 15 condiciones con **61 aristas medidas** sobre 14 fuentes de la serie
+- [x] 30 condiciones con **115 aristas medidas** (140 valores de LR) sobre 28 fuentes de la serie
 - [x] osteoartritis de cadera → `HM:6012`, con 8 aristas de `pmid:31846019`
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
 - [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
-      La fuente compara viral contra bacteriana, no enfermedad contra salud:
-      solo se emiten los cocientes que el abstract da a favor de bacteriana
-      (secreción mucopurulenta, otitis media). Los que da a favor de viral
-      (faringitis, adenopatía preauricular, contacto con ojo rojo) no se
-      invierten —esa aritmética no la sostiene el abstract— y quedan
-      declarados en `pendiente` para una futura «Conjuntivitis viral»
-- [x] apnea obstructiva del sueño → `HM:6018`, con 2 aristas de
-      `pmid:23989984`. La fuente publica además un cociente combinado
-      («ronquido leve + IMC <26», LR− 0.07) que no se activa: `reglas` está
-      pensado para criterios con nombre propio pendientes de decisión
-      (cuántos componentes exigir), no para una combinación de dos hallazgos
-      con cociente ya publicado. Queda en `pendiente` hasta que el esquema
-      tenga un lugar propio para cocientes combinados de dos conceptos
-- [!] **neumonía infantil descartada por ahora**: `pmid:28763554` (JAMA 2017,
-      la revisión vigente) tiene una errata —«Incorrect Statistical Measures
-      and Typographical Errors»— cuyo texto completo está bloqueado tanto en
-      JAMA (403) como en PMC (`PMC12507477` no permite descarga del XML
-      completo, solo metadatos). No se puede confirmar si las cifras del
-      abstract sobreviven a la corrección, así que no se cita. La referencia
-      queda creada (`referencias/pmid-28763554.yaml`) para que quien consiga
-      leer la corrección complete esto sin repetir la búsqueda
-- [ ] resto de la serie sin revisar. La búsqueda `"rational clinical
-      examination"[Title] AND JAMA[Journal]` devuelve **59 registros**, así que
-      la veta es bastante más ancha de lo que decía la lista anterior. Entre los
-      revisados con cociente extraíble del abstract: glaucoma de ángulo
-      abierto, luxación de cadera del lactante, intubación difícil, conmoción
-      infantil, maltrato físico infantil, hipertensión secundaria del niño,
-      síndrome de abstinencia alcohólica grave y trastorno por consumo de
-      alcohol. Quedan fuera por medir escalas y no signos: ansiedad y pánico,
-      obstrucción del tracto urinario inferior, mal de altura. Sin revisar
-      todavía, la disfunción tiroidea y el grueso de la serie anterior a 2013
+- [x] apnea obstructiva del sueño → `HM:6018`, con 2 aristas de `pmid:23989984`.
+- [x] glaucoma primario de ángulo abierto → `HM:6019`, con 4 aristas de `pmid:23677315`
+- [x] displasia o luxación de cadera del lactante → `HM:6020`, con 3 aristas de `pmid:38619828`
+- [x] conmoción cerebral pediátrica → `HM:6021`, con 8 aristas de `pmid:41941197`
+- [x] maltrato físico infantil → `HM:6022`, con 7 aristas de `pmid:40257808`
+- [x] hipertensión arterial secundaria pediátrica → `HM:6023`, con 7 aristas de `pmid:36976276`
+- [x] trastorno por consumo de alcohol → `HM:6024`, con 3 aristas de `pmid:38592385`
+- [x] insuficiencia aórtica → `HM:6025`, con 2 aristas de `pmid:10376577`
+- [x] rotura del ligamento cruzado anterior → `HM:6026`, con 3 aristas de `pmid:11585485`
+- [x] alergia a penicilina → `HM:6027`, con 2 aristas de `pmid:11368703`
+- [x] hipertensión arterial en adultos → `HM:6028`, con 2 aristas de `pmid:34313682`
+- [x] infarto agudo de miocardio → `HM:6029`, con 9 aristas de `pmid:9786377`
+- [x] trastorno de ansiedad generalizada → `HM:6030`, con 1 arista de `pmid:25058220`
+- [x] trastorno de pánico → `HM:6031`, con 1 arista de `pmid:25058220`
+- [x] melanoma cutáneo → `HM:6032`, con 3 aristas de `pmid:9496989`
+- [x] cáncer de mama → `HM:6033`, con 2 aristas de `pmid:10517431`
+- [!] **intubación difícil (`pmid:30721300`) y neumonía infantil (`pmid:28763554`) pospuestas**:
+      ambas tienen errata publicada en JAMA pendiente de auditoría sobre el texto completo.
+      Las referencias quedan creadas (`referencias/pmid-30721300.yaml` y `referencias/pmid-28763554.yaml`).
+- [ ] resto de la serie sin revisar: síndrome de abstinencia alcohólica grave,
+      disfunción tiroidea y el grueso de la serie anterior a 2013.
 - [ ] pendientes de **texto completo**: ascitis y esplenomegalia (sin abstract),
       las tres reglas de predicción de la faringitis, y el extremo del rango
       7.1–250 del colesterol pleural
@@ -407,10 +412,10 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias              97              97
-conceptos               210            ~800
-condiciones              18             ~515
-aristas con cociente     61              61
+referencias             113              113
+conceptos               276            ~800
+condiciones              33             ~515
+aristas con cociente    115              115
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

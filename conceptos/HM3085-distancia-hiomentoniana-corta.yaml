@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3085'
+tipo: concepto
+semantica: hallazgo
+termino: Distancia hiomentoniana corta
+termino_en: Short hyomental distance
+sinonimos:
+  - distancia hioides-mentón reducida
+  - distancia hiomentoniana menor de 3 a 5.5 cm
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al poblar la condición de vía aérea / intubación difícil (pmid:30721300).

@@ -1,0 +1,19 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3094'
+tipo: concepto
+semantica: hallazgo
+termino: Lesión oral o desgarro del frenillo en el lactante
+termino_en: Oral injury or torn frenulum in infant
+sinonimos:
+  - traumatismo del frenillo labial o lingual
+  - laceración mucosa oral no explicada
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al poblar la condición de maltrato físico infantil (pmid:40257808).

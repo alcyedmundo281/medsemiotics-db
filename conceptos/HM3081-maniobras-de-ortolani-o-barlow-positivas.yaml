@@ -1,0 +1,20 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+
+id: 'HM:3081'
+tipo: concepto
+semantica: hallazgo
+termino: Maniobras de Ortolani o Barlow positivas
+termino_en: Positive Barlow or Ortolani maneuver
+sinonimos:
+  - signo de Ortolani
+  - signo de Barlow
+  - inestabilidad de cadera reducible o luxable
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al poblar la condición displasia/luxación de cadera en lactantes (pmid:38619828).

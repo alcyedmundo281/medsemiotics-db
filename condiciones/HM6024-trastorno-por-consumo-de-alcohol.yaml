@@ -1,0 +1,61 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:38592385 (Wood 2024, JAMA Rational Clinical Examination).
+# Población: cribado poblacional de adultos y jóvenes según criterios DSM-5.
+
+id: 'HM:6024'
+tipo: condicion
+clase: sindrome
+termino: Trastorno por consumo de alcohol
+termino_en: Alcohol use disorder
+sinonimos:
+  - alcoholismo
+  - consumo perjudicial de alcohol
+  - dependencia alcohólica
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3110'    # AUDIT >= 8
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 6.5
+      ic95: [3.9, 11]
+      ref: 'pmid:38592385'
+    lr_negativo:
+      valor: 0.33
+      ic95: [0.20, 0.52]
+      ref: 'pmid:38592385'
+    decision: el instrumento global más validado; mayor rendimiento en mujeres (LR+ 6.9) que en hombres (LR+ 3.8)
+
+  - concepto: 'HM:3111'    # AUDIT-C positivo
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 1.9
+      ic95: [1.5, 2.3]
+      ref: 'pmid:38592385'
+    decision: útil para consumo excesivo pero con menor rendimiento diagnóstico específico que AUDIT completo
+
+  - concepto: 'HM:3112'    # TWEAK / TACER en puerperio
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 6.4
+      ic95: [5.1, 8.0]
+      ref: 'pmid:38592385'
+    lr_negativo:
+      valor: 0.05
+      ic95: [0.01, 0.20]
+      ref: 'pmid:38592385'
+    decision: en mujeres en el posparto precoz (<48h), una puntuación baja descarta con gran fiabilidad (LR- 0.05)
+
+conclusion_de_la_fuente: >-
+  El cuestionario AUDIT con punto de corte >= 8 es la herramienta más precisa para
+  identificar el trastorno por consumo de alcohol según el DSM-5 en adultos (LR+ 6.5,
+  LR- 0.33). En puerperio, los cuestionarios TWEAK/TACER permiten tanto confirmar
+  como descartar el trastorno con alta exactitud.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:38592385).

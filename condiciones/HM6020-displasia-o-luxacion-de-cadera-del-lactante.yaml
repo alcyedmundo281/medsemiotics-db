@@ -1,0 +1,77 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:38619828 (Singh 2024, JAMA Rational Clinical Examination).
+# Población: lactantes <= 3 meses sometidos a cribado clínico y ecográfico de cadera.
+
+id: 'HM:6020'
+tipo: condicion
+clase: enfermedad
+termino: Displasia o luxación de cadera del lactante
+termino_en: Developmental dysplasia or dislocation of the hip in infants
+sinonimos:
+  - luxación congénita de cadera
+  - displasia del desarrollo de la cadera
+  - DDC
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.0094
+  ic95: [0.0028, 0.020]
+  poblacion: lactantes de hasta 3 meses de edad en cribado general
+  ref: 'pmid:38619828'
+
+signos:
+  - concepto: 'HM:3081'    # Maniobras de Ortolani o Barlow positivas
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.46
+    especificidad: 0.991
+    lr_positivo:
+      valor: 52
+      ic95: [21, 127]
+      ref: 'pmid:38619828'
+    lr_negativo:
+      valor: 0.55
+      ic95: [0.37, 0.82]
+      ref: 'pmid:38619828'
+    decision: el hallazgo físico más potente para confirmar luxación de cadera
+
+  - concepto: 'HM:3082'    # Limitación de la abducción de cadera
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.13
+    especificidad: 0.97
+    lr_positivo:
+      valor: 3.6
+      ic95: [0.72, 18]
+      ref: 'pmid:38619828'
+    lr_negativo:
+      valor: 0.91
+      ic95: [0.76, 1.1]
+      ref: 'pmid:38619828'
+    decision: especificidad alta pero bajo rendimiento diagnóstico aislado en lactantes menores de 3 meses
+
+  - concepto: 'HM:3083'    # Clic o chasquido de cadera
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.13
+    especificidad: 0.92
+    lr_positivo:
+      valor: 1.6
+      ic95: [0.91, 2.8]
+      ref: 'pmid:38619828'
+    lr_negativo:
+      valor: 0.95
+      ic95: [0.88, 1.0]
+      ref: 'pmid:38619828'
+    decision: sin utilidad diagnóstica clara para confirmar o descartar luxación
+
+conclusion_de_la_fuente: >-
+  La prevalencia de cadera luxada en lactantes cribados fue del 0.94%. La positividad
+  en las maniobras de Barlow y Ortolani fue el hallazgo más fuertemente asociado a
+  luxación (LR+ 52). La limitación de la abducción o el clic articular no tuvieron
+  utilidad diagnóstica concluyente.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:38619828).

@@ -1,0 +1,61 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:34313682 (Viera 2021, JAMA Rational Clinical Examination).
+# Población: adultos evaluados para cribado y confirmación de hipertensión arterial.
+
+id: 'HM:6028'
+tipo: condicion
+clase: enfermedad
+termino: Hipertensión arterial en adultos
+termino_en: Hypertension in adults
+sinonimos:
+  - hipertensión arterial esencial
+  - HTA del adulto
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.49
+  ic95: [0.39, 0.60]
+  poblacion: adultos sometidos a evaluación tensional mediante MAPA de 24 horas (estándar de referencia)
+  ref: 'pmid:34313682'
+
+signos:
+  - concepto: 'HM:3124'    # PA en consulta oscilométrica >= 140/90
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.51
+    especificidad: 0.88
+    lr_positivo:
+      valor: 4.2
+      ic95: [2.5, 6.0]
+      ref: 'pmid:34313682'
+    lr_negativo:
+      valor: 0.56
+      ic95: [0.42, 0.69]
+      ref: 'pmid:34313682'
+    decision: la medición única o convencional en consulta tiene sensibilidad insuficiente (0.51) para confirmar o descartar por sí sola
+
+  - concepto: 'HM:3125'    # AMPA domiciliaria >= 135/85
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.75
+    especificidad: 0.76
+    lr_positivo:
+      valor: 3.1
+      ic95: [2.2, 4.0]
+      ref: 'pmid:34313682'
+    lr_negativo:
+      valor: 0.33
+      ic95: [0.20, 0.47]
+      ref: 'pmid:34313682'
+    decision: la automonitorización domiciliaria mejora la sensibilidad y ayuda a descartar HTA de bata blanca
+
+conclusion_de_la_fuente: >-
+  Las tomas de presión arterial convencionales en consulta no son suficientemente
+  precisas por sí solas para confirmar o descartar hipertensión. La automonitorización
+  domiciliaria (AMPA) y el MAPA de 24 horas son necesarios para establecer el diagnóstico
+  definitivo.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:34313682).

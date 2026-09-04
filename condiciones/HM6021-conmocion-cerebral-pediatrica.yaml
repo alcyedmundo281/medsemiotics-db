@@ -1,0 +1,106 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:41941197 (Shah 2026, JAMA Rational Clinical Examination).
+# Población: niños y adolescentes de 2 a 18 años evaluados tras traumatismo craneal.
+
+id: 'HM:6021'
+tipo: condicion
+clase: sindrome
+termino: Conmoción cerebral pediátrica
+termino_en: Pediatric concussion
+sinonimos:
+  - traumatismo craneoencefálico leve en pediatría
+  - conmoción deportiva infantil
+  - TCE leve infantil
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3088'    # Niebla mental
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.96
+    lr_positivo:
+      valor: 11.9
+      ic95: [11.8, 12.0]
+      ref: 'pmid:41941197'
+    decision: el síntoma individual con mayor cociente para aumentar la probabilidad
+
+  - concepto: 'HM:3091'    # Punto próximo de convergencia anormal
+    rol: prueba_especifica
+    estado_lr: medido
+    especificidad: 0.97
+    lr_positivo:
+      valor: 7.0
+      ic95: [2.0, 24.9]
+      ref: 'pmid:41941197'
+    decision: signo físico ocular de alta especificidad pero sensibilidad inferior a 0.40
+
+  - concepto: 'HM:3089'    # Fonofobia / sensibilidad al ruido
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.94
+    lr_positivo:
+      valor: 6.9
+      ic95: [3.6, 13.1]
+      ref: 'pmid:41941197'
+    decision: síntoma neurosensorial característico
+
+  - concepto: 'HM:0301'    # Náuseas
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.93
+    lr_positivo:
+      valor: 6.7
+      ic95: [3.1, 14.6]
+      ref: 'pmid:41941197'
+    decision: síntoma frecuente que apoya el diagnóstico
+
+  - concepto: 'HM:3092'    # Movimientos de persecución suave anormales
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.96
+    lr_positivo:
+      valor: 6.5
+      ic95: [2.4, 17.5]
+      ref: 'pmid:41941197'
+    decision: alteración óculo-motora de seguimiento
+
+  - concepto: 'HM:3090'    # Fotofobia / sensibilidad a la luz
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.93
+    lr_positivo:
+      valor: 6.4
+      ic95: [2.1, 19.7]
+      ref: 'pmid:41941197'
+    decision: síntoma neurosensorial visual
+
+  - concepto: 'HM:3093'    # Sacadas oculares anormales
+    rol: apoyo
+    estado_lr: medido
+    especificidad: 0.92
+    lr_positivo:
+      valor: 4.8
+      ic95: [1.8, 13.1]
+      ref: 'pmid:41941197'
+    decision: dismetría o lentitud sacádica
+
+  - concepto: 'HM:0207'    # Cefalea (ausencia disminuye la probabilidad)
+    rol: prueba_sensible
+    estado_lr: medido
+    sensibilidad: 0.74
+    lr_negativo:
+      valor: 0.20
+      ic95: [0.10, 0.39]
+      ref: 'pmid:41941197'
+    decision: la ausencia de cefalea es el hallazgo más útil para reducir la probabilidad de conmoción
+
+conclusion_de_la_fuente: >-
+  Aunque ningún hallazgo aislado es suficiente para confirmar o excluir la
+  conmoción, la presencia de niebla mental, hipersensibilidad a la luz/ruido,
+  náuseas o anomalías en la exploración ocular son los más útiles para aumentar la
+  probabilidad, mientras que la ausencia de cefalea la reduce marcadamente (LR- 0.20).
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:41941197).

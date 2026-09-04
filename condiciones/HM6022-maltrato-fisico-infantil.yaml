@@ -1,0 +1,90 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:40257808 (Shah 2025, JAMA Rational Clinical Examination).
+# Población: lactantes y niños evaluados por lesiones traumáticas o traumatismo craneal.
+
+id: 'HM:6022'
+tipo: condicion
+clase: sindrome
+termino: Maltrato físico infantil
+termino_en: Physical child abuse
+sinonimos:
+  - abuso físico en pediatría
+  - traumatismo pediátrico no accidental
+  - traumatismo craneal por maltrato
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3098'    # Hemorragias retinianas
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 11.0
+      ic95: [4.0, 32.0]
+      ref: 'pmid:40257808'
+    decision: en niños hospitalizados con traumatismo craneal, altamente sugestivo de maltrato
+
+  - concepto: 'HM:3094'    # Lesión oral o desgarro del frenillo
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 6.6
+      ic95: [3.2, 14.0]
+      ref: 'pmid:40257808'
+    decision: hallazgo mucoso centinela de agresión física en lactantes
+
+  - concepto: 'HM:3101'    # Fractura única en estudio esquelético
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.9
+      ic95: [2.9, 12.0]
+      ref: 'pmid:40257808'
+    decision: lesión ósea en la serie esquelética pediátrica
+
+  - concepto: 'HM:0506'    # Convulsiones tras TCE
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.9
+      ic95: [2.4, 6.5]
+      ref: 'pmid:40257808'
+    decision: manifestación neurológica asociada en trauma craneal no accidental
+
+  - concepto: 'HM:3102'    # Fracturas múltiples en serie esquelética
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.8
+      ic95: [2.4, 6.0]
+      ref: 'pmid:40257808'
+    decision: múltiples focos de fractura o diferentes estadios evolutivos
+
+  - concepto: 'HM:3099'    # Daño hipóxico-isquémico
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.4
+      ic95: [1.8, 6.4]
+      ref: 'pmid:40257808'
+    decision: lesión parenquimatosa difusa en neuroimagen
+
+  - concepto: 'HM:3100'    # Hematoma subdural
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.2
+      ic95: [2.6, 3.8]
+      ref: 'pmid:40257808'
+    decision: colección extraaxial hemática en neuroimagen
+
+conclusion_de_la_fuente: >-
+  La exploración física detallada que revela lesiones orales (desgarro del frenillo),
+  equimosis en nalgas/cuello o con patrón, y hemorragia subconjuntival debe alertar
+  de maltrato físico. En niños con traumatismo craneal, las hemorragias retinianas
+  (LR+ 11.0), el hematoma subdural y las lesiones óseas apoyan decisivamente el
+  diagnóstico.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:40257808).
