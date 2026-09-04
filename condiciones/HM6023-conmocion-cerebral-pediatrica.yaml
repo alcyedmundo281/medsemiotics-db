@@ -1,0 +1,95 @@
+id: 'HM:6023'
+tipo: condicion
+clase: sindrome
+termino: Conmoción cerebral pediátrica
+termino_en: Pediatric concussion
+sinonimos:
+  - traumatismo craneoencefálico leve pediátrico
+  - concusión cerebral en niños
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3094'    # Niebla mental
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 11.9
+      ic95: [5.2, 27.0]
+      ref: 'pmid:41941197'
+    decision: el síntoma cognitivo autoinformado con mayor LR positivo en la evaluación postraumática
+
+  - concepto: 'HM:3097'    # Punto próximo de convergencia anormal
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 7.0
+      ic95: [3.1, 16.0]
+      ref: 'pmid:41941197'
+    decision: el signo físico oculomotor más potente del examen vestibular/ocular motor (VOMS)
+
+  - concepto: 'HM:3095'    # Fonofobia
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 6.9
+      ic95: [3.4, 14.0]
+      ref: 'pmid:41941197'
+    decision: hipersensibilidad sensorial fuertemente indicativa de disfunción corticosensorial aguda
+
+  - concepto: 'HM:0105'    # Náuseas
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 6.7
+      ic95: [3.5, 13.0]
+      ref: 'pmid:41941197'
+    decision: síntoma neurovegetativo precoz muy prevalente tras conmoción cerebral
+
+  - concepto: 'HM:3096'    # Fotofobia
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.6
+      ic95: [2.9, 11.0]
+      ref: 'pmid:41941197'
+    decision: síntoma sensorial complementario de alta especificidad
+
+  - concepto: 'HM:3098'    # Persecución suave anormal
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.5
+      ic95: [2.0, 10.0]
+      ref: 'pmid:41941197'
+    decision: signo exploratorio de afectación cerebelosa o de vías de seguimiento visual
+
+  - concepto: 'HM:3099'    # Sacadas anormales
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.4
+      ic95: [2.0, 9.7]
+      ref: 'pmid:41941197'
+    decision: dismetría sacádica indicativa de alteración en la coordinación ocular rápida
+
+  - concepto: 'HM:0201'    # Cefalea (ausencia)
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 0.20
+      ic95: [0.10, 0.40]
+      ref: 'pmid:41941197'
+    dispara_si: ausente
+    efecto: excluye
+    sostiene: discriminacion_medida
+    ref: 'pmid:41941197'
+    decision: la ausencia completa de cefalea reduce sustancialmente la probabilidad de conmoción cerebral (LR 0.20)
+
+conclusion_de_la_fuente: >-
+  Los síntomas referidos como sentirse 'en una niebla' (LR+ 11.9) y los hallazgos
+  del examen de motilidad ocular/convergencia (LR+ 7.0) son los mejores predictores
+  de conmoción cerebral pediátrica. La ausencia de cefalea prácticamente descarta el cuadro (LR 0.20).
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:41941197).

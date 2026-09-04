@@ -1,0 +1,14 @@
+id: 'HM:3093'
+tipo: concepto
+semantica: hallazgo
+termino: Antecedente familiar de glaucoma
+termino_en: Family history of glaucoma
+sinonimos:
+  - historia familiar de glaucoma de primer grado
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar glaucoma de ángulo abierto (pmid:23677315).

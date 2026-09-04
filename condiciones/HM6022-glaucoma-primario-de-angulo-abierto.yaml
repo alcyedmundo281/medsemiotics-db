@@ -1,0 +1,64 @@
+id: 'HM:6022'
+tipo: condicion
+clase: enfermedad
+termino: Glaucoma primario de ángulo abierto
+termino_en: Primary open-angle glaucoma
+sinonimos:
+  - GPAA
+  - glaucoma crónico simple
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.02
+  ic95: [0.01, 0.03]
+  poblacion: adultos mayores de 40 años en cribado poblacional
+  ref: 'pmid:23677315'
+
+signos:
+  - concepto: 'HM:3088'    # Relación copa-disco aumentada
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 14.0
+      ic95: [6.3, 30.0]
+      ref: 'pmid:23677315'
+    decision: el hallazgo oftalmoscópico aislado más potente para confirmar sospecha de glaucoma
+
+  - concepto: 'HM:3089'    # Asimetría copa-disco
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 7.3
+      ic95: [3.4, 16.0]
+      ref: 'pmid:23677315'
+    decision: la diferencia de excavación entre ambos ojos aumenta marcadamente la probabilidad
+
+  - concepto: 'HM:3090'    # Hemorragia en astilla
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 12.0
+      ic95: [2.9, 48.0]
+      ref: 'pmid:23677315'
+    decision: signo patognomónico de daño microvascular y progresión activa de la neuropatía glaucomatosa
+
+  - concepto: 'HM:3091'    # PIO elevada
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 13.0
+      ic95: [8.2, 21.0]
+      ref: 'pmid:23677315'
+    lr_negativo:
+      valor: 0.65
+      ic95: [0.55, 0.76]
+      ref: 'pmid:23677315'
+    decision: confirma con fuerza pero una PIO normal no descarta (glaucoma de tensión normal)
+
+conclusion_de_la_fuente: >-
+  La evaluación del disco óptico (relación copa-disco >= 0.7, asimetría y hemorragias
+  en astilla) es más informativa que la tonometría aislada para el diagnóstico de glaucoma.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:23677315).

@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:40257808'
+clave_bibtex: shah2025
+tipo: articulo
+titulo: 'Has This Child Experienced Physical Abuse?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Shah SN
+  - Fong HF
+  - Haney SB
+  - Harper NS
+  - Pierce MC
+  - Neuman MI
+publicacion: JAMA
+anio: 2025
+volumen: 334
+paginas: 160-170
+
+identificadores:
+  pmid: 40257808
+  doi: 10.1001/jama.2025.2216
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

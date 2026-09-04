@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:10517431'
+clave_bibtex: barton1999
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have breast cancer? The screening clinical breast examination: should it be done? How?'
+autores:
+  - Barton MB
+  - Harris R
+  - Fletcher SW
+publicacion: JAMA
+anio: 1999
+volumen: 282
+paginas: 1270-80
+
+identificadores:
+  pmid: 10517431
+  doi: 10.1001/jama.282.13.1270
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

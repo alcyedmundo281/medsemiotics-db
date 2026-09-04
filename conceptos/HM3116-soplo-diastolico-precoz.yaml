@@ -1,0 +1,15 @@
+id: 'HM:3116'
+tipo: concepto
+semantica: hallazgo
+termino: Soplo diastólico precoz
+termino_en: Early diastolic murmur
+sinonimos:
+  - soplo en decrescendo en foco aórtico accesorio
+  - soplo aspirativo diastólico
+padre: 'HM:0608'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar insuficiencia aórtica (pmid:10376577).

@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:11585485'
+clave_bibtex: solomon2001
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have a torn meniscus or ligament of the knee? Value of the physical examination'
+autores:
+  - Solomon DH
+  - Simel DL
+  - Bates DW
+  - Katz JN
+  - Schaffer JL
+publicacion: JAMA
+anio: 2001
+volumen: 286
+paginas: 1610-20
+
+identificadores:
+  pmid: 11585485
+  doi: 10.1001/jama.286.13.1610
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

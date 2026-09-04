@@ -1,0 +1,14 @@
+id: 'HM:3107'
+tipo: concepto
+semantica: hallazgo
+termino: Fractura única en serie esquelética
+termino_en: Single fracture on skeletal survey
+sinonimos:
+  - fractura aislada en radiología pediátrica
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar maltrato físico infantil (pmid:40257808).

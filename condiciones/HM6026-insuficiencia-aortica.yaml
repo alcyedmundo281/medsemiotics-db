@@ -1,0 +1,50 @@
+id: 'HM:6026'
+tipo: condicion
+clase: enfermedad
+termino: Insuficiencia aórtica
+termino_en: Aortic regurgitation
+sinonimos:
+  - regurgitación aórtica
+  - valvulopatía aórtica incompetente
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3116'    # Soplo diastólico precoz
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 8.8
+      ic95: [7.3, 11.0]
+      ref: 'pmid:10376577'
+    lr_negativo:
+      valor: 0.20
+      ic95: [0.10, 0.30]
+      ref: 'pmid:10376577'
+    decision: el signo físico cardinal; su presencia confirma fuertemente (LR+ 8.8) y su ausencia reduce marcadamente la probabilidad (LR- 0.20)
+
+  - concepto: 'HM:3118'    # Oclusión arterial transitoria
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 8.4
+      ic95: [3.9, 18.0]
+      ref: 'pmid:10376577'
+    lr_negativo:
+      valor: 0.30
+      ic95: [0.10, 0.70]
+      ref: 'pmid:10376577'
+    decision: la maniobra de oclusión con manguito acentúa el soplo diastólico con excelente rendimiento diagnóstico
+
+  - concepto: 'HM:3117'    # Presión de pulso amplia
+    rol: apoyo
+    estado_lr: no_medido
+    motivo: signo hemodinámico clásico de regurgitación aórtica moderada o severa
+
+conclusion_de_la_fuente: >-
+  La auscultación de un soplo diastólico precoz es el signo más potente para diagnosticar
+  o descartar la insuficiencia aórtica (LR+ 8.8, LR- 0.20). Maniobras como la oclusión
+  arterial transitoria aumentan la sensibilidad de la auscultación en casos dudosos.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:10376577).

@@ -1,0 +1,14 @@
+id: 'HM:3136'
+tipo: concepto
+semantica: hallazgo
+termino: Dolor torácico posicional
+termino_en: Positional chest pain
+sinonimos:
+  - dolor torácico que varía con los cambios posturales
+padre: 'HM:0206'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar infarto agudo de miocardio (pmid:9786377).

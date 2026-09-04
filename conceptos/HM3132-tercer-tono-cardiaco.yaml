@@ -1,0 +1,14 @@
+id: 'HM:3132'
+tipo: concepto
+semantica: hallazgo
+termino: Tercer tono cardíaco (R3)
+termino_en: Third heart sound (S3)
+sinonimos:
+  - galope ventricular
+padre: 'HM:0608'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar infarto agudo de miocardio (pmid:9786377).

@@ -1,0 +1,15 @@
+id: 'HM:3113'
+tipo: concepto
+semantica: hallazgo
+termino: Microalbuminuria
+termino_en: Microalbuminuria
+sinonimos:
+  - excreción urinaria de albúmina elevada
+  - cociente albúmina/creatinina urinario patológico
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar hipertensión secundaria pediátrica (pmid:36976276).

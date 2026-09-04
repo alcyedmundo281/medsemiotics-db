@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:9496989'
+clave_bibtex: whited1998
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have a mole or a melanoma?'
+autores:
+  - Whited JD
+  - Grichnik JM
+publicacion: JAMA
+anio: 1998
+volumen: 279
+paginas: 696-701
+
+identificadores:
+  pmid: 9496989
+  doi: 10.1001/jama.279.9.696
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

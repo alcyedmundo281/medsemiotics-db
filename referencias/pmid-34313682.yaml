@@ -1,0 +1,39 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:34313682'
+clave_bibtex: viera2021
+tipo: articulo
+titulo: 'Does This Adult Patient Have Hypertension?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Viera AJ
+  - Yano Y
+  - Lin FC
+  - Simel DL
+  - Yun J
+  - Dave G
+  - Von Holle A
+  - Viera LA
+  - Shimbo D
+  - Hardy ST
+  - Donahue KE
+  - Hinderliter A
+  - Voisin CE
+  - Jonas DE
+publicacion: JAMA
+anio: 2021
+volumen: 326
+paginas: 339-347
+
+identificadores:
+  pmid: 34313682
+  doi: 10.1001/jama.2021.4533
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

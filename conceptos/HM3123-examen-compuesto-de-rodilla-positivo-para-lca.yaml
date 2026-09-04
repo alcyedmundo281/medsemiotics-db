@@ -1,0 +1,14 @@
+id: 'HM:3123'
+tipo: concepto
+semantica: hallazgo
+termino: Examen compuesto de rodilla positivo para ligamento cruzado anterior
+termino_en: Composite physical examination positive for ACL tear
+sinonimos:
+  - combinación de Lachman y traslación tibial positiva
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar lesión de ligamento cruzado anterior (pmid:11585485).

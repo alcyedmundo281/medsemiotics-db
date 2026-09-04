@@ -1,0 +1,45 @@
+id: 'HM:6029'
+tipo: condicion
+clase: enfermedad
+termino: Hipertensión arterial en adultos
+termino_en: Hypertension in adults
+sinonimos:
+  - HTA esencial
+  - hipertensión arterial primaria en adultos
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3127'    # Presión en consulta >= 140/90
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.2
+      ic95: [2.9, 6.1]
+      ref: 'pmid:34313682'
+    lr_negativo:
+      valor: 0.56
+      ic95: [0.46, 0.68]
+      ref: 'pmid:34313682'
+    decision: una cifra elevada en consulta quintuplica aproximadamente la odds pero exige confirmación fuera de consulta por bata blanca
+
+  - concepto: 'HM:3128'    # AMPA >= 135/85
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.1
+      ic95: [2.3, 4.2]
+      ref: 'pmid:34313682'
+    lr_negativo:
+      valor: 0.33
+      ic95: [0.24, 0.46]
+      ref: 'pmid:34313682'
+    decision: la automonitorización domiciliaria presenta un excelente cociente negativo (LR- 0.33) para descartar hipertensión mantenida
+
+conclusion_de_la_fuente: >-
+  La medición de la presión arterial en consulta es una prueba de cribado útil (LR+ 4.2),
+  pero la automonitorización domiciliaria (AMPA) o el MAPA son necesarios para confirmar
+  el diagnóstico definitivo y descartar la hipertensión de bata blanca.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:34313682).

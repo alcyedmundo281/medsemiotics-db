@@ -1,0 +1,14 @@
+id: 'HM:3135'
+tipo: concepto
+semantica: hallazgo
+termino: Dolor torácico punzante o cortante
+termino_en: Sharp or stabbing chest pain
+sinonimos:
+  - dolor punzante en tórax
+padre: 'HM:0206'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar infarto agudo de miocardio (pmid:9786377).

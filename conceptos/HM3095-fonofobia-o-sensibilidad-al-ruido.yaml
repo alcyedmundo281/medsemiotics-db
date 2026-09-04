@@ -1,0 +1,15 @@
+id: 'HM:3095'
+tipo: concepto
+semantica: hallazgo
+termino: Fonofobia o sensibilidad al ruido
+termino_en: Sensitivity to noise
+sinonimos:
+  - hiperacusia postraumática
+  - intolerancia a estímulos auditivos
+padre: 'HM:0400'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar conmoción cerebral pediátrica (pmid:41941197).

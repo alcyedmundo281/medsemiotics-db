@@ -1,0 +1,14 @@
+id: 'HM:3126'
+tipo: concepto
+semantica: hallazgo
+termino: Prueba cutánea a determinantes de penicilina
+termino_en: Penicillin skin test
+sinonimos:
+  - prick test e intradermorreacción a determinantes mayores y menores de penicilina
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar alergia a penicilina (pmid:11368703).

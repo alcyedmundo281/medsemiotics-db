@@ -1,0 +1,14 @@
+id: 'HM:3129'
+tipo: concepto
+semantica: hallazgo
+termino: Presión arterial en consulta no atendida mayor o igual a 135/85 mmHg
+termino_en: Unattended office blood pressure 135/85 mm Hg or greater
+sinonimos:
+  - toma tensional oscilométrica automatizada sin presencia de personal sanitario
+padre: 'HM:0109'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar hipertensión arterial en adultos (pmid:34313682).

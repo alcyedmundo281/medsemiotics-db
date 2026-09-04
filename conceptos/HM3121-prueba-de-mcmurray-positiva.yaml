@@ -1,0 +1,14 @@
+id: 'HM:3121'
+tipo: concepto
+semantica: hallazgo
+termino: Prueba de McMurray positiva
+termino_en: Positive McMurray test
+sinonimos:
+  - chasquido o dolor en interlínea articular con rotación y flexoextensión de rodilla
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar rotura meniscal de rodilla (pmid:11585485).
