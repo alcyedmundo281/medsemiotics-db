@@ -1,0 +1,14 @@
+id: 'HM:3124'
+tipo: concepto
+semantica: hallazgo
+termino: Examen compuesto de rodilla positivo para desgarro meniscal
+termino_en: Composite physical examination positive for meniscal tear
+sinonimos:
+  - combinación de interlínea dolorosa y maniobras meniscales positivas
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar rotura meniscal de rodilla (pmid:11585485).

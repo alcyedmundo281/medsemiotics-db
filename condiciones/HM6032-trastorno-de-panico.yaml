@@ -1,0 +1,37 @@
+id: 'HM:6032'
+tipo: condicion
+clase: sindrome
+termino: Trastorno de pánico
+termino_en: Panic disorder
+sinonimos:
+  - crisis de angustia
+  - ataques de pánico
+  - ansiedad paroxística episódica
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.085
+  poblacion: pacientes adultos atendidos en consultas de atención primaria
+  ref: 'pmid:25058220'
+
+signos:
+  - concepto: 'HM:3138'    # Módulo de pánico PHQ positivo
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 78.0
+      ic95: [29.0, 210.0]
+      ref: 'pmid:25058220'
+    lr_negativo:
+      valor: 0.20
+      ic95: [0.11, 0.37]
+      ref: 'pmid:25058220'
+    decision: el módulo de pánico del PHQ tiene un cociente positivo masivo (LR+ 78) y permite descartar eficazmente cuando es negativo (LR- 0.20)
+
+conclusion_de_la_fuente: >-
+  El módulo de pánico del Patient Health Questionnaire (PHQ) es el instrumento de
+  autoinforme más potente para detectar el trastorno de pánico en atención primaria (LR+ 78, LR- 0.20).
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:25058220).

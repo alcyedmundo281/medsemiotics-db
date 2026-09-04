@@ -1,0 +1,14 @@
+id: 'HM:3105'
+tipo: concepto
+semantica: hallazgo
+termino: Daño cerebral hipóxico-isquémico
+termino_en: Hypoxic-ischemic brain injury
+sinonimos:
+  - encefalopatía hipóxico-isquémica postraumática
+padre: 'HM:0400'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar maltrato físico infantil (pmid:40257808).

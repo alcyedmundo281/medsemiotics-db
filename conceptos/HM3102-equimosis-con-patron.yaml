@@ -1,0 +1,15 @@
+id: 'HM:3102'
+tipo: concepto
+semantica: hallazgo
+termino: Equimosis con patrón
+termino_en: Patterned bruising
+sinonimos:
+  - hematomas con impronta de objeto
+  - equimosis por cinturón, mano u objeto punzocortante
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar maltrato físico infantil (pmid:40257808).

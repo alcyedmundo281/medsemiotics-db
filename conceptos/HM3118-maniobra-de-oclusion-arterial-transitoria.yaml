@@ -1,0 +1,14 @@
+id: 'HM:3118'
+tipo: concepto
+semantica: hallazgo
+termino: Maniobra de oclusión arterial transitoria
+termino_en: Transient arterial occlusion
+sinonimos:
+  - acentuación de soplo tras oclusión arterial con manguito
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar insuficiencia aórtica (pmid:10376577).

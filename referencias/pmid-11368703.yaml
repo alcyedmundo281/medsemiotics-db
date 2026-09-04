@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:11368703'
+clave_bibtex: salkind2001
+tipo: articulo
+titulo: 'The rational clinical examination. Is this patient allergic to penicillin? An evidence-based analysis of the likelihood of penicillin allergy'
+autores:
+  - Salkind AR
+  - Cuddy PG
+  - Foxworth JW
+publicacion: JAMA
+anio: 2001
+volumen: 285
+paginas: 2498-505
+
+identificadores:
+  pmid: 11368703
+  doi: 10.1001/jama.285.19.2498
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

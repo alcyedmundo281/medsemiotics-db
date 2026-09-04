@@ -1,0 +1,45 @@
+id: 'HM:6033'
+tipo: condicion
+clase: enfermedad
+termino: Melanoma cutáneo
+termino_en: Cutaneous melanoma
+sinonimos:
+  - melanoma maligno
+  - cáncer de piel tipo melanoma
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3139'    # Regla ABCD positiva
+    rol: prueba_especifica
+    estado_lr: medido
+    sensibilidad: 0.92
+    especificidad: 0.98
+    lr_positivo:
+      valor: 46.0
+      ic95: [18.4, 96.0]
+      ref: 'pmid:9496989'
+    lr_negativo:
+      valor: 0.08
+      ic95: [0.04, 0.18]
+      ref: 'pmid:9496989'
+    decision: la regla clínica ABCD (Asimetría, Bordes, Color, Diámetro >6mm) es altamente sensible y específica
+
+  - concepto: 'HM:3140'    # Asimetría y bordes irregulares
+    rol: apoyo
+    estado_lr: no_medido
+    motivo: componente de los criterios semiológicos combinados de dermatología clínica
+
+  - concepto: 'HM:3141'    # Policromía y diámetro > 6 mm
+    rol: apoyo
+    estado_lr: no_medido
+    motivo: componente de los criterios semiológicos combinados de dermatología clínica
+
+conclusion_de_la_fuente: >-
+  La detección precoz del melanoma mediante la regla semiológica ABCD (Asimetría,
+  Bordes irregulares, Color heterogéneo y Diámetro >6 mm) presenta una sensibilidad
+  del 92-100% y una especificidad del 98%, siendo la principal herramienta clínica
+  de triaje y derivación para biopsia.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:9496989).

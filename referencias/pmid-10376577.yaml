@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:10376577'
+clave_bibtex: choudhry1999
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have aortic regurgitation?'
+autores:
+  - Choudhry NK
+  - Etchells EE
+publicacion: JAMA
+anio: 1999
+volumen: 281
+paginas: 2231-8
+
+identificadores:
+  pmid: 10376577
+  doi: 10.1001/jama.281.23.2231
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

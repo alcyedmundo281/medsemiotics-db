@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+
+id: 'pmid:41941197'
+clave_bibtex: shah2026
+tipo: articulo
+titulo: 'Does This Child Have a Concussion?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Shah SN
+  - Chizuk HM
+  - Fong HF
+  - Hannon M
+  - Mannix RC
+publicacion: JAMA
+anio: 2026
+volumen: 
+paginas: 
+
+identificadores:
+  pmid: 41941197
+  doi: 10.1001/jama.2026.1233
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-04
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

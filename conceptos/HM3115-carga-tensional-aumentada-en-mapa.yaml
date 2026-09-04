@@ -1,0 +1,14 @@
+id: 'HM:3115'
+tipo: concepto
+semantica: hallazgo
+termino: Carga tensional aumentada en monitorización ambulatoria (MAPA)
+termino_en: Increased systolic blood pressure load on ABPM
+sinonimos:
+  - carga de presión arterial sistólica elevada en MAPA de 24 horas
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar hipertensión secundaria pediátrica (pmid:36976276).

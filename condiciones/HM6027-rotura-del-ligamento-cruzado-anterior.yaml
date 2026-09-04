@@ -1,0 +1,53 @@
+id: 'HM:6027'
+tipo: condicion
+clase: enfermedad
+termino: Rotura del ligamento cruzado anterior
+termino_en: Anterior cruciate ligament tear
+sinonimos:
+  - desgarro del LCA
+  - rotura del ligamento cruzado de la rodilla
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3119'    # Prueba de Lachman positiva
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 25.0
+      ic95: [2.7, 250.0]
+      ref: 'pmid:11585485'
+    lr_negativo:
+      valor: 0.10
+      ic95: [0.04, 0.20]
+      ref: 'pmid:11585485'
+    decision: la prueba clínica individual de referencia; altamente sensible y específica para confirmar o descartar rotura del LCA
+
+  - concepto: 'HM:3123'    # Examen compuesto rodilla LCA
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 25.0
+      ic95: [2.7, 250.0]
+      ref: 'pmid:11585485'
+    lr_negativo:
+      valor: 0.04
+      ic95: [0.01, 0.40]
+      ref: 'pmid:11585485'
+    decision: la combinación de maniobras clínicas por un examinador entrenado descarta con fiabilidad casi absoluta (LR- 0.04)
+
+  - concepto: 'HM:3120'    # Cajón anterior
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.8
+      ic95: [0.7, 22.0]
+      ref: 'pmid:11585485'
+    decision: maniobra clásica pero con menor sensibilidad que la prueba de Lachman debido al bloqueo de isquiotibiales
+
+conclusion_de_la_fuente: >-
+  La prueba de Lachman es la maniobra con mayor exactitud diagnóstica para confirmar
+  (LR+ 25) o descartar (LR- 0.1) la rotura del ligamento cruzado anterior, superando al cajón anterior.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:11585485).

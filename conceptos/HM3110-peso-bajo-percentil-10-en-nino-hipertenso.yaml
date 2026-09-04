@@ -1,0 +1,15 @@
+id: 'HM:3110'
+tipo: concepto
+semantica: hallazgo
+termino: Peso menor o igual al percentil 10 en niño con hipertensión
+termino_en: Weight less than or equal to 10th percentile
+sinonimos:
+  - peso bajo para la edad en hipertensión pediátrica
+  - niño hipertenso no obeso
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar hipertensión secundaria pediátrica (pmid:36976276).

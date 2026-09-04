@@ -1,0 +1,38 @@
+id: 'HM:6031'
+tipo: condicion
+clase: sindrome
+termino: Trastorno de ansiedad generalizada
+termino_en: Generalized anxiety disorder
+sinonimos:
+  - TAG
+  - GAD
+  - ansiedad crónica
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.092
+  poblacion: pacientes adultos en centros de atención primaria
+  ref: 'pmid:25058220'
+
+signos:
+  - concepto: 'HM:3137'    # GAD-7 positivo
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.1
+      ic95: [4.3, 6.0]
+      ref: 'pmid:25058220'
+    lr_negativo:
+      valor: 0.13
+      ic95: [0.07, 0.25]
+      ref: 'pmid:25058220'
+    decision: la escala GAD-7 es el mejor instrumento de cribado en atención primaria, con alta capacidad tanto confirmatoria como de exclusión (LR- 0.13)
+
+conclusion_de_la_fuente: >-
+  El cuestionario GAD-7 presenta excelentes características de rendimiento diagnóstico
+  para detectar el trastorno de ansiedad generalizada en atención primaria (LR+ 5.1, LR- 0.13)
+  y es factible de implementar en la práctica clínica diaria.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:25058220).

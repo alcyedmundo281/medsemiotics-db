@@ -1,0 +1,88 @@
+id: 'HM:6025'
+tipo: condicion
+clase: sindrome
+termino: Hipertensión arterial secundaria pediátrica
+termino_en: Pediatric secondary hypertension
+sinonimos:
+  - HTA secundaria en niños
+  - hipertensión renovascular o renal pediátrica
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.15
+  ic95: [0.10, 0.25]
+  poblacion: niños y adolescentes con confirmación de hipertensión arterial
+  ref: 'pmid:36976276'
+
+signos:
+  - concepto: 'HM:3113'    # Microalbuminuria
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 13.0
+      ic95: [3.2, 53.0]
+      ref: 'pmid:36976276'
+    decision: el marcador de daño orgánico o nefropatía subyacente con mayor LR positivo en niños hipertensos
+
+  - concepto: 'HM:3115'    # Carga tensional en MAPA
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.8
+      ic95: [1.8, 13.0]
+      ref: 'pmid:36976276'
+    decision: alteración en la monitorización ambulatoria que orienta fuertemente hacia etiología secundaria
+
+  - concepto: 'HM:3109'    # Antecedente familiar HTA secundaria
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.7
+      ic95: [1.5, 15.0]
+      ref: 'pmid:36976276'
+    decision: historia familiar de nefropatía o trastornos vasculares orienta al diagnóstico etiológico
+
+  - concepto: 'HM:3110'    # Peso <= p10
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.5
+      ic95: [1.8, 11.0]
+      ref: 'pmid:36976276'
+    decision: la delgadez o bajo peso contrasta con la HTA primaria pediátrica típica asociada a obesidad
+
+  - concepto: 'HM:3114'    # Ácido úrico < 5.5
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.6
+      ic95: [1.5, 8.6]
+      ref: 'pmid:36976276'
+    decision: niveles de ácido úrico no elevados aumentan la sospecha de causa secundaria frente a primaria
+
+  - concepto: 'HM:3111'    # Prematuridad
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.0
+      ic95: [1.2, 7.5]
+      ref: 'pmid:36976276'
+    decision: antecedente perinatal asociado a oligonefronía o trombosis de arteria renal por catéter
+
+  - concepto: 'HM:3112'    # Edad <= 6 años
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.8
+      ic95: [1.3, 6.0]
+      ref: 'pmid:36976276'
+    decision: a menor edad de presentación, mucho mayor probabilidad de hipertensión secundaria
+
+conclusion_de_la_fuente: >-
+  En niños hipertensos, la microalbuminuria (LR+ 13.0), una elevada carga tensional en
+  el MAPA (LR+ 4.8), el bajo peso para la edad (LR+ 4.5) y el debut en menores de 6 años
+  (LR+ 2.8) son las principales claves clínicas para sospechar hipertensión secundaria.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:36976276).

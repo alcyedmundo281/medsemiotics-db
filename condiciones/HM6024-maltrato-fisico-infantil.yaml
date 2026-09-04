@@ -1,0 +1,83 @@
+id: 'HM:6024'
+tipo: condicion
+clase: sindrome
+termino: Maltrato físico infantil
+termino_en: Child physical abuse
+sinonimos:
+  - traumatismo no accidental en niños
+  - violencia física infantil
+  - síndrome del niño maltratado
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3104'    # Hemorragias retinianas
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 11.0
+      ic95: [5.2, 23.0]
+      ref: 'pmid:40257808'
+    decision: el signo oftalmológico clásico más específico de traumatismo craneoencefálico abusivo (AHT)
+
+  - concepto: 'HM:3100'    # Lesión oral / frenillo
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 6.6
+      ic95: [2.8, 16.0]
+      ref: 'pmid:40257808'
+    decision: traumatismo centrado en la cavidad bucal por alimentación forzada o impacto directo
+
+  - concepto: 'HM:3108'    # Fracturas múltiples
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.9
+      ic95: [3.3, 10.0]
+      ref: 'pmid:40257808'
+    decision: hallazgo en el examen radiológico esquelético altamente discriminativo
+
+  - concepto: 'HM:3102'    # Equimosis con patrón
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.6
+      ic95: [2.1, 15.0]
+      ref: 'pmid:40257808'
+    decision: hematomas con forma de objeto o marca anatómica incompatible con caídas accidentales
+
+  - concepto: 'HM:3101'    # Equimosis en nalgas o cuello
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.1
+      ic95: [1.8, 14.0]
+      ref: 'pmid:40257808'
+    decision: localización anatómica protegida indicativa de lesión infligida intencionalmente
+
+  - concepto: 'HM:3106'    # Hematoma subdural
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.2
+      ic95: [2.1, 4.8]
+      ref: 'pmid:40257808'
+    decision: complicación intracraneal frecuente en traumatismos por sacudida o impacto
+
+  - concepto: 'HM:3107'    # Fractura única
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 1.8
+      ic95: [1.2, 2.7]
+      ref: 'pmid:40257808'
+    decision: incrementa modestamente el riesgo de maltrato pero requiere correlación con el mecanismo referido
+
+conclusion_de_la_fuente: >-
+  La presencia de hemorragias retinianas (LR+ 11.0), desgarro del frenillo labial (LR+ 6.6),
+  fracturas múltiples (LR+ 5.9) y hematomas con patrón o en localizaciones protegidas
+  (LR+ 5.1-5.6) son las banderas rojas con mayor capacidad discriminativa para maltrato físico.
+
+procedencia:
+  fuente: Acuñada en la Oleada 1.5 a partir de la revisión sistemática RCE (pmid:40257808).

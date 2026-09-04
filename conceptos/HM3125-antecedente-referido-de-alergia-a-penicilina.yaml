@@ -1,0 +1,14 @@
+id: 'HM:3125'
+tipo: concepto
+semantica: hallazgo
+termino: Antecedente referido de alergia a penicilina
+termino_en: Self-reported history of penicillin allergy
+sinonimos:
+  - historia clínica referida de reacción a betalactámicos
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+significante: null
+significado: null
+falsos_positivos: []
+procedencia:
+  fuente: Acuñado al modelar alergia a penicilina (pmid:11368703).
