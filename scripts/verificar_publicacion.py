@@ -45,8 +45,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-EXTENSIONES_IMAGEN = (".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif")
-
 
 def validar_url(url: str):
     """El problema con esta URL, o None. No comprueba la red."""
