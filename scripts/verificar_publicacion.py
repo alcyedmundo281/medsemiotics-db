@@ -29,6 +29,7 @@ inestable.
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 import sys
 import urllib.request
@@ -41,9 +42,6 @@ import banco  # noqa: E402  (import tras ajustar sys.path)
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-
-EXTENSIONES_IMAGEN = (".png", ".jpg", ".jpeg", ".svg", ".webp")
-
 
 def validar_url(url: str):
     """El problema con esta URL, o None. No comprueba la red."""
@@ -120,11 +118,21 @@ def huellas_epub(epub: Path, errores: list):
     try:
         with zipfile.ZipFile(epub) as zf:
             nombres = zf.namelist()
-            huellas = {
-                hashlib.sha256(zf.read(n)).digest()
-                for n in nombres
-                if Path(n).suffix.lower() in EXTENSIONES_IMAGEN
-            }
+            huellas = set()
+            for nombre in nombres:
+                if Path(nombre).suffix.lower() not in banco.EXTENSIONES_IMAGEN_EPUB:
+                    continue
+                datos = zf.read(nombre)
+                huellas.add(hashlib.sha256(datos).digest())
+                # Pandoc empaqueta los SVG comprimidos con gzip. La huella que
+                # hay que comparar contra el `archivo_local` del índice es la
+                # del contenido descomprimido; sin esto, una figura SVG bien
+                # incrustada se declararía ausente.
+                if nombre.lower().endswith(".svgz"):
+                    try:
+                        huellas.add(hashlib.sha256(gzip.decompress(datos)).digest())
+                    except (OSError, EOFError):
+                        pass
             textos = "".join(
                 zf.read(n).decode("utf-8", "replace")
                 for n in nombres

@@ -230,6 +230,15 @@ def imagen_de_concepto(indice: Indice, concepto: dict, donde: str):
     return None
 
 
+# Extensiones de las imágenes YA INCRUSTADAS en un contenedor EPUB. `.svgz` no
+# es un descuido: pandoc comprime los SVG con gzip al empaquetarlos y los declara
+# igual como `image/svg+xml` —EPUBCheck 5.1.0 lo da por válido—, así que un
+# validador que solo mire `.svg` da por perdida una figura que sí está. Pandoc
+# 3.1.11 no comprime y 3.1.3 sí: contar por extensión sin esto convierte la
+# versión de pandoc del entorno en un fallo de compilación.
+EXTENSIONES_IMAGEN_EPUB = (".png", ".jpg", ".jpeg", ".svg", ".svgz", ".webp")
+
+
 def figura_en_latex(relativa: Path, fuente: str) -> bool:
     """¿La figura llegó al LaTeX, convertida o no?
 

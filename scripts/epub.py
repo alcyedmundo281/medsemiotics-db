@@ -207,7 +207,7 @@ def validar_epub(path: Path, indice: banco.Indice, informe: dict, plano: str) ->
 
         imagenes = [
             n for n in nombres
-            if n.lower().endswith((".png", ".jpg", ".jpeg", ".svg", ".webp"))
+            if n.lower().endswith(banco.EXTENSIONES_IMAGEN_EPUB)
         ]
         if len(imagenes) < informe["figuras"] + 1:  # figuras del índice + portada
             raise ErrorGeneracion(
