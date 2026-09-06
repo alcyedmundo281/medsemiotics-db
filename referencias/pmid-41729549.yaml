@@ -34,6 +34,7 @@ verificacion:
   errata_corrige: Incorrect Data in Rational Clinical Examination Article.
   errata_pmid: 'pmid:42377978'
   errata_pmcid: PMC13320701
+  errata_verificada: true
   crossref: true
   crossref_titulo_coincide: false
   notas:
@@ -43,11 +44,11 @@ verificacion:
       Registrada SIN usar. Era el candidato más rico de la serie con 12 cocientes,
       y la errata se titula «Incorrect Data in Rational Clinical Examination Article».
     - >-
-      COTEJO HECHO el 06/09/2026 contra el cuerpo de la corrección (doi
-      10.1001/jama.2026.9987, jamanetwork fullarticle/2850814). Es de este
-      artículo: su referencia [1] es Drum 2026, JAMA 335(13):1159-1168, doi
-      10.1001/jama.2026.0446. PERO NO DESBLOQUEA NADA, y por eso
-      `errata_verificada` sigue SIN poner: leer la corrección no bastó.
+      COTEJO CERRADO el 06/09/2026, en dos pasos. Primero la corrección (doi
+      10.1001/jama.2026.9987, jamanetwork fullarticle/2850814), que confirmó el
+      daño sin acotarlo. Después el ABSTRACT YA CORREGIDO del propio artículo
+      (doi 10.1001/jama.2026.0446), que es lo que de verdad desbloqueó la
+      fuente. Leer el aviso no bastó: hizo falta el artículo.
     - >-
       QUÉ CORRIGE, literal: «incorrect values appeared in the abstract, text,
       supplement, and video. Some extracted values were incorrect as well as the
@@ -56,10 +57,32 @@ verificacion:
       primary sources. None of these errors alter the published results or
       conclusions.»
     - >-
-      DICE «EN EL ABSTRACT» Y NO DICE CUÁLES. Los doce cocientes de esta fuente
-      se transcribirían del abstract, que es exactamente donde la corrección
-      sitúa los valores incorrectos. Ninguno puede entrar. Es el peor caso
-      posible de los tres cotejos de hoy: el aviso confirma el daño sin acotarlo.
+      SEIS DE LOS DOCE COCIENTES CAMBIARON. Cotejado uno por uno el abstract
+      anterior contra el corregido: intactos la ingurgitación yugular (4.1), el
+      edema (2.2), la ausencia de líneas B (0.09) y las dos caras de la VCI
+      (3.9 y 0.22). Cambian: crepitantes IC95% 1.7-4.5 a 0.7-4.5 y Sp 81% a
+      82%; congestión radiográfica 5.9 (2.9-12.0) a 5.8 (2.9-11.5); líneas B
+      presentes IC95% 2.6-6.1 a 2.7-6.1; PVY ecográfica 2.8 (2.2-3.5, Sp 71%) a
+      2.9 (2.3-3.7, Sp 73%) y su cara negativa 0.26 a 0.27; y el BNP, que es el
+      que se lleva casi todo el cambio.
+    - >-
+      EL BNP ERA LA FILA ROTA, y esto es lo importante del cotejo. LR+ pasa de
+      6.9 (IC95% 2.4-20.4, Sp 87%) a 4.2 (IC95% 1.8-10, Sp 78%), y LR− de 0.14
+      (Se 87%) a 0.09 (Se 93%). Encaja con lo que la corrección llama «the
+      transposition of two data rows between primary sources».
+    - >-
+      LA ARITMÉTICA ACERTÓ LA FILA Y FALLÓ LA REPARACIÓN, que es exactamente la
+      razón por la que no autoriza. Señalaba el BNP —única fila cuya Sp
+      declarada (87%) no cuadraba con la derivada (93%)— y acertó. Pero los
+      valores que implicaba eran Se 90% y Sp 93%, y los corregidos son Se 93% y
+      Sp 78%: haberla «arreglado» con la aritmética habría dejado la
+      especificidad MÁS lejos de la verdad que el error original. Detecta que
+      una fila está rota; no puede decir cuál de sus cuatro cifras lo está.
+    - >-
+      CON LAS CIFRAS CORREGIDAS LOS CUATRO HALLAZGOS DE DOBLE CARA CUADRAN
+      consigo mismos dentro del 3%: líneas B (Sp declarada 77%, derivada 77.8%),
+      VCI (79% y 81.8%), PVY (73% y 74.1%) y BNP (78% y 77.8%). Antes el BNP se
+      separaba 6 puntos. Es coherencia recuperada, no prueba de corrección.
     - >-
       «NONE OF THESE ERRORS ALTER THE PUBLISHED RESULTS OR CONCLUSIONS» NO ES UN
       SALVOCONDUCTO. Habla de los resultados y las conclusiones del artículo,
@@ -110,8 +133,9 @@ verificacion:
       normal LR 0.14 (0.08-0.24, Se 87%). Prevalencia 35-69% en 40 estudios y
       11 490 pacientes.
     - >-
-      QUÉ FALTA: el abstract YA CORREGIDO del propio artículo, no el de la
-      corrección. La página del editor lo sirve corregido en línea —lleva el
-      aviso «A Correction has been published»— en doi 10.1001/jama.2026.0446.
-      Con ese abstract entran los doce cocientes de golpe y esta pasa a ser la
-      fuente más rica del índice. El que sirve PubMed es anterior y no vale.
+      NO FALTA NADA: modelada en HM:6037 con los doce cocientes corregidos. Es
+      la fuente más rica del índice.
+    - >-
+      EL ABSTRACT QUE SIRVE PUBMED SIGUE SIENDO EL ANTERIOR a la corrección: es
+      de donde salían las cifras viejas anotadas más arriba. Quien vuelva a esta
+      referencia debe leer el artículo en el editor, no el resumen de PubMed.

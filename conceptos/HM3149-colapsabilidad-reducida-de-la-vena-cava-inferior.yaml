@@ -1,0 +1,32 @@
+# Concepto del índice. Acuñado al modelar HM:6037 (sobrecarga de volumen).
+#
+# EL CORTE VA AL REVÉS QUE LA INTUICIÓN: lo anormal es colapsar POCO. Un índice
+# por debajo del 50% indica sobrecarga; por encima, la hace menos probable. Por
+# eso `direccion: bajo` y `corte_inferior`, y por eso el término nombra la
+# colapsabilidad REDUCIDA y no la medida a secas.
+
+id: 'HM:3149'
+tipo: concepto
+semantica: hallazgo
+termino: Colapsabilidad reducida de la vena cava inferior
+termino_en: Reduced inferior vena cava collapsibility
+sinonimos:
+  - índice de colapsabilidad de la VCI disminuido
+  - vena cava inferior pletórica
+  - VCI no colapsable
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Índice de colapsabilidad de la vena cava inferior
+  unidad: '%'
+  direccion: bajo
+  corte_inferior: 50
+  ref: 'pmid:41729549'
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la sobrecarga de volumen.

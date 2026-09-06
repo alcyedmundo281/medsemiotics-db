@@ -1,0 +1,24 @@
+# Concepto del índice. Acuñado al modelar HM:6037 (sobrecarga de volumen).
+#
+# SIN `umbral`: no es un corte sobre un eje numérico sino la lectura de un
+# patrón radiográfico. Ponerle un umbral sería inventarle una escala que la
+# fuente no mide.
+
+id: 'HM:3147'
+tipo: concepto
+semantica: hallazgo
+termino: Congestión vascular en la radiografía de tórax
+termino_en: Vascular congestion on chest radiography
+sinonimos:
+  - redistribución vascular pulmonar
+  - congestión pulmonar radiográfica
+  - patrón de congestión venosa pulmonar
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la sobrecarga de volumen.

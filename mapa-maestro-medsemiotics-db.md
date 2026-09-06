@@ -435,35 +435,38 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
       entra es el dímero D con seis cocientes negativos —cruce de tres estratos
       de probabilidad previa por dos clases de ensayo— y la prevalencia por
       estrato de la regla de predicción.
+- [x] sobrecarga de volumen → `HM:6037`, con 8 aristas y **12 cocientes** de
+      `pmid:41729549`. La fuente más rica de la serie. Seis conceptos nuevos
+      (`HM:3146`-`HM:3151`), cinco de ellos con umbral y procedencia. Los
+      valores son los del **abstract corregido en la página del editor**, no los
+      del que sirve PubMed.
 #### Qué queda de verdad (revisado el 06/09/2026 contra `referencias/`)
 
-**La veta está agotada salvo por una errata.** De las 112 referencias, 33
-sostienen algún dato y 79 no; pero de esas 79 **solo quedan 3 de la serie**, y
-las tres traían errata. Modelada la trombosis venosa profunda
-(`pmid:16403932`, la única que estaba limpia), ninguna se podía escribir sin ir
-antes a la corrección publicada. **Las tres se cotejaron el 06/09/2026 contra el
-cuerpo del aviso, y dieron tres resultados distintos.** Las otras 75 son
+**La veta está agotada.** De las 112 referencias, 33 sostienen algún dato y 79
+no; pero de esas 79 **solo quedaban 3 de la serie**, y las tres traían errata.
+Las tres se cotejaron el 06/09/2026 y **dieron tres resultados distintos**;
+modelada la sobrecarga de volumen, **ya no queda ninguna bloqueada por su
+errata**. Lo que falta ahora es escribir aristas, no abrir puertas. Las otras 75
+son
 ecografía y cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
 J*, *Radiographics*—: el fondo de biosemiotics que entró con `refs.bib`, y por
 tanto material de la **oleada 1**, no de ésta.
 
 Conviene no confundir dos cosas que esta sección mezclaba:
 
-- **En el repositorio y sin modelar** — las 3 de abajo. En dos de ellas el
-  trabajo ya es solo leer el abstract y escribir las aristas; la tercera sigue
-  cerrada.
+- **En el repositorio y sin modelar** — las 2 de abajo. En las dos el trabajo
+  ya es solo leer el abstract y escribir las aristas.
 - **Ni siquiera obtenidas** — abstinencia alcohólica grave, disfunción tiroidea,
   ascitis, esplenomegalia. **No están en `referencias/`**: hay que traerlas por
   PMID y verificarlas antes de que exista nada que modelar. Es otro trabajo y
   otra fase.
 
-Las 3 de la serie que quedan en el repositorio, con sus erratas ya cotejadas:
+Las 2 de la serie que quedan sin modelar, con sus erratas ya cotejadas:
 
 | Referencia | Año | Estado tras el cotejo del 06/09/2026 |
 |---|---|---|
-| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | **DESBLOQUEADA, y con un dato de regalo.** La corrección («Data Error») acota su alcance a una fila de la Tabla 1 y a una frase de los Resultados; el abstract no está afectado. Además aporta un cociente que el abstract no traía: GCS < 14 a las dos horas, LR 3.4 (IC95% 1.4-8.4). Nueve cocientes listos |
-| `pmid:26241601` · estrés postraumático | 2015 | **PARCIAL.** Solo entra el Trauma Screening Questionnaire, y sus cifras las da el propio aviso: Se 0.95, Sp 0.26, LR+ 1.3 (1.2-1.4), LR− 0.20 (0.10-0.41). **El abstract sigue bloqueado**: la corrección dice que retiró dos frases y redondeó valores, pero no dice cuáles |
-| `pmid:41729549` · sobrecarga de volumen | 2026 | **SIGUE BLOQUEADA.** La corrección sitúa los valores incorrectos «in the abstract, text, supplement, and video» sin enumerar ninguno, y el abstract es de donde saldrían los 12 cocientes. `errata_verificada` sigue sin poner, a propósito: que `build.py` siga siendo la puerta |
+| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | **LISTA, y con un dato de regalo.** La corrección («Data Error») acota su alcance a una fila de la Tabla 1 y a una frase de los Resultados; el abstract no está afectado. Además aporta un cociente que el abstract no traía: GCS < 14 a las dos horas, LR 3.4 (IC95% 1.4-8.4). Nueve cocientes esperando |
+| `pmid:26241601` · estrés postraumático | 2015 | **PARCIAL.** Solo entra el Trauma Screening Questionnaire, y sus cifras las da el propio aviso: Se 0.95, Sp 0.26, LR+ 1.3 (1.2-1.4), LR− 0.20 (0.10-0.41). **El abstract sigue bloqueado**: la corrección dice que retiró dos frases y redondeó valores, pero no dice cuáles. Para desbloquearlo hace falta el abstract corregido del artículo (`10.1001/jama.2015.7877`), como en la sobrecarga de volumen |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
 menudo su propio PMC, aunque el artículo corregido esté de pago.
@@ -517,8 +520,29 @@ para quien transcribe es peor que no saber.
 **Cuando no lo acota, lo que hace falta ya no es la corrección: es el artículo
 corregido.** JAMA corrige en línea sobre el propio artículo. El abstract que
 sirve PubMed puede ser el anterior —en `pmid:26241601` conserva las dos frases
-que el aviso retiró—, así que hay que ir al DOI del artículo, no al de la
-errata.
+que el aviso retiró, y en `pmid:41729549` sigue dando las doce cifras viejas—,
+así que hay que ir al DOI del artículo, no al de la errata. Fue leer ese
+abstract corregido, y no el aviso, lo que desbloqueó la sobrecarga de volumen.
+
+**La aritmética acierta la fila y falla la reparación.** Es el hallazgo más útil
+de los tres cotejos y conviene que quede escrito con su número. En
+`pmid:41729549` la comprobación cruzada señalaba el BNP como la única fila cuya
+especificidad declarada (87%) no cuadraba con la derivada (93%). **Acertó**: de
+los doce cocientes, el BNP fue el que más movió la corrección, de LR+ 6.9 a 4.2.
+Pero los valores que la aritmética implicaba eran Se 90% y Sp 93%, **y los
+corregidos son Se 93% y Sp 78%**. Haber «arreglado» la fila con la aritmética
+habría dejado la especificidad más lejos de la verdad que el error original.
+
+La razón es simple y hay que tenerla presente: la comprobación cruzada detecta
+que una fila es incoherente, pero no puede decir **cuál** de sus cuatro cifras
+lo es. Sirve para saber dónde mirar. Nunca para escribir.
+
+**Y una corrección puede volver un hallazgo indistinguible del ruido.** En
+`pmid:41729549` los crepitantes pasan de LR 2.7 (IC95% 1.7-4.5) a 2.7
+(IC95% **0.7**-4.5): el valor puntual no se mueve y el intervalo pasa a cruzar
+el 1. Un consumidor que solo lea el valor puntual no notará nada. Se transcribe
+tal cual, con su advertencia, porque recortar el intervalo para que «tenga
+sentido» sería inventar.
 
 **Una corrección puede mover el umbral y el cociente a la vez.** En
 `pmid:26717031`, «GCS < 15 a las 2 h, LR 1.6-7.6» pasó a «GCS < 14 a las 2 h, LR

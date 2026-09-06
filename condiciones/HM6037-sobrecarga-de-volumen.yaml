@@ -1,0 +1,246 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:41729549 (Drum 2026, JAMA), revisión sistemática de 40
+# estudios y 11 490 adultos. Transcritos del ABSTRACT YA CORREGIDO en la página
+# del editor, NO del que sirve PubMed, que es el anterior a la corrección.
+#
+# ESTUVO BLOQUEADA por su errata, cerrada el 06/09/2026 en dos pasos: la
+# corrección («Incorrect Data in Rational Clinical Examination Article») dice
+# que hubo valores incorrectos «in the abstract, text, supplement, and video»
+# sin enumerar ninguno, así que confirmó el daño sin acotarlo. Lo que desbloqueó
+# la fuente fue el artículo corregido, no el aviso.
+#
+# SEIS DE LOS DOCE COCIENTES CAMBIARON, y el BNP se lleva casi todo el cambio:
+# LR+ de 6.9 a 4.2 y LR− de 0.14 a 0.09. Está documentado en la referencia.
+#
+# ALCANCE: pacientes que respiran espontáneamente, NO intubados. Treinta y tres
+# de los cuarenta estudios reclutaron pacientes con disnea.
+
+id: 'HM:6037'
+tipo: condicion
+clase: sindrome
+termino: Sobrecarga de volumen
+termino_en: Volume overload
+sinonimos:
+  - sobrecarga hídrica
+  - hipervolemia
+  - congestión volémica
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  rango: [0.35, 0.69]
+  poblacion: >-
+    adultos que respiran espontáneamente con sospecha de sobrecarga de volumen,
+    en 40 estudios y 11 490 pacientes; 33 de los 40 estudiaron pacientes con
+    disnea
+  ref: 'pmid:41729549'
+  nota: >-
+    es la dispersión entre entornos asistenciales, no un intervalo de
+    incertidumbre sobre un mismo valor; quien puebla un protocolo elige según
+    dónde atiende
+
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3147'    # Congestión vascular en la radiografía de tórax
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 5.8
+      ic95: [2.9, 11.5]
+      ref: 'pmid:41729549'
+    especificidad: 0.91
+    decision: >-
+      con las cifras corregidas es el cociente positivo más alto de los doce, por
+      encima del BNP. La conclusión de la fuente los nombra juntos como las dos
+      pruebas más útiles para identificar la sobrecarga.
+
+  - concepto: 'HM:3151'    # Péptido natriurético cerebral elevado
+    rol: prueba_sensible
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.2
+      ic95: [1.8, 10]
+      umbral: BNP ≥ 100 ng/mL
+      ref: 'pmid:41729549'
+    lr_negativo:
+      valor: 0.09
+      ic95: [0.06, 0.16]
+      umbral: BNP < 100 ng/mL
+      ref: 'pmid:41729549'
+    sensibilidad: 0.93
+    especificidad: 0.78
+    efecto: excluye
+    dispara_si: ausente
+    sostiene: discriminacion_medida
+    ref: 'pmid:41729549'
+    decision: >-
+      la conclusión de la fuente lo señala, junto con la ausencia de líneas B,
+      como lo más útil para EXCLUIR la sobrecarga: un BNP normal la hace muy
+      poco probable
+    advertencia: >-
+      la unidad del corte es la que imprime la fuente, ng/mL, y no se convierte.
+      La literatura habitual sitúa el mismo corte en 100 pg/mL. Ver la
+      advertencia del concepto HM:3151 antes de usar este umbral.
+    nota: >-
+      es el hallazgo cuyas cifras más movió la corrección: LR+ pasó de 6.9 a 4.2
+      y LR− de 0.14 a 0.09. Las de aquí son las corregidas.
+
+  - concepto: 'HM:3146'    # Ingurgitación yugular
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.1
+      ic95: [2.9, 5.6]
+      umbral: punto máximo de pulsación > 3 cm sobre el ángulo esternal
+      ref: 'pmid:41729549'
+    especificidad: 0.92
+    decision: >-
+      el hallazgo de exploración física con mejor rendimiento de la serie, y el
+      más específico de los doce
+    advertencia: >-
+      es la ingurgitación que se INSPECCIONA. La presión venosa yugular medida
+      con ecografía es otra arista (HM:3150) con otro cociente: 2.9 frente a
+      4.1, y especificidad 73% frente a 92%. No son intercambiables.
+
+  - concepto: 'HM:3148'    # Líneas B pulmonares bilaterales
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.0
+      ic95: [2.7, 6.1]
+      ref: 'pmid:41729549'
+    lr_negativo:
+      valor: 0.09
+      ic95: [0.04, 0.23]
+      ref: 'pmid:41729549'
+    sensibilidad: 0.93
+    especificidad: 0.77
+    efecto: excluye
+    dispara_si: ausente
+    sostiene: discriminacion_medida
+    ref: 'pmid:41729549'
+    decision: >-
+      su AUSENCIA es lo que la conclusión de la fuente convierte en decisión:
+      junto con un BNP normal, es lo más útil para excluir la sobrecarga
+    advertencia: >-
+      el cociente es el de las líneas B BILATERALES. Unas líneas B focales son
+      otro hallazgo y no llevan este número.
+
+  - concepto: 'HM:3149'    # Colapsabilidad reducida de la vena cava inferior
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.9
+      ic95: [2.5, 6.1]
+      umbral: índice de colapsabilidad < 50%
+      ref: 'pmid:41729549'
+    lr_negativo:
+      valor: 0.22
+      ic95: [0.11, 0.45]
+      umbral: índice de colapsabilidad ≥ 50%
+      ref: 'pmid:41729549'
+    sensibilidad: 0.82
+    especificidad: 0.79
+    ref: 'pmid:41729549'
+    advertencia: >-
+      el corte va al revés que la intuición: lo que indica sobrecarga es
+      colapsar POCO. Un índice por debajo del 50% la hace más probable; por
+      encima, menos.
+
+  - concepto: 'HM:3150'    # Presión venosa yugular elevada por ecografía
+    rol: imagen
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.9
+      ic95: [2.3, 3.7]
+      umbral: PVY ecográfica > 8 cm
+      ref: 'pmid:41729549'
+    lr_negativo:
+      valor: 0.27
+      ic95: [0.21, 0.34]
+      umbral: PVY ecográfica ≤ 8 cm
+      ref: 'pmid:41729549'
+    sensibilidad: 0.80
+    especificidad: 0.73
+    ref: 'pmid:41729549'
+    advertencia: >-
+      no confundir con la ingurgitación yugular de la inspección (HM:3146), que
+      la fuente mide aparte y con mejor cociente
+
+  - concepto: 'HM:0406'    # Crepitantes
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.7
+      ic95: [0.7, 4.5]
+      ref: 'pmid:41729549'
+    especificidad: 0.82
+    advertencia: >-
+      EL INTERVALO CORREGIDO CRUZA EL 1. La corrección cambió el límite inferior
+      de 1.7 a 0.7, así que el cociente ya no es distinguible de la ausencia de
+      efecto. Se transcribe tal como lo publica la fuente corregida, sin
+      redondear ni recortar. Quien lo consuma no debe tratarlo como un hallazgo
+      que desplaza la probabilidad.
+    nota: >-
+      el intervalo es además el único de los doce que no es simétrico en escala
+      logarítmica: la distancia al límite inferior es 2.6 veces la distancia al
+      superior. Se anota porque se comprobó, no porque autorice a corregirlo.
+
+  - concepto: 'HM:0604'    # Edema en miembros inferiores
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.2
+      ic95: [1.5, 3.1]
+      ref: 'pmid:41729549'
+    especificidad: 0.80
+    decision: >-
+      el más débil de los hallazgos de exploración con efecto medible: mueve la
+      probabilidad, pero poco
+
+notas_de_uso:
+  - >-
+    Todos los cocientes se leen en pacientes que RESPIRAN ESPONTÁNEAMENTE. La
+    revisión excluye a los intubados, y ninguna cifra se puede trasladar a
+    ventilación mecánica: la colapsabilidad de la vena cava, en particular,
+    cambia de significado.
+  - >-
+    Treinta y tres de los cuarenta estudios reclutaron pacientes con disnea, así
+    que la serie describe sobre todo el problema de decidir si una disnea es por
+    sobrecarga.
+  - >-
+    Las cuatro pruebas de doble cara —líneas B, vena cava, PVY ecográfica y
+    BNP— son coherentes consigo mismas dentro del 3%: la sensibilidad y la
+    especificidad que declaran predicen sus propios cocientes. Es una
+    comprobación que se hizo, no una fuente de datos.
+  - >-
+    Con las cifras corregidas, la ecografía a pie de cama (líneas B 4.0, vena
+    cava 3.9, PVY 2.9) rinde por encima de la exploración física salvo por la
+    ingurgitación yugular (4.1), que sigue siendo el mejor hallazgo de la mano.
+
+pendiente:
+  - >-
+    La discrepancia de unidad del BNP —100 ng/mL en la fuente frente a los 100
+    pg/mL habituales en la literatura— no se puede resolver sin el texto
+    completo. Está declarada en HM:3151 y en la arista, y no se reconcilia aquí.
+  - >-
+    El intervalo de los crepitantes, 0.7-4.5 sobre un valor puntual de 2.7, es
+    marcadamente asimétrico en escala logarítmica y cruza el 1. Es el valor
+    corregido y así se transcribe, pero conviene confirmarlo contra el texto
+    completo antes de que ningún consumidor lo trate como definitivo.
+
+conclusion_de_la_fuente: >-
+  Un BNP de 100 ng/mL o más y la presencia de congestión vascular en la
+  radiografía de tórax pueden ser las pruebas más útiles para identificar a los
+  pacientes con sobrecarga de volumen. La ausencia de líneas B pulmonares en la
+  ecografía a pie de cama, o un BNP menor de 100 ng/mL, pueden ser lo más útil
+  para excluirla.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1.5 a partir de la revisión sistemática RCE
+    (pmid:41729549). Valores del abstract corregido en la página del editor, no
+    del que sirve PubMed. Desbloqueada el 06/09/2026 tras cotejar su errata y
+    después leer el artículo corregido.

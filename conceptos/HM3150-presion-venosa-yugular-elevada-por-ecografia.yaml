@@ -1,0 +1,32 @@
+# Concepto del índice. Acuñado al modelar HM:6037 (sobrecarga de volumen).
+#
+# NO ES UN DUPLICADO de HM:3146. Aquel es la ingurgitación que se ve; éste es
+# una presión que se mide en centímetros con la sonda. pmid:41729549 los estudia
+# por separado y les da cocientes distintos —4.1 la inspección, 2.9 la
+# ecografía—, con especificidades muy diferentes (92% frente a 73%). Fundirlos
+# borraría justo lo que la fuente midió.
+
+id: 'HM:3150'
+tipo: concepto
+semantica: hallazgo
+termino: Presión venosa yugular elevada por ecografía
+termino_en: Elevated ultrasonographically measured jugular venous pressure
+sinonimos:
+  - PVY ecográfica elevada
+  - presión venosa yugular medida con ecografía
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Presión venosa yugular medida por ecografía
+  unidad: cm
+  direccion: alto
+  corte_superior: 8
+  ref: 'pmid:41729549'
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la sobrecarga de volumen.
