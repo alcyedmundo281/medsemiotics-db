@@ -437,31 +437,33 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
       estrato de la regla de predicción.
 #### Qué queda de verdad (revisado el 06/09/2026 contra `referencias/`)
 
-**La veta está agotada salvo por las erratas.** De las 112 referencias, 33
-sostienen algún dato y 79 no; pero de esas 79 **solo quedan 4 de la serie, y las
-cuatro traen errata sin cotejar**. Modelada la trombosis venosa profunda
-(`pmid:16403932`, la única que estaba limpia), no queda ninguna que se pueda
-escribir sin ir antes a la corrección publicada. Las otras 75 son ecografía y
-cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
+**La veta está agotada salvo por una errata.** De las 112 referencias, 33
+sostienen algún dato y 79 no; pero de esas 79 **solo quedan 3 de la serie**, y
+las tres traían errata. Modelada la trombosis venosa profunda
+(`pmid:16403932`, la única que estaba limpia), ninguna se podía escribir sin ir
+antes a la corrección publicada. **Las tres se cotejaron el 06/09/2026 contra el
+cuerpo del aviso, y dieron tres resultados distintos.** Las otras 75 son
+ecografía y cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
 J*, *Radiographics*—: el fondo de biosemiotics que entró con `refs.bib`, y por
 tanto material de la **oleada 1**, no de ésta.
 
 Conviene no confundir dos cosas que esta sección mezclaba:
 
-- **En el repositorio y sin modelar** — las 5 de abajo. El trabajo es leer el
-  abstract y escribir las aristas.
+- **En el repositorio y sin modelar** — las 3 de abajo. En dos de ellas el
+  trabajo ya es solo leer el abstract y escribir las aristas; la tercera sigue
+  cerrada.
 - **Ni siquiera obtenidas** — abstinencia alcohólica grave, disfunción tiroidea,
   ascitis, esplenomegalia. **No están en `referencias/`**: hay que traerlas por
   PMID y verificarlas antes de que exista nada que modelar. Es otro trabajo y
   otra fase.
 
-Las 4 de la serie que quedan en el repositorio:
+Las 3 de la serie que quedan en el repositorio, con sus erratas ya cotejadas:
 
-| Referencia | Año | Qué la bloquea |
+| Referencia | Año | Estado tras el cotejo del 06/09/2026 |
 |---|---|---|
-| `pmid:26241601` · estrés postraumático | 2015 | cotejo abierto: la errata (`pmid:26746468`) no está en PMC. **La más peligrosa de las tres**: se titula «Value Errors in Tables and Abstract» y el abstract se contradice a sí mismo |
-| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | cotejo abierto: la errata (`pmid:28510658`, «Data Error») no está en PMC. El abstract **no** se contradice, que es ausencia de pista y no garantía |
-| `pmid:41729549` · sobrecarga de volumen | 2026 | cotejo abierto: la errata (`pmid:42377978`) está en PMC pero **el depósito viene sin cuerpo**. La fuente más rica que queda: 12 cocientes |
+| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | **DESBLOQUEADA, y con un dato de regalo.** La corrección («Data Error») acota su alcance a una fila de la Tabla 1 y a una frase de los Resultados; el abstract no está afectado. Además aporta un cociente que el abstract no traía: GCS < 14 a las dos horas, LR 3.4 (IC95% 1.4-8.4). Nueve cocientes listos |
+| `pmid:26241601` · estrés postraumático | 2015 | **PARCIAL.** Solo entra el Trauma Screening Questionnaire, y sus cifras las da el propio aviso: Se 0.95, Sp 0.26, LR+ 1.3 (1.2-1.4), LR− 0.20 (0.10-0.41). **El abstract sigue bloqueado**: la corrección dice que retiró dos frases y redondeó valores, pero no dice cuáles |
+| `pmid:41729549` · sobrecarga de volumen | 2026 | **SIGUE BLOQUEADA.** La corrección sitúa los valores incorrectos «in the abstract, text, supplement, and video» sin enumerar ninguno, y el abstract es de donde saldrían los 12 cocientes. `errata_verificada` sigue sin poner, a propósito: que `build.py` siga siendo la puerta |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
 menudo su propio PMC, aunque el artículo corregido esté de pago.
@@ -483,23 +485,56 @@ equivocado.**
 y el mismo corte, y solo uno de los dos bloques cuadra con la sensibilidad y la
 especificidad que él mismo declara —`LR+ = Se/(1−Sp)`—. Eso señala cuál es
 probablemente el corregido, y no basta: quién corrige a quién lo dice el aviso.
+**Leído el aviso, la aritmética sigue sin veredicto**: la corrección confirma
+que sobraban dos frases, pero no dice cuál de los dos bloques retiró. Haber
+esperado no fue prudencia excesiva; era la única lectura honesta.
 
 El caso opuesto es `pmid:26717031`, cuyo abstract **sí** cuadra consigo mismo
 —sus probabilidades postprueba se derivan bien de su prevalencia y sus
-cocientes—. Eso no lo absuelve: un bloque de cifras uniformemente erróneo cuadra
-consigo mismo igual de bien. **Que sume no significa que sea correcto**, y una
-errata titulada «Data Error» sigue sin leerse.
+cocientes—. Eso no lo absolvía: un bloque de cifras uniformemente erróneo cuadra
+consigo mismo igual de bien. **Que sume no significa que sea correcto.** El
+aviso acabó dándole la razón al abstract, y la cautela seguía siendo correcta:
+la conclusión benigna la trajo la corrección, no la aritmética.
 
-**Estar en PMC no es tener el texto.** Dos de las tres correcciones pendientes
-tienen depósito en PMC y las dos lo sirven **vacío**: JAMA deposita el registro
-sin cuerpo. Comprobar que existe el PMC no adelanta el cotejo; hay que abrir la
+**Estar en PMC no es tener el texto.** Dos de las tres correcciones tenían
+depósito en PMC y las dos lo servían **vacío**: JAMA deposita el registro sin
+cuerpo. Comprobar que existe el PMC no adelanta el cotejo; hay que abrir la
 página del editor igual.
 
-Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
-queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
-convierte en **error** y no en aviso, porque la corrección puede haber cambiado
-justo la cifra que se cita. Avanzar en esta oleada es, a partir de aquí, cotejar
-erratas.
+##### Lo que enseñaron los tres cotejos juntos
+
+**Leer la corrección no siempre desbloquea.** Tres avisos que se parecían mucho
+—misma revista, misma serie, los tres titulados como si tocaran datos— dieron
+tres resultados: uno abrió la fuente entera, otro abrió una fila, el tercero la
+dejó igual de cerrada.
+
+**Lo que decide es si la corrección ACOTA su alcance.** «Data Error» nombra la
+fila, la tabla y la frase, y con eso todo lo demás queda a salvo. «Incorrect
+Data in Rational Clinical Examination Article» dice «in the abstract, text,
+supplement, and video» y no enumera nada: confirma el daño sin delimitarlo, que
+para quien transcribe es peor que no saber.
+
+**Cuando no lo acota, lo que hace falta ya no es la corrección: es el artículo
+corregido.** JAMA corrige en línea sobre el propio artículo. El abstract que
+sirve PubMed puede ser el anterior —en `pmid:26241601` conserva las dos frases
+que el aviso retiró—, así que hay que ir al DOI del artículo, no al de la
+errata.
+
+**Una corrección puede mover el umbral y el cociente a la vez.** En
+`pmid:26717031`, «GCS < 15 a las 2 h, LR 1.6-7.6» pasó a «GCS < 14 a las 2 h, LR
+3.4 (1.4-8.4)». Con el corte viejo el número no queda impreciso: queda siendo el
+de otro hallazgo. Es la justificación más limpia que tiene la regla de no
+transcribir nunca un cociente sin su umbral.
+
+**«No altera los resultados ni las conclusiones» no es un salvoconducto.** Lo
+dice el aviso de `pmid:41729549`, y habla de las conclusiones del artículo, no
+de cada cifra: un cociente puede cambiar sin mover la conclusión de que el BNP
+es la mejor prueba aislada. Aquí se transcriben cifras.
+
+**Y `errata_verificada` no se pone por haber leído.** Se pone cuando la lectura
+autoriza a transcribir. En `pmid:41729549` el cotejo está hecho y el campo sigue
+sin poner a propósito, para que `build.py` convierta en error cualquier intento
+de citarla. El campo dice «esta cifra está cotejada», no «alguien miró».
 
 #### Pendientes declarados dentro de las condiciones
 

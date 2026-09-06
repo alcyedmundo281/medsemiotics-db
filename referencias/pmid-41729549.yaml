@@ -43,11 +43,36 @@ verificacion:
       Registrada SIN usar. Era el candidato más rico de la serie con 12 cocientes,
       y la errata se titula «Incorrect Data in Rational Clinical Examination Article».
     - >-
-      COTEJO DEL 06/09/2026, NO CERRADO: localizada la corrección
-      (pmid:42377978, PMC13320701, doi 10.1001/jama.2026.9987, jamanetwork
-      fullarticle/2850814). ESTÁ en PMC, pero el depósito viene SIN CUERPO, igual
-      que el de pmid:28763554. Falta su texto y este entorno no alcanza la web
-      del editor.
+      COTEJO HECHO el 06/09/2026 contra el cuerpo de la corrección (doi
+      10.1001/jama.2026.9987, jamanetwork fullarticle/2850814). Es de este
+      artículo: su referencia [1] es Drum 2026, JAMA 335(13):1159-1168, doi
+      10.1001/jama.2026.0446. PERO NO DESBLOQUEA NADA, y por eso
+      `errata_verificada` sigue SIN poner: leer la corrección no bastó.
+    - >-
+      QUÉ CORRIGE, literal: «incorrect values appeared in the abstract, text,
+      supplement, and video. Some extracted values were incorrect as well as the
+      corresponding summary statistics. In addition, discrepancies reflected
+      small rounding differences and the transposition of two data rows between
+      primary sources. None of these errors alter the published results or
+      conclusions.»
+    - >-
+      DICE «EN EL ABSTRACT» Y NO DICE CUÁLES. Los doce cocientes de esta fuente
+      se transcribirían del abstract, que es exactamente donde la corrección
+      sitúa los valores incorrectos. Ninguno puede entrar. Es el peor caso
+      posible de los tres cotejos de hoy: el aviso confirma el daño sin acotarlo.
+    - >-
+      «NONE OF THESE ERRORS ALTER THE PUBLISHED RESULTS OR CONCLUSIONS» NO ES UN
+      SALVOCONDUCTO. Habla de los resultados y las conclusiones del artículo,
+      no de cada cifra: un cociente puede cambiar sin mover la conclusión de que
+      el BNP es la mejor prueba aislada. Aquí se transcriben cifras, no
+      conclusiones.
+    - >-
+      LA PISTA DEL BNP GANA SENTIDO, y sigue sin autorizar nada: la corrección
+      menciona «the transposition of two data rows between primary sources», que
+      es justo el tipo de error que dejaría las cifras de un hallazgo sin cuadrar
+      con las suyas propias. Era el hallazgo cuyo desvío se anotó (Se declarada
+      87% frente a 90% derivada, Sp 87% frente a 93%). Sirve para saber por
+      dónde mirar, no para transcribir.
     - >-
       A FAVOR DEL ENLACE: la corrección se titula «Incorrect Data in Rational
       Clinical Examination Article», que nombra explícitamente la serie de este
@@ -56,8 +81,8 @@ verificacion:
       encajaba y el cuerpo corregía otra cosa.
     - >-
       La cita guardada dice «JAMA. 2026 Jun 30», que es la fecha en línea; la
-      cita impresa es JAMA 2026;336(9):804. El DOI coincide en ambas y es lo que
-      manda.
+      cita impresa es JAMA 2026;336(9):804, CONFIRMADA en la página del editor.
+      El DOI coincide en ambas y es lo que manda.
     - >-
       COMPROBACIÓN CRUZADA, y esta fuente la permite mejor que ninguna otra:
       cuatro hallazgos traen su LR+ y su LR−, así que cada uno predice el dato
@@ -85,5 +110,8 @@ verificacion:
       normal LR 0.14 (0.08-0.24, Se 87%). Prevalencia 35-69% en 40 estudios y
       11 490 pacientes.
     - >-
-      QUÉ FALTA: abrir jamanetwork.com/journals/jama/fullarticle/2850814 y pegar
-      su texto. Es la fuente más rica de las que quedan.
+      QUÉ FALTA: el abstract YA CORREGIDO del propio artículo, no el de la
+      corrección. La página del editor lo sirve corregido en línea —lleva el
+      aviso «A Correction has been published»— en doi 10.1001/jama.2026.0446.
+      Con ese abstract entran los doce cocientes de golpe y esta pasa a ser la
+      fuente más rica del índice. El que sirve PubMed es anterior y no vale.

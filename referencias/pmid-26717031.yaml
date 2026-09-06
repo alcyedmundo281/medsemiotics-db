@@ -30,6 +30,7 @@ verificacion:
   errata: 'JAMA. 2017 May 16;317(19):2021. doi: 10.1001/jama.2017.5136.'
   errata_corrige: Data Error.
   errata_pmid: 'pmid:28510658'
+  errata_verificada: true
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -39,10 +40,28 @@ verificacion:
       Registrada SIN usar. La errata se titula «Data Error» y afecta a un artículo
       del que solo puedo leer el abstract; no hay forma de saber qué cifra cambió.
     - >-
-      COTEJO DEL 06/09/2026, NO CERRADO: localizada la corrección
-      (pmid:28510658, doi 10.1001/jama.2017.5136, jamanetwork
-      fullarticle/2626550) pero NO está en PMC y este entorno no alcanza la web
-      del editor. Falta su cuerpo.
+      COTEJO CERRADO el 06/09/2026 contra el cuerpo de la corrección
+      (doi 10.1001/jama.2017.5136, jamanetwork fullarticle/2626550). Es de este
+      artículo: su referencia [1] es Easter 2015, JAMA 314(24):2672-2681.
+    - >-
+      QUÉ CORRIGE, y es UNA SOLA COSA: la fila «<15 at 2 h» de la sección GCS de
+      la Tabla 1, y la frase correspondiente del apartado Signs de los
+      Resultados. Donde decía «GCS score of less than 15 two hours after the
+      injury (LR range, 1.6-7.6)» debe leerse «less than 14 two hours after the
+      injury (LR, 3.4; 95% CI, 1.4-8.4)».
+    - >-
+      CAMBIA EL CORTE Y EL COCIENTE A LA VEZ: 15 pasa a 14, y un rango 1.6-7.6
+      pasa a ser un valor puntual 3.4 (IC95% 1.4-8.4). Es el caso que justifica
+      la regla de no transcribir nunca un cociente sin su umbral: con el corte
+      equivocado el número no queda impreciso, queda siendo el de otro hallazgo.
+    - >-
+      EL ABSTRACT NO ESTÁ AFECTADO. La corrección acota su alcance a la Tabla 1
+      y a los Resultados, y ninguna de las ocho cifras del abstract es la
+      corregida: el «GCS de 13, LR 4.9» es otra fila, no la del GCS a las dos
+      horas. Los cocientes del abstract quedan citables.
+    - >-
+      DATO NUEVO, que aporta la propia corrección y no estaba en el abstract:
+      GCS menor de 14 a las dos horas del traumatismo, LR 3.4 (IC95% 1.4-8.4).
     - >-
       La página 2021 de JAMA 317(19) lleva DOS avisos: «Data Error»
       (pmid:28510658, el nuestro, por su DOI) y «Omission in Text»
@@ -70,5 +89,6 @@ verificacion:
       Rule LR 0.04 (IC95% 0-0.65); ausencia de los New Orleans Criteria LR 0.08
       (IC95% 0.01-0.84).
     - >-
-      QUÉ FALTA: abrir jamanetwork.com/journals/jama/fullarticle/2626550 y pegar
-      su texto.
+      NO FALTA NADA: esta fuente está lista para modelarse. Nueve cocientes
+      —los ocho del abstract más el GCS < 14 de la corrección— con su
+      procedencia verificada.

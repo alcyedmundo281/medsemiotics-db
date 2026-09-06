@@ -31,6 +31,7 @@ verificacion:
   errata: 'JAMA. 2016 Jan 5;315(1):90. doi: 10.1001/jama.2015.16955.'
   errata_corrige: Value Errors in Tables and Abstract.
   errata_pmid: 'pmid:26746468'
+  errata_verificada: true
   crossref: true
   crossref_titulo_coincide: false
   notas:
@@ -42,11 +43,32 @@ verificacion:
       abstract dé dos cocientes distintos para el mismo instrumento y umbral:
       LR+ 6.9 y 8.49 para el PC-PTSD.
     - >-
-      COTEJO DEL 06/09/2026, NO CERRADO: localizada la corrección
-      (pmid:26746468, doi 10.1001/jama.2015.16955, jamanetwork
-      fullarticle/2480459) pero NO está en PMC y este entorno no alcanza la web
-      del editor. Falta su cuerpo. NINGUNA cifra de esta fuente puede entrar
-      hasta leerlo.
+      COTEJO CERRADO el 06/09/2026 contra el cuerpo de la corrección
+      (doi 10.1001/jama.2015.16955, jamanetwork fullarticle/2480459). La
+      corrección SÍ es de este artículo: su referencia [1] es Spoont 2015, JAMA
+      314(5):501-510. Identificada por DOI, no por página.
+    - >-
+      QUÉ CORRIGE, literal: «had incorrect data in the Abstract, in Table 3, and
+      in eAppendix 5. In the Abstract, 2 sentences were removed and some values
+      were rounded. The Trauma Screening Questionnaire row of Table 3 has an
+      added footnote and the values for the Total Patients, PPV, and NPV columns
+      should be 152, 44, and 89, respectively. In eAppendix 5, there is an added
+      footnote and the values for sensitivity, specificity, LR+, and LR− columns
+      in the Trauma Screening Questionnaire row should be 0.95 (0.90-0.97), 0.26
+      (0.22-0.30), 1.3 (1.2-1.4), and 0.20 (0.10-0.41), respectively.»
+    - >-
+      LO ÚNICO CITABLE ES EL TRAUMA SCREENING QUESTIONNAIRE, y sus cifras las da
+      la propia corrección, que es la fuente más autorizada posible: Se 0.95
+      (IC95% 0.90-0.97), Sp 0.26 (IC95% 0.22-0.30), LR+ 1.3 (IC95% 1.2-1.4),
+      LR− 0.20 (IC95% 0.10-0.41), sobre 152 pacientes, VPP 44 y VPN 89.
+    - >-
+      EL ABSTRACT SIGUE BLOQUEADO. La corrección dice que tenía datos
+      incorrectos, que se retiraron dos frases y que se redondearon valores,
+      pero NO dice cuáles. La contradicción del PC-PTSD (LR+ 6.9 frente a 8.49)
+      y la del PTSD Checklist (5.2 frente a 6.8) quedan EXPLICADAS —eran las
+      frases duplicadas— pero no RESUELTAS: el aviso no dice qué bloque
+      sobrevivió. La aritmética sigue favoreciendo el segundo y sigue sin
+      autorizar nada.
     - >-
       LA PÁGINA 90 DE JAMA 315(1) LLEVA TRES AVISOS DE CORRECCIÓN, cada uno con
       su PMID y su DOI: «Value Errors in Tables and Abstract» (pmid:26746468,
@@ -71,6 +93,7 @@ verificacion:
       son los del segundo bloque, pero sugerir no es leer la corrección: quién
       corrige a quién lo dice el aviso, no la aritmética de quien puebla.
     - >-
-      QUÉ FALTA: abrir jamanetwork.com/journals/jama/fullarticle/2480459 y pegar
-      su texto. Con él, el cotejo se cierra en un minuto y la condición se puede
-      modelar.
+      QUÉ FALTA PARA EL RESTO: el abstract YA CORREGIDO del propio artículo
+      (doi 10.1001/jama.2015.7877). El que sirve PubMed sigue mostrando los dos
+      bloques, así que parece ser el anterior a la corrección. Sin él, los
+      cocientes del PC-PTSD y del PTSD Checklist no pueden entrar.
