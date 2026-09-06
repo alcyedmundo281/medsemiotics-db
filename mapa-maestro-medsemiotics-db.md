@@ -460,7 +460,7 @@ Las 4 de la serie que quedan en el repositorio:
 | Referencia | Año | Qué la bloquea |
 |---|---|---|
 | `pmid:26241601` · estrés postraumático | 2015 | cotejo abierto: la errata (`pmid:26746468`) no está en PMC. **La más peligrosa de las tres**: se titula «Value Errors in Tables and Abstract» y el abstract se contradice a sí mismo |
-| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | errata sin cotejar |
+| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | cotejo abierto: la errata (`pmid:28510658`, «Data Error») no está en PMC. El abstract **no** se contradice, que es ausencia de pista y no garantía |
 | `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
@@ -478,11 +478,17 @@ existía y estaba en jamanetwork. **Que el cuerpo hallado no mencione tu artícu
 no prueba que la errata sea ajena; prueba que estás mirando el sitio
 equivocado.**
 
-**La aritmética orienta pero no autoriza.** En `pmid:26241601` el abstract da dos
-cocientes distintos para el mismo instrumento y el mismo corte, y solo uno de los
-dos bloques cuadra con la sensibilidad y la especificidad que él mismo declara
-—`LR+ = Se/(1−Sp)`—. Eso señala cuál es probablemente el corregido, y no basta:
-quién corrige a quién lo dice el aviso, no el cálculo de quien puebla.
+**La aritmética orienta pero no autoriza, y su silencio no absuelve.** En
+`pmid:26241601` el abstract da dos cocientes distintos para el mismo instrumento
+y el mismo corte, y solo uno de los dos bloques cuadra con la sensibilidad y la
+especificidad que él mismo declara —`LR+ = Se/(1−Sp)`—. Eso señala cuál es
+probablemente el corregido, y no basta: quién corrige a quién lo dice el aviso.
+
+El caso opuesto es `pmid:26717031`, cuyo abstract **sí** cuadra consigo mismo
+—sus probabilidades postprueba se derivan bien de su prevalencia y sus
+cocientes—. Eso no lo absuelve: un bloque de cifras uniformemente erróneo cuadra
+consigo mismo igual de bien. **Que sume no significa que sea correcto**, y una
+errata titulada «Data Error» sigue sin leerse.
 
 Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
 queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
