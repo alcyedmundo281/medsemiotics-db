@@ -424,10 +424,19 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
 - [x] trastorno de pánico → `HM:6032`, con 1 arista de `pmid:25058220`.
 - [x] melanoma cutáneo → `HM:6033`, con 3 aristas de `pmid:9496989`.
 - [x] cáncer de mama → `HM:6034`, con 2 aristas de `pmid:10517431`.
+- [x] trombosis venosa profunda → `HM:6035`, con `pmid:16403932`. **Es la
+      excepción de la serie**: la fuente no publica ningún cociente de signo ni
+      de síntoma, así que la condición no tiene aristas de exploración. Lo que
+      entra es el dímero D con seis cocientes negativos —cruce de tres estratos
+      de probabilidad previa por dos clases de ensayo— y la prevalencia por
+      estrato de la regla de predicción.
 #### Qué queda de verdad (revisado el 06/09/2026 contra `referencias/`)
 
-**La veta está casi agotada.** De las 112 referencias, 32 sostienen algún dato y
-80 no; pero de esas 80 **solo 5 son de la serie**. Las otras 75 son ecografía y
+**La veta está agotada salvo por las erratas.** De las 112 referencias, 33
+sostienen algún dato y 79 no; pero de esas 79 **solo quedan 4 de la serie, y las
+cuatro traen errata sin cotejar**. Modelada la trombosis venosa profunda
+(`pmid:16403932`, la única que estaba limpia), no queda ninguna que se pueda
+escribir sin ir antes a la corrección publicada. Las otras 75 son ecografía y
 cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
 J*, *Radiographics*—: el fondo de biosemiotics que entró con `refs.bib`, y por
 tanto material de la **oleada 1**, no de ésta.
@@ -441,19 +450,20 @@ Conviene no confundir dos cosas que esta sección mezclaba:
   PMID y verificarlas antes de que exista nada que modelar. Es otro trabajo y
   otra fase.
 
-Las 5 de la serie que quedan en el repositorio:
+Las 4 de la serie que quedan en el repositorio:
 
 | Referencia | Año | Qué la bloquea |
 |---|---|---|
-| `pmid:16403932` · trombosis venosa profunda | 2006 | **Nada. Lista para modelar.** |
 | `pmid:26241601` · estrés postraumático | 2015 | errata sin cotejar |
 | `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | errata sin cotejar |
 | `pmid:28763554` · neumonía infantil | 2017 | errata, y texto completo bloqueado |
 | `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
 
-Cotejar la errata no es opcional ni se deja para después: en cuanto una de esas
-cuatro sostenga un cociente, `build.py` lo convierte en **error** y no en aviso.
-La corrección puede haber cambiado justo la cifra que se cita.
+Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
+queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
+convierte en **error** y no en aviso, porque la corrección puede haber cambiado
+justo la cifra que se cita. Avanzar en esta oleada es, a partir de aquí, cotejar
+erratas.
 
 #### Pendientes declarados dentro de las condiciones
 
@@ -539,9 +549,9 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 ```
                         hoy      al cerrar oleada 2
 referencias             112             112
-conceptos               279            ~800
-condiciones              34            ~515
-aristas con cociente    122             122
+conceptos               280            ~800
+condiciones              35            ~515
+aristas con cociente    123             123
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

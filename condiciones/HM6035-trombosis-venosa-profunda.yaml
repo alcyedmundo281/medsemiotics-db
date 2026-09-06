@@ -1,0 +1,174 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:16403932 (Wells 2006, JAMA), revisión
+# sistemática de 14 estudios y más de 8000 pacientes ambulatorios. Transcritos
+# del abstract, no del texto completo, que no está en PMC.
+#
+# ATENCIÓN: esta fuente NO se parece al resto de la serie. No publica ni un solo
+# cociente de signo ni de síntoma —su abstract dice que son inespecíficos—. Lo
+# que mide es otra cosa: la prevalencia dentro de cada estrato de una regla de
+# predicción clínica, y el cociente del dímero D DENTRO de cada estrato. Por eso
+# esta condición no tiene aristas de exploración física: no es que falten, es que
+# la fuente no las midió, y eso se declara en `no_emitidos`.
+#
+# Y por eso el dímero D lleva tramos que NO son un eje graduado: no hay `desde`
+# ni `hasta`, porque lo que cambia el cociente no es el valor del analito sino el
+# ensayo empleado y la probabilidad previa. Un `graduacion` aquí sería falso.
+
+id: 'HM:6035'
+tipo: condicion
+clase: enfermedad
+termino: Trombosis venosa profunda
+termino_en: Deep vein thrombosis
+sinonimos:
+  - TVP
+  - trombosis venosa profunda de miembros inferiores
+  - trombosis de venas profundas
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.19
+  ic95: [0.16, 0.23]
+  poblacion: >-
+    pacientes ambulatorios consecutivos y no seleccionados con sospecha clínica
+    de TVP, sin antecedente de TVP previa salvo que el modelo lo incorporase
+  ref: 'pmid:16403932'
+
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3144'    # Dímero D elevado
+    rol: prueba_sensible
+    estado_lr: medido
+    # El LR− de cabecera es el que la fuente destaca en su conclusión: es la
+    # combinación con la que se puede excluir la TVP sin ecografía. Declara su
+    # población porque sin ella no significa nada: el mismo dímero D negativo
+    # vale 0.10 o 0.23 según el ensayo y el estrato.
+    lr_negativo:
+      valor: 0.10
+      ic95: [0.03, 0.37]
+      poblacion: sospecha clínica baja, ensayo de alta sensibilidad
+      nota: >-
+        es la lectura que la conclusión de la fuente convierte en decisión
+      ref: 'pmid:16403932'
+    efecto: excluye
+    dispara_si: ausente
+    sostiene: discriminacion_medida
+    ref: 'pmid:16403932'
+    decision: >-
+      un dímero D normal descarta la TVP con fuerza, pero cuánta depende de dos
+      cosas que hay que saber antes de aplicarlo: qué ensayo se usó y en qué
+      estrato de probabilidad previa está el paciente
+    advertencia: >-
+      la fuente es explícita en que, con sospecha clínica alta, el resultado no
+      debe modificar la decisión clínica. Un dímero D normal no autoriza a
+      detener el estudio en ese estrato.
+    # Seis mediciones del MISMO signo bajo condiciones declaradas distintas. No
+    # son tramos de un eje numérico —por eso ninguno trae `desde` ni `hasta`—
+    # sino el cruce de dos condiciones: el ensayo y la probabilidad previa.
+    tramos:
+      - poblacion: sospecha clínica baja, ensayo de alta sensibilidad
+        lr_negativo: 0.10
+        ic95_negativo: [0.03, 0.37]
+        ref: 'pmid:16403932'
+      - poblacion: sospecha clínica baja, ensayo de sensibilidad moderada
+        lr_negativo: 0.20
+        ic95_negativo: [0.12, 0.31]
+        ref: 'pmid:16403932'
+      - poblacion: sospecha clínica moderada, ensayo de alta sensibilidad
+        lr_negativo: 0.05
+        ic95_negativo: [0.01, 0.21]
+        ref: 'pmid:16403932'
+      - poblacion: sospecha clínica moderada, ensayo de sensibilidad moderada
+        lr_negativo: 0.23
+        ic95_negativo: [0.13, 0.39]
+        ref: 'pmid:16403932'
+      - poblacion: sospecha clínica alta, ensayo de alta sensibilidad
+        lr_negativo: 0.07
+        ic95_negativo: [0.03, 0.18]
+        ref: 'pmid:16403932'
+      - poblacion: sospecha clínica alta, ensayo de sensibilidad moderada
+        lr_negativo: 0.15
+        ic95_negativo: [0.10, 0.38]
+        ref: 'pmid:16403932'
+
+# La regla estratifica; el dímero D se lee dentro del estrato. La prevalencia por
+# estrato es la salida de la regla, así que vive aquí y no en las aristas.
+escalas:
+  - nombre: Regla de predicción clínica para TVP
+    componentes_declarados: >-
+      el abstract no los enumera; catorce estudios con más de 8000 pacientes
+      aplicaron una regla de predicción clínica antes del dímero D o la imagen
+    tramos:
+      - rango: probabilidad clínica baja
+        prevalencia: 0.050
+        ic95_prevalencia: [0.040, 0.080]
+        ref: 'pmid:16403932'
+      - rango: probabilidad clínica moderada
+        prevalencia: 0.17
+        ic95_prevalencia: [0.13, 0.23]
+        ref: 'pmid:16403932'
+      - rango: probabilidad clínica alta
+        prevalencia: 0.53
+        ic95_prevalencia: [0.44, 0.61]
+        ref: 'pmid:16403932'
+    decision: >-
+      estimar la probabilidad clínica ANTES de pedir pruebas es lo que mejora la
+      exactitud diagnóstica, según la conclusión de la fuente
+
+no_emitidos:
+  - concepto: 'HM:0604'    # Edema en miembros inferiores
+    motivo: >-
+      La fuente no publica ningún cociente de signos ni de síntomas: afirma que
+      son inespecíficos y no los cuantifica. Emitir una arista medida sería
+      inventarla, y emitirla como no_medido sugeriría que esta revisión la
+      buscó y no la encontró, cuando lo que hizo fue estudiar otra cosa.
+    nota: >-
+      Los cocientes de los signos de la TVP, si existen, están en otra fuente.
+      Esta mide reglas de predicción y dímero D.
+
+notas_de_uso:
+  - >-
+    Rendimiento agrupado del dímero D por estrato, con todos los ensayos
+    combinados: sospecha baja, sensibilidad 88% (IC95% 81-92) y especificidad
+    72% (IC95% 65-78); sospecha moderada, sensibilidad 90% (IC95% 80-95) y
+    especificidad 58% (IC95% 49-67); sospecha alta, sensibilidad 92% (IC95%
+    85-96) y especificidad 45% (IC95% 37-52).
+  - >-
+    La especificidad del dímero D cae según sube la probabilidad previa —72%,
+    58%, 45%—, que es la razón aritmética de que la fuente desaconseje apoyarse
+    en él cuando la sospecha es alta.
+  - >-
+    Una TVP no diagnosticada puede terminar en embolia pulmonar mortal. La
+    fuente lo pone como justificación del proceso diagnóstico selectivo, no como
+    un dato medido.
+
+pendiente:
+  - >-
+    Los componentes de la regla de predicción clínica y sus puntos de corte no
+    están en el abstract. Sin ellos los tramos de la escala no pueden llevar
+    límites numéricos, y por eso se quedan en prosa. Requiere el texto completo,
+    que no está en PMC.
+  - >-
+    El abstract publica además un cociente negativo agrupado por estrato —0.18,
+    0.19 y 0.16— que NO se transcribe. Los imprime con un signo de porcentaje
+    que un cociente no puede llevar, y al del estrato bajo le asigna el intervalo
+    0.12-0.18, cuyo extremo superior coincide con el valor puntual. Una de las
+    dos cifras está mal en el abstract y no se puede saber cuál sin el texto
+    completo. Los seis cocientes que sí entran, separados por ensayo, son
+    internamente coherentes y más específicos.
+
+conclusion_de_la_fuente: >-
+  La exactitud diagnóstica de la TVP mejora cuando se estima la probabilidad
+  clínica antes de las pruebas. Los pacientes con probabilidad baja en la regla
+  de predicción tienen una prevalencia de TVP menor del 5%. En pacientes con
+  probabilidad baja y dímero D negativo, el diagnóstico de TVP puede excluirse
+  sin ecografía; en pacientes con sospecha clínica alta, el resultado no debería
+  modificar las decisiones clínicas.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1.5 a partir de la revisión sistemática RCE
+    (pmid:16403932). Valores del abstract, no del texto completo: el artículo no
+    está en PMC.

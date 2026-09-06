@@ -1,0 +1,28 @@
+# Concepto del índice. Acuñado al modelar HM:6035 (trombosis venosa profunda).
+#
+# SIN `umbral`, y no por descuido: pmid:16403932 no publica el punto de corte del
+# ensayo. El corte habitual de la práctica clínica no entra aquí por no estar en
+# la fuente, que es la regla de la casa.
+#
+# Además, el cociente de este signo NO cambia con el valor —no se gradúa—: cambia
+# con el ENSAYO empleado y con la probabilidad clínica previa del paciente. Eso
+# vive en los tramos de la arista de HM:6035, no en un umbral del concepto.
+
+id: 'HM:3144'
+tipo: concepto
+semantica: hallazgo
+termino: Dímero D elevado
+termino_en: Elevated D-dimer
+sinonimos:
+  - dímero D positivo
+  - D-dímero elevado
+  - productos de degradación de la fibrina elevados
+padre: 'HM:0710'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la trombosis venosa profunda.
