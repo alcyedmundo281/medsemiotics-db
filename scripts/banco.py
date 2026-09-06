@@ -448,7 +448,8 @@ CLAVES_ARISTA_CONOCIDAS = {
     "motivo", "decision", "nota", "advertencia", "ref", "poblacion",
     "sensibilidad", "especificidad", "ic95_sensibilidad", "ic95_especificidad",
     "efecto", "dispara_si", "sostiene", "odds_ratio",
-    "tramos", "sensibilidad_por_diametro", "sensibilidad_por_gravedad",
+    "tramos", "graduacion",
+    "sensibilidad_por_diametro", "sensibilidad_por_gravedad",
 }
 CLAVES_LR_CONOCIDAS = {
     "valor", "rango", "ic95", "ref", "nota", "umbral_condicion", "umbral",
@@ -457,6 +458,11 @@ CLAVES_LR_CONOCIDAS = {
 CLAVES_TRAMO_CONOCIDAS = {
     "umbral_condicion", "umbral", "lr_positivo", "ic95", "lr_negativo",
     "ic95_negativo", "ref", "especificidad", "sensibilidad",
+    # Los límites legibles del tramo y la población en la que se midió. La
+    # prosa del `umbral` sigue siendo la etiqueta de la tabla; estos números
+    # son lo que el consumidor lee, y salen impresos en la nota de graduación
+    # para que el libro no publique menos de lo que trae el índice.
+    "desde", "hasta", "poblacion", "nota",
 }
 
 # Claves del `balance` que NO son un nivel de certeza. Lista blanca a propósito,
@@ -485,6 +491,52 @@ def porcentaje(v, etiqueta: str) -> str:
     if isinstance(v, float) and v <= 1:
         return f"{etiqueta} {v:.0%}"
     return f"{etiqueta} {v}"
+
+
+def intervalo_texto(tramo: dict, unidad: str = "") -> str:
+    """Los límites de un tramo en texto, con la convención semiabierta explícita.
+
+    `[desde, hasta)`: el extremo inferior entra y el superior no. Se escribe
+    «≥ 7 y < 11» y no «7 a 10» a propósito, porque en una escala entera los dos
+    dicen lo mismo y en un analito continuo no: un potasio de exactamente 3.5
+    tiene que caer en un tramo y sólo en uno.
+    """
+    desde, hasta = tramo.get("desde"), tramo.get("hasta")
+    sufijo = f" {unidad}" if unidad else ""
+    piezas = []
+    if desde is not None:
+        piezas.append(f"≥ {numero(desde)}")
+    if hasta is not None:
+        piezas.append(f"< {numero(hasta)}")
+    return " y ".join(piezas) + sufijo if piezas else ""
+
+
+def nota_graduacion(contenedor: dict) -> str:
+    """El eje de graduación en una frase: qué se gradúa, en qué unidad y cómo se lee."""
+    grad = contenedor.get("graduacion") or {}
+    if not grad:
+        return ""
+    unidad = str(grad.get("unidad") or "")
+    cabeza = str(grad.get("parametro") or "").strip()
+    cabeza = f"{cabeza} ({unidad})" if cabeza and unidad else (cabeza or unidad)
+    lectura = str(grad.get("lectura") or "")
+    explica = {
+        "acumulativo": "Cortes acumulativos: se aplica el más estricto que el "
+                       "valor satisface",
+        "disjunto": "Tramos disjuntos [desde, hasta): el valor cae en uno y sólo "
+                    "en uno",
+    }.get(lectura, lectura)
+    tramos = [
+        intervalo_texto(t)
+        for t in (contenedor.get("tramos") or [])
+        if t.get("desde") is not None or t.get("hasta") is not None
+    ]
+    partes = [p for p in (cabeza, explica) if p]
+    if tramos:
+        partes.append("; ".join(tramos))
+    if grad.get("nota"):
+        partes.append(str(grad["nota"]).strip())
+    return ". ".join(partes) + "."
 
 
 def _lr_texto(lr: dict, etiqueta: str) -> str:
@@ -533,6 +585,8 @@ def filas_de_signo(indice: Indice, arista: dict, donde: str):
         )
 
     filas: list = []
+    notas_tramo: list = []
+    unidad = str((arista.get("graduacion") or {}).get("unidad") or "")
     tramos = arista.get("tramos")
     if tramos:
         for tramo in tramos:
@@ -564,10 +618,23 @@ def filas_de_signo(indice: Indice, arista: dict, donde: str):
             if tramo.get("ref"):
                 resolver_ref(indice, tramo["ref"], f"{donde} ({termino}, tramo)")
                 citas.append(str(tramo["ref"]))
-            umbral = tramo.get("umbral_condicion") or tramo.get("umbral") or "?"
+            # La prosa manda como etiqueta cuando la hay: es la que escribió la
+            # fuente. Los límites numéricos sólo la sustituyen si no existe, para
+            # que un tramo legible por máquina no salga rotulado «?».
+            umbral = (
+                tramo.get("umbral_condicion")
+                or tramo.get("umbral")
+                or intervalo_texto(tramo, unidad)
+                or "?"
+            )
             filas.append(
                 FilaSigno(f"{termino} ({umbral})", rol, " / ".join(piezas), citas)
             )
+            for atributo in ("poblacion", "nota"):
+                if tramo.get(atributo):
+                    notas_tramo.append(
+                        (f"{termino} ({umbral}) — {atributo}", frase(tramo[atributo]))
+                    )
     elif estado in ("no_medible", "no_medido"):
         citas = []
         if arista.get("ref"):
@@ -608,6 +675,12 @@ def filas_de_signo(indice: Indice, arista: dict, donde: str):
         filas.append(FilaSigno(termino, rol, cociente, citas))
 
     notas: list = []
+    # El eje de graduación va primero: sin él los tramos de la tabla se leen como
+    # variantes sueltas y no como cortes de una misma escala.
+    texto_graduacion = nota_graduacion(arista)
+    if texto_graduacion:
+        notas.append((f"{termino} — Graduación", texto_graduacion))
+    notas += notas_tramo
     for campo, etiqueta in (("lr_positivo", "LR+"), ("lr_negativo", "LR-")):
         bloque = arista.get(campo) or {}
         for atributo in ("nota", "poblacion"):

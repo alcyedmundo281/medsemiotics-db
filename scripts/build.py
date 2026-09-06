@@ -55,6 +55,7 @@ condiciones = carga('condiciones')
 referencias = carga('referencias')
 
 ids_concepto = {d.get('id') for d in conceptos.values() if d.get('id')}
+conceptos_por_id = {d['id']: d for d in conceptos.values() if d.get('id')}
 ids_ref = {d.get('id') for d in referencias.values() if d.get('id')}
 
 # ── conceptos ─────────────────────────────────────────────────────────────────
@@ -79,6 +80,12 @@ for f, d in conceptos.items():
             err(f, 'umbral sin corte superior ni inferior')
         if not u.get('ref'):
             avi(f, 'umbral sin procedencia (ref)')
+        # La unidad es la que hace dato al corte: 3.5 de potasio en mmol/L y en
+        # mg/dL son cuadros distintos. Es aviso y no error porque los umbrales
+        # heredados de la semilla no la traen y adivinarla sería inventarla; se
+        # repara en la misma pasada que su procedencia.
+        if not u.get('unidad'):
+            avi(f, 'umbral sin unidad')
     if not d.get('significante'):
         avi(f, 'sin significante')
     # Una figura sin crédito, licencia o archivo real no es una figura: es una
@@ -218,6 +225,179 @@ def revisa_efecto(f, s, donde):
             err(f, f'{donde} «{c}»: odds_ratio sin «covariables»; sin ellas no significa nada')
 
 
+# ── graduación: el eje que convierte un tramo en prosa en un tramo legible ────
+# El índice ya traía `tramos`, pero su frontera vivía SOLO en prosa —«linfocitos
+# atípicos ≥ 10%», «7 a 10 (riesgo alto)»—. Un consumidor no puede leer eso, así
+# que el valor volvía a ser binario en cuanto salía de aquí. `graduacion` declara
+# el eje (qué se gradúa, en qué unidad y cómo se leen los tramos) y cada tramo
+# puede traer sus límites como números, sin perder la prosa, que sigue siendo la
+# etiqueta del libro.
+#
+# `lectura` NO se infiere de la forma de los datos, porque las dos formas reales
+# son indistinguibles a ojo y significan cosas opuestas:
+#
+#   disjunto     los tramos son [desde, hasta) y no se solapan. Un valor cae en
+#                uno y sólo en uno. Es la forma de las escalas: HEART 0-3 y 7-10
+#                son estratos que la fuente midió por separado.
+#   acumulativo  cada tramo es UN corte de un solo lado, y los cortes se anidan
+#                a propósito: la fuente midió «≥10%», «≥20%» y «≥40%» sobre
+#                poblaciones que se contienen unas a otras. El consumidor toma el
+#                corte MÁS ESTRICTO que el valor satisface. Partirlos en [10,20)
+#                para que no se solapen inventaría tres cocientes que nadie midió,
+#                que es exactamente el fallo que este repositorio existe para
+#                evitar.
+LECTURAS = {'acumulativo', 'disjunto'}
+CLAVES_GRADUACION = {'parametro', 'unidad', 'lectura', 'nota'}
+# Los dos ejes que puede graduar un tramo. No son intercambiables y no pueden
+# convivir en la misma lista: ver el comentario de HM:6006.
+EJES_TRAMO = ('umbral', 'umbral_condicion')
+INF = float('inf')
+
+
+def _etiqueta_tramo(t):
+    for k in EJES_TRAMO + ('rango',):
+        if t.get(k):
+            return t[k]
+    desde, hasta = t.get('desde'), t.get('hasta')
+    if desde is not None and hasta is not None:
+        return f'[{desde}, {hasta})'
+    if desde is not None:
+        return f'≥ {desde}'
+    if hasta is not None:
+        return f'< {hasta}'
+    return '?'
+
+
+def _solapan(a, b):
+    """Dos intervalos semiabiertos [desde, hasta), con los extremos abiertos."""
+    a0 = -INF if a.get('desde') is None else a['desde']
+    a1 = INF if a.get('hasta') is None else a['hasta']
+    b0 = -INF if b.get('desde') is None else b['desde']
+    b1 = INF if b.get('hasta') is None else b['hasta']
+    return max(a0, b0) < min(a1, b1)
+
+
+def revisa_graduacion(f, contenedor, donde, concepto=None):
+    tramos = [t for t in (contenedor.get('tramos') or []) if isinstance(t, dict)]
+    grad = contenedor.get('graduacion')
+    # Un tramo sin límites numéricos no es un error: sigue siendo prosa honesta
+    # —«linfocitos > 50% y atípicos > 10%» no es un corte sobre un solo eje— y el
+    # consumidor dirá en voz alta que no sabe leerlo, en vez de callarlo.
+    graduados = [t for t in tramos
+                 if t.get('desde') is not None or t.get('hasta') is not None]
+
+    if grad is not None and not isinstance(grad, dict):
+        err(f, f'{donde}: «graduacion» debe ser un bloque con parametro, unidad y lectura')
+        return
+    if graduados and not grad:
+        err(f, f'{donde}: hay tramos con «desde»/«hasta» pero falta «graduacion»: '
+               f'un número sin unidad ni forma de lectura no es un dato')
+        return
+    if grad and not graduados:
+        err(f, f'{donde}: «graduacion» declarada pero ningún tramo trae «desde» ni '
+               f'«hasta»; declara el eje o quítalo, pero no lo dejes sin efecto')
+    if not grad:
+        return
+
+    sobrantes = sorted(set(grad) - CLAVES_GRADUACION)
+    if sobrantes:
+        err(f, f'{donde}: graduacion trae claves sin vigilancia: {", ".join(sobrantes)}')
+    # `parametro` y `unidad` son la misma exigencia partida en dos: un número
+    # tiene que decir QUÉ mide y EN QUÉ escala. Sin `parametro` el consumidor no
+    # sabe contra qué valor del paciente comparar los límites, y además se salta
+    # en silencio la comprobación contra la unidad canónica del concepto, que es
+    # la que caza una discrepancia antes de que la lea un clínico. El concepto no
+    # siempre lo suple: HM:3004 no declara `umbral` a propósito, y una escala no
+    # cuelga de ningún concepto.
+    if not grad.get('parametro'):
+        err(f, f'{donde}: graduacion sin «parametro»: los límites no dicen qué '
+               f'valor del paciente gradúan')
+    if not grad.get('unidad'):
+        err(f, f'{donde}: graduacion sin «unidad». Un número sin unidad no es un '
+               f'dato: 3.5 de potasio en mmol/L y en mg/dL son cuadros distintos')
+    lectura = grad.get('lectura')
+    if lectura not in LECTURAS:
+        err(f, f'{donde}: graduacion.lectura «{lectura}» fuera de la taxonomía '
+               f'({" o ".join(sorted(LECTURAS))}). No se infiere: acumulativo y '
+               f'disjunto se parecen en el YAML y dicen cosas opuestas')
+
+    # El corte del hallazgo y el corte de la condición son ejes distintos. En la
+    # mononucleosis «≥ 10%» y «≥ 20%» son dos intensidades del MISMO hallazgo; en
+    # el aneurisma «≥ 3 cm» y «≥ 4 cm» son la MISMA maniobra medida contra dos
+    # diagnósticos distintos. Mezclarlos en una lista deja al consumidor sin
+    # forma de saber cuál de las dos cosas está leyendo.
+    ejes = {k for t in tramos for k in EJES_TRAMO if t.get(k)}
+    if len(ejes) > 1:
+        err(f, f'{donde}: los tramos mezclan «umbral» y «umbral_condicion». Uno '
+               f'gradúa el hallazgo y el otro redefine la condición contra la que '
+               f'se mide; elegir el tramo equivocado desplaza la probabilidad de '
+               f'otra cosa')
+
+    numericos = []
+    for t in graduados:
+        etiqueta = _etiqueta_tramo(t)
+        limpio = True
+        for k in ('desde', 'hasta'):
+            v = t.get(k)
+            if v is not None and (isinstance(v, bool) or not isinstance(v, (int, float))):
+                err(f, f'{donde}: tramo «{etiqueta}» tiene {k} = {v!r}, que no es un número')
+                limpio = False
+        if not limpio:
+            continue
+        desde, hasta = t.get('desde'), t.get('hasta')
+        if desde is not None and hasta is not None and not desde < hasta:
+            err(f, f'{donde}: tramo «{etiqueta}»: desde ({desde}) no es menor que '
+                   f'hasta ({hasta}); el intervalo está vacío')
+        numericos.append(t)
+
+    # Un corte estratificado por edad o sexo —creatinina, hemoglobina— no es otro
+    # tramo del mismo eje: es otra población medida. Por eso el solapamiento se
+    # comprueba DENTRO de cada población y no entre ellas: el corte de varón y el
+    # de mujer se solapan por definición y no es un error.
+    grupos = collections.defaultdict(list)
+    for t in numericos:
+        grupos[str(t.get('poblacion') or '')].append(t)
+
+    for poblacion, grupo in grupos.items():
+        sufijo = f' [población: {poblacion}]' if poblacion else ''
+        if lectura == 'disjunto':
+            for i, a in enumerate(grupo):
+                for b in grupo[i + 1:]:
+                    if _solapan(a, b):
+                        err(f, f'{donde}{sufijo}: los tramos «{_etiqueta_tramo(a)}» y '
+                               f'«{_etiqueta_tramo(b)}» se solapan. En una lectura '
+                               f'disjunta un valor cae en un tramo y sólo en uno')
+        elif lectura == 'acumulativo':
+            lados, cortes = set(), []
+            for t in grupo:
+                presentes = [k for k in ('desde', 'hasta') if t.get(k) is not None]
+                if len(presentes) != 1:
+                    err(f, f'{donde}{sufijo}: el tramo «{_etiqueta_tramo(t)}» declara '
+                           f'sus dos extremos. Un tramo acumulativo es UN corte de un '
+                           f'solo lado; si la fuente publicó un intervalo cerrado, la '
+                           f'lectura es disjunta')
+                    continue
+                lados.add(presentes[0])
+                cortes.append(t[presentes[0]])
+            if len(lados) > 1:
+                err(f, f'{donde}{sufijo}: los tramos acumulativos mezclan cortes por '
+                       f'arriba y por abajo. Los cortes anidados van todos al mismo lado')
+            repetidos = sorted({v for v, n in collections.Counter(cortes).items() if n > 1})
+            if repetidos:
+                err(f, f'{donde}{sufijo}: el corte {repetidos} aparece en dos tramos: '
+                       f'dos cocientes para el mismo corte y el consumidor no puede elegir')
+
+    # La unidad canónica vive en el concepto. Cuando el concepto la declara, la
+    # arista la comprueba en vez de volver a declararla, y la discrepancia se caza
+    # aquí en vez de en una lectura equivocada de un valor de laboratorio.
+    umbral_concepto = (concepto or {}).get('umbral') or {}
+    for clave in ('parametro', 'unidad'):
+        aqui, alli = grad.get(clave), umbral_concepto.get(clave)
+        if aqui and alli and str(aqui).strip().lower() != str(alli).strip().lower():
+            err(f, f'{donde}: graduacion.{clave} «{aqui}» contradice el umbral del '
+                   f'concepto «{concepto.get("id")}», que declara «{alli}»')
+
+
 # ── condiciones y aristas ─────────────────────────────────────────────────────
 
 # Dos métricas distintas que conviene no confundir: una arista puede traer LR+
@@ -284,9 +464,24 @@ for f, d in condiciones.items():
         # medición distinta, y sin ref quedaría fuera de la regla dura.
         for t in (s.get('tramos') or []):
             if not t.get('ref'):
-                err(f, f'tramo «{t.get("umbral", "?")}» de «{c}» sin «ref»')
+                err(f, f'tramo «{_etiqueta_tramo(t)}» de «{c}» sin «ref»')
             elif t['ref'] not in ids_ref:
-                err(f, f'tramo «{t.get("umbral", "?")}» de «{c}» cita «{t["ref"]}», que no está en referencias/')
+                err(f, f'tramo «{_etiqueta_tramo(t)}» de «{c}» cita «{t["ref"]}», que no está en referencias/')
+
+        revisa_graduacion(f, s, f'arista «{c}»', conceptos_por_id.get(c))
+
+        # Un LR− suelto junto a tramos graduados no dice a qué corte llama
+        # «negativo», y ése es justo el número con el que se descarta. Sin
+        # declararlo, una prueba sensible negativa descarta contra un umbral que
+        # el lector supone y el consumidor adivina.
+        graduados = [t for t in (s.get('tramos') or [])
+                     if isinstance(t, dict)
+                     and (t.get('desde') is not None or t.get('hasta') is not None)]
+        ln = s.get('lr_negativo')
+        if graduados and isinstance(ln, dict) and not (
+                ln.get('umbral') or ln.get('umbral_condicion')):
+            err(f, f'«{c}» tiene tramos graduados y un lr_negativo que no declara '
+                   f'«umbral»: no se sabe qué corte define «negativo»')
 
     # Los signos de alarma apuntan fuera de la condición: son los que obligan a
     # estudiar antes de etiquetar. Se validan igual que las aristas — una
@@ -299,6 +494,19 @@ for f, d in condiciones.items():
             err(f, 'signo de alarma sin «concepto»')
         elif c not in ids_concepto:
             err(f, f'signo de alarma apunta a concepto inexistente: {c}')
+
+    # Las escalas se leen por tramos igual que un analito, y sus tramos son lo
+    # único que desplaza la probabilidad de forma decisiva en varias condiciones.
+    # Se validan con la misma vara: procedencia por tramo y eje declarado.
+    for e in (d.get('escalas') or []):
+        nombre = e.get('nombre', '?')
+        for t in (e.get('tramos') or []):
+            if not t.get('ref'):
+                err(f, f'escala «{nombre}», tramo «{_etiqueta_tramo(t)}» sin «ref»')
+            elif t['ref'] not in ids_ref:
+                err(f, f'escala «{nombre}», tramo «{_etiqueta_tramo(t)}» cita '
+                       f'«{t["ref"]}», que no está en referencias/')
+        revisa_graduacion(f, e, f'escala «{nombre}»')
 
     # Las reglas combinan varios conceptos en un criterio que no cabe en una
     # arista suelta —la tríada de la meningitis, los criterios de Light—. Sus
@@ -394,7 +602,7 @@ print(f'\n⚠ {sin_triada} conceptos sin significante   (se rellenan al migrar b
 # El backlog conocido —conceptos sin tríada, umbrales heredados sin fuente— es
 # ruido de fondo previsible y se resume. Lo demás exige mirarlo: un aviso sobre
 # un cociente sospechoso sepultado bajo 147 rutinarios es un aviso que nadie ve.
-RUTINA = ('sin significante', 'umbral sin procedencia')
+RUTINA = ('sin significante', 'umbral sin procedencia', 'umbral sin unidad')
 rutina = [a for a in avisos if any(r in a for r in RUTINA)]
 atencion = [a for a in avisos if a not in rutina]
 

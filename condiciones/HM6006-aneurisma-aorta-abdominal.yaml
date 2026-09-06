@@ -43,14 +43,26 @@ signos:
     advertencia: >-
       no puede usarse para excluir el aneurisma, y menos si la rotura entra en
       el diferencial. La fuente lo dice de forma explícita.
+    # El eje que se gradúa aquí es `umbral_condicion`, no `umbral`: el diámetro
+    # no es el valor que mide la maniobra —la palpación no da centímetros—, sino
+    # el diagnóstico contra el que se la evaluó. El consumidor NO busca aquí en
+    # qué tramo cae un valor del paciente: elige el tramo según qué aneurisma
+    # está preguntando. Por eso build.py prohíbe mezclar los dos ejes en una
+    # misma lista.
+    graduacion:
+      parametro: Diámetro aórtico máximo
+      unidad: cm
+      lectura: acumulativo
     tramos:
       - umbral_condicion: aneurisma de 3.0 cm o mayor
+        desde: 3.0
         lr_positivo: 12.0
         ic95: [7.4, 19.5]
         lr_negativo: 0.72
         ic95_negativo: [0.65, 0.81]
         ref: 'pmid:9892455'
       - umbral_condicion: aneurisma de 4.0 cm o mayor
+        desde: 4.0
         lr_positivo: 15.6
         ic95: [8.6, 28.5]
         lr_negativo: 0.51

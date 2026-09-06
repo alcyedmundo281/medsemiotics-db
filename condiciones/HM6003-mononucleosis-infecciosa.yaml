@@ -96,25 +96,40 @@ signos:
     umbral: linfocitos atípicos ≥ 10%
     ref: pmid:27115266
   decision: a partir del 10% ya desplaza la probabilidad con fuerza
+  # Los tres primeros tramos son cortes ACUMULATIVOS, no estratos. La fuente midió
+  # «≥ 10%», «≥ 20%» y «≥ 40%» sobre poblaciones que se contienen unas a otras, y
+  # el consumidor aplica el corte más estricto que el valor satisface. Partirlos
+  # en [10,20), [20,40) para que no se solapen daría tres cocientes que nadie
+  # midió: es la razón de que `lectura` se declare y no se infiera.
+  graduacion:
+    parametro: Linfocitos atípicos
+    unidad: '%'
+    lectura: acumulativo
   tramos:
   - umbral: linfocitos atípicos ≥ 10%
+    desde: 10
     lr_positivo: 11.4
     ic95:
     - 2.7
     - 35
     ref: pmid:27115266
   - umbral: linfocitos atípicos ≥ 20%
+    desde: 20
     lr_positivo: 26
     ic95:
     - 9.6
     - 68
     ref: pmid:27115266
   - umbral: linfocitos atípicos ≥ 40%
+    desde: 40
     lr_positivo: 50
     ic95:
     - 38
     - 64
     ref: pmid:27115266
+  # Sin `desde`: este tramo NO es un corte sobre el eje de los linfocitos
+  # atípicos, sino un criterio compuesto sobre dos recuentos a la vez. Ponerle un
+  # límite numérico lo haría legible al precio de que se leyera mal.
   - umbral: linfocitos > 50% y atípicos > 10%
     lr_positivo: 54
     ic95:

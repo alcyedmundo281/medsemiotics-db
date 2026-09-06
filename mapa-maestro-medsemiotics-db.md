@@ -171,6 +171,85 @@ modelo, así que **ni siquiera es una propiedad del hallazgo**. Si el motor
 bayesiano pudiera leerlo por accidente, lo multiplicaría como si fuera un
 cociente.
 
+#### `graduacion` — cuando el cociente cambia con el valor
+
+Un hallazgo de laboratorio no es binario. El índice ya guardaba eso en `tramos`,
+pero la frontera del tramo vivía **solo en prosa** —«linfocitos atípicos ≥ 10%»,
+«7 a 10 (riesgo alto)»—, y ningún consumidor puede leer eso: el valor volvía a
+ser binario en cuanto salía de aquí. `graduacion` declara el eje y cada tramo
+puede traer sus límites como números, **sin perder la prosa**, que sigue siendo
+la etiqueta que imprime el libro.
+
+```yaml
+graduacion:
+  parametro: Linfocitos atípicos    # qué se gradúa
+  unidad: '%'                       # obligatoria en cuanto haya un número
+  lectura: acumulativo              # acumulativo | disjunto
+tramos:
+  - {umbral: 'linfocitos atípicos ≥ 10%', desde: 10, lr_positivo: 11.4, ref: 'pmid:27115266'}
+  - {umbral: 'linfocitos atípicos ≥ 20%', desde: 20, lr_positivo: 26,   ref: 'pmid:27115266'}
+```
+
+**`lectura` no se infiere.** Las dos formas se parecen en el YAML y dicen cosas
+opuestas:
+
+| `lectura` | Qué son los tramos | Cómo se lee un valor |
+|---|---|---|
+| `disjunto` | intervalos `[desde, hasta)` que no se solapan | cae en uno y sólo en uno |
+| `acumulativo` | cortes de un solo lado, anidados a propósito | se aplica el **más estricto** que satisface |
+
+La mononucleosis es el caso que obliga a distinguirlas: la fuente midió «≥ 10%»,
+«≥ 20%» y «≥ 40%» sobre poblaciones que se contienen unas a otras. Partirlas en
+`[10,20)` y `[20,40)` para que no se solapen **inventaría tres cocientes que
+nadie midió**. Un validador que exigiera intervalos disjuntos siempre obligaría
+a esa invención, así que la forma se declara.
+
+**Los intervalos son semiabiertos, `[desde, hasta)`.** Omitir un extremo lo abre,
+que es más honesto que escribir `desde: 0` afirmando un límite que nadie midió.
+En una escala entera esto se ve raro y **no es una errata**: el estrato «7 a 10»
+de HEART se escribe `desde: 7, hasta: 11`, porque el 10 tiene que entrar y el
+extremo superior no entra nunca.
+
+**Los tramos no tienen que cubrir toda la recta.** HEART declara `0–3` y `7–10`
+porque la fuente no publica el cociente de `4–6`. Un valor que no cae en ningún
+tramo significa que esta hipótesis no sabe leerlo, y eso se dice; rellenarlo por
+interpolación sería inventar.
+
+**Cada tramo cita su fuente**, como cualquier otro cociente. Un tramo sin `ref`
+no entra: la regla dura no tiene excepción por ser un tramo.
+
+##### Los dos ejes, que no son intercambiables
+
+`umbral` gradúa **el hallazgo**: «≥ 10%» y «≥ 20%» son dos intensidades del mismo
+signo. `umbral_condicion` redefine **la condición contra la que se mide**: en el
+aneurisma, «≥ 3 cm» y «≥ 4 cm» son la misma palpación evaluada contra dos
+diagnósticos distintos. El consumidor busca en el primero dónde cae el valor del
+paciente; en el segundo elige según qué está preguntando. Mezclarlos en una
+misma lista es un error de `build.py`.
+
+##### Estratificación por edad o sexo
+
+No es una clave nueva dentro del tramo: es **otra población medida**, y se
+declara con `poblacion` en el tramo. El solapamiento se comprueba dentro de cada
+población y no entre ellas, porque el corte de varón y el de mujer se solapan por
+definición. `poblacion` sigue siendo prosa, como en el resto del índice, así que
+un consumidor que no sepa a qué población pertenece su paciente tiene que decirlo
+en vez de elegir un tramo.
+
+##### `lr_negativo` junto a tramos graduados
+
+Tiene que declarar `umbral` o `umbral_condicion`. Un LR− suelto no dice a qué
+corte llama «negativo», y ése es justo el número con el que se descarta.
+
+##### Unidades
+
+La unidad canónica vive en el **concepto**, dentro de su `umbral`. Cuando el
+concepto la declara, la `graduacion` de la arista la **comprueba** en vez de
+volver a declararla, y la discrepancia se caza en `build.py`. Los múltiplos del
+límite superior de normalidad (`xLSN`) y los valores absolutos conviven, y la
+`unidad` distingue cuál es: **el índice no convierte entre ellos**, porque
+hacerlo exige el LSN del laboratorio local, que el índice no conoce ni debe
+conocer. Se guarda la escala en la que la fuente publicó el corte.
 
 ---
 
@@ -441,3 +520,37 @@ Que las 88 primeras referencias lo tuvieran era casualidad, no regla. Holten
 se documentó en la §2 el mismo día.
 - **Directorio de referencias plano o por año.** 74 en plano funciona; a partir
   de unos miles conviene particionar.
+
+**Resuelto el 06/09/2026 — las bandas de LR, respondiendo a la propuesta de
+holonmed.** El eje entra como `graduacion` + límites en los `tramos` que el
+índice ya tenía, y no como una clave `bandas` nueva. Las cuatro preguntas
+abiertas de la propuesta se resuelven así:
+
+1. **`analito` no entra.** Aquí la identidad de un signo es su código `HM:`, que
+   es permanente y es lo que citan los tres clientes. Un nombre de analito en
+   texto libre reintroduciría la identidad-por-nombre que los códigos existen
+   para evitar; `graduacion.parametro` describe, no identifica.
+2. **Unidades canónicas: sí, en el concepto.** `umbral.unidad` es la
+   declaración; la arista comprueba. El backlog es real y está contado: 20 de
+   los 25 conceptos con umbral heredado de la semilla no traen unidad, y
+   `build.py` los lista.
+
+   **El criterio para rellenarlas**, cuando se haga, no es escribir la unidad
+   más común: es escribir la que hace coherente **el corte que ya está escrito**.
+   38.0 solo es fiebre en °C, 12.0 de hemoglobina solo existe en g/dL, 11000
+   leucocitos solo se cuentan por µL —en cada caso la alternativa daría un número
+   distinto en un orden de magnitud, así que el dato presente determina la unidad
+   y no queda nada que elegir—. Cuando el corte **no** la determina, la unidad
+   espera a la fuente junto con la procedencia: un corte de 10 de proteína C
+   reactiva es plausible en mg/L y en mg/dL, y las dos lecturas se diferencian en
+   un factor de 10, que es justo el error que la unidad existe para impedir.
+3. **`xLSN` y valor absoluto conviven**, y `unidad` distingue cuál es. El índice
+   no convierte entre ellos.
+4. **Edad y sexo entran ya, sin v2**, como `poblacion` del tramo — que es lo que
+   son: otra población medida, no otra clave dentro de la banda.
+
+Dos cosas que la propuesta no contemplaba y que el índice sí necesita:
+`lectura`, porque los cortes acumulativos de la mononucleosis no se pueden
+expresar como intervalos disjuntos sin inventar cocientes; y la separación entre
+`umbral` y `umbral_condicion`, que ya estaba en los datos y que una clave
+`bandas` única habría aplanado.
