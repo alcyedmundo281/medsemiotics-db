@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Calcio sérico
+  unidad: mg/dL
   direccion: bajo
   corte_inferior: 8.5
   ref: null   # pendiente: el corte necesita procedencia

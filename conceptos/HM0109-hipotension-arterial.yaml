@@ -17,6 +17,7 @@ codigos:
 
 umbral:
   parametro: Presión arterial sistólica
+  unidad: mmHg
   direccion: bajo
   corte_inferior: 90
   ref: null   # pendiente: el corte necesita procedencia

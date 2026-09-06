@@ -15,6 +15,7 @@ codigos:
 
 umbral:
   parametro: Sodio
+  unidad: mmol/L
   direccion: alto
   corte_superior: 145
   corte_inferior: 135

@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Creatinina
+  unidad: mg/dL
   direccion: alto
   corte_superior: 1.3
   ref: null   # pendiente: el corte necesita procedencia

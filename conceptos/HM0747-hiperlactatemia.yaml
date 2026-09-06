@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Lactato
+  unidad: mmol/L
   direccion: alto
   corte_superior: 2.0
   ref: null   # pendiente: el corte necesita procedencia

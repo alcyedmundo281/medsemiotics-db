@@ -17,6 +17,7 @@ codigos:
 
 umbral:
   parametro: Frecuencia cardíaca
+  unidad: latidos por minuto
   direccion: alto
   corte_superior: 100
   ref: null   # pendiente: el corte necesita procedencia

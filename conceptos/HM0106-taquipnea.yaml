@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Frecuencia respiratoria
+  unidad: respiraciones por minuto
   direccion: alto
   corte_superior: 20
   ref: null   # pendiente: el corte necesita procedencia

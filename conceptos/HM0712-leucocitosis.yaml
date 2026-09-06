@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Leucocitos
+  unidad: células/µL
   direccion: alto
   corte_superior: 11000
   ref: null   # pendiente: el corte necesita procedencia

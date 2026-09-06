@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Potasio
+  unidad: mmol/L
   direccion: alto
   corte_superior: 5.5
   corte_inferior: 3.5

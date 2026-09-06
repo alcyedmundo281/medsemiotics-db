@@ -18,6 +18,7 @@ codigos:
 
 umbral:
   parametro: Presión arterial sistólica
+  unidad: mmHg
   direccion: alto
   corte_superior: 140
   corte_inferior: 90
