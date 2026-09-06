@@ -533,8 +533,17 @@ abiertas de la propuesta se resuelven así:
 2. **Unidades canónicas: sí, en el concepto.** `umbral.unidad` es la
    declaración; la arista comprueba. El backlog es real y está contado: 20 de
    los 25 conceptos con umbral heredado de la semilla no traen unidad, y
-   `build.py` los lista. No se rellenan a ojo: la unidad se repara en la misma
-   pasada que la procedencia del corte, contra la fuente.
+   `build.py` los lista.
+
+   **El criterio para rellenarlas**, cuando se haga, no es escribir la unidad
+   más común: es escribir la que hace coherente **el corte que ya está escrito**.
+   38.0 solo es fiebre en °C, 12.0 de hemoglobina solo existe en g/dL, 11000
+   leucocitos solo se cuentan por µL —en cada caso la alternativa daría un número
+   distinto en un orden de magnitud, así que el dato presente determina la unidad
+   y no queda nada que elegir—. Cuando el corte **no** la determina, la unidad
+   espera a la fuente junto con la procedencia: un corte de 10 de proteína C
+   reactiva es plausible en mg/L y en mg/dL, y las dos lecturas se diferencian en
+   un factor de 10, que es justo el error que la unidad existe para impedir.
 3. **`xLSN` y valor absoluto conviven**, y `unidad` distingue cuál es. El índice
    no convierte entre ellos.
 4. **Edad y sexo entran ya, sin v2**, como `poblacion` del tramo — que es lo que
