@@ -203,6 +203,12 @@ haría legible al precio de que se leyera mal.
   bacteriana—, y las dos lecturas se diferencian en un factor de 10. Se queda sin
   unidad hasta que la resuelva su fuente. Es el único de los 20 umbrales
   heredados que sigue así.
+
+  > **Nota añadida el 06/09/2026, después de enviar esta respuesta:** el
+  > responsable clínico fijó `mg/L`. Ya no queda ningún umbral sin unidad; su
+  > `ref` sigue pendiente, que es otra cosa. El texto de arriba se deja como
+  > estaba: este documento es el registro de lo que se dijo aquel día, no un
+  > estado que se actualiza.
 - **Vuestras conversiones.** Si un laboratorio informa lipasa en absoluto y el
   tramo está en `xLSN`, la conversión la hacéis vosotros con vuestro LSN, o no se
   hace. El índice no os dará el LSN porque no lo tiene.

@@ -531,19 +531,26 @@ abiertas de la propuesta se resuelven así:
    texto libre reintroduciría la identidad-por-nombre que los códigos existen
    para evitar; `graduacion.parametro` describe, no identifica.
 2. **Unidades canónicas: sí, en el concepto.** `umbral.unidad` es la
-   declaración; la arista comprueba. El backlog es real y está contado: 20 de
-   los 25 conceptos con umbral heredado de la semilla no traen unidad, y
-   `build.py` los lista.
+   declaración; la arista comprueba. **Cerrado el 06/09/2026: los 25 conceptos
+   con umbral traen unidad**, y el aviso `umbral sin unidad` ya no señala a
+   ninguno.
 
-   **El criterio para rellenarlas**, cuando se haga, no es escribir la unidad
-   más común: es escribir la que hace coherente **el corte que ya está escrito**.
+   **El criterio**, que es lo que sobrevive al caso, no es escribir la unidad más
+   común: es escribir la que hace coherente **el corte que ya está escrito**.
    38.0 solo es fiebre en °C, 12.0 de hemoglobina solo existe en g/dL, 11000
    leucocitos solo se cuentan por µL —en cada caso la alternativa daría un número
    distinto en un orden de magnitud, así que el dato presente determina la unidad
-   y no queda nada que elegir—. Cuando el corte **no** la determina, la unidad
-   espera a la fuente junto con la procedencia: un corte de 10 de proteína C
-   reactiva es plausible en mg/L y en mg/dL, y las dos lecturas se diferencian en
-   un factor de 10, que es justo el error que la unidad existe para impedir.
+   y no queda nada que elegir—. Así entraron 19 de los 20 heredados, en el #10.
+
+   Cuando el corte **no** la determina, no se adivina: un corte de 10 de proteína
+   C reactiva es plausible en mg/L y en mg/dL, y las dos lecturas se diferencian
+   en un factor de 10, que es justo el error que la unidad existe para impedir.
+   `HM:0761` esperó por eso, y lo resolvió **el responsable clínico**, que es de
+   quien depende esa decisión: `mg/L`.
+
+   **La unidad no es la procedencia.** `HM:0761` sigue sin `ref`, como los otros
+   19: la unidad dice en qué escala está el 10, no de dónde sale el 10. Los 20
+   avisos `umbral sin procedencia` siguen intactos.
 3. **`xLSN` y valor absoluto conviven**, y `unidad` distingue cuál es. El índice
    no convierte entre ellos.
 4. **Edad y sexo entran ya, sin v2**, como `poblacion` del tramo — que es lo que

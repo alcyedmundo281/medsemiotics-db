@@ -15,18 +15,19 @@ codigos:
   hpo: null
 
 umbral:
-  # SIN `unidad` a propósito, y es el único de los 20 heredados que se queda así.
-  # En los demás el valor del corte determina la unidad —38.0 solo es fiebre en
-  # °C, 12.0 de hemoglobina solo existe en g/dL—. Aquí no: 10 mg/L es el límite
-  # superior de normalidad habitual y 10 mg/dL (= 100 mg/L) es un corte de
-  # infección bacteriana también en uso. Las dos lecturas son clínicamente
-  # plausibles y se diferencian en un factor de 10, que es exactamente el error
-  # que la unidad existe para impedir. Lo resuelve la fuente, no el criterio de
-  # quien puebla.
+  # La unidad NO se dedujo del valor, a diferencia de los otros 19 umbrales
+  # heredados: un corte de 10 es plausible en mg/L —límite superior de
+  # normalidad— y en mg/dL —infección bacteriana—, y las dos lecturas se
+  # diferencian en un factor de 10. La fijó el responsable clínico el
+  # 06/09/2026, que es de quien depende esa decisión.
+  #
+  # `ref` sigue pendiente y es otra cosa: la unidad dice en qué escala está el
+  # 10, no de dónde sale el 10.
   parametro: Proteína C reactiva
+  unidad: mg/L
   direccion: alto
   corte_superior: 10
-  ref: null   # pendiente: el corte necesita procedencia, y con ella la unidad
+  ref: null   # pendiente: el corte necesita procedencia
 
 significante: null
 significado: null
