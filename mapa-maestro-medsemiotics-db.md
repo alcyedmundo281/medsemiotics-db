@@ -407,7 +407,12 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
 - [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
 - [x] apnea obstructiva del sueño → `HM:6018`, con 2 aristas de `pmid:23989984`.
-- [!] **neumonía infantil descartada por ahora**: `pmid:28763554` (JAMA 2017) con errata en texto completo bloqueado.
+- [!] **neumonía infantil, `pmid:28763554`**: bloqueada por su errata, no por su
+      texto. Cotejo intentado el 06/09/2026: la corrección es `pmid:28973229`
+      (`PMC12507477`) y está **en abierto**; lo que falla es que PubMed no sirve
+      su cuerpo y este entorno no alcanza PMC. Quien tenga navegador la resuelve
+      en dos minutos. El artículo original sí está bloqueado —no tiene PMC—,
+      pero eso es otra cosa y esta línea las confundía.
 - [x] luxación de cadera en el lactante → `HM:6019`, con 3 aristas de `pmid:38619828`.
 - [x] intubación difícil → `HM:6020`, con 5 aristas de `pmid:30721300`.
 - [x] trastorno por consumo de alcohol → `HM:6021`, con 5 aristas de `pmid:38592385`.
@@ -456,8 +461,15 @@ Las 4 de la serie que quedan en el repositorio:
 |---|---|---|
 | `pmid:26241601` · estrés postraumático | 2015 | errata sin cotejar |
 | `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | errata sin cotejar |
-| `pmid:28763554` · neumonía infantil | 2017 | errata, y texto completo bloqueado |
+| `pmid:28763554` · neumonía infantil | 2017 | errata **localizada y en abierto** (`pmid:28973229`), sin cotejar |
 | `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
+
+**Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
+menudo su propio PMC, aunque el artículo corregido esté de pago. Y desconfía del
+título que le pone PubMed: en `pmid:28763554` la misma corrección aparece como
+«Incorrect Data in the Statistical Methods Section» en PubMed y como «Incorrect
+Statistical Measures and Typographical Errors» en PMC. El segundo alcanza a los
+resultados; el primero parecía no hacerlo.
 
 Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
 queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
