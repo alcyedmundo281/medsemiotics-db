@@ -1,5 +1,8 @@
 # Registro de referencia del índice. Verificado contra PubMed y CrossRef.
-# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
 
 id: 'pmid:41729549'
 clave_bibtex: drum2026
@@ -29,6 +32,8 @@ verificacion:
   retractado: false
   errata: 'JAMA. 2026 Jun 30. doi: 10.1001/jama.2026.9987.'
   errata_corrige: Incorrect Data in Rational Clinical Examination Article.
+  errata_pmid: 'pmid:42377978'
+  errata_pmcid: PMC13320701
   crossref: true
   crossref_titulo_coincide: false
   notas:
@@ -37,3 +42,48 @@ verificacion:
     - >-
       Registrada SIN usar. Era el candidato más rico de la serie con 12 cocientes,
       y la errata se titula «Incorrect Data in Rational Clinical Examination Article».
+    - >-
+      COTEJO DEL 06/09/2026, NO CERRADO: localizada la corrección
+      (pmid:42377978, PMC13320701, doi 10.1001/jama.2026.9987, jamanetwork
+      fullarticle/2850814). ESTÁ en PMC, pero el depósito viene SIN CUERPO, igual
+      que el de pmid:28763554. Falta su texto y este entorno no alcanza la web
+      del editor.
+    - >-
+      A FAVOR DEL ENLACE: la corrección se titula «Incorrect Data in Rational
+      Clinical Examination Article», que nombra explícitamente la serie de este
+      artículo. Es mucho más creíble que el título genérico que despistó en
+      pmid:28763554. Aun así no basta: allí el título de PubMed también
+      encajaba y el cuerpo corregía otra cosa.
+    - >-
+      La cita guardada dice «JAMA. 2026 Jun 30», que es la fecha en línea; la
+      cita impresa es JAMA 2026;336(9):804. El DOI coincide en ambas y es lo que
+      manda.
+    - >-
+      COMPROBACIÓN CRUZADA, y esta fuente la permite mejor que ninguna otra:
+      cuatro hallazgos traen su LR+ y su LR−, así que cada uno predice el dato
+      que declara el otro. Líneas B, colapsabilidad de la VCI y presión venosa
+      yugular cuadran dentro de 3 puntos. El BNP es el que más se separa:
+      sensibilidad declarada 87% frente a 90% derivada, y especificidad
+      declarada 87% frente a 93% derivada.
+    - >-
+      ESE DESVÍO NO ES PRUEBA DE NADA. Los valores son estimaciones agrupadas
+      con un modelo logístico mixto de dos niveles, y agrupar cocientes por un
+      lado y sensibilidades por otro no tiene por qué dar cifras exactamente
+      coherentes. Se anota solo como PISTA de por dónde empezar a leer la
+      corrección, y se anota porque coincide con que el BNP es el hallazgo que
+      la fuente llama «la mejor prueba aislada» y el que tiene el intervalo más
+      ancho de los doce (2.4-20.4).
+    - >-
+      Doce cocientes en juego, todos del abstract: ingurgitación yugular >3 cm
+      LR 4.1 (2.9-5.6, Sp 92%); edema de miembros inferiores LR 2.2 (1.5-3.1, Sp
+      80%); crepitantes LR 2.7 (1.7-4.5, Sp 81%); congestión vascular en
+      radiografía LR 5.9 (2.9-12.0, Sp 91%); líneas B bilaterales LR 4.0
+      (2.6-6.1, Sp 77%) y su ausencia LR 0.09 (0.04-0.23, Se 93%);
+      colapsabilidad de VCI <50% LR 3.9 (2.5-6.1, Sp 79%) y ≥50% LR 0.22
+      (0.11-0.45, Se 82%); PVY ecográfica >8 cm LR 2.8 (2.2-3.5, Sp 71%) y ≤8 cm
+      LR 0.26 (0.20-0.33, Se 81%); BNP ≥100 ng/mL LR 6.9 (2.4-20.4, Sp 87%) y
+      normal LR 0.14 (0.08-0.24, Se 87%). Prevalencia 35-69% en 40 estudios y
+      11 490 pacientes.
+    - >-
+      QUÉ FALTA: abrir jamanetwork.com/journals/jama/fullarticle/2850814 y pegar
+      su texto. Es la fuente más rica de las que quedan.

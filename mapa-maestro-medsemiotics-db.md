@@ -461,7 +461,7 @@ Las 4 de la serie que quedan en el repositorio:
 |---|---|---|
 | `pmid:26241601` · estrés postraumático | 2015 | cotejo abierto: la errata (`pmid:26746468`) no está en PMC. **La más peligrosa de las tres**: se titula «Value Errors in Tables and Abstract» y el abstract se contradice a sí mismo |
 | `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | cotejo abierto: la errata (`pmid:28510658`, «Data Error») no está en PMC. El abstract **no** se contradice, que es ausencia de pista y no garantía |
-| `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
+| `pmid:41729549` · sobrecarga de volumen | 2026 | cotejo abierto: la errata (`pmid:42377978`) está en PMC pero **el depósito viene sin cuerpo**. La fuente más rica que queda: 12 cocientes |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
 menudo su propio PMC, aunque el artículo corregido esté de pago.
@@ -489,6 +489,11 @@ El caso opuesto es `pmid:26717031`, cuyo abstract **sí** cuadra consigo mismo
 cocientes—. Eso no lo absuelve: un bloque de cifras uniformemente erróneo cuadra
 consigo mismo igual de bien. **Que sume no significa que sea correcto**, y una
 errata titulada «Data Error» sigue sin leerse.
+
+**Estar en PMC no es tener el texto.** Dos de las tres correcciones pendientes
+tienen depósito en PMC y las dos lo sirven **vacío**: JAMA deposita el registro
+sin cuerpo. Comprobar que existe el PMC no adelanta el cotejo; hay que abrir la
+página del editor igual.
 
 Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
 queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
