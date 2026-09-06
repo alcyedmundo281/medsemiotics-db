@@ -253,5 +253,42 @@ class ResumenDerivadosTest(unittest.TestCase):
         self.assertEqual(verificar.resumen_derivados(False, False, False), "")
 
 
+class CondicionEnLatexTest(unittest.TestCase):
+    """Un término largo que Quarto envuelve sigue estando en el libro.
+
+    CI rechazó «Lesión intracraneal en el traumatismo craneal leve del adulto»
+    —61 caracteres, el más largo del índice— porque el `.tex` lo trae partido
+    por un salto de línea. Estaba impreso en el PDF; lo que fallaba era la
+    comparación literal.
+    """
+
+    def indice_con(self, *terminos):
+        indice = banco.Indice(RAIZ)
+        indice.condiciones_por_archivo = {
+            f"HM:60{i:02d}": dict(id=f"HM:60{i:02d}", termino=t)
+            for i, t in enumerate(terminos, 1)
+        }
+        return indice
+
+    def test_termino_partido_por_el_ajuste_de_linea_no_se_da_por_perdido(self):
+        largo = "Lesión intracraneal en el traumatismo craneal leve del adulto"
+        tex = ("\\section{Lesión intracraneal en el traumatismo craneal leve del\n"
+               "adulto}\\label{sec-lesion}")
+        self.assertEqual(libro.condiciones_ausentes(self.indice_con(largo), tex), [])
+
+    def test_una_condicion_que_falta_de_verdad_sigue_fallando(self):
+        indice = self.indice_con("Presente", "Ausente")
+        tex = "\\section{Presente}\\label{x}"
+        self.assertEqual(libro.condiciones_ausentes(indice, tex), ["Ausente"])
+
+    def test_la_normalizacion_no_cose_palabras_que_no_estan(self):
+        # «traumatismo craneal» no debe darse por hallado si el .tex solo trae
+        # las dos palabras separadas por otro texto
+        indice = self.indice_con("traumatismo craneal")
+        tex = "traumatismo del hueso craneal"
+        self.assertEqual(libro.condiciones_ausentes(indice, tex),
+                         ["traumatismo craneal"])
+
+
 if __name__ == "__main__":
     unittest.main()
