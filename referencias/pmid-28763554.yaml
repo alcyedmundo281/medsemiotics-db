@@ -33,18 +33,28 @@ verificacion:
     - 'Tiene errata publicada: comprobar las cifras contra la corrección'
     - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'
     - >-
-      Cotejo INTENTADO el 06/09/2026 y NO completado. Localizada la corrección
-      (pmid:28973229, PMC12507477), pero PubMed no sirve su cuerpo y el entorno
-      de trabajo no alcanza pmc.ncbi.nlm.nih.gov. Está en abierto: quien tenga
-      navegador la resuelve en dos minutos.
+      COTEJO DEL 06/09/2026: leído el cuerpo de la corrección (pmid:28973229,
+      PMC12507477, doi 10.1001/jama.2017.13624). NO CORRIGE ESTE ARTÍCULO. Su
+      texto corrige el «Stroke Oxygen Study» de Roffe (JAMA 2017;318(12):
+      1125-1135, pmid:28973619): el factor de conversión de la glucosa en su
+      tabla 1, unos intervalos rotulados 99% que eran 95% en su tabla 2, y dos
+      cifras de su figura 3. No menciona neumonía, ni pediatría, ni ninguno de
+      los cocientes de este artículo.
     - >-
-      HALLAZGO DEL COTEJO, y agrava el riesgo en vez de reducirlo: la misma
-      corrección lleva DOS títulos distintos. PubMed la indexa «Incorrect Data
-      in the Statistical Methods Section», que sugiere un fallo confinado a la
-      metodología; PMC titula el mismo DOI «Incorrect Statistical Measures and
-      Typographical Errors». Una medida estadística es un resultado, y una
-      errata tipográfica puede estar en cualquier sitio, tablas de cocientes
-      incluidas. Hasta leer el cuerpo hay que suponer lo segundo.
+      EL ENLACE ESTÁ ROTO AGUAS ARRIBA, y el índice no puede arreglarlo. El
+      mismo registro arrastra dos títulos incompatibles: PubMed lo indexa
+      «Incorrect Data in the Statistical Methods Section» y lo declara errata de
+      ESTE artículo; PMC titula el mismo DOI «Incorrect Statistical Measures and
+      Typographical Errors» y sirve el cuerpo del estudio del ictus. Una búsqueda
+      por título en PubMed devuelve un único registro, pmid:28973229, así que no
+      son dos avisos mal separados: es un registro con la procedencia cruzada.
+    - >-
+      QUÉ FALTA PARA CERRARLO, y es una decisión editorial y no técnica: o bien
+      este artículo nunca tuvo errata y el enlace de PubMed es espurio —que es
+      lo que sugiere la evidencia— o bien JAMA imprimió en esa misma página otro
+      aviso que ni PubMed ni PMC indexan por separado. Lo segundo solo se
+      descarta mirando la página 1284 del número impreso. Mientras no se decida,
+      este artículo sigue bloqueado por una errata que puede no ser suya.
     - >-
       Cifras en juego, todas del abstract: prevalencia radiográfica 19% (IC95%
       11-31) en Norteamérica y 37% (IC95% 26-50) fuera; dolor torácico LR
