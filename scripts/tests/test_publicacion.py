@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import banco
+import libro
 import qmd
 import verificar_publicacion as verificar
 
@@ -187,6 +188,43 @@ class PublicacionTest(unittest.TestCase):
         with self.assertRaises(banco.ErrorGeneracion):
             qmd.generar(self.indice, self.raiz, destino)
         self.assertEqual(archivo.read_text(), "conservar")
+
+
+class RasterizadorTest(unittest.TestCase):
+    """El PDF necesita `rsvg-convert`, y decirlo antes cuesta menos que después.
+
+    Sin él Quarto aborta con un volcado de Lua que no nombra la dependencia.
+    Estas pruebas fijan las dos mitades del contrato: se exige cuando hay SVG,
+    y no se exige cuando no lo hay.
+    """
+
+    def informe(self, *nombres):
+        return {"figuras_detalle": [
+            (f"HM:300{n}", dict(archivo_local=nombre))
+            for n, nombre in enumerate(nombres, start=1)
+        ]}
+
+    def test_svg_sin_rasterizador_aborta_nombrando_la_dependencia(self):
+        informe = self.informe("assets/img/uno.png", "assets/img/dos.SVG")
+        with patch("shutil.which", return_value=None):
+            with self.assertRaises(banco.ErrorGeneracion) as fallo:
+                libro.exigir_rasterizador(informe)
+        mensaje = str(fallo.exception)
+        self.assertIn("rsvg-convert", mensaje)
+        self.assertIn("librsvg2-bin", mensaje)
+        # y dice cuál es la figura que lo obliga, no sólo que falta algo
+        self.assertIn("assets/img/dos.SVG", mensaje)
+        self.assertNotIn("uno.png", mensaje)
+
+    def test_svg_con_rasterizador_pasa(self):
+        informe = self.informe("assets/img/dos.svg")
+        with patch("shutil.which", return_value="/usr/bin/rsvg-convert"):
+            self.assertIsNone(libro.exigir_rasterizador(informe))
+
+    def test_sin_svg_no_se_exige_una_dependencia_que_no_se_usa(self):
+        informe = self.informe("assets/img/uno.png", "assets/img/tres.jpg")
+        with patch("shutil.which", return_value=None):
+            self.assertIsNone(libro.exigir_rasterizador(informe))
 
 
 if __name__ == "__main__":
