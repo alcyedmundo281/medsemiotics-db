@@ -57,6 +57,27 @@ def argumentos() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def condiciones_ausentes(indice: banco.Indice, fuente: str) -> list:
+    """Términos de condición que NO llegaron al LaTeX.
+
+    Compara sobre el texto con los espacios normalizados, y no literalmente,
+    porque Quarto envuelve las líneas largas del `.tex`: un término de más de
+    unos sesenta caracteres sale partido por un salto de línea. La comparación
+    literal lo daba entonces por ausente aunque estuviera impreso en el PDF, y
+    el error acusaba al índice de perder una condición que no había perdido.
+
+    Pandoc solo parte por espacios, así que colapsar cada racha de espacio en
+    uno reconstruye el texto original y la comprobación sigue siendo estricta:
+    un término que de verdad falte sigue faltando.
+    """
+    plano = " ".join(fuente.split())
+    return [
+        cond["termino"]
+        for cond in indice.condiciones_por_archivo.values()
+        if cond.get("termino") and " ".join(cond["termino"].split()) not in plano
+    ]
+
+
 def validar_libro(tex: Path, pdf: Path, indice: banco.Indice, informe: dict,
                   plano: str) -> str:
     """Comprueba el .tex y el PDF antes de darlos por buenos.
@@ -68,20 +89,25 @@ def validar_libro(tex: Path, pdf: Path, indice: banco.Indice, informe: dict,
     if not tex.is_file():
         raise ErrorGeneracion(f"Quarto no dejó la fuente LaTeX en {tex}")
     fuente = tex.read_text(encoding="utf-8", errors="replace")
+    # Mismo motivo que en `condiciones_ausentes`: Quarto envuelve las líneas
+    # largas, así que toda comprobación de prosa va contra el texto con los
+    # espacios normalizados. Las que buscan un token sin espacios —«[?]»,
+    # «TODO», «FreeSerif»— dan igual en uno u otro.
+    plano_tex = " ".join(fuente.split())
     citacion = informe["citacion"]
 
     comprobaciones = {
         "citas sin resolver ([?])": "[?]" not in fuente,
         "marcadores TODO": "TODO" not in fuente,
-        "DOI": citacion.doi in fuente,
-        "licencia": citacion.licencia in fuente,
-        "aviso de alcance": "juicio clínico" in fuente,
-        "bibliografía": "Bibliografía" in fuente,
-        "vocabulario": "Vocabulario" in fuente,
+        "DOI": citacion.doi in plano_tex,
+        "licencia": citacion.licencia in plano_tex,
+        "aviso de alcance": "juicio clínico" in plano_tex,
+        "bibliografía": "Bibliografía" in plano_tex,
+        "vocabulario": "Vocabulario" in plano_tex,
         "fuente FreeSerif": "FreeSerif" in fuente,
     }
     if informe["figuras"]:
-        comprobaciones["créditos de imágenes"] = "Créditos de imágenes" in fuente
+        comprobaciones["créditos de imágenes"] = "Créditos de imágenes" in plano_tex
     fallos = [n for n, correcto in comprobaciones.items() if not correcto]
     if fallos:
         raise ErrorGeneracion(
@@ -95,11 +121,12 @@ def validar_libro(tex: Path, pdf: Path, indice: banco.Indice, informe: dict,
                 "el preámbulo siga usando fontspec con FreeSerif"
             )
 
-    for cond in indice.condiciones_por_archivo.values():
-        if cond.get("termino") and cond["termino"] not in fuente:
-            raise ErrorGeneracion(
-                f"la condición «{cond['termino']}» no aparece en el LaTeX"
-            )
+    ausentes = condiciones_ausentes(indice, fuente)
+    if ausentes:
+        raise ErrorGeneracion(
+            "condiciones ausentes del LaTeX: "
+            + ", ".join(f"«{t}»" for t in ausentes)
+        )
 
     # Cada figura entra por el `archivo_local` declarado, la misma autoridad que
     # usan el EPUB y el índice. Una ruta inventada por el renderizador sería una
