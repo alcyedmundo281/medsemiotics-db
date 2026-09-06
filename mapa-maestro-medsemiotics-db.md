@@ -459,12 +459,16 @@ Las 4 de la serie que quedan en el repositorio:
 
 | Referencia | Año | Qué la bloquea |
 |---|---|---|
-| `pmid:26241601` · estrés postraumático | 2015 | errata sin cotejar |
+| `pmid:26241601` · estrés postraumático | 2015 | cotejo abierto: la errata (`pmid:26746468`) no está en PMC. **La más peligrosa de las tres**: se titula «Value Errors in Tables and Abstract» y el abstract se contradice a sí mismo |
 | `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | errata sin cotejar |
 | `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
 menudo su propio PMC, aunque el artículo corregido esté de pago.
+
+**Identifícala por su DOI, no por su página.** JAMA agrupa varias correcciones
+en una misma página: la 90 del 315(1) lleva **tres**, cada una con su PMID y su
+DOI. Buscar «la errata de la página 90» devuelve las tres y no dice cuál es.
 
 **Y termina en la página del editor.** El cotejo de `pmid:28763554` casi sale al
 revés: PMC sirve bajo el DOI correcto el cuerpo de OTRA corrección, con otro
@@ -473,6 +477,12 @@ que la errata era ajena y el enlace espurio. No lo era: la corrección real
 existía y estaba en jamanetwork. **Que el cuerpo hallado no mencione tu artículo
 no prueba que la errata sea ajena; prueba que estás mirando el sitio
 equivocado.**
+
+**La aritmética orienta pero no autoriza.** En `pmid:26241601` el abstract da dos
+cocientes distintos para el mismo instrumento y el mismo corte, y solo uno de los
+dos bloques cuadra con la sensibilidad y la especificidad que él mismo declara
+—`LR+ = Se/(1−Sp)`—. Eso señala cuál es probablemente el corregido, y no basta:
+quién corrige a quién lo dice el aviso, no el cálculo de quien puebla.
 
 Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
 queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
