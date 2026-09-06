@@ -124,6 +124,46 @@ class PublicacionTest(unittest.TestCase):
         self.assertIn("IC95%", texto)
         self.assertEqual(self.citas.orden, ["pmid:1", "pmid:2"])
 
+    def test_probabilidad_base_no_pierde_ic95_ni_nota(self):
+        """Estaba tirando en silencio el IC95 de tres condiciones y la nota de otras tres."""
+        condicion = dict(
+            self.indice.condiciones_por_archivo["HM:6001"],
+            probabilidad_base=dict(valor=0.19, ic95=[0.16, 0.23],
+                                   poblacion="ambulatorios con sospecha",
+                                   nota="depende del cribado", ref="pmid:1"),
+        )
+        texto = qmd.capitulo_condicion(self.indice, "HM:6001", condicion, self.citas, [])
+        # `frase()` capitaliza la nota, de ahí la mayúscula.
+        for fragmento in ("19%", "IC95% 16%–23%", "ambulatorios con sospecha",
+                          "Depende del cribado"):
+            self.assertIn(fragmento, texto)
+
+    def test_probabilidad_base_con_clave_desconocida_aborta(self):
+        condicion = dict(
+            self.indice.condiciones_por_archivo["HM:6001"],
+            probabilidad_base=dict(valor=0.19, inventada=1, ref="pmid:1"),
+        )
+        with self.assertRaisesRegex(banco.ErrorGeneracion, "probabilidad_base"):
+            qmd.capitulo_condicion(self.indice, "HM:6001", condicion, self.citas, [])
+
+    def test_tramo_sin_umbral_se_rotula_por_su_poblacion(self):
+        """Seis mediciones del mismo signo en estratos distintos: la fila necesita nombre."""
+        arista = dict(concepto="HM:3001", rol="prueba_sensible", estado_lr="medido",
+                      lr_negativo=dict(valor=0.10, ref="pmid:1"),
+                      tramos=[dict(poblacion="sospecha baja, ensayo sensible",
+                                   lr_negativo=0.10, ref="pmid:1"),
+                              dict(poblacion="sospecha alta, ensayo sensible",
+                                   lr_negativo=0.07, ref="pmid:1")])
+        filas, notas = banco.filas_de_signo(self.indice, arista, "prueba")
+        etiquetas = [f.etiqueta for f in filas]
+        self.assertEqual(etiquetas,
+                         ["Hallazgo (sospecha baja, ensayo sensible)",
+                          "Hallazgo (sospecha alta, ensayo sensible)"])
+        self.assertNotIn("?", " ".join(etiquetas))
+        # y no se repite como nota al pie lo que ya es la etiqueta de la fila
+        self.assertFalse([e for e, _ in notas if e.endswith("— poblacion")
+                          and "sospecha baja" in e])
+
     def test_numeracion_global_con_saltos(self):
         for n in (1, 2, 3):
             self.citas.marca(f"pmid:{n}", "prueba")

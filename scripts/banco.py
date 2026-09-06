@@ -621,17 +621,23 @@ def filas_de_signo(indice: Indice, arista: dict, donde: str):
             # La prosa manda como etiqueta cuando la hay: es la que escribió la
             # fuente. Los límites numéricos sólo la sustituyen si no existe, para
             # que un tramo legible por máquina no salga rotulado «?».
+            # Un tramo puede distinguirse solo por la población en que se midió
+            # —el mismo signo medido en tres estratos de probabilidad previa—.
+            # Sin este eslabón esa fila salía rotulada «?» en el libro.
             umbral = (
                 tramo.get("umbral_condicion")
                 or tramo.get("umbral")
                 or intervalo_texto(tramo, unidad)
+                or tramo.get("poblacion")
                 or "?"
             )
             filas.append(
                 FilaSigno(f"{termino} ({umbral})", rol, " / ".join(piezas), citas)
             )
             for atributo in ("poblacion", "nota"):
-                if tramo.get(atributo):
+                # La población ya puede ser la etiqueta de la fila; repetirla
+                # como nota al pie no añade nada y ensucia el bloque.
+                if tramo.get(atributo) and tramo[atributo] != umbral:
                     notas_tramo.append(
                         (f"{termino} ({umbral}) — {atributo}", frase(tramo[atributo]))
                     )

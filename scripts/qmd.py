@@ -274,6 +274,19 @@ def bloque_probabilidad_base(
     if not isinstance(base, dict):
         return [f"**Probabilidad base.** {md_texto(base)}.", ""]
 
+    # Lista blanca, como en el resto del generador. Sin ella este bloque se
+    # comportaba al revés que todo lo demás: tipografiaba lo que reconocía y
+    # tiraba en silencio el resto. Estaba perdiendo el `ic95` de tres
+    # condiciones y la `nota` de otras tres, y nadie podía notarlo, porque el
+    # libro salía perfectamente válido con una probabilidad base sin intervalo.
+    CLAVES_BASE = {"valor", "rango", "ic95", "poblacion", "nota", "ref"}
+    sobrantes = sorted(set(base) - CLAVES_BASE)
+    if sobrantes:
+        raise ErrorGeneracion(
+            f"{donde}, probabilidad_base: clave(s) {', '.join(sobrantes)} "
+            "sin renderizador en qmd.py"
+        )
+
     partes = []
     if base.get("valor") is not None:
         valor = base["valor"]
@@ -285,9 +298,17 @@ def bloque_probabilidad_base(
         partes.append(md_texto("–".join(str(v) for v in base["rango"])))
     linea = "**Probabilidad base.**"
     if partes:
-        linea += " " + partes[0] + "."
+        linea += " " + partes[0]
+        if base.get("ic95"):
+            a, b = base["ic95"][0], base["ic95"][1]
+            pct = all(isinstance(v, float) and v <= 1 for v in (a, b))
+            rango = f"{a:.0%}–{b:.0%}" if pct else f"{a}–{b}"
+            linea += " " + md_texto(f"(IC95% {rango})")
+        linea += "."
     if base.get("poblacion"):
         linea += " " + md_texto(frase(f"Población: {base['poblacion']}"))
+    if base.get("nota"):
+        linea += " " + md_texto(frase(base["nota"]))
     if base.get("ref"):
         linea += " " + citas.marca(base["ref"], f"{donde} (probabilidad base)")
     return [linea, ""]
