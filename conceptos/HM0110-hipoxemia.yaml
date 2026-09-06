@@ -17,6 +17,7 @@ codigos:
 
 umbral:
   parametro: Saturación de oxígeno
+  unidad: '%'
   direccion: bajo
   corte_inferior: 92
   ref: null   # pendiente: el corte necesita procedencia

@@ -17,6 +17,7 @@ codigos:
 
 umbral:
   parametro: Glucosa
+  unidad: mg/dL
   direccion: alto
   corte_superior: 126
   corte_inferior: 70

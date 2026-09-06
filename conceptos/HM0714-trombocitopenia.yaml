@@ -16,6 +16,7 @@ codigos:
 
 umbral:
   parametro: Plaquetas
+  unidad: plaquetas/µL
   direccion: bajo
   corte_inferior: 150000
   ref: null   # pendiente: el corte necesita procedencia

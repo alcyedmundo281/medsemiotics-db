@@ -15,6 +15,7 @@ codigos: {snomed: null, icd10: null, hpo: null}
 
 umbral:
   parametro: Índice de masa corporal
+  unidad: kg/m²
   direccion: bajo
   corte_inferior: 26
   ref: null   # el corte solo se usa dentro de una regla combinada; ver arriba

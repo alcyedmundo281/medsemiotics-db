@@ -20,6 +20,7 @@ codigos:
 
 umbral:
   parametro: Lipasa
+  unidad: U/L
   direccion: alto
   corte_superior: 60
   multiplicador: 3

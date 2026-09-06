@@ -19,6 +19,7 @@ codigos:
 
 umbral:
   parametro: Temperatura
+  unidad: °C
   direccion: alto
   corte_superior: 38.0
   ref: null   # pendiente: el corte necesita procedencia

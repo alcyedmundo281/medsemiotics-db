@@ -15,6 +15,7 @@ codigos:
 
 umbral:
   parametro: Hematocrito
+  unidad: '%'
   direccion: alto
   corte_superior: 44
   ref: null   # pendiente: el corte necesita procedencia
