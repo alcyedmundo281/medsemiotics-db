@@ -1,0 +1,30 @@
+# Concepto del índice. Acuñado al modelar HM:6036 (neumonía infantil).
+#
+# Es un hallazgo COMPUESTO, y así lo mide la fuente: pmid:28763554 publica un
+# único cociente para «grunting, flaring, and retractions» tomados en conjunto,
+# no uno por cada signo. Desglosarlo en tres conceptos daría tres aristas con el
+# mismo cociente copiado, que es afirmar tres mediciones donde hubo una.
+
+id: 'HM:3145'
+tipo: concepto
+semantica: hallazgo
+termino: Aumento del trabajo respiratorio
+termino_en: Increased work of breathing
+sinonimos:
+  - dificultad respiratoria
+  - distrés respiratorio
+  - quejido, aleteo y tiraje
+padre: 'HM:0400'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+componentes:
+  - quejido espiratorio
+  - aleteo nasal
+  - tiraje o retracciones
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la neumonía infantil.

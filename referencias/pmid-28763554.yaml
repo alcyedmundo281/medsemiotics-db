@@ -1,5 +1,8 @@
 # Registro de referencia del índice. Verificado contra PubMed y CrossRef.
-# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
 
 id: 'pmid:28763554'
 clave_bibtex: shah2017
@@ -25,8 +28,39 @@ verificacion:
   retractado: false
   errata: 'JAMA. 2017 Oct 3;318(13):1284. doi: 10.1001/jama.2017.13624.'
   errata_corrige: Incorrect Data in the Statistical Methods Section.
+  errata_verificada: true
+  errata_pmid: 'pmid:28973229'
+  errata_pmcid: PMC12507477
   crossref: true
   crossref_titulo_coincide: false
   notas:
-    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
-    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'
+    - >-
+      COTEJO CERRADO el 06/09/2026 contra la corrección impresa. La errata SÍ es
+      de este artículo —PubMed la enlazaba bien— y NO TOCA NINGUNA CIFRA QUE ESTE
+      ÍNDICE TRANSCRIBA. Corrige dos cosas: una frase de la sección Statistical
+      Methods, que es un ejemplo ilustrativo con un LR genérico de 2 y otro de
+      0.5 sobre una previa del 20%, y la primera frase de los Key Points, que
+      debía decir que la hipoxia y el aumento del trabajo respiratorio se asocian
+      al diagnóstico. Ni un cociente, ni un intervalo, ni una prevalencia del
+      abstract cambian.
+    - >-
+      Los siete cocientes del abstract quedan verificados e intactos: prevalencia
+      radiográfica 19% (IC95% 11-31) en Norteamérica y 37% (IC95% 26-50) fuera;
+      dolor torácico LR 1.5-5.5; fiebre >37.5 °C LR 1.7-1.8; taquipnea >40/min LR
+      1.5 (IC95% 1.3-1.7); hipoxemia ≤96% LR 2.8 (IC95% 2.1-3.6); aumento del
+      trabajo respiratorio LR+ 2.1 (IC95% 1.6-2.7); oxigenación normal >96% LR
+      0.47 (IC95% 0.32-0.67).
+    - >-
+      EL CABLE CRUZADO ESTÁ EN PMC, no en PubMed, y conviene dejarlo escrito
+      porque estuvo a punto de costar una conclusión falsa. PMC12507477 declara
+      el DOI 10.1001/jama.2017.13624 y sirve bajo él un cuerpo que corrige el
+      «Stroke Oxygen Study» de Roffe, con otro título. La página del editor
+      (jamanetwork, fullarticle/2656145) sirve en ese mismo DOI la corrección
+      real de este artículo, con el título que PubMed indexa. Leer solo PMC lleva
+      a concluir que el enlace era espurio; no lo era.
+    - >-
+      Lección para los cotejos siguientes: PMC puede servir el cuerpo equivocado
+      bajo el DOI correcto. Cuando el cuerpo hallado no mencione el artículo que
+      se está cotejando, eso NO prueba que la errata sea ajena: prueba que hay
+      que ir a la página del editor antes de decidir.
+
