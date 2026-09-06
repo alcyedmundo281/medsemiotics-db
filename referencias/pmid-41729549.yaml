@@ -50,6 +50,14 @@ verificacion:
       (doi 10.1001/jama.2026.0446), que es lo que de verdad desbloqueó la
       fuente. Leer el aviso no bastó: hizo falta el artículo.
     - >-
+      CÓMO ENTRARON ESTAS CIFRAS, porque no son reproducibles desde aquí y hay
+      que decirlo: las pegó el Dr. Torres en la sesión del 06/09/2026 desde la
+      página del editor, abierta con su acceso. NINGUNA de las tres vías
+      automáticas sirve para comprobarlas: PubMed sigue sirviendo el abstract
+      anterior a la corrección, el depósito PMC13320701 del aviso viene vacío, y
+      jamanetwork.com no es alcanzable desde el entorno de trabajo. Quien quiera
+      verificarlas tiene que abrir doi 10.1001/jama.2026.0446 con acceso propio.
+    - >-
       QUÉ CORRIGE, literal: «incorrect values appeared in the abstract, text,
       supplement, and video. Some extracted values were incorrect as well as the
       corresponding summary statistics. In addition, discrepancies reflected
@@ -57,11 +65,11 @@ verificacion:
       primary sources. None of these errors alter the published results or
       conclusions.»
     - >-
-      SEIS DE LOS DOCE COCIENTES CAMBIARON. Cotejado uno por uno el abstract
-      anterior contra el corregido: intactos la ingurgitación yugular (4.1), el
-      edema (2.2), la ausencia de líneas B (0.09) y las dos caras de la VCI
-      (3.9 y 0.22). Cambian: crepitantes IC95% 1.7-4.5 a 0.7-4.5 y Sp 81% a
-      82%; congestión radiográfica 5.9 (2.9-12.0) a 5.8 (2.9-11.5); líneas B
+      SIETE DE LOS DOCE COCIENTES CAMBIARON. Cotejado uno por uno el abstract
+      anterior contra el corregido: intactos solo cinco —la ingurgitación
+      yugular (4.1), el edema (2.2), la ausencia de líneas B (0.09) y las dos
+      caras de la VCI (3.9 y 0.22)—. Cambian: crepitantes IC95% 1.7-4.5 a
+      0.7-4.5 y Sp 81% a 82%; congestión radiográfica 5.9 (2.9-12.0) a 5.8 (2.9-11.5); líneas B
       presentes IC95% 2.6-6.1 a 2.7-6.1; PVY ecográfica 2.8 (2.2-3.5, Sp 71%) a
       2.9 (2.3-3.7, Sp 73%) y su cara negativa 0.26 a 0.27; y el BNP, que es el
       que se lleva casi todo el cambio.

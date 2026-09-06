@@ -437,9 +437,11 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
       estrato de la regla de predicción.
 - [x] sobrecarga de volumen → `HM:6037`, con 8 aristas y **12 cocientes** de
       `pmid:41729549`. La fuente más rica de la serie. Seis conceptos nuevos
-      (`HM:3146`-`HM:3151`), cinco de ellos con umbral y procedencia. Los
+      (`HM:3146`-`HM:3151`), cuatro de ellos con umbral y procedencia. Los
       valores son los del **abstract corregido en la página del editor**, no los
-      del que sirve PubMed.
+      del que sirve PubMed, y **no son reproducibles desde el entorno de
+      trabajo**: los aportó el autor a mano. Declarado en la condición y en la
+      referencia.
 - [x] lesión intracraneal en traumatismo craneal leve → `HM:6038`, con 6 aristas
       y 2 escalas de `pmid:26717031`. **Los seis conceptos de exploración ya
       existían** (`HM:3049`-`HM:3054`), acuñados para esta fuente y huérfanos
@@ -558,9 +560,21 @@ de cada cifra: un cociente puede cambiar sin mover la conclusión de que el BNP
 es la mejor prueba aislada. Aquí se transcriben cifras.
 
 **Y `errata_verificada` no se pone por haber leído.** Se pone cuando la lectura
-autoriza a transcribir. En `pmid:41729549` el cotejo está hecho y el campo sigue
-sin poner a propósito, para que `build.py` convierta en error cualquier intento
-de citarla. El campo dice «esta cifra está cotejada», no «alguien miró».
+autoriza a transcribir. El campo dice «esta cifra está cotejada», no «alguien
+miró».
+
+En `pmid:41729549` estuvo sin poner mientras el cotejo del aviso no autorizaba
+nada, y se puso el mismo día en cuanto llegó el abstract corregido y entraron
+los doce cocientes. Sigue sin poner en `pmid:26241601`, y ahí está el límite del
+campo que conviene tener presente: **es por referencia y no por cifra.** De esa
+fuente solo está desbloqueada una fila —el Trauma Screening Questionnaire, con
+cifras del propio aviso—, mientras el abstract sigue bloqueado; ponerlo abriría
+la puerta a las dos cosas. Se deja sin poner para que **falle cerrado**: quien
+modele esa fila tendrá que ponerlo, y al hacerlo pasará por las notas del
+registro, que es justo lo que se busca.
+
+Darle granularidad por cifra sería el arreglo de verdad, y no se hace aquí: es
+un cambio de esquema que afecta a `build.py` y a los tres consumidores.
 
 #### Pendientes declarados dentro de las condiciones
 
@@ -646,9 +660,9 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 ```
                         hoy      al cerrar oleada 2
 referencias             112             112
-conceptos               281            ~800
-condiciones              36            ~515
-aristas con cociente    128             128
+conceptos               288            ~800
+condiciones              38            ~515
+aristas con cociente    142             142
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

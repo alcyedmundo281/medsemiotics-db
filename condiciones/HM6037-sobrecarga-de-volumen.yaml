@@ -4,14 +4,21 @@
 # estudios y 11 490 adultos. Transcritos del ABSTRACT YA CORREGIDO en la página
 # del editor, NO del que sirve PubMed, que es el anterior a la corrección.
 #
+# NO SON REPRODUCIBLES DESDE EL ENTORNO DE TRABAJO, y hay que decirlo: PubMed
+# sirve el abstract anterior, el depósito PMC del aviso viene vacío y
+# jamanetwork.com no es alcanzable. Las cifras las pegó el Dr. Torres desde la
+# página del editor con su acceso, el 06/09/2026. Para verificarlas hay que
+# abrir doi 10.1001/jama.2026.0446 con acceso propio.
+#
 # ESTUVO BLOQUEADA por su errata, cerrada el 06/09/2026 en dos pasos: la
 # corrección («Incorrect Data in Rational Clinical Examination Article») dice
 # que hubo valores incorrectos «in the abstract, text, supplement, and video»
 # sin enumerar ninguno, así que confirmó el daño sin acotarlo. Lo que desbloqueó
 # la fuente fue el artículo corregido, no el aviso.
 #
-# SEIS DE LOS DOCE COCIENTES CAMBIARON, y el BNP se lleva casi todo el cambio:
-# LR+ de 6.9 a 4.2 y LR− de 0.14 a 0.09. Está documentado en la referencia.
+# SIETE DE LOS DOCE COCIENTES CAMBIARON —solo cinco quedan intactos— y el BNP
+# se lleva casi todo el cambio: LR+ de 6.9 a 4.2 y LR− de 0.14 a 0.09. Está
+# documentado cifra por cifra en la referencia.
 #
 # ALCANCE: pacientes que respiran espontáneamente, NO intubados. Treinta y tres
 # de los cuarenta estudios reclutaron pacientes con disnea.
@@ -242,5 +249,6 @@ procedencia:
   fuente: >-
     Acuñada en la oleada 1.5 a partir de la revisión sistemática RCE
     (pmid:41729549). Valores del abstract corregido en la página del editor, no
-    del que sirve PubMed. Desbloqueada el 06/09/2026 tras cotejar su errata y
-    después leer el artículo corregido.
+    del que sirve PubMed, y aportados a mano porque ninguna vía automática los
+    alcanza. Desbloqueada el 06/09/2026 tras cotejar su errata y después leer el
+    artículo corregido.
