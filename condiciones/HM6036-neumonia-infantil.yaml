@@ -1,0 +1,168 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:28763554 (Shah 2017, JAMA), revisión sistemática de 23
+# estudios de cohorte prospectivos con 13 833 niños. Transcritos del abstract;
+# el texto completo no está en PMC.
+#
+# ESTUVO BLOQUEADA por su errata, cotejada y cerrada el 06/09/2026. La
+# corrección SÍ es de este artículo, pero no toca ninguna cifra: arregla un
+# ejemplo ilustrativo de la sección Statistical Methods y una frase de los Key
+# Points. Los siete cocientes del abstract quedan intactos y verificados.
+#
+# El cotejo casi sale al revés: PMC sirve bajo este DOI el cuerpo de OTRA
+# corrección, la del «Stroke Oxygen Study», con otro título. Hizo falta la
+# página del editor para verlo. Está documentado en las notas de la referencia.
+#
+# ATENCIÓN AL LEER LOS UMBRALES: tres aristas usan cortes que NO son el umbral
+# canónico de su concepto, porque son cortes pediátricos y los del concepto son
+# de adulto. Están declarados dentro de cada cociente, que es donde mandan.
+
+id: 'HM:6036'
+tipo: condicion
+clase: enfermedad
+termino: Neumonía infantil
+termino_en: Childhood pneumonia
+sinonimos:
+  - neumonía pediátrica
+  - neumonía radiográfica del niño
+  - neumonía adquirida en la comunidad en la infancia
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  rango: [0.19, 0.37]
+  poblacion: >-
+    niños con sospecha de neumonía: 19% (IC95% 11-31) en los estudios
+    norteamericanos y 37% (IC95% 26-50) fuera de Norteamérica
+  ref: 'pmid:28763554'
+  nota: >-
+    la previa cambia con el entorno asistencial, no es un rango de incertidumbre
+    sobre un mismo valor; quien puebla un protocolo elige según dónde atiende
+
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:0110'    # Hipoxemia
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.8
+      ic95: [2.1, 3.6]
+      umbral: saturación de oxígeno ≤ 96%
+      ref: 'pmid:28763554'
+    lr_negativo:
+      valor: 0.47
+      ic95: [0.32, 0.67]
+      umbral: saturación de oxígeno > 96%
+      ref: 'pmid:28763554'
+    sensibilidad: 0.64
+    especificidad: 0.77
+    decision: >-
+      junto con el aumento del trabajo respiratorio, es lo que la fuente señala
+      como más asociado a la neumonía, por encima de la taquipnea y de la
+      auscultación
+    advertencia: >-
+      el corte de esta arista es ≤ 96%, no el 92% que el concepto declara como
+      umbral canónico. El de la fuente es un corte pediátrico de hipoxemia
+      moderada, mucho más laxo; aplicar el de adulto aquí perdería el hallazgo.
+
+  - concepto: 'HM:3145'    # Aumento del trabajo respiratorio
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.1
+      ic95: [1.6, 2.7]
+      nota: >-
+        quejido, aleteo y tiraje medidos en conjunto, no por separado
+      ref: 'pmid:28763554'
+    decision: >-
+      el otro signo que la fuente destaca; se mide como bloque y no admite
+      desglose
+
+  - concepto: 'HM:0206'    # Dolor torácico
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      rango: [1.5, 5.5]
+      poblacion: dos estudios que incluían adolescentes
+      ref: 'pmid:28763554'
+    nota: >-
+      sensibilidad 8-14% y especificidad 94-97%: es el único síntoma que la
+      fuente asocia a la neumonía, y lo hace por su especificidad, no por su
+      rendimiento global. Casi nunca está, pero cuando está cuenta.
+    advertencia: >-
+      el rango 1.5-5.5 sale de dos estudios, no de un metaanálisis: es la
+      dispersión entre dos mediciones y no un intervalo de confianza
+
+  - concepto: 'HM:0101'    # Fiebre
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      rango: [1.7, 1.8]
+      umbral: temperatura > 37.5 °C
+      ref: 'pmid:28763554'
+    nota: >-
+      sensibilidad 80-92% y especificidad 47-54%: sensible y muy inespecífica,
+      con un cociente que apenas mueve la probabilidad
+    advertencia: >-
+      el corte de la fuente es 37.5 °C, no los 38.0 °C del umbral canónico del
+      concepto. Con el corte de 38.0 el cociente publicado no aplica.
+
+  - concepto: 'HM:0106'    # Taquipnea
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 1.5
+      ic95: [1.3, 1.7]
+      umbral: frecuencia respiratoria > 40 por minuto
+      ref: 'pmid:28763554'
+    sensibilidad: 0.79
+    especificidad: 0.51
+    decision: >-
+      la conclusión de la fuente es explícita en que la taquipnea pesa MENOS que
+      la hipoxemia y el trabajo respiratorio, al contrario de lo que sugiere su
+      papel en los algoritmos de cribado
+    advertencia: >-
+      el corte es > 40 por minuto, pediátrico, no los 20 del umbral canónico del
+      concepto, que es de adulto
+
+  - concepto: 'HM:0406'    # Crepitantes
+    rol: manifestacion
+    estado_lr: sin_efecto
+    motivo: >-
+      la fuente afirma que los hallazgos auscultatorios no se asociaron al
+      diagnóstico, pero no publica su cociente. Es un resultado medido de
+      ausencia de efecto, no una laguna: por eso sin_efecto y no no_medido.
+
+notas_de_uso:
+  - >-
+    Veintitrés estudios de cohorte prospectivos, 13 833 niños, entre 78 y 2829
+    pacientes por estudio; ocho de los estudios son norteamericanos.
+  - >-
+    El patrón de referencia es el infiltrado en la radiografía de tórax. Todos
+    los cocientes de esta condición se leen contra esa definición de caso, no
+    contra un diagnóstico clínico ni microbiológico.
+  - >-
+    Ningún hallazgo aislado distingue de forma fiable la neumonía de otras causas
+    de enfermedad respiratoria en la infancia. El cociente más alto de la serie
+    es 2.8.
+
+pendiente:
+  - >-
+    La fuente declara que los hallazgos auscultatorios no se asocian al
+    diagnóstico pero no publica el cociente que lo sostiene. Sin él la arista de
+    los crepitantes no puede pasar de sin_efecto a un cociente neutro explícito.
+    Requiere el texto completo, que no está en PMC.
+
+conclusion_de_la_fuente: >-
+  Aunque ningún hallazgo aislado diferencia de forma fiable la neumonía de otras
+  causas de enfermedad respiratoria infantil, la hipoxia y el aumento del trabajo
+  respiratorio son más importantes que la taquipnea y que los hallazgos
+  auscultatorios.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1.5 a partir de la revisión sistemática RCE
+    (pmid:28763554). Valores del abstract, no del texto completo. Desbloqueada el
+    06/09/2026 tras cotejar su errata contra la corrección impresa y comprobar
+    que no altera ningún cociente.

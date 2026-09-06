@@ -407,14 +407,12 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
 - [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
 - [x] apnea obstructiva del sueño → `HM:6018`, con 2 aristas de `pmid:23989984`.
-- [!] **neumonía infantil, `pmid:28763554`**: cotejada el 06/09/2026, y el
-      resultado no es el esperado. La corrección que PubMed le atribuye
-      (`pmid:28973229`) **corrige otro artículo**: el «Stroke Oxygen Study» de
-      Roffe. No menciona neumonía ni ninguno de sus cocientes. El enlace está
-      cruzado aguas arriba y el índice no puede arreglarlo. **Decisión
-      pendiente**, y es editorial: o el enlace es espurio y el artículo se
-      desbloquea, o JAMA imprimió otro aviso en la misma página que nadie ha
-      indexado. Lo segundo solo se descarta mirando la página impresa.
+- [x] neumonía infantil → `HM:6036`, con 6 aristas de `pmid:28763554`.
+      **Desbloqueada el 06/09/2026 al cotejar su errata**: la corrección es suya,
+      pero solo arregla un ejemplo ilustrativo de la sección Statistical Methods
+      y una frase de los Key Points. Ningún cociente cambia. El cotejo casi sale
+      al revés porque PMC sirve bajo ese DOI el cuerpo de otra corrección; hizo
+      falta la página del editor.
 - [x] luxación de cadera en el lactante → `HM:6019`, con 3 aristas de `pmid:38619828`.
 - [x] intubación difícil → `HM:6020`, con 5 aristas de `pmid:30721300`.
 - [x] trastorno por consumo de alcohol → `HM:6021`, con 5 aristas de `pmid:38592385`.
@@ -463,15 +461,18 @@ Las 4 de la serie que quedan en el repositorio:
 |---|---|---|
 | `pmid:26241601` · estrés postraumático | 2015 | errata sin cotejar |
 | `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | errata sin cotejar |
-| `pmid:28763554` · neumonía infantil | 2017 | cotejada: **la errata corrige otro artículo**; enlace cruzado, decisión editorial pendiente |
 | `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
-menudo su propio PMC, aunque el artículo corregido esté de pago. Y **lee el
-cuerpo, no el título**: en `pmid:28763554` la corrección aparece con un título en
-PubMed y otro distinto en PMC, y al leerla resultó corregir un artículo
-completamente diferente. Una errata mal enlazada bloquea un artículo sano, que
-es un fallo tan real como transcribir una cifra corregida.
+menudo su propio PMC, aunque el artículo corregido esté de pago.
+
+**Y termina en la página del editor.** El cotejo de `pmid:28763554` casi sale al
+revés: PMC sirve bajo el DOI correcto el cuerpo de OTRA corrección, con otro
+título, que no menciona el artículo cotejado. Leer solo PMC llevaba a concluir
+que la errata era ajena y el enlace espurio. No lo era: la corrección real
+existía y estaba en jamanetwork. **Que el cuerpo hallado no mencione tu artículo
+no prueba que la errata sea ajena; prueba que estás mirando el sitio
+equivocado.**
 
 Cotejar la errata ya no es un paso previo opcional: es **la única puerta que
 queda abierta**. En cuanto una de las cuatro sostenga un cociente, `build.py` lo
@@ -563,9 +564,9 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 ```
                         hoy      al cerrar oleada 2
 referencias             112             112
-conceptos               280            ~800
-condiciones              35            ~515
-aristas con cociente    123             123
+conceptos               281            ~800
+condiciones              36            ~515
+aristas con cociente    128             128
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres
