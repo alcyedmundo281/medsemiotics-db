@@ -402,7 +402,7 @@ Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
 serie *Rational Clinical Examination* con abstract en PubMed son una veta
 acotada y verificable, y convenía agotarla mientras estaba localizada.
 
-- [x] 31 condiciones con **122 aristas medidas** (143 valores de LR) sobre 30 fuentes de la serie
+- [x] 31 condiciones con **122 aristas medidas** (143 valores de LR) sobre 29 fuentes de la serie
 - [x] osteoartritis de cadera → `HM:6012`, con 8 aristas de `pmid:31846019`
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
 - [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
@@ -424,11 +424,58 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
 - [x] trastorno de pánico → `HM:6032`, con 1 arista de `pmid:25058220`.
 - [x] melanoma cutáneo → `HM:6033`, con 3 aristas de `pmid:9496989`.
 - [x] cáncer de mama → `HM:6034`, con 2 aristas de `pmid:10517431`.
-- [ ] resto de la serie sin revisar: síndrome de abstinencia alcohólica grave,
-      disfunción tiroidea y el grueso de la serie anterior a 2013.
-- [ ] pendientes de **texto completo**: ascitis y esplenomegalia (sin abstract),
-      las tres reglas de predicción de la faringitis, y el extremo del rango
-      7.1–250 del colesterol pleural
+#### Qué queda de verdad (revisado el 06/09/2026 contra `referencias/`)
+
+**La veta está casi agotada.** De las 112 referencias, 32 sostienen algún dato y
+80 no; pero de esas 80 **solo 5 son de la serie**. Las otras 75 son ecografía y
+cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
+J*, *Radiographics*—: el fondo de biosemiotics que entró con `refs.bib`, y por
+tanto material de la **oleada 1**, no de ésta.
+
+Conviene no confundir dos cosas que esta sección mezclaba:
+
+- **En el repositorio y sin modelar** — las 5 de abajo. El trabajo es leer el
+  abstract y escribir las aristas.
+- **Ni siquiera obtenidas** — abstinencia alcohólica grave, disfunción tiroidea,
+  ascitis, esplenomegalia. **No están en `referencias/`**: hay que traerlas por
+  PMID y verificarlas antes de que exista nada que modelar. Es otro trabajo y
+  otra fase.
+
+Las 5 de la serie que quedan en el repositorio:
+
+| Referencia | Año | Qué la bloquea |
+|---|---|---|
+| `pmid:16403932` · trombosis venosa profunda | 2006 | **Nada. Lista para modelar.** |
+| `pmid:26241601` · estrés postraumático | 2015 | errata sin cotejar |
+| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | errata sin cotejar |
+| `pmid:28763554` · neumonía infantil | 2017 | errata, y texto completo bloqueado |
+| `pmid:41729549` · sobrecarga de volumen | 2026 | errata sin cotejar |
+
+Cotejar la errata no es opcional ni se deja para después: en cuanto una de esas
+cuatro sostenga un cociente, `build.py` lo convierte en **error** y no en aviso.
+La corrección puede haber cambiado justo la cifra que se cita.
+
+#### Pendientes declarados dentro de las condiciones
+
+No viven en este mapa sino en la clave `pendiente` de cada registro, que es donde
+se ven al trabajar. Hoy son nueve. La mayoría espera **texto completo**: las tres
+reglas de predicción de la faringitis (`HM:6009`), la resistencia a la rotación
+externa del manguito (`HM:6013`), los biomarcadores del síncope (`HM:6010`).
+
+Dos son decisiones de esquema y no de literatura:
+
+- `HM:6018` — la fuente publica «ronquido leve **y** IMC < 26» con LR− 0.07. Es
+  un cociente de dos hallazgos combinados, y el esquema no tiene sitio para eso:
+  no es una arista ni una `regla`.
+- `HM:6015` — los criterios de apoyo de MDS piden `consenso_con_afirmacion` y no
+  `consenso_de_lista`, y esa distinción hay que justificarla por escrito.
+
+Y uno que **ya tiene solución**: `HM:6016` deja fuera la hCG diciendo que entrará
+«probablemente como tramos y no como cifra suelta». Ese mecanismo existe desde
+que se acuñó `graduacion`.
+
+- [ ] pendiente aparte, y sigue abierto: el extremo del rango 7.1–250 del
+      colesterol pleural (`HM:3008`), que exige el texto completo
 
 ### OLEADA 1 — lo que ya está escrito y revisado
 Migrar lo que biosemiotics y holonmed tienen validado.
