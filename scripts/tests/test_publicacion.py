@@ -227,5 +227,31 @@ class RasterizadorTest(unittest.TestCase):
             self.assertIsNone(libro.exigir_rasterizador(informe))
 
 
+class ResumenDerivadosTest(unittest.TestCase):
+    """El resumen nombra lo que se comprobó, ni más ni menos.
+
+    Callaba el PDF aunque `validar_pdf` lo hubiera recorrido entero: quien leía
+    la salida concluía que no se había verificado.
+    """
+
+    def test_nombra_el_pdf_que_acaba_de_verificar(self):
+        self.assertEqual(
+            verificar.resumen_derivados(True, True, True),
+            "✓ Derivados coherentes: libro.tex, libro aplanado, EPUB y PDF")
+
+    def test_sin_epub_no_lo_nombra(self):
+        self.assertEqual(
+            verificar.resumen_derivados(True, False, False),
+            "✓ Derivados coherentes: libro.tex y libro aplanado")
+
+    def test_solo_pdf_tambien_se_anuncia(self):
+        # `--pdf` sin `--verificar-derivados` comprobaba en silencio
+        self.assertEqual(verificar.resumen_derivados(False, False, True),
+                         "✓ Derivados coherentes: PDF")
+
+    def test_sin_comprobar_nada_no_hay_linea(self):
+        self.assertEqual(verificar.resumen_derivados(False, False, False), "")
+
+
 if __name__ == "__main__":
     unittest.main()

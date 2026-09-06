@@ -296,6 +296,32 @@ def buscar_condicion(indice: banco.Indice, referencia: str):
     return None, None
 
 
+def resumen_derivados(derivados: bool, epub: bool, pdf: bool) -> str:
+    """Nombra las salidas comprobadas, y sólo ésas.
+
+    El resumen callaba el PDF aunque `validar_pdf` lo hubiera recorrido entero
+    —cada código «HM:» en su texto, cada URL como anotación clicable—, de modo
+    que quien leía la salida concluía que no se había comprobado. Una
+    comprobación que corre en silencio se acaba dando por perdida, que es el
+    mismo fallo que tuvo el EPUB cuando dejó de tipografiar `nucleo` y nadie lo
+    notó.
+    """
+    comprobados = []
+    if derivados or epub:
+        comprobados += ["libro.tex", "libro aplanado"]
+        if epub:
+            comprobados.append("EPUB")
+    if pdf:
+        comprobados.append("PDF")
+    if not comprobados:
+        return ""
+    if len(comprobados) == 1:
+        cuales = comprobados[0]
+    else:
+        cuales = ", ".join(comprobados[:-1]) + " y " + comprobados[-1]
+    return f"✓ Derivados coherentes: {cuales}"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--raiz", type=Path, default=Path(__file__).resolve().parents[1])
@@ -365,9 +391,11 @@ def main() -> int:
         f"✓ Publicación coherente: {publicadas} de {total} condiciones con URL, "
         f"{len(figuras)} figuras con atribución completa"
     )
-    if args.verificar_derivados or args.epub:
-        print("✓ Derivados coherentes: libro.tex, libro aplanado"
-              + (" y EPUB" if args.epub else ""))
+    resumen = resumen_derivados(
+        bool(args.verificar_derivados), args.epub is not None, args.pdf is not None
+    )
+    if resumen:
+        print(resumen)
     return 0
 
 
