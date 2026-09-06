@@ -11,18 +11,18 @@ publicación; una errata no. El artículo sigue vigente pero alguna cifra pudo
 cambiar, y para un índice cuyo valor son las cifras eso importa igual. Si el
 registro cita una referencia con errata, build.py falla.
 """
-import json, sys, io, re, time, pathlib, urllib.request, urllib.parse
+import json, sys, io, re, time, textwrap, pathlib, urllib.request, urllib.parse
+
+try:
+    import yaml
+except ImportError:
+    sys.exit('Falta PyYAML:  pip install pyyaml')
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 EUTILS = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/'
 UA = 'medsemiotics-index/0.1 (mailto:alcy.torres@powersemiotics.com)'
-
-if len(sys.argv) < 3:
-    sys.exit(__doc__)
-PMID, CLAVE = sys.argv[1], sys.argv[2]
-
 
 def esummary(pmid):
     u = EUTILS + 'esummary.fcgi?' + urllib.parse.urlencode(
@@ -48,119 +48,191 @@ def crossref(doi):
         return json.load(r)['message']
 
 
+# ── lo que este script NO debe pisar ─────────────────────────────────────────
+# El registro se reescribe entero en cada corrida, así que sin esto una
+# regeneración borraría en silencio el trabajo de cotejar una errata:
+# `errata_verificada`, el rastro de la corrección y las notas de quien fue a
+# mirarla. Y el borrado sería invisible: el registro volvería a estar bloqueado
+# sin que nadie supiera que alguna vez se desbloqueó, y build.py fallaría
+# señalando un cotejo que sí se hizo. Es exactamente el fallo silencioso del que
+# se defiende el resto del repositorio, en el único script capaz de causarlo.
+CLAVES_GENERADAS = {'pubmed', 'fecha', 'retractado', 'errata', 'errata_corrige',
+                    'crossref', 'crossref_titulo_coincide', 'notas'}
+
+# Las notas que emite este script. Todo lo demás lo escribió una persona.
+NOTAS_GENERADAS = (
+    'Tiene errata publicada: comprobar las cifras contra la corrección',
+    'La errata afecta a DATOS: no transcribir cifras sin cotejarlas',
+    'CrossRef registra un título distinto; PubMed es la autoridad',
+)
+# Estas dos se generan con texto variable, así que se reconocen por su inicio.
+PREFIJOS_GENERADOS = ('sin DOI en PubMed', 'el DOI no resuelve en CrossRef')
+
+
+def conservadas(destino):
+    """Claves y notas de `verificacion` que puso una persona, no este script."""
+    if not destino.exists():
+        return {}, []
+    previo = yaml.safe_load(destino.read_text(encoding='utf8')) or {}
+    previo = previo.get('verificacion') or {}
+    claves = {k: v for k, v in previo.items() if k not in CLAVES_GENERADAS}
+    notas = [n for n in (previo.get('notas') or [])
+             if ' '.join(str(n).split()) not in NOTAS_GENERADAS
+             and not str(n).lstrip().startswith(PREFIJOS_GENERADOS)]
+    return claves, notas
+
+
+def linea_yaml(clave, valor, sangria='  '):
+    """Un escalar de vuelta a YAML, respetando el booleano en minúscula."""
+    if isinstance(valor, bool):
+        return f'{sangria}{clave}: {"true" if valor else "false"}'
+    return f'{sangria}{clave}: {esc(valor)}'
+
+
+def bloque_nota(texto, ancho=74):
+    """Una nota larga como escalar plegado, para que el archivo siga legible."""
+    lineas = textwrap.wrap(' '.join(str(texto).split()), ancho)
+    return ['    - >-'] + [f'      {l}' for l in lineas]
+
+
 def esc(v):
     s = str(v)
     return "'" + s.replace("'", "''") + "'" if re.search(r'[:#\[\]{},&*?|<>=!%@`"\']', s) else s
 
 
-d = esummary(PMID)
-bruto = efetch(PMID)
-doi = next((x['value'] for x in d.get('articleids', []) if x['idtype'] == 'doi'), '')
-autores = [a['name'] for a in d.get('authors', []) if a.get('authtype') == 'Author']
-retractado = any('retract' in t.lower() for t in (d.get('pubtype') or [])) \
-    or bool(re.search(r'Retraction in', bruto, re.I))
-# La cita de la errata acaba en su DOI; sin ese corte el patrón se lleva el
-# comienzo del abstract.
-m_err = re.search(r'Erratum in[:\s]+(.*?doi:\s*\S+|.{0,90}?\.)', bruto, re.S)
-errata = ' '.join(m_err.group(1).split()) if m_err else None
+def main():
+    if len(sys.argv) < 3:
+        sys.exit(__doc__)
+    PMID, CLAVE = sys.argv[1], sys.argv[2]
+
+    d = esummary(PMID)
+    bruto = efetch(PMID)
+    doi = next((x['value'] for x in d.get('articleids', []) if x['idtype'] == 'doi'), '')
+    autores = [a['name'] for a in d.get('authors', []) if a.get('authtype') == 'Author']
+    retractado = any('retract' in t.lower() for t in (d.get('pubtype') or [])) \
+        or bool(re.search(r'Retraction in', bruto, re.I))
+    # La cita de la errata acaba en su DOI; sin ese corte el patrón se lleva el
+    # comienzo del abstract.
+    m_err = re.search(r'Erratum in[:\s]+(.*?doi:\s*\S+|.{0,90}?\.)', bruto, re.S)
+    errata = ' '.join(m_err.group(1).split()) if m_err else None
 
 
-def titulo_errata(cita):
-    """Qué corrige la errata, no solo dónde está.
+    def titulo_errata(cita):
+        """Qué corrige la errata, no solo dónde está.
 
-    La diferencia importa: «Data Error» o «Value Errors in Tables and Abstract»
-    invalidan las cifras; una corrección de afiliación de autor no. Sin el
-    título habría que abrir cada una a mano para saber si descartar el artículo.
-    """
-    m = re.search(r'doi:\s*(\S+?)\.?$', cita or '')
-    if not m:
-        return None
-    try:
-        u = EUTILS + 'esearch.fcgi?' + urllib.parse.urlencode(
-            {'db': 'pubmed', 'term': m.group(1) + '[DOI]', 'retmode': 'json'})
-        with urllib.request.urlopen(u, timeout=45) as r:
-            ids = json.load(r)['esearchresult']['idlist']
-        if not ids:
+        La diferencia importa: «Data Error» o «Value Errors in Tables and Abstract»
+        invalidan las cifras; una corrección de afiliación de autor no. Sin el
+        título habría que abrir cada una a mano para saber si descartar el artículo.
+        """
+        m = re.search(r'doi:\s*(\S+?)\.?$', cita or '')
+        if not m:
             return None
-        t = efetch(ids[0])
-        partes = [p.strip() for p in t.split('\n\n') if p.strip()]
-        return ' '.join(partes[1].split())[:90] if len(partes) > 1 else None
-    except Exception:
-        return None
+        try:
+            u = EUTILS + 'esearch.fcgi?' + urllib.parse.urlencode(
+                {'db': 'pubmed', 'term': m.group(1) + '[DOI]', 'retmode': 'json'})
+            with urllib.request.urlopen(u, timeout=45) as r:
+                ids = json.load(r)['esearchresult']['idlist']
+            if not ids:
+                return None
+            t = efetch(ids[0])
+            partes = [p.strip() for p in t.split('\n\n') if p.strip()]
+            return ' '.join(partes[1].split())[:90] if len(partes) > 1 else None
+        except Exception:
+            return None
 
 
-err_titulo = titulo_errata(errata) if errata else None
+    err_titulo = titulo_errata(errata) if errata else None
 
-print(f'PubMed  {d["title"][:74]}')
-print(f'  {d.get("source")}  {d.get("pubdate")}  doi {doi}')
-print(f'  retractado: {retractado}   errata: {errata or "no"}')
-if err_titulo:
-    print(f'  la errata corrige: {err_titulo}')
-
-# Sin DOI no hay nada que resolver. Consultar CrossRef con una cadena vacía
-# devuelve algo y el registro acababa diciendo «crossref: true» sobre un DOI
-# que no existe: una verificación falsa es peor que ninguna.
-cr_ok, igual, cr_nota = False, False, None
-if not doi:
-    cr_nota = 'sin DOI en PubMed: la verificación CrossRef no aplica'
-    print(f'  CrossRef: omitido ({cr_nota})')
-try:
-    if not doi:
-        raise ValueError('sin doi')
-    m = crossref(doi)
-    cr_ok = True
-    t_cr = (m.get('title') or [''])[0]
-    norm = lambda s: re.sub(r'[^a-z0-9]', '', (s or '').lower())
-    igual = norm(t_cr)[:60] == norm(d['title'])[:60]
-    print(f'  CrossRef resuelve: sí   título coincide: {igual}')
-except ValueError:
-    pass
-except Exception as e:
-    cr_nota = f'el DOI no resuelve en CrossRef ({str(e)[:40]}); PubMed sí lo registra'
-    print(f'  CrossRef: {str(e)[:60]}')
-
-L = ['# Registro de referencia del índice. Verificado contra PubMed y CrossRef.',
-     '# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.',
-     '',
-     f'id: {esc("pmid:" + PMID)}',
-     f'clave_bibtex: {esc(CLAVE)}',
-     'tipo: articulo',
-     f'titulo: {esc(d["title"].rstrip("."))}',
-     'autores:']
-L += [f'  - {esc(a)}' for a in autores] or ['  []']
-L += [f'publicacion: {esc(d.get("source", ""))}',
-      f'anio: {d.get("pubdate", "")[:4]}',
-      f'volumen: {esc(d.get("volume", ""))}',
-      f'paginas: {esc(d.get("pages", ""))}',
-      '',
-      'identificadores:',
-      f'  pmid: {PMID}',
-      f'  doi: {esc(doi) if doi else "null"}',
-      '',
-      'verificacion:',
-      '  pubmed: true',
-      f'  fecha: {esc(time.strftime("%Y-%m-%d"))}',
-      f'  retractado: {"true" if retractado else "false"}']
-if errata:
-    L.append(f'  errata: {esc(errata)}')
+    print(f'PubMed  {d["title"][:74]}')
+    print(f'  {d.get("source")}  {d.get("pubdate")}  doi {doi}')
+    print(f'  retractado: {retractado}   errata: {errata or "no"}')
     if err_titulo:
-        L.append(f'  errata_corrige: {esc(err_titulo)}')
-L += [f'  crossref: {"true" if cr_ok else "false"}',
-      f'  crossref_titulo_coincide: {"true" if igual else "false"}']
-if errata:
-    grave = err_titulo and re.search(r'data|value|error|incorrect', err_titulo, re.I)
-    L += ['  notas:',
-          "    - 'Tiene errata publicada: comprobar las cifras contra la corrección'"]
-    if grave:
-        L.append("    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'")
-elif cr_nota:
-    L += ['  notas:', f'    - {esc(cr_nota)}']
-elif not igual and cr_ok:
-    L += ['  notas:',
-          "    - 'CrossRef registra un título distinto; PubMed es la autoridad'"]
+        print(f'  la errata corrige: {err_titulo}')
 
-destino = RAIZ / 'referencias' / f'pmid-{PMID}.yaml'
-destino.write_text('\n'.join(L) + '\n', encoding='utf8')
-print(f'\nescrito: referencias/pmid-{PMID}.yaml')
-if errata:
-    print('  ⚠ tiene errata: verifica la cifra antes de citarla en una arista')
+    # Sin DOI no hay nada que resolver. Consultar CrossRef con una cadena vacía
+    # devuelve algo y el registro acababa diciendo «crossref: true» sobre un DOI
+    # que no existe: una verificación falsa es peor que ninguna.
+    cr_ok, igual, cr_nota = False, False, None
+    if not doi:
+        cr_nota = 'sin DOI en PubMed: la verificación CrossRef no aplica'
+        print(f'  CrossRef: omitido ({cr_nota})')
+    try:
+        if not doi:
+            raise ValueError('sin doi')
+        m = crossref(doi)
+        cr_ok = True
+        t_cr = (m.get('title') or [''])[0]
+        norm = lambda s: re.sub(r'[^a-z0-9]', '', (s or '').lower())
+        igual = norm(t_cr)[:60] == norm(d['title'])[:60]
+        print(f'  CrossRef resuelve: sí   título coincide: {igual}')
+    except ValueError:
+        pass
+    except Exception as e:
+        cr_nota = f'el DOI no resuelve en CrossRef ({str(e)[:40]}); PubMed sí lo registra'
+        print(f'  CrossRef: {str(e)[:60]}')
+
+    L = ['# Registro de referencia del índice. Verificado contra PubMed y CrossRef.',
+         '# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se',
+         '# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano',
+         '# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración',
+         '# lo conserva en vez de pisarlo.',
+         '',
+         f'id: {esc("pmid:" + PMID)}',
+         f'clave_bibtex: {esc(CLAVE)}',
+         'tipo: articulo',
+         f'titulo: {esc(d["title"].rstrip("."))}',
+         'autores:']
+    L += [f'  - {esc(a)}' for a in autores] or ['  []']
+    L += [f'publicacion: {esc(d.get("source", ""))}',
+          f'anio: {d.get("pubdate", "")[:4]}',
+          f'volumen: {esc(d.get("volume", ""))}',
+          f'paginas: {esc(d.get("pages", ""))}',
+          '',
+          'identificadores:',
+          f'  pmid: {PMID}',
+          f'  doi: {esc(doi) if doi else "null"}',
+          '',
+          'verificacion:',
+          '  pubmed: true',
+          f'  fecha: {esc(time.strftime("%Y-%m-%d"))}',
+          f'  retractado: {"true" if retractado else "false"}']
+    if errata:
+        L.append(f'  errata: {esc(errata)}')
+        if err_titulo:
+            L.append(f'  errata_corrige: {esc(err_titulo)}')
+    L += [f'  crossref: {"true" if cr_ok else "false"}',
+          f'  crossref_titulo_coincide: {"true" if igual else "false"}']
+
+    destino = RAIZ / 'referencias' / f'pmid-{PMID}.yaml'
+    extra_claves, extra_notas = conservadas(destino)
+    for k, v in extra_claves.items():
+        L.append(linea_yaml(k, v))
+    if errata:
+        grave = err_titulo and re.search(r'data|value|error|incorrect', err_titulo, re.I)
+        L += ['  notas:',
+              "    - 'Tiene errata publicada: comprobar las cifras contra la corrección'"]
+        if grave:
+            L.append("    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'")
+    elif cr_nota:
+        L += ['  notas:', f'    - {esc(cr_nota)}']
+    elif not igual and cr_ok:
+        L += ['  notas:',
+              "    - 'CrossRef registra un título distinto; PubMed es la autoridad'"]
+
+    if extra_notas:
+        if '  notas:' not in L:
+            L.append('  notas:')
+        for nota in extra_notas:
+            L += bloque_nota(nota)
+        print(f'  conservadas {len(extra_notas)} notas añadidas a mano')
+    if extra_claves:
+        print(f'  conservadas: {", ".join(extra_claves)}')
+
+    destino.write_text('\n'.join(L) + '\n', encoding='utf8')
+    print(f'\nescrito: referencias/pmid-{PMID}.yaml')
+    if errata:
+        print('  ⚠ tiene errata: verifica la cifra antes de citarla en una arista')
+
+
+if __name__ == '__main__':
+    main()
