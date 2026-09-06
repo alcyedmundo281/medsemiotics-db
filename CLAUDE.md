@@ -28,6 +28,7 @@ artículo?* Lo primero es estructura; lo segundo es didáctica.
 medsemiotics-db/
 ├── CLAUDE.md                        ← este archivo
 ├── mapa-maestro-medsemiotics-db.md  ← QUÉ poblar y en qué orden (léelo siempre)
+├── docs/                            ← respuestas y contratos con los consumidores
 ├── conceptos/*.yaml                 ← signos y hallazgos
 ├── condiciones/*.yaml               ← síndromes y enfermedades, con sus LR y URLs
 ├── referencias/*.yaml               ← artículos con PMID y DOI
@@ -221,6 +222,12 @@ cambios como pull request que revisa y acepta un humano.
 Esa asimetría preserva su promesa de procesamiento local y su auditabilidad. Es
 lo primero que alguien optimizaría por descuido —«total, es solo un `fetch`»— y
 rompería las dos cosas a la vez. **No lo hagas.**
+
+Lo que se le ha respondido a holonmed sobre el formato vive en `docs/`, fechado y
+**no normativo**: son registros de una conversación, no una segunda
+especificación. Lo que obliga es el mapa maestro y lo que valida es `build.py`.
+Si un documento de `docs/` discrepa del índice, el que se corrige es el
+documento.
 
 ## Flujo para añadir una condición con sus aristas
 
