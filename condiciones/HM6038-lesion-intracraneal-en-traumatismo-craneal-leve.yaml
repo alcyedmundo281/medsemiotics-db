@@ -1,0 +1,226 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:26717031 (Easter 2015, JAMA), revisión sistemática con
+# 23 079 pacientes. Transcritos del abstract, salvo uno que viene de la
+# CORRECCIÓN publicada y no está en el abstract: el Glasgow menor de 14 a las
+# dos horas.
+#
+# ESTUVO BLOQUEADA por su errata, cotejada y cerrada el 06/09/2026. La
+# corrección («Data Error», doi 10.1001/jama.2017.5136) ACOTA su alcance a una
+# fila de la Tabla 1 y a una frase de los Resultados, así que el abstract no
+# está afectado y sus cifras quedan intactas.
+#
+# LO QUE CORRIGIÓ ES EJEMPLAR: donde decía «Glasgow menor de 15 a las dos horas
+# (LR 1.6-7.6)» debe leerse «menor de 14 a las dos horas (LR 3.4; IC95%
+# 1.4-8.4)». Cambia el umbral Y el cociente a la vez. Con el corte viejo el
+# número no queda impreciso: queda siendo el de otro hallazgo.
+#
+# LOS SEIS CONCEPTOS DE EXPLORACIÓN YA EXISTÍAN, acuñados para esta fuente y
+# huérfanos desde entonces. La errata era lo único que faltaba.
+
+id: 'HM:6038'
+tipo: condicion
+clase: enfermedad
+termino: Lesión intracraneal en el traumatismo craneal leve del adulto
+termino_en: Intracranial injury after minor head trauma in adults
+sinonimos:
+  - lesión intracraneal grave tras traumatismo craneal leve
+  - hemorragia intracraneal postraumática del adulto
+  - indicación de neuroimagen en el traumatismo craneal leve
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base:
+  valor: 0.071
+  ic95: [0.068, 0.074]
+  poblacion: >-
+    adultos atendidos por traumatismo craneal leve, 23 079 pacientes
+  ref: 'pmid:26717031'
+  nota: >-
+    es la prevalencia de lesión intracraneal GRAVE, que es el desenlace contra
+    el que se leen todos los cocientes de esta condición. La fuente publica
+    además un desenlace más estrecho —lesión mortal o que requiere
+    neurocirugía— con prevalencia del 0.9% (IC95% 0.78-1.0), y esos cocientes
+    NO son los de aquí
+
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3049'    # Signos de fractura de cráneo
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 16
+      ic95: [3.1, 59]
+      ref: 'pmid:26717031'
+    especificidad: 0.99
+    decision: >-
+      con diferencia el cociente más alto de la serie: encontrarlos cambia la
+      decisión por sí solo
+    advertencia: >-
+      el intervalo va de 3.1 a 59, casi veinte veces de ancho. El hallazgo es
+      raro y la estimación muy imprecisa: lo que sostiene la decisión es el
+      extremo inferior, no el valor puntual.
+
+  - concepto: 'HM:3050'    # Puntuación de Glasgow de 13
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 4.9
+      ic95: [2.8, 8.5]
+      ref: 'pmid:26717031'
+    especificidad: 0.97
+    advertencia: >-
+      es la puntuación EXACTA de 13, no «13 o menos». El Glasgow por debajo de
+      14 a las dos horas es otra arista (HM:3152) con otro cociente.
+
+  - concepto: 'HM:3052'    # Vómitos en dos o más episodios
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.6
+      ic95: [3.1, 4.1]
+      ref: 'pmid:26717031'
+    especificidad: 0.92
+    decision: >-
+      el cociente más preciso de la serie —intervalo de 3.1 a 4.1— y el más
+      fácil de recoger en la anamnesis
+    advertencia: >-
+      lo que discrimina son DOS o más episodios. El vómito aislado no lleva
+      este número.
+
+  - concepto: 'HM:3152'    # Glasgow menor de 14 a las dos horas
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.4
+      ic95: [1.4, 8.4]
+      ref: 'pmid:26717031'
+    decision: >-
+      un Glasgow que sigue por debajo de 14 dos horas después pesa por sí mismo,
+      con independencia de la puntuación de llegada
+    nota: >-
+      ESTE COCIENTE NO ESTÁ EN EL ABSTRACT: lo aporta la corrección publicada.
+      El artículo original decía «menor de 15 a las dos horas, LR 1.6-7.6».
+    advertencia: >-
+      el corte es 14, no 15. Con el corte de 15 ni este cociente ni el del
+      artículo original aplican: la corrección cambió los dos a la vez.
+
+  - concepto: 'HM:3051'    # Descenso de la puntuación de Glasgow
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      rango: [3.4, 16]
+      poblacion: entre los estudios que lo midieron
+      ref: 'pmid:26717031'
+    nota: >-
+      especificidad del 91% al 99% según el estudio
+    advertencia: >-
+      3.4 a 16 es la DISPERSIÓN ENTRE ESTUDIOS, no un intervalo de confianza. El
+      rango es tan ancho que no se puede tratar como una estimación única.
+
+  - concepto: 'HM:3053'    # Peatón atropellado por vehículo
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      rango: [3.0, 4.3]
+      poblacion: entre los estudios que lo midieron
+      ref: 'pmid:26717031'
+    nota: >-
+      especificidad del 96% al 97% según el estudio
+    advertencia: >-
+      es un mecanismo lesional, no un hallazgo de exploración: se obtiene de la
+      anamnesis y está disponible antes de tocar al paciente
+    decision: >-
+      3.0 a 4.3 es la dispersión entre estudios, no un intervalo de confianza
+
+# Las dos reglas de decisión se leen por su NEGATIVO: lo que la fuente publica
+# es el cociente de que la regla no se cumpla, que es lo que autoriza a no pedir
+# la tomografía. No tienen concepto HM: al que anclarse, así que cuelgan de
+# `escalas` y no de `signos`.
+escalas:
+  - nombre: Canadian CT Head Rule
+    componentes_declarados: >-
+      el abstract no los enumera; el Glasgow menor de 14 a las dos horas es uno
+      de ellos, y la corrección de este artículo cambió justo ese corte
+    tramos:
+      - rango: regla negativa (ningún criterio presente)
+        lr_negativo: 0.04
+        ic95_negativo: [0, 0.65]
+        ref: 'pmid:26717031'
+        nota: >-
+          el límite inferior del intervalo es 0, como lo publica la fuente
+    decision: >-
+      es el cociente negativo más fuerte de la condición: una regla canadiense
+      negativa hace la lesión intracraneal muy improbable
+
+  - nombre: New Orleans Criteria
+    componentes_declarados: >-
+      el abstract no los enumera; la amnesia de más de 30 minutos es uno de
+      ellos
+    tramos:
+      - rango: criterios ausentes
+        lr_negativo: 0.08
+        ic95_negativo: [0.01, 0.84]
+        ref: 'pmid:26717031'
+    decision: >-
+      descarta con fuerza, aunque algo menos que la regla canadiense y con un
+      intervalo que llega hasta 0.84
+
+no_emitidos:
+  - concepto: 'HM:3054'    # Amnesia de más de 30 minutos
+    motivo: >-
+      El abstract no publica su cociente aislado: la trata como COMPONENTE de
+      los New Orleans Criteria, no como hallazgo independiente. Emitirla como
+      no_medido afirmaría que esta revisión no la cuantificó, y desde el
+      abstract no se puede saber; el texto completo probablemente sí la mide.
+    nota: >-
+      Su efecto está dentro del cociente de la escala, no fuera de él.
+
+notas_de_uso:
+  - >-
+    Todos los cocientes se leen contra la LESIÓN INTRACRANEAL GRAVE, prevalencia
+    7.1%. El desenlace más estrecho de la fuente —lesión mortal o quirúrgica,
+    0.9%— tiene sus propias cifras y no son éstas.
+  - >-
+    La serie separa lo que se pregunta de lo que se explora. El mecanismo
+    lesional (atropello, LR 3.0-4.3) y los vómitos (LR 3.6) están disponibles en
+    la anamnesis, antes de tocar al paciente, y rinden tanto como buena parte de
+    la exploración.
+  - >-
+    Dos de los seis cocientes positivos son RANGOS entre estudios y no
+    intervalos de confianza: el descenso del Glasgow y el atropello. No se
+    pueden combinar con los demás como si fueran estimaciones equivalentes.
+  - >-
+    El valor de esta condición está en sus cocientes NEGATIVOS. Con una
+    prevalencia previa del 7.1%, una regla canadiense negativa (LR 0.04) deja
+    una probabilidad posterior por debajo del 0.4%, que es lo que sostiene la
+    decisión de no pedir la tomografía.
+
+pendiente:
+  - >-
+    Los componentes de la Canadian CT Head Rule y de los New Orleans Criteria no
+    están en el abstract, así que los tramos de las escalas no pueden llevar
+    límites ni desglose. Requiere el texto completo.
+  - >-
+    La amnesia de más de 30 minutos (HM:3054) existe como concepto y no tiene
+    arista: el abstract no publica su cociente aislado. Está declarado en
+    `no_emitidos`.
+  - >-
+    Las especificidades del descenso del Glasgow (91-99%) y del atropello
+    (96-97%) son rangos entre estudios y no entran como `especificidad`, que es
+    un valor único. Quedan anotadas en la nota de cada arista.
+
+conclusion_de_la_fuente: >-
+  En el adulto con traumatismo craneal leve, la probabilidad de lesión
+  intracraneal grave es del 7.1%. Los signos de fractura de cráneo, una
+  puntuación de Glasgow de 13, el descenso del Glasgow y dos o más episodios de
+  vómito aumentan esa probabilidad. Una Canadian CT Head Rule negativa o unos
+  New Orleans Criteria ausentes la hacen muy improbable.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1.5 a partir de la revisión sistemática RCE
+    (pmid:26717031). Valores del abstract más un cociente que solo aparece en la
+    corrección publicada. Desbloqueada el 06/09/2026 tras cotejar su errata y
+    comprobar que acota su alcance fuera del abstract.

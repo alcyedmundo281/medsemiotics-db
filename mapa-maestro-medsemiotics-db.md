@@ -440,32 +440,34 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
       (`HM:3146`-`HM:3151`), cinco de ellos con umbral y procedencia. Los
       valores son los del **abstract corregido en la página del editor**, no los
       del que sirve PubMed.
+- [x] lesión intracraneal en traumatismo craneal leve → `HM:6038`, con 6 aristas
+      y 2 escalas de `pmid:26717031`. **Los seis conceptos de exploración ya
+      existían** (`HM:3049`-`HM:3054`), acuñados para esta fuente y huérfanos
+      desde entonces: la errata era lo único que faltaba. Un séptimo concepto
+      nuevo, `HM:3152`, para el cociente que **solo está en la corrección**.
 #### Qué queda de verdad (revisado el 06/09/2026 contra `referencias/`)
 
 **La veta está agotada.** De las 112 referencias, 33 sostienen algún dato y 79
 no; pero de esas 79 **solo quedaban 3 de la serie**, y las tres traían errata.
-Las tres se cotejaron el 06/09/2026 y **dieron tres resultados distintos**;
-modelada la sobrecarga de volumen, **ya no queda ninguna bloqueada por su
-errata**. Lo que falta ahora es escribir aristas, no abrir puertas. Las otras 75
-son
+Las tres se cotejaron el 06/09/2026 y **dieron tres resultados distintos**.
+Modeladas la sobrecarga de volumen y la lesión intracraneal, **queda una sola
+fuente de la serie sin modelar**, y solo en parte. Las otras 75 son
 ecografía y cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
 J*, *Radiographics*—: el fondo de biosemiotics que entró con `refs.bib`, y por
 tanto material de la **oleada 1**, no de ésta.
 
 Conviene no confundir dos cosas que esta sección mezclaba:
 
-- **En el repositorio y sin modelar** — las 2 de abajo. En las dos el trabajo
-  ya es solo leer el abstract y escribir las aristas.
+- **En el repositorio y sin modelar** — la de abajo, y solo en parte.
 - **Ni siquiera obtenidas** — abstinencia alcohólica grave, disfunción tiroidea,
   ascitis, esplenomegalia. **No están en `referencias/`**: hay que traerlas por
   PMID y verificarlas antes de que exista nada que modelar. Es otro trabajo y
   otra fase.
 
-Las 2 de la serie que quedan sin modelar, con sus erratas ya cotejadas:
+La única de la serie que queda sin modelar:
 
 | Referencia | Año | Estado tras el cotejo del 06/09/2026 |
 |---|---|---|
-| `pmid:26717031` · neuroimagen en TCE leve del adulto | 2015 | **LISTA, y con un dato de regalo.** La corrección («Data Error») acota su alcance a una fila de la Tabla 1 y a una frase de los Resultados; el abstract no está afectado. Además aporta un cociente que el abstract no traía: GCS < 14 a las dos horas, LR 3.4 (IC95% 1.4-8.4). Nueve cocientes esperando |
 | `pmid:26241601` · estrés postraumático | 2015 | **PARCIAL.** Solo entra el Trauma Screening Questionnaire, y sus cifras las da el propio aviso: Se 0.95, Sp 0.26, LR+ 1.3 (1.2-1.4), LR− 0.20 (0.10-0.41). **El abstract sigue bloqueado**: la corrección dice que retiró dos frases y redondeó valores, pero no dice cuáles. Para desbloquearlo hace falta el abstract corregido del artículo (`10.1001/jama.2015.7877`), como en la sobrecarga de volumen |
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a

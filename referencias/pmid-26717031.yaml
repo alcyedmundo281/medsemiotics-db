@@ -89,6 +89,8 @@ verificacion:
       Rule LR 0.04 (IC95% 0-0.65); ausencia de los New Orleans Criteria LR 0.08
       (IC95% 0.01-0.84).
     - >-
-      NO FALTA NADA: esta fuente está lista para modelarse. Nueve cocientes
-      —los ocho del abstract más el GCS < 14 de la corrección— con su
-      procedencia verificada.
+      MODELADA en HM:6038 el 06/09/2026. Ocho cocientes: seis aristas de signo
+      —cuatro con valor puntual y dos que son rangos entre estudios— más los dos
+      negativos de las reglas de decisión, que cuelgan de `escalas`. Siete
+      salen del abstract y el octavo, el Glasgow menor de 14 a las dos horas,
+      solo existe en la corrección.

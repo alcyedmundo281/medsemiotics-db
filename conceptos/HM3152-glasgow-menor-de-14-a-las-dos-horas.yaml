@@ -1,0 +1,40 @@
+# Concepto del índice. Acuñado al modelar HM:6038 (traumatismo craneal leve).
+#
+# NO ES HM:3050. Aquel es una puntuación EXACTA de 13 al llegar; éste es un
+# umbral —menos de 14— medido DOS HORAS después del traumatismo. Son dos
+# mediciones distintas con cocientes distintos: 4.9 y 3.4.
+#
+# Y el corte es el CORREGIDO. El artículo publicó «menos de 15 a las dos horas
+# (LR 1.6-7.6)» y la corrección de 2017 lo cambió a «menos de 14 a las dos horas
+# (LR 3.4; IC95% 1.4-8.4)»: mueve el umbral Y el cociente a la vez. Con el corte
+# de 15 el número publicado no aplica: es el de otro hallazgo.
+
+id: 'HM:3152'
+tipo: concepto
+semantica: hallazgo
+termino: Puntuación de Glasgow menor de 14 a las dos horas del traumatismo
+termino_en: Glasgow Coma Score less than 14 two hours after injury
+sinonimos:
+  - Glasgow por debajo de 14 a las dos horas
+  - deterioro persistente del Glasgow a las dos horas
+padre: 'HM:0501'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Puntuación de Glasgow a las dos horas del traumatismo
+  unidad: puntos
+  direccion: bajo
+  corte_inferior: 14
+  ref: 'pmid:26717031'
+  nota: >-
+    corte de la corrección publicada (doi 10.1001/jama.2017.5136), no el del
+    artículo original, que decía 15
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el traumatismo craneal leve, a partir de la corrección
+    del artículo y no de su abstract.
