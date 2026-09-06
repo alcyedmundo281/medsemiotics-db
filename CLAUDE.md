@@ -113,7 +113,10 @@ lualatex -halt-on-error -interaction=nonstopmode libro.tex
 `texlive-lang-spanish`, `texlive-luatex`, `fonts-freefont-ttf` y
 **`librsvg2-bin`**. Este último no es opcional: dos figuras del índice son SVG y
 LaTeX no incluye SVG, así que Quarto las convierte con `rsvg-convert` o aborta
-el PDF; rasteriza además la portada, que Kindle no admite en SVG. **`biber` ya
+el PDF; rasteriza además la portada, que Kindle no admite en SVG. Cuando falta,
+Quarto aborta con un volcado de Lua que no nombra la dependencia, así que
+`libro.py` la comprueba antes de invocarlo y la dice por su nombre —sólo si el
+libro lleva SVG: un índice sin ellos compila sin rasterizador—. **`biber` ya
 no hace falta**: el `.tex` de Quarto no usa biblatex.
 
 ### El EPUB

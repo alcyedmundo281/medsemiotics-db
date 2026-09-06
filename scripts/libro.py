@@ -20,7 +20,8 @@ sin depender del checkout:
 
 Eso es lo que empaqueta `paquete_latex.py`.
 
-Requiere Quarto y LuaLaTeX. A diferencia del EPUB no hay respaldo con pandoc a
+Requiere Quarto, LuaLaTeX y —si el índice trae figuras SVG— `rsvg-convert`.
+A diferencia del EPUB no hay respaldo con pandoc a
 secas: el preámbulo —fontspec con FreeSerif para ≥ → ±, babel en español,
 longtable— lo arma Quarto, y reconstruirlo a mano sería volver justo a lo que
 este script jubila. **Biber ya no hace falta**: el `.tex` no usa biblatex,
@@ -131,6 +132,37 @@ def validar_libro(tex: Path, pdf: Path, indice: banco.Indice, informe: dict,
     )
 
 
+def exigir_rasterizador(informe: dict) -> None:
+    """Aborta si el libro lleva figuras SVG y no hay con qué convertirlas.
+
+    LaTeX no incluye SVG: Quarto las convierte a PDF con `rsvg-convert` antes
+    de pasárselas a LuaLaTeX, y sin esa herramienta aborta el render con un
+    volcado de Lua de treinta líneas que no nombra la dependencia que falta.
+    Nombrarla aquí no cambia el resultado —el PDF sigue sin compilar—, cambia
+    el tiempo que se tarda en saber por qué.
+
+    La comprobación no va junto a las de `quarto` y `lualatex` porque solo se
+    puede hacer después de saber qué figuras entran: un índice sin SVG compila
+    perfectamente sin rasterizador, y negarse a compilarlo sería exigir una
+    dependencia que ese libro no usa.
+    """
+    svg = sorted({
+        medio["archivo_local"]
+        for _, medio in informe["figuras_detalle"]
+        if Path(medio["archivo_local"]).suffix.lower() == ".svg"
+    })
+    if not svg or shutil.which("rsvg-convert"):
+        return
+    cuantas = f"{len(svg)} figura SVG" if len(svg) == 1 else f"{len(svg)} figuras SVG"
+    raise ErrorGeneracion(
+        f"rsvg-convert no está en PATH y el libro lleva {cuantas} "
+        f"({', '.join(svg)}). LaTeX no incluye SVG, así que Quarto las "
+        "convierte con esa herramienta o aborta el PDF. Instala librsvg —en "
+        "Debian y Ubuntu es el paquete «librsvg2-bin»— y comprueba con "
+        "«rsvg-convert --version». El EPUB no la necesita: ese sí compila."
+    )
+
+
 def main() -> int:
     args = argumentos()
     raiz = args.raiz.resolve()
@@ -151,6 +183,7 @@ def main() -> int:
 
     indice = banco.Indice(raiz)
     informe = qmd.generar(indice, raiz, proyecto)
+    exigir_rasterizador(informe)
     plano = (proyecto / "libro-plano.md").read_text(encoding="utf-8")
 
     producido = qmd.render(quarto, proyecto, "pdf", ".pdf")
