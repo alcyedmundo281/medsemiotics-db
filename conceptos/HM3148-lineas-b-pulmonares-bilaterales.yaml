@@ -1,0 +1,27 @@
+# Concepto del índice. Acuñado al modelar HM:6037 (sobrecarga de volumen).
+#
+# Hallazgo ecográfico, y BILATERAL por definición: pmid:41729549 mide la
+# presencia de líneas B en los dos hemitórax, no en uno. Unas líneas B focales
+# significan otra cosa y no llevan este cociente.
+#
+# SIN `umbral`: la fuente lo trata como presencia o ausencia y no publica el
+# número de líneas ni de campos que exige.
+
+id: 'HM:3148'
+tipo: concepto
+semantica: hallazgo
+termino: Líneas B pulmonares bilaterales
+termino_en: Bilateral pulmonary B-lines
+sinonimos:
+  - colas de cometa
+  - líneas B ecográficas
+  - síndrome intersticial ecográfico bilateral
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la sobrecarga de volumen.

@@ -1,0 +1,38 @@
+# Concepto del índice. Acuñado al modelar HM:6037 (sobrecarga de volumen).
+#
+# ATENCIÓN A LA UNIDAD. El corte se transcribe como lo imprime la fuente —100
+# ng/mL— y NO se convierte. La literatura habitual sitúa este mismo corte en 100
+# pg/mL, mil veces menor. Una de las dos formas de escribirlo está mal, y no se
+# puede saber cuál sin el texto completo: la corrección publicada (que sí tocó
+# las cifras de este hallazgo) mantiene «ng/mL». Quien lo consuma debe leer el
+# corte con esta advertencia delante y NO reconciliar la unidad en silencio.
+
+id: 'HM:3151'
+tipo: concepto
+semantica: hallazgo
+termino: Péptido natriurético cerebral elevado
+termino_en: Elevated brain-type natriuretic peptide
+sinonimos:
+  - BNP elevado
+  - péptido natriurético tipo B elevado
+  - BNP plasmático elevado
+padre: 'HM:0700'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Péptido natriurético cerebral en plasma
+  unidad: ng/mL
+  direccion: alto
+  corte_superior: 100
+  ref: 'pmid:41729549'
+  nota: >-
+    la unidad es la que imprime la fuente. El mismo corte se publica
+    habitualmente en pg/mL en otra literatura; la discrepancia es de tres
+    órdenes de magnitud y no se resuelve aquí.
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la sobrecarga de volumen.
