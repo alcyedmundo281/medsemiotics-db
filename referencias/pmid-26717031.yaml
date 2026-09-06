@@ -1,5 +1,8 @@
 # Registro de referencia del índice. Verificado contra PubMed y CrossRef.
-# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
 
 id: 'pmid:26717031'
 clave_bibtex: easter2015
@@ -26,6 +29,7 @@ verificacion:
   retractado: false
   errata: 'JAMA. 2017 May 16;317(19):2021. doi: 10.1001/jama.2017.5136.'
   errata_corrige: Data Error.
+  errata_pmid: 'pmid:28510658'
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -34,3 +38,37 @@ verificacion:
     - >-
       Registrada SIN usar. La errata se titula «Data Error» y afecta a un artículo
       del que solo puedo leer el abstract; no hay forma de saber qué cifra cambió.
+    - >-
+      COTEJO DEL 06/09/2026, NO CERRADO: localizada la corrección
+      (pmid:28510658, doi 10.1001/jama.2017.5136, jamanetwork
+      fullarticle/2626550) pero NO está en PMC y este entorno no alcanza la web
+      del editor. Falta su cuerpo.
+    - >-
+      La página 2021 de JAMA 317(19) lleva DOS avisos: «Data Error»
+      (pmid:28510658, el nuestro, por su DOI) y «Omission in Text»
+      (pmid:28510659). Identificada por DOI, no por página.
+    - >-
+      EL ABSTRACT NO SE CONTRADICE, al revés que el del TEPT (pmid:26241601), y
+      eso NO es tranquilizador: es solo la ausencia de una pista. Sus
+      probabilidades postprueba se derivan bien de su propia prevalencia y sus
+      propios cocientes —previa 7.1%, LR 0.04 da 0.3048% frente al 0.31%
+      declarado; LR 0.08 da 0.6077% frente al 0.61%— y las sensibilidades
+      implícitas de LR+ y especificidad son plausibles (16%, 15%, 29%). Un
+      bloque de cifras uniformemente erróneo cuadraría consigo mismo igual de
+      bien. Que sume no significa que sea correcto.
+    - >-
+      La errata se publicó en mayo de 2017 para un artículo de diciembre de
+      2015: dieciocho meses después. Un desfase así suele significar que el
+      error lo encontró alguien releyendo, no el propio equipo en pruebas.
+    - >-
+      Cifras en juego, todas del abstract: prevalencia de lesión intracraneal
+      grave 7.1% (IC95% 6.8-7.4) sobre 23 079 pacientes y de lesión mortal o
+      quirúrgica 0.9% (IC95% 0.78-1.0); signos de fractura de cráneo LR 16
+      (IC95% 3.1-59, Sp 99%); GCS de 13 LR 4.9 (IC95% 2.8-8.5, Sp 97%); ≥2
+      vómitos LR 3.6 (IC95% 3.1-4.1, Sp 92%); descenso del GCS LR 3.4-16 (Sp
+      91-99%); atropello LR 3.0-4.3 (Sp 96-97%); ausencia de la Canadian CT Head
+      Rule LR 0.04 (IC95% 0-0.65); ausencia de los New Orleans Criteria LR 0.08
+      (IC95% 0.01-0.84).
+    - >-
+      QUÉ FALTA: abrir jamanetwork.com/journals/jama/fullarticle/2626550 y pegar
+      su texto.

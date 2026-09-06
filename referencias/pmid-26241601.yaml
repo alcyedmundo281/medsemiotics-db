@@ -1,5 +1,8 @@
 # Registro de referencia del índice. Verificado contra PubMed y CrossRef.
-# Generado por scripts/6_referencia_por_pmid.py — no editar a mano.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
 
 id: 'pmid:26241601'
 clave_bibtex: spoont2015
@@ -27,6 +30,7 @@ verificacion:
   retractado: false
   errata: 'JAMA. 2016 Jan 5;315(1):90. doi: 10.1001/jama.2015.16955.'
   errata_corrige: Value Errors in Tables and Abstract.
+  errata_pmid: 'pmid:26746468'
   crossref: true
   crossref_titulo_coincide: false
   notas:
@@ -37,3 +41,36 @@ verificacion:
       es decir, afecta justo a la parte de la que se transcribe. Coincide con que su
       abstract dé dos cocientes distintos para el mismo instrumento y umbral:
       LR+ 6.9 y 8.49 para el PC-PTSD.
+    - >-
+      COTEJO DEL 06/09/2026, NO CERRADO: localizada la corrección
+      (pmid:26746468, doi 10.1001/jama.2015.16955, jamanetwork
+      fullarticle/2480459) pero NO está en PMC y este entorno no alcanza la web
+      del editor. Falta su cuerpo. NINGUNA cifra de esta fuente puede entrar
+      hasta leerlo.
+    - >-
+      LA PÁGINA 90 DE JAMA 315(1) LLEVA TRES AVISOS DE CORRECCIÓN, cada uno con
+      su PMID y su DOI: «Value Errors in Tables and Abstract» (pmid:26746468,
+      el nuestro), «Incomplete Dosage Information» (pmid:26746469) y «Incorrect
+      Data in Tables and eFigure» (pmid:26746470). Confirma que JAMA agrupa
+      varias correcciones por página, que es justo la posibilidad que no se pudo
+      descartar al cotejar pmid:28763554. Al buscar una errata hay que
+      identificarla por su DOI, no por su página.
+    - >-
+      EL ABSTRACT QUE SIRVE PUBMED SE CONTRADICE A SÍ MISMO, y encaja con el
+      título de la errata. Da dos bloques de cifras para los MISMOS
+      instrumentos y los MISMOS cortes: el PC-PTSD de 4 ítems con el corte de la
+      VA aparece con LR+ 6.9 (IC95% 5.5-8.8) y LR− 0.30, y también con Se 0.69,
+      Sp 0.92, LR+ 8.49 (IC95% 5.56-12.96) y LR− 0.34; el PTSD Checklist de 17
+      ítems con corte ~40 aparece con LR+ 5.2 (IC95% 3.6-7.5) y también con Se
+      0.70, Sp 0.90 y LR+ 6.8 (IC95% 4.7-9.9).
+    - >-
+      COMPROBACIÓN ARITMÉTICA, que es una pista y NO una autorización para
+      transcribir: LR+ = Se/(1−Sp) da 8.63 para el PC-PTSD y 7.00 para el
+      Checklist. El segundo bloque cuadra con su propia Se y Sp (desvíos del 2%
+      y 3%); el primero no (20% y 26%). Eso SUGIERE que los valores corregidos
+      son los del segundo bloque, pero sugerir no es leer la corrección: quién
+      corrige a quién lo dice el aviso, no la aritmética de quien puebla.
+    - >-
+      QUÉ FALTA: abrir jamanetwork.com/journals/jama/fullarticle/2480459 y pegar
+      su texto. Con él, el cotejo se cierra en un minuto y la condición se puede
+      modelar.
