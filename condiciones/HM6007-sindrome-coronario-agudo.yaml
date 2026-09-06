@@ -100,12 +100,30 @@ escalas:
   - nombre: HEART
     componentes_declarados: >-
       anamnesis, electrocardiograma, edad, factores de riesgo y primera troponina
+    # CUIDADO al leer `hasta`, y no lo «corrijas»: el intervalo es SEMIABIERTO
+    # [desde, hasta), así que el estrato que la fuente escribe «7 a 10» se declara
+    # `desde: 7, hasta: 11`. El 11 no existe en la escala; está ahí porque el 10
+    # tiene que entrar y el corte superior no entra nunca. La prosa del `rango`
+    # sigue siendo lo que se imprime.
+    #
+    # Los estratos intermedios (4 a 6 en HEART, 2 a 4 en TIMI) NO están: la fuente
+    # no publica su cociente. Los tramos no tienen por qué cubrir toda la escala;
+    # una puntuación de 5 significa que esta hipótesis no sabe leerla, y eso se
+    # dice en voz alta en vez de rellenarse por interpolación.
+    graduacion:
+      parametro: Puntuación HEART
+      unidad: puntos
+      lectura: disjunto
     tramos:
       - rango: 7 a 10 (riesgo alto)
+        desde: 7
+        hasta: 11
         lr_positivo: 13
         ic95: [7.0, 24]
         ref: 'pmid:26547467'
       - rango: 0 a 3 (riesgo bajo)
+        desde: 0
+        hasta: 4
         lr_negativo: 0.20
         ic95: [0.13, 0.30]
         ref: 'pmid:26547467'
@@ -114,12 +132,20 @@ escalas:
       descarta en el bajo
 
   - nombre: TIMI
+    graduacion:
+      parametro: Puntuación TIMI
+      unidad: puntos
+      lectura: disjunto
     tramos:
       - rango: 5 a 7 (riesgo alto)
+        desde: 5
+        hasta: 8
         lr_positivo: 6.8
         ic95: [5.2, 8.9]
         ref: 'pmid:26547467'
       - rango: 0 a 1 (riesgo bajo)
+        desde: 0
+        hasta: 2
         lr_negativo: 0.31
         ic95: [0.23, 0.43]
         ref: 'pmid:26547467'

@@ -204,6 +204,11 @@ recuperación manual.
   Duplicar un concepto es el error más caro de deshacer.
 - **`estado_lr` distingue `no_medido` de `sin_efecto`.** No son lo mismo:
   holonmed necesita saber si ignorar la arista o tratarla como neutra.
+- **Un tramo con límites numéricos exige `graduacion`, y `lectura` no se
+  infiere.** `acumulativo` y `disjunto` se parecen en el YAML y significan cosas
+  opuestas. Convertir cortes acumulativos («≥ 10%», «≥ 20%», «≥ 40%») en
+  intervalos disjuntos para que no se solapen inventa cocientes que nadie midió.
+  Ver §2 del mapa maestro.
 - **Nada de prosa.** Ni `abstract`, ni `descripcion`, ni notas explicativas en
   los registros. Las `notas` de verificación son la única excepción y describen
   el estado del dato, no el concepto.
@@ -226,7 +231,11 @@ rompería las dos cosas a la vez. **No lo hagas.**
    confianza si consta, y `ref` a una referencia del repositorio.
 4. **Si no hay LR publicado**, la arista se crea igual con
    `estado_lr: no_medido`. La relación existe aunque nadie la haya cuantificado.
-5. `python scripts/build.py`. No continúes con errores.
+5. **Si la fuente publica el cociente por tramos**, transcríbelos con sus
+   límites (`desde`/`hasta`) y su `graduacion`, no solo la prosa del umbral. Un
+   tramo que no es un corte sobre un solo eje —un criterio compuesto— se queda
+   en prosa: es más honesto que un número que se leería mal.
+6. `python scripts/build.py`. No continúes con errores.
 
 ## Añadir una referencia
 

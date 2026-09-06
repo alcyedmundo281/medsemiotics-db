@@ -405,11 +405,26 @@ def bloque_escalas(condicion: dict, citas: banco.Citas, donde: str) -> list:
     lineas: list = []
     for escala in escalas:
         lineas += [f"**Escala: {md_texto(escala.get('nombre', ''))}.**", ""]
-        metadatos = {k: v for k, v in escala.items() if k not in ("nombre", "tramos")}
+        metadatos = {
+            k: v for k, v in escala.items()
+            if k not in ("nombre", "tramos", "graduacion")
+        }
         if metadatos:
             lineas += [dato_markdown(metadatos, citas, donde), ""]
+        # El eje de graduación se tipografía en prosa y no con el renderizador
+        # genérico: «lectura: disjunto» no le dice nada a un lector, y lo que hay
+        # que decirle es que el valor cae en un tramo y sólo en uno.
+        graduacion = banco.nota_graduacion(escala)
+        if graduacion:
+            lineas += [md_texto(graduacion), ""]
+        unidad = str((escala.get("graduacion") or {}).get("unidad") or "")
         for tramo in escala.get("tramos") or []:
-            lineas.append("- " + dato_markdown(tramo, citas, donde))
+            resto = {k: v for k, v in tramo.items() if k not in ("desde", "hasta")}
+            texto = dato_markdown(resto, citas, donde)
+            limites = banco.intervalo_texto(tramo, unidad)
+            if limites:
+                texto = f"{md_texto(limites)} · {texto}" if texto else md_texto(limites)
+            lineas.append("- " + texto)
         lineas.append("")
     return lineas
 

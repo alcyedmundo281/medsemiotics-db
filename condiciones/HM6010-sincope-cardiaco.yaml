@@ -150,8 +150,17 @@ signos:
 escalas:
   - nombre: EGSYS
     componentes_declarados: seis variables clínicas, electrocardiograma incluido
+    # Un solo tramo declarado: la fuente publica el cociente del tramo bajo y no
+    # el del alto. Una puntuación de 4 queda fuera de todos los tramos, que es la
+    # respuesta correcta —esta escala, aquí, no sabe leerla— y no una laguna que
+    # convenga rellenar.
+    graduacion:
+      parametro: Puntuación EGSYS
+      unidad: puntos
+      lectura: disjunto
     tramos:
       - rango: menor de 3
+        hasta: 3
         lr_negativo_rango: [0.12, 0.17]
         ref: 'pmid:31237649'
         nota: >-
