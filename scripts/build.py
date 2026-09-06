@@ -302,6 +302,16 @@ def revisa_graduacion(f, contenedor, donde, concepto=None):
     sobrantes = sorted(set(grad) - CLAVES_GRADUACION)
     if sobrantes:
         err(f, f'{donde}: graduacion trae claves sin vigilancia: {", ".join(sobrantes)}')
+    # `parametro` y `unidad` son la misma exigencia partida en dos: un número
+    # tiene que decir QUÉ mide y EN QUÉ escala. Sin `parametro` el consumidor no
+    # sabe contra qué valor del paciente comparar los límites, y además se salta
+    # en silencio la comprobación contra la unidad canónica del concepto, que es
+    # la que caza una discrepancia antes de que la lea un clínico. El concepto no
+    # siempre lo suple: HM:3004 no declara `umbral` a propósito, y una escala no
+    # cuelga de ningún concepto.
+    if not grad.get('parametro'):
+        err(f, f'{donde}: graduacion sin «parametro»: los límites no dicen qué '
+               f'valor del paciente gradúan')
     if not grad.get('unidad'):
         err(f, f'{donde}: graduacion sin «unidad». Un número sin unidad no es un '
                f'dato: 3.5 de potasio en mmol/L y en mg/dL son cuadros distintos')

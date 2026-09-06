@@ -146,6 +146,17 @@ class GraduacionTest(unittest.TestCase):
                 - {umbral: '≥ 10', desde: 10, lr_positivo: 11.4, ref: 'pmid:1'}
         """, "graduacion sin «unidad»")
 
+    def test_graduacion_sin_parametro(self):
+        """Sin decir qué se gradúa, el número no dice a qué valor del paciente aplica."""
+        self.rechaza("""
+            - concepto: 'HM:3001'
+              estado_lr: medido
+              lr_positivo: {valor: 11.4, ref: 'pmid:1'}
+              graduacion: {unidad: mg/dL, lectura: acumulativo}
+              tramos:
+                - {umbral: '≥ 10', desde: 10, lr_positivo: 11.4, ref: 'pmid:1'}
+        """, "graduacion sin «parametro»")
+
     def test_lectura_no_se_infiere(self):
         self.rechaza("""
             - concepto: 'HM:3001'
