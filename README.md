@@ -102,6 +102,23 @@ con EPUBCheck y publica los artifacts en cada push a `main` y en cada release.
   request y los acepta un humano. Ningún cliente consulta este repositorio en
   tiempo de ejecución.
 
+## Cómo citar
+
+Hay dos DOI y conviene distinguirlos:
+
+| DOI | Qué identifica | Cuándo usarlo |
+|-----|----------------|---------------|
+| [`10.5281/zenodo.22064424`](https://doi.org/10.5281/zenodo.22064424) | Todas las versiones | Por defecto. Resuelve siempre a la última |
+| [`10.5281/zenodo.22065450`](https://doi.org/10.5281/zenodo.22065450) | Sólo v0.1.1 | Cuando importe reproducir ese estado exacto del índice |
+
+Importa más aquí que en el resto del ecosistema: de este índice se sirven
+holonmed, biosemiotics y medsemiotics, y un trabajo que reproduzca uno de
+ellos necesita saber **qué estado** del índice tenía delante.
+
+Los metadatos completos viven en [CITATION.cff](CITATION.cff) —GitHub los
+ofrece en «Cite this repository»— y los de depósito en
+[`.zenodo.json`](.zenodo.json).
+
 ## Licencia
 
 [CC0 1.0 Universal](LICENSE) — dominio público.
