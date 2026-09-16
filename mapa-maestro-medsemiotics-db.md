@@ -265,7 +265,7 @@ nombres paralelo.**
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
 | **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **164** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **39** de ~3000 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **40** de ~3000 |
 
 Los 74 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
@@ -321,6 +321,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6037` | Sobrecarga de volumen | 8 (12 cocientes) | `pmid:41729549` |
 | `HM:6038` | Lesión intracraneal en traumatismo craneal leve | 6 + 2 escalas | `pmid:26717031` |
 | `HM:6039` | Trastorno de estrés postraumático | 1 (parcial a propósito) | `pmid:26241601` |
+| `HM:6040` | Pancreatitis aguda | 7 aristas, **0 cocientes** | holonmed (sin fuente resoluble) |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -355,7 +356,7 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 | Serie *Rational Clinical Examination* | revisiones con cociente publicado | **14 fuentes** | ✅ 61 aristas medidas |
 | Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 14 migrados · 14 esperan 59 referencias |
 | Conceptos de biosemiotics | física y artefactos de ecografía | **17** | fuera de alcance (ver oleada 1) |
-| Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
+| Skills de holonmed | aristas, pero sin fuente resoluble | **7 aristas** | ✅ migradas sin cociente |
 | Skills de holonmed | parámetros de laboratorio con corte | **19** únicos | ✅ incrustados en su concepto |
 | Temario DeGowin | términos con tipo SIGN/SYNDROME/DISEASE | **1113** | 991 limpios · 122 a revisar |
 
@@ -375,9 +376,9 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 171 — 59 con errata sin comprobar | las que traiga cada condición nueva |
+| **Referencias** | 172 — 60 con errata sin comprobar | las que traiga cada condición nueva |
 | **Conceptos** | 300 — 14 con tríada | ~420 signos del temario |
-| **Condiciones** | 39 | ~480 síndromes y enfermedades |
+| **Condiciones** | 40 | ~480 síndromes y enfermedades |
 | **Aristas con cociente** | **143** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
@@ -634,8 +635,17 @@ Migrar lo que biosemiotics y holonmed tienen validado.
       candado: `errata_comprobada: false` hasta que alguien pueda consultar
       eutils. Ver abajo.
 - [ ] **14 signos más**, ya desbloqueados en cuanto se comprueben sus erratas.
-- [ ] **1 condición** (pancreatitis aguda) con sus **7 aristas** y sus fuentes,
-      desde las skills de holonmed.
+- [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
+      desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
+      hallazgo: ver abajo.
+
+**La oleada 1 no está cerrada, y le falta UNA orden.** Los 14 signos restantes y
+la regla de Atlanta esperan lo mismo: que se coteje la errata de las 60
+referencias importadas con candado.
+
+```bash
+python scripts/9_desbloquear_referencias.py
+```
 
 Al cerrar esta oleada, el índice ya sirve a los tres clientes y se puede
 invertir la dirección con biosemiotics.
@@ -726,6 +736,58 @@ basta con volver a lanzarlo.
 Son dos minutos de reloj y abre el candado de golpe; después, los 14 signos
 entran igual que entraron los primeros catorce.
 
+#### La pancreatitis llegó con siete cocientes y no entró ninguno
+
+Es el resultado más incómodo de la oleada, y conviene que esté escrito. El
+protocolo de holonmed (`backend/skills/acute_pancreatitis.md` v2.0.0) asigna un
+cociente a cada uno de sus siete signos. **Ninguno declara procedencia
+resoluble:**
+
+| Signo | LR que usa holonmed | Lo que cita |
+|---|---|---|
+| Hiperlipasemia (>3x) | 26.6 / 0.1 | «JAMA Rational Clinical Examination» |
+| Hiperamilasemia (>3x) | 12.5 / 0.3 | «JAMA Rational Clinical Examination» |
+| Dolor epigástrico | 2.1 / 0.2 | GetTheDiagnosis.org |
+| Vómitos | 1.6 | GetTheDiagnosis.org |
+| Irritación peritoneal | 2.2 | GetTheDiagnosis.org |
+| Signo de Cullen | 8.0 | **nada** |
+| Hallazgos de imagen | 9.0 | «el tercer criterio de Atlanta» |
+
+**Comprobado contra PubMed el 16/09/2026: la serie *Rational Clinical
+Examination* NO tiene ningún artículo sobre pancreatitis.** La atribución de los
+dos cocientes más altos del protocolo no se sostiene. GetTheDiagnosis.org es un
+agregador web, no un artículo con PMID. Y Atlanta define un criterio; no publica
+ese cociente.
+
+**Las aristas entraron; los números no.** Es lo que manda el flujo de
+`CLAUDE.md`: si no hay LR publicado, la arista se crea igual con
+`estado_lr: no_medido`, porque la relación existe aunque nadie la haya
+cuantificado de forma citable. Los valores quedan anotados en el `pendiente` de
+`HM:6040` —no en las aristas, para que no se lean como dato— junto a la pista ya
+descartada, que ahorra la siguiente búsqueda.
+
+**Tampoco entraron la `probabilidad_base` ni los multiplicadores de riesgo.** La
+primera el propio protocolo la declara como prevalencia local, no como hecho
+publicado. Los segundos (alcohol 2.8, litiasis 3.2, hipertrigliceridemia 2.2,
+CPRE 2.5) habrían entrado **en silencio**, porque `build.py` no valida
+`factores_riesgo`: es la puerta por la que se cuela un número sin procedencia, y
+conviene saber que está abierta.
+
+#### El candado mordió el trabajo propio, que es para lo que estaba
+
+La regla de Atlanta es lo único cuantificado y bien citado del protocolo, y
+**tampoco entró como regla**. Su fuente, `pmid:23100216`, se importó con
+`errata_comprobada: false`, y el candado que la oleada 1 añadió a `build.py`
+impide que una referencia sin cotejar sostenga un dato. Una regla de
+clasificación es un dato.
+
+No se esquivó. Se buscó la errata por la vía disponible y no apareció ninguna
+para Banks 2013 —la única que devuelve el título es de otro artículo, un
+*pictorial essay* de *Radiographics*—, pero «busqué y no vi nada» no es el campo
+«Erratum in:» del propio registro, y bajar el listón para desbloquearse a uno
+mismo vacía el campo de significado. Los criterios quedan en prosa, que no exige
+procedencia, y la regla entra con la misma orden que desbloquea todo lo demás.
+
 #### Dos rendimientos que esperan a que exista su condición
 
 `HM:3162` (ventrículo derecho dilatado) y `HM:3163` (taponamiento cardíaco)
@@ -795,9 +857,9 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias             171             171
+referencias             172             172
 conceptos               300            ~800
-condiciones              39            ~515
+condiciones              40            ~515
 aristas con cociente    143             143
 ```
 
