@@ -33,6 +33,8 @@ medsemiotics-db/
 ├── condiciones/*.yaml               ← síndromes y enfermedades, con sus LR y URLs
 ├── referencias/*.yaml               ← artículos con PMID y DOI
 ├── scripts/build.py                 ← valida; no modifica nada
+├── scripts/6_referencia_por_pmid.py ← la ÚNICA vía para añadir una referencia
+├── scripts/9_desbloquear_referencias.py ← recomprueba las erratas pendientes
 ├── scripts/banco.py                 ← carga el índice y extrae sus datos (sin tipografiar)
 ├── scripts/qmd.py                   ← proyecta el índice a un proyecto Quarto en build/quarto/
 ├── scripts/libro.py                 ← renderiza el PDF desde ese proyecto

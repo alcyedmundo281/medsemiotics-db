@@ -94,6 +94,54 @@ confirma a mano en la columna `decision`. Incluye guardas que bloquean pares que
 un motor de similitud confunde y un clínico jamás: `lipasemia`/`lipemia`,
 `natremia`/`potasemia`, `hiper`/`hipo`.
 
+### `6_referencia_por_pmid.py` — la vía canónica para añadir una referencia
+```bash
+python scripts/6_referencia_por_pmid.py 27115266 ebell2016
+```
+Verifica el PMID contra PubMed —título, año, retractación y errata— resuelve el
+DOI en CrossRef y escribe `referencias/pmid-<PMID>.yaml`.
+
+**Es la única vía por la que debe entrar una referencia.** Escribirla a mano
+abre la puerta a citas que nadie comprobó, y este ecosistema ya fue salvado de
+tres referencias inventadas.
+
+Reescribe el registro entero en cada corrida, pero **conserva lo que se anotó a
+mano**: `errata_verificada`, el rastro del cotejo y sus notas. Sin eso, una
+regeneración borraría en silencio el trabajo de ir a leer una corrección.
+
+### `8_comprobar_erratas.py` — informa, no escribe
+```bash
+python scripts/8_comprobar_erratas.py
+```
+Recorre todas las referencias con PMID y dice cuáles tienen errata publicada o
+están retractadas, marcando las que ya sostienen un dato.
+
+**No modifica ningún registro.** Para que una errata quede anotada hay que
+regenerar la referencia con el script 6.
+
+### `9_desbloquear_referencias.py` — abre el candado de las erratas sin comprobar
+```bash
+python scripts/9_desbloquear_referencias.py --listar   # cuáles están bloqueadas
+python scripts/9_desbloquear_referencias.py            # las regenera
+```
+Busca las referencias con `errata_comprobada: false` y llama al script 6 sobre
+cada una, espaciando las llamadas.
+
+**Para qué sirve el candado.** Una referencia puede entrar sin que nadie haya
+podido mirar si tiene errata: pasó con las 59 de la oleada 1, importadas desde
+una red que no alcanzaba eutils. El peligro no es el hueco sino su forma —un
+registro sin campo `errata` es indistinguible de uno que se comprobó y salió
+limpio—, así que esas llevan `errata_comprobada: false` y **`build.py` falla si
+una de ellas sostiene un cociente o un umbral**.
+
+**Se abre solo.** `errata_comprobada` está en `CLAVES_GENERADAS` del script 6,
+de modo que una corrida de verdad —que sí comprueba la errata— borra el campo.
+
+**Córrelo donde PubMed responda.** Lo primero que hace es sondear eutils y parar
+con un mensaje claro si está bloqueado, en vez de soltar 59 trazas seguidas. No
+lleva lista fija: descubre las pendientes en cada corrida, así que si alguna
+falla basta con volver a lanzarlo y solo reintenta ésas.
+
 ## Motores de Medios y Publicación
 
 ### `incorporar_medio.py` — descarga e incorpora medios de Wikimedia Commons

@@ -711,9 +711,20 @@ erratas, y hasta entonces el candado no los deja sostener ningún umbral.
 | colecistitis-aguda · coledocolitiasis | 9 cada uno |
 | apendicitis | 10 |
 
-**Lo que queda es correr el script sobre las 59 desde una red que alcance
-PubMed.** Son dos minutos de reloj y abre el candado de golpe; después, los 14
-signos entran igual que entraron los primeros catorce.
+**Lo que queda es una orden, desde una red que alcance PubMed:**
+
+```bash
+python scripts/9_desbloquear_referencias.py
+```
+
+Busca las que llevan el candado, llama al script 6 sobre cada una espaciando las
+peticiones, y avisa de las que resulten tener errata para que se cotejen antes
+de sostener ninguna cifra. Con `--listar` dice cuáles son sin tocar nada. Es
+re-ejecutable: descubre las pendientes en cada corrida, así que si alguna falla
+basta con volver a lanzarlo.
+
+Son dos minutos de reloj y abre el candado de golpe; después, los 14 signos
+entran igual que entraron los primeros catorce.
 
 #### Dos rendimientos que esperan a que exista su condición
 
