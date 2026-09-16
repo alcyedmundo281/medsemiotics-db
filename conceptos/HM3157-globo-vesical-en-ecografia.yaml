@@ -1,0 +1,46 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# SIN `umbral`, y la ausencia es el dato: la fuente dice expresamente que no
+# existe una cifra única que defina el signo. Estructurar un corte aquí
+# inventaría un número que la fuente niega tener.
+#
+# La fuente añade que la medición ecográfica del volumen es APROXIMADA, así que
+# ni siquiera el número que da el equipo es un corte: hay que leerlo con el
+# tiempo desde la última micción, la función renal y la anatomía.
+
+id: 'HM:3157'
+tipo: concepto
+semantica: hallazgo
+termino: Globo vesical en ecografía
+termino_en: Distended urinary bladder on ultrasound
+sinonimos:
+  - vejiga distendida
+  - retención urinaria ecográfica
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Estructura anecoica distendida en la línea media pélvica, posterior a la
+  sínfisis púbica, confirmada en eje transversal y longitudinal.
+significado: >-
+  Vejiga llena; en el contexto de incapacidad para orinar, hallazgo
+  compatible con retención urinaria.
+falsos_positivos:
+  - Ascitis o líquido pélvico libre
+  - Quiste ovárico o masa quística pélvica
+  - Útero gestante o aumentado de tamaño
+  - Asa intestinal con contenido líquido
+  - Coágulos, sedimento o sonda dentro de la vejiga
+  - Geometría irregular o compresión por recto, útero o masa
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-globo-
+    vesical), que la sostiene sobre 6 referencias, todas ya presentes en
+    el índice.
+  nota: >-
+    Los seis falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

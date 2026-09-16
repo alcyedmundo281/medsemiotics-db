@@ -4,8 +4,15 @@
 # presencia de líneas B en los dos hemitórax, no en uno. Unas líneas B focales
 # significan otra cosa y no llevan este cociente.
 #
-# SIN `umbral`: la fuente lo trata como presencia o ausencia y no publica el
-# número de líneas ni de campos que exige.
+# EL `umbral` LO TRAE LA OLEADA 1, y resuelve un pendiente que este fichero
+# declaraba. Decía «sin umbral: la fuente lo trata como presencia o ausencia y
+# no publica el número de líneas que exige», y era cierto de SU fuente. El
+# consenso internacional de ecografía pulmonar sí lo publica, y es el que entra.
+#
+# CUIDADO AL LEERLO JUNTO AL COCIENTE. El corte de tres líneas por espacio es la
+# definición del consenso; el cociente que HM:6037 cuelga de este concepto viene
+# de otra fuente, que no publica contra qué corte lo midió. No se puede afirmar
+# que ese LR se midió a este umbral, y por eso el umbral lleva su propia `ref`.
 
 id: 'HM:3148'
 tipo: concepto
@@ -19,9 +26,37 @@ sinonimos:
 padre: 'HM:0900'
 codigos: {snomed: null, icd10: null, hpo: null}
 
-significante: null
-significado: null
-falsos_positivos: []
+umbral:
+  parametro: Líneas B por espacio intercostal
+  unidad: líneas
+  direccion: alto
+  corte_superior: 3
+  ref: 'pmid:22392031'
+  nota: >-
+    tres o más líneas B hacen positivo ESE espacio intercostal; el patrón
+    bilateral exige además varios espacios en los dos hemitórax. Es el corte
+    del consenso internacional, no el de la fuente que mide el cociente.
+
+significante: >-
+  Artefactos verticales hiperecoicos, en cola de cometa, que nacen en la
+  línea pleural, borran las líneas A y se mueven con la respiración.
+significado: >-
+  Engrosamiento del intersticio por líquido. Síndrome intersticial.
+falsos_positivos:
+  - Fibrosis pulmonar
+  - Neumonía
+  - SDRA
+  - Contusión pulmonar
+
+contrasta_con: ['HM:3160']
 
 procedencia:
-  fuente: Acuñado al modelar la sobrecarga de volumen.
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-lineas-b), que
+    la sostiene sobre 5 referencias, todas ya presentes en el índice.
+  nota: >-
+    Los cuatro falsos positivos son los que publica biosemiotics, sin
+    añadir ni quitar ninguno. `se_basa_en` NO se migró: apuntaba a
+    conceptos de física y artefactos de ecografía que se quedan en
+    biosemiotics por decisión de la oleada 1, y una relación sin destino
+    resoluble se publicaría como un identificador roto.

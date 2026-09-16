@@ -1,0 +1,52 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# NO ES HM:3012. Aquel es la pulsación aórtica ensanchada A LA PALPACIÓN, con su
+# propio cociente para HM:6006. Éste es la medición ECOGRÁFICA del diámetro. Son
+# dos maniobras distintas sobre la misma arteria y no son intercambiables.
+
+id: 'HM:3154'
+tipo: concepto
+semantica: hallazgo
+termino: Aorta abdominal dilatada en ecografía
+termino_en: Dilated abdominal aorta on ultrasound
+sinonimos:
+  - aneurisma de aorta abdominal en POCUS
+  - dilatación aórtica ecográfica
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+umbral:
+  parametro: Diámetro máximo de la aorta abdominal
+  unidad: cm
+  direccion: alto
+  corte_superior: 3.0
+  ref: 'pmid:36322642'
+  nota: >-
+    se mide de borde externo a borde externo, en un plano perpendicular al vaso,
+    e incluye el trombo mural dentro del diámetro total. Medir solo la luz
+    subestima el aneurisma y es uno de los falsos negativos de la lista.
+
+significante: >-
+  Dilatación de la aorta abdominal con diámetro máximo mayor de 3,0 cm,
+  medido perpendicular al eje vascular de borde externo a borde externo.
+significado: >-
+  Aneurisma aórtico abdominal.
+falsos_positivos:
+  - Medición oblicua de una aorta tortuosa que exagera el diámetro
+  - Medir solo la luz y excluir el trombo mural, subestimando el
+    aneurisma
+  - Confundir la vena cava inferior con la aorta
+  - Masa o ganglio paraaórtico
+  - No visualizar la aorta distal por gas y declarar un estudio negativo
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-aneurisma-
+    aortico-abdominal), que la sostiene sobre 3 referencias, todas ya
+    presentes en el índice.
+  nota: >-
+    Los cinco falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

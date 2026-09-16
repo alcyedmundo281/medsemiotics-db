@@ -1,0 +1,46 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# EL SIGNIFICADO ES DELIBERADAMENTE PRUDENTE, y es el de la fuente: la
+# morfología APOYA enfermedad parenquimatosa crónica, sugiere tiempo, pero no
+# demuestra irreversibilidad. No es lo mismo que decir enfermedad renal crónica.
+#
+# ES EL ÚNICO DE LOS CATORCE SIN `umbral` EN EL ORIGEN: biosemiotics no declara
+# ninguno para este signo, ni siquiera en prosa. Aquí tampoco hay uno que migrar.
+
+id: 'HM:3161'
+tipo: concepto
+semantica: hallazgo
+termino: Riñón crónico en ecografía
+termino_en: Chronic kidney disease on ultrasound
+sinonimos:
+  - nefropatía crónica ecográfica
+  - riñón pequeño e hiperecogénico
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Patrón bilateral de reducción del tamaño renal, adelgazamiento cortical,
+  aumento de ecogenicidad y pérdida de diferenciación corticomedular.
+significado: >-
+  Morfología que apoya enfermedad parenquimatosa crónica; la imagen
+  sugiere tiempo, pero no demuestra por sí sola irreversibilidad.
+falsos_positivos:
+  - Medición oblicua que subestima la longitud
+  - Variación por edad, talla, sexo y hábito corporal
+  - Hiperecogenicidad renal en enfermedad aguda
+  - Comparación con hígado esteatósico
+
+contrasta_con: ['HM:3158']
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-riñon-
+    cronico), que la sostiene sobre 5 referencias, todas ya presentes en
+    el índice.
+  nota: >-
+    Los cuatro falsos positivos venían como identificadores con guiones y
+    se normalizaron a prosa; ni se añadió ni se quitó ninguno.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

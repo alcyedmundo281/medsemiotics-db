@@ -1,0 +1,45 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# ES UNA CLASIFICACIÓN CUALITATIVA, NO UNA MEDICIÓN, y la fuente lo dice con
+# todas las letras: no debe asignarse un porcentaje exacto, ni cruzar un umbral
+# terapéutico con una sola vista o un solo latido. Por eso NO lleva `umbral`:
+# estructurar aquí un corte de FEVI convertiría en número lo que la fuente
+# define como categoría, que es justo lo que advierte que no se haga.
+
+id: 'HM:3156'
+tipo: concepto
+semantica: hallazgo
+termino: Función sistólica del ventrículo izquierdo estimada a ojo
+termino_en: Visual assessment of left ventricular systolic function
+sinonimos:
+  - eyeball EF
+  - FEVI cualitativa
+  - estimación visual de la FEVI
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Cambio global del tamaño de la cavidad del VI, engrosamiento miocárdico
+  y desplazamiento endocárdico durante la sístole, observado en varias
+  vistas y ciclos.
+significado: >-
+  Categoría cualitativa de función sistólica global del ventrículo
+  izquierdo.
+falsos_positivos:
+  - Vista apical acortada que exagera la contracción
+  - Alteración segmentaria que no representa la función global
+  - Taquicardia, fibrilación auricular o extrasístoles
+  - Cambios de precarga o poscarga que modifican la apariencia
+  - Mala definición endocárdica por ventana, ganancia o profundidad
+  - Sobrecarga del ventrículo derecho con desplazamiento septal
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-eyeball-ef),
+    que la sostiene sobre 7 referencias, todas ya presentes en el índice.
+  nota: >-
+    Los seis falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

@@ -264,8 +264,8 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **74** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **18** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **164** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **39** de ~3000 |
 
 Los 74 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
@@ -316,6 +316,11 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6032` | Trastorno de pánico | 1 | `pmid:25058220` |
 | `HM:6033` | Melanoma cutáneo | 3 | `pmid:9496989` |
 | `HM:6034` | Cáncer de mama | 2 | `pmid:10517431` |
+| `HM:6035` | Trombosis venosa profunda | 0 de exploración (6 cocientes del dímero D) | `pmid:16403932` |
+| `HM:6036` | Neumonía infantil | 6 | `pmid:28763554` |
+| `HM:6037` | Sobrecarga de volumen | 8 (12 cocientes) | `pmid:41729549` |
+| `HM:6038` | Lesión intracraneal en traumatismo craneal leve | 6 + 2 escalas | `pmid:26717031` |
+| `HM:6039` | Trastorno de estrés postraumático | 1 (parcial a propósito) | `pmid:26241601` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -348,8 +353,8 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
 | Serie *Rational Clinical Examination* | revisiones con cociente publicado | **14 fuentes** | ✅ 61 aristas medidas |
-| 14 signos de biosemiotics | significante, significado, umbral, falsos positivos | **14** | listo, requiere normalizar |
-| 14 conceptos de biosemiotics | física y artefactos, grafo de prerrequisitos | **14** | listo |
+| Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 14 migrados · 14 esperan 59 referencias |
+| Conceptos de biosemiotics | física y artefactos de ecografía | **17** | fuera de alcance (ver oleada 1) |
 | Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
 | Skills de holonmed | parámetros de laboratorio con corte | **19** únicos | ✅ incrustados en su concepto |
 | Temario DeGowin | términos con tipo SIGN/SYNDROME/DISEASE | **1113** | 991 limpios · 122 a revisar |
@@ -370,10 +375,10 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 112 | las que traiga cada condición nueva |
-| **Conceptos** | 279 | ~420 signos del temario |
-| **Condiciones** | 34 | ~480 síndromes y enfermedades |
-| **Aristas con cociente** | **122** | prácticamente todo |
+| **Referencias** | 112 | 59 de biosemiotics, más las que traiga cada condición |
+| **Conceptos** | 300 — 14 con tríada | ~420 signos del temario |
+| **Condiciones** | 39 | ~480 síndromes y enfermedades |
+| **Aristas con cociente** | **143** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
@@ -618,15 +623,79 @@ que se acuñó `graduacion`.
 - [ ] pendiente aparte, y sigue abierto: el extremo del rango 7.1–250 del
       colesterol pleural (`HM:3008`), que exige el texto completo
 
-### OLEADA 1 — lo que ya está escrito y revisado
+### OLEADA 1 — lo que ya está escrito y revisado *(en curso)*
 Migrar lo que biosemiotics y holonmed tienen validado.
 
-- [ ] **14 signos** de biosemiotics con su tríada completa
-- [ ] **14 conceptos** base con `se_basa_en` y `contrasta_con`
-- [ ] **1 condición** (pancreatitis aguda) con sus **7 aristas** y sus fuentes
+- [x] **14 signos de biosemiotics con su tríada completa** — los 14 cuyas
+      referencias YA estaban en el índice. Tres rellenaron conceptos que existían
+      vacíos (`HM:3007` derrame pleural, `HM:3148` líneas B, `HM:0903` litiasis
+      biliar) y once se acuñaron, `HM:3154`–`HM:3164`.
+- [ ] **14 signos más, bloqueados por sus referencias** — ver abajo.
+- [ ] **1 condición** (pancreatitis aguda) con sus **7 aristas** y sus fuentes,
+      desde las skills de holonmed.
 
 Al cerrar esta oleada, el índice ya sirve a los tres clientes y se puede
 invertir la dirección con biosemiotics.
+
+#### Los 14 conceptos de física NO entran, y es una decisión
+
+El mapa decía «14 conceptos base con `se_basa_en` y `contrasta_con`». Al abrir
+biosemiotics resultaron ser **17**, y sobre todo resultaron ser otra cosa: son
+física y artefactos de ecografía —efecto piezoeléctrico, reverberación,
+knobology, tipos de sonda—, y **no traen ni significante, ni significado, ni
+umbral, ni falsos positivos**. Lo que traen es un `abstract` en prosa, un
+capítulo y un orden de lectura.
+
+No hay un solo hecho estructurado que migrar, y este índice es proveedor de
+hechos. Se quedan en biosemiotics, que es donde sirven.
+
+**La consecuencia práctica:** `se_basa_en` no se migra con los signos, porque
+todos sus destinos son esos conceptos. Una relación que apunta fuera del índice
+se publicaría como un identificador roto. `contrasta_con` sí se migra, pero solo
+entre signos que ya tienen código aquí.
+
+#### Lo que bloquea a los otros 14 signos
+
+**59 referencias que biosemiotics cita y este índice no tiene.** `refs.bib` entró
+en la oleada 0 con 74 referencias; biosemiotics ha seguido creciendo desde
+entonces. De las 122 claves bibtex que citan los 28 signos, 63 resuelven y 59 no.
+
+El corte no es arbitrario y por eso partió exactamente por la mitad: entran los
+signos cuyas referencias resuelven TODAS. Un signo cuyo umbral cita una fuente
+que el índice no tiene no puede declarar procedencia, y un umbral sin procedencia
+es la misma clase de dato inventado que un LR sin `ref`.
+
+| Signo | Referencias que le faltan |
+|---|---|
+| fevi-simpson | 2 |
+| absceso-partes-blandas · disfuncion-diastolica · hemotorax · hernia-complicada | 3 cada uno |
+| fast-douglas · fast-esplenorrenal · fast-morrison · vti | 4 cada uno |
+| embarazo-ectopico · gasto-cardiaco | 6 cada uno |
+| colecistitis-aguda · coledocolitiasis | 9 cada uno |
+| apendicitis | 10 |
+
+**Desbloquearlos es un trabajo acotado y mecánico**, no una investigación: las
+entradas de `refs.bib` de biosemiotics **ya traen `pmid` y `doi`**, así que
+`scripts/6_referencia_por_pmid.py` puede traerlas y verificarlas contra PubMed
+una por una. Es la fase siguiente de esta oleada.
+
+#### Dos rendimientos que esperan a que exista su condición
+
+`HM:3162` (ventrículo derecho dilatado) y `HM:3163` (taponamiento cardíaco)
+llegan con cifras de sensibilidad y especificidad que NO entraron, y conviene
+que no se pierdan:
+
+- **Sobrecarga derecha para tromboembolia pulmonar**: Se 53 % (IC95% 45-61),
+  Sp 83 % (IC95% 74-90).
+- **Colapso del ventrículo derecho para taponamiento**: Se 48-100 %, Sp 72-100 %
+  según la serie. **Colapso de la aurícula derecha**: Se 50-100 %, Sp 33-100 %.
+
+No son umbrales: son el rendimiento del signo **contra una condición**, y aquí
+ese dato vive en la arista, no en el concepto. La tromboembolia pulmonar y el
+taponamiento **no existen todavía como condiciones**. Cuando se acuñen, estas
+cifras son su primera arista y su procedencia ya está en el índice. Los rangos
+entre series del taponamiento, además, se transcriben como rango y no se
+promedian.
 
 ### OLEADA 2 — el temario limpio
 Los 991 términos que pasaron la normalización, por tipo.
@@ -680,7 +749,7 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 ```
                         hoy      al cerrar oleada 2
 referencias             112             112
-conceptos               289            ~800
+conceptos               300            ~800
 condiciones              39            ~515
 aristas con cociente    143             143
 ```

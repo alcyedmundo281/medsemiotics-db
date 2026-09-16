@@ -1,0 +1,54 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# EL SIGNIFICADO ACOTA LO QUE EL SIGNO NO DICE, y es de la fuente: la dilatación
+# puede acompañar una obstrucción, pero no identifica su causa. El título del
+# original lo resume: detectar dilatación, no adivinar la piedra.
+#
+# SIN `umbral` NUMÉRICO a propósito. La fuente usa una lectura cualitativa
+# —ausente, leve o marcada— y advierte de no convertir un diámetro aislado en
+# diagnóstico. Un corte en milímetros aquí sería exactamente esa conversión.
+
+id: 'HM:3158'
+tipo: concepto
+semantica: hallazgo
+termino: Hidronefrosis en ecografía
+termino_en: Hydronephrosis on ultrasound
+sinonimos:
+  - dilatación del sistema colector
+  - hidronefrosis ecográfica
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Área anecoica central ramificada y comunicada que separa o dilata pelvis
+  y cálices renales.
+significado: >-
+  Dilatación del sistema colector; puede acompañar obstrucción urinaria,
+  pero no identifica por sí sola su causa.
+falsos_positivos:
+  - >-
+      Pelvis extrarrenal: área anecoica central sin dilatación
+      calicial
+  - >-
+      Quistes parapélvicos: espacios redondeados que no se comunican
+      entre sí
+  - >-
+      Vasos renales prominentes: confírmarlos con Doppler cuando esté
+      disponible
+  - Vejiga muy llena o diuresis intensa con dilatación fisiológica
+    transitoria
+  - Embarazo, especialmente con dilatación fisiológica del lado derecho
+
+contrasta_con: ['HM:3161']
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-
+    hidronefrosis), que la sostiene sobre 4 referencias, todas ya
+    presentes en el índice.
+  nota: >-
+    Los cinco falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.
