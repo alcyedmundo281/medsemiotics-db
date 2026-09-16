@@ -1,0 +1,35 @@
+# Concepto del índice. Acuñado al modelar HM:6039 (estrés postraumático).
+#
+# NO DECLARA UMBRAL, y la omisión es deliberada. Sus cocientes salen de la
+# corrección de pmid:26241601, que publica la fila entera del eAppendix 5
+# —sensibilidad, especificidad, LR+ y LR−— pero NO dice con qué puntuación se
+# consideró positivo el cuestionario. El corte vive en el eAppendix, que está
+# tras el mismo muro que el resto de la fuente. Escribir aquí el corte habitual
+# del instrumento sería adivinarlo, y un corte adivinado convierte un cociente
+# medido en un número que no aplica: es exactamente el error que documenta
+# HM:3152, donde mover el corte de 15 a 14 cambió el cociente de 1.6-7.6 a 3.4.
+
+id: 'HM:3153'
+tipo: concepto
+semantica: hallazgo
+termino: Trauma Screening Questionnaire positivo
+termino_en: Positive Trauma Screening Questionnaire
+sinonimos:
+  - TSQ positivo
+  - cuestionario de cribado de estrés postraumático positivo
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar el estrés postraumático, a partir de la corrección de
+    pmid:26241601 (doi 10.1001/jama.2015.16955) y no de su abstract, que no
+    menciona este instrumento.
+  nota: >-
+    Sin `umbral` a propósito: la corrección da las cuatro cifras de la fila pero
+    no el punto de corte que las produjo. Quien consiga el eAppendix 5 del
+    artículo puede añadirlo; hasta entonces no se infiere.

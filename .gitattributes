@@ -1,0 +1,33 @@
+# Final de línea, fijado para que git no vuelva a confundir un cambio de
+# formato con un cambio de contenido.
+#
+# POR QUÉ EXISTE ESTE FICHERO. Antes de él, el índice estaba mezclado: 306
+# ficheros versionados en CRLF y 181 en LF, y la mezcla atravesaba todos los
+# directorios. No era una convención, era deriva: cada herramienta que abre un
+# YAML en modo texto y lo vuelve a escribir —Python, un editor, un script de
+# generación— le impone su propio final de línea sin decirlo. El resultado es
+# un diff que declara el fichero entero reescrito y entierra el cambio real.
+# Pasó con este mismo fichero de reglas delante: un mapa maestro de 54 líneas
+# cambiadas se presentó como 1482.
+#
+# Es un fallo silencioso y caro en un repositorio cuya unidad de revisión es
+# el PR de tres líneas: ninguna validación lo detecta —build.py, qmd.py, los
+# tests y el CI pasan igual, porque a YAML le da lo mismo— y lo único que
+# rompe es la capacidad de revisar, que es justo la garantía del proyecto.
+#
+# QUÉ HACE. `text=auto` normaliza a LF DENTRO del repositorio. Eso es lo que
+# cierra el fallo: si una herramienta escribe LF donde había CRLF, git ya no
+# ve ninguna diferencia y el diff queda limpio solo. `eol=lf` hace además que
+# la copia de trabajo sea LF, así que no hay traducción en ningún punto y lo
+# que se lee en disco es lo que guarda git.
+#
+# Si alguna vez conviene que la copia de trabajo sea CRLF —un editor de
+# Windows que lo prefiera—, se cambia `eol=lf` por `eol=crlf` y ya está: es
+# cosmético y no mueve el índice, así que no produce ni un diff.
+
+* text=auto eol=lf
+
+# Binarios: ni se inspeccionan ni se convierten. `text=auto` ya los detecta,
+# pero declararlos evita depender de la heurística para las imágenes del libro.
+*.jpg binary
+*.png binary

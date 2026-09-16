@@ -396,13 +396,13 @@ Salieron 19 y no 21: la amilasa y la lipasa aparecían en dos skills distintas.
 Los umbrales no viven en un directorio propio sino dentro del concepto que
 definen, porque un punto de corte es propiedad del hallazgo, no una entidad.
 
-### OLEADA 1.5 — condiciones con cociente publicado *(en curso, fuera de orden)*
+### OLEADA 1.5 — condiciones con cociente publicado ✅ *completada, fuera de orden*
 
 Se adelantó a la oleada 1 por oportunidad: las revisiones sistemáticas de la
 serie *Rational Clinical Examination* con abstract en PubMed son una veta
 acotada y verificable, y convenía agotarla mientras estaba localizada.
 
-- [x] 31 condiciones con **122 aristas medidas** (143 valores de LR) sobre 29 fuentes de la serie
+- [x] 32 condiciones con **123 aristas medidas** (145 valores de LR) sobre 30 fuentes de la serie
 - [x] osteoartritis de cadera → `HM:6012`, con 8 aristas de `pmid:31846019`
 - [x] embarazo ectópico → `HM:6016`, con 5 aristas de `pmid:23613077`
 - [x] conjuntivitis bacteriana → `HM:6017`, con 2 aristas de `pmid:35699701`.
@@ -447,30 +447,50 @@ acotada y verificable, y convenía agotarla mientras estaba localizada.
       existían** (`HM:3049`-`HM:3054`), acuñados para esta fuente y huérfanos
       desde entonces: la errata era lo único que faltaba. Un séptimo concepto
       nuevo, `HM:3152`, para el cociente que **solo está en la corrección**.
-#### Qué queda de verdad (revisado el 06/09/2026 contra `referencias/`)
+- [x] estrés postraumático → `HM:6039`, con **1 arista** de `pmid:26241601`, y
+      **parcial a propósito**: es la que cierra la oleada. De los 15 instrumentos
+      que evalúa la fuente solo entra el Trauma Screening Questionnaire
+      (`HM:3153`), porque sus cuatro cifras las publica literalmente el aviso de
+      corrección y no dependen del abstract. Los dos que la fuente RECOMIENDA
+      —el PC-PTSD y el PTSD Checklist— **siguen bloqueados**: el abstract da dos
+      bloques de cifras para los mismos cortes y la corrección explica la
+      duplicación sin decir cuál sobrevivió. El concepto se acuñó **sin
+      `umbral`**: la corrección da la fila entera pero no el punto de corte, y un
+      corte adivinado convierte un cociente medido en un número que no aplica.
+#### Qué queda de verdad (cerrado el 16/09/2026 contra `referencias/`)
 
-**La veta está agotada.** De las 112 referencias, 33 sostienen algún dato y 79
-no; pero de esas 79 **solo quedaban 3 de la serie**, y las tres traían errata.
-Las tres se cotejaron el 06/09/2026 y **dieron tres resultados distintos**.
-Modeladas la sobrecarga de volumen y la lesión intracraneal, **queda una sola
-fuente de la serie sin modelar**, y solo en parte. Las otras 75 son
+**La veta está agotada y la oleada, cerrada.** De las 112 referencias, **37
+sostienen algún dato y 75 no** —recontado el 16/09/2026 sobre los campos `ref`
+de `condiciones/` y `conceptos/`, porque la cifra anterior de esta sección, 33,
+se había quedado atrás—; y de esas 75 **no queda ninguna de la serie**. Las tres
+últimas traían errata, se cotejaron el 06/09/2026 y dieron tres resultados
+distintos; modeladas la sobrecarga de volumen, la lesión intracraneal y el
+estrés postraumático, **la serie está agotada**. Las 75 restantes son
 ecografía y cuidados críticos —*Intensive Care Med*, *J Am Soc Echocardiogr*, *Ultrasound
 J*, *Radiographics*—: el fondo de biosemiotics que entró con `refs.bib`, y por
 tanto material de la **oleada 1**, no de ésta.
 
 Conviene no confundir dos cosas que esta sección mezclaba:
 
-- **En el repositorio y sin modelar** — la de abajo, y solo en parte.
+- **En el repositorio y sin modelar** — ya ninguna de la serie.
 - **Ni siquiera obtenidas** — abstinencia alcohólica grave, disfunción tiroidea,
   ascitis, esplenomegalia. **No están en `referencias/`**: hay que traerlas por
   PMID y verificarlas antes de que exista nada que modelar. Es otro trabajo y
-  otra fase.
+  otra fase, y es lo único de la serie que sigue vivo.
 
-La única de la serie que queda sin modelar:
+**Agotada no es lo mismo que completa.** Una condición de la oleada quedó
+parcial, y quedó así a propósito:
 
-| Referencia | Año | Estado tras el cotejo del 06/09/2026 |
+| Referencia | Año | Qué falta, y por qué |
 |---|---|---|
-| `pmid:26241601` · estrés postraumático | 2015 | **PARCIAL.** Solo entra el Trauma Screening Questionnaire, y sus cifras las da el propio aviso: Se 0.95, Sp 0.26, LR+ 1.3 (1.2-1.4), LR− 0.20 (0.10-0.41). **El abstract sigue bloqueado**: la corrección dice que retiró dos frases y redondeó valores, pero no dice cuáles. Para desbloquearlo hace falta el abstract corregido del artículo (`10.1001/jama.2015.7877`), como en la sobrecarga de volumen |
+| `pmid:26241601` · estrés postraumático → `HM:6039` | 2015 | **MODELADA EN PARTE.** Entró el Trauma Screening Questionnaire, con las cifras que publica literalmente el aviso de corrección. **No entraron el PC-PTSD ni el PTSD Checklist**, que son los dos que la fuente recomienda: el abstract da dos bloques de cifras para los mismos cortes y la corrección explica la duplicación sin decir cuál sobrevivió. Para desbloquearlos hace falta el abstract corregido del artículo (`10.1001/jama.2015.7877`), como en la sobrecarga de volumen. Tampoco consta el punto de corte del TSQ, que vive en el eAppendix 5 |
+
+**Modelar una fuente en parte es un resultado, no un trabajo a medias**, siempre
+que la parte que falta esté declarada donde alguien la vaya a leer. Aquí lo está
+tres veces: en `HM:6039`, en `HM:3153` y en la referencia. Lo que no vale es
+dejar fuera un instrumento sin decir que se dejó fuera: quien leyera la condición
+creería que el TSQ es el mejor cribado de la fuente, cuando es el único cuyas
+cifras se pudieron verificar.
 
 **Al cotejar una errata, empieza por localizarla**: tiene su propio PMID y a
 menudo su propio PMC, aunque el artículo corregido esté de pago.
@@ -660,9 +680,9 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 ```
                         hoy      al cerrar oleada 2
 referencias             112             112
-conceptos               288            ~800
-condiciones              38            ~515
-aristas con cociente    142             142
+conceptos               289            ~800
+condiciones              39            ~515
+aristas con cociente    143             143
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

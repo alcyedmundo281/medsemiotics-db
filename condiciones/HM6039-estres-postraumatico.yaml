@@ -1,0 +1,124 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# ES UNA CONDICIÓN DELIBERADAMENTE PARCIAL, y cierra la oleada 1.5 siéndolo.
+# La fuente, pmid:26241601 (Spoont 2015, JAMA), evalúa 15 instrumentos de
+# cribado sobre 23 estudios de cohorte, y su abstract recomienda dos: el
+# PC-PTSD de 4 ítems y el PTSD Checklist de 17. NINGUNO DE LOS DOS ENTRA AQUÍ.
+#
+# POR QUÉ NO ENTRAN. La corrección de 2016 —«Value Errors in Tables and
+# Abstract», doi 10.1001/jama.2015.16955— dice que el abstract tenía datos
+# incorrectos, que se retiraron dos frases y que se redondearon valores, pero NO
+# DICE CUÁLES. El abstract que sigue sirviendo PubMed da dos bloques de cifras
+# para los MISMOS instrumentos y los MISMOS cortes: el PC-PTSD con LR+ 6.9 y
+# también con 8.49; el Checklist con 5.2 y también con 6.8. La corrección
+# explica la duplicación —eran las frases retiradas— pero no dice cuál bloque
+# sobrevivió, así que los dos instrumentos que la fuente recomienda son los dos
+# que no se pueden transcribir. Está documentado cifra por cifra en la
+# referencia.
+#
+# QUÉ SÍ ENTRA, y por qué es lo único citable: el Trauma Screening
+# Questionnaire. Sus cuatro cifras las publica la propia corrección, literales,
+# como valores que deben sustituir a los del eAppendix 5. No dependen del
+# abstract bloqueado, no las toca ninguna de las dos frases retiradas, y vienen
+# de la fuente más autorizada que existe para un dato corregido: el aviso de
+# corrección. Es una fila, y es una fila firme.
+#
+# LO QUE FALTA PARA COMPLETARLA es el abstract YA CORREGIDO del artículo
+# (doi 10.1001/jama.2015.7877), igual que en HM:6037. Con él entran los otros
+# dos instrumentos y esta condición deja de ser parcial.
+
+id: 'HM:6039'
+tipo: condicion
+clase: sindrome
+termino: Trastorno de estrés postraumático
+termino_en: Posttraumatic stress disorder
+sinonimos:
+  - TEPT
+  - PTSD
+  - estrés postraumático
+
+codigos: {snomed: null, cie10: null}
+
+signos:
+  - concepto: 'HM:3153'    # Trauma Screening Questionnaire positivo
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: >-
+      152 pacientes, los de la fila del Trauma Screening Questionnaire; la
+      corrección publica además VPP 44 y VPN 89 para esa misma fila
+    lr_positivo:
+      valor: 1.3
+      ic95: [1.2, 1.4]
+      ref: 'pmid:26241601'
+    lr_negativo:
+      valor: 0.20
+      ic95: [0.10, 0.41]
+      ref: 'pmid:26241601'
+    sensibilidad: 0.95
+    ic95_sensibilidad: [0.90, 0.97]
+    especificidad: 0.26
+    ic95_especificidad: [0.22, 0.30]
+    efecto: excluye
+    dispara_si: ausente
+    sostiene: discriminacion_medida
+    ref: 'pmid:26241601'
+    decision: >-
+      solo decide cuando es NEGATIVO. Con sensibilidad del 95% y LR− 0.20, un
+      TSQ negativo hace el trastorno bastante improbable. Un TSQ positivo no
+      decide nada: LR+ 1.3 sobre una especificidad del 26% apenas mueve la
+      probabilidad, así que cribar positivo obliga a la entrevista diagnóstica y
+      no la sustituye.
+    advertencia: >-
+      las cuatro cifras son las de la CORRECCIÓN (doi 10.1001/jama.2015.16955),
+      no las del eAppendix 5 original, que la corrección declara erróneo. No se
+      transcriben del abstract: el abstract ni siquiera nombra este instrumento.
+    nota: >-
+      la fila corregida es coherente consigo misma, y se comprobó: Se/(1−Sp) =
+      0.95/0.74 = 1.28, que redondea al LR+ 1.3 publicado, y (1−Se)/Sp =
+      0.05/0.26 = 0.19, que redondea al LR− 0.20. Es una comprobación que se
+      hizo, no una fuente de datos.
+
+notas_de_uso:
+  - >-
+    ESTE COCIENTE NO SE LEE SOBRE UNA PROBABILIDAD PREVIA DE ATENCIÓN PRIMARIA.
+    El VPP 44 y el VPN 89 que publica la corrección solo son compatibles con una
+    prevalencia cercana al 38% en la muestra de 152 pacientes: con Se 0.95 y Sp
+    0.26, esa prevalencia devuelve VPP 44% y VPN 89%, las dos cifras exactas.
+    Es aritmética de comprobación, no un dato publicado, y por eso no se guarda
+    como probabilidad base; pero basta para advertir que aplicar el LR− 0.20 a
+    una consulta de baja prevalencia es leerlo fuera de donde se midió.
+  - >-
+    Los dos instrumentos que la fuente recomienda —el PC-PTSD de 4 ítems y el
+    PTSD Checklist de 17— NO ESTÁN EN EL ÍNDICE, y su ausencia no significa que
+    rindan peor que el TSQ: significa que sus cifras están bloqueadas por la
+    corrección. Quien lea esta condición como el rendimiento del cribado del
+    estrés postraumático la estará leyendo mal. Es el instrumento cuyas cifras
+    se pudieron verificar, no el mejor de los evaluados.
+  - >-
+    El punto de corte del TSQ no consta. La corrección da las cuatro cifras de
+    la fila pero no la puntuación con la que se consideró positivo el
+    cuestionario, y no se adivina. Ver HM:3153.
+
+pendiente:
+  - >-
+    El abstract corregido del artículo (doi 10.1001/jama.2015.7877) desbloquea
+    el PC-PTSD y el PTSD Checklist. El que sirve PubMed sigue siendo el anterior
+    a la corrección —muestra los dos bloques contradictorios—, así que hace
+    falta la página del editor con acceso propio, como en HM:6037.
+  - >-
+    El punto de corte del Trauma Screening Questionnaire vive en el eAppendix 5.
+    Con él, HM:3153 puede declarar su umbral.
+
+conclusion_de_la_fuente: >-
+  Dos instrumentos de cribado, el PC-PTSD y el PTSD Checklist, muestran
+  características de rendimiento razonables para su uso en consultas de atención
+  primaria o en entornos comunitarios con poblaciones de alto riesgo. Ambos son
+  fáciles de administrar e interpretar y pueden incorporarse sin dificultad a
+  una práctica clínica con poco tiempo.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1.5 a partir de la revisión sistemática RCE
+    (pmid:26241601), y parcial a propósito: entra únicamente el Trauma Screening
+    Questionnaire, con las cifras que publica su corrección de 2016. Cierra la
+    veta de la serie con la última fuente que quedaba sin modelar.
