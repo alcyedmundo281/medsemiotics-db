@@ -589,6 +589,20 @@ for f, d in referencias.items():
                 avi(f, f'tiene errata publicada cotejada y verificada ({v["errata"]})')
         else:
             avi(f, f'tiene errata publicada ({v["errata"]}); aún no la cita nadie')
+    # `errata_comprobada: false` dice que NADIE ha mirado si este artículo tiene
+    # errata. No dice que no la tenga, y esa diferencia es justo la que se pierde
+    # sola: un registro sin campo `errata` es indistinguible de uno que se
+    # comprobó y salió limpio. Las referencias que entraron sin poder consultar
+    # eutils lo declaran, y aquí se convierte en un candado: sin comprobar no
+    # sostienen nada. Mientras nadie las cite es solo un aviso.
+    elif v.get('errata_comprobada') is False:
+        if d.get('id') in refs_citadas:
+            errores.append(f'{f}: SOSTIENE UN DATO Y SU ERRATA ESTÁ SIN COMPROBAR — '
+                           f'corre scripts/6_referencia_por_pmid.py '
+                           f'{(d.get("identificadores") or {}).get("pmid")} '
+                           f'{d.get("clave_bibtex")} donde PubMed sea alcanzable')
+        else:
+            avi(f, 'errata sin comprobar; aún no la cita nadie')
 
 # ── informe ───────────────────────────────────────────────────────────────────
 
@@ -602,7 +616,12 @@ print(f'\n⚠ {sin_triada} conceptos sin significante   (se rellenan al migrar b
 # El backlog conocido —conceptos sin tríada, umbrales heredados sin fuente— es
 # ruido de fondo previsible y se resume. Lo demás exige mirarlo: un aviso sobre
 # un cociente sospechoso sepultado bajo 147 rutinarios es un aviso que nadie ve.
-RUTINA = ('sin significante', 'umbral sin procedencia', 'umbral sin unidad')
+RUTINA = ('sin significante', 'umbral sin procedencia', 'umbral sin unidad',
+          # Son 59 de una sola importación y listarlas una por una sepulta
+          # las alertas que sí piden decisión. Contadas dicen lo mismo, y el
+          # candado que importa no es este aviso sino el error de más arriba,
+          # que salta en cuanto una de ellas sostiene un dato.
+          'errata sin comprobar')
 rutina = [a for a in avisos if any(r in a for r in RUTINA)]
 atencion = [a for a in avisos if a not in rutina]
 

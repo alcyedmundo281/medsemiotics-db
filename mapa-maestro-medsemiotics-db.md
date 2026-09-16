@@ -264,8 +264,8 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **74** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **18** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **164** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **40** de ~3000 |
 
 Los 74 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
@@ -316,6 +316,12 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6032` | Trastorno de pánico | 1 | `pmid:25058220` |
 | `HM:6033` | Melanoma cutáneo | 3 | `pmid:9496989` |
 | `HM:6034` | Cáncer de mama | 2 | `pmid:10517431` |
+| `HM:6035` | Trombosis venosa profunda | 0 de exploración (6 cocientes del dímero D) | `pmid:16403932` |
+| `HM:6036` | Neumonía infantil | 6 | `pmid:28763554` |
+| `HM:6037` | Sobrecarga de volumen | 8 (12 cocientes) | `pmid:41729549` |
+| `HM:6038` | Lesión intracraneal en traumatismo craneal leve | 6 + 2 escalas | `pmid:26717031` |
+| `HM:6039` | Trastorno de estrés postraumático | 1 (parcial a propósito) | `pmid:26241601` |
+| `HM:6040` | Pancreatitis aguda | 7 aristas, **0 cocientes** | holonmed (sin fuente resoluble) |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -348,9 +354,9 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
 | Serie *Rational Clinical Examination* | revisiones con cociente publicado | **14 fuentes** | ✅ 61 aristas medidas |
-| 14 signos de biosemiotics | significante, significado, umbral, falsos positivos | **14** | listo, requiere normalizar |
-| 14 conceptos de biosemiotics | física y artefactos, grafo de prerrequisitos | **14** | listo |
-| Skills de holonmed | aristas con LR y fuente | **7 aristas** | pendiente (oleada 1) |
+| Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 14 migrados · 14 esperan 59 referencias |
+| Conceptos de biosemiotics | física y artefactos de ecografía | **17** | fuera de alcance (ver oleada 1) |
+| Skills de holonmed | aristas, pero sin fuente resoluble | **7 aristas** | ✅ migradas sin cociente |
 | Skills de holonmed | parámetros de laboratorio con corte | **19** únicos | ✅ incrustados en su concepto |
 | Temario DeGowin | términos con tipo SIGN/SYNDROME/DISEASE | **1113** | 991 limpios · 122 a revisar |
 
@@ -370,10 +376,10 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 112 | las que traiga cada condición nueva |
-| **Conceptos** | 279 | ~420 signos del temario |
-| **Condiciones** | 34 | ~480 síndromes y enfermedades |
-| **Aristas con cociente** | **122** | prácticamente todo |
+| **Referencias** | 172 — 60 con errata sin comprobar | las que traiga cada condición nueva |
+| **Conceptos** | 300 — 14 con tríada | ~420 signos del temario |
+| **Condiciones** | 40 | ~480 síndromes y enfermedades |
+| **Aristas con cociente** | **143** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
@@ -618,15 +624,187 @@ que se acuñó `graduacion`.
 - [ ] pendiente aparte, y sigue abierto: el extremo del rango 7.1–250 del
       colesterol pleural (`HM:3008`), que exige el texto completo
 
-### OLEADA 1 — lo que ya está escrito y revisado
+### OLEADA 1 — lo que ya está escrito y revisado *(en curso)*
 Migrar lo que biosemiotics y holonmed tienen validado.
 
-- [ ] **14 signos** de biosemiotics con su tríada completa
-- [ ] **14 conceptos** base con `se_basa_en` y `contrasta_con`
-- [ ] **1 condición** (pancreatitis aguda) con sus **7 aristas** y sus fuentes
+- [x] **14 signos de biosemiotics con su tríada completa** — los 14 cuyas
+      referencias YA estaban en el índice. Tres rellenaron conceptos que existían
+      vacíos (`HM:3007` derrame pleural, `HM:3148` líneas B, `HM:0903` litiasis
+      biliar) y once se acuñaron, `HM:3154`–`HM:3164`.
+- [x] **Las 59 referencias que los bloqueaban, traídas y cotejadas** — con
+      candado: `errata_comprobada: false` hasta que alguien pueda consultar
+      eutils. Ver abajo.
+- [ ] **14 signos más**, ya desbloqueados en cuanto se comprueben sus erratas.
+- [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
+      desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
+      hallazgo: ver abajo.
+
+**La oleada 1 no está cerrada, y le falta UNA orden.** Los 14 signos restantes y
+la regla de Atlanta esperan lo mismo: que se coteje la errata de las 60
+referencias importadas con candado.
+
+```bash
+python scripts/9_desbloquear_referencias.py
+```
 
 Al cerrar esta oleada, el índice ya sirve a los tres clientes y se puede
 invertir la dirección con biosemiotics.
+
+#### Los 14 conceptos de física NO entran, y es una decisión
+
+El mapa decía «14 conceptos base con `se_basa_en` y `contrasta_con`». Al abrir
+biosemiotics resultaron ser **17**, y sobre todo resultaron ser otra cosa: son
+física y artefactos de ecografía —efecto piezoeléctrico, reverberación,
+knobology, tipos de sonda—, y **no traen ni significante, ni significado, ni
+umbral, ni falsos positivos**. Lo que traen es un `abstract` en prosa, un
+capítulo y un orden de lectura.
+
+No hay un solo hecho estructurado que migrar, y este índice es proveedor de
+hechos. Se quedan en biosemiotics, que es donde sirven.
+
+**La consecuencia práctica:** `se_basa_en` no se migra con los signos, porque
+todos sus destinos son esos conceptos. Una relación que apunta fuera del índice
+se publicaría como un identificador roto. `contrasta_con` sí se migra, pero solo
+entre signos que ya tienen código aquí.
+
+#### Las 59 referencias que los bloqueaban: traídas, y con candado
+
+**Ya están en `referencias/`.** Eran las que biosemiotics cita y este índice no
+tenía: `refs.bib` entró en la oleada 0 con 74 referencias y biosemiotics siguió
+creciendo. De las 122 claves bibtex que citan los 28 signos, 63 resolvían y 59 no.
+
+**Entraron por una vía que no es la canónica, y eso está declarado en cada una.**
+La política de egreso de la sesión que las trajo bloquea
+`eutils.ncbi.nlm.nih.gov` y `api.crossref.org`, así que ni
+`scripts/6_referencia_por_pmid.py` ni `scripts/8_comprobar_erratas.py` pudieron
+correr. Los datos bibliográficos salen mecánicamente del `refs.bib` de
+biosemiotics y **se cotejaron contra PubMed una por una**: las 59 coinciden en
+título, revista, volumen, páginas y DOI, y ninguna está retractada.
+
+**Lo que NO se pudo comprobar son las erratas**, porque la vía disponible no
+expone el campo «Erratum in:». Y ahí está el peligro real: un registro sin campo
+`errata` es indistinguible de uno que se comprobó y salió limpio. Por eso cada
+una lleva `errata_comprobada: false`, y **`build.py` falla si una referencia con
+ese campo en false sostiene un cociente o un umbral**. El hueco no es una nota
+que alguien deba recordar: es un candado que salta solo.
+
+Se abre corriendo, desde donde PubMed sea alcanzable:
+
+```bash
+python scripts/6_referencia_por_pmid.py <pmid> <clave_bibtex>
+```
+
+que comprueba la errata de verdad y **borra el campo al regenerar el registro**
+—`errata_comprobada` está en `CLAVES_GENERADAS` justo para eso—.
+
+Tampoco se resolvió el DOI en CrossRef, así que las 59 llevan `crossref: false`.
+No es grave por sí solo: PubMed manda sobre CrossRef para título, año y
+retractación, y CrossRef solo confirma que el DOI resuelve.
+
+**Nueve llevan además una nota de año.** PubMed muestra para ellas una fecha de
+publicación electrónica anterior al número de la revista; el `anio` que se guarda
+es el del número, que es lo que escribe el script del repositorio.
+
+El corte de la primera mitad no fue arbitrario y por eso partió exactamente por
+la mitad: entraron los signos cuyas referencias resolvían TODAS. Un signo cuyo
+umbral cita una fuente que el índice no tiene no puede declarar procedencia, y un
+umbral sin procedencia es la misma clase de dato inventado que un LR sin `ref`.
+Estos catorce ya tienen sus fuentes; lo que les falta ahora es el cotejo de
+erratas, y hasta entonces el candado no los deja sostener ningún umbral.
+
+| Signo | Referencias que le faltan |
+|---|---|
+| fevi-simpson | 2 |
+| absceso-partes-blandas · disfuncion-diastolica · hemotorax · hernia-complicada | 3 cada uno |
+| fast-douglas · fast-esplenorrenal · fast-morrison · vti | 4 cada uno |
+| embarazo-ectopico · gasto-cardiaco | 6 cada uno |
+| colecistitis-aguda · coledocolitiasis | 9 cada uno |
+| apendicitis | 10 |
+
+**Lo que queda es una orden, desde una red que alcance PubMed:**
+
+```bash
+python scripts/9_desbloquear_referencias.py
+```
+
+Busca las que llevan el candado, llama al script 6 sobre cada una espaciando las
+peticiones, y avisa de las que resulten tener errata para que se cotejen antes
+de sostener ninguna cifra. Con `--listar` dice cuáles son sin tocar nada. Es
+re-ejecutable: descubre las pendientes en cada corrida, así que si alguna falla
+basta con volver a lanzarlo.
+
+Son dos minutos de reloj y abre el candado de golpe; después, los 14 signos
+entran igual que entraron los primeros catorce.
+
+#### La pancreatitis llegó con siete cocientes y no entró ninguno
+
+Es el resultado más incómodo de la oleada, y conviene que esté escrito. El
+protocolo de holonmed (`backend/skills/acute_pancreatitis.md` v2.0.0) asigna un
+cociente a cada uno de sus siete signos. **Ninguno declara procedencia
+resoluble:**
+
+| Signo | LR que usa holonmed | Lo que cita |
+|---|---|---|
+| Hiperlipasemia (>3x) | 26.6 / 0.1 | «JAMA Rational Clinical Examination» |
+| Hiperamilasemia (>3x) | 12.5 / 0.3 | «JAMA Rational Clinical Examination» |
+| Dolor epigástrico | 2.1 / 0.2 | GetTheDiagnosis.org |
+| Vómitos | 1.6 | GetTheDiagnosis.org |
+| Irritación peritoneal | 2.2 | GetTheDiagnosis.org |
+| Signo de Cullen | 8.0 | **nada** |
+| Hallazgos de imagen | 9.0 | «el tercer criterio de Atlanta» |
+
+**Comprobado contra PubMed el 16/09/2026: la serie *Rational Clinical
+Examination* NO tiene ningún artículo sobre pancreatitis.** La atribución de los
+dos cocientes más altos del protocolo no se sostiene. GetTheDiagnosis.org es un
+agregador web, no un artículo con PMID. Y Atlanta define un criterio; no publica
+ese cociente.
+
+**Las aristas entraron; los números no.** Es lo que manda el flujo de
+`CLAUDE.md`: si no hay LR publicado, la arista se crea igual con
+`estado_lr: no_medido`, porque la relación existe aunque nadie la haya
+cuantificado de forma citable. Los valores quedan anotados en el `pendiente` de
+`HM:6040` —no en las aristas, para que no se lean como dato— junto a la pista ya
+descartada, que ahorra la siguiente búsqueda.
+
+**Tampoco entraron la `probabilidad_base` ni los multiplicadores de riesgo.** La
+primera el propio protocolo la declara como prevalencia local, no como hecho
+publicado. Los segundos (alcohol 2.8, litiasis 3.2, hipertrigliceridemia 2.2,
+CPRE 2.5) habrían entrado **en silencio**, porque `build.py` no valida
+`factores_riesgo`: es la puerta por la que se cuela un número sin procedencia, y
+conviene saber que está abierta.
+
+#### El candado mordió el trabajo propio, que es para lo que estaba
+
+La regla de Atlanta es lo único cuantificado y bien citado del protocolo, y
+**tampoco entró como regla**. Su fuente, `pmid:23100216`, se importó con
+`errata_comprobada: false`, y el candado que la oleada 1 añadió a `build.py`
+impide que una referencia sin cotejar sostenga un dato. Una regla de
+clasificación es un dato.
+
+No se esquivó. Se buscó la errata por la vía disponible y no apareció ninguna
+para Banks 2013 —la única que devuelve el título es de otro artículo, un
+*pictorial essay* de *Radiographics*—, pero «busqué y no vi nada» no es el campo
+«Erratum in:» del propio registro, y bajar el listón para desbloquearse a uno
+mismo vacía el campo de significado. Los criterios quedan en prosa, que no exige
+procedencia, y la regla entra con la misma orden que desbloquea todo lo demás.
+
+#### Dos rendimientos que esperan a que exista su condición
+
+`HM:3162` (ventrículo derecho dilatado) y `HM:3163` (taponamiento cardíaco)
+llegan con cifras de sensibilidad y especificidad que NO entraron, y conviene
+que no se pierdan:
+
+- **Sobrecarga derecha para tromboembolia pulmonar**: Se 53 % (IC95% 45-61),
+  Sp 83 % (IC95% 74-90).
+- **Colapso del ventrículo derecho para taponamiento**: Se 48-100 %, Sp 72-100 %
+  según la serie. **Colapso de la aurícula derecha**: Se 50-100 %, Sp 33-100 %.
+
+No son umbrales: son el rendimiento del signo **contra una condición**, y aquí
+ese dato vive en la arista, no en el concepto. La tromboembolia pulmonar y el
+taponamiento **no existen todavía como condiciones**. Cuando se acuñen, estas
+cifras son su primera arista y su procedencia ya está en el índice. Los rangos
+entre series del taponamiento, además, se transcriben como rango y no se
+promedian.
 
 ### OLEADA 2 — el temario limpio
 Los 991 términos que pasaron la normalización, por tipo.
@@ -679,9 +857,9 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias             112             112
-conceptos               289            ~800
-condiciones              39            ~515
+referencias             172             172
+conceptos               300            ~800
+condiciones              40            ~515
 aristas con cociente    143             143
 ```
 

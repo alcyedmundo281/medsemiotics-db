@@ -1,16 +1,41 @@
 # Concepto del índice. Acuñado al modelar HM:6005 (derrame pleural exudativo).
+#
+# La tríada se rellenó en la OLEADA 1, migrada de biosemiotics
+# (signo-derrame-pleural). El `significante` es el ECOGRÁFICO, que es el que
+# publica la fuente: un espacio anecoico no es un hallazgo radiográfico.
+#
+# SIN `umbral`, y la ausencia es el dato: biosemiotics dice expresamente que no
+# existe un volumen único que obligue a drenar —la decisión depende de síntomas,
+# etiología, infección y accesibilidad—. Estructurar aquí una cifra sería
+# inventar un corte que la fuente niega tener.
 
 id: 'HM:3007'
 tipo: concepto
 semantica: hallazgo
 termino: Derrame pleural
+termino_en: Pleural effusion
 sinonimos: [líquido pleural, colección pleural]
 padre: 'HM:0400'
 codigos: {snomed: null, icd10: null, hpo: null}
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Espacio anecoico entre la pared torácica y el pulmón, sobre el diafragma.
+significado: >-
+  Líquido en el espacio pleural.
+falsos_positivos:
+  - Ascitis subdiafragmática
+  - Consolidación pulmonar
+  - Órgano sólido
+  - Engrosamiento o masa pleural
+  - Derrame pericárdico
+  - Ventana mala
+
+contrasta_con: ['HM:3148']
 
 procedencia:
   fuente: Acuñado al modelar el derrame pleural exudativo.
+  nota: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-derrame-pleural),
+    que la sostiene sobre pmid:22392031, pmid:26218493 y otras seis referencias
+    ya presentes en el índice. Los falsos positivos venían como identificadores
+    con guiones y se normalizaron a prosa; ni se añadió ni se quitó ninguno.

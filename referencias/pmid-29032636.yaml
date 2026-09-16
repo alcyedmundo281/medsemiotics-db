@@ -1,0 +1,107 @@
+# Registro de referencia del índice. Datos bibliográficos derivados de refs.bib
+# de biosemiotics; PMID, título, revista, volumen, páginas y DOI cotejados contra
+# PubMed uno por uno.
+#
+# NO LO GENERÓ scripts/6_referencia_por_pmid.py, y por eso lleva candado. La
+# política de egreso de la sesión que lo trajo bloquea eutils.ncbi.nlm.nih.gov y
+# api.crossref.org, así que ni ese script ni scripts/8_comprobar_erratas.py
+# pudieron correr. El cotejo se hizo contra PubMed por otra vía, que confirma
+# título, año, revista, volumen, páginas, DOI y tipo de publicación —así que la
+# retractación SÍ está comprobada— pero NO expone «Erratum in:».
+#
+# QUÉ SIGNIFICA `errata_comprobada: false`. Que nadie ha mirado si este artículo
+# tiene errata publicada. No que no la tenga. build.py FALLA si un registro con
+# este campo en false sostiene un cociente o un umbral, así que el hueco está
+# cerrado por el validador y no por una nota que alguien deba recordar.
+#
+# CÓMO SE ABRE: corriendo el script donde PubMed sea alcanzable,
+#
+#     python scripts/6_referencia_por_pmid.py 29032636 yokoe2018
+#
+# que comprueba la errata de verdad y borra este campo al regenerar el registro.
+
+id: "pmid:29032636"
+clave_bibtex: yokoe2018
+tipo: articulo
+titulo: "Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis (with videos)"
+autores:
+  - Yokoe M
+  - Hata J
+  - Takada T
+  - Strasberg SM
+  - Asbun HJ
+  - Wakabayashi G
+  - Kozaka K
+  - Endo I
+  - Deziel DJ
+  - Miura F
+  - Okamoto K
+  - Hwang TL
+  - Huang WS
+  - Ker CG
+  - Chen MF
+  - Han HS
+  - Yoon YS
+  - Choi IS
+  - Yoon DS
+  - Noguchi Y
+  - Shikata S
+  - Ukai T
+  - Higuchi R
+  - Gabata T
+  - Mori Y
+  - Iwashita Y
+  - Hibi T
+  - Jagannath P
+  - Jonas E
+  - Liau KH
+  - Dervenis C
+  - Gouma DJ
+  - Cherqui D
+  - Belli G
+  - Garden OJ
+  - Giménez ME
+  - de Santibañes E
+  - Suzuki K
+  - Umezawa A
+  - Supe AN
+  - Pitt HA
+  - Singh H
+  - Chan ACW
+  - Lau WY
+  - Teoh AYB
+  - Honda G
+  - Sugioka A
+  - Asai K
+  - Gomi H
+  - Itoi T
+  - Kiriyama S
+  - Yoshida M
+  - Mayumi T
+  - Matsumura N
+  - Tokumura H
+  - Kitano S
+  - Hirata K
+  - Inui K
+  - Sumiyama Y
+  - Yamamoto M
+publicacion: J Hepatobiliary Pancreat Sci
+anio: 2018
+volumen: "25"
+paginas: "41-54"
+
+identificadores:
+  pmid: 29032636
+  doi: "10.1002/jhbp.515"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-09-16"
+  retractado: false
+  errata_comprobada: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden con refs.bib'
+    - 'ERRATA SIN COMPROBAR: eutils bloqueado por la política de egreso; corre scripts/6_referencia_por_pmid.py donde PubMed sea alcanzable'
+    - 'CrossRef sin comprobar: api.crossref.org bloqueado. El DOI es el que publica PubMed, no se ha resuelto'

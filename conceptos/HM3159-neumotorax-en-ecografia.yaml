@@ -1,0 +1,48 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# EL SIGNO ES COMPUESTO Y ASIMÉTRICO, y así lo transcribe el significante: la
+# presencia de sliding o de líneas B EXCLUYE neumotórax en el punto examinado,
+# pero su ausencia aislada NO lo confirma. El lung point es lo que confirma,
+# cuando se encuentra. Es la advertencia del título original: la ausencia de
+# sliding no basta.
+#
+# SIN `umbral`: la fuente dice expresamente que no usa un conteo.
+
+id: 'HM:3159'
+tipo: concepto
+semantica: hallazgo
+termino: Neumotórax en ecografía
+termino_en: Pneumothorax on ultrasound
+sinonimos:
+  - ausencia de deslizamiento pleural
+  - lung point
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Línea pleural sin sliding, sin líneas B y sin pulso pulmonar; el lung
+  point muestra la transición hacia pleura en contacto.
+significado: >-
+  Aire en el espacio pleural que separa la pleura visceral de la parietal
+  en la zona examinada.
+falsos_positivos:
+  - Apnea o ventilación muy superficial
+  - Intubación endobronquial o ventilación selectiva
+  - Adherencias pleurales, pleurodesis o fibrosis
+  - Contusión pulmonar, síndrome de dificultad respiratoria o
+    consolidación extensa
+  - Bullas enfisematosas e interfaces anatómicas que imitan lung point
+  - Sonda sobre una costilla o línea pleural mal identificada
+
+contrasta_con: ['HM:3160']
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-neumotorax),
+    que la sostiene sobre 8 referencias, todas ya presentes en el índice.
+  nota: >-
+    Los seis falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

@@ -1,0 +1,47 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# EL SIGNIFICADO LLEVA SU PROPIA ADVERTENCIA, y es de la fuente: tener líquido
+# pericárdico NO demuestra fisiología de taponamiento. Esa distinción es la que
+# separa este concepto de HM:3163, que es otro hallazgo con otros criterios.
+#
+# SIN `umbral`, y la ausencia es el dato: la fuente dice expresamente que no
+# existe una cifra única que defina el signo. Estructurar un corte aquí
+# inventaría un número que la fuente niega tener.
+
+id: 'HM:3155'
+tipo: concepto
+semantica: hallazgo
+termino: Derrame pericárdico en ecografía
+termino_en: Pericardial effusion on ultrasound
+sinonimos:
+  - líquido pericárdico
+  - derrame pericárdico ecográfico
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Espacio anecoico o hipoecoico entre el miocardio y el pericardio,
+  visible y confirmable en más de una ventana cardíaca.
+significado: >-
+  Líquido en el espacio pericárdico; su presencia no demuestra por sí sola
+  fisiología de taponamiento.
+falsos_positivos:
+  - Grasa epicárdica o pericárdica
+  - Derrame pleural visto detrás de la aorta descendente
+  - Ascitis adyacente a la ventana subcostal
+  - Quiste o masa mediastínica
+  - Ganancia excesiva o plano oblicuo que crea un espacio oscuro
+
+contrasta_con: ['HM:3163']
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-derrame-
+    pericardico), que la sostiene sobre 5 referencias, todas ya presentes
+    en el índice.
+  nota: >-
+    Los cinco falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

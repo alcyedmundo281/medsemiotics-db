@@ -41,9 +41,9 @@ arista concepto→condición y no al concepto suelto.
 
 | capa | registros |
 |---|---|
-| referencias | **112** — todas con PMID y DOI verificados |
-| conceptos | **289** — 30 con umbral de laboratorio |
-| condiciones | **39** |
+| referencias | **172** — todas con PMID y DOI verificados · 60 con errata pendiente de cotejo |
+| conceptos | **300** — 32 con umbral · 14 con tríada completa |
+| condiciones | **40** |
 | aristas con LR | **143** (170 valores de LR medidos) |
 
 Ver [mapa-maestro-medsemiotics-db.md](mapa-maestro-medsemiotics-db.md) para el

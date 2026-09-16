@@ -60,6 +60,25 @@ verificacion:
         _, notas = generador.conservadas(destino)
         self.assertEqual(notas, ["Comprobado a mano contra el número impreso."])
 
+    def test_no_conserva_el_candado_de_errata_sin_comprobar(self):
+        """La otra mitad del candado: una corrida de verdad tiene que abrirlo.
+
+        `errata_comprobada: false` lo escriben las referencias que entraron sin
+        poder consultar eutils, y significa «nadie ha mirado la errata». Este
+        script SÍ la mira, así que conservar el campo dejaría bloqueada para
+        siempre una referencia ya verificada —y build.py seguiría negándose a
+        que sostuviera cifras que están perfectamente comprobadas—.
+        """
+        destino = self.escribe("""\
+verificacion:
+  pubmed: true
+  errata_comprobada: false
+  errata_verificada: true
+""")
+        claves, _ = generador.conservadas(destino)
+        self.assertNotIn("errata_comprobada", claves)
+        self.assertEqual(claves, {"errata_verificada": True})
+
     def test_registro_nuevo_no_conserva_nada(self):
         claves, notas = generador.conservadas(Path("/no/existe/pmid-0.yaml"))
         self.assertEqual((claves, notas), ({}, []))

@@ -1,0 +1,51 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# EL CRITERIO ES BINARIO POR SEGMENTO —compresión completa o incompleta— y la
+# fuente añade el alcance: hay que revisar al menos femoral común y poplítea con
+# un protocolo validado, y una exploración focalizada proximal NO equivale a una
+# dúplex de toda la extremidad. Registrar como negativo un segmento no
+# visualizado es uno de los falsos positivos de la lista.
+#
+# SIN `umbral` porque no hay eje numérico que graduar: no es un corte sobre una
+# magnitud, es una dicotomía sobre una maniobra.
+#
+# LA CONDICIÓN YA EXISTE (HM:6035), y este concepto todavía NO cuelga de ella:
+# pmid:16403932 no publica cociente de ningún signo de exploración, que es la
+# excepción declarada de esa condición. La arista necesita otra fuente.
+
+id: 'HM:3164'
+tipo: concepto
+semantica: hallazgo
+termino: Vena profunda no compresible en ecografía
+termino_en: Non-compressible deep vein on ultrasound
+sinonimos:
+  - TVP por compresión
+  - compresibilidad venosa ausente
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Persistencia de la luz de una vena profunda durante compresión gradual y
+  perpendicular adecuada.
+significado: >-
+  Trombo venoso en el segmento no compresible, hasta demostrar otra causa.
+falsos_positivos:
+  - Presión insuficiente por dolor, edema o profundidad
+  - Compresión oblicua que desplaza la vena sin colapsarla
+  - Confundir arteria, ganglio o quiste de Baker con una vena
+  - Cambios residuales de una TVP antigua
+  - >-
+      Vena duplicada: comprimir la rama sana y omitir la trombosada
+  - Segmento no visualizado registrado erróneamente como negativo
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-trombosis-
+    venosa-profunda), que la sostiene sobre 4 referencias, todas ya
+    presentes en el índice.
+  nota: >-
+    Los seis falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

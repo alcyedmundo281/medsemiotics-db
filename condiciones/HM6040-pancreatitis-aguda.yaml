@@ -1,0 +1,186 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cierra la OLEADA 1, migrada del protocolo de holonmed
+# (backend/skills/acute_pancreatitis.md v2.0.0).
+#
+# LAS SIETE ARISTAS ENTRAN SIN COCIENTE, Y ESO ES EL HALLAZGO DE LA MIGRACIÓN.
+# El protocolo trae un LR para cada una, pero ninguno con procedencia resoluble:
+#
+#   · hiperlipasemia (26.6 / 0.1) y hiperamilasemia (12.5 / 0.3) citan «JAMA
+#     Rational Clinical Examination». COMPROBADO EL 16/09/2026 CONTRA PUBMED:
+#     esa serie NO TIENE ningún artículo sobre pancreatitis. La atribución de
+#     los dos cocientes más altos del protocolo no se sostiene.
+#   · dolor epigástrico (2.1 / 0.2), vómitos (1.6) e irritación peritoneal (2.2)
+#     citan GetTheDiagnosis.org, que es un sitio web agregador, no un artículo
+#     con PMID.
+#   · el signo de Cullen (8.0) no cita nada en absoluto.
+#   · los hallazgos de imagen (9.0) citan «el tercer criterio de Atlanta».
+#     Atlanta define un criterio diagnóstico; no publica ese cociente.
+#
+# Por la regla dura del repositorio —ningún LR sin `ref` resoluble— los siete
+# números se quedan fuera. Las ARISTAS sí entran, con `estado_lr: no_medido`:
+# la relación existe aunque nadie la haya cuantificado de forma citable, y
+# holonmed necesita saber que existe. Los valores quedan anotados abajo, en
+# `pendiente`, para que quien vaya a buscar la fuente sepa qué está buscando.
+#
+# NO ENTRA LA `probabilidad_base` DEL PROTOCOLO (0.05). Él mismo la declara como
+# «prevalencia en la población que atiendes, no en la literatura mundial»: es
+# configuración local de holonmed, no un hecho publicado, y este índice no es
+# el sitio donde se guarda la prevalencia de una consulta concreta.
+#
+# NO ENTRAN LOS MULTIPLICADORES DE RIESGO (alcohol 2.8, litiasis 3.2,
+# hipertrigliceridemia 2.2, CPRE 2.5). Los factores sí, porque la asociación es
+# real y está en el protocolo; los números no, por la misma razón que los LR.
+# build.py NO valida `factores_riesgo`, así que habrían entrado en silencio: es
+# justo la puerta por la que se cuela un número sin procedencia.
+#
+# LO ÚNICO DEL PROTOCOLO QUE LLEGA CON CITA COMPLETA Y RESOLUBLE es Atlanta
+# 2012 (pmid:23100216). Y TAMPOCO ENTRA COMO REGLA TODAVÍA, porque esa
+# referencia se importó con la errata sin comprobar y el candado de build.py
+# impide que una referencia así sostenga un dato. El candado mordió este mismo
+# trabajo, que es exactamente para lo que se puso. Los criterios quedan en
+# prosa, que no exige procedencia, y la regla entra en cuanto se coteje.
+
+id: 'HM:6040'
+tipo: condicion
+clase: enfermedad
+termino: Pancreatitis aguda
+termino_en: Acute pancreatitis
+sinonimos:
+  - inflamación aguda del páncreas
+
+codigos: {snomed: '197456007', cie10: null}
+
+factores_riesgo:
+  - factor: Consumo de alcohol
+    nota: >-
+      el protocolo de holonmed le asigna un multiplicador de 2.8 que no entra
+      aquí: no declara de dónde sale
+  - factor: Litiasis biliar, incluida la coledocolitiasis
+    nota: >-
+      multiplicador 3.2 en holonmed, el más alto de los cuatro, también sin
+      procedencia
+  - factor: Hipertrigliceridemia
+    nota: multiplicador 2.2 en holonmed, sin procedencia
+  - factor: Colangiopancreatografía retrógrada endoscópica previa
+    nota: multiplicador 2.5 en holonmed, sin procedencia
+
+signos:
+  - concepto: 'HM:0732'    # Hiperlipasemia
+    rol: prueba_especifica
+    estado_lr: no_medido
+    decision: >-
+      es el criterio de referencia de laboratorio y el que holonmed considera
+      más discriminante, por encima de la amilasa: se eleva más tiempo y es más
+      específica del páncreas
+    nota: >-
+      el corte que usa el protocolo es más de tres veces el límite alto, que es
+      también el que exige Atlanta. El cociente que holonmed le asigna no entra
+      por falta de procedencia; ver «Fuera de alcance».
+
+  - concepto: 'HM:0731'    # Hiperamilasemia
+    rol: prueba_especifica
+    estado_lr: no_medido
+    decision: >-
+      el mismo papel que la lipasa pero menos específica: se eleva también en
+      patología salival y en otras causas, y se normaliza antes
+    advertencia: >-
+      no se confunde con la lipasa ni se sustituye por ella. Son enzimas
+      distintas con especificidad distinta, y el propio protocolo de holonmed
+      bloquea el emparejamiento.
+
+  - concepto: 'HM:0202'    # Dolor epigástrico
+    rol: manifestacion
+    estado_lr: no_medido
+    decision: >-
+      fija la sospecha de partida. Sensible y poco específico, así que lo que
+      holonmed aprovecha de él es sobre todo su ausencia
+
+  - concepto: 'HM:0302'    # Vómitos
+    rol: apoyo
+    estado_lr: no_medido
+    decision: aporta poca certeza por sí solo
+
+  - concepto: 'HM:0601'    # Irritación peritoneal
+    rol: apoyo
+    estado_lr: no_medido
+    decision: signo de Blumberg; apoya, no decide
+
+  - concepto: 'HM:0611'    # Signo de Cullen
+    rol: apoyo
+    estado_lr: no_medido
+    decision: >-
+      raro pero llamativo: orienta a pancreatitis necrotizante o hemorrágica
+    advertencia: >-
+      su AUSENCIA no descarta nada, y por eso el protocolo de holonmed no le
+      declara cociente negativo. Es infrecuente incluso dentro de la enfermedad.
+
+  - concepto: 'HM:0901'    # Hallazgos de imagen compatibles con pancreatitis
+    rol: imagen
+    estado_lr: no_medido
+    decision: >-
+      es el tercero de los tres criterios de Atlanta, y el que permite
+      diagnosticar cuando las enzimas no llegan al corte
+    nota: >-
+      la referencia es la tomografía con contraste; la ecografía sirve sobre
+      todo para buscar la causa biliar, no para confirmar la pancreatitis
+
+notas_de_uso:
+  - >-
+    LOS CRITERIOS DE ATLANTA NO ESTÁN AQUÍ COMO REGLA, solo descritos abajo en
+    prosa, y la razón es el propio validador. Una `regla` exige `ref`, su única
+    fuente posible es Atlanta 2012 (pmid:23100216), y esa referencia entró en el
+    índice con la errata sin comprobar porque la red desde la que se importó no
+    alcanzaba PubMed. build.py falla si una referencia así sostiene un dato, y
+    una regla de clasificación es un dato. Se añade sola en cuanto alguien corra
+    `scripts/9_desbloquear_referencias.py` desde una red que sí lo alcance.
+  - >-
+    NINGUNA DE LAS SIETE ARISTAS TRAE COCIENTE, y no es un descuido de la
+    migración: es que el protocolo de origen no declara procedencia para
+    ninguno. Quien lea esta condición esperando cifras con las que mover una
+    probabilidad no las va a encontrar aquí todavía, y ésa es la respuesta
+    honesta hasta que aparezcan las fuentes.
+  - >-
+    Lo único cuantificado que entra es la regla de Atlanta, que no es un
+    cociente sino un criterio de clasificación: dice cuándo el diagnóstico está
+    hecho, no cuánto se mueve la probabilidad con cada hallazgo.
+
+pendiente:
+  - >-
+    LOS COCIENTES QUE HOLONMED USA Y AQUÍ NO ENTRAN, para que quien busque la
+    fuente sepa qué busca: hiperlipasemia LR+ 26.6 y LR− 0.1; hiperamilasemia
+    LR+ 12.5 y LR− 0.3; dolor epigástrico LR+ 2.1 y LR− 0.2; vómitos LR+ 1.6;
+    irritación peritoneal LR+ 2.2; signo de Cullen LR+ 8.0; hallazgos de imagen
+    LR+ 9.0. Se anotan aquí y NO en las aristas justamente para que no se lean
+    como dato del índice.
+  - >-
+    La pista de la lipasa y la amilasa está agotada por el lado que indicaba el
+    protocolo: la serie Rational Clinical Examination no tiene artículo de
+    pancreatitis, comprobado contra PubMed. Hay que buscar en otra parte, y
+    conviene descartar de entrada los metaanálisis de pancreatitis POST-CPRE:
+    miden otra cosa y sus cocientes rondan 8 y 6, no 26.6 y 12.5.
+  - >-
+    LA REGLA DE ATLANTA, que es lo único cuantificado y bien citado de todo el
+    protocolo. Está escrita y comprobada; solo espera a que se coteje la errata
+    de pmid:23100216. Sus componentes son HM:0205 y HM:0202 (dolor), HM:0731 y
+    HM:0732 (enzimas) y HM:0901 (imagen), con el criterio de dos de tres.
+  - >-
+    Los cuatro factores de riesgo entran sin `ref`. La asociación es conocida,
+    pero este índice guarda hechos con procedencia y todavía no la tienen.
+
+conclusion_de_la_fuente: >-
+  El diagnóstico de pancreatitis aguda se establece con dos de tres criterios:
+  dolor abdominal característico, elevación de las enzimas pancreáticas por
+  encima de tres veces el límite alto de la normalidad, o hallazgos de imagen
+  compatibles.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1 desde el protocolo de pancreatitis de holonmed
+    (backend/skills/acute_pancreatitis.md v2.0.0), que es la dirección que la
+    asimetría del ecosistema permite: este índice LEE de holonmed, y holonmed
+    recibe los cambios como pull request que revisa un humano.
+  nota: >-
+    De las tres cosas que traía el protocolo —aristas, cocientes y criterios—
+    entran dos. Los cocientes se quedaron fuera por no declarar procedencia
+    resoluble, y esa decisión la tomó el Dr. Torres el 16/09/2026.

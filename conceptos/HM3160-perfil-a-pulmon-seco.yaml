@@ -1,0 +1,46 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# EL DESLIZAMIENTO PLEURAL ES PARTE DEL SIGNO, no un añadido: unas líneas A SIN
+# deslizamiento no son un perfil A, son un neumotórax (HM:3159). El mismo patrón
+# horizontal significa lo contrario según ese único dato, y por eso el
+# significante lo exige y los falsos positivos lo repiten.
+#
+# SIN `umbral`: la fuente dice que no es un conteo. Lo que exige es
+# distribución —campos anteriores, bilateral— y un solo espacio no basta.
+
+id: 'HM:3160'
+tipo: concepto
+semantica: hallazgo
+termino: Perfil A pulmonar
+termino_en: A-profile (dry lung)
+sinonimos:
+  - pulmón seco
+  - líneas A con deslizamiento conservado
+  - perfil A
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Líneas horizontales paralelas, repetidas a intervalos regulares bajo la
+  línea pleural, con deslizamiento pleural conservado.
+significado: >-
+  Relación aire-tejido normal. Pulmón aireado, sin edema intersticial.
+falsos_positivos:
+  - Ventana mala (ganancia baja o profundidad excesiva que borra líneas
+    B)
+  - Enfisema o bulla
+  - Neumotórax (líneas A sin deslizamiento pleural)
+  - Patrón anterior que no excluye consolidación o derrame posterior
+
+contrasta_con: ['HM:3148', 'HM:3159']
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-perfil-a), que
+    la sostiene sobre 3 referencias, todas ya presentes en el índice.
+  nota: >-
+    Los cuatro falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.

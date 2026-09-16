@@ -1,25 +1,50 @@
 # Concepto del índice. Sembrado desde el vocabulario semilla de holonmed.
-# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+#
+# La tríada se rellenó en la OLEADA 1, migrada de biosemiotics
+# (signo-colelitiasis).
+#
+# SIN `umbral`, y la ausencia es el dato. biosemiotics dice expresamente que no
+# hay un diámetro único que defina el signo: lo que lo define es la combinación
+# de localización intravesicular, movilidad y sombra posterior, y advierte que
+# los cálculos pequeños pueden no dar sombra visible. Estructurar un corte aquí
+# inventaría una cifra que la fuente niega tener.
 
 id: 'HM:0903'
 tipo: concepto
 semantica: hallazgo
 termino: Litiasis biliar en imagen
+termino_en: Cholelithiasis on imaging
 sinonimos:
-  - cálculos en vesícula
-  - colelitiasis ecográfica
+  - colelitiasis
+  - cálculo vesicular
+  - cálculo biliar en ecografía
 padre: 'HM:0900'
-codigos:
-  snomed: null
-  icd10: null
-  hpo: null
+codigos: {snomed: null, icd10: null, hpo: null}
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Foco ecogénico intravesicular, móvil o dependiente, con sombra acústica
+  posterior.
+significado: >-
+  Cálculo dentro de la luz de la vesícula biliar.
+falsos_positivos:
+  - >-
+      Pólipo vesicular adherido a la pared: no cambia de posición y
+      habitualmente no produce sombra
+  - >-
+      Barro biliar o barro tumefactivo: ecos de bajo nivel,
+      dependientes, sin sombra limpia
+  - Pliegue del cuello vesicular o válvula de Heister
+  - Gas duodenal o sombra de borde fuera de la luz vesicular
+  - Calcificación mural o clip quirúrgico en una anatomía alterada
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-colelitiasis),
+    que la sostiene sobre 3 referencias, todas ya presentes en el índice.
   nota: >-
-    Relicenciado a CC0 por el autor para su uso como índice compartido.
-    El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.
+    Los cinco falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró —apuntaba a la física de la sombra acústica,
+    que se queda en biosemiotics—. `contrasta_con` tampoco: sus dos
+    destinos, la colecistitis aguda y la coledocolitiasis, son de los 14
+    signos que esperan a que entren sus referencias, así que hoy no tienen
+    código al que apuntar.

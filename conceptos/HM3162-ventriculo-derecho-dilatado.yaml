@@ -1,0 +1,65 @@
+# Concepto del índice. Acuñado en la OLEADA 1 al migrar biosemiotics.
+#
+# SIN `umbral`, pese a que su origen SÍ trae cifras, y conviene decir por qué.
+# biosemiotics publica para el conjunto de signos de sobrecarga derecha una
+# sensibilidad del 53 % (IC95% 45-61) y una especificidad del 83 % (IC95% 74-90)
+# en el diagnóstico de tromboembolia pulmonar. Eso NO es un umbral: es el
+# rendimiento del signo CONTRA UNA CONDICIÓN, y en este índice ese dato vive en
+# la arista concepto→condición, no en el concepto.
+#
+# NO PUEDE ENTRAR TODAVÍA porque la tromboembolia pulmonar no existe aún como
+# condición. Cuando se acuñe, esas cifras son su primera arista y su procedencia
+# ya está en el índice. Declarado en el mapa maestro para que no se pierda.
+
+id: 'HM:3162'
+tipo: concepto
+semantica: hallazgo
+termino: Ventrículo derecho dilatado en ecografía
+termino_en: Right ventricular overload on ultrasound
+sinonimos:
+  - sobrecarga aguda de presión del VD
+  - signo de la D
+  - signo de McConnell
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ventrículo derecho dilatado (su diámetro se acerca o supera al del
+  ventrículo izquierdo), tabique interventricular aplanado o desplazado
+  hacia el ventrículo izquierdo en sístole (signo de la D), TAPSE reducido
+  y, en algunos casos, acinesia de la pared libre media del VD con el ápex
+  conservado (signo de McConnell).
+significado: >-
+  El ventrículo derecho, de pared delgada y diseñado para bajas presiones,
+  se dilata y falla agudamente ante un aumento súbito de la resistencia
+  vascular pulmonar —típicamente una tromboembolia pulmonar que obstruye
+  una porción significativa del lecho vascular.
+falsos_positivos:
+  - >-
+      Cor pulmonale crónico (EPOC, hipertensión pulmonar crónica,
+      cardiopatía congénita): dilata el VD de forma crónica; pared
+      libre gruesa (>5 mm) y aurícula derecha mayor que la izquierda
+      orientan a cronicidad, no a un evento agudo
+  - >-
+      Signo de McConnell descrito también en infarto del ventrículo
+      derecho: no es exclusivo de tromboembolia pulmonar
+  - Ventana subóptima o corte oblicuo del ápex que simula una relación
+    VD:VI aumentada sin serlo
+  - TAPSE reducido por disfunción del ventrículo izquierdo que arrastra
+    secundariamente al derecho
+  - Ausencia de todos estos hallazgos no descarta tromboembolia pulmonar
+    submasiva o de bajo riesgo hemodinámico
+
+contrasta_con: ['HM:3163']
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-sobrecarga-
+    vd), que la sostiene sobre 6 referencias, todas ya presentes en el
+    índice.
+  nota: >-
+    Los cinco falsos positivos son los de la fuente, literales.
+    `se_basa_en` no se migró: apuntaba a los conceptos de física y
+    artefactos de ecografía, que se quedan en biosemiotics por decisión de
+    la oleada 1. Una relación sin destino resoluble se publicaría como un
+    identificador roto.
