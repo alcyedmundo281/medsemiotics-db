@@ -56,7 +56,12 @@ def crossref(doi):
 # sin que nadie supiera que alguna vez se desbloqueó, y build.py fallaría
 # señalando un cotejo que sí se hizo. Es exactamente el fallo silencioso del que
 # se defiende el resto del repositorio, en el único script capaz de causarlo.
+# `errata_comprobada` está aquí para que una corrida REAL lo borre. Lo escriben
+# los registros que entraron sin poder consultar eutils, y significa «nadie ha
+# mirado la errata». Cuando este script corre sí la mira, así que el candado
+# sobra: conservarlo dejaría bloqueada para siempre una referencia ya verificada.
 CLAVES_GENERADAS = {'pubmed', 'fecha', 'retractado', 'errata', 'errata_corrige',
+                    'errata_comprobada',
                     'crossref', 'crossref_titulo_coincide', 'notas'}
 
 # Las notas que emite este script. Todo lo demás lo escribió una persona.

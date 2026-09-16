@@ -375,7 +375,7 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 112 | 59 de biosemiotics, más las que traiga cada condición |
+| **Referencias** | 171 — 59 con errata sin comprobar | las que traiga cada condición nueva |
 | **Conceptos** | 300 — 14 con tríada | ~420 signos del temario |
 | **Condiciones** | 39 | ~480 síndromes y enfermedades |
 | **Aristas con cociente** | **143** | prácticamente todo |
@@ -630,7 +630,10 @@ Migrar lo que biosemiotics y holonmed tienen validado.
       referencias YA estaban en el índice. Tres rellenaron conceptos que existían
       vacíos (`HM:3007` derrame pleural, `HM:3148` líneas B, `HM:0903` litiasis
       biliar) y once se acuñaron, `HM:3154`–`HM:3164`.
-- [ ] **14 signos más, bloqueados por sus referencias** — ver abajo.
+- [x] **Las 59 referencias que los bloqueaban, traídas y cotejadas** — con
+      candado: `errata_comprobada: false` hasta que alguien pueda consultar
+      eutils. Ver abajo.
+- [ ] **14 signos más**, ya desbloqueados en cuanto se comprueben sus erratas.
 - [ ] **1 condición** (pancreatitis aguda) con sus **7 aristas** y sus fuentes,
       desde las skills de holonmed.
 
@@ -654,16 +657,50 @@ todos sus destinos son esos conceptos. Una relación que apunta fuera del índic
 se publicaría como un identificador roto. `contrasta_con` sí se migra, pero solo
 entre signos que ya tienen código aquí.
 
-#### Lo que bloquea a los otros 14 signos
+#### Las 59 referencias que los bloqueaban: traídas, y con candado
 
-**59 referencias que biosemiotics cita y este índice no tiene.** `refs.bib` entró
-en la oleada 0 con 74 referencias; biosemiotics ha seguido creciendo desde
-entonces. De las 122 claves bibtex que citan los 28 signos, 63 resuelven y 59 no.
+**Ya están en `referencias/`.** Eran las que biosemiotics cita y este índice no
+tenía: `refs.bib` entró en la oleada 0 con 74 referencias y biosemiotics siguió
+creciendo. De las 122 claves bibtex que citan los 28 signos, 63 resolvían y 59 no.
 
-El corte no es arbitrario y por eso partió exactamente por la mitad: entran los
-signos cuyas referencias resuelven TODAS. Un signo cuyo umbral cita una fuente
-que el índice no tiene no puede declarar procedencia, y un umbral sin procedencia
-es la misma clase de dato inventado que un LR sin `ref`.
+**Entraron por una vía que no es la canónica, y eso está declarado en cada una.**
+La política de egreso de la sesión que las trajo bloquea
+`eutils.ncbi.nlm.nih.gov` y `api.crossref.org`, así que ni
+`scripts/6_referencia_por_pmid.py` ni `scripts/8_comprobar_erratas.py` pudieron
+correr. Los datos bibliográficos salen mecánicamente del `refs.bib` de
+biosemiotics y **se cotejaron contra PubMed una por una**: las 59 coinciden en
+título, revista, volumen, páginas y DOI, y ninguna está retractada.
+
+**Lo que NO se pudo comprobar son las erratas**, porque la vía disponible no
+expone el campo «Erratum in:». Y ahí está el peligro real: un registro sin campo
+`errata` es indistinguible de uno que se comprobó y salió limpio. Por eso cada
+una lleva `errata_comprobada: false`, y **`build.py` falla si una referencia con
+ese campo en false sostiene un cociente o un umbral**. El hueco no es una nota
+que alguien deba recordar: es un candado que salta solo.
+
+Se abre corriendo, desde donde PubMed sea alcanzable:
+
+```bash
+python scripts/6_referencia_por_pmid.py <pmid> <clave_bibtex>
+```
+
+que comprueba la errata de verdad y **borra el campo al regenerar el registro**
+—`errata_comprobada` está en `CLAVES_GENERADAS` justo para eso—.
+
+Tampoco se resolvió el DOI en CrossRef, así que las 59 llevan `crossref: false`.
+No es grave por sí solo: PubMed manda sobre CrossRef para título, año y
+retractación, y CrossRef solo confirma que el DOI resuelve.
+
+**Nueve llevan además una nota de año.** PubMed muestra para ellas una fecha de
+publicación electrónica anterior al número de la revista; el `anio` que se guarda
+es el del número, que es lo que escribe el script del repositorio.
+
+El corte de la primera mitad no fue arbitrario y por eso partió exactamente por
+la mitad: entraron los signos cuyas referencias resolvían TODAS. Un signo cuyo
+umbral cita una fuente que el índice no tiene no puede declarar procedencia, y un
+umbral sin procedencia es la misma clase de dato inventado que un LR sin `ref`.
+Estos catorce ya tienen sus fuentes; lo que les falta ahora es el cotejo de
+erratas, y hasta entonces el candado no los deja sostener ningún umbral.
 
 | Signo | Referencias que le faltan |
 |---|---|
@@ -674,10 +711,9 @@ es la misma clase de dato inventado que un LR sin `ref`.
 | colecistitis-aguda · coledocolitiasis | 9 cada uno |
 | apendicitis | 10 |
 
-**Desbloquearlos es un trabajo acotado y mecánico**, no una investigación: las
-entradas de `refs.bib` de biosemiotics **ya traen `pmid` y `doi`**, así que
-`scripts/6_referencia_por_pmid.py` puede traerlas y verificarlas contra PubMed
-una por una. Es la fase siguiente de esta oleada.
+**Lo que queda es correr el script sobre las 59 desde una red que alcance
+PubMed.** Son dos minutos de reloj y abre el candado de golpe; después, los 14
+signos entran igual que entraron los primeros catorce.
 
 #### Dos rendimientos que esperan a que exista su condición
 
@@ -748,7 +784,7 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias             112             112
+referencias             171             171
 conceptos               300            ~800
 condiciones              39            ~515
 aristas con cociente    143             143

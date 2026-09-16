@@ -41,7 +41,7 @@ arista concepto→condición y no al concepto suelto.
 
 | capa | registros |
 |---|---|
-| referencias | **112** — todas con PMID y DOI verificados |
+| referencias | **171** — todas con PMID y DOI verificados · 59 con errata pendiente de cotejo |
 | conceptos | **300** — 32 con umbral · 14 con tríada completa |
 | condiciones | **39** |
 | aristas con LR | **143** (170 valores de LR medidos) |

@@ -1,0 +1,48 @@
+# Registro de referencia del índice. Datos bibliográficos derivados de refs.bib
+# de biosemiotics; PMID, título, revista, volumen, páginas y DOI cotejados contra
+# PubMed uno por uno.
+#
+# NO LO GENERÓ scripts/6_referencia_por_pmid.py, y por eso lleva candado. La
+# política de egreso de la sesión que lo trajo bloquea eutils.ncbi.nlm.nih.gov y
+# api.crossref.org, así que ni ese script ni scripts/8_comprobar_erratas.py
+# pudieron correr. El cotejo se hizo contra PubMed por otra vía, que confirma
+# título, año, revista, volumen, páginas, DOI y tipo de publicación —así que la
+# retractación SÍ está comprobada— pero NO expone «Erratum in:».
+#
+# QUÉ SIGNIFICA `errata_comprobada: false`. Que nadie ha mirado si este artículo
+# tiene errata publicada. No que no la tenga. build.py FALLA si un registro con
+# este campo en false sostiene un cociente o un umbral, así que el hueco está
+# cerrado por el validador y no por una nota que alguien deba recordar.
+#
+# CÓMO SE ABRE: corriendo el script donde PubMed sea alcanzable,
+#
+#     python scripts/6_referencia_por_pmid.py 2934762 puylaert1986
+#
+# que comprueba la errata de verdad y borra este campo al regenerar el registro.
+
+id: "pmid:2934762"
+clave_bibtex: puylaert1986
+tipo: articulo
+titulo: "Acute appendicitis: US evaluation using graded compression"
+autores:
+  - Puylaert JB
+publicacion: Radiology
+anio: 1986
+volumen: "158"
+paginas: "355-60"
+
+identificadores:
+  pmid: 2934762
+  doi: "10.1148/radiology.158.2.2934762"
+
+verificacion:
+  pubmed: true
+  fecha: "2026-09-16"
+  retractado: false
+  errata_comprobada: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden con refs.bib'
+    - 'ERRATA SIN COMPROBAR: eutils bloqueado por la política de egreso; corre scripts/6_referencia_por_pmid.py donde PubMed sea alcanzable'
+    - 'CrossRef sin comprobar: api.crossref.org bloqueado. El DOI es el que publica PubMed, no se ha resuelto'
