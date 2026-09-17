@@ -64,7 +64,8 @@ class GraduacionTest(unittest.TestCase):
         )
         hecho = subprocess.run(
             [sys.executable, str(self.raiz / "scripts" / "build.py")],
-            capture_output=True, text=True,
+            # `encoding` explícito: ver la nota de test_errata_sin_comprobar.py.
+            capture_output=True, text=True, encoding="utf8",
         )
         return hecho.returncode, hecho.stdout + hecho.stderr
 
