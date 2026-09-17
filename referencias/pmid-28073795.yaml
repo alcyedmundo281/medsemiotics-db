@@ -28,6 +28,7 @@ verificacion:
   fecha: 2026-09-17
   retractado: false
   errata: 'BMJ Open. 2017 Sep 14;7(9):e013688corr1. doi: 10.1136/bmjopen-2016-013688corr1.'
+  errata_pmid: 'pmid:28912196'
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -35,3 +36,30 @@ verificacion:
     - >-
       Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
       con refs.bib
+    - >-
+      COTEJO LEÍDO el 17/09/2026 contra el cuerpo de la corrección
+      (pmid:28912196, doi 10.1136/bmjopen-2016-013688corr1, PMC5640141, texto
+      completo en Europe PMC). La corrección SÍ es de este artículo: lo cita
+      como BMJ Open 2017;7:e013688, doi 10.1136/bmjopen-2016-013688.
+    - >-
+      LA ERRATA CAMBIA LAS CIFRAS PRINCIPALES. Del estudio de Marin 2013 (Acad
+      Emerg Med 2013;20:545-53) se incluyeron solo pacientes con absceso a la
+      exploración y no todos los que tuvieron POCUS. Recuento corregido de
+      Marin: VP 193, FP 37, FN 27, VN 95, con Se 88 % y Sp 72 % (la aritmética
+      cuadra: 193/220 = 0.877; 95/132 = 0.720).
+    - >-
+      VALORES AGRUPADOS CORREGIDOS, literales de la corrección: Se 95.5 % (IC95%
+      88.9-98.3) y Sp 80.3 % (IC95% 56.4-92.7). Los ORIGINALES, que ya NO se
+      citan: Se 96.2 % (IC95% 91.1-98.4) y Sp 82.9 % (IC95% 60.4-93.9).
+    - >-
+      `errata_verificada` SIN PONER a propósito, igual que en pmid:26241601
+      antes de citarse: la corrección da solo la Se y la Sp agrupadas. El
+      abstract que sirve PubMed sigue siendo el ORIGINAL y trae además LR+ 5.63
+      (IC95% 2.2-14.6) y LR− 0.05 (IC95% 0.01-0.11), calculados con Marin mal
+      extraído. La corrección NO los recalcula, así que esos dos cocientes
+      están BLOQUEADOS, igual que cualquier subgrupo que incluya a Marin. Poner
+      el campo al modelar el absceso, citando solo los dos valores corregidos.
+    - >-
+      AVISO A BIOSEMIOTICS: signos/absceso-partes-blandas.qmd (línea 162, rama
+      main a 17/09/2026) cita «96,2 % y 82,9 %» de esta fuente: son los valores
+      ANTERIORES a la corrección.

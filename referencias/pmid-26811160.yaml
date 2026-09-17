@@ -29,6 +29,8 @@ verificacion:
   retractado: false
   errata: 'J Am Heart Assoc. 2016 May 12;5(5):e002078. doi: 10.1161/JAHA.116.002078.'
   errata_corrige: Diagnostic Accuracy of Tissue Doppler Index E/è for Evaluating Left Ventricular Filling Pr
+  errata_pmid: 'pmid:27172910'
+  errata_verificada: true
   crossref: true
   crossref_titulo_coincide: false
   notas:
@@ -36,3 +38,21 @@ verificacion:
     - >-
       Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
       con refs.bib
+    - >-
+      COTEJO CERRADO el 17/09/2026 contra el cuerpo de la corrección
+      (pmid:27172910, doi 10.1161/JAHA.116.002078, PMC4889162, texto completo
+      en Europe PMC). La corrección SÍ es de este artículo: cita su doi
+      10.1161/JAHA.115.002530 y su PMID enlaza a 26811160.
+    - >-
+      NO CORRIGE NINGUNA CIFRA. Corrige solo la edición HTML: números de cita
+      mal compuestos en Resultados (p. 8) y Discusión (p. 16), la alineación de
+      la Tabla 4 (p. 11) y un apóstrofo que sustituía a «è» en «E/è» en el
+      título y el texto. Ningún valor de sensibilidad, especificidad, cociente
+      ni umbral cambia.
+    - >-
+      `errata_verificada` se pone ya, sin esperar a que se cite, y es distinto
+      del caso de pmid:26241601: allí la corrección cambiaba datos y solo una
+      fila quedaba cotejada; aquí la corrección entera es tipográfica, así que
+      queda cotejada para cualquier cifra de la fuente. Precaución que sí
+      queda: la Tabla 4 de la versión HTML anterior a mayo de 2016 estaba
+      desalineada; transcribir de la versión actual o del PDF.

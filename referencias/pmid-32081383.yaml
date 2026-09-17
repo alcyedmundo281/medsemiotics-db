@@ -27,6 +27,7 @@ verificacion:
   fecha: 2026-09-17
   retractado: false
   errata: 'Ann Emerg Med. 2022 Jan;79(1):90. doi: 10.1016/j.annemergmed.2021.10.020.'
+  errata_pmid: 'pmid:34949417'
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -34,3 +35,17 @@ verificacion:
     - >-
       Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
       con refs.bib
+    - >-
+      COTEJO PENDIENTE: CORRECCIÓN LOCALIZADA PERO SIN LEER (17/09/2026).
+      Identificada por DOI: pmid:34949417, doi 10.1016/j.annemergmed.2021.10.020,
+      titulada solo «Correction», que PubMed enlaza como «Erratum for» este
+      artículo. PubMed no trae su texto, y tampoco Europe PMC, CrossRef ni
+      OpenAlex (acceso cerrado). annemergmed.com y ScienceDirect exigen
+      verificación antibots y no se sortearon. Falta leerla desde un acceso
+      institucional o en el PDF de Ann Emerg Med 2022;79(1):90.
+    - >-
+      SOSPECHA, que NO es cotejo: la corrección de barbic2017 (pmid:28073795)
+      se debió a que Marin 2013 se extrajo mal, y ese estudio pediátrico es
+      candidato a estar también en este metaanálisis. La sospecha no autoriza
+      a corregir nada: al leer la corrección, mirar primero si trata de Marin
+      y del subgrupo pediátrico.

@@ -27,6 +27,7 @@ verificacion:
   retractado: false
   errata: 'Am J Emerg Med. 2025 Feb;88:277. doi: 10.1016/j.ajem.2024.12.040.'
   errata_corrige: 'Corrigendum to "The impact of high-frequency linear transducer on the accuracy of pelvic u'
+  errata_pmid: 'pmid:39709283'
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -34,3 +35,14 @@ verificacion:
     - >-
       Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
       con refs.bib
+    - >-
+      COTEJO PENDIENTE: CORRECCIÓN LOCALIZADA PERO SIN LEER (17/09/2026).
+      Identificada por DOI: pmid:39709283, doi 10.1016/j.ajem.2024.12.040, que
+      PubMed enlaza como «Erratum for» este artículo, firmada por los mismos
+      tres autores. PubMed no trae su texto, y tampoco Europe PMC, CrossRef ni
+      OpenAlex (sin abstract, sin copia en repositorio). ScienceDirect exige
+      CAPTCHA y no se sorteó. Falta leerla desde un acceso institucional o en
+      el PDF de Am J Emerg Med 2025;88:277.
+    - >-
+      Ninguna cifra de esta fuente entra hasta leerla. Sí la cita
+      biosemiotics, en signos/embarazo-ectopico.qmd.
