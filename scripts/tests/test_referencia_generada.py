@@ -79,6 +79,28 @@ verificacion:
         self.assertNotIn("errata_comprobada", claves)
         self.assertEqual(claves, {"errata_verificada": True})
 
+    def test_descarta_las_notas_del_estado_transitorio(self):
+        """Una nota que dice «sin comprobar» sobre un dato ya comprobado miente.
+
+        Las escribe una importación hecha sin red a PubMed o a CrossRef, y
+        describen un estado que deja de ser cierto en cuanto ESTE script corre:
+        él sí comprueba la errata y sí resuelve el DOI. Conservarlas dejó los 60
+        registros de la oleada 1 contradiciéndose consigo mismos —`crossref:
+        true` junto a «CrossRef sin comprobar»—, y ése es el reverso exacto del
+        daño que el candado evitaba: hace desconfiar de un registro correcto.
+        """
+        destino = self.escribe("""\
+verificacion:
+  crossref: true
+  notas:
+    - 'ERRATA SIN COMPROBAR: eutils bloqueado por la política de egreso; corre scripts/6_referencia_por_pmid.py donde PubMed sea alcanzable'
+    - 'CrossRef sin comprobar: api.crossref.org bloqueado. El DOI es el que publica PubMed, no se ha resuelto'
+    - 'Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden con refs.bib'
+""")
+        _, notas = generador.conservadas(destino)
+        self.assertEqual(notas, ["Cotejada contra PubMed: título, revista, "
+                                 "volumen, páginas y DOI coinciden con refs.bib"])
+
     def test_registro_nuevo_no_conserva_nada(self):
         claves, notas = generador.conservadas(Path("/no/existe/pmid-0.yaml"))
         self.assertEqual((claves, notas), ({}, []))

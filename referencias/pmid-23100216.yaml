@@ -1,21 +1,13 @@
-# Registro de referencia del índice. Datos cotejados contra PubMed: título,
-# revista, volumen, páginas y DOI.
-#
-# NO LO GENERÓ scripts/6_referencia_por_pmid.py: la política de egreso de la
-# sesión que lo trajo bloquea eutils.ncbi.nlm.nih.gov y api.crossref.org. Lleva
-# el mismo candado que las 59 de la oleada 1 —ver scripts/9_desbloquear_referencias.py—.
-#
-# ES LA FUENTE DE LOS CRITERIOS DE ATLANTA 2012, que es lo que la protocoliza
-# holonmed y lo único de su protocolo de pancreatitis que llega con una cita
-# completa y resoluble.
-#
-# EL AÑO ES EL DEL NÚMERO. PubMed muestra además un epub del 25/10/2012; el
-# número es Gut 2013;62(1), que es lo que cita el protocolo.
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
 
-id: "pmid:23100216"
+id: 'pmid:23100216'
 clave_bibtex: banks2013
 tipo: articulo
-titulo: "Classification of acute pancreatitis--2012: revision of the Atlanta classification and definitions by international consensus"
+titulo: 'Classification of acute pancreatitis--2012: revision of the Atlanta classification and definitions by international consensus'
 autores:
   - Banks PA
   - Bollen TL
@@ -27,22 +19,22 @@ autores:
   - Vege SS
 publicacion: Gut
 anio: 2013
-volumen: "62"
-paginas: "102-11"
+volumen: 62
+paginas: 102-11
 
 identificadores:
   pmid: 23100216
-  doi: "10.1136/gutjnl-2012-302779"
+  doi: 10.1136/gutjnl-2012-302779
 
 verificacion:
   pubmed: true
-  fecha: "2026-09-16"
+  fecha: 2026-09-17
   retractado: false
-  errata_comprobada: false
-  crossref: false
-  crossref_titulo_coincide: false
+  crossref: true
+  crossref_titulo_coincide: true
   notas:
-    - 'Cotejada contra PubMed: título, revista, volumen, páginas y DOI'
-    - 'ERRATA SIN COMPROBAR: eutils bloqueado por la política de egreso; corre scripts/9_desbloquear_referencias.py donde PubMed sea alcanzable'
-    - 'CrossRef sin comprobar: api.crossref.org bloqueado'
-    - 'El año es el del número (Gut 2013;62(1)); PubMed muestra un epub de octubre de 2012'
+    - >-
+      Cotejada contra PubMed: título, revista, volumen, páginas y DOI
+    - >-
+      El año es el del número (Gut 2013;62(1)); PubMed muestra un epub de
+      octubre de 2012

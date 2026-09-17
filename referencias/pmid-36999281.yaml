@@ -1,29 +1,13 @@
-# Registro de referencia del índice. Datos bibliográficos derivados de refs.bib
-# de biosemiotics; PMID, título, revista, volumen, páginas y DOI cotejados contra
-# PubMed uno por uno.
-#
-# NO LO GENERÓ scripts/6_referencia_por_pmid.py, y por eso lleva candado. La
-# política de egreso de la sesión que lo trajo bloquea eutils.ncbi.nlm.nih.gov y
-# api.crossref.org, así que ni ese script ni scripts/8_comprobar_erratas.py
-# pudieron correr. El cotejo se hizo contra PubMed por otra vía, que confirma
-# título, año, revista, volumen, páginas, DOI y tipo de publicación —así que la
-# retractación SÍ está comprobada— pero NO expone «Erratum in:».
-#
-# QUÉ SIGNIFICA `errata_comprobada: false`. Que nadie ha mirado si este artículo
-# tiene errata publicada. No que no la tenga. build.py FALLA si un registro con
-# este campo en false sostiene un cociente o un umbral, así que el hueco está
-# cerrado por el validador y no por una nota que alguien deba recordar.
-#
-# CÓMO SE ABRE: corriendo el script donde PubMed sea alcanzable,
-#
-#     python scripts/6_referencia_por_pmid.py 36999281 mullany2023
-#
-# que comprueba la errata de verdad y borra este campo al regenerar el registro.
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
 
-id: "pmid:36999281"
+id: 'pmid:36999281'
 clave_bibtex: mullany2023
 tipo: articulo
-titulo: "Overview of ectopic pregnancy diagnosis, management, and innovation"
+titulo: 'Overview of ectopic pregnancy diagnosis, management, and innovation'
 autores:
   - Mullany K
   - Minneci M
@@ -31,21 +15,20 @@ autores:
   - C Coiado O
 publicacion: Womens Health (Lond)
 anio: 2023
-volumen: "19"
-paginas: "17455057231160349"
+volumen: 19
+paginas: 17455057231160349
 
 identificadores:
   pmid: 36999281
-  doi: "10.1177/17455057231160349"
+  doi: 10.1177/17455057231160349
 
 verificacion:
   pubmed: true
-  fecha: "2026-09-16"
+  fecha: 2026-09-17
   retractado: false
-  errata_comprobada: false
-  crossref: false
-  crossref_titulo_coincide: false
+  crossref: true
+  crossref_titulo_coincide: true
   notas:
-    - 'Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden con refs.bib'
-    - 'ERRATA SIN COMPROBAR: eutils bloqueado por la política de egreso; corre scripts/6_referencia_por_pmid.py donde PubMed sea alcanzable'
-    - 'CrossRef sin comprobar: api.crossref.org bloqueado. El DOI es el que publica PubMed, no se ha resuelto'
+    - >-
+      Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
+      con refs.bib

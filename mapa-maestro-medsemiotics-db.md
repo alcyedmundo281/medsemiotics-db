@@ -376,7 +376,7 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 
 | Capa | Poblado | Falta |
 |---|---|---|
-| **Referencias** | 172 — 60 con errata sin comprobar | las que traiga cada condición nueva |
+| **Referencias** | 172 — todas con errata comprobada · 4 con errata publicada por cotejar | las que traiga cada condición nueva |
 | **Conceptos** | 300 — 14 con tríada | ~420 signos del temario |
 | **Condiciones** | 40 | ~480 síndromes y enfermedades |
 | **Aristas con cociente** | **143** | prácticamente todo |
@@ -634,18 +634,23 @@ Migrar lo que biosemiotics y holonmed tienen validado.
 - [x] **Las 59 referencias que los bloqueaban, traídas y cotejadas** — con
       candado: `errata_comprobada: false` hasta que alguien pueda consultar
       eutils. Ver abajo.
-- [ ] **14 signos más**, ya desbloqueados en cuanto se comprueben sus erratas.
+- [x] **Las 60 erratas, cotejadas** el 17/09/2026 corriendo el script 9 desde
+      una red que alcanza PubMed. Candado abierto en las 60.
+- [ ] **14 signos más**, ya sin nada que los bloquee salvo cuatro erratas
+      concretas: ver abajo.
 - [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
       desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
       hallazgo: ver abajo.
 
-**La oleada 1 no está cerrada, y le falta UNA orden.** Los 14 signos restantes y
-la regla de Atlanta esperan lo mismo: que se coteje la errata de las 60
-referencias importadas con candado.
+**El candado se abrió el 17/09/2026.** Se corrió el script 9 desde una red con
+acceso a PubMed: 58 de 60 en la primera pasada, y las dos que fallaron
+—`moharamzad2018` y `gottlieb2020`— se cerraron al relanzarlo, que es
+exactamente para lo que el script se hizo re-ejecutable.
 
-```bash
-python scripts/9_desbloquear_referencias.py
-```
+Lo que queda de la oleada es **trabajo de modelado, no de infraestructura**: los
+14 signos y la regla de Atlanta ya tienen sus fuentes verificadas y con DOI
+resuelto. Solo hay cuatro erratas que cotejar antes de que sus referencias
+sostengan cifras.
 
 Al cerrar esta oleada, el índice ya sirve a los tres clientes y se puede
 invertir la dirección con biosemiotics.
@@ -721,20 +726,39 @@ erratas, y hasta entonces el candado no los deja sostener ningún umbral.
 | colecistitis-aguda · coledocolitiasis | 9 cada uno |
 | apendicitis | 10 |
 
-**Lo que queda es una orden, desde una red que alcance PubMed:**
+**Ya tienen sus fuentes.** El script 9 se corrió el 17/09/2026 desde una red con
+acceso a PubMed y abrió el candado en las 60: errata comprobada, DOI resuelto en
+CrossRef. Estos 14 signos entran ahora igual que entraron los primeros catorce.
 
-```bash
-python scripts/9_desbloquear_referencias.py
-```
+#### Cuatro erratas que sí hay que cotejar
 
-Busca las que llevan el candado, llama al script 6 sobre cada una espaciando las
-peticiones, y avisa de las que resulten tener errata para que se cotejen antes
-de sostener ninguna cifra. Con `--listar` dice cuáles son sin tocar nada. Es
-re-ejecutable: descubre las pendientes en cada corrida, así que si alguna falla
-basta con volver a lanzarlo.
+De las 60, cuatro traen errata publicada. Ninguna la cita nadie todavía, así que
+`build.py` las da como aviso; en cuanto sostengan un cociente o un umbral pasa a
+error, y hay que ir a leer la corrección antes de transcribir ninguna cifra:
 
-Son dos minutos de reloj y abre el candado de golpe; después, los 14 signos
-entran igual que entraron los primeros catorce.
+| Referencia | Errata |
+|---|---|
+| `sharifov2016` · `pmid:26811160` | J Am Heart Assoc. 2016;5(5):e002078 |
+| `barbic2017` · `pmid:28073795` | BMJ Open. 2017;7(9):e013688corr1 |
+| `celik2022` · `pmid:36063623` | Am J Emerg Med. 2025;88:277 |
+| `gottlieb2020` · `pmid:32081383` | Ann Emerg Med. 2022;79(1):90 |
+
+Dos de ellas —`barbic2017` y `gottlieb2020`— sostienen el absceso de partes
+blandas, y `sharifov2016` la disfunción diastólica: son de los 14 que faltan, así
+que el cotejo toca ANTES de modelarlos, no después.
+
+#### La lección de las notas, que costó un susto
+
+Las 60 salieron de la regeneración **contradiciéndose consigo mismas**: su bloque
+`verificacion` decía `crossref: true` y sus notas seguían diciendo «CrossRef sin
+comprobar». El script 6 conserva las notas escritas a mano, y las dos que puso la
+importación con candado describían un estado transitorio que dejó de ser cierto
+en cuanto el script corrió de verdad.
+
+Es el reverso exacto del daño que el candado evitaba: una nota que dice «sin
+comprobar» sobre un dato ya comprobado hace desconfiar de un registro correcto.
+Corregido en el origen —esas dos notas entran en `PREFIJOS_GENERADOS`, así que
+una corrida futura las descarta sola— y con su regresión.
 
 #### La pancreatitis llegó con siete cocientes y no entró ninguno
 
