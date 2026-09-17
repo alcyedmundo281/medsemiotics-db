@@ -70,8 +70,19 @@ NOTAS_GENERADAS = (
     'La errata afecta a DATOS: no transcribir cifras sin cotejarlas',
     'CrossRef registra un título distinto; PubMed es la autoridad',
 )
-# Estas dos se generan con texto variable, así que se reconocen por su inicio.
-PREFIJOS_GENERADOS = ('sin DOI en PubMed', 'el DOI no resuelve en CrossRef')
+# Estas se generan con texto variable, así que se reconocen por su inicio.
+#
+# Las dos últimas las escribe una importación hecha sin red a PubMed o a
+# CrossRef, y describen un ESTADO TRANSITORIO: que nadie pudo comprobar la
+# errata, y que el DOI no se resolvió. En cuanto este script corre de verdad,
+# las dos cosas SÍ se comprueban, así que conservarlas dejaría el registro
+# contradiciéndose consigo mismo: `crossref: true` junto a «CrossRef sin
+# comprobar». Pasó con las 60 de la oleada 1, y el fallo es peor de lo que
+# parece: una nota que dice «sin comprobar» sobre un dato ya comprobado hace
+# desconfiar de un registro correcto, que es el reverso exacto del daño que el
+# candado existía para evitar.
+PREFIJOS_GENERADOS = ('sin DOI en PubMed', 'el DOI no resuelve en CrossRef',
+                      'ERRATA SIN COMPROBAR', 'CrossRef sin comprobar')
 
 
 def conservadas(destino):
