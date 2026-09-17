@@ -95,7 +95,13 @@ class ErrataSinComprobarTest(unittest.TestCase):
         (self.raiz / "referencias" / "pmid-1.yaml").write_text(referencia, encoding="utf8")
         hecho = subprocess.run(
             [sys.executable, str(self.raiz / "scripts" / "build.py")],
-            capture_output=True, text=True,
+            # `encoding` explícito, no solo `text=True`: sin él Python decodifica
+            # la salida del subproceso con la codificación del SISTEMA —cp1252 en
+            # Windows— y build.py imprime «», ⚠ y acentos. El test entonces falla
+            # en la máquina del autor y pasa en CI, que es el peor reparto
+            # posible: rompe el comando que documenta CLAUDE.md justo para quien
+            # lo va a correr a diario.
+            capture_output=True, text=True, encoding="utf8",
         )
         return hecho.returncode, hecho.stdout + hecho.stderr
 
