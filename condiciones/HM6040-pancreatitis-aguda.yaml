@@ -6,14 +6,18 @@
 # LAS SIETE ARISTAS ENTRAN SIN COCIENTE, Y ESO ES EL HALLAZGO DE LA MIGRACIÓN.
 # El protocolo trae un LR para cada una, pero ninguno con procedencia resoluble:
 #
-#   · hiperlipasemia (26.6 / 0.1) y hiperamilasemia (12.5 / 0.3) citan «JAMA
-#     Rational Clinical Examination». COMPROBADO EL 16/09/2026 CONTRA PUBMED:
-#     esa serie NO TIENE ningún artículo sobre pancreatitis. La atribución de
-#     los dos cocientes más altos del protocolo no se sostiene.
-#   · dolor epigástrico (2.1 / 0.2), vómitos (1.6) e irritación peritoneal (2.2)
-#     citan GetTheDiagnosis.org, que es un sitio web agregador, no un artículo
-#     con PMID.
-#   · el signo de Cullen (8.0) no cita nada en absoluto.
+#   · LOS SIETE SALIERON DE GetTheDiagnosis.org. Lo confirmó el Dr. Torres, que
+#     es el autor del protocolo, el 16/09/2026. Es un agregador web: recopila
+#     cocientes de la literatura, pero no es un artículo y no tiene PMID, así
+#     que no puede ser el `ref` de nada en este índice.
+#   · LA CITA A «JAMA Rational Clinical Examination» DE LA LIPASA Y LA AMILASA
+#     ES UN ERROR DEL PROTOCOLO, no una fuente alternativa. Se detectó al
+#     comprobar contra PubMed que esa serie NO TIENE ningún artículo sobre
+#     pancreatitis, y el autor lo ha confirmado. Los dos cocientes más altos del
+#     protocolo llevaban la atribución equivocada, y son justamente los que más
+#     mueven una probabilidad.
+#   · el signo de Cullen (8.0) no citaba nada en absoluto, coherente con lo
+#     anterior: venía del mismo sitio.
 #   · los hallazgos de imagen (9.0) citan «el tercer criterio de Atlanta».
 #     Atlanta define un criterio diagnóstico; no publica ese cociente.
 #
@@ -154,11 +158,16 @@ pendiente:
     LR+ 9.0. Se anotan aquí y NO en las aristas justamente para que no se lean
     como dato del índice.
   - >-
-    La pista de la lipasa y la amilasa está agotada por el lado que indicaba el
-    protocolo: la serie Rational Clinical Examination no tiene artículo de
-    pancreatitis, comprobado contra PubMed. Hay que buscar en otra parte, y
-    conviene descartar de entrada los metaanálisis de pancreatitis POST-CPRE:
-    miden otra cosa y sus cocientes rondan 8 y 6, no 26.6 y 12.5.
+    EL ORIGEN DE LOS SIETE YA NO ES UNA INCÓGNITA: GetTheDiagnosis.org,
+    confirmado por el autor del protocolo el 16/09/2026. Lo que falta no es
+    averiguar de dónde salieron, sino llegar al artículo que cada uno resume.
+    GetTheDiagnosis cita sus fuentes por estudio, así que la vía es abrir la
+    ficha de pancreatitis de ese sitio y recuperar el PMID de cada cociente.
+  - >-
+    Dos atajos que NO valen, y conviene dejarlos escritos para no repetirlos: la
+    serie Rational Clinical Examination no tiene artículo de pancreatitis
+    —comprobado contra PubMed—, y los metaanálisis de pancreatitis POST-CPRE
+    miden otra cosa, con cocientes que rondan 8 y 6 en vez de 26.6 y 12.5.
   - >-
     LA REGLA DE ATLANTA, que es lo único cuantificado y bien citado de todo el
     protocolo. Está escrita y comprobada; solo espera a que se coteje la errata

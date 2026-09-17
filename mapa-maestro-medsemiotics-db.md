@@ -745,19 +745,30 @@ resoluble:**
 
 | Signo | LR que usa holonmed | Lo que cita |
 |---|---|---|
-| Hiperlipasemia (>3x) | 26.6 / 0.1 | «JAMA Rational Clinical Examination» |
-| Hiperamilasemia (>3x) | 12.5 / 0.3 | «JAMA Rational Clinical Examination» |
+| Hiperlipasemia (>3x) | 26.6 / 0.1 | «JAMA Rational Clinical Examination» ← **error** |
+| Hiperamilasemia (>3x) | 12.5 / 0.3 | «JAMA Rational Clinical Examination» ← **error** |
 | Dolor epigástrico | 2.1 / 0.2 | GetTheDiagnosis.org |
 | Vómitos | 1.6 | GetTheDiagnosis.org |
 | Irritación peritoneal | 2.2 | GetTheDiagnosis.org |
-| Signo de Cullen | 8.0 | **nada** |
+| Signo de Cullen | 8.0 | nada |
 | Hallazgos de imagen | 9.0 | «el tercer criterio de Atlanta» |
 
-**Comprobado contra PubMed el 16/09/2026: la serie *Rational Clinical
-Examination* NO tiene ningún artículo sobre pancreatitis.** La atribución de los
-dos cocientes más altos del protocolo no se sostiene. GetTheDiagnosis.org es un
-agregador web, no un artículo con PMID. Y Atlanta define un criterio; no publica
-ese cociente.
+**Los siete salieron de GetTheDiagnosis.org**, confirmado por el autor del
+protocolo el 16/09/2026. Es un agregador web: recopila cocientes de la
+literatura, pero no es un artículo y no tiene PMID.
+
+**La cita a la *Rational Clinical Examination* es un error del protocolo**, no
+una fuente alternativa. Se detectó al comprobar contra PubMed que esa serie no
+tiene ningún artículo sobre pancreatitis, y el autor lo confirmó. Los dos
+cocientes con la atribución equivocada son los dos más altos, que son los que
+más mueven una probabilidad.
+
+**La norma no se relaja por eso, y el autor la reafirmó al confirmarlo: aquí
+todo entra con PMID y DOI.** Un agregador que recopila de la literatura no es la
+literatura, y aceptar su cifra sería aceptar una cadena de custodia que este
+índice existe para no aceptar. Lo que falta no es averiguar de dónde salieron
+—ya se sabe— sino llegar al artículo que cada uno resume: GetTheDiagnosis cita
+sus fuentes por estudio, así que la vía es su ficha de pancreatitis.
 
 **Las aristas entraron; los números no.** Es lo que manda el flujo de
 `CLAUDE.md`: si no hay LR publicado, la arista se crea igual con
