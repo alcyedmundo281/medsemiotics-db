@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3222'
+tipo: concepto
+semantica: hallazgo
+termino: Quemosis conjuntival
+termino_en: Conjunctival Edema-Chemosis
+sinonimos:
+  - quemosis
+  - edema conjuntival
+  - chemosis
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Edema llamativo y engrosamiento gelatinoso, translúcido o amarillento-rojizo de la conjuntiva
+  bulbar que recubre la esclera, el cual puede llegar a formar un rodete o vesícula edematosa
+  prominente que desborda el limbo corneal e incluso impide el cierre palpebral completo
+  (lagoftalmos relativo), herniándose a través de la hendidura palpebral. Puede acompañarse de
+  hiperemia conjuntival y lagrimeo abundante.
+significado: >-
+  Refleja la extravasación masiva de trasudado o exudado hacia el espacio estromal laxo
+  subconjuntival como consecuencia de: 1) marcado aumento de la permeabilidad capilar por
+  reacciones de hipersensibilidad alérgica aguda mediada por IgE (conjuntivitis alérgica estacional,
+  anafilaxia sistémica, angioedema); 2) aumento severo de la presión venosa orbitaria por bloqueo u
+  obstrucción al flujo retrógrado (trombosis séptica o aséptica del seno cavernoso, fístula
+  carótido-cavernosa, orbitopatía tiroidea / enfermedad de Graves activa); o 3) reducción crítica
+  de la presión oncótica plasmática (síndrome nefrótico grave o cirrosis hepática descompensada).
+falsos_positivos:
+  - Pingüécula o pterigión inflamado (lesiones fibrovasculares localizadas y focales, no un rodete gelatinoso difuso)
+  - Hemorragia subconjuntival plana aislada (colección laminar de sangre roja viva homogénea sin acumulación serosa gelatinosa)
+  - Linfangioma o quiste conjuntival localizado estromal
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Conjunctival Edema-Chemosis).

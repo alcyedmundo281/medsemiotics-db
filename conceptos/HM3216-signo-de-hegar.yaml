@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3216'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de Hegar
+termino_en: Softening (Hegar Sign)
+sinonimos:
+  - reblandecimiento ístmico uterino
+  - signo de Hegar I
+  - hegar sign
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Marcado reblandecimiento, laxitud y compresibilidad de la porción inferior del útero
+  (istmo uterino) percibido al tacto ginecológico bimanual: los dedos de la mano vaginal
+  en el fondo de saco anterior y posterior contactan casi virtualmente con los dedos de
+  la mano abdominal que presiona firmemente la pared abdominal suprapúbica, dando la
+  sensación táctil de que el cuello uterino y el cuerpo uterino estuvieran completamente
+  separados o constituyeran dos masas disociadas independientes. Se explora típicamente
+  entre las semanas 6 y 8 de la amenorrea gestacional.
+significado: >-
+  Refleja la intensa hiperemia, edema miometrial y modificación estructural de las fibras
+  colágenas del istmo inducida por el aumento rápido de los niveles de progesterona y
+  estrógenos placentarios tempranos. Es un signo físico clásico de presunción/probabilidad
+  de embarazo intrauterino en el primer trimestre.
+falsos_positivos:
+  - Miomatosis uterina ístmica o retrocervical con degeneración hialina o quística blanda
+  - Hiperplasia endometrial marcada o hematómetra con pared uterina laxa
+  - Cuello uterino hipertrófico con repleción vesical concomitante
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Softening (Hegar Sign)).

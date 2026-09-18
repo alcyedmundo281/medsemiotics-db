@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3215'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de Kussmaul
+termino_en: Hepatojugular Reflux and Kussmaul Sign
+sinonimos:
+  - pulso venoso de Kussmaul
+  - ingurgitación yugular paradójica inspiratoria
+  - kussmaul sign
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Aumento paradójico (o falta del colapso fisiológico) de la presión venosa yugular y de la
+  ingurgitación de las venas yugulares internas y externas durante la inspiración profunda
+  espontánea, evaluado con el paciente recostado en la camilla con el torso elevado a 30° o 45°.
+  En condiciones fisiológicas normales, la presión intratorácica negativa inspiratoria favorece
+  el retorno venoso al corazón derecho, reduciendo la altura de la columna venosa yugular.
+significado: >-
+  Demuestra la incapacidad hemodinámica del ventrículo derecho para acomodar y expandirse ante
+  el incremento fisiológico del retorno venoso inspiratorio, generando una contrapresión
+  retrógrada inmediata hacia la aurícula derecha y el sistema venoso cava superior. Es un signo
+  cardinal de pericarditis constrictiva, miocardiopatía restrictiva, infarto agudo ventricular
+  derecho, embolia pulmonar masiva o estenosis tricuspídea severa. (Nota: suele ser negativo en
+  taponamiento cardíaco puro sin constricción).
+falsos_positivos:
+  - Espiración forzada o maniobra de Valsalva involuntaria durante el examen (eleva la presión intratorácica)
+  - Esfuerzo respiratorio con uso vigoroso de musculatura accesoria cervical en crisis asmática o EPOC descompensada
+  - Síndrome de vena cava superior por compresión extrínseca neoplásica (ingurgitación fija sin oscilación respiratoria)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Hepatojugular Reflux and Kussmaul Sign).

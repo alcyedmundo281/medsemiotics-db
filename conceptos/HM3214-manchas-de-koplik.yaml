@@ -1,0 +1,33 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3214'
+tipo: concepto
+semantica: hallazgo
+termino: Manchas de Koplik
+termino_en: Koplik Spots (Measles)
+sinonimos:
+  - signo de Koplik
+  - koplik spots
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Pequeñas máculas o pápulas puntiformes milimétricas (1 a 2 mm de diámetro) de color
+  blanco-azulado o grisáceo, semejantes a granos de arena o sal fina, rodeadas de una
+  areola o halo eritematoso irregular. Se ubican característicamente en la mucosa yugal
+  (cara interna de las mejillas) a la altura del segundo molar inferior, aunque pueden
+  extenderse a la mucosa labial interna. Aparecen 24 a 48 horas antes del exantema cutáneo
+  generalizado y desaparecen típicamente al segundo o tercer día de iniciada la erupción.
+significado: >-
+  Microlesiones enantemáticas con necrosis epitelial focal, exudado seroso y células
+  gigantes multinucleadas en los conductos de las glándulas submucosas por replicación
+  viral. Es el signo patognomónico y prodrómico cardinal del sarampión (infección por
+  Morbillivirus).
+falsos_positivos:
+  - Gránulos de Fordyce (glándulas sebáceas ectópicas benignas amarillentas sin halo eritematoso circundante)
+  - Aftas bucales milimétricas o estomatitis aftosa recurrente temprana
+  - Placas de candidiasis oral incipiente (muguet, que se desprenden al raspado dejando superficie sangrante)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Koplik Spots (Measles)).

@@ -1,0 +1,38 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3220'
+tipo: concepto
+semantica: hallazgo
+termino: Arco senil
+termino_en: Arcus Senilis
+sinonimos:
+  - gerontoxon
+  - arco lipoideo corneal
+  - arcus lipoides corneae
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Opacidad anular o en arco periférica de color blanco grisáceo o blanco amarillento,
+  bilateral y generalmente simétrica, localizada en el estroma de la córnea paralela al
+  limbo esclerocorneal. Se inicia característicamente en los polos superior e inferior de la
+  córnea antes de confluir en un círculo completo. Un rasgo semiológico definitorio es la
+  presencia constante de una estrecha banda periférica de córnea completamente transparente
+  (intervalo lúcido de Vogt) que separa el arco del limbo esclerocorneal, sin invadir la esclera
+  ni comprometer el eje visual pupilar central.
+significado: >-
+  Consiste en el depósito estromal corneal extracelular de partículas lipoproteicas ricas en
+  ésteres de colesterol y fosfolípidos, filtradas a través de los capilares del plexo límbico
+  vascular. En adultos mayores (> 60 años) representa un fenómeno degenerativo del envejecimiento
+  fisiológico dependiente de la edad (gerontoxon); sin embargo, cuando se manifiesta de forma
+  prematura en personas menores de 40 a 50 años (*arcus juvenilis*), es un marcador semiológico de
+  dislipidemia primaria aterogénica (hipercolesterolemia familiar heterocigota o hiperlipidemia
+  combinada) y confiere un riesgo aumentado de enfermedad coronaria precoz.
+falsos_positivos:
+  - Anillo de Kayser-Fleischer (anillo pardo verdoso o cobrizo por depósito de cobre en la membrana de Descemet, en la enfermedad de Wilson)
+  - Embriotoxon posterior (línea de Schwalbe prominente y desplazada anteriormente congénita)
+  - Pterigión o limbo esclerocorneal engrosado que cruza y borra el intervalo lúcido de Vogt
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Arcus Senilis).

@@ -1,0 +1,41 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3218'
+tipo: concepto
+semantica: hallazgo
+termino: Síndrome de Horner
+termino_en: Horner's Syndrome
+sinonimos:
+  - síndrome de Claude Bernard-Horner
+  - paresia oculosimpática
+  - horner syndrome
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Constelación clínica unilateral clásica consistente en: 1) miosis pupilar ipsilateral
+  con anisocoria más pronunciada en la oscuridad o penumbra (debido al déficit del músculo
+  dilatador del iris con retraso en la redilatación pupilar); 2) ptosis palpebral superior parcial
+  y leve (1 a 2 mm, secundaria a la denervación del músculo tarsal superior de Müller) asociada
+  ocasionalmente a ptosis inversa del párpado inferior ("enoftalmos aparente"); y 3) anhidrosis
+  o hipohidrosis y eritema/calor en la hemicara ipsilateral (presente según el nivel de lesión
+  respecto a la bifurcación carotídea). La instilación tópica de colirio de apraclonidina al 0.5%
+  o 1% revierte la anisocoria produciendo dilatación de la pupila afecta y elevación palpebral
+  por hipersensibilidad adrenérgica por denervación.
+significado: >-
+  Traduce la interrupción de la vía simpática oculosimpática de tres neuronas que discurre desde
+  el hipotálamo posterolateral (primera neurona central), a través de la médula cervical hasta el
+  centro ciliospinal de Budge (C8-T2), saliendo por la raíz ventral y la cadena paravertebral
+  cervical torácica superior (segunda neurona preganglionar, susceptible a tumores del vértice
+  pulmonar de Pancoast o disección aórtica), ascendiendo hasta el ganglio cervical superior a nivel
+  del ángulo mandibular, y proyectándose junto a la adventicia de la arteria carótida interna hacia
+  el seno cavernoso y la órbita (tercera neurona posganglionar, vulnerable a disección carotídea
+  o trombosis del seno cavernoso).
+falsos_positivos:
+  - Anisocoria fisiológica esencial (la diferencia pupilar permanece constante tanto en luz como en penumbra y no hay ptosis palpebral concomitante)
+  - Parálisis oculomotora del III par craneal (cursa con ptosis completa y midriasis paralítica, no miosis)
+  - Blefaroptosis senil o aponeurótica mecánica unilateral sin alteración en el diámetro pupilar
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Horner's Syndrome / Unilateral Miosis-Horner Syndrome).

@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3224'
+tipo: concepto
+semantica: hallazgo
+termino: Angioedema
+termino_en: Angioedema
+sinonimos:
+  - edema angioneurótico
+  - edema de Quincke
+  - angioneurotic edema
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Tumefacción tisular circunscrita, aguda, deformante y autolimitada que afecta las capas profundas
+  de la dermis, tejido celular subcutáneo o la submucosa. Se presenta típicamente como una hinchazón
+  asintomática o con sensación de tensión y ardor tirante, sin prurito intenso, de consistencia firme,
+  no foveolar (no deja fóvea a la compresión digital), de coloración normal cutánea o eritematosa leve.
+  Tiene predilección anatómica marcada por la cara (labios, lengua, párpados), cuello, mucosa faringo-laríngea
+  (generando estridor y disfonía), manos, pies, genitales y pared intestinal (provocando dolor cólico agudo).
+significado: >-
+  Aumento súbito y masivo de la permeabilidad vascular venular poscapilar mediado por dos vías
+  moleculares fundamentales: 1) dependiente de histamina y otros mediadores mastocitarios en
+  reacciones anafilácticas/alérgicas mediadas por IgE o pseudoalérgicas (asociado a urticaria, prurito
+  y broncoespasmo; responde a adrenalina, corticoides y antihistamínicos); o 2) dependiente del
+  acúmulo de bradicinina y calicreína por déficit o inactivación de enzimas reguladoras (efecto adverso
+  de inhibidores de la enzima convertidora de angiotensina [IECA] o déficit funcional/cuantitativo del
+  inhibidor de C1 esterasa en el angioedema hereditario; no asocia urticaria ni responde a corticoides/antihistamínicos).
+falsos_positivos:
+  - Urticaria clásica superficial (afecta dermis superficial con habones pruriginosos evanescentes y eritematosos)
+  - Celulitis facial o periorbitaria infecciosa (cursa con eritema caliente, induración progresiva, fiebre y dolor intenso al tacto)
+  - Mixedema por hipotiroidismo descompensado (infiltración tisular mucopolisacárida fija, fría, crónica y generalizada)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Angioedema).

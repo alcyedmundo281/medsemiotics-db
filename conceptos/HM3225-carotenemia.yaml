@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3225'
+tipo: concepto
+semantica: hallazgo
+termino: Carotenemia
+termino_en: Carotenemia
+sinonimos:
+  - carotenodermia
+  - xantodermia por carotenos
+  - hipercarotenemia clínica
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Coloración amarillenta o anaranjada intensa de la piel que se manifiesta con máxima notoriedad
+  en regiones corporales con estrato córneo engrosado y abundante secreción sebácea o sudorípara:
+  palmas de las manos, plantas de los pies, pliegues nasolabiales, frente y nudillos de los dedos.
+  Un criterio semiológico negativo imprescindible y patognomónico es la indemnidad estricta y color
+  blanco porcelana de las escleras oculares y de las mucosas orales (no tiñe mucosas ni escleras).
+significado: >-
+  Depósito excesivo de pigmentos carotenoides liposolubles (principalmente beta-caroteno procedente
+  de una ingesta dietética copiosa de zanahorias, calabaza, boniatos, naranjas o suplementos) en los
+  lípidos intercelulares del estrato córneo cutáneo. A diferencia de la bilirrubina hidrosoluble o
+  conjugada, los carotenos carecen de afinidad molecular por las fibras elásticas ricas en elastina
+  de la conjuntiva bulbar y la esclera. Puede ser secundaria también a hipotiroidismo primario (por
+  conversión hepática defectuosa de carotenos a vitamina A), diabetes mellitus, anorexia nerviosa o
+  síndrome nefrótico.
+falsos_positivos:
+  - Ictericia verdadera por hiperbilirrubinemia (tiñe precozmente las escleras oculares y la mucosa sublingual con bilirrubina sérica > 2–2.5 mg/dL)
+  - Pigmentación por sales de oro (crisiasis) o amiodarona (coloración grisácea o azulada fotoexpuesta)
+  - Coloración cetrina cutánea por uremia o insuficiencia renal terminal
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Carotenemia).
