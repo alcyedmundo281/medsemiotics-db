@@ -1,0 +1,107 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Acuñada en la OLEADA 1 al migrar el signo del absceso de partes blandas de
+# biosemiotics. Cocientes de pmid:32081383 (Gottlieb 2020, Ann Emerg Med),
+# metaanálisis de 14 estudios prospectivos con 2 656 pacientes, transcritos del
+# abstract. Su errata (pmid:34949417) solo renumera figuras y está cotejada.
+#
+# LA FUENTE COMPARA ABSCESO CONTRA CELULITIS, NO ENFERMEDAD CONTRA SALUD: dentro
+# de pacientes de urgencias que ya tienen una infección de piel y partes
+# blandas. Los cocientes discriminan entre las dos, y así hay que leerlos.
+#
+# SOLO ENTRA EL SUBGRUPO DE ADULTOS, Y ES A PROPÓSITO. El abstract da también
+# el global (LR+ 6.5, LR− 0.06), el pediátrico y los de sospecha clínica alta y
+# dudosa. Ninguno entra todavía: pueden incluir a Marin 2013, el estudio
+# pediátrico que barbic2017 extrajo mal, y comprobar su fila exige la tabla de
+# estudios incluidos del texto completo, que no fue accesible el 18/09/2026. El
+# subgrupo de adultos no puede incluir a Marin, porque Marin es pediátrico. Ver
+# `pendiente`.
+
+id: 'HM:6041'
+tipo: condicion
+clase: enfermedad
+termino: Absceso de partes blandas
+termino_en: Skin and soft tissue abscess
+sinonimos: [absceso cutáneo, absceso de piel y partes blandas]
+
+codigos: {snomed: null, cie10: null}
+
+probabilidad_base: null
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3166'    # Colección de partes blandas en ecografía
+    rol: imagen
+    estado_lr: medido
+    poblacion: >-
+      adultos en urgencias con infección de piel y partes blandas, sospecha de
+      absceso o celulitis; subgrupo de adultos de un metaanálisis de 14
+      estudios prospectivos (2 656 pacientes en total)
+    ref: 'pmid:32081383'
+    sensibilidad: 0.987
+    ic95_sensibilidad: [0.953, 0.998]
+    especificidad: 0.910
+    ic95_especificidad: [0.844, 0.954]
+    lr_positivo:
+      valor: 10.9
+      ic95: [6.2, 19.2]
+      ref: 'pmid:32081383'
+    lr_negativo:
+      valor: 0.01
+      ic95: [0.001, 0.06]
+      ref: 'pmid:32081383'
+    decision: >-
+      colección confirmada: drena o deriva para drenaje. Sin colección, solo
+      empedrado: antibiótico y control, no incisión a ciegas. Y antes de
+      cortar, Doppler color: un seudoaneurisma o un vaso pueden verse como una
+      colección
+    advertencia: >-
+      estos cocientes son del subgrupo de ADULTOS y no se trasladan al niño. El
+      mismo metaanálisis da en pediatría cocientes peores, que no entran
+      todavía porque esperan la comprobación de Marin 2013
+
+pendiente:
+  - >-
+    EL GLOBAL Y TRES SUBGRUPOS ESPERAN LA COMPROBACIÓN DE MARIN 2013. El
+    abstract de pmid:32081383 da: global Se 94.6% (IC95% 89.4-97.4), Sp 85.4%
+    (78.9-90.2), LR+ 6.5 (4.4-9.6), LR− 0.06 (0.03-0.13); sospecha clínica alta
+    LR+ 8.6 (4.1-18.1), LR− 0.07 (0.05-0.12); casos clínicamente dudosos LR+ 4.0
+    (2.5-6.3), LR− 0.11 (0.03-0.32); pediatría Se 89.9% (81.8-94.6), Sp 79.9%
+    (71.5-86.3), LR+ 4.5 (3.1-6.4), LR− 0.13 (0.07-0.23). Cualquiera de ellos
+    puede incluir a Marin 2013 (Acad Emerg Med 2013;20:545-53), el estudio
+    pediátrico de 755 pacientes que barbic2017 extrajo mal y que en su
+    agrupación fue el más influyente (distancia de Cook > 1). Para desbloquear
+    hace falta la tabla de estudios incluidos de Gottlieb: si trae a Marin, su
+    fila debe coincidir con el recuento corregido de la errata de barbic2017
+    (VP 193, FP 37, FN 27, VN 95).
+  - >-
+    LOS DOS COCIENTES DE barbic2017 (pmid:28073795) SIGUEN BLOQUEADOS. Su
+    corrección cambia la sensibilidad y la especificidad agrupadas, pero no
+    recalcula el LR+ 5.63 ni el LR− 0.05 del abstract. No entran aquí, y la
+    referencia no se cita en ninguna arista.
+
+notas_de_uso:
+  - >-
+    LAS CIFRAS CORREGIDAS DE barbic2017 NO SON COCIENTES. Tras su errata, 8
+    estudios dan sensibilidad 95.5% (IC95% 88.9-98.3) y especificidad 80.3%
+    (56.4-92.7), frente a los 96.2% y 82.9% originales. Se anotan como
+    rendimiento de la prueba; convertirlas en un LR sería calcular un cociente
+    que la fuente corregida no publica.
+  - >-
+    EL PEDIÁTRICO DE wu2022 (pmid:34379709) NO ES UNA SEGUNDA CONFIRMACIÓN. Sus
+    cifras agrupadas en 7 estudios y 870 niños —LR+ 4.5 (IC95% 3.1-6.4), LR−
+    0.13 (0.07-0.23)— son idénticas, intervalos incluidos, al subgrupo
+    pediátrico de Gottlieb 2020. Dos metaanálisis que coinciden hasta el
+    segundo decimal comparten casi con seguridad sus estudios, incluido
+    probablemente Marin, así que la comprobación pendiente les afecta a los
+    dos. Wu mide además la exploración física en 4 estudios: Se 0.84 (IC95%
+    0.80-0.88), Sp 0.69 (0.62-0.76).
+
+conclusion_de_la_fuente: >-
+  El POCUS tiene buena exactitud diagnóstica para distinguir absceso de
+  celulitis y llevó a un cambio correcto de manejo en el 10% de los casos.
+
+procedencia:
+  fuente: >-
+    Acuñada al migrar el signo del absceso de partes blandas de biosemiotics
+    (oleada 1). Valores del abstract de pmid:32081383, no del texto completo.
