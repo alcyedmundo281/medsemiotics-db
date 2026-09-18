@@ -1,0 +1,32 @@
+# Concepto del índice. Acuñado al modelar HM:6046 (ascitis).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3182'
+tipo: concepto
+semantica: hallazgo
+termino: Signo del charco
+termino_en: Puddle sign
+sinonimos:
+  - puddle sign
+  - signo del charco de Lawson
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Con el paciente colocado en posición sobre codos y rodillas (genupectoral) durante varios
+  minutos, el fonendoscopio colocado en la porción más declive del abdomen percibe un cambio
+  brusco en la intensidad y calidad de la transmisión acústica al percutir la pared lateral y
+  desplazar el estetoscopio hacia la periferia del área declive.
+significado: >-
+  Agrupamiento gravitacional dependiente de pequeños volúmenes de líquido peritoneal libre
+  (tan bajos como 120-300 mL) en la región periumbilical anterior en posición prona.
+falsos_positivos:
+  - Interferencia por gases intestinales adyacentes
+  - Dificultad técnica postural y artefactos de roce del estetoscopio
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:1573754)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Williams & Simel 1992.'

@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:1573754'
+clave_bibtex: williams1992
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have ascites? How to divine fluid in the abdomen'
+autores:
+  - Williams JW Jr
+  - Simel DL
+publicacion: JAMA
+anio: 1992
+volumen: 267
+paginas: 2645-8
+
+identificadores:
+  pmid: 1573754
+  doi: 10.1001/jama.267.19.2645
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'

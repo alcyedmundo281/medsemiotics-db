@@ -1,0 +1,33 @@
+# Concepto del índice. Acuñado al modelar HM:6048 (bocio).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3188'
+tipo: concepto
+semantica: hallazgo
+termino: Lóbulo tiroideo palpable mayor que la falange distal del pulgar
+termino_en: Palpable thyroid lobe larger than distal thumb phalanx
+sinonimos:
+  - criterio de la falange distal para bocio
+  - lóbulo tiroideo mayor que el pulgar
+  - bocio por regla de la falange distal
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  A la palpación tiroidea bimanual o anterior, el volumen estimado de cada uno de los
+  lóbulos laterales de la glándula tiroides supera el volumen de la falange distal del
+  dedo pulgar de la persona examinada.
+significado: >-
+  Criterio semiológico estandarizado por la Organización Mundial de la Salud (OMS)
+  para la graduación táctil y cribado de bocio endémico o tiromegalia en niños y gestantes.
+falsos_positivos:
+  - Variabilidad en la técnica de palpación entre exploradores noveles
+  - Cuello corto o bocio de implantación retroesternal
+  - Variaciones fisiológicas individuales en la morfología de la falange distal
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:7861577)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Siminoski 1995.'

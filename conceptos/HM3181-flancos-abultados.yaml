@@ -1,0 +1,31 @@
+# Concepto del índice. Acuñado al modelar HM:6046 (ascitis).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3181'
+tipo: concepto
+semantica: hallazgo
+termino: Flancos abdominales abultados
+termino_en: Bulging flanks
+sinonimos:
+  - abombamiento de flancos
+  - flancos prominentes
+  - bulging flanks
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Protrusión o abombamiento simétrico visible y bilateral de ambos flancos abdominales
+  hacia afuera con el paciente en posición supina.
+significado: >-
+  Distensión de la pared abdominal lateral provocada por la presión hidrostática de volumen
+  moderado a severo de líquido intraperitoneal dependiente.
+falsos_positivos:
+  - Obesidad con adiposidad prominente en flancos
+  - Hipotonía o debilidad muscular marcada de la pared abdominal
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:1573754)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Williams & Simel 1992.'

@@ -1,0 +1,33 @@
+# Concepto del índice. Acuñado al modelar HM:6047 (esplenomegalia).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3184'
+tipo: concepto
+semantica: hallazgo
+termino: Matidez en el espacio de Traube
+termino_en: Traube space dullness
+sinonimos:
+  - percusión mate en espacio de Traube
+  - matidez de Traube
+  - pérdida del timpanismo en espacio de Traube
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Pérdida del timpanismo gástrico normal y presencia de sonido mate a la percusión en el
+  espacio semilunar de Traube (delimitado por el 6º cartílago costal superiormente, la línea axilar
+  media lateralmente y el reborde costal inferiormente).
+significado: >-
+  Ocupación del receso subdiafragmático izquierdo anterolateral por un bazo aumentado de tamaño
+  que reemplaza la cámara de aire gástrica.
+falsos_positivos:
+  - Ingesta alimentaria reciente o estómago lleno de contenido sólido/líquido
+  - Derrame pleural izquierdo o consolidación pulmonar basal izquierda
+  - Cardiomegalia grave o lóbulo hepático izquierdo agrandado
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:8411607)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Grover et al. 1993.'

@@ -925,10 +925,10 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias             172             172
-conceptos               313            ~800
-condiciones              45            ~515
-aristas con cociente    148             148
+referencias             176             176
+conceptos               324            ~800
+condiciones              48            ~515
+aristas con cociente    162             162
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

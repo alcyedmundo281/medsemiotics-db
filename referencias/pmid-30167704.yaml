@@ -1,0 +1,39 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:30167704'
+clave_bibtex: wood2018
+tipo: articulo
+titulo: 'Will This Hospitalized Patient Develop Severe Alcohol Withdrawal Syndrome?: The Rational Clinical Examination Systematic Review'
+autores:
+  - Wood E
+  - Albarqouni L
+  - Tkachuk S
+  - Green CJ
+  - Ahamad K
+  - Nolan S
+  - McLean M
+  - Klimas J
+publicacion: JAMA
+anio: 2018
+volumen: 320
+paginas: 825-833
+
+identificadores:
+  pmid: 30167704
+  doi: 10.1001/jama.2018.10574
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  errata: 'JAMA. 2019 Jul 23;322(4):369. doi: 10.1001/jama.2019.9521.'
+  errata_corrige: Data Errors and Incorrect Version of Clinical Prediction Tool Used.
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'

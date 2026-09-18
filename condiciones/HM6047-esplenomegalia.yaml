@@ -1,0 +1,95 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:8411607 (Grover SA, Barkun AN, Sackett DL. «Does this patient
+# have splenomegaly?». JAMA. 1993;270(18):2218-21). Revisión sistemática de la
+# serie The Rational Clinical Examination sobre precisión diagnóstica de la exploración
+# física frente a ecografía o gammagrafía como estándar de referencia.
+#
+# Errata cotejada y verificada: JAMA. 2011 Apr 13;305(14):1414 (doi: 10.1001/jama.2011.429),
+# aclaración descriptiva textual de la técnica de las maniobras sin alteración de datos
+# tabulares ni cocientes de verosimilitud.
+
+id: 'HM:6047'
+tipo: condicion
+clase: sindrome
+termino: Esplenomegalia
+termino_en: Splenomegaly
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=esplenomegalia-precision-semiotica"
+sinonimos:
+  - bazo aumentado de tamaño
+  - hipertrofia esplénica
+  - bazo palpable
+
+codigos:
+  snomed: '16294009'
+  cie10: 'R16.1'
+
+probabilidad_base: null
+factores_riesgo:
+  - hipertensión portal o cirrosis hepática
+  - síndrome linfoproliferativo, leucemia o linfoma
+  - infección sistémica aguda o subaguda (mononucleosis infecciosa, endocarditis bacteriana, leishmaniasis, paludismo)
+  - anemia hemolítica o hemoglobinopatía crónica
+
+signos:
+  - concepto: 'HM:0603'    # Esplenomegalia (bazo palpable / palpación esplénica)
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados mediante palpación abdominal supina o bimanual frente a ecografía
+      o gammagrafía esplénica como estándar de referencia (pmid:8411607)
+    ref: 'pmid:8411607'
+    sensibilidad: 0.58
+    especificidad: 0.93
+    lr_positivo:
+      valor: 8.2
+      ref: 'pmid:8411607'
+    lr_negativo:
+      valor: 0.41
+      ref: 'pmid:8411607'
+    decision: >-
+      un polo esplénico palpable por debajo del reborde costal en adultos sin deformidad
+      torácica previa confirma esplenomegalia con alta probabilidad (LR+ 8.2)
+    advertencia: >-
+      la ausencia de palpación no descarta agrandamiento esplénico (Se 58%, LR- 0.41);
+      el bazo requiere un aumento de volumen del 40-50% antes de ser palpable
+
+  - concepto: 'HM:3184'    # Matidez en el espacio de Traube
+    rol: apoyo
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados mediante percusión del espacio semilunar de Traube
+      frente a estándar de referencia por imagen (pmid:8411607)
+    ref: 'pmid:8411607'
+    sensibilidad: 0.62
+    especificidad: 0.73
+    lr_positivo:
+      valor: 2.3
+      ref: 'pmid:8411607'
+    lr_negativo:
+      valor: 0.48
+      ref: 'pmid:8411607'
+    decision: >-
+      la matidez en el espacio de Traube eleva la sospecha de bazo agrandado e indica
+      proceder a palpación orientada o ecografía
+    advertencia: >-
+      falso positivo común en pacientes sin ayuno previo (estómago ocupado por alimentos sólidos o líquidos)
+
+  - concepto: 'HM:3185'    # Signo de percusión de Castell
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados mediante percusión en el espacio intercostal más inferior en la
+      línea axilar anterior durante inspiración profunda frente a estándar de imagen
+    ref: 'pmid:8411607'
+    lr_positivo:
+      rango: [2.0, 2.7]
+      ref: 'pmid:8411607'
+    lr_negativo:
+      rango: [0.4, 0.6]
+      ref: 'pmid:8411607'
+    decision: >-
+      el viraje de timpanismo espiratorio a matidez inspiratoria en la línea axilar anterior
+      es la maniobra percutoria más sensible para detectar esplenomegalia incipiente
+    advertencia: >-
+      requiere percusión suave y adecuada coordinación respiratoria con el paciente
