@@ -1,0 +1,35 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:16308901'
+clave_bibtex: condous2005
+tipo: articulo
+titulo: Diagnostic accuracy of varying discriminatory zones for the prediction of ectopic pregnancy in women with a pregnancy of unknown location
+autores:
+  - Condous G
+  - Kirk E
+  - Lu C
+  - Van Huffel S
+  - Gevaert O
+  - De Moor B
+  - De Smet F
+  - Timmerman D
+  - Bourne T
+publicacion: Ultrasound Obstet Gynecol
+anio: 2005
+volumen: 26
+paginas: 770-5
+
+identificadores:
+  pmid: 16308901
+  doi: 10.1002/uog.2636
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

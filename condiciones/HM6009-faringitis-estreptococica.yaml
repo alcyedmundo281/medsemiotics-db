@@ -91,6 +91,92 @@ reglas:
     decision: >-
       su ausencia apenas modifica la probabilidad; no sirve para descartar
 
+escalas:
+  - nombre: Criterios de Centor
+    componentes_declarados: >-
+      cuatro variables clínicas (1 punto cada una): fiebre referida o medida > 38 °C,
+      ausencia de tos, exudado amigdalino o faríngeo y adenopatía cervical anterior
+      dolorosa
+    graduacion:
+      parametro: Puntuación de Centor
+      unidad: puntos
+      lectura: disjunto
+    tramos:
+      - rango: 4 puntos (probabilidad alta)
+        desde: 4
+        hasta: 5
+        prevalencia: 0.56
+        ref: 'pmid:6763125'
+        decision: >-
+          la probabilidad ronda el 56%; orienta a realizar prueba rápida o
+          tratamiento según protocolo local
+      - rango: 3 puntos (probabilidad intermedia-alta)
+        desde: 3
+        hasta: 4
+        prevalencia: 0.32
+        ref: 'pmid:6763125'
+        decision: probabilidad de 32%; indicación habitual de prueba rápida de antígeno o cultivo
+      - rango: 2 puntos (probabilidad intermedia)
+        desde: 2
+        hasta: 3
+        prevalencia: 0.15
+        ref: 'pmid:6763125'
+        decision: probabilidad de 15%; orienta a prueba diagnóstica rápida antes de tratar
+      - rango: 1 punto (probabilidad baja)
+        desde: 1
+        hasta: 2
+        prevalencia: 0.065
+        ref: 'pmid:6763125'
+        decision: probabilidad muy baja (6.5%); generalmente no requiere prueba ni antibiótico
+      - rango: 0 puntos (probabilidad mínima)
+        desde: 0
+        hasta: 1
+        prevalencia: 0.025
+        ref: 'pmid:6763125'
+        decision: descarta prácticamente la etiología estreptocócica (2.5%); no tratar ni cultivar
+
+  - nombre: Escala de McIsaac (Centor modificada)
+    componentes_declarados: >-
+      criterios de Centor con ajuste por edad: fiebre > 38 °C (+1), ausencia de tos
+      (+1), exudado o hipertrofia amigdalina (+1), adenopatía cervical anterior dolorosa
+      (+1); edad 3 a 14 años (+1), edad 15 a 44 años (0), edad ≥ 45 años (-1)
+    graduacion:
+      parametro: Puntuación de McIsaac
+      unidad: puntos
+      lectura: disjunto
+    tramos:
+      - rango: 4 a 5 puntos (riesgo alto)
+        desde: 4
+        hasta: 6
+        prevalencia_rango: [0.51, 0.53]
+        ref: 'pmid:9475915'
+        decision: >-
+          riesgo alto (51-53%); indicación de prueba rápida o tratamiento empírico
+          según guías locales
+      - rango: 3 puntos (riesgo intermedio-alto)
+        desde: 3
+        hasta: 4
+        prevalencia_rango: [0.28, 0.35]
+        ref: 'pmid:9475915'
+        decision: riesgo del 28-35%; indicación de prueba diagnóstica rápida o cultivo
+      - rango: 2 puntos (riesgo intermedio)
+        desde: 2
+        hasta: 3
+        prevalencia_rango: [0.11, 0.17]
+        ref: 'pmid:9475915'
+        decision: riesgo del 11-17%; indicación de prueba diagnóstica rápida o cultivo
+      - rango: 1 punto (riesgo bajo)
+        desde: 1
+        hasta: 2
+        prevalencia_rango: [0.05, 0.10]
+        ref: 'pmid:9475915'
+        decision: riesgo del 5-10%; no requiere pruebas adicionales ni antibióticos
+      - rango: 0 o menor (riesgo mínimo)
+        hasta: 1
+        prevalencia_rango: [0.01, 0.025]
+        ref: 'pmid:9475915'
+        decision: riesgo mínimo (1-2.5%); manejo sintomático exclusivo sin antibióticos
+
 conclusion_de_la_fuente: >-
   Ningún elemento aislado de la anamnesis o de la exploración física es lo
   bastante preciso para excluir ni para diagnosticar la faringitis
@@ -100,11 +186,13 @@ conclusion_de_la_fuente: >-
 
 pendiente:
   - >-
-    La fuente describe tres reglas de predicción clínica validadas, para
-    población adulta y pediátrica, pero el abstract no las nombra ni las
-    cuantifica. Registrarlas exige el texto completo.
+    Se incorporaron las escalas canónicas de Centor (pmid:6763125) y McIsaac
+    (pmid:9475915). Queda pendiente evaluar la incorporación de la regla de Breese
+    para población pediátrica específica si se requiere mayor granularidad.
 
 procedencia:
   fuente: >-
-    Acuñada al poblar aristas con cociente verificado. Valores del abstract de
-    pmid:11147989, no del texto completo.
+    Acuñada al poblar aristas con cociente verificado. Valores de signos aislados
+    del abstract de pmid:11147989; escalas de Centor (pmid:6763125) y McIsaac
+    (pmid:9475915).
+
