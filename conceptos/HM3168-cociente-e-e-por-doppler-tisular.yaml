@@ -47,7 +47,7 @@ umbral:
 procedencia:
   fuente: >-
     Tríada migrada en la oleada 1 desde biosemiotics (signo-disfuncion-diastolica), sostenida sobre
-    pmid:40617625 (Nagueh 2025, guía ASE/EACVI), pmid:38782352 (Robinson 2024) y pmid:26811160 (Sharifov 2016).
+    pmid:40617625 (Nagueh 2025, guía ASE/EACVI), pmid:38825710 (Robinson 2024) y pmid:26811160 (Sharifov 2016).
   nota: >-
     La errata de pmid:26811160 fue cotejada el 17/09/2026: correspondió a formato HTML sin
     afectar ninguna cifra. `se_basa_en` apuntaba a conceptos de física de Doppler que quedan en biosemiotics.
