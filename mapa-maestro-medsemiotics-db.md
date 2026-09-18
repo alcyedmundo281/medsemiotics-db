@@ -651,8 +651,8 @@ exactamente para lo que el script se hizo re-ejecutable.
 
 Lo que queda de la oleada es **trabajo de modelado, no de infraestructura**: los
 14 signos y la regla de Atlanta ya tienen sus fuentes verificadas y con DOI
-resuelto. Solo hay cuatro erratas que cotejar antes de que sus referencias
-sostengan cifras.
+resuelto. Las cuatro erratas que quedaban están cotejadas (ver la tabla de
+erratas más abajo).
 
 Al cerrar esta oleada, el índice ya sirve a los tres clientes y se puede
 invertir la dirección con biosemiotics.
@@ -756,9 +756,12 @@ bloqueados, y con ellos cualquier subgrupo que incluya a Marin. `errata_verifica
 se pondrá al modelar el absceso, citando solo los dos valores corregidos.
 
 **Las cuatro están cotejadas.** El absceso de partes blandas ya se puede
-modelar, con la única restricción que impone `barbic2017`: sus dos cocientes
-siguen bloqueados, y la ficha de biosemiotics ya se corrigió a los valores
-agrupados de la corrección.
+modelar, con una restricción y una comprobación. La restricción la impone
+`barbic2017`: sus dos cocientes siguen bloqueados, y la ficha de biosemiotics ya
+se corrigió a los valores agrupados de la corrección. La comprobación es de
+`gottlieb2020`: su errata no toca a Marin 2013, pero eso no demuestra que Marin
+se extrajera bien. Antes de citar un agrupado suyo que lo incluya, mirar la fila
+de Marin en su tabla de estudios incluidos.
 
 #### La lección de las notas, que costó un susto
 
