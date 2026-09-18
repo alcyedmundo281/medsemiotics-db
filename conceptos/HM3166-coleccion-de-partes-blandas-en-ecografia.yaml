@@ -1,0 +1,69 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-absceso-partes-blandas).
+#
+# ES EL HALLAZGO, NO LA ENFERMEDAD. La enfermedad es HM:6041, y los cocientes
+# viven en su arista, no aquí: el rendimiento del POCUS se mide contra una
+# condición.
+#
+# SIN `umbral`, y la ausencia es el dato. biosemiotics lo dice en su propio
+# campo `umbral`: ningún tamaño de corte define el signo, lo definen la
+# morfología, el refuerzo posterior y la movilidad del contenido. Lo que ese
+# campo traía después —sensibilidad, especificidad y cocientes— es rendimiento
+# de la prueba, no un corte, y se lee en HM:6041.
+
+id: 'HM:3166'
+tipo: concepto
+semantica: hallazgo
+termino: Colección de partes blandas en ecografía
+termino_en: Soft tissue fluid collection on ultrasound
+sinonimos:
+  - absceso de partes blandas en ecografía
+  - colección subcutánea con refuerzo acústico posterior
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Colección de bordes irregulares dentro del tejido blando, anecoica o con ecos
+  internos en suspensión, con refuerzo acústico posterior, que deforma sus
+  bordes al comprimir con la sonda y cuyo contenido se arremolina. Alrededor, la
+  celulitis da el patrón en empedrado: tabiques hipoecoicos entre lobulillos de
+  grasa.
+significado: >-
+  Pus colectado: un espacio ocupado por material líquido y detritos que no se
+  resuelve con antibiótico solo. El refuerzo posterior aparece porque el
+  contenido atenúa menos que el tejido vecino: ese artefacto es la prueba de que
+  hay líquido, no tejido.
+falsos_positivos:
+  - >-
+    Ganglio linfático reactivo: ovalado, con hilio ecogénico central y
+    vascularización hiliar al Doppler
+  - >-
+    Quiste epidérmico o sebáceo no infectado: bordes definidos, sin hiperemia
+    perilesional
+  - >-
+    Vaso, seudoaneurisma o malformación vascular: el Doppler color los separa en
+    un segundo, y aquí el error se paga caro
+  - >-
+    Hematoma o seroma: colección sin infección; el contexto y la clínica los
+    distinguen, la imagen sola no
+  - >-
+    Celulitis con edema marcado que crea espacios hipoecoicos entre lobulillos,
+    sin pus colectada
+  - Bursitis o derrame articular vecino tomado por colección de partes blandas
+  - >-
+    Absceso muy ecogénico o con gas: puede verse casi isoecoico al tejido y
+    pasar por celulitis; es un falso negativo, no un falso positivo
+  - >-
+    Colección profunda fuera del alcance de la sonda lineal: un absceso que no
+    se ve no es un absceso ausente
+
+procedencia:
+  fuente: Acuñado al migrar el signo del absceso de partes blandas de biosemiotics.
+  nota: >-
+    Tríada migrada en la oleada 1 desde biosemiotics
+    (signo-absceso-partes-blandas), que la sostiene sobre gottlieb2020,
+    barbic2017 y wu2022, las tres ya en el índice. Los ocho falsos positivos se
+    transcriben sin añadir ni quitar ninguno, incluidos los dos últimos, que la
+    propia fuente marca como falsos negativos. No se migra su `contrasta_con`
+    (signo-hernia-complicada): ese signo aún no tiene código HM.

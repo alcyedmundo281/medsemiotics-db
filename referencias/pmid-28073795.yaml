@@ -63,3 +63,9 @@ verificacion:
       AVISO A BIOSEMIOTICS: signos/absceso-partes-blandas.qmd (línea 162, rama
       main a 17/09/2026) cita «96,2 % y 82,9 %» de esta fuente: son los valores
       ANTERIORES a la corrección.
+    - >-
+      EL ABSCESO SE MODELÓ SIN CITARLA (18/09/2026, HM:6041). Sus dos valores
+      corregidos son Se y Sp, no cocientes, así que entran solo en
+      `notas_de_uso` de HM:6041, y ninguna arista la lleva en `ref`. Por eso
+      `errata_verificada` sigue sin poner: lo que la nota anterior preveía era
+      citarla, y no hizo falta.

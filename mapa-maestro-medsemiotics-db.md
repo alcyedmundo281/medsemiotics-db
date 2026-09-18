@@ -264,8 +264,8 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **164** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **40** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **166** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **41** de ~3000 |
 
 Los 74 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
@@ -322,6 +322,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6038` | Lesión intracraneal en traumatismo craneal leve | 6 + 2 escalas | `pmid:26717031` |
 | `HM:6039` | Trastorno de estrés postraumático | 1 (parcial a propósito) | `pmid:26241601` |
 | `HM:6040` | Pancreatitis aguda | 7 aristas, **0 cocientes** | holonmed (sin fuente resoluble) |
+| `HM:6041` | Absceso de partes blandas | 1 (solo el subgrupo de adultos) | `pmid:32081383` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -638,7 +639,11 @@ Migrar lo que biosemiotics y holonmed tienen validado.
       una red que alcanza PubMed. Candado abierto en las 60.
 - [x] **1 signo más** (embarazo ectópico) → concepto `HM:3165` y una arista
       más en `HM:6016`, desbloqueado al cotejar la errata de `celik2022`.
-- [ ] **13 signos más**, ya sin nada que los bloquee: las cuatro erratas están
+- [x] **1 signo más** (absceso de partes blandas) → concepto `HM:3166` y
+      condición `HM:6041`, con **solo el subgrupo de adultos** de
+      `gottlieb2020`. El global, el pediátrico y los de sospecha clínica
+      esperan la comprobación de Marin 2013: el texto completo no fue accesible.
+- [ ] **12 signos más**, ya sin nada que los bloquee: las cuatro erratas están
       cotejadas. Ver abajo la restricción que deja `barbic2017`.
 - [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
       desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
@@ -752,8 +757,10 @@ acordarse de mirarlo.
 La corrección cambia las cifras agrupadas —Se 95.5% y Sp 80.3%, antes 96.2% y
 82.9%, porque Marin 2013 se había extraído mal— pero NO recalcula el LR+ 5.63 ni
 el LR− 0.05 que sigue publicando el abstract. Esos dos cocientes quedan
-bloqueados, y con ellos cualquier subgrupo que incluya a Marin. `errata_verificada`
-se pondrá al modelar el absceso, citando solo los dos valores corregidos.
+bloqueados, y con ellos cualquier subgrupo que incluya a Marin. El absceso se
+modeló (`HM:6041`) SIN citarla en ninguna arista: sus dos valores corregidos son
+Se y Sp, no cocientes, y viven en `notas_de_uso`. Por eso `errata_verificada`
+sigue sin poner, y el candado sigue donde estaba.
 
 **Las cuatro están cotejadas.** El absceso de partes blandas ya se puede
 modelar, con una restricción y una comprobación. La restricción la impone
