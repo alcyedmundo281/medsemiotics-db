@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3205'
+tipo: concepto
+semantica: hallazgo
+termino: Roce pericárdico
+termino_en: Pericardial Friction Rub
+sinonimos:
+  - frote pericárdico
+  - ruido de fricción pericárdica
+  - pericardial rub
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ruido auscultatorio adventicio precordial de timbre raspante, rudo, chirriante o crujiente
+  (semejante al crujido del cuero nuevo o la fricción de seda), típicamente trifásico
+  (asociado a la sístole auricular presistólica, sístole ventricular y llenado ventricular
+  rápido protodiastólico), bifásico (sístole y diástole) o raramente monofásico. Se ausculta
+  con máxima intensidad en el mesocardio y borde esternal izquierdo inferior utilizando el
+  diafragma del fonendoscopio, y se acentúa notablemente cuando el paciente se inclina hacia
+  adelante en espiración forzada suspendida.
+significado: >-
+  Indica fricción mecánica directa entre las hojas visceral (epicardio) y parietal del
+  pericardio engrosadas e inflamadas, recubiertas de exudado fibrinoso. Es el signo
+  auscultatorio patognomónico de pericarditis aguda fibrinosa o serofibrinosa de cualquier
+  etiología (infecciosa viral, bacteriana, urémica, posinfarto de miocardio temprana o
+  tardía/Dressler, o por colagenopatías). Suele ser fugaz y evanescente, desapareciendo al
+  acumularse abundante derrame pericárdico que separa físicamente ambas serosas.
+falsos_positivos:
+  - Roce pleural adyacente al pericardio (roce pleuropericárdico, el cual suele atenuarse o extinguirse con la apnea mantenida)
+  - Ruidos mediastínicos sincrónicos con los latidos cardíacos (signo de Hamman)
+  - Artefacto de fricción por contacto del vello torácico con la membrana del fonendoscopio
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Pericardial Friction Rub).

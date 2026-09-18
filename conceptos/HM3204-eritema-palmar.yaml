@@ -1,0 +1,38 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3204'
+tipo: concepto
+semantica: hallazgo
+termino: Eritema palmar
+termino_en: Palmar Erythema
+sinonimos:
+  - palmas hepáticas
+  - eritema tenar e hipotenar
+  - palmar erythema
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Coloración rojiza intensa, eritematosa o moteada, caliente y asintomática,
+  localizada de forma simétrica en la palma de las manos con claro predominio en las
+  eminencias tenar e hipotenar y en los pulpejos digitales, respetando la concavidad
+  central de la palma. El eritema palidece por completo ante la vitropresión
+  digital directa o compresión con portaobjetos y recupera rápidamente su rubicundez
+  al liberar la presión.
+significado: >-
+  Dilatación microvascular persistente de las anastomosis arteriovenosas del lecho
+  subpapilar superficial de la mano, inducida por una disminución del aclaramiento
+  hepático y elevación relativa de estrógenos libres circulantes (estradiol), o por
+  un estado circulatorio hiperdinámico con aumento del gasto cardíaco y óxido
+  nítrico endotelial. Es un estigma clásico de cirrosis hepática avanzada (palmas
+  hepáticas de Lane), pero también se presenta de manera fisiológica en el 30-60%
+  de las gestantes normales y de forma patológica en tirotoxicosis, artritis
+  reumatoide o policitemia.
+falsos_positivos:
+  - Eritema palmar constitucional primario o hereditario (enfermedad de Lane)
+  - Enrojecimiento reactivo por exposición aguda al frío o calor local (fenómeno vasomotor transitorio)
+  - Dermatitis de contacto o eccema palmar irritativo (acompañado de prurito, vesiculación o descamación)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Palmar Erythema).

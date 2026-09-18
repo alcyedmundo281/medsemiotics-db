@@ -1,0 +1,40 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3212'
+tipo: concepto
+semantica: hallazgo
+termino: Chasquido de apertura mitral
+termino_en: Diastolic Snap-Mitral Opening Snap
+sinonimos:
+  - ruido de apertura mitral
+  - chasquido mitral
+  - mitral opening snap
+  - opening snap
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ruido auscultatorio adventicio breve, seco, nítido y de tono marcadamente alto
+  (frecuencia aguda), que ocurre en la protodiástole cardíaca inmediatamente después del
+  componente aórtico del segundo ruido (A2) con un intervalo A2-chasquido típicamente
+  comprendido entre 0.04 y 0.12 segundos (40 a 120 ms). Se percibe con máxima claridad
+  con el diafragma rígido del fonendoscopio en el ápex cardíaco o borde esternal izquierdo
+  bajo, y no se desdobla ni varía significativamente con los ciclos respiratorios. Un intervalo
+  A2-chasquido más corto (< 80 ms) correlaciona directamente con presiones auriculares izquierdas
+  más elevadas y mayor severidad hemodinámica de la estenosis.
+significado: >-
+  Se origina por la brusca desaceleración y frenado súbito de los velos de la válvula mitral
+  engrosados y fibróticos pero aún móviles (especialmente la valva anterior) cuando son
+  impulsados hacia el ventrículo izquierdo durante la apertura protodiastólica rápida bajo el
+  gradiente de alta presión transmitido desde una aurícula izquierda hipertensa. Es un signo
+  auscultatorio patognomónico de estenosis mitral reumática con preservación de la elasticidad
+  de los velos; su ausencia en presencia de estenosis sugiere calcificación severa o inmovilidad
+  valvular completa.
+falsos_positivos:
+  - Tercer ruido cardíaco (R3) fisiológico o patológico (de timbre sordo, tono grave y más tardío en la diástole, auscultado preferentemente con la campana)
+  - Desdoblamiento amplio del segundo ruido cardíaco (A2-P2, que varía dinámicamente con las fases de la respiración)
+  - Chasquido de apertura tricuspídeo (se intensifica notablemente con la inspiración profunda)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Diastolic Snap-Mitral Opening Snap).

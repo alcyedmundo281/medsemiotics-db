@@ -1,0 +1,34 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3213'
+tipo: concepto
+semantica: hallazgo
+termino: Golpe pericárdico
+termino_en: Diastolic Sound-Pericardial Knock
+sinonimos:
+  - choque pericárdico protodiastólico
+  - chasquido pericárdico protodiastólico
+  - pericardial knock
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ruido auscultatorio adventicio protodiastólico de tono medio-alto, breve y seco, que ocurre
+  precozmente entre 0.08 y 0.12 segundos (80 a 120 ms) después del segundo ruido cardíaco (R2),
+  temporalmente más precoz y agudo que un tercer ruido cardíaco (R3) convencional. Se ausculta
+  con diafragma o campana sobre el precordio medio y el borde esternal izquierdo, y suele transmitirse
+  ampliamente a todo el tórax. Frecuentemente coincide en el tiempo con la rápida onda diastólica
+  y descenso abrupto 'y' del pulso venoso yugular (dip protodiastólico).
+significado: >-
+  Se produce por la interrupción súbita y el freno violento de la expansión de las paredes
+  ventriculares durante la fase de llenado ventricular rápido inicial, debido a la compresión
+  rígida e inelástica ejercida por una coraza pericárdica fibrótica o intensamente calcificada. Es
+  el hallazgo auscultatorio más característico y altamente específico de la pericarditis constrictiva crónica.
+falsos_positivos:
+  - Tercer ruido cardíaco (R3) por insuficiencia cardíaca descompensada (más tardío en diástole, tono bajo y grave)
+  - Chasquido de apertura de la válvula mitral (más precoz, tono agudo y asociado a estenosis mitral)
+  - Componente P2 retardado de un R2 ampliamente desdoblado
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Diastolic Sound-Pericardial Knock).

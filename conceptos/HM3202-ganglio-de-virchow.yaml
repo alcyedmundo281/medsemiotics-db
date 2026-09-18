@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3202'
+tipo: concepto
+semantica: hallazgo
+termino: Ganglio de Virchow
+termino_en: Sentinel Node (Virchow Node)
+sinonimos:
+  - ganglio de Troisier
+  - signo de Troisier
+  - adenopatía supraclavicular izquierda metastásica
+  - virchow node
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Masa o adenopatía aumentada de tamaño (habitualmente mayor de 1 cm), de consistencia
+  firme, pétrea o elástica dura, no fluctuante, indolora y frecuentemente fija a
+  planos profundos, palpable en la fosa supraclavicular izquierda, en el ángulo
+  formado por la clavícula y el haz clavicular del músculo esternocleidomastoideo.
+  Se palpa mejor con el examinador situado detrás del paciente sentado con los
+  hombros ligeramente encogidos o realizando una maniobra de Valsalva.
+significado: >-
+  Metástasis linfática en el ganglio centinela supraclavicular izquierdo (de
+  Troisier) producida por diseminación celular tumoral retrógrada a través del
+  conducto torácico, que desemboca precisamente en la confluencia venosa yugulosubclavia
+  izquierda (ángulo de Pirogoff). Traduce enfermedad neoplásica maligna avanzada e
+  incurable, clásicamente originada en adenocarcinomas gástricos (signo de Troisier),
+  pancreáticos, esofágicos, colorrectales, ováricos, testiculares o pulmonares.
+falsos_positivos:
+  - Adenopatía infecciosa reactiva inespecífica o granulomatosa (tuberculosis ganglionar / escrófula, histoplasmosis, sarcoidosis)
+  - Lipoma, quiste sebáceo o schwannoma cervical supraclavicular
+  - Costilla cervical supernumeraria o prominencia ósea anómala
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Sentinel Node (Virchow Node)).
