@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3229'
+tipo: concepto
+semantica: hallazgo
+termino: Fasciculaciones
+termino_en: Fasciculation
+sinonimos:
+  - fasciculación muscular
+  - contracciones fasciculares
+  - fasciculations
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Contracciones involuntarias, breves, rápidas, finas y espontáneas de un grupo localizado
+  de fibras musculares esqueléticas pertenecientes a una misma unidad motora, visibles como
+  un temblor u ondulación superficial ("movimiento en bolsa de gusanos") bajo la piel o en el
+  cuerpo de la lengua, que no producen desplazamiento mecánico articular de la extremidad.
+  Pueden provocarse o acentuarse mecánicamente al percutir suavemente el vientre muscular o
+  tras la contracción muscular voluntaria previa.
+significado: >-
+  Se originan por descargas eléctricas ectópicas espontáneas a lo largo del soma o de las
+  ramificaciones axonales terminales de una neurona motora inferior hiperexcitable o en
+  proceso de denervación activa. Cuando son generalizadas, persistentes y se asocian a
+  atrofia muscular marcada y debilidad progresiva, son un signo cardinal de esclerosis lateral
+  amiotrófica (ELA), atrofia muscular espinal o siringomielia.
+falsos_positivos:
+  - Mioquimias faciales o perioculares (contracciones ondulantes rítmicas continuas y más prolongadas, habitualmente benignas)
+  - Fasciculaciones benignas fisiológicas (comunes en gemelos en personas sanas por estrés, privación de sueño, ejercicio o cafeína, sin debilidad ni atrofia)
+  - Fibrilaciones musculares (descargas de fibras musculares individuales aisladas, invisibles a simple vista y detectables solo por electromiografía)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Fasciculation).

@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3235'
+tipo: concepto
+semantica: hallazgo
+termino: Abdomen escafoideo
+termino_en: Depressed Abdomen-Scaphoid Abdomen
+sinonimos:
+  - abdomen excavado
+  - abdomen en balsa
+  - scaphoid abdomen
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Inspección abdominal caracterizada por una profunda concavidad y depresión de la pared
+  abdominal anterior, cuyo plano se sitúa marcadamente por debajo de la línea recta imaginaria
+  que une el apéndice xifoides y la sínfisis del pubis ("abdomen en balsa" o cóncavo como el
+  casco de una canoa). Los rebordes costales inferiores, las crestas ilíacas y las espinas
+  ilíacas anterosuperiores resaltan de forma ósea prominente, con pérdida total del panículo
+  adiposo subcutáneo y atrofia de la musculatura de la prensa abdominal.
+significado: >-
+  Traduce una marcada depleción masiva del contenido intraabdominal de tejido graso mesentérico
+  y retroperitoneal, o bien la migración y desplazamiento anómalo de las vísceras digestivas hacia
+  otra cavidad anatómica. Se observa típicamente en: 1) estados avanzados de desnutrición calórico-proteica
+  severa, marasmo, caquexia neoplásica terminal o anorexia nerviosa restrictiva grave; o 2) en el
+  recién nacido con hernia diafragmática congénita de Bochdalek, donde las asas intestinales y el
+  estómago se encuentran herniados hacia la cavidad torácica, dejando la cavidad abdominal vacía y excavada.
+falsos_positivos:
+  - Biotipo constitucional marcadamente leptosómico o longilíneo constitucional en personas sanas sin emaciación
+  - Abdomen en tabla por peritonitis aguda (pared rígida, tensa e inmóvil con contractura muscular involuntaria, no excavada por consunción tisular)
+  - Deshidratación aguda severa (signo de pliegue cutáneo con concavidad transitoria que se recupera con rehidratación)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Depressed Abdomen-Scaphoid Abdomen).

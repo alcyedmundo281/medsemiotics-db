@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3230'
+tipo: concepto
+semantica: hallazgo
+termino: Tofo gotoso
+termino_en: 'Earlobe Nodule: Gouty Tophus'
+sinonimos:
+  - tofo
+  - tofos gotosos
+  - nódulo gotoso
+  - gouty tophus
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Nódulos subcutáneos, periarticulares o dérmicos firmes o duros como la piedra, indoloros o
+  levemente sensibles, de coloración blanquecina, amarillenta o blanco-tiza visible por
+  transparencia bajo la epidermis adelgazada. Se localizan predominantemente en el hélix y
+  antihélix del pabellón auricular, en la bolsa serosa olecraniana (bursitis olecraniana tofácea),
+  tendón de Aquiles, dedos de las manos y articulaciones interfalángicas. Con frecuencia pueden
+  ulcerarse espontáneamente drenando un material pastoso espeso de aspecto yesoso o tiza líquida.
+significado: >-
+  Representa el depósito tisular masivo crónico de cristales de urato monosódico insolubles
+  rodeados por una reacción granulomatosa inflamatoria crónica de cuerpo extraño con macrófagos,
+  linfocitos y células gigantes multinucleadas. Es el signo patognomónico definitorio de la gota
+  tofácea crónica avanzada, como consecuencia de una hiperuricemia severa y prolongada durante
+  años no tratada.
+falsos_positivos:
+  - Nódulos reumatoides (predominan sobre superficies extensoras periarticulares, no tienen coloración blanco-tiza ni drenan material pastoso)
+  - Xantomas tuberosos o tendinosos (lesiones amarillentas por depósito de lípidos/colesterol en hiperlipidemias familiares)
+  - Calcinosis cutis (depósitos pétreos de sales cálcicas en esclerosis sistémica / síndrome CREST)
+
+procedencia:
+  fuente: "Migrado desde datos/temario.csv (Earlobe Nodule: Gouty Tophus)."

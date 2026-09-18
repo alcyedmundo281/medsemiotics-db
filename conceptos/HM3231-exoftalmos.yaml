@@ -1,0 +1,38 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3231'
+tipo: concepto
+semantica: hallazgo
+termino: Exoftalmos
+termino_en: Exophthalmos (Ocular Proptosis)
+sinonimos:
+  - proptosis ocular
+  - protrusión ocular
+  - exophthalmos
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Protrusión o desplazamiento anterior patológico anormal de uno o ambos globos oculares hacia
+  afuera de los límites óseos de la cavidad orbitaria. A la inspección directa se evidencia
+  exposición escleral anormal visible por debajo del limbo inferior de la córnea (asociado
+  frecuentemente a retracción del párpado superior o signo de Dalrymple). Se cuantifica con
+  precisión mediante el exoftalmómetro de Hertel, considerándose patológica una distancia > 20 a
+  22 mm medida desde el reborde orbitario lateral anterior hasta el vértice de la córnea, o una
+  asimetría mayor de 2 mm entre ambos ojos.
+significado: >-
+  Es consecuencia del aumento de volumen de los tejidos blandos contenidos en el espacio cerrado
+  y rígido de la órbita ósea. Cuando es bilateral, es el signo físico cardinal de orbitopatía
+  autoinmune asociada a la enfermedad de Graves-Basedow (oftalmopatía distiroidea), mediada por la
+  infiltración linfocitaria T, hiperproducción de glucosaminoglucanos hidrofílicos y proliferación de
+  adipocitos que expanden masivamente el vientre de los músculos extraoculares y la grasa retrobulbar.
+  Cuando es unilateral, obliga a descartar celulitis orbitaria bacteriana invasiva, pseudotumor orbitario
+  inflamatorio o neoplasias retrobulbares primarias o metastásicas.
+falsos_positivos:
+  - Pseudoexoftalmos por asimetría facial congénita o miopía magna axial alta con elongación del eje anteroposterior del ojo
+  - Retracción palpebral aislada grave sin protrusión orbitaria verdadera medida con exoftalmómetro
+  - Buftalmos por glaucoma congénito no tratado
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Exophthalmos (Ocular Proptosis)).

@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3236'
+tipo: concepto
+semantica: hallazgo
+termino: Atrofia óptica
+termino_en: Disk Pallor-Optic Atrophy
+sinonimos:
+  - palidez de papila
+  - palidez del disco óptico
+  - optic atrophy
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Hallazgo oftalmoscópico caracterizado por una marcada palidez del disco óptico, que adopta una
+  coloración blanco-tiza, blanco-porcelana o blanco-nacarada (en la atrofia primaria), o blanco-grisácea
+  sucia con márgenes difusos y gliosis glial residual (en la atrofia secundaria post-papiledema).
+  Acompaña a la palidez una notable reducción o pérdida de los pequeños vasos capilares nutricios que
+  cruzan la superficie del disco (signo de Kestenbaum: recuento < 6 a 8 vasos nutricios en el borde
+  papilar, frente a los 10 a 12 normales) y adelgazamiento de la capa de fibras nerviosas de la retina.
+significado: >-
+  Es el resultado final e irreversible de la pérdida y degeneración axonal progresiva de las células
+  ganglionares retinianas a lo largo de la vía visual anterior (retina, nervio óptico, quiasma óptico
+  o tracto óptico). Puede ser consecuencia de neuropatía óptica isquémica anterior o posterior, compresión
+  tumoral prolongada del quiasma o nervio óptico (adenoma hipofisario, meningioma selar), glaucoma crónico
+  avanzado en fase terminal, esclerosis múltiple (secuela de neuritis óptica) o toxicidad por fármacos/tóxicos
+  (etambutol, metanol).
+falsos_positivos:
+  - Papila miópica o con creciente escleral miópico temporal (disco pálido oblicuo común en miopes axiales moderados o altos)
+  - Palidez fisiológica de la copa o excavación central amplia (donde el tejido neuroborde periférico mantiene su coloración sonrosada sana normal)
+  - Coloboma del nervio óptico o fosa del disco óptico congénita
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Disk Pallor-Optic Atrophy).
