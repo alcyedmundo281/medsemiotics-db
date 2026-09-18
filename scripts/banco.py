@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import subprocess
 import sys
+from decimal import Decimal
 from pathlib import Path
 
 try:
@@ -486,11 +487,38 @@ def numero(v) -> str:
     return f"{v:g}" if isinstance(v, (int, float)) else str(v)
 
 
-def porcentaje(v, etiqueta: str) -> str:
-    """`Se 87%` cuando el índice guarda 0.87; tal cual cuando ya viene en texto."""
+def _fraccion_en_porcentaje(v) -> str:
+    """0.987 → `98.7%`, 0.76 → `76%`: los decimales que guarda el índice, ni uno más.
+
+    Se multiplica en `Decimal` sobre la representación del flotante y no con
+    `:.0%`, que redondeaba 0.987 a 99% y publicaba una precisión distinta de la
+    de la fuente.
+    """
+    cifra = format((Decimal(repr(v)) * 100).normalize(), "f")
+    return f"{cifra}%"
+
+
+def porcentaje(v, etiqueta: str, ic95=None) -> str:
+    """`Se 87% (IC95% 80%–92%)` cuando el índice guarda fracciones; tal cual en texto.
+
+    El intervalo se escribe en la misma unidad que la estimación puntual: si el
+    punto se pasa a porcentaje, también sus dos límites.
+    """
     if isinstance(v, float) and v <= 1:
-        return f"{etiqueta} {v:.0%}"
-    return f"{etiqueta} {v}"
+        texto = f"{etiqueta} {_fraccion_en_porcentaje(v)}"
+        convertir = True
+    else:
+        texto = f"{etiqueta} {v}"
+        convertir = False
+    if ic95:
+        bajo, alto = (
+            _fraccion_en_porcentaje(x)
+            if convertir and isinstance(x, (int, float)) and not isinstance(x, bool)
+            else x
+            for x in ic95
+        )
+        texto += f" (IC95% {bajo}–{alto})"
+    return texto
 
 
 def intervalo_texto(tramo: dict, unidad: str = "") -> str:
@@ -744,21 +772,13 @@ def filas_de_signo(indice: Indice, arista: dict, donde: str):
 
     rendimiento = []
     if arista.get("sensibilidad") is not None:
-        texto = porcentaje(arista["sensibilidad"], "Se")
-        if arista.get("ic95_sensibilidad"):
-            texto += (
-                f" (IC95% {arista['ic95_sensibilidad'][0]}–"
-                f"{arista['ic95_sensibilidad'][1]})"
-            )
-        rendimiento.append(texto)
+        rendimiento.append(porcentaje(
+            arista["sensibilidad"], "Se", arista.get("ic95_sensibilidad")
+        ))
     if arista.get("especificidad") is not None:
-        texto = porcentaje(arista["especificidad"], "Sp")
-        if arista.get("ic95_especificidad"):
-            texto += (
-                f" (IC95% {arista['ic95_especificidad'][0]}–"
-                f"{arista['ic95_especificidad'][1]})"
-            )
-        rendimiento.append(texto)
+        rendimiento.append(porcentaje(
+            arista["especificidad"], "Sp", arista.get("ic95_especificidad")
+        ))
     if rendimiento:
         notas.append((f"{termino} — Rendimiento", ", ".join(rendimiento) + "."))
 
