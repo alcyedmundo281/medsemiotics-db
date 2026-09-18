@@ -638,8 +638,8 @@ Migrar lo que biosemiotics y holonmed tienen validado.
       una red que alcanza PubMed. Candado abierto en las 60.
 - [x] **1 signo más** (embarazo ectópico) → concepto `HM:3165` y una arista
       más en `HM:6016`, desbloqueado al cotejar la errata de `celik2022`.
-- [ ] **13 signos más**, ya sin nada que los bloquee salvo dos erratas
-      concretas: ver abajo.
+- [ ] **13 signos más**, ya sin nada que los bloquee: las cuatro erratas están
+      cotejadas. Ver abajo la restricción que deja `barbic2017`.
 - [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
       desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
       hallazgo: ver abajo.
@@ -746,7 +746,7 @@ acordarse de mirarlo.
 | `sharifov2016` · `pmid:26811160` | J Am Heart Assoc. 2016;5(5):e002078 | ✅ cotejada: solo edición HTML, ninguna cifra cambia |
 | `celik2022` · `pmid:36063623` | Am J Emerg Med. 2025;88:277 | ✅ cotejada: una celda de la Tabla 2, ninguna cifra publicada cambia |
 | `barbic2017` · `pmid:28073795` | BMJ Open. 2017;7(9):e013688corr1 | ⚠️ leída, `errata_verificada` a propósito sin poner |
-| `gottlieb2020` · `pmid:32081383` | Ann Emerg Med. 2022;79(1):90 | ⏳ pendiente |
+| `gottlieb2020` · `pmid:32081383` | Ann Emerg Med. 2022;79(1):90 | ✅ cotejada: solo numeración de figuras, ninguna cifra cambia |
 
 **`barbic2017` es el caso que enseña por qué el campo es binario y el cotejo no.**
 La corrección cambia las cifras agrupadas —Se 95.5% y Sp 80.3%, antes 96.2% y
@@ -755,8 +755,10 @@ el LR− 0.05 que sigue publicando el abstract. Esos dos cocientes quedan
 bloqueados, y con ellos cualquier subgrupo que incluya a Marin. `errata_verificada`
 se pondrá al modelar el absceso, citando solo los dos valores corregidos.
 
-`gottlieb2020` sostiene también el absceso de partes blandas: su cotejo toca
-ANTES de modelarlo, no después.
+**Las cuatro están cotejadas.** El absceso de partes blandas ya se puede
+modelar, con la única restricción que impone `barbic2017`: sus dos cocientes
+siguen bloqueados, y la ficha de biosemiotics ya se corrigió a los valores
+agrupados de la corrección.
 
 #### La lección de las notas, que costó un susto
 
