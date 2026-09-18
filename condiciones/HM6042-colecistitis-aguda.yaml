@@ -1,0 +1,116 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Acuñada en la OLEADA 1 al modelar la condición correspondiente a los signos
+# de vía biliar de biosemiotics. Cocientes del metaanálisis de Wilson 2024
+# (pmid:37855790, Ann Emerg Med) en POCUS realizado por médicos de urgencias
+# (7 estudios, 1 772 pacientes). Criterios diagnósticos de consenso según las
+# Guías de Tokio 2018 (pmid:29032636).
+
+id: 'HM:6042'
+tipo: condicion
+clase: enfermedad
+termino: Colecistitis aguda
+termino_en: Acute cholecystitis
+sinonimos:
+  - colecistitis litiásica aguda
+  - colecistitis aguda alitiásica
+  - inflamación aguda de la vesícula biliar
+
+codigos:
+  snomed: '76581006'
+  cie10: 'K81.0'
+
+probabilidad_base: null
+factores_riesgo:
+  - colelitiasis conocida
+  - sexo femenino
+  - edad mayor de 50 años
+  - nutrición parenteral total o ayuno prolongado en paciente crítico
+
+signos:
+  - concepto: 'HM:3175'    # Signo ecográfico de colecistitis aguda
+    rol: imagen
+    estado_lr: medido
+    poblacion: >-
+      adultos en el servicio de urgencias con sospecha clínica de colecistitis
+      aguda; metaanálisis de 7 estudios con diagnóstico final como estándar de
+      referencia (1 772 pacientes)
+    ref: 'pmid:37855790'
+    sensibilidad: 0.709
+    ic95_sensibilidad: [0.623, 0.782]
+    especificidad: 0.944
+    ic95_especificidad: [0.882, 0.975]
+    lr_positivo:
+      valor: 12.7
+      ic95: [5.8, 27.5]
+      ref: 'pmid:37855790'
+    lr_negativo:
+      valor: 0.31
+      ic95: [0.23, 0.41]
+      ref: 'pmid:37855790'
+    decision: >-
+      patrón ecográfico positivo (cálculo + pared > 3 mm + líquido perivesicular
+      + Murphy ecográfico): confirma colecistitis aguda e indica interconsulta
+      quirúrgica temprana para colecistectomía laparoscópica precoz (dentro de
+      las primeras 24-72 h)
+    advertencia: >-
+      un LR− de 0.31 no descarta colecistitis en presencia de clínica inflamatoria
+      persistente; ante ecografía indeterminada o negativa con alta sospecha,
+      indicar imagen adicional o reevaluación seriada
+
+  - concepto: 'HM:0903'    # Litiasis biliar en imagen
+    rol: manifestacion
+    estado_lr: no_medido
+    sostiene: consenso_de_lista
+    ref: 'pmid:29032636'
+
+  - concepto: 'HM:0203'    # Dolor en hipocondrio derecho
+    rol: manifestacion
+    estado_lr: no_medido
+    sostiene: consenso_de_lista
+    ref: 'pmid:29032636'
+
+  - concepto: 'HM:0101'    # Fiebre
+    rol: apoyo
+    estado_lr: no_medido
+    sostiene: consenso_de_lista
+    ref: 'pmid:29032636'
+
+  - concepto: 'HM:0712'    # Leucocitosis
+    rol: apoyo
+    estado_lr: no_medido
+    sostiene: consenso_de_lista
+    ref: 'pmid:29032636'
+
+  - concepto: 'HM:0761'    # Elevación de proteína C reactiva
+    rol: apoyo
+    estado_lr: no_medido
+    sostiene: consenso_de_lista
+    ref: 'pmid:29032636'
+
+  - concepto: 'HM:0601'    # Irritación peritoneal
+    rol: apoyo
+    estado_lr: no_medido
+    sostiene: consenso_de_lista
+    ref: 'pmid:29032636'
+
+notas_de_uso:
+  - >-
+    CRITERIOS DE TOKIO 2018 (TG18, pmid:29032636): el diagnóstico definitivo
+    requiere un ítem del grupo A (signos locales: Murphy o dolor/masa en CSD),
+    uno del grupo B (signos sistémicos: fiebre, PCR > 10 mg/L o leucocitos
+    > 10 000/µL) y un hallazgo confirmatorio del grupo C (ecografía: cálculo,
+    pared engrosada > 3 mm, Murphy ecográfico, líquido perivesicular). La
+    coexistencia de A + B establece sospecha diagnóstica.
+
+conclusion_de_la_fuente: >-
+  El POCUS en urgencias tiene alta especificidad (94.4%) y sensibilidad moderada
+  (70.9%) para confirmar colecistitis aguda en pacientes con sospecha clínica,
+  permitiendo acelerar la resolución quirúrgica definitiva.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1 al modelar la condición asociada a los signos de
+    vía biliar de biosemiotics. Cocientes de Wilson 2024 (pmid:37855790).
+
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=colecistitis-aguda-precision-semiotica"

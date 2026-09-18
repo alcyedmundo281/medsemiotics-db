@@ -1,0 +1,53 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-disfuncion-diastolica).
+#
+# ORIENTA, NO SENTENCIA. La fuente advierte expresamente que un cociente aislado
+# no confirma insuficiencia cardíaca con fracción de eyección preservada ni
+# permite descartarla; debe integrarse con el volumen auricular, la velocidad
+# de regurgitación tricuspídea y la clínica del paciente.
+
+id: 'HM:3168'
+tipo: concepto
+semantica: hallazgo
+termino: Cociente E/e' por ecocardiografía Doppler tisular
+termino_en: E/e' ratio on tissue Doppler echocardiography
+sinonimos:
+  - relación E/e'
+  - índice E/e'
+  - estimación de presiones de llenado del VI por Doppler tisular
+  - disfunción diastólica en ecocardiografía
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Cociente entre la velocidad máxima del flujo de llenado mitral temprano (onda E)
+  y el promedio de las velocidades del anillo mitral en diástole temprana (e' septal
+  y lateral) obtenidas mediante Doppler tisular espectral.
+significado: >-
+  Estimador indirecto de la presión capilar pulmonar y de las presiones de llenado
+  del ventrículo izquierdo, indicador de alteración de la relajación y compliance miocárdica.
+falsos_positivos:
+  - Velocidad e' subestimada por desalineación del haz Doppler o volumen de muestra incorrecto
+  - Calcificación extensa del anillo mitral o anillo protésico/quirúrgico que limita su excursión
+  - Disfunción contráctil regional, isquemia o infarto del miocardio basal adyacente
+  - Fusión de ondas E y A en taquicardia o bloqueo auriculoventricular de primer grado
+
+umbral:
+  parametro: "Cociente E/e' promedio transmitral y anular"
+  unidad: cociente
+  direccion: alto
+  corte_superior: 14
+  ref: 'pmid:40617625'
+  nota: >-
+    E/e' promedio > 14 apoya presiones de llenado elevadas; entre 8 y 14 es
+    indeterminado y requiere otros parámetros (volumen de AI, velocidad de IT);
+    < 8 es generalmente normal.
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-disfuncion-diastolica), sostenida sobre
+    pmid:40617625 (Nagueh 2025, guía ASE/EACVI), pmid:38782352 (Robinson 2024) y pmid:26811160 (Sharifov 2016).
+  nota: >-
+    La errata de pmid:26811160 fue cotejada el 17/09/2026: correspondió a formato HTML sin
+    afectar ninguna cifra. `se_basa_en` apuntaba a conceptos de física de Doppler que quedan en biosemiotics.

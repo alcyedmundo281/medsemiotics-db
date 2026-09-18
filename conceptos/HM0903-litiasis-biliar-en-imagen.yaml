@@ -37,6 +37,10 @@ falsos_positivos:
   - Gas duodenal o sombra de borde fuera de la luz vesicular
   - Calcificación mural o clip quirúrgico en una anatomía alterada
 
+contrasta_con:
+  - 'HM:3175'
+  - 'HM:3176'
+
 procedencia:
   fuente: >-
     Tríada migrada en la oleada 1 desde biosemiotics (signo-colelitiasis),
@@ -44,7 +48,5 @@ procedencia:
   nota: >-
     Los cinco falsos positivos son los de la fuente, literales.
     `se_basa_en` no se migró —apuntaba a la física de la sombra acústica,
-    que se queda en biosemiotics—. `contrasta_con` tampoco: sus dos
-    destinos, la colecistitis aguda y la coledocolitiasis, son de los 14
-    signos que esperan a que entren sus referencias, así que hoy no tienen
-    código al que apuntar.
+    que se queda en biosemiotics—. Contrasta con el signo de colecistitis aguda
+    (HM:3175) y con la dilatación del conducto biliar común / coledocolitiasis (HM:3176).

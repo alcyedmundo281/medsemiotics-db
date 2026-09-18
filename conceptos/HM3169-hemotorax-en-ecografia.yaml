@@ -1,0 +1,48 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-hemotorax).
+#
+# SIN `umbral` autónomo en el contexto de urgencias: opera como prueba binaria
+# (líquido presente o ausente por encima del diafragma). Las cifras de rendimiento
+# diagnóstico de Zanobetti 2018 (sensibilidad 82%, especificidad 97% en 601 traumatizados)
+# corresponden al desempeño global del eFAST torácico.
+
+id: 'HM:3169'
+tipo: concepto
+semantica: hallazgo
+termino: Hemotórax en ecografía torácica
+termino_en: Hemothorax on thoracic ultrasound
+sinonimos:
+  - hemotórax en eFAST
+  - líquido pleural en trauma por ecografía
+  - signo de la columna torácica en ecografía
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Espacio anecoico supradiafragmático con pérdida del artefacto en espejo habitual
+  del hígado o bazo, visualización patológica de los cuerpos vertebrales torácicos
+  continuos (signo de la columna) y, en derrames moderados o graves, pulmón
+  atelectásico fluctuante.
+significado: >-
+  Presencia de líquido libre en la cavidad pleural. En el contexto de trauma cerrado
+  o penetrante, representa hemotórax (sangrado intratorácico) hasta demostrar lo contrario.
+falsos_positivos:
+  - Derrame pleural preexistente no traumático (insuficiencia cardíaca, cirrosis, neoplasia)
+  - Ascitis subdiafragmática voluminosa confundida con líquido supradiafragmático si no se define bien el diafragma
+  - Quiste o colección líquida subfrénica
+  - Consolidación pulmonar o atelectasia hipoecoica sin derrame
+  - Artefacto en espejo normal malinterpretado como colección
+  - Hemotórax laminar pequeño menor al volumen detectable, o coágulo ecogénico organizado
+
+contrasta_con:
+  - 'HM:3007'
+  - 'HM:3159'
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-hemotorax), sostenida sobre
+    pmid:30139330 (Zanobetti 2018), pmid:37803387 (Savoia 2023) y pmid:30602377 (van der Weide 2019).
+  nota: >-
+    Contrasta con el derrame pleural general (HM:3007) y con el neumotórax (HM:3159).
+    `se_basa_en` apuntaba a conceptos de artefactos acústicos que residen en biosemiotics.

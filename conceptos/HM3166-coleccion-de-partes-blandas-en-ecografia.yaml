@@ -58,6 +58,8 @@ falsos_positivos:
     Colección profunda fuera del alcance de la sonda lineal: un absceso que no
     se ve no es un absceso ausente
 
+contrasta_con: ['HM:3170']
+
 procedencia:
   fuente: Acuñado al migrar el signo del absceso de partes blandas de biosemiotics.
   nota: >-
@@ -65,5 +67,5 @@ procedencia:
     (signo-absceso-partes-blandas), que la sostiene sobre gottlieb2020,
     barbic2017 y wu2022, las tres ya en el índice. Los ocho falsos positivos se
     transcriben sin añadir ni quitar ninguno, incluidos los dos últimos, que la
-    propia fuente marca como falsos negativos. No se migra su `contrasta_con`
-    (signo-hernia-complicada): ese signo aún no tiene código HM.
+    propia fuente marca como falsos negativos. Contrasta con la hernia complicada
+    (HM:3170).
