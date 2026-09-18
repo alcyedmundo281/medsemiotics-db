@@ -28,6 +28,7 @@ verificacion:
   retractado: false
   errata: 'Ann Emerg Med. 2022 Jan;79(1):90. doi: 10.1016/j.annemergmed.2021.10.020.'
   errata_pmid: 'pmid:34949417'
+  errata_verificada: true
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -36,16 +37,35 @@ verificacion:
       Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
       con refs.bib
     - >-
-      COTEJO PENDIENTE: CORRECCIÓN LOCALIZADA PERO SIN LEER (17/09/2026).
-      Identificada por DOI: pmid:34949417, doi 10.1016/j.annemergmed.2021.10.020,
-      titulada solo «Correction», que PubMed enlaza como «Erratum for» este
-      artículo. PubMed no trae su texto, y tampoco Europe PMC, CrossRef ni
-      OpenAlex (acceso cerrado). annemergmed.com y ScienceDirect exigen
-      verificación antibots y no se sortearon. Falta leerla desde un acceso
-      institucional o en el PDF de Ann Emerg Med 2022;79(1):90.
+      COTEJO CERRADO el 18/09/2026 contra el cuerpo de la corrección, leído en
+      el PDF de la página 90 de Ann Emerg Med 2022;79(1), descargado por el Dr.
+      Torres con su acceso. La corrección SÍ es de este artículo: lo cita por
+      título, como «Annals of Emergency Medicine 76 (2020) 67-77» y por su doi
+      10.1016/j.annemergmed.2020.01.004. PubMed confirma que pmid:34949417 es
+      un «Published Erratum» en 79(1):90 con doi
+      10.1016/j.annemergmed.2021.10.020.
     - >-
-      SOSPECHA, que NO es cotejo: la corrección de barbic2017 (pmid:28073795)
-      se debió a que Marin 2013 se extrajo mal, y ese estudio pediátrico es
-      candidato a estar también en este metaanálisis. La sospecha no autoriza
-      a corregir nada: al leer la corrección, mirar primero si trata de Marin
-      y del subgrupo pediátrico.
+      LA PÁGINA 90 LLEVA DOS AVISOS DE CORRECCIÓN, igual que JAMA agrupa
+      varios por página: uno del Abstract 364 (Hayes et al., doi del original
+      10.1016/j.annemergmed.2021.09.379), que no tiene que ver con este, y el
+      de Gottlieb. Se identificó por el doi del original que cita el aviso, no
+      por la página.
+    - >-
+      NO CORRIGE NINGUNA CIFRA. Corrige solo la numeración de las figuras: se
+      omitió la Figura 3, así que las Figuras 3-8 originales pasan a ser 4-9, y
+      la Figura 9 era un duplicado de la 8 y se retiró. Ningún valor de
+      sensibilidad, especificidad, cociente ni umbral cambia.
+    - >-
+      `errata_verificada` se pone ya, sin esperar a que se cite, por la misma
+      razón que en pmid:26811160: toda la corrección es editorial, así que la
+      fuente queda cotejada para cualquier cifra. Precaución que sí queda: en
+      el PDF de 2020, una «Figura N» citada a partir de la 3 es la N+1 de la
+      versión actual. Citar figuras por la numeración corregida.
+    - >-
+      LA SOSPECHA SOBRE MARIN 2013 QUEDA DESCARTADA COMO ERRATA, NO COMO
+      PREGUNTA. La corrección no menciona a Marin ni ningún subgrupo
+      pediátrico. Eso significa que esta errata no cambia ninguna cifra, pero
+      no demuestra que Marin se extrajera bien: barbic2017 (pmid:28073795) lo
+      extrajo mal sin que nadie lo corrigiera hasta 2017. Si se transcribe un
+      agrupado que incluya a Marin, mirar su fila en la tabla de estudios
+      incluidos antes de fiarse.
