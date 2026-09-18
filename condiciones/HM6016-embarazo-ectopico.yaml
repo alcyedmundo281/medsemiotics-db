@@ -20,6 +20,13 @@
 # 12 a 1028: dos órdenes de magnitud. El aviso queda en pie a propósito, porque
 # un cociente de tres cifras merece que alguien lo mire cada vez, y quien lo
 # mire encontrará aquí por qué se aceptó.
+#
+# SEGUNDA FUENTE, AÑADIDA EN LA OLEADA 1: pmid:36063623, el signo del embarazo
+# ectópico migrado de biosemiotics. No trae cociente y no podía traerlo —mide
+# el rendimiento del POCUS transabdominal para confirmar el INTRAUTERINO,
+# contra la ecografía transvaginal del obstetra—, así que su arista entra con
+# `estado_lr: no_medido` y sus cifras viven en `notas_de_uso`, donde se leen sin
+# que nadie las tome por cocientes de esta condición.
 
 id: 'HM:6016'
 tipo: condicion
@@ -36,6 +43,38 @@ probabilidad_base: null
 factores_riesgo: []
 
 signos:
+  # ─── ecografía transabdominal en urgencias: el primer contacto ──────────────
+  - concepto: 'HM:3165'    # Embarazo intrauterino confirmado en ecografía
+    rol: imagen
+    estado_lr: no_medido
+    efecto: excluye
+    dispara_si: presente
+    sostiene: mecanismo
+    poblacion: >-
+      143 gestantes sintomáticas del primer trimestre atendidas en urgencias por
+      sangrado vaginal y dolor abdominopélvico
+    ref: 'pmid:36063623'
+    motivo: >-
+      la exclusión no descansa en un cociente sino en la anatomía: un embarazo
+      ectópico está fuera del útero por definición, así que ver el embarazo
+      dentro lo vuelve muy improbable sin que nadie haya tenido que medirlo. Y
+      la fuente no lo mide: su condición diana es el embarazo intrauterino
+      contrastado contra la ecografía transvaginal del obstetra, no el ectópico
+      contrastado contra visualización quirúrgica o seguimiento. Convertir su
+      especificidad del 100% en un cociente del ectópico sería inventar un
+      número que el estudio no calculó. Ver `notas_de_uso`.
+    decision: >-
+      cuando dice que sí, créele; cuando no lo ve, no has descartado nada. Es
+      una asimetría, no un resultado positivo o negativo: sin intrauterino
+      confirmado hay un embarazo de localización no determinada, que obliga a
+      ecografía transvaginal y hCG, no a un alta
+    advertencia: >-
+      el embarazo heterotópico existe: confirmar el intrauterino no excluye un
+      ectópico simultáneo, y la excepción pesa de verdad en la mujer que viene
+      de reproducción asistida. El seudosaco es la otra trampa, y es la
+      peligrosa: una colección endometrial central sin saco vitelino ni embrión
+      NO es este hallazgo
+
   # ─── ecografía transvaginal: lo único que decide ────────────────────────────
   - concepto: 'HM:3064'    # Masa anexial sin gestación intrauterina en ecografía transvaginal
     rol: imagen
@@ -129,7 +168,33 @@ signos:
       el otro criterio de entrada, con la misma acotación: ningún componente de
       la anamnesis alcanza un LR+ de 1.5
 
+notas_de_uso:
+  - >-
+    LAS CIFRAS DE pmid:36063623 NO SON COCIENTES DEL ECTÓPICO Y NO DEBEN LEERSE
+    COMO TALES. Miden el rendimiento del POCUS transabdominal hecho por médicos
+    de urgencias para CONFIRMAR UN EMBARAZO INTRAUTERINO, contrastado contra la
+    ecografía transvaginal del obstetra, en 143 gestantes sintomáticas del
+    primer trimestre: exactitud 93.0%, sensibilidad 89.0%, especificidad 100%.
+    Añadir un transductor lineal de alta frecuencia las lleva a 97.9%, 96.7% y
+    100%. La condición diana es el intrauterino, no el ectópico, y el patrón de
+    referencia es otra prueba de imagen, no el desenlace: son dos razones
+    independientes por las que estas cifras no se convierten en un LR de
+    HM:6016.
+  - >-
+    ESTA FUENTE TIENE ERRATA PUBLICADA Y ESTÁ COTEJADA (Am J Emerg Med
+    2025;88:277, pmid:39709283). Corrige una sola celda de la Tabla 2 —el
+    recuento de falsos negativos para actividad cardiaca fetal, 8 y no 12— y
+    sus autores declaran que resultados, análisis y conclusiones no se ven
+    afectados. Ninguna de las cifras de arriba cambia. Lo que sí cambia: quien
+    recalcule a mano un cociente desde la fila de actividad cardiaca fetal tiene
+    que usar FN = 8.
+
 pendiente:
+  - >-
+    El embarazo de localización no determinada no está en el índice como
+    concepto propio, y es el hallazgo que de verdad decide el manejo en
+    urgencias: no es «ausencia de HM:3165» sino una categoría con su propia
+    ruta. Entrará cuando haya una fuente que lo mida, no antes.
   - >-
     La hCG sérica cuantitativa no entra como arista. La fuente es explícita en
     que los estudios existentes NO establecen un valor único diagnóstico de

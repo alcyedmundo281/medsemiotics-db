@@ -1,0 +1,64 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-embarazo-ectopico).
+#
+# ES EL COMPLEMENTO DE HM:3064, NO SU DUPLICADO. HM:3064 es la masa anexial con
+# el útero vacío, vista por vía transvaginal, y trae el cociente de Crochet.
+# Éste es el hallazgo contrario —el embarazo visto DENTRO del útero— y se mide
+# por vía transabdominal en urgencias. Dos ventanas, dos hallazgos, dos fuentes.
+#
+# SIN `umbral`, y la ausencia es el dato. El hallazgo es morfológico y binario:
+# o se ve el saco con saco vitelino o embrión dentro del manto miometrial, o no
+# se ve. Las cifras de pmid:36063623 —exactitud 93.0%, sensibilidad 89.0%,
+# especificidad 100%, y 97.9%/96.7%/100% al añadir el transductor lineal de
+# alta frecuencia— NO son un corte: son el rendimiento del POCUS transabdominal
+# para obtener este hallazgo, contrastado contra la ecografía transvaginal del
+# obstetra. Viven en `notas_de_uso` de HM:6016, que es donde se leen sin
+# confundirlas con un cociente del ectópico.
+
+id: 'HM:3165'
+tipo: concepto
+semantica: hallazgo
+termino: Embarazo intrauterino confirmado en ecografía
+termino_en: Confirmed intrauterine pregnancy on sonography
+sinonimos:
+  - gestación intrauterina confirmada
+  - saco gestacional intrauterino con saco vitelino o embrión
+  - embarazo intrauterino definitivo
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Saco gestacional dentro del útero con saco vitelino o embrión en su interior,
+  rodeado de un manto de miometrio.
+significado: >-
+  El embarazo está donde debe estar. No confirmarlo no significa que sea
+  ectópico: significa que no se sabe dónde está.
+falsos_positivos:
+  - >-
+    Seudosaco: colección de líquido o sangre en la cavidad endometrial, central
+    y sin saco vitelino ni embrión, en una mujer que sí tiene un ectópico
+  - >-
+    Embarazo intersticial o cornual: está en el útero pero fuera de la cavidad,
+    con manto miometrial delgado o ausente hacia un lado
+  - Embarazo en cicatriz de cesárea, que se implanta sobre la cicatriz
+  - >-
+    Embarazo heterotópico: hay un intrauterino y un ectópico a la vez, así que
+    confirmar el primero no excluye el segundo
+  - Quiste o colección anexial tomada por saco gestacional extrauterino
+  - Líquido libre escaso fisiológico en fondo de saco, sin sangrado
+  - >-
+    Ventana mala por vejiga vacía, obesidad, gas intestinal o útero muy
+    retrovertido: un estudio no concluyente no es un estudio negativo
+
+contrasta_con: ['HM:3064']
+
+procedencia:
+  fuente: Acuñado al migrar el signo del embarazo ectópico de biosemiotics.
+  nota: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-embarazo-ectopico),
+    que la sostiene sobre pmid:36063623 y otras cinco referencias ya presentes
+    en el índice. Los falsos positivos venían en prosa y se transcriben sin
+    añadir ni quitar ninguno; solo se recortó la incidencia del embarazo en
+    cicatriz de cesárea, que es un dato epidemiológico de otra fuente y no un
+    rasgo del hallazgo.
