@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3191'
+tipo: concepto
+semantica: hallazgo
+termino: Asterixis
+termino_en: Asterixis
+sinonimos:
+  - flapping tremor
+  - temblor aleteante
+  - mioclonía negativa postural
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Lapsos breves, súbitos e involuntarios del tono muscular antigravitatorio
+  (mioclonía negativa) seguidos de una corrección compensatoria en sacudida,
+  observados al solicitar al paciente que mantenga los brazos extendidos hacia el
+  frente con las muñecas en dorsiflexión y los dedos separados durante al menos
+  30 segundos. Puede observarse también al protruir la lengua o cerrar los párpados.
+significado: >-
+  Interrupción episódica de las descargas eferentes de la formación reticular
+  pontomesencefálica y los ganglios basales hacia la corteza motora como
+  consecuencia de encefalopatía metabólica o tóxica difusa. Hallazgo cardinal en la
+  encefalopatía hepática (por hiperamonemia y aumento de glutamina cerebral), la
+  encefalopatía urémica y la insuficiencia respiratoria hipercápnica grave con
+  narcosis por CO2.
+falsos_positivos:
+  - Temblor postural esencial o fisiológico exagerado (es continuo, oscilatorio y no en sacudida por fallo del tono)
+  - Mioclonías positivas (contracciones activas y no pausas de la contracción)
+  - Falta de cooperación o fatiga muscular voluntaria
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Asterixis).

@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3196'
+tipo: concepto
+semantica: hallazgo
+termino: Dolor a la percusión en fosa renal
+termino_en: Costovertebral Tenderness
+sinonimos:
+  - puñopercusión renal dolorosa
+  - signo de Giordano
+  - dolor en ángulo costovertebral
+  - costovertebral angle tenderness
+padre: 'HM:0200'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Dolor agudo, punzante o exacerbación intensa del malestar lumbar que provoca una
+  reacción de retirada o defensa en el paciente cuando el examinador aplica un golpe
+  seco y firme con el borde cubital del puño cerrado sobre la mano plana colocada
+  en el ángulo costovertebral (espacio delimitado entre la 12.ª costilla y los
+  músculos paravertebrales lumbares).
+significado: >-
+  Transmisión de una onda de choque mecánica hacia un parénquima renal inflamado o
+  una vía urinaria superior sobredistendida, provocando tracción dolorosa y brusca
+  sobre las terminaciones nociceptivas de la cápsula renal de Gerota y el peritoneo
+  parietal posterior. Hallazgo fundamental de la pielonefritis aguda, absceso
+  perirrenal o pionefritis, así como de la litiasis renoureteral aguda con
+  obstrucción e hidronefrosis secundaria.
+falsos_positivos:
+  - Contractura o espasmo muscular paravertebral lumbar / lumbalgia mecánica
+  - Fractura o contusión traumática de 11.ª o 12.ª costilla
+  - Radiculopatía lumbosacra o espondilodiscitis
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Costovertebral Tenderness).
