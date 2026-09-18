@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3221'
+tipo: concepto
+semantica: hallazgo
+termino: Queilosis angular
+termino_en: Cheilosis (Angular Stomatitis)
+sinonimos:
+  - estomatitis angular
+  - queilitis comisural
+  - boqueras
+  - perleche
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Eritema inflamatorio, maceración húmeda, descamación epitelial y formación de fisuras o
+  grietas dolorosas lineales dispuestas de manera radial en una o ambas comisuras labiales
+  (ángulos de la boca). En fases crónicas pueden apreciarse costras melicéricas o exudativas y
+  pequeñas áreas ulceradas que sangran levemente al abrir ampliamente la cavidad oral para hablar
+  o alimentarse.
+significado: >-
+  Es consecuencia de la inflamación del epitelio escamoso estratificado de las comisuras inducida
+  por factores nutricionales carenciales (déficit selectivo de riboflavina [vitamina B2], piridoxina
+  [vitamina B6], niacina [vitamina B3], cianocobalamina [vitamina B12] o anemia ferropénica crónica),
+  frecuentemente sobreinfectada por Candida albicans o Staphylococcus aureus debido a la humedad
+  continua por exceso de salivación (en portadores de prótesis dentales mal adaptadas con pérdida
+  de la dimensión vertical maxilofacial o respiradores bucales).
+falsos_positivos:
+  - Herpes labial recidivante comisural (cursa con vesículas arracimadas prodrómicas sobre base eritematosa)
+  - Sífilis primaria (cancro duro comisural indurado e indoloro)
+  - Carcinoma epidermoide de labio en comisura oral (lesión tumoral con bordes sobreelevados e indurados)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Cheilosis (Angular Stomatitis)).

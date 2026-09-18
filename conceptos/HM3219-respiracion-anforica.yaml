@@ -1,0 +1,34 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3219'
+tipo: concepto
+semantica: hallazgo
+termino: Respiración anfórica
+termino_en: Amphoric Breathing
+sinonimos:
+  - soplo anfórico
+  - ruido respiratorio anfórico
+  - amphoric souffle
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ruido respiratorio auscultatorio adventicio de timbre hueco, metálico, resonante y de
+  tono marcadamente bajo (grave), que semeja con fidelidad acústica el sonido producido al
+  soplar suave y oblicuamente a través del gollete o boca de una botella o vasija de vidrio
+  vacía. Se percibe tanto en la inspiración como en la espiración, con predominio o persistencia
+  marcada durante esta última fase.
+significado: >-
+  Se genera por la resonancia acústica del flujo de aire turbulento al penetrar y reverberar en
+  una cavidad intratorácica de gran tamaño (habitualmente mayor de 4 a 6 cm de diámetro), con
+  paredes lisas, firmes o rígidas y en comunicación directa y libre con un bronquio permeable.
+  Es característico de cavernas tuberculosas pulmonares voluminosas apicales, abscesos pulmonares
+  drenados parcialmente o neumotórax espontáneo a tensión con fístula broncopleural abierta.
+falsos_positivos:
+  - Soplo cavernoso o cavitario común (de tono intermedio, sin el característico armónico metálico de resonancia en jarra)
+  - Soplo pleurítico en el límite superior de un derrame pleural (timbre en "E", tono agudo, espiratorio)
+  - Respiración bronquial o tubárica ruda transmitida por consolidación neumónica sin cavitación
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Amphoric Breathing).

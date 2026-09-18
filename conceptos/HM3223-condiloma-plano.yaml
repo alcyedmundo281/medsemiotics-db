@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3223'
+tipo: concepto
+semantica: hallazgo
+termino: Condiloma plano
+termino_en: Condyloma Latum
+sinonimos:
+  - condiloma lato
+  - condilomas planos
+  - placas mucosas sifilíticas
+  - condylomata lata
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Pápulas o placas sobreelevadas anchas, aplanadas, húmedas, de superficie lisa o ligeramente
+  vegetante no digitada, de color blanquecino, grisáceo o rosado pálido, con aspecto macerado y
+  recubiertas de un exudado seroso rico en gérmenes. Se asientan predominantemente en zonas
+  húmedas y pliegues intertriginosos por fricción continua: región perianal, vulva, escroto, cara
+  interna de los muslos, axilas o comisuras labiales. Típicamente son indoloras pero extraordinariamente
+  infectantes al contacto directo.
+significado: >-
+  Lesión mucocutánea hipertrófica exuberante abarrotada de abundantes espiroquetas (Treponema
+  pallidum) detectables por microscopía de campo oscuro o inmunohistoquímica, acompañada de un denso
+  infiltrado plasmocitario e hiperplasia epidérmica con acantosis. Es una manifestación física clásica
+  y altamente contagiosa de la sífilis secundaria generalizada.
+falsos_positivos:
+  - Condilomas acuminados (verrugas anogenitales por VPH: lesiones digitadas, papilomatosas en coliflor, secas o hiperqueratósicas)
+  - Pénfigo vegetante (lesiones vegetantes crónicas con vesículas periféricas y acantólisis autoinmune)
+  - Hemorroides trombosadas o mariscos cutáneos inflamados (sin exudado macerado plano ni espiroquetas)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Condyloma Latum / Mucous Patches (Condyloma Latum)).
