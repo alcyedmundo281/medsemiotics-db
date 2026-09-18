@@ -1,0 +1,43 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-vti).
+#
+# SIN `umbral` terapéutico universal estático: en monitorización hemodinámica el VTI
+# se evalúa en forma dinámica (cambio relativo tras maniobra de elevación pasiva de
+# piernas o sobrecarga de volumen para predecir respuesta a fluidos). Es el componente
+# de velocidad para el cálculo del volumen sistólico y gasto cardíaco (HM:3174).
+
+id: 'HM:3173'
+tipo: concepto
+semantica: hallazgo
+termino: Integral tiempo-velocidad del tracto de salida del ventrículo izquierdo
+termino_en: Left ventricular outflow tract velocity-time integral
+sinonimos:
+  - VTI del TSVI
+  - VTI subaórtico
+  - distancia sistólica de flujo
+  - integral velocidad-tiempo por Doppler pulsado
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Área bajo la curva espectral de la envolvente sistólica de velocidad-tiempo del
+  flujo subaórtico, obtenida mediante Doppler pulsado en el tracto de salida del
+  ventrículo izquierdo en vista apical de cinco o tres cámaras, expresada en centímetros.
+significado: >-
+  Distancia sistólica de eyección de la columna de sangre; directamente proporcional
+  al volumen sistólico cuando el área del tracto de salida ventricular permanece fija.
+falsos_positivos:
+  - Error por desalineación angular entre el haz de ultrasonido y la dirección del flujo (> 20°)
+  - Volumen de muestra situado demasiado distal que registra aceleración o artefacto de cierre valvular
+  - Regurgitación aórtica severa que eleva falsamente el volumen de eyección total sin beneficio neto
+  - Variabilidad latido a latido marcada en arritmias como fibrilación auricular
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-vti), sostenida sobre
+    pmid:36001157 (Mercadal 2022), pmid:29149863 (Orde 2017), pmid:30971307 (Jozwiak 2019)
+    y pmid:25658678 (Monnet 2015).
+  nota: >-
+    `se_basa_en` apuntaba a conceptos de física de Doppler y límites de cuantificación
+    en biosemiotics. Parámetro clave que se integra en el gasto cardíaco (HM:3174).

@@ -1,0 +1,42 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:8411607'
+clave_bibtex: grover1993
+tipo: articulo
+titulo: 'The rational clinical examination. Does this patient have splenomegaly?'
+autores:
+  - Grover SA
+  - Barkun AN
+  - Sackett DL
+publicacion: JAMA
+anio: 1993
+volumen: 270
+paginas: 2218-21
+
+identificadores:
+  pmid: 8411607
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  errata: 'JAMA. 2011 Apr 13;305(14):1414. doi: 10.1001/jama.2011.429.'
+  errata_corrige: 'Clarified Text Description in: Does This Patient Have Splenomegaly?'
+  errata_verificada: true
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - >-
+      COTEJO CERRADO el 18/09/2026 contra el cuerpo de la corrección
+      (doi: 10.1001/jama.2011.429, JAMA. 2011;305(14):1414). La corrección se
+      titula «Clarified Text Description in: Does This Patient Have Splenomegaly?»
+      y consiste exclusivamente en una aclaración textual de la técnica de
+      las maniobras semiológicas descritas. No modifica las tablas de pacientes,
+      la sensibilidad, la especificidad ni los cocientes de verosimilitud (LR).
+      Las cifras reportadas en Grover 1993 permanecen intactas y plenamente vigentes.

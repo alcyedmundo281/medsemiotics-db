@@ -1,0 +1,181 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:1573754 (Williams JW Jr, Simel DL. «Does this patient have ascites?
+# How to divine fluid in the abdomen». JAMA. 1992;267(19):2645-8). Revisión sistemática
+# de la serie The Rational Clinical Examination sobre precisión diagnóstica del examen físico
+# comparado contra ecografía abdominal como estándar de referencia.
+#
+# Se estructuran las maniobras de examen físico clásicas (onda líquida, matidez cambiante,
+# matidez en flancos, flancos abultados, signo del charco), síntomas de la anamnesis
+# (aumento de perímetro abdominal, ganancia de peso, edema periférico) y la confirmación
+# ecográfica (HM:0902).
+
+id: 'HM:6046'
+tipo: condicion
+clase: sindrome
+termino: Ascitis
+termino_en: Ascites
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=ascitis-precision-semiotica"
+sinonimos:
+  - síndrome ascítico
+  - ascitis abdominal
+  - acumulación de líquido peritoneal
+  - líquido libre intraabdominal
+
+codigos:
+  snomed: '389026000'
+  cie10: 'R18'
+
+probabilidad_base: null
+factores_riesgo:
+  - cirrosis hepática o hipertensión portal
+  - insuficiencia cardíaca congestiva
+  - síndrome nefrótico o hipoalbuminemia grave
+  - neoplasia maligna intraabdominal o carcinomatosis peritoneal
+  - pancreatitis crónica o aguda grave
+
+signos:
+  - concepto: 'HM:0902'    # Líquido libre abdominal en ecografía
+    rol: imagen
+    estado_lr: no_medible
+    motivo: >-
+      Estándar de referencia de la condición: la ecografía abdominal define
+      la presencia de líquido libre peritoneal frente a la cual se calibran las
+      maniobras físicas en la revisión sistemática de Williams & Simel 1992
+      (sesgo de incorporación). Detecta desde 100 mL de líquido libre peritoneal en
+      recesos dependientes (Morrison, esplenorrenal, Douglas), superando ampliamente
+      el umbral de detección de la exploración física clínica (> 1.5 L).
+    decision: >-
+      la presencia de líquido anecoico libre dependiente confirma ascitis y permite
+      guiar paracentesis diagnóstica de forma segura
+
+  - concepto: 'HM:3178'    # Signo de la onda líquida abdominal
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: >-
+      adultos con sospecha de ascitis evaluados frente a ecografía abdominal
+      como estándar de referencia en la revisión sistemática JAMA RCE
+    ref: 'pmid:1573754'
+    lr_positivo:
+      rango: [2.8, 9.6]
+      ref: 'pmid:1573754'
+    lr_negativo:
+      rango: [0.2, 0.6]
+      ref: 'pmid:1573754'
+    decision: >-
+      la presencia de onda líquida positiva confirma ascitis voluminosa (> 1.5-2 L)
+      con la mayor especificidad entre las maniobras físicas
+    advertencia: >-
+      su ausencia no descarta ascitis leve a moderada (< 1500 mL)
+
+  - concepto: 'HM:3179'    # Matidez cambiante abdominal
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: >-
+      adultos con sospecha de ascitis evaluados frente a ecografía abdominal
+      como estándar de referencia en la revisión sistemática JAMA RCE
+    ref: 'pmid:1573754'
+    lr_positivo:
+      rango: [1.9, 5.8]
+      ref: 'pmid:1573754'
+    lr_negativo:
+      rango: [0.2, 0.5]
+      ref: 'pmid:1573754'
+    decision: >-
+      el desplazamiento gravitacional de la matidez hacia el lado dependiente al cambiar
+      a decúbito lateral confirma la presencia de líquido peritoneal libre
+    advertencia: >-
+      falso negativo en ascitis loculada o tabicada por peritonitis o adherencias quirúrgicas
+
+  - concepto: 'HM:3180'    # Matidez en flancos abdominales
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: >-
+      adultos con sospecha de ascitis evaluados frente a ecografía abdominal
+      como estándar de referencia en la revisión sistemática JAMA RCE
+    ref: 'pmid:1573754'
+    lr_positivo:
+      rango: [1.3, 2.6]
+      ref: 'pmid:1573754'
+    lr_negativo:
+      rango: [0.2, 0.3]
+      ref: 'pmid:1573754'
+    decision: >-
+      maniobra de cribado inicial por percusión: la ausencia de matidez en flancos
+      reduce fuertemente la probabilidad de ascitis (LR- 0.2-0.3)
+
+  - concepto: 'HM:3181'    # Flancos abdominales abultados
+    rol: apoyo
+    estado_lr: medido
+    poblacion: >-
+      adultos con sospecha de ascitis evaluados frente a ecografía abdominal
+      como estándar de referencia en la revisión sistemática JAMA RCE
+    ref: 'pmid:1573754'
+    lr_positivo:
+      rango: [1.4, 2.4]
+      ref: 'pmid:1573754'
+    lr_negativo:
+      rango: [0.1, 0.5]
+      ref: 'pmid:1573754'
+
+  - concepto: 'HM:3182'    # Signo del charco
+    rol: apoyo
+    estado_lr: medido
+    poblacion: >-
+      adultos con sospecha de ascitis de bajo volumen evaluados en posición prona
+      sobre codos y rodillas
+    ref: 'pmid:1573754'
+    lr_positivo:
+      valor: 1.6
+      ref: 'pmid:1573754'
+    lr_negativo:
+      valor: 0.8
+      ref: 'pmid:1573754'
+    decision: >-
+      maniobra incómoda y de escasa ganancia diagnóstica; ante sospecha de ascitis
+      mínima debe procederse directamente a ecografía abdominal
+
+  - concepto: 'HM:3183'    # Aumento del perímetro abdominal
+    rol: manifestacion
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados para detección de ascitis en la anamnesis clínica
+    ref: 'pmid:1573754'
+    lr_positivo:
+      valor: 4.16
+      ref: 'pmid:1573754'
+    lr_negativo:
+      valor: 0.17
+      ref: 'pmid:1573754'
+    decision: >-
+      la ausencia de aumento referido de la circunferencia abdominal o ropa apretada
+      reduce significativamente la probabilidad de ascitis (LR- 0.17)
+
+  - concepto: 'HM:3186'    # Ganancia de peso reciente
+    rol: manifestacion
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados para detección de ascitis en la anamnesis clínica
+    ref: 'pmid:1573754'
+    lr_positivo:
+      valor: 3.2
+      ref: 'pmid:1573754'
+    lr_negativo:
+      valor: 0.42
+      ref: 'pmid:1573754'
+
+  - concepto: 'HM:0604'    # Edema en miembros inferiores
+    rol: manifestacion
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados para detección de ascitis en exploración clínica
+    ref: 'pmid:1573754'
+    lr_positivo:
+      valor: 2.8
+      ref: 'pmid:1573754'
+    lr_negativo:
+      valor: 0.10
+      ref: 'pmid:1573754'
+    decision: >-
+      la ausencia de edema en tobillos o piernas descarta ascitis con gran poder
+      excluyente (LR- 0.10) en contexto de fallo sistémico o hipertensión portal

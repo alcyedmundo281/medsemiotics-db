@@ -1,0 +1,46 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-hernia-complicada).
+#
+# SIN `umbral` de tamaño autónomo: la complicación está definida clínicamente por
+# la irreductibilidad, la pérdida de peristalsis y los signos de obstrucción o
+# sufrimiento de asa. Shokoohi 2023 reporta para obstrucción de intestino delgado
+# por POCUS sensibilidad 83.0% y especificidad 93.0% (LR+ 11.9, LR- 0.20).
+
+id: 'HM:3170'
+tipo: concepto
+semantica: hallazgo
+termino: Hernia complicada en ecografía
+termino_en: Complicated hernia on ultrasound
+sinonimos:
+  - hernia estrangulada en ecografía
+  - hernia encarcelada con obstrucción intestinal
+  - hernia con sufrimiento de asa
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Defecto aponeurótico de la pared abdominal o conducto inguinal a través del cual
+  protruye un saco herniario con asa intestinal aperistáltica, pared engrosada,
+  líquido libre intrasacular y dilatación retrógrada de asas proximales con flujo en vaivén.
+significado: >-
+  Incarcelación y compromiso mecánico o vascular del contenido herniario, indicativo
+  de obstrucción intestinal aguda o isquemia que contraindica la reducción manual forzada.
+falsos_positivos:
+  - Lipoma del cordón espermático (no comunica con la cavidad ni cambia con maniobras)
+  - Adenopatía inguinal, quiste del canal de Nuck o hematoma en topografía herniaria
+  - Dilatación del plexo pampiniforme (varicocele) o cayado safeno varicoso
+  - Diástasis de rectos sin defecto aponeurótico ni saco
+  - Hernia reductible no complicada con grasa preperitoneal
+  - Sufrimiento epiploico aislado sin dilatación de asas entéricas acompañantes
+
+contrasta_con:
+  - 'HM:3166'
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-hernia-complicada), sostenida sobre
+    pmid:36974151 (Shokoohi 2023), pmid:34304859 (Thaker 2021) y pmid:29884501 (Fonseca 2018).
+  nota: >-
+    Contrasta con la colección/absceso de partes blandas (HM:3166). `se_basa_en` apuntaba
+    a conceptos de física y transductores que residen en biosemiotics.

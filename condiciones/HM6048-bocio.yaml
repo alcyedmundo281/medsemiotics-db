@@ -1,0 +1,88 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Cocientes de pmid:7861577 (Siminoski K. «The rational clinical examination.
+# Does this patient have a goiter?». JAMA. 1995;273(10):813-7). Revisión
+# sistemática sobre la precisión de la inspección y palpación tiroidea frente a
+# ecografía como estándar de referencia.
+
+id: 'HM:6048'
+tipo: condicion
+clase: sindrome
+termino: Bocio
+termino_en: Goiter
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=bocio-inspeccion-palpacion-precision"
+sinonimos:
+  - tiromegalia
+  - agrandamiento tiroideo
+  - hipertrofia de la glándula tiroides
+  - bocio tiroideo
+
+codigos:
+  snomed: '3716002'
+  cie10: 'E04.9'
+
+probabilidad_base: null
+factores_riesgo:
+  - deficiencia crónica de yodo en la dieta
+  - sexo femenino
+  - antecedentes familiares de patología tiroidea o autoinmune
+  - gestación o periodo puerperal
+
+signos:
+  - concepto: 'HM:3187'    # Agrandamiento tiroideo palpable en posición neutra
+    rol: prueba_especifica
+    estado_lr: medido
+    poblacion: >-
+      adultos evaluados mediante inspección y palpación con el cuello en
+      posición neutra frente a ecografía tiroidea como estándar de referencia
+    ref: 'pmid:7861577'
+    lr_positivo:
+      valor: 26.3
+      ref: 'pmid:7861577'
+    lr_negativo:
+      valor: 0.40
+      ref: 'pmid:7861577'
+    decision: >-
+      un tiroides netamente visible o palpable con el cuello en posición neutra
+      confirma bocio con muy alta probabilidad clínica (LR+ 26.3)
+    advertencia: >-
+      la ausencia de bocio evidente en posición neutra no descarta bocio
+      leve o de localización intratorácica/retroesternal (LR- 0.40)
+
+  - concepto: 'HM:3188'    # Lóbulo tiroideo palpable mayor que la falange distal del pulgar (niños)
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: >-
+      niños en edad escolar evaluados según el criterio de falange distal
+      del pulgar de la OMS frente a ecografía tiroidea
+    ref: 'pmid:7861577'
+    lr_positivo:
+      valor: 3.0
+      ic95: [2.5, 3.5]
+      ref: 'pmid:7861577'
+    lr_negativo:
+      valor: 0.30
+      ic95: [0.24, 0.37]
+      ref: 'pmid:7861577'
+    decision: >-
+      en cribado pediátrico, un lóbulo que supera la falange distal del pulgar
+      triplica la probabilidad de bocio confirmado por ultrasonido
+
+  - concepto: 'HM:3188'    # Lóbulo tiroideo palpable mayor que la falange distal del pulgar (gestantes)
+    rol: prueba_sensible
+    estado_lr: medido
+    poblacion: >-
+      mujeres gestantes evaluadas según el criterio de falange distal del
+      pulgar de la OMS frente a ecografía tiroidea
+    ref: 'pmid:7861577'
+    lr_positivo:
+      valor: 4.7
+      ic95: [3.6, 6.0]
+      ref: 'pmid:7861577'
+    lr_negativo:
+      valor: 0.08
+      ic95: [0.02, 0.27]
+      ref: 'pmid:7861577'
+    decision: >-
+      en gestantes, la ausencia de lóbulos tiroideos que superen la falange
+      distal descarta bocio con excelente fiabilidad (LR- 0.08)

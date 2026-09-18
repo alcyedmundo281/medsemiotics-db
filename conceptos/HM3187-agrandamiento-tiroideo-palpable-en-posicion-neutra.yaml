@@ -1,0 +1,33 @@
+# Concepto del índice. Acuñado al modelar HM:6048 (bocio).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3187'
+tipo: concepto
+semantica: hallazgo
+termino: Agrandamiento tiroideo palpable en posición neutra
+termino_en: Palpable goiter in neutral neck position
+sinonimos:
+  - bocio palpable en posición neutra
+  - tiroides palpable en posición anatómica
+  - bocio evidente a la exploración
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Tiroides visible o palpable con el cuello en posición neutra o relajada
+  (sin hiperextensión forzada), que asciende con los movimientos de deglución
+  al palpar los lóbulos laterales o el istmo tiroideo.
+significado: >-
+  Aumento patológico del volumen o masa de la glándula tiroides (bocio o tiromegalia)
+  por encima de los límites fisiológicos del adulto.
+falsos_positivos:
+  - Cuello marcadamente delgado con cartílago tiroides o cricoides prominente
+  - Quiste del conducto tirogloso o adenopatía de la cadena cervical anterior
+  - Tejido adiposo pretraqueal o lipoma cervical
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:7861577)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Siminoski 1995.'

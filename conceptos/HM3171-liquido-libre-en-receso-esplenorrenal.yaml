@@ -1,0 +1,47 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-fast-esplenorrenal).
+#
+# SIN `umbral` autónomo de corte numérico: opera como signo binario dentro del
+# protocolo FAST. La acumulación hemática en el cuadrante superior izquierdo suele
+# localizarse primero en el espacio subfrénico (por encima del bazo) antes de ocupar
+# el espacio entre el bazo y el riñón.
+
+id: 'HM:3171'
+tipo: concepto
+semantica: hallazgo
+termino: Líquido libre en receso esplenorrenal en ecografía
+termino_en: Free fluid in the splenorenal recess on ultrasound
+sinonimos:
+  - líquido libre esplenorrenal
+  - espacio periesplénico con líquido en FAST
+  - FAST cuadrante superior izquierdo positivo
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Banda anecoica en el espacio subfrénico izquierdo (entre el bazo y el diafragma)
+  y/o en la interfase entre el bazo y el polo superior o convexidad del riñón izquierdo.
+significado: >-
+  Presencia de líquido libre peritoneal en el cuadrante superior izquierdo. En el
+  contexto de trauma abdominal cerrado o penetrante, traduce hemoperitoneo habitualmente
+  secundario a lesión esplénica.
+falsos_positivos:
+  - Gas o contenido gástrico hipoecoico que simula o enmascara colecciones
+  - Sombra acústica de las costillas inferiores izquierdas
+  - Grasa perirrenal o periesplénica hipoecoica
+  - Ascitis preexistente por hipertensión portal o fallo cardíaco
+  - Quiste esplénico simple o hematoma subcapsular contenido
+  - Hemoperitoneo menor al límite de detección por volumen o sangre coagulada
+
+contrasta_con:
+  - 'HM:0902'
+  - 'HM:3172'
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-fast-esplenorrenal), sostenida sobre
+    pmid:7674411 (Branney 1995), pmid:37803387 (Savoia 2023), pmid:30139330 (Zanobetti 2018)
+    y pmid:37576415 (Sutarjono 2023).
+  nota: >-
+    Contrasta con el receso hepatorrenal de Morrison (HM:0902) y la ventana pélvica de Douglas (HM:3172).

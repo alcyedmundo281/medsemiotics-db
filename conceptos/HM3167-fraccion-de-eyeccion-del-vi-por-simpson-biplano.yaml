@@ -1,0 +1,40 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-fevi-simpson).
+#
+# SIN `umbral` autónomo. biosemiotics lo documenta expresamente: la cuantificación
+# volumétrica por suma de discos no elimina la dependencia del operador, y un
+# contorno incierto no debe convertirse en un umbral terapéutico ciego. Se
+# relaciona clínicamente con la estimación cualitativa eyeball (HM:3156).
+
+id: 'HM:3167'
+tipo: concepto
+semantica: hallazgo
+termino: Fracción de eyección del ventrículo izquierdo por Simpson biplano
+termino_en: Left ventricular ejection fraction by Simpson's biplane method
+sinonimos:
+  - FEVI por Simpson biplano
+  - FEVI biplano
+  - fracción de eyección por suma de discos
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Contornos del ventrículo izquierdo delimitados en vistas apicales de cuatro y
+  dos cámaras, al final de la diástole y de la sístole.
+significado: >-
+  Fracción del volumen telediastólico expulsada durante la sístole, estimada por
+  el método biplano de suma de discos.
+falsos_positivos:
+  - Acortamiento apical que distorsiona los volúmenes ventriculares
+  - Borde endocárdico mal definido que obliga a inventar el contorno
+  - Selección inadecuada del fotograma telediastólico o telesistólico, o plano oblicuo
+  - Variabilidad interobservador acentuada en operadores principiantes ante FEVI reducida
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-fevi-simpson), sostenida sobre
+    pmid:25559473 (Lang 2015, consenso ASE/EACVI) y pmid:39620363 (Akil 2025).
+  nota: >-
+    `se_basa_en` apuntaba a conceptos de física y límites de cuantificación que
+    permanecen en biosemiotics. Se relaciona conceptualmente con HM:3156 (eyeball EF).

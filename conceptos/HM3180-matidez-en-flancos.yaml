@@ -1,0 +1,30 @@
+# Concepto del índice. Acuñado al modelar HM:6046 (ascitis).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3180'
+tipo: concepto
+semantica: hallazgo
+termino: Matidez en flancos abdominales
+termino_en: Flank dullness
+sinonimos:
+  - matidez en los flancos
+  - percusión mate de flancos
+  - flank dullness
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Sonoridad mate o apagada a la percusión desde la línea media hacia los flancos con el
+  paciente en decúbito supino, en lugar del timpanismo abdominal fisiológico.
+significado: >-
+  Acumulación de líquido peritoneal en las zonas declives o dependientes de los flancos.
+falsos_positivos:
+  - Masa retroperitoneal o visceromegalia
+  - Fecaloma o heces abundantes en colon ascendente o descendente
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:1573754)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Williams & Simel 1992.'

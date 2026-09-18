@@ -1,0 +1,99 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Acuñada en la OLEADA 1 al modelar la condición correspondiente a los signos
+# de taponamiento cardíaco y derrame pericárdico de biosemiotics (HM:3163).
+# Cifras de sensibilidad y especificidad de la revisión de Alerhand 2022
+# (pmid:35696801, Am J Emerg Med).
+#
+# FISIOLOGÍA DE RESTRICCIÓN, NO SOLO LÍQUIDO. El taponamiento es un diagnóstico
+# hemodinámico: la presión intrapericárdica supera la presión de llenado de las
+# cavidades derechas. La presencia de derrame pericárdico (HM:3155) es precondición
+# necesaria (mecanismo), pero el compromiso clínico lo dictan los signos de
+# colapso endocavitario y la pletora de la vena cava inferior.
+
+id: 'HM:6045'
+tipo: condicion
+clase: sindrome
+termino: Taponamiento cardíaco
+termino_en: Cardiac tamponade
+sinonimos:
+  - taponamiento pericárdico
+  - compromiso hemodinámico por derrame pericárdico
+
+codigos:
+  snomed: '42232009'
+  cie10: 'I31.4'
+
+probabilidad_base: null
+factores_riesgo:
+  - neoplasia maligna con metástasis pericárdicas
+  - pericarditis aguda o recurrente
+  - insuficiencia renal crónica terminal o uremia
+  - traumatismo torácico penetrante o cerrado
+  - procedimiento invasivo cardiovascular o cirugía cardíaca reciente
+  - disección aórtica tipo A con hemopericardio retrógrado
+
+signos:
+  - concepto: 'HM:3163'    # Taponamiento cardíaco en ecografía
+    rol: imagen
+    estado_lr: no_medido
+    sostiene: consenso_con_afirmacion
+    ref: 'pmid:35696801'
+    poblacion: >-
+      pacientes con derrame pericárdico evaluados en urgencias o cuidados críticos
+      mediante ecocardiografía a pie de cama; revisión de Alerhand 2022
+    decision: >-
+      la presencia de colapso diastólico del ventrículo derecho o colapso sistólico
+      de la aurícula derecha en un paciente con inestabilidad hemodinámica acelera
+      de inmediato la activación del equipo para pericardiocentesis evacuadora o
+      ventana pericárdica quirúrgica de emergencia
+    advertencia: >-
+      la ausencia de colapso de cavidades derechas puede ocurrir en hipertensión
+      pulmonar grave o hipertrofia ventricular derecha previa debido a presiones
+      diastólicas basales elevadas (falso negativo); no descarta taponamiento ante
+      shock clínico evidente
+
+  - concepto: 'HM:3155'    # Derrame pericárdico en ecografía
+    rol: prueba_sensible
+    estado_lr: no_medido
+    sostiene: mecanismo
+    motivo: >-
+      precondición fisiopatológica sine qua non: no puede existir taponamiento
+      cardíaco en ausencia de líquido o coágulo en el espacio pericárdico que
+      eleve la presión intrapericárdica
+
+  - concepto: 'HM:0109'    # Hipotensión arterial
+    rol: manifestacion
+    estado_lr: no_medido
+
+  - concepto: 'HM:3146'    # Ingurgitación yugular
+    rol: manifestacion
+    estado_lr: no_medido
+
+  - concepto: 'HM:0104'    # Taquicardia
+    rol: apoyo
+    estado_lr: no_medido
+
+notas_de_uso:
+  - >-
+    RENDIMIENTO POR RANGOS DE LA REVISIÓN DE ALERHAND 2022 (pmid:35696801): el
+    colapso diastólico del ventrículo derecho presenta sensibilidad del 48% al
+    100% y especificidad del 72% al 100% entre series; el colapso sistólico de
+    la aurícula derecha rinde sensibilidad del 50% al 100% y especificidad del
+    33% al 100%. La vena cava inferior pletórica sin colapso inspiratorio aporta
+    alta sensibilidad (>95%) para descartar taponamiento cuando es normal.
+    No se calculan cocientes agrupados sintéticos: los estudios originales
+    publican rangos de sensibilidad y especificidad sin metaanálisis de LR.
+
+conclusion_de_la_fuente: >-
+  El colapso de cavidades derechas y la pletora de la vena cava inferior en
+  presencia de derrame pericárdico son los pilares ecocardiográficos que definen
+  la fisiología de taponamiento; integrados con la inestabilidad hemodinámica,
+  guían la indicación de descompresión pericárdica urgente.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1 para incorporar los signos pericárdicos migrados de
+    biosemiotics (HM:3163). Cifras de Alerhand 2022 (pmid:35696801).
+
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=taponamiento-cardiaco-precision-semiotica"

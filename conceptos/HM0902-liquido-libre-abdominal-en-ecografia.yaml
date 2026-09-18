@@ -1,12 +1,24 @@
 # Concepto del índice. Sembrado desde el vocabulario semilla de holonmed.
 # Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+#
+# La tríada se rellenó en la OLEADA 1, migrada de biosemiotics (signo-fast-morrison).
+#
+# SIN `umbral` autónomo de corte dimensional. Es una prueba binaria de presencia o
+# ausencia de líquido libre en el punto más declive del abdomen superior. El estudio
+# de Branney 1995 (pmid:7674411) demostró un volumen medio de detección de 619 mL
+# (solo 10% de examinadores lo detectó con < 400 mL; 97% de sensibilidad recién con
+# 1000 mL). Una ventana limpia no descarta hemoperitoneo de bajo volumen.
 
 id: 'HM:0902'
 tipo: concepto
 semantica: hallazgo
-termino: Líquido libre abdominal en ecografía
+termino: Líquido libre en receso hepatorrenal (espacio de Morrison)
+termino_en: Free fluid in the hepatorenal recess (Morison's pouch)
 sinonimos:
   - líquido libre en Morrison
+  - espacio de Morrison positivo
+  - FAST cuadrante superior derecho positivo
+  - líquido libre abdominal en ecografía
   - FAST positivo
 padre: 'HM:0900'
 codigos:
@@ -14,12 +26,32 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Banda anecoica que separa la cápsula hepática de la corteza del riñón derecho,
+  en el espacio hepatorrenal, visualizada habitualmente como una cuña o franja oscura
+  que contornea ambos órganos.
+significado: >-
+  Presencia de líquido libre en la cavidad peritoneal. En el contexto de un
+  traumatizado, representa hemoperitoneo hasta demostrar lo contrario; fuera del
+  trauma orienta a ascitis, diálisis peritoneal o rotura de víscera/quiste.
+falsos_positivos:
+  - Ascitis preexistente por cirrosis, insuficiencia cardíaca o carcinomatosis
+  - Diálisis peritoneal en curso o líquido de infusión
+  - Grasa perirrenal hipoecoica confundida con lámina de líquido
+  - Vesícula biliar o vena cava inferior vistas en corte oblicuo
+  - Sombra acústica costal que oscurece el receso y simula banda líquida
+  - Quiste cortical renal o hepático periférico tomado por líquido libre
+  - Hemoperitoneo precoz por debajo del umbral de volumen detectable (promedio 619 mL)
+
+contrasta_con:
+  - 'HM:3171'
+  - 'HM:3172'
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    Sembrado desde el vocabulario semilla de holonmed (HM:0902). Tríada rellenada en la oleada 1
+    desde biosemiotics (signo-fast-morrison), sostenida sobre pmid:7674411 (Branney 1995),
+    pmid:37803387 (Savoia 2023), pmid:30139330 (Zanobetti 2018) y pmid:37576415 (Sutarjono 2023).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
-    El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.
+    Contrasta con el receso esplenorrenal (HM:3171) y el fondo de saco pélvico (HM:3172).

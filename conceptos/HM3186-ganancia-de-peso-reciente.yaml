@@ -1,0 +1,31 @@
+# Concepto del índice. Acuñado al modelar HM:6046 (ascitis).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3186'
+tipo: concepto
+semantica: hallazgo
+termino: Ganancia de peso reciente
+termino_en: Recent weight gain
+sinonimos:
+  - aumento de peso reciente
+  - ganancia ponderal involuntaria
+  - aumento ponderal reciente
+padre: 'HM:0800'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Incremento involuntario de la masa corporal en un periodo corto (días a semanas),
+  frecuentemente no atribuible a un incremento del aporte calórico.
+significado: >-
+  Retención hidrosalina patológica con acumulación de líquido en el tercer espacio
+  (peritoneo, intersticio tisular) o masa tumoral de crecimiento rápido.
+falsos_positivos:
+  - Sobreingesta calórica reciente o cambios en dieta
+  - Edema periférico aislado sin tercer espacio peritoneal
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:1573754)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Williams & Simel 1992.'

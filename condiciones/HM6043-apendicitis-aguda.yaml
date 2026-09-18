@@ -1,0 +1,89 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Acuñada en la OLEADA 1 al modelar la condición correspondiente a los signos
+# de abdomen agudo de biosemiotics. Cocientes de Becker 2022 (pmid:34420255),
+# estudio prospectivo multicéntrico de POCUS en urgencias (n = 256).
+
+id: 'HM:6043'
+tipo: condicion
+clase: enfermedad
+termino: Apendicitis aguda
+termino_en: Acute appendicitis
+sinonimos:
+  - apendicitis
+  - inflamación aguda del apéndice cecal
+
+codigos:
+  snomed: '85189001'
+  cie10: 'K35.8'
+
+probabilidad_base: null
+factores_riesgo:
+  - edad entre 10 y 30 años
+  - sexo masculino
+
+signos:
+  - concepto: 'HM:3177'    # Signo ecográfico de apendicitis aguda
+    rol: imagen
+    estado_lr: medido
+    poblacion: >-
+      adultos que consultan en servicios de urgencias con dolor abdominal y
+      sospecha de apendicitis evaluados mediante POCUS por médicos de urgencias
+      (estudio prospectivo observacional multicéntrico, n = 256)
+    ref: 'pmid:34420255'
+    sensibilidad: 0.85
+    ic95_sensibilidad: [0.74, 0.92]
+    especificidad: 0.63
+    ic95_especificidad: [0.56, 0.70]
+    lr_positivo:
+      valor: 2.29
+      ic95: [1.85, 2.84]
+      ref: 'pmid:34420255'
+    lr_negativo:
+      valor: 0.24
+      ic95: [0.14, 0.42]
+      ref: 'pmid:34420255'
+    decision: >-
+      hallazgo positivo (apéndice no compresible > 6 mm en FID con dolor local):
+      apoya fuertemente la sospecha de apendicitis e indica valoración quirúrgica
+      inmediata
+    advertencia: >-
+      el POCUS general rinde especificidad moderada (63%, LR+ 2.29); un estudio
+      no concluyente por no visualización del apéndice o gas cecal NO descarta
+      apendicitis y exige tomografía computarizada o internación en observación
+
+  - concepto: 'HM:0204'    # Dolor en fosa ilíaca derecha
+    rol: manifestacion
+    estado_lr: no_medido
+
+  - concepto: 'HM:0601'    # Irritación peritoneal
+    rol: prueba_especifica
+    estado_lr: no_medido
+
+  - concepto: 'HM:0712'    # Leucocitosis
+    rol: apoyo
+    estado_lr: no_medido
+
+  - concepto: 'HM:0101'    # Fiebre
+    rol: apoyo
+    estado_lr: no_medido
+
+notas_de_uso:
+  - >-
+    VARIABILIDAD SEGÚN OPERADOR Y PROTOCOLO: mientras que el POCUS general de
+    urgencias reporta LR+ de 2.29 (pmid:34420255), los metaanálisis de ecografía
+    reglada que excluyen casos indeterminados (Arruzza 2022, pmid:36130469)
+    alcanzan sensibilidad de 82.1% (73.8-88.2) y especificidad de 85.9%
+    (72.7-93.3).
+
+conclusion_de_la_fuente: >-
+  La ecografía a pie de cama es moderadamente precisa para la sospecha de apendicitis
+  en urgencias; acelera la decisión quirúrgica ante hallazgo positivo inequívoco
+  pero requiere confirmación tomográfica cuando el apéndice no es visualizado.
+
+procedencia:
+  fuente: >-
+    Acuñada en la oleada 1 al modelar la condición asociada a los signos de
+    fosa ilíaca derecha de biosemiotics. Cocientes de Becker 2022 (pmid:34420255).
+
+url: "https://powersemiotics.com/medsemiotics/post.html?slug=apendicitis-aguda-precision-semiotica"

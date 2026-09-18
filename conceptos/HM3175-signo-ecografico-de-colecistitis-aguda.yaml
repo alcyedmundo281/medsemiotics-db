@@ -1,0 +1,64 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-colecistitis-aguda).
+#
+# EL SIGNO ES LA COMBINACIÓN, NO EL GROSOR AISLADO. La pared engrosada sola tiene
+# causas extrabiliares frecuentes (cirrosis, insuficiencia cardíaca, insuficiencia renal,
+# hipoalbuminemia). El diagnóstico ecográfico exige la tríada de cálculo, pared > 3 mm,
+# líquido perivesicular y Murphy ecográfico positivo. El metaanálisis de Wilson 2024
+# (pmid:37855790) en POCUS reporta Se 70.9%, Sp 94.4%, LR+ 12.7 y LR- 0.31: prueba
+# que sirve para confirmar (Sp alta), no para descartar si la sospecha persiste.
+
+id: 'HM:3175'
+tipo: concepto
+semantica: hallazgo
+termino: Signo ecográfico de colecistitis aguda
+termino_en: Sonographic acute cholecystitis sign
+sinonimos:
+  - colecistitis aguda en ecografía
+  - engrosamiento de pared vesicular con cálculo y Murphy ecográfico
+  - Murphy ecográfico positivo con litiasis
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Coexistencia de colelitiasis (habitualmente con cálculo impactado en cuello o
+  cístico), pared vesicular engrosada mayor de 3 mm en cara anterior, líquido o
+  halo perivesicular y dolor selectivo agudo al presionar con el transductor
+  directamente sobre la vesícula visualizada (Murphy ecográfico). En cuadros
+  avanzados, pared estriada en capas hipo e hiperecogénicas alternas.
+significado: >-
+  Obstrucción aguda del conducto cístico con hiperpresión intraluminal, edema,
+  isquemia mural e inflamación aguda de la vesícula biliar.
+falsos_positivos:
+  - Engrosamiento de pared vesicular por causas sistémicas (falla cardíaca, cirrosis con ascitis, hipoalbuminemia, hepatitis aguda, pancreatitis)
+  - Vesícula biliar colapsada posprandial (falso engrosamiento fisiológico)
+  - Falso Murphy ecográfico negativo por administración previa de analgesia, sedación o shock
+  - Colecistitis alitiásica (5-10% de casos, sin cálculo pero con pared patológica en paciente crítico)
+  - Colelitiasis simple con cólico biliar sin inflamación mural
+  - Adenomiomatosis o neoplasia vesicular con engrosamiento parietal localizado
+  - Interposición de gas intestinal que impide la visualización completa del órgano
+
+umbral:
+  parametro: Grosor de la pared anterior vesicular
+  unidad: mm
+  direccion: alto
+  corte_superior: 3.0
+  ref: 'pmid:37855790'
+  nota: >-
+    Medido en corte transversal sobre la pared anterior contigua al parénquima hepático
+    para evitar el refuerzo posterior. Es el umbral estándar de los metaanálisis clínicos.
+
+contrasta_con:
+  - 'HM:0903'
+  - 'HM:3176'
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-colecistitis-aguda), sostenida sobre
+    pmid:37855790 (Wilson 2024), pmid:38037062 (Huang 2023), pmid:37838525 (Wu 2024),
+    pmid:20138397 (Summers 2010), pmid:35258527 (Gallaher 2022), pmid:29032636 (Yokoe 2018),
+    pmid:2017956 (Teefey 1991), pmid:41928009 (Nipitkul 2026) y pmid:33517707 (Wehrle 2022).
+  nota: >-
+    Contrasta con la litiasis biliar simple (HM:0903) y con la coledocolitiasis (HM:3176).
+    `se_basa_en` apuntaba a conceptos de física de sombra acústica en biosemiotics.

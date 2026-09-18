@@ -264,8 +264,8 @@ nombres paralelo.**
 | `HM:01xx`–`HM:09xx` | hallazgos por sistema | 117 |
 | `HM:10xx` | trastornos (raíz y agrupación) | 3 |
 | `HM:2000`–`HM:23xx` | procedimientos | 15 |
-| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **166** de ~2900 |
-| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **41** de ~3000 |
+| **`HM:30xx`–`HM:59xx`** | **signos nuevos** | **177** de ~2900 |
+| **`HM:60xx`–`HM:89xx`** | **condiciones (síndromes y enfermedades)** | **45** de ~3000 |
 
 Los 74 del bloque nuevo no salieron del temario, pese al nombre que llevaba
 antes esa fila: los acuñó una condición al necesitarlos. El temario sigue
@@ -323,6 +323,10 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6039` | Trastorno de estrés postraumático | 1 (parcial a propósito) | `pmid:26241601` |
 | `HM:6040` | Pancreatitis aguda | 7 aristas, **0 cocientes** | holonmed (sin fuente resoluble) |
 | `HM:6041` | Absceso de partes blandas | 1 (solo el subgrupo de adultos) | `pmid:32081383` |
+| `HM:6042` | Colecistitis aguda | 1 | `pmid:37855790` |
+| `HM:6043` | Apendicitis aguda | 1 | `pmid:34420255` |
+| `HM:6044` | Tromboembolia pulmonar | 2 (sobrecarga VD + dímero D) | `pmid:28495379` |
+| `HM:6045` | Taponamiento cardíaco | 0 (rangos Se/Sp Alerhand 2022) | `pmid:35696801` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide
@@ -355,7 +359,7 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
 | Serie *Rational Clinical Examination* | revisiones con cociente publicado | **14 fuentes** | ✅ 61 aristas medidas |
-| Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 15 migrados · 13 en cola |
+| Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 28 migrados (100%) · 0 en cola |
 | Conceptos de biosemiotics | física y artefactos de ecografía | **17** | fuera de alcance (ver oleada 1) |
 | Skills de holonmed | aristas, pero sin fuente resoluble | **7 aristas** | ✅ migradas sin cociente |
 | Skills de holonmed | parámetros de laboratorio con corte | **19** únicos | ✅ incrustados en su concepto |
@@ -378,9 +382,9 @@ primer día hasta el último. Ver [`datos/README.md`](datos/README.md).
 | Capa | Poblado | Falta |
 |---|---|---|
 | **Referencias** | 172 — todas con errata comprobada · 4 con errata publicada por cotejar | las que traiga cada condición nueva |
-| **Conceptos** | 300 — 14 con tríada | ~420 signos del temario |
-| **Condiciones** | 40 | ~480 síndromes y enfermedades |
-| **Aristas con cociente** | **143** | prácticamente todo |
+| **Conceptos** | 313 — 28 con tríada (biosemiotics completo) | ~420 signos del temario |
+| **Condiciones** | 45 | ~476 síndromes y enfermedades |
+| **Aristas con cociente** | **148** | prácticamente todo |
 
 **El cuello de botella sigue siendo la última fila.** Es la capa que da sentido
 al índice —el consejo del experto que mueve la probabilidad— y la única que no
@@ -643,8 +647,14 @@ Migrar lo que biosemiotics y holonmed tienen validado.
       condición `HM:6041`, con **solo el subgrupo de adultos** de
       `gottlieb2020`. El global, el pediátrico y los de sospecha clínica
       esperan la comprobación de Marin 2013: el texto completo no fue accesible.
-- [ ] **12 signos más**, ya sin nada que los bloquee: las cuatro erratas están
-      cotejadas. Ver abajo la restricción que deja `barbic2017`.
+- [x] **12 signos más**, migrados el 18/09/2026: fevi-simpson (`HM:3167`),
+      disfunción diastólica (`HM:3168`), hemotórax (`HM:3169`), hernia complicada
+      (`HM:3170`), receso hepatorrenal de Morrison (`HM:0902` rellenado), receso
+      esplenorrenal (`HM:3171`), fondo de saco pélvico de Douglas (`HM:3172`),
+      VTI del TSVI (`HM:3173`), gasto cardíaco (`HM:3174`), colecistitis aguda
+      (`HM:3175`), dilatación del colédoco / coledocolitiasis (`HM:3176`) y
+      apendicitis aguda (`HM:3177`). Tríada completa, umbrales y referencias
+      verificadas. Con esto los **28 signos de biosemiotics quedan migrados al 100%**.
 - [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
       desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
       hallazgo: ver abajo.
@@ -915,10 +925,10 @@ Comparar títulos contra CrossRef genera falsas alarmas.
 
 ```
                         hoy      al cerrar oleada 2
-referencias             172             172
-conceptos               300            ~800
-condiciones              40            ~515
-aristas con cociente    143             143
+referencias             176             176
+conceptos               324            ~800
+condiciones              48            ~515
+aristas con cociente    162             162
 ```
 
 Lo que este mapa deja claro: **sembrar es barato, medir es caro.** Las tres

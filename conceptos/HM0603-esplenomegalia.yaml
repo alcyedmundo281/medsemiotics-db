@@ -5,20 +5,36 @@ id: 'HM:0603'
 tipo: concepto
 semantica: hallazgo
 termino: Esplenomegalia
+termino_en: Splenomegaly
 sinonimos:
   - bazo aumentado de tamaño
+  - bazo palpable
+  - esplenomegalia clínica
 padre: 'HM:0600'
 codigos:
   snomed: null
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Polo inferior del bazo palpable por debajo del reborde costal izquierdo en decúbito
+  supino o decúbito lateral derecho (maniobra bimanual o de Middleton), o percusión mate
+  anormal en el área esplénica (HM:3184, HM:3185).
+significado: >-
+  Aumento patológico del volumen o masa esplénica más allá de sus límites fisiológicos normales.
+falsos_positivos:
+  - Ptosis esplénica (bazo móvil o desplazado caudalmente sin incremento de masa)
+  - Masa en polo inferior de riñón izquierdo o hidronefrosis
+  - Tumor retroperitoneal o masa dependiente del ángulo esplénico del colon
+
+contrasta_con:
+  - 'HM:3184'
+  - 'HM:3185'
+  - 'HM:0602'
 
 procedencia:
   fuente: vocabulario_semilla holonmed v1.3.0
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.
+    Tríada completada al modelar la condición HM:6047.

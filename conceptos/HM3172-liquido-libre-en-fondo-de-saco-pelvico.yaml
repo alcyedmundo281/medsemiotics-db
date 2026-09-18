@@ -1,0 +1,49 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-fast-douglas).
+#
+# SIN `umbral` numérico autónomo: prueba cualitativa binaria del FAST. En mujeres
+# en edad fértil, una lámina fina aislada puede ser fisiológica y no debe
+# interpretarse como hemoperitoneo sin correlación hemodinámica y clínica. Requiere
+# vejiga con repleción adecuada como ventana acústica.
+
+id: 'HM:3172'
+tipo: concepto
+semantica: hallazgo
+termino: Líquido libre en fondo de saco pélvico en ecografía
+termino_en: Free fluid in the pelvic pouch on ultrasound
+sinonimos:
+  - líquido libre en fondo de saco de Douglas
+  - líquido libre rectovesical en FAST
+  - FAST ventana pélvica positiva
+  - hemoperitoneo pélvico en ecografía
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Colección anecoica de bordes agudos y dependientes que se adapta a las estructuras
+  vecinas por detrás de la vejiga: en el varón en el receso rectovesical; en la
+  mujer en el fondo de saco de Douglas (rectouterino), posterior al útero.
+significado: >-
+  Líquido libre en el compartimento más declive de la cavidad peritoneal. En trauma
+  indica hemoperitoneo dependiente; fuera del trauma traduce ascitis, líquido
+  folicular fisiológico o patología ginecológica aguda.
+falsos_positivos:
+  - Lámina fina de líquido fisiológico periovulatorio en mujeres en edad fértil
+  - Vejiga urinaria vacía o colapsada que imposibilita la ventana acústica
+  - Quiste ovárico simple o quiste del saco de Douglas
+  - Hematoma retroperitoneal o pélvico extraperitoneal por fractura ósea
+  - Ascitis de origen cirrótico o nefrótico
+  - Quiste de la vesícula seminal o divertículo vesical
+
+contrasta_con:
+  - 'HM:0902'
+  - 'HM:3171'
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-fast-douglas), sostenida sobre
+    pmid:7674411 (Branney 1995), pmid:37803387 (Savoia 2023), pmid:30139330 (Zanobetti 2018)
+    y pmid:28609532 (Holmes 2017).
+  nota: >-
+    Contrasta con el receso hepatorrenal de Morrison (HM:0902) y el receso esplenorrenal (HM:3171).

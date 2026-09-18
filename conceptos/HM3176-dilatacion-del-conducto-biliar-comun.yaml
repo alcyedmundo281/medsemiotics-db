@@ -1,0 +1,62 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-coledocolitiasis).
+#
+# EL SIGNO ES EL CONDUCTO DILATADO, NO LA PIEDRA DIRECTA. La ecografía transabdominal
+# detecta el cálculo en el colédoco solo en el 20-50% de los casos debido al gas
+# duodenal superpuesto; lo que habitualmente se observa es la dilatación del colédoco
+# proximal en el hilio hepático (signo del cañón de escopeta junto a la vena porta).
+
+id: 'HM:3176'
+tipo: concepto
+semantica: hallazgo
+termino: Dilatación del conducto biliar común en ecografía
+termino_en: Common bile duct dilation on ultrasound
+sinonimos:
+  - coledocolitiasis en ecografía
+  - colédoco dilatado
+  - signo del cañón de escopeta biliar
+  - dilatación de la vía biliar principal
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Calibre aumentado del conducto biliar común en el hilio hepático por encima de
+  la vena porta (signo del doble conducto o cañón de escopeta), con o sin
+  visualización directa de un foco ecogénico con sombra acústica en su interior.
+significado: >-
+  Obstrucción mecánica al drenaje biliar en el colédoco distal. En el paciente con
+  litiasis vesicular, obedece típicamente a coledocolitiasis por migración, aunque
+  la dilatación per se traduce cualquier causa obstructiva litiásica o tumoral.
+falsos_positivos:
+  - Dilatación compensatoria poscolecistectomía (calibre de hasta 8-10 mm sin litiasis)
+  - Dilatación por envejecimiento fisiológico (el colédoco normal aumenta ~1 mm por década tras los 50 años)
+  - Vena porta o ramas de la arteria hepática confundidas con el conducto biliar al no aplicar Doppler color
+  - Estenosis benigna, compresión extrínseca o colangiocarcinoma sin cálculo
+  - Expulsión reciente de litiasis que dejó el conducto dilatado transitoriamente
+  - Gas duodenal o antral que oculta el colédoco retroduodenal simulando ausencia de dilatación
+
+umbral:
+  parametro: Diámetro interno del conducto biliar común en hilio hepático
+  unidad: mm
+  direccion: alto
+  corte_superior: 6.0
+  ref: 'pmid:30979521'
+  nota: >-
+    En adultos jóvenes sanos el calibre normal es < 6 mm (media 3.6 mm). En mayores
+    de 60 años o con colecistectomía previa se aceptan valores normales de hasta 8-10 mm.
+    La guía ASGE 2019 (pmid:30979521) estratifica el riesgo combinando el diámetro > 6 mm
+    con el perfil bioquímico hepático alterado.
+
+contrasta_con:
+  - 'HM:0903'
+  - 'HM:3175'
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-coledocolitiasis), sostenida sobre
+    pmid:31971959 (Worku 2020), pmid:15362577 (Jendresen 2002), pmid:30979521 (Buxbaum 2019, guía ASGE),
+    pmid:25719224 (Giljaca 2015, Cochrane), pmid:25792387 (Adams 2015), pmid:27957289 (Sotoudehmanesh 2016),
+    pmid:23489651 (Jafari 2013), pmid:17703081 (Dewaele 2007) y pmid:29214447 (Moharamzad 2018).
+  nota: >-
+    Contrasta con la litiasis vesicular (HM:0903) y con la colecistitis aguda (HM:3175).

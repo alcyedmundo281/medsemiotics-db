@@ -1,0 +1,32 @@
+# Concepto del índice. Acuñado al modelar HM:6047 (esplenomegalia).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3185'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de percusión de Castell
+termino_en: Castell sign
+sinonimos:
+  - signo de Castell
+  - maniobra de Castell
+  - signo esplénico de Castell
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Con el paciente en decúbito supino, se percute en el espacio intercostal más inferior en la
+  línea axilar anterior izquierda (habitualmente 8º o 9º espacio) durante la espiración (debe ser
+  timpánico) y luego durante una inspiración profunda mantenida: el sonido vira de timpánico a mate.
+significado: >-
+  Descenso diafragmático inspiratorio del polo inferior de un bazo agrandado (esplenomegalia)
+  que interfiere y reemplaza la resonancia aérea circundante.
+falsos_positivos:
+  - Abundante contenido fecal o alimentario en el ángulo esplénico del colon o estómago
+  - Pequeño derrame pleural izquierdo basal
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:8411607)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Grover et al. 1993.'

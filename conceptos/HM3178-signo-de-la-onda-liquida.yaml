@@ -1,0 +1,34 @@
+# Concepto del índice. Acuñado al modelar HM:6046 (ascitis).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3178'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de la onda líquida abdominal
+termino_en: Fluid wave sign
+sinonimos:
+  - onda ascítica
+  - signo de la ola líquida abdominal
+  - signo de la fluctuación abdominal
+  - fluid wave
+padre: 'HM:0600'
+codigos:
+  snomed: null
+  icd10: null
+  hpo: null
+
+significante: >-
+  Con el paciente en decúbito supino y un asistente (o la mano del propio paciente)
+  comprimiendo firmemente la línea media abdominal para amortiguar la transmisión a
+  través del tejido celular subcutáneo, la percusión breve de un flanco genera un impulso
+  o choque palpable percibido por la mano del explorador situada en el flanco opuesto.
+significado: >-
+  Transmisión hidrostática de una onda de choque a través de una masa voluminosa de
+  líquido libre intraperitoneal (habitualmente superior a 1.5-2 litros).
+falsos_positivos:
+  - Obesidad con pared abdominal muy gruesa e insuficiente compresión de la línea media
+  - Grandes quistes ováricos o mesentéricos gigantes
+
+procedencia:
+  fuente: 'JAMA Rational Clinical Examination (pmid:1573754)'
+  nota: 'Sintetizado para el índice a partir de la revisión de Williams & Simel 1992.'

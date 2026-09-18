@@ -1,0 +1,60 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-apendicitis).
+#
+# EL APÉNDICE QUE NO SE APLASTA. La compresión gradual de Puylaert demuestra que la
+# estructura no se comprime porque la luz está a tensión por obstrucción proximal.
+# El corte habitual de 6 mm es de consenso; la serie Cochrane de Rud 2019 (pmid:31743429)
+# rinde sensibilidad de 95% y especificidad de 94% cuando el apéndice se visualiza
+# íntegro. Un estudio no concluyente (apéndice no visto) NO es un estudio negativo.
+
+id: 'HM:3177'
+tipo: concepto
+semantica: hallazgo
+termino: Signo ecográfico de apendicitis aguda
+termino_en: Sonographic acute appendicitis sign
+sinonimos:
+  - apendicitis aguda en ecografía
+  - apéndice no compresible con diámetro mayor de 6 mm
+  - signo de la diana apendicular
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Estructura tubular ciega en fosa ilíaca derecha que emerge del polo cecal, no
+  compresible a la presión sostenida con la sonda, aperistáltica, con diámetro
+  externo mayor de 6 mm y aspecto estratificado en diana en corte transversal.
+  A menudo con apendicolito ecogénico con sombra, líquido periapendicular o grasa
+  mesentérica hiperecogénica circundante.
+significado: >-
+  Obstrucción de la luz apendicular que desencadena hiperpresión intraluminal,
+  congestión venosa, invasión bacteriana e inflamación transmural supurativa.
+falsos_positivos:
+  - Apéndice normal visible con diámetro en el límite alto (5-6 mm) sin dolor ni cambios parietales
+  - Adenitis mesentérica con múltiples ganglios hipoecoicos y reactividad parietal en íleon
+  - Íleon terminal engrosado por enteritis infecciosa (Yersinia, Campylobacter) o enfermedad de Crohn
+  - Diverticulitis cecal o apendagitis epiploica de fosa ilíaca derecha
+  - Patología ginecológica aguda ipsilateral (salpingitis, quiste ovárico hemorrágico, torsión de anexo)
+  - Apéndice retrocecal parcialmente oculto por gas cecal (causa frecuente de falso negativo)
+
+umbral:
+  parametro: Diámetro externo máximo anteroposterior del apéndice cecal
+  unidad: mm
+  direccion: alto
+  corte_superior: 6.0
+  ref: 'pmid:2934762'
+  nota: >-
+    Medido con técnica de compresión graduada de Puylaert (pmid:2934762). En población
+    pediátrica Mangona 2017 (pmid:28826614) demostró que un umbral de 7.0 mm optimiza
+    el equilibrio diagnóstico en casos dudosos.
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-apendicitis), sostenida sobre
+    pmid:2934762 (Puylaert 1986), pmid:3538138 (Puylaert 1986b), pmid:24113477 (Prendergast 2014),
+    pmid:36130469 (Arruzza 2022), pmid:34420255 (Becker 2022), pmid:35100766 (Harel 2022),
+    pmid:30293146 (Held 2018), pmid:28826614 (Mangona 2017), pmid:31743429 (Rud 2019, Cochrane)
+    y pmid:33688952 (Bom 2021).
+  nota: >-
+    `se_basa_en` apuntaba a conceptos de física de sombra acústica y compresión que
+    permanecen en biosemiotics.

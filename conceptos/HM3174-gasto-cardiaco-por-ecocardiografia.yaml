@@ -1,0 +1,42 @@
+# Concepto del índice. Los códigos HM: son permanentes.
+#
+# Acuñado en la OLEADA 1, migrado de biosemiotics (signo-gasto-cardiaco).
+#
+# SIN `umbral` numérico autónomo fijo. El gasto cardíaco ecocardiográfico requiere
+# interpretar el resultado reconociendo la amplificación del error: la medición del
+# diámetro del TSVI se eleva al cuadrado (área = π × [diámetro/2]²), de modo que un
+# error de 1-2 mm altera el cálculo entre un 15% y un 25%. Integra el VTI (HM:3173).
+
+id: 'HM:3174'
+tipo: concepto
+semantica: hallazgo
+termino: Gasto cardíaco estimado por ecocardiografía Doppler
+termino_en: Doppler-derived cardiac output on echocardiography
+sinonimos:
+  - gasto cardíaco ecocardiográfico
+  - volumen minuto cardíaco por Doppler
+  - estimación ecográfica del flujo sistémico
+padre: 'HM:0900'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Diámetro del tracto de salida del ventrículo izquierdo medido en meso-sístole
+  en eje paraesternal largo combinado con la envolvente del VTI subaórtico por
+  Doppler pulsado y la frecuencia cardíaca registrada simultáneamente.
+significado: >-
+  Estimación del volumen de sangre eyectado por el ventrículo izquierdo por unidad
+  de tiempo (gasto cardíaco = área del TSVI × VTI × frecuencia cardíaca).
+falsos_positivos:
+  - Error milimétrico en la medición del diámetro del TSVI que se magnifica al cuadrado en el área
+  - Asunción errónea de una sección transversal circular en un tracto de salida elíptico
+  - Desalineación angular del haz de Doppler pulsado que subestima la velocidad del VTI
+  - Variabilidad hemodinámica latido a latido en arritmias no promediadas adecuadamente
+
+procedencia:
+  fuente: >-
+    Tríada migrada en la oleada 1 desde biosemiotics (signo-gasto-cardiaco), sostenida sobre
+    pmid:25559474 (Porter 2015), pmid:40912865 (Taub 2025), pmid:26932349 (Wetterslev 2016),
+    pmid:31581196 (Zhang 2019), pmid:29149863 (Orde 2017) y pmid:30971307 (Jozwiak 2019).
+  nota: >-
+    Integra directamente el concepto de VTI del TSVI (HM:3173). `se_basa_en` apuntaba
+    a conceptos de física y Doppler de biosemiotics.
