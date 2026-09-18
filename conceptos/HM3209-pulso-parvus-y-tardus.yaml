@@ -1,0 +1,34 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3209'
+tipo: concepto
+semantica: hallazgo
+termino: Pulso parvus y tardus
+termino_en: Plateau Pulse (Pulsus Tardus)
+sinonimos:
+  - pulso anácroto
+  - pulsus parvus et tardus
+  - pulso en meseta
+  - pulsus tardus
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Alteración de la onda de pulso arterial periférico (evaluada de forma óptima por palpación
+  de la arteria carótida interna/común o braquial) caracterizada por una amplitud o volumen de
+  pulso marcadamente disminuido y débil (parvus) combinado con una velocidad de ascenso sistólico
+  anormalmente lenta, prolongada y aplanada en meseta con retraso evidente en alcanzar su cúspide
+  (tardus), respecto al inicio del primer ruido cardíaco auscultado.
+significado: >-
+  Es el signo clínico periférico cardinal de estenosis aórtica valvular grave hemodinámicamente
+  significativa. Refleja la severa obstrucción fija al tracto de salida del ventrículo izquierdo,
+  que restringe mecánicamente el volumen sistólico expulsado por unidad de tiempo y alarga el
+  tiempo de vaciado y eyección ventricular sistólica hacia la raíz aórtica.
+falsos_positivos:
+  - Evaluación en arterias periféricas distales (ej. radial en ancianos con esclerosis vascular marcada que amortigua la onda arterial)
+  - Estados de choque cardiogénico o hipovolémico severo (producen pulso filiforme o parvus pero con ascenso rápido y taquicárdico)
+  - Pseudo-retraso de pulso en coartación de aorta o estenosis severa del tronco braquiocefálico o subclavia
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Plateau Pulse (Pulsus Tardus)).

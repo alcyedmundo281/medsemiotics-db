@@ -1,0 +1,39 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3203'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de Romberg
+termino_en: Romberg Sign
+sinonimos:
+  - prueba de Romberg positiva
+  - rombergism
+  - ataxia sensorial de Romberg
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Aparición de oscilaciones corporales marcadas, titubeo postural severo o pérdida
+  inminente del equilibrio con caída que se desencadena o empeora ostensiblemente
+  de inmediato al cerrar los ojos, en un paciente que logra mantenerse de pie con
+  estabilidad normal o casi normal con los ojos abiertos, estando con los pies
+  descalzos juntos (talones y puntas en contacto) y los brazos extendidos a lo largo
+  del cuerpo o cruzados sobre el tórax durante al menos 30 segundos.
+significado: >-
+  Fallo selectivo de las vías propioceptivas conscientes que ascienden por los
+  cordones posteriores de la médula espinal (fascículos grácil y cuneiforme) o de las
+  fibras aferentes sensitivas de gran calibre de los nervios periféricos (ataxia
+  sensorial). El mantenimiento de la bipedestación exige al menos dos de tres
+  aferencias intactas: visión, propiocepción y función vestibular; al suprimir la
+  visión, el paciente con pérdida propioceptiva pierde la compensación cortical y
+  cae. Característico de la degeneración combinada subaguda por déficit de vitamina
+  B12, tabes dorsal por neurosífilis, polineuropatías sensoriales graves (diabética,
+  por amiloidosis o síndrome de Guillain-Barré) y mielopatía cervical espondilótica.
+falsos_positivos:
+  - Ataxia cerebelosa (el paciente oscila y cae tanto con ojos abiertos como con ojos cerrados; no es un Romberg positivo)
+  - Disfunción vestibular aguda no compensada (desviación lateralizada constante hacia el laberinto hipofuncionante)
+  - Astasia-abasia funcional o psicógena (oscilaciones grotescas pero sin caídas traumáticas reales)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Romberg Sign).

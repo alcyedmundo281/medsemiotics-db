@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3207'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de Hamman
+termino_en: Mediastinal Crunch (Hamman Sign)
+sinonimos:
+  - crujido mediastínico
+  - estertor de Hamman
+  - mediastinal crunch
+  - hamman sign
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ruido auscultatorio adventicio precordial rudo, chasqueante, gorgoteante o crujiente sincrónico
+  estrictamente con los latidos cardíacos (sístole y diástole cardíacas) y no con los movimientos
+  respiratorios, aunque con frecuencia se intensifica notablemente al final de la espiración y en
+  posición de decúbito lateral izquierdo. Se percibe con máxima intensidad sobre el precordio
+  anterior y borde esternal izquierdo medio-inferior.
+significado: >-
+  Denota la presencia anormal de aire libre en las estructuras tisulares del mediastino
+  (neumomediastino / enfisema mediastínico espontáneo de Hamman, o secundario a perforación
+  esofágica por síndrome de Boerhaave, instrumentación endoscópica, traumatismo torácico cerrado
+  o rotura alveolar por maniobras de Valsalva intensas). El aire libre mediastínico es comprimido
+  y desplazado rítmicamente por el choque contráctil del corazón y los grandes vasos contra las
+  pleuras mediastínicas y la pared torácica.
+falsos_positivos:
+  - Roce pericárdico o pleuropericárdico
+  - Gorgoteo de asas intestinales o cámara gástrica intratorácica en hernias diafragmáticas masivas
+  - Crepitación por enfisema subcutáneo parietal superficial localizado
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Mediastinal Crunch (Hamman Sign)).

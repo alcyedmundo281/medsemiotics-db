@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3206'
+tipo: concepto
+semantica: hallazgo
+termino: Roce pleural
+termino_en: Palpable Pleural Friction Rub
+sinonimos:
+  - frémito pleural
+  - frote pleural
+  - pleural rub
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Sensación vibratoria palpable (frémito) y ruido auscultatorio rudo, seco y áspero
+  localizado en la pared torácica (con frecuencia en las bases pulmonares axilares
+  o infraescapulares), sincrónico con las dos fases de la respiración (inspiración y
+  espiración), que se extingue por completo cuando el paciente retiene la respiración
+  (apnea). No se modifica con los accesos de tos a diferencia de los roncus o secreciones
+  bronquiales gruesas.
+significado: >-
+  Demuestra fricción directa y despulimiento de las serosas pleurales parietal y visceral
+  cubiertas de depósitos de fibrina por pleuritis aguda o inflamación pleural localizada
+  (neumonía bacteriana subyacente, tromboembolismo pulmonar con infarto pulmonar periférico,
+  tuberculosis o enfermedades del tejido conectivo como lupus eritematoso sistémico). La
+  palpabilidad del roce implica un engrosamiento fibrinoso conspicuo de la serosa parietal en
+  contacto directo con la jaula torácica, y cesa si se desarrolla un derrame pleural significativo
+  que separa las superficies.
+falsos_positivos:
+  - Frémito bronquial por secreciones espesas en grandes vías aéreas (se moviliza o desaparece tras toser vigorosamente)
+  - Crepitación ósea o articular costal debida a fracturas costales o costocondritis
+  - Roce pericárdico (continúa presente durante la apnea)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Palpable Pleural Friction Rub).

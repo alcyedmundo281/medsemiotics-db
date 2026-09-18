@@ -1,0 +1,40 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3208'
+tipo: concepto
+semantica: hallazgo
+termino: Pupila tónica de Adie
+termino_en: Tonic Pupil (Adie Pupil)
+sinonimos:
+  - pupila de Adie
+  - pupila tónica
+  - adie pupil
+  - holmes-adie syndrome
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Pupila unilateral (inicialmente en el 80% de los casos, luego puede ser bilateral) moderadamente
+  dilatada (anisocoria más manifiesta en fotocopia/luz ambiental) que muestra una respuesta
+  fotomotora directa y consensual prácticamente ausente o extremadamente lenta y perezosa a la
+  luz intensa. En contraste, presenta una contracción constrictora marcada aunque tónica y lenta
+  durante la acomodación cercana (disociación luz-cerca), seguida de una redilatación sumamente
+  retardada al retornar la mirada al infinito. Al examen con lámpara de hendidura se aprecian
+  movimientos vermiformes segmentarios del margen pupilar. Confirma el diagnóstico la constricción
+  miótica exagerada ante la instilación de pilocarpina tópica a baja concentración diluida
+  (0.1% a 0.125%), la cual no contrae una pupila normal intacta (hipersensibilidad por denervación).
+significado: >-
+  Demuestra lesión o disfunción posganglionar de la inervación parasimpática ciliar y pupilar (a
+  nivel del ganglio ciliar o de los nervios ciliares cortos en la órbita), de causa idiopática
+  autoinmune frecuente en mujeres jóvenes (asociada a hiporreflexia aquílea o rotuliana en el síndrome
+  de Holmes-Adie) o secundaria a neuropatías autonómicas, traumatismos orbitarios, infecciones virales
+  herpéticas o diabetes mellitus. La hipersensibilidad pupilar a colirios colinérgicos muy diluidos
+  traduce la regulación al alza y desensibilización de receptores muscarínicos postsinápticos.
+falsos_positivos:
+  - Parálisis del III par craneal (nervio oculomotor) con midriasis (asocia ptosis palpebral y paresia de músculos extraoculares)
+  - Pupila midriática farmacológica (por colirios atropínicos o simpaticomiméticos; no responde a pilocarpina al 0.1% ni al 1%)
+  - Pupila de Argyll Robertson (pupilas pequeñas, irregulares, mióticas bilaterales, que acomodan pero no reaccionan a la luz)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Tonic Pupil (Adie Pupil)).

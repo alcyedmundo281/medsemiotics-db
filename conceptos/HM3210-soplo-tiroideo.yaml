@@ -1,0 +1,34 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3210'
+tipo: concepto
+semantica: hallazgo
+termino: Soplo tiroideo
+termino_en: Thyroid Bruit
+sinonimos:
+  - frote o murmullo vascular tiroideo
+  - frémito tiroideo
+  - thyroid bruit
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Soplo continuo o predominantemente sistólico de tono bajo o medio auscultado directamente
+  con la campana o diafragma del fonendoscopio sobre los polos superiores o lóbulos de la
+  glándula tiroides aumentada de tamaño (bocio), con el paciente en apnea mantenida tras una
+  inspiración moderada para evitar la interferencia de los ruidos respiratorios traqueales.
+  En casos floridos suele acompañarse de un frémito o vibración palpable (thrill) supratiroideo.
+significado: >-
+  Denota un flujo sanguíneo hiperdinámico local masivo y turbulento a través de una red
+  vascular tiroidea extraordinariamente proliferada, dilatada y tortuosa. Es un signo físico
+  característico y altamente específico de hipertiroidismo primario activo en el contexto de
+  bocio difuso tóxico (enfermedad de Graves-Basedow). Rara vez puede auscultarse en bocios
+  multinodulares tóxicos de gran tamaño o tiroiditis subaguda transitoria.
+falsos_positivos:
+  - Soplo carotídeo ipsilateral transmitido por estenosis ateroesclerótica de la arteria carótida (máxima intensidad lateral sobre trayecto carotídeo)
+  - Zumbido venoso yugular (venous hum; ruido continuo benigno que desaparece al comprimir suavemente la yugular interna ipsilateral)
+  - Transmisión precordial de un soplo aórtico o soplos funcionales por hiperdinamia sistémica
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Thyroid Bruit).

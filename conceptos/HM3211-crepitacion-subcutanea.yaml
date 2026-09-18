@@ -1,0 +1,38 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3211'
+tipo: concepto
+semantica: hallazgo
+termino: Crepitación subcutánea
+termino_en: Subcutaneous Crepitus
+sinonimos:
+  - enfisema subcutáneo clínico
+  - crujido subcutáneo
+  - subcutaneous crepitus
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Sensación táctil peculiar de crujido elástico o estallido de pequeñas burbujas bajo los
+  dedos al palpar y deslizar suavemente la piel sobre el tejido celular subcutáneo
+  (frecuentemente comparado con el roce de nieve virgen recién caída, papel celofán o
+  plástico de burbujas). A la inspección suele observarse tumefacción o hinchazón
+  asimétrica de la piel de la pared torácica, fosas supraclaviculares, base del cuello
+  o cara, sin eritema inflamatorio inicial obligado a menos que haya infección de partes blandas.
+significado: >-
+  Evidencia de la presencia anormal de gas o aire libre atrapado en el intersticio del
+  tejido celular subcutáneo. Ocurre fundamentalmente por escape de aire procedente de las
+  vías aéreas o cavidad pleural (neumotórax a tensión con rotura parietal, traumatismo
+  torácico con fracturas costales, barotrauma por ventilación mecánica con presión positiva
+  invasiva, o neumomediastino disecante hacia el cuello), perforación de víscera hueca
+  retroperitoneal o esofágica (síndrome de Boerhaave), o producción de gas por gérmenes
+  anaerobios o formadores de esporas en infecciones necrosantes profundas de partes blandas
+  (gangrena gaseosa por Clostridium perfringens o fascitis necrosante polimicrobiana).
+falsos_positivos:
+  - Crepitación articular o tenosinovitis crepitante superficial subyacente
+  - Edema severo con induración tisular o lipodermatoesclerosis que simula tensión elástica
+  - Artefacto de fricción por apósitos adhesivos a la piel durante la palpación
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Subcutaneous Crepitus).
