@@ -1,6 +1,6 @@
 # Condición del índice. Los códigos HM: son permanentes.
 #
-# Cocientes de pmid:38619828 (Tidwell 2024, JAMA RCE), 9 estudios con lactantes
+# Cocientes de pmid:38619828 (Singh 2024, JAMA RCE), 9 estudios con lactantes
 # de 3 meses o menores evaluados con examen clínico y ecografía diagnóstica
 # (método de Graf como estándar de referencia).
 #
@@ -102,4 +102,4 @@ conclusion_de_la_fuente: >-
   aislado carecen de utilidad diagnóstica clara.
 
 procedencia:
-  fuente: Acuñado a partir de pmid:38619828 (Tidwell 2024, JAMA RCE).
+  fuente: Acuñado a partir de pmid:38619828 (Singh 2024, JAMA RCE).

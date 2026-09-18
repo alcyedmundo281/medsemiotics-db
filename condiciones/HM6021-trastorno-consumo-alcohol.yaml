@@ -1,6 +1,6 @@
 # Condición del índice. Los códigos HM: son permanentes.
 #
-# Cocientes de pmid:38592385 (Keyes 2024, JAMA RCE), 35 estudios con 79 633
+# Cocientes de pmid:38592385 (Wood 2024, JAMA RCE), 35 estudios con 79 633
 # participantes evaluados para trastorno por consumo de alcohol según criterios DSM-5.
 #
 # Un AUDIT ≥ 8 aumenta la probabilidad de trastorno por consumo de alcohol con un
@@ -107,4 +107,4 @@ conclusion_de_la_fuente: >-
   las herramientas TWEAK/T-ACE < 2 descartan con gran exactitud (LR- 0.05).
 
 procedencia:
-  fuente: Acuñado a partir de pmid:38592385 (Keyes 2024, JAMA RCE).
+  fuente: Acuñado a partir de pmid:38592385 (Wood 2024, JAMA RCE).
