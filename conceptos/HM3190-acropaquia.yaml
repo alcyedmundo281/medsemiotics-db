@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3190'
+tipo: concepto
+semantica: hallazgo
+termino: Acropaquia
+termino_en: Clubbing of the Fingers
+sinonimos:
+  - hipocratismo digital
+  - dedos en palillo de tambor
+  - uñas en vidrio de reloj
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Incremento del ángulo entre la placa ungueal y el pliegue ungueal proximal por
+  encima de 180° (ángulo de Lovibond), con engrosamiento bulboso indoloro de la
+  falange distal, sensación esponjosa y fluctuante a la palpación de la base de la
+  uña y pérdida de la ventana en diamante al oponer las superficies dorsales de
+  las falanges distales (signo de Schamroth).
+significado: >-
+  Hiperplasia vascular y de tejido conectivo subungueal mediada por factores de
+  crecimiento endotelial y plaquetario (VEGF, PDGF) liberados por megacariocitos
+  que eluden la fragmentación en el lecho capilar pulmonar por cortocircuitos
+  derecha-izquierda o shunts intrapulmonares, o por inflamación sistémica crónica.
+  Característico de neoplasias pulmonares primarias y metastásicas, supuraciones
+  pleuropulmonares (bronquiectasias, absceso), fibrosis pulmonar idiopática,
+  cardiopatías congénitas cianóticas, endocarditis infecciosa y hepatopatías crónicas.
+falsos_positivos:
+  - Curvatura ungueal excesiva constitucional o hereditaria con ángulo de Lovibond normal
+  - Paquidermoperiostosis (osteoartropatía hipertrófica primaria idiopática)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Clubbing of the Fingers).

@@ -1,0 +1,34 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3193'
+tipo: concepto
+semantica: hallazgo
+termino: Ondas a en cañón
+termino_en: Cannon "a" Waves-AV Asynchrony
+sinonimos:
+  - ondas a gigantes del pulso yugular
+  - ondas en cañón
+  - cannon a waves
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Pulsaciones venosas yugulares presistólicas súbitas, enérgicas y de gran amplitud,
+  visibles en el cuello a nivel de la vena yugular interna (a diferencia del pulso
+  carotídeo, no son palpables y descienden con la inspiración o incorporando al
+  paciente). Pueden ser irregulares e intermitentes o regulares con cada latido.
+significado: >-
+  Reflujo masivo de presión hidrostática transmitido retrógradamente al sistema venoso
+  cava y yugular cuando la aurícula derecha se contrae mientras la válvula tricúspide
+  se encuentra cerrada por la sístole ventricular simultánea. Si son intermitentes,
+  indican disociación auriculoventricular (bloqueo auriculoventricular de tercer
+  grado completo, taquicardia ventricular con disociación AV o extrasístoles
+  ventriculares); si son regulares en cada latido, orientan a ritmo nodal/de la unión
+  AV o taquicardia por reentrada auriculoventricular.
+falsos_positivos:
+  - Pulso carotídeo enérgico palpable (signo de Corrigan en insuficiencia aórtica severa)
+  - Onda v gigante en insuficiencia tricuspídea severa (sistólica y no presistólica)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Cannon "a" Waves-AV Asynchrony).

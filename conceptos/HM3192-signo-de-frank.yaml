@@ -1,0 +1,33 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3192'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de Frank
+termino_en: Earlobe Crease
+sinonimos:
+  - pliegue diagonal del lóbulo auricular
+  - surco lobular diagonal
+  - diagonal earlobe crease
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Surco o hendidura cutánea lineal oblicua que recorre el lóbulo auricular con una
+  inclinación de aproximadamente 45°, extendiéndose desde el trago hacia el borde
+  inferoposterior de la oreja. Se clasifica según su profundidad (superficial o
+  profundo) y extensión (parcial o completo), siendo más significativo cuando es
+  bilateral y continuo.
+significado: >-
+  Degeneración prematura y pérdida de elastina en las fibras elásticas de la dermis
+  y en la capa íntima-media vascular dependiente de arteriolas terminales comunes.
+  Se correlaciona de forma estadísticamente significativa e independiente de la
+  edad con la extensión de la enfermedad arterial coronaria aterosclerótica y con
+  aterosclerosis carotídea y periférica.
+falsos_positivos:
+  - Arrugas cutáneas superficiales seniles o secundarias a decúbito lateral prolongado al dormir
+  - Pliegues posquirúrgicos o posinflamatorios en el pabellón auricular
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Earlobe Crease).

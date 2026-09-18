@@ -1,0 +1,35 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3197'
+tipo: concepto
+semantica: hallazgo
+termino: Soplo tubárico
+termino_en: Bronchial Breathing (Tubular Breathing)
+sinonimos:
+  - respiración bronquial patológica
+  - ruido respiratorio bronquial periférico
+  - tubular breathing
+padre: 'HM:0400'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Ruido auscultatorio respiratorio áspero, rudo, soplante y de frecuencia elevada,
+  audible con el estetoscopio en la pared torácica periférica sobre regiones
+  habitualmente ocupadas por murmullo vesicular. Presenta una fase espiratoria
+  prolongada, de tono más alto y de intensidad igual o superior a la inspiratoria,
+  separada de ésta por una breve pausa silente.
+significado: >-
+  Transmisión directa y acústicamente amplificada de las turbulencias aéreas
+  generadas en las grandes vías respiratorias proximales (laringe, tráquea y
+  bronquios principales) hacia la superficie del tórax a través de un parénquima
+  pulmonar densamente hepatizado o condensado, cuyos alvéolos están ocupados por
+  exudado inflamatorio, líquido o células neoplásicas, con persistencia de la
+  permeabilidad del bronquio tributario. Signo definitorio de consolidación pulmonar
+  en neumonía bacteriana lobar o atelectasia con bronquio permeable.
+falsos_positivos:
+  - Auscultación normal fisiológica sobre la tráquea o el hueco supraesternal (respiración traqueobronquial normal)
+  - Auscultación interescapular en individuos muy delgados o niños pequeños
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Bronchial Breathing (Tubular Breathing)).

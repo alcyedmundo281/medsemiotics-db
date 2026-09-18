@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3195'
+tipo: concepto
+semantica: hallazgo
+termino: Acantosis nigricans
+termino_en: Acanthosis Nigricans
+sinonimos:
+  - acantosis pigmentaria
+  - hiperpigmentación aterciopelada flexural
+  - acanthosis nigricans
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Placas cutáneas hiperqueratósicas de aspecto aterciopelado, verrugoso o
+  papilomatoso, simétricas, de coloración parduzca, grisácea o negruzca, con
+  acentuación de los pliegues cutáneos naturales, localizadas predominantemente en
+  zonas flexurales e intertriginosas: región posterior y lateral del cuello, huecos
+  axilares, ingles, pliegues antecubitales, nudillos y región anogenital.
+significado: >-
+  Proliferación de queratinocitos epidérmicos y fibroblastos dérmicos estimulada por
+  concentraciones elevadas de insulina plasmática que actúan cruzadamente sobre los
+  receptores del factor de crecimiento similar a la insulina tipo 1 (IGF-1R), o por
+  secreción tumoral paraneoplásica de factores de crecimiento como el factor de
+  crecimiento transformante alfa (TGF-alfa). Frecuente marcador de resistencia a la
+  insulina grave, obesidad, diabetes mellitus tipo 2, síndrome de ovario
+  poliquístico o, cuando es de aparición rápida y extensa en mucosas, de
+  adenocarcinoma intraabdominal oculto (acantosis nigricans maligna).
+falsos_positivos:
+  - Hiperpigmentación postinflamatoria simple por roce crónico en pliegues sin engrosamiento aterciopelado
+  - Suciedad cutánea o dermatitis neglected (desaparece con limpieza exhaustiva con alcohol)
+  - Confluente y reticulada papilomatosis de Gougerot-Carteaud
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Acanthosis Nigricans).

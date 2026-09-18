@@ -1,0 +1,34 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3199'
+tipo: concepto
+semantica: hallazgo
+termino: Nódulo de la hermana María José
+termino_en: Abdominal Wall Mass-Nodular Umbilicus
+sinonimos:
+  - nódulo umbilical metastásico
+  - metástasis umbilical
+  - Sister Mary Joseph nodule
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Masa o nódulo duro, pétreo, firme, irregular y habitualmente indoloro en la
+  cicatriz umbilical o en el tejido celular subcutáneo periumbilical, de tamaño
+  variable (0.5 a 5 cm), que puede fijarse a planos profundos o presentar cambios
+  cutáneos suprayacentes como eritema, ulceración, fisuras o secreción serosanguinolenta.
+significado: >-
+  Implantación metastásica neoplásica en la pared abdominal a través de los remanentes
+  embriológicos vasculares (ligamento falciforme, ligamento redondo, uraco) o por
+  contigüidad peritoneal y diseminación linfática retrógrada. Representa un signo
+  de enfermedad neoplásica avanzada e incurable, procedente con mayor frecuencia de
+  adenocarcinomas gastrointestinales (estómago, colon, páncreas) y ginecológicos
+  (ovario, endometrio).
+falsos_positivos:
+  - Hernia umbilical encarcelada no reducible o granuloma de cicatrización
+  - Endometriosis umbilical primaria o secundaria (nódulo cíclico doloroso durante la menstruación)
+  - Onfalito o cuerpo extraño umbilical con reacción granulomatosa
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Abdominal Wall Mass-Nodular Umbilicus).

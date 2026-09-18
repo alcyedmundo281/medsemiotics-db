@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3200'
+tipo: concepto
+semantica: hallazgo
+termino: Contractura de Dupuytren
+termino_en: Dupuytren Contracture (Palmar Fibrosis)
+sinonimos:
+  - fibromatosis palmar
+  - enfermedad de Dupuytren
+  - retracción de la aponeurosis palmar
+  - dupuytren contracture
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Presencia de nódulos indoloros firmes en la palma de la mano sobre las líneas de
+  tensión de los tendones flexores, con hoyuelos cutáneos adheridos y bandas o
+  cuerdas fibrotendinosas longitudinales palpables que causan deformidad en flexión
+  fija e incapacidad para extender completamente los dedos (afectando
+  predominantemente al 4.º y 5.º dedo). El paciente no logra apoyar la mano
+  plana sobre una mesa (test de la mesa de Hueston positivo).
+significado: >-
+  Proliferación fibroblástica anormal con diferenciación miofibroblástica activa y
+  depósito excesivo y desorganizado de colágeno tipo III en la fascia palmar y
+  digital. Aunque tiene una base genética poligénica y hereditaria bien establecida,
+  se asocia fuertemente con la cirrosis hepática (especialmente alcohólica), la
+  diabetes mellitus de larga evolución, el tabaquismo y el uso crónico de
+  anticonvulsivantes como fenobarbital.
+falsos_positivos:
+  - Dedo en gatillo o tenosinovitis estenosante (resalte o bloqueo intermitente con dolor al extender el dedo)
+  - Contractura articular postraumática o por cicatriz cutánea retráctil tras quemadura
+  - Artritis reumatoide con flexión fija articular primaria
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Dupuytren Contracture (Palmar Fibrosis)).

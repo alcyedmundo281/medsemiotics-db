@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3198'
+tipo: concepto
+semantica: hallazgo
+termino: Soplos vasculares abdominales
+termino_en: Abdominal Bruits
+sinonimos:
+  - soplo arterial abdominal
+  - soplo en epigastrio o flancos
+  - abdominal bruits
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Sonido auscultatorio sibilante, áspero o rugiente de origen vascular detectado
+  mediante el diafragma del fonendoscopio presionado firmemente sobre el abdomen
+  (epigastrio, cuadrantes superiores o regiones laterales de los flancos a 2-3 cm
+  del ombligo). Es de especial relevancia semiológica cuando presenta un componente
+  sistodiastólico continuo y no meramente protosistólico.
+significado: >-
+  Vórtices y flujo sanguíneo turbulento acelerado a través de un estrechamiento
+  arterial focal hemodinámicamente relevante (lumen reducido > 50-70%) o a través de
+  una pared vascular dilatada o irregular. Un soplo sistodiastólico en flanco o
+  epigastrio tiene alta especificidad para estenosis de arteria renal en sospecha
+  de hipertensión renovascular (aterosclerótica o displasia fibromuscular); un soplo
+  epigástrico sistólico puede deberse a estenosis del tronco celíaco, arteria
+  mesentérica superior o aneurisma aórtico abdominal.
+falsos_positivos:
+  - Soplo sistólico epigástrico benigno o inocente en individuos jóvenes sanos delgados
+  - Ruidos hidroaéreos peristálticos intestinales acelerados (borborigmos con timbre metálico)
+  - Zumbido venoso umbilical (hum venoso continuo en hipertensión portal, que se apaga al comprimir)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Abdominal Bruits).

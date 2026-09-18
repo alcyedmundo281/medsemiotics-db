@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3201'
+tipo: concepto
+semantica: hallazgo
+termino: Soplo de Austin Flint
+termino_en: Austin Flint Murmur
+sinonimos:
+  - retumbo de Austin Flint
+  - soplo mesodiastólico apical por reflujo aórtico
+  - austin flint murmur
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Soplo cardíaco diastólico de baja frecuencia (grave, rodante o retumbante), de
+  localización mesodiastólica a presistólica (telediastólica), auscultado con la
+  campana del fonendoscopio en el ápex cardíaco con el paciente en decúbito lateral
+  izquierdo (posición de Pachon). A diferencia de la estenosis mitral orgánica, no
+  va precedido de chasquido de apertura mitral ni presenta refuerzo del primer
+  ruido (R1 suele ser suave o normal).
+significado: >-
+  Estenosis mitral funcional y relativa originada en una insuficiencia valvular
+  aórtica severa. El chorro de regurgitación aórtica retrógrado a alta velocidad
+  se proyecta hacia el interior del ventrículo izquierdo, chocando físicamente
+  contra la valva anterior de la válvula mitral e induciendo su cierre o elevación
+  prematura hacia el tabique, lo que genera turbulencias en el flujo transmitral
+  anterógrado diastólico normal.
+falsos_positivos:
+  - Estenosis mitral reumática u orgánica verdadera coexistente (presenta chasquido de apertura mitral y R1 hiperfonético)
+  - Mixoma auricular izquierdo prolapsante hacia el orificio mitral (plop tumoral característico)
+  - Soplo de Carey Coombs en la carditis reumática aguda activa
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Austin Flint Murmur).

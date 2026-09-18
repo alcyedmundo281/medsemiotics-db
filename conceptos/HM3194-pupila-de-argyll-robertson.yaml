@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3194'
+tipo: concepto
+semantica: hallazgo
+termino: Pupila de Argyll Robertson
+termino_en: Argyll Robertson Pupil
+sinonimos:
+  - disociación luz-acomodación sifilítica
+  - pupila de tabes dorsal
+  - argyll robertson pupil
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Pupilas pequeñas (miosis bilateral bilateral menor a 2.5 mm), habitualmente
+  asimétricas e irregulares en su contorno, que no responden ni muestran
+  constricción ante la estimulación luminosa directa ni consensual (reflejo
+  fotomotor abolido), pero que se contraen con rapidez e intensidad normales
+  cuando el paciente fija la mirada en un objeto cercano (reflejo de acomodación y
+  convergencia preservado). Dilatan lenta e incompletamente con midriáticos.
+significado: >-
+  Interrupción focal de las fibras tectotegmentarias aferentes procedentes de la
+  retina hacia los núcleos de Edinger-Westphal a nivel del área pretectal del
+  mesencéfalo dorsal, respetando las vías más ventrales eferentes y corticales que
+  median la acomodación y convergencia visual. Es el signo patognomónico clásico
+  de la neurosífilis terciaria (tabes dorsal y parálisis general progresiva), aunque
+  puede observarse excepcionalmente en diabetes mellitus avanzada, sarcoidosis o
+  esclerosis múltiple.
+falsos_positivos:
+  - Pupila tónica de Adie (unilateral en el 80%, midriática y con hipersensibilidad de denervación parasimpática)
+  - Parálisis del tercer par craneal (cursa con ptosis y oftalmoplejía extrínseca)
+  - Efecto farmacológico por colirios mióticos o narcóticos sistémicos (ausencia de respuesta tanto a luz como a acomodación)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Argyll Robertson Pupil).
