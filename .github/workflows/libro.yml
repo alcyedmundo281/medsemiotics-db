@@ -72,11 +72,14 @@ concurrency:
 jobs:
   libro:
     name: Validar y generar libro, EPUB y fuente LuaLaTeX
-    runs-on: ubuntu-latest
+    # Fijado, no `ubuntu-latest`: el PDF depende de los paquetes de apt de la
+    # imagen (TeX Live, FreeFont, librsvg2-bin), y `ubuntu-latest` pasa a
+    # Ubuntu 26 el 19/10/2026. Subir de imagen es un cambio deliberado, con su PR.
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 
@@ -201,7 +204,7 @@ jobs:
 
       - name: Publicar derivados como artifact
         if: github.event_name != 'release'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: libro-epub-latex
           path: |
