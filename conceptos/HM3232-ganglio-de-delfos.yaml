@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3232'
+tipo: concepto
+semantica: hallazgo
+termino: Ganglio de Delfos
+termino_en: Enlarged Delphian Lymph Nodes
+sinonimos:
+  - ganglio délfico
+  - adenopatía prelaríngea
+  - ganglio cricotiroideo
+  - delphian node
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Masa o nódulo linfático palpable, redondeado u ovalado, de consistencia firme o pétrea,
+  localizado con precisión en la línea media anterior del cuello, directamente sobre la
+  membrana cricotiroidea (en el espacio comprendido entre el borde inferior del cartílago
+  tiroides y el cartílago cricoides). Asciende de forma sincrónica con las estructuras
+  laríngeas durante los movimientos de deglución del paciente.
+significado: >-
+  Metástasis linfática o adenopatía reactiva localizada en la cadena ganglionar prelaríngea
+  (nivel VI anterior del cuello), que drena directamente el istmo y los polos superiores de la
+  glándula tiroides, la laringe subglótica y la porción anterior de las cuerdas vocales. Su
+  aparición palpable predice con frecuencia ("oráculo de Delfos") una neoplasia maligna avanzada
+  infiltrante, clásicamente carcinoma papilar de tiroides o cáncer epidermoide de laringe con
+  diseminación ganglionar cervical precoz.
+falsos_positivos:
+  - Quiste del conducto tirogloso (masa quística blanda o elástica que asciende no solo con la deglución sino de forma patognomónica con la protrusión forzada de la lengua)
+  - Nódulo tiroideo del lóbulo piramidal de Lalouette (prolongación de parénquima tiroideo eutópico o bocio nodular)
+  - Quiste sebáceo dérmico superficial o lipoma prelaríngeo libre
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Enlarged Delphian Lymph Nodes).

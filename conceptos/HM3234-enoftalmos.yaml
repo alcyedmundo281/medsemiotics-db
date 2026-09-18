@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3234'
+tipo: concepto
+semantica: hallazgo
+termino: Enoftalmos
+termino_en: Enophthalmos
+sinonimos:
+  - recesión ocular
+  - hundimiento del globo ocular
+  - enophthalmos
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Desplazamiento o recesión anormal hacia atrás (posterior) del globo ocular dentro de los
+  márgenes óseos de la cavidad orbitaria. A la inspección se evidencia un hundimiento visible del
+  ojo con profundización exagerada del surco palpebral superior y estrechamiento relativo de la
+  hendidura palpebral. Medido con exoftalmómetro de Hertel, se confirma una reducción objetiva
+  de la distancia anterior corneal respecto al reborde orbitario lateral (> 2 mm de asimetría
+  respecto al ojo contralateral sano).
+significado: >-
+  Es consecuencia de la discrepancia entre el continente óseo orbitario y el volumen del contenido
+  orbitario de partes blandas. Se produce fundamentalmente por: 1) fractura traumática por estallido
+  del suelo o pared medial de la órbita (*blow-out fracture*), con prolapso herniario de la grasa
+  retrobulbar y atrapamiento del músculo recto inferior hacia el seno maxilar; 2) atrofia o cicatrización
+  retráctil de la grasa orbitaria secundaria a radioterapia, traumatismos o síndrome del seno silente
+  (atelectasia del seno maxilar); o 3) infiltración tumoral esclerosante de la grasa retrobulbar
+  (carcinoma escirro metastásico de mama).
+falsos_positivos:
+  - Pseudoenoftalmos en síndrome de Horner (la ptosis palpebral superior y elevación del párpado inferior simulan un ojo más pequeño y hundido, pero la medición con exoftalmómetro es normal)
+  - Microftalmos congénito o ptisis bulbi (globo ocular atrófico o hipoplásico intrínsecamente pequeño)
+  - Ptosis aponeurótica senil severa que cubre el globo ocular simulando retracción
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Enophthalmos).

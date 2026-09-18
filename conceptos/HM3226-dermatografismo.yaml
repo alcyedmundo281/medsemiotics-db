@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3226'
+tipo: concepto
+semantica: hallazgo
+termino: Dermatografismo
+termino_en: Dermatographia
+sinonimos:
+  - dermografismo
+  - escritura sobre la piel
+  - urticaria facticia
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Respuesta cutánea física provocada mediante la fricción firme o el raspado de la piel
+  con un objeto romo (como la punta de un bajalenguas, bolígrafo sin punta o la uña).
+  Se manifiesta en un plazo de 3 a 5 minutos como una línea eritematosa inicial (reacción
+  local refleja) seguida rápidamente por la aparición de un habón lineal edematoso,
+  sobreelevado y palpable, rodeado de un halo eritematoso reflejo ("triple respuesta de Lewis"
+  exagerada). Suele acompañarse de prurito o sensación de ardor y persiste típicamente
+  entre 30 minutos y 2 horas antes de involucionar por completo.
+significado: >-
+  Es consecuencia de la degranulación y liberación masiva y desproporcionada de histamina,
+  leucotrienos y otros mediadores vasoactivos por parte de los mastocitos dérmicos en
+  respuesta directa al estímulo mecánico de cizallamiento. Constituye la variante más
+  frecuente de urticaria física inducible (urticaria facticia) y puede presentarse en
+  forma primaria idiopática o asociada a procesos atópicos, mastocitosis o fármacos.
+falsos_positivos:
+  - Dermatografismo blanco en dermatitis atópica (aparición paradójica de una línea pálida/blanquecina por vasoconstricción sin habón sobreelevado)
+  - Eritema reflejo fisiológico transitorio (enrojecimiento plano sin componente edematoso sobreelevado ni prurito)
+  - Urticaria por presión tardía (habones profundos y dolorosos que aparecen tras 4 a 8 horas de presión mantenida)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Dermatographia).

@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3227'
+tipo: concepto
+semantica: hallazgo
+termino: Disdiadococinesia
+termino_en: Dysdiadochokinesis
+sinonimos:
+  - adiadococinesia
+  - alteración de los movimientos alternantes rápidos
+  - dysdiadochokinesia
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Incapacidad, lentitud extrema o marcada irregularidad y pérdida del ritmo al intentar
+  ejecutar movimientos alternantes rápidos y antagónicos sucesivos. Se evalúa clínicamente
+  pidiendo al paciente realizar maniobras de pronación y supinación alternantes rápidas
+  de los antebrazos (golpear alternativamente la palma y el dorso de la mano sobre el muslo)
+  o dar golpecitos rápidos y rítmicos con la punta del pie o el talón sobre el suelo. En el
+  lado afecto el movimiento es torpe, arrítmico, vacilante, descompuesto y de amplitud
+  irregularmente variable.
+significado: >-
+  Traduce la pérdida de la coordinación temporal fina entre los grupos musculares agonistas
+  y antagonistas regulada por los circuitos cortico-ponto-cerebelosos. Es un signo clásico
+  y altamente sensible de lesión o disfunción del neocerebelo o del hemisferio cerebeloso
+  ipsilateral (infarto cerebeloso, esclerosis múltiple, tumor de fosa posterior o degeneración
+  cerebelosa).
+falsos_positivos:
+  - Bradicinesia parkinsoniana (los movimientos se vuelven progresivamente más pequeños y lentos [fatiga/decremento] pero sin la ataxia y arritmia caótica cerebelosa)
+  - Paresia piramidal o debilidad motora severa periférica que impide la movilidad articular
+  - Apraxia ideomotora o rigidez articular musculoesquelética por artrosis o espasticidad
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Dysdiadochokinesis).

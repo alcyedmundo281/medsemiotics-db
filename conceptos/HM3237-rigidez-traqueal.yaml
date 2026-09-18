@@ -1,0 +1,36 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3237'
+tipo: concepto
+semantica: hallazgo
+termino: Rigidez traqueal
+termino_en: Fixation of the Trachea
+sinonimos:
+  - fijación traqueal
+  - inmovilidad traqueal
+  - fixed trachea
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Pérdida de la movilidad fisiológica pasiva y activa de la tráquea cervical a la exploración
+  física. En condiciones normales, al tomar la tráquea suavemente entre el pulgar y el índice por
+  encima de la horquilla esternal, esta puede movilizarse lateralmente de forma indolora y elástica
+  unos milímetros hacia ambos lados y asciende libremente con el cartílago tiroides durante la deglución.
+  La rigidez se manifiesta cuando la tráquea aparece firmemente anclada e inmóvil, fija a los planos
+  profundos y fascias cervicales o mediastínicas, sin excursión lateral posible ni elevación durante el
+  acto deglutorio.
+significado: >-
+  Demuestra la invasión tumoral infiltrativa destructiva o el engrosamiento fibroso masivo que
+  compromete la pared traqueal, la fascia visceral y el compartimento visceral cervical/mediastínico.
+  Es un signo clínico de malignidad invasiva local agresiva avanzada, característico del carcinoma
+  anaplásico de tiroides, carcinomas epidermoides de esófago cervical o tráquea con invasión extrínseca,
+  o secuela de mediastinitis fibrosante idiopática o post-radioterapia.
+falsos_positivos:
+  - Desviación traqueal fija contralateral sin infiltración intrínseca (por bocio multinodular gigante endotorácico benigno voluminoso o atelectasia masiva retráctil)
+  - Resistencia voluntaria o contractura refleja de los músculos infrahioideos por dolor cervical o aprehensión
+  - Cicatrices cervicales hipertróficas o bridas quirúrgicas posquirúrgicas retráctiles superficiales
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Fixation of the Trachea).

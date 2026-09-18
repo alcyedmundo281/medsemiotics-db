@@ -1,0 +1,37 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3228'
+tipo: concepto
+semantica: hallazgo
+termino: Dismetría
+termino_en: Dyssynergia and Dysmetria
+sinonimos:
+  - hipermetría
+  - disinergia cerebelosa
+  - fallo en la prueba índice-nariz
+  - dysmetria
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Incapacidad para calibrar, medir y graduar adecuadamente la distancia, velocidad y
+  fuerza necesarias para alcanzar con precisión un blanco espacial fijado. En la prueba
+  índice-nariz o índice-dedo del examinador (miembros superiores) o en la prueba talón-rodilla
+  (miembros inferiores), la extremidad sobrepasa ostensiblemente el objetivo (hipermetría) o se
+  queda corta (hipometría), típicamente acompañada de correcciones bruscas sucesivas, descomposición
+  del movimiento armónico en fases angulares (asinergia) y acentuación de un temblor oscilatorio
+  intencional terminal al aproximarse al objetivo visual. El déficit persiste inalterado con los ojos
+  abiertos (a diferencia del empeoramiento sensitivo en ataxia propioceptiva).
+significado: >-
+  Refleja la falla en el cálculo computacional interno del cerebelo para amortiguar e interrumpir
+  frenando a tiempo la acción de los músculos agonistas activando coordinadamente los antagonistas.
+  Es un signo patognomónico de lesión en los hemisferios cerebelosos o en las vías eferentes
+  del pedúnculo cerebeloso superior (haz dentado-rúbrico-talámico) ipsilaterales.
+falsos_positivos:
+  - Dismetría por déficit propioceptivo / ataxia sensitiva (empeora drásticamente al cerrar los ojos y se corrige en gran medida con el control visual)
+  - Temblor esencial severo de acción y postural (oscilación rítmica que no muestra la descomposición del movimiento multifásico propia de la dismetría)
+  - Paresia de origen piramidal con debilidad motora que dificulta sostener el miembro
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Dyssynergia and Dysmetria).

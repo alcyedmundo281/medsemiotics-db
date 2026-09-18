@@ -1,0 +1,38 @@
+# Concepto del índice. Migrado desde datos/temario.csv.
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3233'
+tipo: concepto
+semantica: hallazgo
+termino: Soplo continuo
+termino_en: Continuous Murmur
+sinonimos:
+  - soplo en maquinaria
+  - soplo de Gibson
+  - soplo sistodiastólico continuo
+  - machinery murmur
+padre: 'HM:0600'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Soplo cardiovascular auscultatorio adventicio que comienza en la sístole ventricular,
+  aumenta en crescendo progresivo alcanzando su máxima intensidad acústica alrededor o justo
+  después del segundo ruido cardíaco (R2), y continúa sin interrupción a través del R2 durante
+  toda o gran parte de la diástole. Clásicamente tiene un timbre rudo, rugiente o arremolinado
+  comparado con el ruido continuo de maquinaria en marcha o una locomotora ("soplo en maquinaria
+  de Gibson"). Se percibe con máxima intensidad en el foco pulmonar (segundo espacio intercostal
+  izquierdo subclavicular) y suele acompañarse de frémito continuo palpable.
+significado: >-
+  Refleja un flujo sanguíneo continuo y turbulento generado por un gradiente de presión positivo
+  ininterrumpido entre una estructura arterial de alta presión y otra de baja presión (arterial o
+  venosa) a lo largo de todo el ciclo cardíaco (tanto en sístole como en diástole). Es el signo
+  cardinal del conducto arterioso persistente (ductus arteriosus permeable). También se observa en
+  fístulas arteriovenosas periféricas o coronarias, rotura de aneurisma del seno de Valsalva hacia
+  cavidades derechas o ventana aortopulmonar.
+falsos_positivos:
+  - Doble soplo sistólico y diastólico combinado (ej. estenosis y regurgitación aórtica severa asociada / soplo en vaivén), el cual se interrumpe y separa claramente en dos fases acústicas alrededor de R2
+  - Zumbido venoso yugular (*venous hum*, soplo continuo venoso benigno cervical que desaparece al comprimir la yugular o rotar la cabeza)
+  - Soplo mamario de la lactancia (soplo benigno continuo superficial sobre las mamas en embarazadas/lactantes)
+
+procedencia:
+  fuente: Migrado desde datos/temario.csv (Continuous Murmur).
