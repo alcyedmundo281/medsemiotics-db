@@ -354,7 +354,7 @@ anterior necesitaba. `HM:6016` retoma la veta donde la había dejado `HM:6014`.
 | `vocabulario_semilla.json` de holonmed | esqueleto de IDs, sinónimos, jerarquía | **136 conceptos** | ✅ sembrado |
 | `refs.bib` de biosemiotics | referencias con PMID + DOI | **74** | ✅ convertido y verificado |
 | Serie *Rational Clinical Examination* | revisiones con cociente publicado | **14 fuentes** | ✅ 61 aristas medidas |
-| Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 14 migrados · 14 esperan 59 referencias |
+| Signos de biosemiotics | significante, significado, umbral, falsos positivos | **28** | ✅ 15 migrados · 13 en cola |
 | Conceptos de biosemiotics | física y artefactos de ecografía | **17** | fuera de alcance (ver oleada 1) |
 | Skills de holonmed | aristas, pero sin fuente resoluble | **7 aristas** | ✅ migradas sin cociente |
 | Skills de holonmed | parámetros de laboratorio con corte | **19** únicos | ✅ incrustados en su concepto |
@@ -636,7 +636,9 @@ Migrar lo que biosemiotics y holonmed tienen validado.
       eutils. Ver abajo.
 - [x] **Las 60 erratas, cotejadas** el 17/09/2026 corriendo el script 9 desde
       una red que alcanza PubMed. Candado abierto en las 60.
-- [ ] **14 signos más**, ya sin nada que los bloquee salvo cuatro erratas
+- [x] **1 signo más** (embarazo ectópico) → concepto `HM:3165` y una arista
+      más en `HM:6016`, desbloqueado al cotejar la errata de `celik2022`.
+- [ ] **13 signos más**, ya sin nada que los bloquee salvo dos erratas
       concretas: ver abajo.
 - [x] **1 condición** (pancreatitis aguda) → `HM:6040`, con sus **7 aristas**,
       desde las skills de holonmed. **Ninguna trae cociente**, y ése es el
@@ -722,7 +724,7 @@ erratas, y hasta entonces el candado no los deja sostener ningún umbral.
 | fevi-simpson | 2 |
 | absceso-partes-blandas · disfuncion-diastolica · hemotorax · hernia-complicada | 3 cada uno |
 | fast-douglas · fast-esplenorrenal · fast-morrison · vti | 4 cada uno |
-| embarazo-ectopico · gasto-cardiaco | 6 cada uno |
+| gasto-cardiaco | 6 |
 | colecistitis-aguda · coledocolitiasis | 9 cada uno |
 | apendicitis | 10 |
 
@@ -732,20 +734,29 @@ CrossRef. Estos 14 signos entran ahora igual que entraron los primeros catorce.
 
 #### Cuatro erratas que sí hay que cotejar
 
-De las 60, cuatro traen errata publicada. Ninguna la cita nadie todavía, así que
-`build.py` las da como aviso; en cuanto sostengan un cociente o un umbral pasa a
-error, y hay que ir a leer la corrección antes de transcribir ninguna cifra:
+De las 60, cuatro traen errata publicada. Mientras nadie las cite, `build.py` las
+da como aviso; en cuanto sostengan un cociente o un umbral pasa a error, y hay
+que ir a leer la corrección antes de transcribir ninguna cifra. **El candado ya
+se probó en marcha:** al entrar la arista de `HM:3165`, `celik2022` pasó de
+«aún no la cita nadie» a «cotejada y verificada» sin que nadie tuviera que
+acordarse de mirarlo.
 
-| Referencia | Errata |
-|---|---|
-| `sharifov2016` · `pmid:26811160` | J Am Heart Assoc. 2016;5(5):e002078 |
-| `barbic2017` · `pmid:28073795` | BMJ Open. 2017;7(9):e013688corr1 |
-| `celik2022` · `pmid:36063623` | Am J Emerg Med. 2025;88:277 |
-| `gottlieb2020` · `pmid:32081383` | Ann Emerg Med. 2022;79(1):90 |
+| Referencia | Errata | Estado |
+|---|---|---|
+| `sharifov2016` · `pmid:26811160` | J Am Heart Assoc. 2016;5(5):e002078 | ✅ cotejada: solo edición HTML, ninguna cifra cambia |
+| `celik2022` · `pmid:36063623` | Am J Emerg Med. 2025;88:277 | ✅ cotejada: una celda de la Tabla 2, ninguna cifra publicada cambia |
+| `barbic2017` · `pmid:28073795` | BMJ Open. 2017;7(9):e013688corr1 | ⚠️ leída, `errata_verificada` a propósito sin poner |
+| `gottlieb2020` · `pmid:32081383` | Ann Emerg Med. 2022;79(1):90 | ⏳ pendiente |
 
-Dos de ellas —`barbic2017` y `gottlieb2020`— sostienen el absceso de partes
-blandas, y `sharifov2016` la disfunción diastólica: son de los 14 que faltan, así
-que el cotejo toca ANTES de modelarlos, no después.
+**`barbic2017` es el caso que enseña por qué el campo es binario y el cotejo no.**
+La corrección cambia las cifras agrupadas —Se 95.5% y Sp 80.3%, antes 96.2% y
+82.9%, porque Marin 2013 se había extraído mal— pero NO recalcula el LR+ 5.63 ni
+el LR− 0.05 que sigue publicando el abstract. Esos dos cocientes quedan
+bloqueados, y con ellos cualquier subgrupo que incluya a Marin. `errata_verificada`
+se pondrá al modelar el absceso, citando solo los dos valores corregidos.
+
+`gottlieb2020` sostiene también el absceso de partes blandas: su cotejo toca
+ANTES de modelarlo, no después.
 
 #### La lección de las notas, que costó un susto
 
