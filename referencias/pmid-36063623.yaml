@@ -28,6 +28,7 @@ verificacion:
   errata: 'Am J Emerg Med. 2025 Feb;88:277. doi: 10.1016/j.ajem.2024.12.040.'
   errata_corrige: 'Corrigendum to "The impact of high-frequency linear transducer on the accuracy of pelvic u'
   errata_pmid: 'pmid:39709283'
+  errata_verificada: true
   crossref: true
   crossref_titulo_coincide: true
   notas:
@@ -36,13 +37,27 @@ verificacion:
       Cotejada contra PubMed: título, revista, volumen, páginas y DOI coinciden
       con refs.bib
     - >-
-      COTEJO PENDIENTE: CORRECCIÓN LOCALIZADA PERO SIN LEER (17/09/2026).
-      Identificada por DOI: pmid:39709283, doi 10.1016/j.ajem.2024.12.040, que
-      PubMed enlaza como «Erratum for» este artículo, firmada por los mismos
-      tres autores. PubMed no trae su texto, y tampoco Europe PMC, CrossRef ni
-      OpenAlex (sin abstract, sin copia en repositorio). ScienceDirect exige
-      CAPTCHA y no se sorteó. Falta leerla desde un acceso institucional o en
-      el PDF de Am J Emerg Med 2025;88:277.
+      COTEJO CERRADO el 18/09/2026 contra el PDF de la corrección
+      (pmid:39709283, doi 10.1016/j.ajem.2024.12.040, Am J Emerg Med
+      2025;88:277), obtenida por acceso institucional. Es de este artículo:
+      declara su DOI de origen 10.1016/j.ajem.2022.08.045 y la firman los
+      mismos tres autores.
     - >-
-      Ninguna cifra de esta fuente entra hasta leerla. Sí la cita
-      biosemiotics, en signos/embarazo-ectopico.qmd.
+      NO CORRIGE NINGUNA CIFRA PUBLICADA. Corrige una sola celda de la Tabla 2:
+      el recuento de falsos negativos de POCUS para actividad cardiaca fetal
+      decía «12» y el correcto es «8». Los autores lo declaran error
+      tipográfico introducido en la revisión final de la tabla, y afirman que
+      resultados, análisis estadísticos y conclusiones no se ven afectados
+      porque se calcularon sobre el dato correcto.
+    - >-
+      PRECAUCIÓN QUE SÍ QUEDA: la corrección alcanza al texto publicado, no a
+      la tabla anterior. Un cociente recalculado a mano desde la fila de
+      actividad cardiaca fetal de la Tabla 2 sale mal si usa FN = 12; usar
+      FN = 8. Las cifras de confirmación de embarazo intrauterino son de otra
+      fila y la corrección no las toca.
+    - >-
+      Queda desbloqueada para el índice. La cita biosemiotics en
+      signos/embarazo-ectopico.qmd: sus cifras —sensibilidad 89,0 %,
+      especificidad 100 %, y 96,7 % al añadir el transductor lineal— son de la
+      fila de embarazo intrauterino, ajenas a la celda corregida. Comprobado el
+      18/09/2026; no requieren cambio.
