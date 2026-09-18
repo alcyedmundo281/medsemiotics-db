@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:9475915'
+clave_bibtex: mcisaac1998
+tipo: articulo
+titulo: A clinical score to reduce unnecessary antibiotic use in patients with sore throat
+autores:
+  - McIsaac WJ
+  - White D
+  - Tannenbaum D
+  - Low DE
+publicacion: CMAJ
+anio: 1998
+volumen: 158
+paginas: 75-83
+
+identificadores:
+  pmid: 9475915
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'

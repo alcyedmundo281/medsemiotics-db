@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:6763125'
+clave_bibtex: centor1981
+tipo: articulo
+titulo: The diagnosis of strep throat in adults in the emergency room
+autores:
+  - Centor RM
+  - Witherspoon JM
+  - Dalton HP
+  - Brody CE
+  - Link K
+publicacion: Med Decis Making
+anio: 1981
+volumen: 1
+paginas: 239-46
+
+identificadores:
+  pmid: 6763125
+  doi: 10.1177/0272989X8100100304
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

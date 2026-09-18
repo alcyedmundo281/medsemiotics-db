@@ -1,0 +1,28 @@
+# Concepto del índice. Acuñado al modelar HM:6016 (embarazo ectópico).
+#
+# SIN `umbral` fijo en el concepto: el cociente y la interpretación clínica no
+# dependen de un valor único dicotómico, sino de zonas discriminatorias contextuales
+# (1000, 1500, 2000 mIU/mL y umbral de seguridad de 3500 mIU/mL) en conjunción con la
+# ecografía transvaginal. Los límites se gradúan en los tramos de las aristas.
+
+id: 'HM:3189'
+tipo: concepto
+semantica: hallazgo
+termino: hCG sérica cuantitativa
+termino_en: Quantitative serum hCG
+sinonimos:
+  - beta-hCG cuantitativa
+  - gonadotropina coriónica humana sérica
+  - subunidad beta de gonadotropina coriónica humana
+  - fracción beta de hCG
+padre: 'HM:0710'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar los tramos discriminatorios de hCG en el diagnóstico de
+    embarazo ectópico (pmid:16308901, pmid:23262929, pmid:23613077).

@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:23262929'
+clave_bibtex: connolly2013
+tipo: articulo
+titulo: Reevaluation of discriminatory and threshold levels for serum β-hCG in early pregnancy
+autores:
+  - Connolly A
+  - Ryan DH
+  - Stuebe AM
+  - Wolfe HM
+publicacion: Obstet Gynecol
+anio: 2013
+volumen: 121
+paginas: 65-70
+
+identificadores:
+  pmid: 23262929
+  doi: 10.1097/aog.0b013e318278f421
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-18
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

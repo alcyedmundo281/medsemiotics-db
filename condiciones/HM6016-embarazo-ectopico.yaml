@@ -168,6 +168,70 @@ signos:
       el otro criterio de entrada, con la misma acotación: ningún componente de
       la anamnesis alcanza un LR+ de 1.5
 
+  # ─── analítica cuantitativa: zonas discriminatorias en PUL ─────────────────
+  - concepto: 'HM:3189'    # hCG sérica cuantitativa
+    rol: prueba_especifica
+    estado_lr: medido
+    lr_positivo:
+      valor: 2.30
+      umbral: 'hCG > 1500 mIU/mL'
+      ref: 'pmid:16308901'
+    lr_negativo:
+      valor: 0.91
+      umbral: 'hCG > 1500 mIU/mL'
+      ref: 'pmid:16308901'
+    poblacion: >-
+      527 mujeres con embarazo de localización no determinada (PUL) tras
+      ecografía transvaginal en unidad especializada
+    graduacion:
+      parametro: hCG sérica
+      unidad: mIU/mL
+      lectura: acumulativo
+      nota: 1 IU/L equivale numéricamente a 1 mIU/mL
+    tramos:
+      - umbral: 'hCG > 1000 mIU/mL'
+        desde: 1000
+        sensibilidad: 0.217
+        especificidad: 0.873
+        lr_positivo: 1.71
+        lr_negativo: 0.90
+        ref: 'pmid:16308901'
+        nota: >-
+          un valor superior a 1000 mIU/mL con útero vacío desplaza muy poco la
+          probabilidad (LR+ 1.71); la mayoría de ectópicos cursan con valores
+          inferiores
+      - umbral: 'hCG > 1500 mIU/mL'
+        desde: 1500
+        sensibilidad: 0.152
+        especificidad: 0.934
+        lr_positivo: 2.30
+        lr_negativo: 0.91
+        ref: 'pmid:16308901'
+        nota: >-
+          umbral clásico de zona discriminatoria; especificidad del 93.4% pero
+          sensibilidad muy pobre (15.2%), con LR+ de sólo 2.30
+      - umbral: 'hCG > 2000 mIU/mL'
+        desde: 2000
+        sensibilidad: 0.109
+        especificidad: 0.952
+        lr_positivo: 2.27
+        lr_negativo: 0.94
+        ref: 'pmid:16308901'
+        nota: >-
+          elevar el corte a 2000 mIU/mL aumenta la especificidad al 95.2% pero
+          reduce la sensibilidad al 10.9%, sin ganar potencia diagnóstica (LR+
+          2.27)
+    decision: >-
+      ningún valor aislado de hCG por encima de la zona discriminatoria confirma
+      el ectópico, y un valor por debajo nunca lo descarta (LR− 0.90-0.94). La
+      zona discriminatoria define cuándo un embarazo intrauterino viable
+      debería verse, no cuándo un embarazo es obligadamente ectópico
+    advertencia: >-
+      el uso aislado de la zona discriminatoria clásica (1500-2000 mIU/mL) para
+      indicar metotrexato o legrado interrumpe gestaciones intrauterinas viables
+      que tardan más en ser visibles. La guía ACOG y Connolly 2013
+      (pmid:23262929) elevan el corte de visualización fiable al 99% a 3500 mIU/mL
+
 notas_de_uso:
   - >-
     LAS CIFRAS DE pmid:36063623 NO SON COCIENTES DEL ECTÓPICO Y NO DEBEN LEERSE
@@ -196,15 +260,8 @@ pendiente:
     urgencias: no es «ausencia de HM:3165» sino una categoría con su propia
     ruta. Entrará cuando haya una fuente que lo mida, no antes.
   - >-
-    La hCG sérica cuantitativa no entra como arista. La fuente es explícita en
-    que los estudios existentes NO establecen un valor único diagnóstico de
-    ectópico, y un umbral inventado aquí sería exactamente lo que este
-    repositorio no admite. Entrará cuando haya una fuente que lo mida, y
-    probablemente como tramos y no como cifra suelta.
-  - >-
-    La cinética de la hCG seriada tampoco entra, y aquí ni siquiera hay
-    afirmación de la fuente en que apoyarse: el abstract se pronuncia sobre un
-    valor aislado, no sobre el patrón de ascenso. Requiere otra fuente.
+    La cinética de la hCG seriada no entra: requiere otra fuente con datos de
+    ascenso porcentual a las 48 horas.
 
 conclusion_de_la_fuente: >-
   La ecografía transvaginal es la mejor prueba diagnóstica aislada para evaluar
@@ -214,5 +271,7 @@ conclusion_de_la_fuente: >-
 
 procedencia:
   fuente: >-
-    Acuñada al seguir la veta de la serie Rational Clinical Examination. Valores
-    del abstract de pmid:23613077, no del texto completo.
+    Acuñada al seguir la veta de la serie Rational Clinical Examination (pmid:23613077).
+    Tramos de zona discriminatoria de hCG incorporados de Condous 2005 (pmid:16308901)
+    y Connolly 2013 (pmid:23262929).
+
