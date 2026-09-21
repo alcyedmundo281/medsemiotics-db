@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:9299672'
+clave_bibtex: lewis1997
+tipo: articulo
+titulo: Stool form scale as a useful guide to intestinal transit time
+autores:
+  - Lewis SJ
+  - Heaton KW
+publicacion: Scand J Gastroenterol
+anio: 1997
+volumen: 32
+paginas: 920-4
+
+identificadores:
+  pmid: 9299672
+  doi: 10.3109/00365529709011203
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -14,12 +14,23 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Deposiciones infrecuentes, duras o difíciles de evacuar, con esfuerzo, sensación de
+  evacuación incompleta o de obstrucción anorrectal. La forma de las heces se registra
+  con la escala de Bristol, cuyos tipos 1 y 2 corresponden a heces duras (pmid:9299672,
+  pmid:27144627).
+significado: >-
+  Enlentecimiento del tránsito colónico o trastorno de la evacuación; la forma de las
+  heces se correlaciona con el tiempo de tránsito intestinal (pmid:9299672).
+falsos_positivos:
+  - Deposiciones infrecuentes pero blandas y sin dificultad para evacuar
+  - Ingesta escasa, con poco volumen fecal y sin trastorno del tránsito
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6002,
+    sostenida sobre pmid:9299672 (Lewis 1997, escala de Bristol) y pmid:27144627
+    (Mearin 2016, Roma IV).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.
