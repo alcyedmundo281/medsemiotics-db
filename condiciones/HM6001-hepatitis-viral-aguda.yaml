@@ -32,6 +32,10 @@ signos:
     rol: manifestacion
     estado_lr: no_medible
     motivo: forma parte de la definición de caso; sesgo de incorporación
+    decision: >-
+      orienta a medir bilirrubina fraccionada, pruebas hepáticas y serología de hepatitis
+      infecciosa; por sí sola no cuantifica la probabilidad
+    ref: 'pmid:14765767'
   - concepto: 'HM:0306'    # Coluria
     rol: manifestacion
     estado_lr: no_medido
@@ -61,6 +65,13 @@ signos:
   - concepto: 'HM:0802'    # Anorexia
     rol: apoyo
     estado_lr: no_medido
+
+pendiente:
+  - >-
+    Búsqueda en PubMed del 2026-09-21: no se hallaron estudios que midan la coluria, la
+    acolia, el dolor en hipocondrio derecho, la hepatomegalia, la fiebre, la astenia ni la
+    anorexia frente a la serología en la hepatitis viral aguda. Sus aristas siguen en
+    no_medido.
 
 procedencia:
   fuente: >-

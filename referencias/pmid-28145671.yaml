@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:28145671'
+clave_bibtex: fargo2017
+tipo: articulo
+titulo: Evaluation of Jaundice in Adults
+autores:
+  - Fargo MV
+  - Grogan SP
+  - Saguil A
+publicacion: Am Fam Physician
+anio: 2017
+volumen: 95
+paginas: 164-168
+
+identificadores:
+  pmid: 28145671
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'

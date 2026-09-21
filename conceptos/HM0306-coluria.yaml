@@ -14,12 +14,22 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Orina de color oscuro, pardo o «de té» por la presencia de bilirrubina; se confirma con la
+  tira reactiva de orina positiva para bilirrubina (pmid:14765767).
+significado: >-
+  Solo la bilirrubina conjugada, hidrosoluble, se excreta por el riñón: la coluria indica
+  hiperbilirrubinemia conjugada y separa el daño hepatocelular y la colestasis de las causas
+  prehepáticas, que elevan la fracción no conjugada (pmid:14765767, pmid:28145671).
+falsos_positivos:
+  - Orina concentrada por deshidratación, sin bilirrubina en la tira reactiva
+  - Hematuria, hemoglobinuria o mioglobinuria
+  - Pigmentos de alimentos o de fármacos que oscurecen la orina
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6001,
+    sostenida sobre pmid:14765767 (Roche 2004) y pmid:28145671 (Fargo 2017).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.
