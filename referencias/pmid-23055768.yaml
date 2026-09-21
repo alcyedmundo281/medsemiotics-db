@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:23055768'
+clave_bibtex: macaluso2012
+tipo: articulo
+titulo: Evaluation and management of acute abdominal pain in the emergency department
+autores:
+  - Macaluso CR
+  - McNamara RM
+publicacion: Int J Gen Med
+anio: 2012
+volumen: 5
+paginas: 789-97
+
+identificadores:
+  pmid: 23055768
+  doi: 10.2147/IJGM.S25936
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

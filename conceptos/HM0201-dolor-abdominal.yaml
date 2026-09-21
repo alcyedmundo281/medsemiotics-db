@@ -14,12 +14,25 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Dolor referido por el paciente en el abdomen. Se caracteriza por su localización
+  (cuadrante o región), carácter, cronología, irradiación y los factores que lo
+  modifican; la localización es el punto de partida de la evaluación (pmid:18441863).
+significado: >-
+  Estímulo nociceptivo de origen visceral (distensión, inflamación o isquemia de una
+  víscera, mal localizado y de línea media), parietal (irritación del peritoneo,
+  bien localizado) o referido desde estructuras extraabdominales (pmid:23055768).
+  En los trastornos funcionales intestinales se asocia a la defecación o a cambios
+  del hábito intestinal (pmid:27144627).
+falsos_positivos:
+  - Dolor de pared abdominal (musculoesquelético o neuropático), que no procede de las vísceras
+  - Dolor referido desde el tórax, como el de origen cardiaco o pleural
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6002,
+    sostenida sobre pmid:18441863 (Cartwright 2008), pmid:23055768 (Macaluso 2012) y
+    pmid:27144627 (Mearin 2016, Roma IV).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.

@@ -1,0 +1,47 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:18854541'
+clave_bibtex: ford2008
+tipo: articulo
+titulo: 'Will the history and physical examination help establish that irritable bowel syndrome is causing this patient''s lower gastrointestinal tract symptoms?'
+autores:
+  - Ford AC
+  - Talley NJ
+  - Veldhuyzen van Zanten SJ
+  - Vakil NB
+  - Simel DL
+  - Moayyedi P
+publicacion: JAMA
+anio: 2008
+volumen: 300
+paginas: 1793-805
+
+identificadores:
+  pmid: 18854541
+  doi: 10.1001/jama.300.15.1793
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  errata: 'JAMA. 2009 Apr 15;301(15):1544. Comment in JAMA. 2009 Mar 18;301(11):1126; author reply 1126. doi: 10.1001/jama.2009.272.'
+  errata_corrige: Testing for celiac disease in patients with symptoms of irritable bowel syndrome.
+  errata_verificada: true
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - >-
+      COTEJO CERRADO el 21/09/2026 contra el cuerpo de la corrección
+      (doi: 10.1001/jama.301.15.1544, JAMA. 2009;301(15):1544), titulada
+      «Incorrect Wording in: Will the History and Physical Examination Help
+      Establish That Irritable Bowel Syndrome Is Causing This Patient's Lower
+      Gastrointestinal Tract Symptoms». Sustituye «and» por «or» al describir a los
+      pacientes del estudio de Kruis (dolor abdominal, flatulencia o cambio del
+      hábito intestinal). No modifica prevalencias, cocientes ni intervalos. El
+      campo errata_corrige de PubMed apunta al comentario asociado, no a la
+      corrección.

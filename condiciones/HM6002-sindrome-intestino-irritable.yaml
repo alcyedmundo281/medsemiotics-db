@@ -17,7 +17,13 @@ codigos:
   snomed: null
   cie10: null    # pendiente: se declara solo con verificación, no de memoria
 
-probabilidad_base: null    # pendiente: prevalencia con fuente
+probabilidad_base:
+  valor: 0.57
+  poblacion: >-
+    adultos con síntomas gastrointestinales bajos estudiados antes de su
+    investigación (10 estudios prospectivos, 2355 pacientes); prevalencia resumida
+    de SII tras la investigación del tracto gastrointestinal bajo
+  ref: 'pmid:18854541'
 factores_riesgo: []
 
 # Signos que lo manifiestan. Solo se enlazan conceptos existentes en el índice.
@@ -25,6 +31,10 @@ signos:
   - concepto: 'HM:0201'    # Dolor abdominal
     rol: manifestacion
     estado_lr: no_medido
+    decision: >-
+      su relación con la defecación y con los cambios del hábito intestinal es el
+      núcleo de los criterios diagnósticos; por sí solo no cuantifica la probabilidad
+    ref: 'pmid:27144627'
   - concepto: 'HM:0303'    # Diarrea
     rol: manifestacion
     estado_lr: no_medido
@@ -121,6 +131,26 @@ discrepancias:
       lr_positivo, con sus covariables leídas del texto completo —el modelo
       incluye edad de inicio, sexo y criterios de Manning—, porque sin esa lista
       un OR de regresión no significa nada.
+
+pendiente:
+  - >-
+    Los criterios diagnósticos tienen cocientes medidos que este índice aún no
+    estructura como reglas, porque sus componentes no existen como conceptos. En
+    pacientes con síntomas gastrointestinales bajos (pmid:18854541): Manning, LR+ 2.9
+    (IC95% 1.3-6.4) y LR− 0.29 (IC95% 0.12-0.71); Roma I, LR+ 4.8 (IC95% 3.6-6.5) y
+    LR− 0.34 (IC95% 0.29-0.41); Kruis, LR+ 8.6 (IC95% 2.9-26.0) y LR− 0.26 (IC95%
+    0.17-0.41). Roma III, en un metaanálisis posterior (pmid:26076071): LR+ 3.35
+    (IC95% 2.97-3.79) y LR− 0.39 (IC95% 0.34-0.46). Roma IV no consta validado en
+    estas fuentes. Modelarlos exige acuñar sus componentes (dolor aliviado por la
+    defecación, heces más blandas o frecuentes al inicio del dolor, moco rectal,
+    distensión, sensación de evacuación incompleta) y leer el texto completo.
+  - >-
+    Los síntomas individuales tienen LR+ de 1.2 a 2.1 y LR− de 0.29 a 0.88
+    (pmid:18854541), pero el abstract no los atribuye uno a uno salvo en los
+    extremos: el LR− 0.29 (IC95% 0.12-0.72) corresponde a la AUSENCIA de dolor
+    abdominal BAJO, un hallazgo más estrecho que el dolor abdominal (HM:0201). No se
+    asigna a HM:0201 para no atribuirle la cifra de otro hallazgo; requiere acuñar
+    el concepto y leer el texto completo.
 
 procedencia:
   fuente: >-

@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:26076071'
+clave_bibtex: sood2015
+tipo: articulo
+titulo: 'Systematic review with meta-analysis: the accuracy of diagnosing irritable bowel syndrome with symptoms, biomarkers and/or psychological markers'
+autores:
+  - Sood R
+  - Gracie DJ
+  - Law GR
+  - Ford AC
+publicacion: Aliment Pharmacol Ther
+anio: 2015
+volumen: 42
+paginas: 491-503
+
+identificadores:
+  pmid: 26076071
+  doi: 10.1111/apt.13283
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

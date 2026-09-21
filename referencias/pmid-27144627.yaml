@@ -1,0 +1,33 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:27144627'
+clave_bibtex: mearin2016
+tipo: articulo
+titulo: Bowel Disorders
+autores:
+  - Mearin F
+  - Lacy BE
+  - Chang L
+  - Chey WD
+  - Lembo AJ
+  - Simren M
+  - Spiller R
+publicacion: Gastroenterology
+anio: 2016
+volumen: 
+paginas: 
+
+identificadores:
+  pmid: 27144627
+  doi: 10.1053/j.gastro.2016.02.031
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
