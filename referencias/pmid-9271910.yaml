@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:9271910'
+clave_bibtex: ruiz1997
+tipo: articulo
+titulo: 'The clinical detection of scleral icterus: observations of multiple examiners'
+autores:
+  - Ruiz MA
+  - Saab S
+  - Rickman LS
+publicacion: Mil Med
+anio: 1997
+volumen: 162
+paginas: 560-3
+
+identificadores:
+  pmid: 9271910
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'

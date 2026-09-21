@@ -14,12 +14,25 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Coloración amarilla de la esclerótica, las mucosas y la piel, que se busca con luz natural
+  y aparece primero en la esclerótica. Su detección clínica es poco fiable: con bilirrubina
+  sérica total de 2.5 mg/dL la reconoció el 58 % de los examinadores (IC 95 %: 33 a 80 %) y
+  con 3.1 mg/dL el 68 % (IC 95 %: 46 a 85 %) (pmid:9271910); frente a la bilirrubina medida,
+  los médicos la detectaron con sensibilidad y especificidad cercanas al 70 % (pmid:10691073).
+significado: >-
+  Depósito tisular de bilirrubina por hiperbilirrubinemia (HM:0745), no conjugada
+  (producción aumentada por hemólisis o defecto de conjugación) o conjugada (daño
+  hepatocelular o colestasis intrahepática o extrahepática) (pmid:28145671, pmid:14765767).
+falsos_positivos:
+  - Carotenemia, que tiñe la piel de amarillo pero respeta la esclerótica
+  - Examen con luz artificial o por un examinador inexperto (pmid:9271910)
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6001,
+    sostenida sobre pmid:9271910 (Ruiz 1997), pmid:10691073 (Hung 2000), pmid:28145671
+    (Fargo 2017) y pmid:14765767 (Roche 2004).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.

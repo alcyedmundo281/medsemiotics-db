@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:14765767'
+clave_bibtex: roche2004
+tipo: articulo
+titulo: Jaundice in the adult patient
+autores:
+  - Roche SP
+  - Kobos R
+publicacion: Am Fam Physician
+anio: 2004
+volumen: 69
+paginas: 299-304
+
+identificadores:
+  pmid: 14765767
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'

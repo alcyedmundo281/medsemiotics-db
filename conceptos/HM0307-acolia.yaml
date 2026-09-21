@@ -14,12 +14,22 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Heces de color pálido, gris arcilla o blanquecino, sin el pigmento pardo habitual. En el
+  lactante se objetiva comparándolas con una tarjeta colorimétrica de heces (pmid:16585309).
+significado: >-
+  Llega poca o ninguna bilis al intestino por colestasis, intrahepática o por obstrucción de
+  la vía biliar; suele acompañar a la hiperbilirrubinemia conjugada (pmid:28145671). En el
+  lactante con colestasis obliga a descartar atresia biliar (pmid:21249394).
+falsos_positivos:
+  - Esteatorrea por malabsorción, con heces pálidas y grasas pero con bilis presente
+  - Sulfato de bario eliminado tras un estudio radiológico con contraste
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6001,
+    sostenida sobre pmid:28145671 (Fargo 2017), pmid:16585309 (Chen 2006) y pmid:21249394
+    (De Bruyne 2011).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.

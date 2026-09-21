@@ -1,0 +1,38 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:16585309'
+clave_bibtex: chen2006
+tipo: articulo
+titulo: Screening for biliary atresia by infant stool color card in Taiwan
+autores:
+  - Chen SM
+  - Chang MH
+  - Du JC
+  - Lin CC
+  - Chen AC
+  - Lee HC
+  - Lau BH
+  - Yang YJ
+  - Wu TC
+  - Chu CH
+  - Lai MW
+  - Chen HL
+publicacion: Pediatrics
+anio: 2006
+volumen: 117
+paginas: 1147-54
+
+identificadores:
+  pmid: 16585309
+  doi: 10.1542/peds.2005-1267
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-21
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
