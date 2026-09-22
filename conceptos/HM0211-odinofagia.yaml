@@ -14,12 +14,22 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Dolor al tragar referido por el paciente, habitualmente localizado en la garganta;
+  es el motivo de consulta más frecuente de la mononucleosis infecciosa y de las
+  faringitis (pmid:25822555).
+significado: >-
+  Inflamación o lesión de la mucosa orofaríngea o esofágica que se estimula con la
+  deglución; en la mononucleosis refleja la replicación viral inicial en la
+  orofaringe (pmid:25774295).
+falsos_positivos:
+  - Disfagia sin dolor, que indica dificultad para tragar y no dolor
+  - Dolor cervical musculoesquelético que el paciente refiere a la garganta
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6003,
+    sostenida sobre pmid:25822555 (Womack 2015) y pmid:25774295 (Balfour 2015).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.

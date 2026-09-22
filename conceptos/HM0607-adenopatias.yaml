@@ -14,12 +14,22 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Ganglios linfáticos palpables de tamaño o consistencia anormales. Se describen por
+  región, tamaño, consistencia, sensibilidad y movilidad; se clasifican como localizadas
+  o generalizadas, cuando afectan dos o más regiones (pmid:27929264).
+significado: >-
+  Respuesta de los ganglios a infección, inflamación o infiltración neoplásica. Las
+  localizadas orientan a la región que drenan; las generalizadas suelen indicar una
+  enfermedad sistémica (pmid:27929264).
+falsos_positivos:
+  - Ganglios pequeños, blandos y móviles de tamaño normal, frecuentes en cuello e ingle
+  - Masas no ganglionares como lipomas, quistes o glándulas salivales
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6003,
+    sostenida sobre pmid:27929264 (Gaddey 2016).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.

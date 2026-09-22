@@ -137,6 +137,17 @@ signos:
     - 189
     especificidad: 0.99
     ref: pmid:27115266
+pendiente:
+  - >-
+    Un metaanálisis bivariado posterior (pmid:34772769, Cai y Ebell 2021) actualiza
+    los cocientes de esta condición: adenopatía cervical posterior, LR+ 3.16 (IC95%
+    1.45-5.20); adenopatía axilar o inguinal, LR+ 3.05 (IC95% 1.85-4.70); petequias en
+    paladar, LR+ en rango 1.32-11.40; esplenomegalia, LR+ 2.39 (IC95% 1.11-5.51);
+    linfocitos > 50% y atípicos > 10%, LR+ 50.40 (IC95% 8.43-162). Concluye además que
+    la ausencia de un hallazgo aislado apenas sirve para descartar. Las aristas siguen
+    sobre pmid:27115266 hasta decidir si se sustituyen o se registran como segunda
+    medición.
+
 procedencia:
   fuente: Acuñada al poblar las primeras aristas con cociente verificado. Todos los
     valores salen del abstract de pmid:27115266, no del texto completo.

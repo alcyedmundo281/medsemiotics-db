@@ -13,9 +13,18 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Adenopatías palpables en las regiones axilares o inguinales. Su presencia junto con la
+  cervical define una adenopatía generalizada, que afecta dos o más regiones
+  (pmid:27929264).
+significado: >-
+  Afectación ganglionar fuera del territorio cervical, propia de una infección o
+  enfermedad sistémica y no de un proceso limitado a la faringe (pmid:27929264).
+falsos_positivos:
+  - Ganglios inguinales pequeños y móviles, habituales en adultos sanos
+  - Lesiones cutáneas o infecciones de miembros que explican una adenopatía regional
 
 procedencia:
-  fuente: Acuñado al modelar la mononucleosis infecciosa.
+  fuente: >-
+    Acuñado al modelar la mononucleosis infecciosa. Tríada completada al revisar la condición HM:6003,
+    sostenida sobre pmid:27929264 (Gaddey 2016).

@@ -16,12 +16,22 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Cansancio o falta de energía referida por el paciente, desproporcionada al esfuerzo y
+  que no mejora del todo con el descanso; se clasifica como fisiológica, secundaria o
+  crónica (pmid:37440739).
+significado: >-
+  Síntoma inespecífico que acompaña a infecciones, enfermedades sistémicas, trastornos
+  del ánimo o del sueño y a la falta de descanso; la historia y la exploración orientan
+  su causa (pmid:37440739).
+falsos_positivos:
+  - Debilidad muscular objetiva, que es un signo neurológico y no fatiga
+  - Somnolencia diurna por un trastorno del sueño
 
 procedencia:
-  fuente: vocabulario_semilla holonmed v1.3.0
+  fuente: >-
+    vocabulario_semilla holonmed v1.3.0. Tríada completada al revisar la condición HM:6003,
+    sostenida sobre pmid:37440739 (Latimer 2023).
   nota: >-
     Relicenciado a CC0 por el autor para su uso como índice compartido.
     El original se distribuye bajo AGPL-3.0-or-later dentro de holonmed.
