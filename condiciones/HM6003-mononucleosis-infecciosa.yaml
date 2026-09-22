@@ -31,6 +31,19 @@ signos:
     - 5.9
     ref: pmid:27115266
   decision: aumenta la probabilidad; por sí sola no confirma
+- concepto: HM:3001
+  rol: prueba_especifica
+  estado_lr: medido
+  poblacion: >-
+    metaanálisis bivariado de 17 estudios en pacientes con sospecha de mononucleosis,
+    con prevalencias de 2.1% a 80% en las cohortes prospectivas
+  lr_positivo:
+    valor: 3.16
+    ic95:
+    - 1.45
+    - 5.2
+    ref: pmid:34772769
+  decision: moderadamente útil para confirmar; su ausencia apenas descarta
 - concepto: HM:3002
   rol: prueba_especifica
   estado_lr: medido
@@ -41,6 +54,20 @@ signos:
     ref: pmid:27115266
     nota: rango entre estudios; la fuente no da estimación resumida
   decision: aumenta la probabilidad de forma similar a la cervical posterior
+- concepto: HM:3002
+  rol: prueba_especifica
+  estado_lr: medido
+  poblacion: >-
+    metaanálisis bivariado de 17 estudios en pacientes con sospecha de mononucleosis,
+    con prevalencias de 2.1% a 80% en las cohortes prospectivas
+  lr_positivo:
+    valor: 3.05
+    ic95:
+    - 1.85
+    - 4.7
+    ref: pmid:34772769
+    nota: la fuente la denomina adenopatía axilar o inguinal
+  decision: moderadamente útil para confirmar; su ausencia apenas descarta
 - concepto: HM:3003
   rol: prueba_especifica
   estado_lr: medido
@@ -52,6 +79,21 @@ signos:
     - 13
     ref: pmid:27115266
   decision: el hallazgo exploratorio que más aumenta la probabilidad
+- concepto: HM:3003
+  rol: prueba_especifica
+  estado_lr: medido
+  poblacion: >-
+    metaanálisis bivariado de 17 estudios en pacientes con sospecha de mononucleosis,
+    con prevalencias de 2.1% a 80% en las cohortes prospectivas
+  lr_positivo:
+    rango:
+    - 1.32
+    - 11.4
+    ref: pmid:34772769
+    nota: rango entre estudios en el abstract; no da estimación resumida
+  decision: >-
+    moderadamente útil para confirmar, con una incertidumbre mucho mayor que la
+    medición anterior
 - concepto: HM:0603
   rol: prueba_especifica
   estado_lr: medido
@@ -63,6 +105,19 @@ signos:
     nota: rango entre estudios, con especificidad de 0.71 a 0.99. La amplitud refleja
       lo mucho que depende del explorador.
   decision: apoya el diagnóstico y condiciona el consejo de evitar deporte de contacto
+- concepto: HM:0603
+  rol: prueba_especifica
+  estado_lr: medido
+  poblacion: >-
+    metaanálisis bivariado de 17 estudios en pacientes con sospecha de mononucleosis,
+    con prevalencias de 2.1% a 80% en las cohortes prospectivas
+  lr_positivo:
+    valor: 2.39
+    ic95:
+    - 1.11
+    - 5.51
+    ref: pmid:34772769
+  decision: moderadamente útil para confirmar; su ausencia apenas descarta
 - concepto: HM:0607
   rol: prueba_sensible
   estado_lr: medido
@@ -139,14 +194,14 @@ signos:
     ref: pmid:27115266
 pendiente:
   - >-
-    Un metaanálisis bivariado posterior (pmid:34772769, Cai y Ebell 2021) actualiza
-    los cocientes de esta condición: adenopatía cervical posterior, LR+ 3.16 (IC95%
-    1.45-5.20); adenopatía axilar o inguinal, LR+ 3.05 (IC95% 1.85-4.70); petequias en
-    paladar, LR+ en rango 1.32-11.40; esplenomegalia, LR+ 2.39 (IC95% 1.11-5.51);
-    linfocitos > 50% y atípicos > 10%, LR+ 50.40 (IC95% 8.43-162). Concluye además que
-    la ausencia de un hallazgo aislado apenas sirve para descartar. Las aristas siguen
-    sobre pmid:27115266 hasta decidir si se sustituyen o se registran como segunda
-    medición.
+    Cai y Ebell 2021 (pmid:34772769) se registra como segunda medición de la
+    adenopatía cervical posterior, la adenopatía axilar o inguinal, las petequias en
+    paladar y la esplenomegalia, junto a pmid:27115266, que no se sustituye. Falta
+    incorporar su criterio combinado (linfocitos > 50% y atípicos > 10%, LR+ 50.40,
+    IC95% 8.43-162) como tramo de HM:3004, y los cortes de linfocitos > 4 × 10⁹/L y
+    > 40-50%, que el abstract menciona sin cifras: requiere el texto completo. La
+    fuente concluye además que la ausencia de un hallazgo aislado apenas sirve para
+    descartar.
 
 procedencia:
   fuente: Acuñada al poblar las primeras aristas con cociente verificado. Todos los
