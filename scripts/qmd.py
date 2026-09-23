@@ -256,10 +256,17 @@ def tabla_signos(
                 f"| {celda(fila.etiqueta)} | {celda(fila.rol)} | "
                 f"{celda(fila.cociente)} | {marcas} |"
             )
-        notas_todas += notas
+        # Con `ref_rendimiento` la fila cita dos fuentes y el lector no sabría
+        # cuál sostiene la sensibilidad: la nota del rendimiento lleva la suya.
+        ref_rendimiento = arista.get("ref_rendimiento")
+        for etiqueta, texto in notas:
+            marca = ""
+            if ref_rendimiento and etiqueta.endswith("— Rendimiento"):
+                marca = " " + citas.marca(ref_rendimiento, f"{donde} (rendimiento)")
+            notas_todas.append((etiqueta, texto, marca))
     lineas.append("")
-    for etiqueta, texto in notas_todas:
-        lineas.append(f"- **{md_texto(etiqueta)}.** {md_texto(texto)}")
+    for etiqueta, texto, marca in notas_todas:
+        lineas.append(f"- **{md_texto(etiqueta)}.** {md_texto(texto)}{marca}")
     if notas_todas:
         lineas.append("")
     return lineas

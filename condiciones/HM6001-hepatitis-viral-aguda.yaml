@@ -62,6 +62,11 @@ signos:
       orienta a medir bilirrubina fraccionada, pruebas hepáticas y serología de hepatitis
       infecciosa; por sí sola no cuantifica la probabilidad
     ref: 'pmid:14765767'
+    sensibilidad: 0.667
+    poblacion: >-
+      adultos con hepatitis A aguda confirmada por serología en 12 hospitales de
+      Corea del Sur, 2020-2021; 84 de 126
+    ref_rendimiento: 'pmid:37652984'
   - concepto: 'HM:0306'    # Coluria
     rol: manifestacion
     estado_lr: no_medido
@@ -115,14 +120,10 @@ pendiente:
     profile[Title] OR features[Title])»: 98 resultados, cribados por título; se
     leyó el texto completo solo de Jeong 2023. No se halló ningún estudio que
     compare los hallazgos con un grupo sin hepatitis vírica, así que ninguna
-    arista tiene LR. Falta leer los resúmenes de los otros 97. Jeong 2023 (pmid:37652984) da la frecuencia de fiebre y anorexia, que
-    ya están en sus aristas. La coluria, la acolia, el dolor en hipocondrio
+    arista tiene LR. Falta leer los resúmenes de los otros 97. Jeong 2023
+    (pmid:37652984) da la frecuencia de ictericia, fiebre y anorexia, que ya
+    están en sus aristas. La coluria, la acolia, el dolor en hipocondrio
     derecho, la hepatomegalia y la astenia no figuran en sus tablas.
-  - >-
-    Jeong 2023 da la ictericia en 84 de 126 adultos con hepatitis A aguda (66.7%),
-    pero la arista de ictericia ya usa su única «ref» para la decisión
-    (pmid:14765767). Ese número entra cuando el esquema admita una ref propia para
-    la sensibilidad.
 
 procedencia:
   fuente: >-

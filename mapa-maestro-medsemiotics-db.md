@@ -70,6 +70,23 @@ incorporación y el número no puede existir. No es que falte literatura. Un
 nunca, y tratarlo como pendiente deja la ficha eternamente incompleta.
 Declararlo obliga a dar `motivo`.
 
+### `ref_rendimiento` — la fuente de la sensibilidad y la especificidad
+
+Una `sensibilidad` o una `especificidad` en la arista es un número igual que un
+cociente, y **sin procedencia no entra**: `build.py` lo rechaza. La fuente se
+toma, en este orden, de `ref_rendimiento`, de la `ref` de la arista o de la
+`ref` de un LR.
+
+La clave propia existe porque la `ref` de la arista no siempre está libre. En
+`HM:6001` la ictericia usa su `ref` para sostener la `decision` con una revisión
+(`pmid:14765767`), y su sensibilidad sale de otro estudio (`pmid:37652984`).
+Con una sola `ref` una de las dos cifras se quedaba fuera o se atribuía a una
+fuente que no la publica.
+
+Es opcional y compatible hacia atrás: un consumidor que no la lea no pierde
+nada que antes tuviera. Queda bajo el candado de la errata como cualquier otra
+`ref`, y declararla sin sensibilidad ni especificidad es un error.
+
 ### `efecto` de la arista — el eje nuevo
 
 `apoya` *(por defecto)* · `bandera_roja` · `excluye`

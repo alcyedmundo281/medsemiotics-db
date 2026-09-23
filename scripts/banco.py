@@ -448,6 +448,7 @@ CLAVES_ARISTA_CONOCIDAS = {
     "concepto", "rol", "estado_lr", "lr_positivo", "lr_negativo",
     "motivo", "decision", "nota", "advertencia", "ref", "poblacion",
     "sensibilidad", "especificidad", "ic95_sensibilidad", "ic95_especificidad",
+    "ref_rendimiento",
     "efecto", "dispara_si", "sostiene", "odds_ratio",
     "tramos", "graduacion",
     "sensibilidad_por_diametro", "sensibilidad_por_gravedad",
@@ -781,6 +782,13 @@ def filas_de_signo(indice: Indice, arista: dict, donde: str):
         ))
     if rendimiento:
         notas.append((f"{termino} — Rendimiento", ", ".join(rendimiento) + "."))
+    # La fuente del rendimiento viaja en la fila, como la del OR: la columna
+    # «Fuente» es donde el lector busca de dónde sale un número, y la `ref` de
+    # la arista puede ser otra —la que sostiene la decisión—.
+    if arista.get("ref_rendimiento"):
+        resolver_ref(indice, arista["ref_rendimiento"], f"{donde} ({termino}, rendimiento)")
+        if filas and str(arista["ref_rendimiento"]) not in filas[0].citas:
+            filas[0].citas.append(str(arista["ref_rendimiento"]))
 
     for campo, etiqueta_campo in (
         ("sensibilidad_por_diametro", "Sensibilidad por diámetro"),
