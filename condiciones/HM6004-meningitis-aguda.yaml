@@ -17,7 +17,15 @@ termino_en: Acute meningitis
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=meningitis-aguda-sacudida-cefalica"
 sinonimos: [meningitis bacteriana aguda, meningitis vírica aguda]
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 822031000000101 «Acute meningitis», activo y en el módulo
+# central. CIE-10 contra el navegador de la OMS (versión 2019): no hay código
+# para la meningitis aguda sin causa especificada —la bacteriana es G00 y la
+# vírica A87—, así que se declara G03.9 «Meningitis, unspecified», el más
+# próximo.
+codigos:
+  snomed: '822031000000101'
+  cie10: 'G03.9'
 
 probabilidad_base: null    # pendiente: la fuente no publica prevalencia
 factores_riesgo: []
@@ -78,8 +86,19 @@ signos:
 
   - concepto: 'HM:3005'    # Rigidez de nuca
     rol: prueba_sensible
-    estado_lr: no_medido
-    motivo: componente de la tríada; la fuente no publica su cociente aislado
+    estado_lr: medido
+    sensibilidad: 0.30
+    lr_positivo:
+      valor: 0.94
+      ref: 'pmid:12060874'
+      poblacion: >-
+        297 adultos con sospecha de meningitis explorados antes de la punción
+        lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
+    ref: 'pmid:12060874'
+    nota: >-
+      Attia 1999 (pmid:10411200) no publica su cociente aislado; este es de
+      Thomas 2002. La fuente solo le halla valor en los 4 pacientes con ≥ 1000
+      leucocitos en el LCR
 
   - concepto: 'HM:0501'    # Alteración del nivel de conciencia
     rol: prueba_sensible
@@ -100,6 +119,23 @@ reglas:
     advertencia: >-
       la fuente matiza que ante alto riesgo clínico hay que ir directamente a la
       punción lumbar, sin apoyarse en la exploración
+
+pendiente:
+  - >-
+    La arista de la acentuación de la cefalea con la sacudida (HM:3006) lleva el
+    LR− 0 de Attia 1999, que viene de un único estudio de 1991. La revisión
+    Cochrane de 2020 (pmid:32524581; 9 estudios, 1161 participantes) da una
+    sensibilidad agrupada de 0.653 (IC95% 0.373-0.856) y una especificidad de
+    0.704 (IC95% 0.477-0.861), con certeza muy baja, y concluye que una prueba
+    negativa no excluye la meningitis. Contradice la decisión actual de la
+    arista. Falta que el responsable clínico decida cómo actualizarla.
+  - >-
+    Thomas 2002 (pmid:12060874) mide los signos de Kernig y de Brudzinski:
+    sensibilidad 0.05 y LR+ 0.97 cada uno. Ninguno existe como concepto; la
+    procedencia decía que no se acuñarían hasta tener datos, y ya los hay.
+  - >-
+    Sin probabilidad_base: Attia 1999 no publica prevalencia, y los resúmenes
+    de Thomas 2002 y de Iguchi 2020 tampoco.
 
 procedencia:
   fuente: >-
