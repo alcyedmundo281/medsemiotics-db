@@ -10,28 +10,54 @@ termino_en: Acute viral hepatitis
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=hepatitis-viral-aguda-precision-semiotica"
 sinonimos:
   - hepatitis aguda
-  - hepatitis A
   - hepatitis vírica aguda
 
+# Verificados el 2026-09-23: CIE-10 contra el navegador de la OMS (versión 2019,
+# B17.9 «Acute viral hepatitis, unspecified»); SNOMED CT contra la edición
+# internacional 20250201 en tx.fhir.org (57412004 «Acute viral hepatitis
+# (disorder)», activo).
 codigos:
-  snomed: null
-  cie10: null    # pendiente: se declara solo con verificación, no de memoria
+  snomed: '57412004'
+  cie10: 'B17.9'
 
-probabilidad_base: null    # pendiente: prevalencia con fuente
-factores_riesgo: []
+probabilidad_base:
+  valor: 0.09
+  poblacion: >-
+    adultos con ictericia de nueva aparición (bilirrubina total > 3 mg/dL sin
+    cifra previa > 3) en un hospital comunitario de Indianápolis, 1999-2003;
+    66 de 732
+  ref: 'pmid:17156142'
+factores_riesgo:
+  - factor: Consumo de almejas u ostras crudas en los tres meses previos
+    ref: 'pmid:37652984'
+    nota: >-
+      referido por 51 de 126 adultos con hepatitis A aguda (40.5%); la fuente no
+      tiene grupo control
+  - factor: Conducta sexual de riesgo
+    ref: 'pmid:32663522'
+    nota: >-
+      presente en el 79% de los casos de hepatitis A aguda de un servicio de
+      urgencias de Barcelona, 2014-2018; la fuente no tiene grupo control
 
 # Signos que la manifiestan. Solo se enlazan conceptos existentes en el índice.
 #
-# Nota sobre por qué varias aristas son no_medible: el diagnóstico de hepatitis
+# Nota sobre por qué dos aristas son no_medible: el diagnóstico de hepatitis
 # viral aguda se hace por serología (anti-VHA IgM, HBsAg), y la elevación de
-# transaminasas junto con la ictericia forman parte de su definición de caso.
+# transaminasas y la hiperbilirrubinemia forman parte de su definición de caso.
 # Medir su cociente contra un patrón de referencia que ya los contiene es sesgo
 # de incorporación. No falta literatura: el número no puede existir.
+#
+# La ictericia se sacó de ese grupo el 2026-09-23 por decisión del responsable
+# clínico: con un patrón de referencia solo serológico, como el de Jeong 2023
+# (pmid:37652984), la ictericia queda fuera de la definición de caso y su
+# cociente sí puede medirse. Nadie lo ha publicado todavía.
 signos:
   - concepto: 'HM:0305'    # Ictericia
     rol: manifestacion
-    estado_lr: no_medible
-    motivo: forma parte de la definición de caso; sesgo de incorporación
+    estado_lr: no_medido
+    motivo: >-
+      no se halló ningún estudio que la compare con hepatitis agudas no víricas
+      frente a un patrón serológico
     decision: >-
       orienta a medir bilirrubina fraccionada, pruebas hepáticas y serología de hepatitis
       infecciosa; por sí sola no cuantifica la probabilidad
@@ -59,19 +85,44 @@ signos:
   - concepto: 'HM:0101'    # Fiebre
     rol: apoyo
     estado_lr: no_medido
+    sensibilidad: 0.611
+    poblacion: >-
+      adultos con hepatitis A aguda confirmada por serología en 12 hospitales de
+      Corea del Sur, 2020-2021; 77 de 126
+    motivo: >-
+      la fuente da la frecuencia en los casos pero no en las hepatitis agudas no
+      víricas, así que no hay especificidad ni cociente
+    ref: 'pmid:37652984'
   - concepto: 'HM:0801'    # Astenia
     rol: apoyo
     estado_lr: no_medido
   - concepto: 'HM:0802'    # Anorexia
     rol: apoyo
     estado_lr: no_medido
+    sensibilidad: 0.69
+    poblacion: >-
+      adultos con hepatitis A aguda confirmada por serología en 12 hospitales de
+      Corea del Sur, 2020-2021; 87 de 126
+    motivo: >-
+      la fuente da la frecuencia en los casos pero no en las hepatitis agudas no
+      víricas, así que no hay especificidad ni cociente
+    ref: 'pmid:37652984'
 
 pendiente:
   - >-
-    Búsqueda en PubMed del 2026-09-21: no se hallaron estudios que midan la coluria, la
-    acolia, el dolor en hipocondrio derecho, la hepatomegalia, la fiebre, la astenia ni la
-    anorexia frente a la serología en la hepatitis viral aguda. Sus aristas siguen en
-    no_medido.
+    Búsqueda en PubMed del 2026-09-23. Consulta «"acute viral hepatitis"[Title]
+    AND (clinical[Title] OR symptoms[Title] OR presentation[Title] OR
+    profile[Title] OR features[Title])»: 98 resultados, cribados por título; se
+    leyó el texto completo solo de Jeong 2023. No se halló ningún estudio que
+    compare los hallazgos con un grupo sin hepatitis vírica, así que ninguna
+    arista tiene LR. Falta leer los resúmenes de los otros 97. Jeong 2023 (pmid:37652984) da la frecuencia de fiebre y anorexia, que
+    ya están en sus aristas. La coluria, la acolia, el dolor en hipocondrio
+    derecho, la hepatomegalia y la astenia no figuran en sus tablas.
+  - >-
+    Jeong 2023 da la ictericia en 84 de 126 adultos con hepatitis A aguda (66.7%),
+    pero la arista de ictericia ya usa su única «ref» para la decisión
+    (pmid:14765767). Ese número entra cuando el esquema admita una ref propia para
+    la sensibilidad.
 
 procedencia:
   fuente: >-

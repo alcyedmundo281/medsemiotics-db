@@ -411,6 +411,24 @@ for f, d in condiciones.items():
     if d.get('clase') not in CLASES:
         err(f, f'clase «{d.get("clase")}» fuera de la taxonomía')
 
+    # Lo que la ficha deja en blanco también se cuenta. Sin esto, medsemiotics
+    # publica «No documentado» y nadie ve el hueco hasta leer el artículo.
+    codigos = d.get('codigos') or {}
+    for clave in ('cie10', 'snomed'):
+        if not codigos.get(clave):
+            avi(f, f'sin {clave}')
+    base = d.get('probabilidad_base')
+    if base is None:
+        avi(f, 'sin probabilidad_base')
+    # La probabilidad base es el número del que parte todo el cálculo de
+    # holonmed: sin procedencia no entra, igual que un LR.
+    elif not (isinstance(base, dict) and base.get('ref')):
+        err(f, 'probabilidad_base sin «ref»: un número sin procedencia no entra')
+    for fr in (d.get('factores_riesgo') or []):
+        if not (isinstance(fr, dict) and fr.get('ref')):
+            nombre = fr.get('factor') if isinstance(fr, dict) else fr
+            avi(f, f'factor de riesgo sin procedencia: «{nombre}»')
+
     # Una búsqueda que salió vacía solo vale si otro puede repetirla. «No se
     # hallaron estudios» sin la consulta es indistinguible de no haber buscado,
     # y quien llegue después vuelve a empezar de cero. Formato en CLAUDE.md,
@@ -451,6 +469,15 @@ for f, d in condiciones.items():
         # holonmed no sabe interpretar.
         if estado == 'medido' and not (s.get('lr_positivo') or s.get('lr_negativo')):
             err(f, f'«{c}» está marcado medido pero no trae ningún LR')
+        # Una sensibilidad es un número igual que un cociente. En una arista
+        # no_medido no hay LR que lleve la ref, así que tiene que llevarla la
+        # arista; si no, el número entra sin procedencia y nadie lo nota.
+        if s.get('sensibilidad') is not None or s.get('especificidad') is not None:
+            refs = [s.get('ref')] + [s[k].get('ref') for k in ('lr_positivo', 'lr_negativo')
+                                     if isinstance(s.get(k), dict)]
+            if not any(refs):
+                avi(f, f'rendimiento sin procedencia: «{c}» trae sensibilidad o '
+                       f'especificidad sin ninguna «ref»')
 
         for campo in ('lr_positivo', 'lr_negativo'):
             lr = s.get(campo)
@@ -637,7 +664,11 @@ RUTINA = ('sin significante', 'umbral sin procedencia', 'umbral sin unidad',
           # las alertas que sí piden decisión. Contadas dicen lo mismo, y el
           # candado que importa no es este aviso sino el error de más arriba,
           # que salta en cuanto una de ellas sostiene un dato.
-          'errata sin comprobar')
+          'errata sin comprobar',
+          # Huecos de las fichas: se cuentan para que la brecha sea visible,
+          # no se listan porque son decenas y no piden una decisión cada uno.
+          'sin cie10', 'sin snomed', 'sin probabilidad_base',
+          'factor de riesgo sin procedencia')
 rutina = [a for a in avisos if any(r in a for r in RUTINA)]
 atencion = [a for a in avisos if a not in rutina]
 
