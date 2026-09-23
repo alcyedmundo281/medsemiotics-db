@@ -33,6 +33,7 @@ signos:
     poblacion: adultos con sospecha de pérdida sanguínea
     especificidad: 0.98
     ic95_especificidad: [0.97, 0.99]
+    ref_rendimiento: 'pmid:10086438'
     sensibilidad_por_gravedad:
       - perdida: moderada
         sensibilidad: 0.22
