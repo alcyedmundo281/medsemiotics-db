@@ -20,9 +20,15 @@ sinonimos:
   - taponamiento pericárdico
   - compromiso hemodinámico por derrame pericárdico
 
+# Corregidos el 2026-09-23 con scripts/10_verificar_codigos.py. Los anteriores
+# —SNOMED 42232009 y CIE-10 I31.4— no existen en las fuentes que declara el
+# índice. SNOMED CT, edición internacional 20250201: 35304003 «Cardiac tamponade
+# (disorder)», activo. CIE-10 de la OMS (versión 2019): no tiene código para el
+# taponamiento —I31.4 es de la CIE-10-CM estadounidense—, así que se declara
+# I31.8 «Other specified diseases of pericardium», el más próximo.
 codigos:
-  snomed: '42232009'
-  cie10: 'I31.4'
+  snomed: '35304003'
+  cie10: 'I31.8'
 
 probabilidad_base: null
 factores_riesgo:

@@ -256,10 +256,17 @@ def tabla_signos(
                 f"| {celda(fila.etiqueta)} | {celda(fila.rol)} | "
                 f"{celda(fila.cociente)} | {marcas} |"
             )
-        notas_todas += notas
+        # Con `ref_rendimiento` la fila cita dos fuentes y el lector no sabría
+        # cuál sostiene la sensibilidad: la nota del rendimiento lleva la suya.
+        ref_rendimiento = arista.get("ref_rendimiento")
+        for etiqueta, texto in notas:
+            marca = ""
+            if ref_rendimiento and etiqueta.endswith("— Rendimiento"):
+                marca = " " + citas.marca(ref_rendimiento, f"{donde} (rendimiento)")
+            notas_todas.append((etiqueta, texto, marca))
     lineas.append("")
-    for etiqueta, texto in notas_todas:
-        lineas.append(f"- **{md_texto(etiqueta)}.** {md_texto(texto)}")
+    for etiqueta, texto, marca in notas_todas:
+        lineas.append(f"- **{md_texto(etiqueta)}.** {md_texto(texto)}{marca}")
     if notas_todas:
         lineas.append("")
     return lineas
@@ -314,20 +321,35 @@ def bloque_probabilidad_base(
     return [linea, ""]
 
 
-def bloque_factores_riesgo(condicion: dict) -> list:
+def bloque_factores_riesgo(condicion: dict, donde: str, citas: banco.Citas) -> list:
     factores = condicion.get("factores_riesgo") or []
     if not factores:
         return []
+    # Lista blanca, como en la probabilidad base. Este bloque tipografiaba solo
+    # el nombre y tiraba la `ref` y la `nota`: el libro publicaba un factor de
+    # riesgo sin su fuente aunque el índice la trajera.
+    CLAVES_FACTOR = {"nombre", "factor", "termino", "nota", "ref"}
     lineas = ["**Factores de riesgo.**", ""]
     for factor in factores:
         if isinstance(factor, dict):
+            sobrantes = sorted(set(factor) - CLAVES_FACTOR)
+            if sobrantes:
+                raise ErrorGeneracion(
+                    f"{donde}, factores_riesgo: clave(s) {', '.join(sobrantes)} "
+                    "sin renderizador en qmd.py"
+                )
             nombre = (
                 factor.get("nombre") or factor.get("factor")
                 or factor.get("termino") or ""
             )
+            linea = f"- {md_texto(frase(nombre))}"
+            if factor.get("nota"):
+                linea += " " + md_texto(frase(factor["nota"]))
+            if factor.get("ref"):
+                linea += " " + citas.marca(factor["ref"], f"{donde} (factor de riesgo)")
         else:
-            nombre = factor
-        lineas.append(f"- {md_texto(frase(nombre))}")
+            linea = f"- {md_texto(frase(factor))}"
+        lineas.append(linea)
     lineas.append("")
     return lineas
 
@@ -559,7 +581,7 @@ def capitulo_condicion(
     lineas += figuras_de_registro(indice, condicion, donde, figuras)
 
     lineas += bloque_probabilidad_base(indice, condicion, donde, citas)
-    lineas += bloque_factores_riesgo(condicion)
+    lineas += bloque_factores_riesgo(condicion, donde, citas)
     lineas += bloque_nucleo_balance(indice, condicion, donde, citas)
 
     if condicion.get("signos"):

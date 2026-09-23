@@ -1,0 +1,35 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:32663522'
+clave_bibtex: llaneras2021
+tipo: articulo
+titulo: Etiologies and Features of Acute Viral Hepatitis in Spain
+autores:
+  - Llaneras J
+  - Riveiro-Barciela M
+  - Rando-Segura A
+  - Marcos-Fosch C
+  - Roade L
+  - Velázquez F
+  - Rodríguez-Frías F
+  - Esteban R
+  - Buti M
+publicacion: Clin Gastroenterol Hepatol
+anio: 2021
+volumen: 19
+paginas: 1030-1037
+
+identificadores:
+  pmid: 32663522
+  doi: 10.1016/j.cgh.2020.07.006
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-23
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

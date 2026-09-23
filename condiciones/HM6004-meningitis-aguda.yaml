@@ -60,6 +60,7 @@ signos:
     estado_lr: no_medido
     sensibilidad: 0.50
     ic95_sensibilidad: [0.32, 0.68]
+    ref_rendimiento: 'pmid:10411200'
     motivo: >-
       la fuente publica sensibilidad agrupada pero no especificidad, así que el
       cociente no es calculable desde el abstract
@@ -69,6 +70,7 @@ signos:
     estado_lr: no_medido
     sensibilidad: 0.30
     ic95_sensibilidad: [0.22, 0.38]
+    ref_rendimiento: 'pmid:10411200'
     motivo: sensibilidad agrupada sin especificidad; LR no calculable
 
   - concepto: 'HM:0302'    # Vómitos
@@ -76,6 +78,7 @@ signos:
     estado_lr: no_medido
     sensibilidad: 0.30
     ic95_sensibilidad: [0.22, 0.38]
+    ref_rendimiento: 'pmid:10411200'
     motivo: la fuente agrupa náuseas y vómitos en una sola estimación
 
   # La tríada clásica: su fuerza está en la AUSENCIA de las tres a la vez.
