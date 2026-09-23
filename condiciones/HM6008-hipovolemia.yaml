@@ -20,7 +20,14 @@ termino_en: Hypovolemia
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=hipovolemia-aguda-signos-vitales-posturales"
 sinonimos: [depleción de volumen, hipovolemia aguda]
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 816082000 «Hypovolemia», activo y en el módulo central.
+# CIE-10 contra el navegador de la OMS (versión 2019): E86 «Volume depletion»,
+# que incluye expresamente la hipovolemia y excluye el shock hipovolémico
+# (R57.1, T79.4, T81.1).
+codigos:
+  snomed: '816082000'
+  cie10: 'E86'
 
 probabilidad_base: null    # la fuente no publica prevalencia
 factores_riesgo: []
@@ -33,6 +40,7 @@ signos:
     poblacion: adultos con sospecha de pérdida sanguínea
     especificidad: 0.98
     ic95_especificidad: [0.97, 0.99]
+    ref_rendimiento: 'pmid:10086438'
     sensibilidad_por_gravedad:
       - perdida: moderada
         sensibilidad: 0.22

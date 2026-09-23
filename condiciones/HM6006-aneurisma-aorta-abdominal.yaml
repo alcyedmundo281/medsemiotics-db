@@ -18,10 +18,50 @@ termino_en: Abdominal aortic aneurysm
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=aneurisma-aorta-abdominal-palpacion-semiotica"
 sinonimos: [AAA, aneurisma aórtico abdominal]
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 233985008 «Abdominal aortic aneurysm», activo. CIE-10 contra
+# el navegador de la OMS (versión 2019): no hay código general, solo roto
+# (I71.3) o sin mención de rotura (I71.4). Se declara I71.4 porque la condición
+# es el aneurisma que se busca con la palpación, y su advertencia excluye la
+# rotura.
+codigos:
+  snomed: '233985008'
+  cie10: 'I71.4'
 
-probabilidad_base: null    # depende del cribado; la fuente no publica previa general
-factores_riesgo: []
+probabilidad_base:
+  valor: 0.014
+  poblacion: >-
+    73 451 veteranos de 50 a 79 años sin aneurisma conocido, cribados con
+    ecografía en 15 centros de Estados Unidos; 1031 de ellos
+  nota: >-
+    prevalencia de aneurisma de 4.0 cm o mayor, que corresponde al segundo tramo
+    de la palpación; la fuente no da la de 3.0 cm o mayor en su resumen
+  ref: 'pmid:9072929'
+factores_riesgo:
+  - factor: Tabaquismo
+    ref: 'pmid:9072929'
+    nota: >-
+      OR 5.57 (IC95% 4.24-7.31) para aneurisma de 4.0 cm o mayor frente a aorta
+      normal, en análisis multivariable. Crece con los años fumados y baja con
+      los años sin fumar
+  - factor: Antecedente familiar de aneurisma de aorta abdominal
+    ref: 'pmid:9072929'
+    nota: OR 1.95 (IC95% 1.56-2.43) en análisis multivariable
+  - factor: Edad
+    ref: 'pmid:9072929'
+    nota: asociación independiente; el resumen no da su OR
+  - factor: Talla alta
+    ref: 'pmid:9072929'
+    nota: asociación independiente; el resumen no da su OR
+  - factor: Enfermedad coronaria o aterosclerosis en otro territorio
+    ref: 'pmid:9072929'
+    nota: asociación independiente; el resumen no da su OR
+  - factor: Hipercolesterolemia
+    ref: 'pmid:9072929'
+    nota: asociación independiente; el resumen no da su OR
+  - factor: Hipertensión arterial
+    ref: 'pmid:9072929'
+    nota: asociación independiente; el resumen no da su OR
 
 signos:
   - concepto: 'HM:3012'    # Pulsación aórtica ensanchada a la palpación

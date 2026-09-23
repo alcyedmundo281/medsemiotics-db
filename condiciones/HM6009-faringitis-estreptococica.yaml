@@ -19,11 +19,25 @@ url: "https://powersemiotics.com/medsemiotics/post.html?slug=faringitis-estrepto
 sinonimos:
   - faringoamigdalitis estreptocócica
   - faringitis por estreptococo del grupo A
-  - strep throat
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 43878008 «Streptococcal sore throat», activo, que lleva
+# «Streptococcal pharyngitis» como sinónimo. CIE-10 contra el navegador de la
+# OMS (versión 2019): J02.0 «Streptococcal pharyngitis».
+codigos:
+  snomed: '43878008'
+  cie10: 'J02.0'
 
-probabilidad_base: null    # la fuente no publica prevalencia
+probabilidad_base:
+  valor: 0.37
+  ic95: [0.32, 0.43]
+  poblacion: >-
+    niños menores de 18 años que consultan por odinofagia; metaanálisis de 29
+    estudios
+  nota: >-
+    solo vale para niños: en los menores de 5 años baja al 24% (IC95% 21-26%).
+    En adultos no hay estimación agrupada; ver pendiente
+  ref: 'pmid:20696723'
 factores_riesgo: []
 
 signos:
@@ -189,6 +203,12 @@ pendiente:
     Se incorporaron las escalas canónicas de Centor (pmid:6763125) y McIsaac
     (pmid:9475915). Queda pendiente evaluar la incorporación de la regla de Breese
     para población pediátrica específica si se requiere mayor granularidad.
+  - >-
+    Probabilidad base en adultos. Aalbers 2011 (pmid:21631919; 21 estudios,
+    mayores de 14 años) no da prevalencia agrupada: en sus series oscila entre
+    el 4.7% y el 37.6%, y tres de ellas excluían a los pacientes con Centor
+    menor de 2, lo que infla el extremo alto. No se transcribe como rango para
+    no leerlo como estimación.
 
 procedencia:
   fuente: >-
