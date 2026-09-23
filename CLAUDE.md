@@ -35,6 +35,7 @@ medsemiotics-db/
 ├── scripts/build.py                 ← valida; no modifica nada
 ├── scripts/6_referencia_por_pmid.py ← la ÚNICA vía para añadir una referencia
 ├── scripts/9_desbloquear_referencias.py ← recomprueba las erratas pendientes
+├── scripts/10_verificar_codigos.py  ← busca y verifica CIE-10 (OMS) y SNOMED CT en línea
 ├── scripts/banco.py                 ← carga el índice y extrae sus datos (sin tipografiar)
 ├── scripts/qmd.py                   ← proyecta el índice a un proyecto Quarto en build/quarto/
 ├── scripts/libro.py                 ← renderiza el PDF desde ese proyecto
@@ -190,6 +191,8 @@ recuperación manual.
 3. `python scripts/build.py` y reporta las alertas actuales.
 4. `python scripts/verificar_publicacion.py` (sin `--verificar-derivados`: no
    necesita el libro compilado) y reporta si alguna URL o figura está rota.
+5. `git fetch` y `gh pr list`: el trabajo en curso vive en los PR abiertos, no
+   en la memoria de ninguna sesión ni en el `main` local de ningún equipo.
 
 ## Reglas duras (no se rompen nunca)
 
@@ -203,6 +206,13 @@ recuperación manual.
   74 referencias iniciales: cuatro títulos de CrossRef están truncados o con
   erratas —una dice «Critically III» desde 1995—. Comparar títulos contra
   CrossRef genera falsas alarmas.
+- **Ningún código CIE-10 ni SNOMED de memoria.** Se buscan y se comprueban con
+  `scripts/10_verificar_codigos.py`. Un código inventado parece idéntico a uno
+  real: HM:6045 llevó CIE-10 I31.4 y SNOMED 42232009, que no existen en las
+  fuentes que el índice declara, hasta que el script los detectó.
+- **Se transcribe, no se calcula.** Ni un LR derivado de sensibilidad y
+  especificidad, ni una prevalencia sumando categorías, ni un rango entre series
+  leído como estimación. Si la fuente no publica el número, el número no entra.
 - **Los códigos `HM:` son permanentes.** No se renumeran, no se reutilizan, no
   se reasignan. Otros sistemas los citan.
 - **Antes de acuñar un código nuevo, busca si el término ya existe.** El
@@ -255,6 +265,71 @@ No se escriben a mano. Se obtienen por PMID y se verifican contra PubMed; el
 DOI se confirma contra CrossRef. El registro guarda ambos identificadores más la
 `clave_bibtex` original, que es la que citan hoy las fichas de biosemiotics: sin
 ella la migración no puede resolver `refs: [lichtenstein2008]`.
+
+## Rellenar una condición
+
+Es el procedimiento con el que se rellenan los campos vacíos de una condición
+—códigos, probabilidad base, factores de riesgo, rendimiento de las aristas—.
+Existe porque medsemiotics publica lo que el índice trae: un campo vacío sale
+como «No documentado» en el artículo, y el trabajo que el índice no hace acaba
+haciéndolo, sin procedencia, la prosa.
+
+Una condición por rama y por PR, contra `main`. Los pasos, en este orden:
+
+1. **Rama desde `origin/main` recién traído**, no desde el `main` local, que
+   suele ir atrasado: `git fetch && git switch -c feat/hmNNNN-... origin/main`.
+2. **Códigos.** Se buscan, nunca se recuerdan:
+   ```bash
+   python scripts/10_verificar_codigos.py --buscar-snomed "irritable bowel syndrome"
+   python scripts/10_verificar_codigos.py --hijos-cie10 K58
+   ```
+   - CIE-10 **de la OMS, versión 2019**, no la CIE-10-CM estadounidense.
+     SNOMED de la **edición internacional**, módulo central; `(disorder)` para
+     una condición, `(finding)` para un concepto.
+   - Si no hay código exacto se declara **el más próximo**, y un comentario
+     encima de `codigos` dice la fecha, la fuente, la etiqueta oficial y por qué
+     ése. Si la condición no distingue subtipo, la categoría (K58, B27), no un
+     subcódigo elegido al azar.
+   - Antes del PR: `python scripts/10_verificar_codigos.py --id HM:NNNN`. Con
+     errores no se abre.
+3. **Referencias**, solo por `6_referencia_por_pmid.py`. Si trae errata, se lee
+   la corrección (PubMed, PMC o Europe PMC) y se anota a mano en su
+   `verificacion`: `errata_verificada: true` y una nota con la fecha y qué
+   corrige. Regenerar el registro después confirma que el script la conserva.
+4. **Cifras.** Del resumen en PubMed o del texto completo en PMC o Europe PMC,
+   transcritas tal cual (ver la regla dura «Se transcribe, no se calcula»):
+   - Cada número lleva `ref` y la población en la que se midió, con n/N si
+     consta.
+   - Sensibilidad o especificidad sin cociente publicado: `estado_lr: no_medido`
+     con el rendimiento y un `motivo`. Si la `ref` de la arista ya sostiene
+     otra cosa —la `decision`—, la fuente del rendimiento va en
+     `ref_rendimiento`.
+   - `probabilidad_base`: población concreta. Si solo vale para un subgrupo
+     (niños, un umbral de diámetro), la `nota` lo dice.
+   - `factores_riesgo`: `factor`, `ref` y una `nota` con la medida (OR o RR con
+     su IC95) y el diseño. «La fuente no tiene grupo control» se declara. Lo
+     que la fuente cuantifica como LR va como arista, no como factor.
+5. **Evidencia posterior.** Antes de dar por buena una arista que sale de una
+   revisión antigua, se busca una más reciente (Cochrane, metaanálisis). Si la
+   contradice, **no se cambia sin el responsable clínico**: se anota en
+   `pendiente` y se pregunta. Así se detectó que el LR− 0 de la sacudida
+   cefálica venía de un solo estudio de 1991 y Cochrane 2020 lo desmentía.
+6. **La búsqueda queda registrada** en `pendiente`, sobre todo si salió vacía,
+   con este formato —`build.py` avisa si falta la fecha, la consulta o el número
+   de resultados—:
+   > Búsqueda en PubMed del AAAA-MM-DD. Consulta «...»: N resultados, cribados
+   > por título; se leyó el texto completo de .... Falta ....
+7. **Lo que decide el responsable clínico** se propone en el PR, no se aplica:
+   acuñar un concepto; cambiar `estado_lr`, `rol` o `decision`; retirar un
+   sinónimo. Criterios ya aprobados, que se aplican igual cada vez:
+   - Un sinónimo que es un subtipo («hepatitis A»), una definición («angina
+     inestable e infarto») o un término en inglés («strep throat») se retira.
+   - Una `prueba_sensible` con sensibilidad baja pasa a `apoyo`.
+8. **Cierre**: `build.py` sin errores, los tests, `verificar_publicacion.py`,
+   `10_verificar_codigos.py --id`, y `qmd.py` **mirando el capítulo generado**:
+   así aparecieron tres fallos del generador que ninguna validación veía. El PR
+   lleva una tabla campo / valor / fuente y una sección «Pendiente de decisión
+   clínica». Tras fusionarlo, medsemiotics regenera el artículo.
 
 ## Qué NO hacer
 

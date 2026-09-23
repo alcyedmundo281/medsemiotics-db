@@ -83,6 +83,7 @@ signos:
   rol: manifestacion
   estado_lr: sin_efecto
   sensibilidad: 0.81
+  ref_rendimiento: pmid:27115266
   motivo: '«symptoms are of limited value»: sensible (0.81-0.83) pero inespecífico.
     La fuente no publica cociente porque no discrimina.'
 - concepto: HM:0801
