@@ -428,6 +428,22 @@ for f, d in condiciones.items():
         if not (isinstance(fr, dict) and fr.get('ref')):
             nombre = fr.get('factor') if isinstance(fr, dict) else fr
             avi(f, f'factor de riesgo sin procedencia: «{nombre}»')
+
+    # Una búsqueda que salió vacía solo vale si otro puede repetirla. «No se
+    # hallaron estudios» sin la consulta es indistinguible de no haber buscado,
+    # y quien llegue después vuelve a empezar de cero. Formato en CLAUDE.md,
+    # «Rellenar una condición».
+    for nota in (d.get('pendiente') or []):
+        texto = ' '.join(str(nota).split())
+        if not re.match(r'b[uú]squeda en pubmed', texto, re.I):
+            continue
+        falta = [nombre for nombre, patron in (
+            ('fecha', r'\d{4}-\d{2}-\d{2}'),
+            ('consulta entre «»', r'«[^»]+»'),
+            ('número de resultados', r'\d[\d\s.]*\s+resultados'),
+        ) if not re.search(patron, texto)]
+        if falta:
+            avi(f, f'búsqueda en PubMed no reproducible: le falta {", ".join(falta)}')
     for s in (d.get('signos') or []):
         n_aristas += 1
         revisa_efecto(f, s, 'arista')
