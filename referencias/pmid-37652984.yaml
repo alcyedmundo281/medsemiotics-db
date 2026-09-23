@@ -1,0 +1,50 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:37652984'
+clave_bibtex: jeong2023
+tipo: articulo
+titulo: 'Etiology and clinical characteristics of acute viral hepatitis in South Korea during 2020-2021: a prospective multicenter study'
+autores:
+  - Jeong CY
+  - Choi GH
+  - Jang ES
+  - Kim YS
+  - Lee YJ
+  - Kim IH
+  - Cho SB
+  - Yoon JH
+  - Kim KA
+  - Choi DH
+  - Chung WJ
+  - Cho HC
+  - Na SK
+  - Kim YT
+  - Lee BS
+  - Jeong SH
+publicacion: Sci Rep
+anio: 2023
+volumen: 13
+paginas: 14271
+
+identificadores:
+  pmid: 37652984
+  doi: 10.1038/s41598-023-40775-5
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-23
+  retractado: false
+  errata: 'Sci Rep. 2024 Nov 19;14(1):28622. doi: 10.1038/s41598-024-78816-2.'
+  errata_corrige: 'Author Correction: Etiology and clinical characteristics of acute viral hepatitis in South'
+  crossref: true
+  crossref_titulo_coincide: true
+  errata_verificada: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - >-
+      Errata comprobada el 2026-09-23 (PMC11576991): corrige solo la grafía del
+      autor Hyun Chin Cho. Las cifras de las tablas 1 a 3 no cambian.
