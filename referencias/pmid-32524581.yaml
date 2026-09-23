@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:32524581'
+clave_bibtex: iguchi2020
+tipo: articulo
+titulo: Diagnostic test accuracy of jolt accentuation for headache in acute meningitis in the emergency setting
+autores:
+  - Iguchi M
+  - Noguchi Y
+  - Yamamoto S
+  - Tanaka Y
+  - Tsujimoto H
+publicacion: Cochrane Database Syst Rev
+anio: 2020
+volumen: 6
+paginas: CD012824
+
+identificadores:
+  pmid: 32524581
+  doi: 10.1002/14651858.CD012824.pub2
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-23
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
