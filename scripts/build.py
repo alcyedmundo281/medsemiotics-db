@@ -37,6 +37,33 @@ def avi(f, m):
     avisos.append(f'{f}: {m}')
 
 
+class CargadorEstricto(yaml.SafeLoader):
+    """SafeLoader que rechaza claves repetidas en un mismo mapa.
+
+    PyYAML se queda en silencio con la última. Así se perdió la procedencia de
+    HM:3030: un segundo bloque `procedencia` añadido después sustituyó al
+    original, y el índice atribuía el concepto a una condición que ni lo usa.
+    Pasó otra vez al añadir un segundo `pendiente` a HM:6009, que habría
+    borrado el primero. Es el fallo silencioso por excelencia.
+    """
+
+
+def _mapa_sin_duplicados(cargador, nodo, deep=False):
+    vistas = set()
+    for clave_nodo, _ in nodo.value:
+        clave = cargador.construct_object(clave_nodo, deep=deep)
+        if clave in vistas:
+            raise yaml.constructor.ConstructorError(
+                None, None, f'clave «{clave}» repetida: YAML se queda con la última '
+                f'y la otra se pierde en silencio', clave_nodo.start_mark)
+        vistas.add(clave)
+    return cargador.construct_mapping(nodo, deep=deep)
+
+
+CargadorEstricto.add_constructor(
+    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _mapa_sin_duplicados)
+
+
 def carga(directorio):
     d = RAIZ / directorio
     if not d.exists():
@@ -44,7 +71,7 @@ def carga(directorio):
     out = {}
     for f in sorted(d.glob('*.yaml')):
         try:
-            out[f.name] = yaml.safe_load(f.read_text(encoding='utf8')) or {}
+            out[f.name] = yaml.load(f.read_text(encoding='utf8'), Loader=CargadorEstricto) or {}
         except Exception as e:
             err(f.name, f'YAML ilegible: {str(e)[:80]}')
     return out

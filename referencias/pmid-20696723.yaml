@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:20696723'
+clave_bibtex: shaikh2010
+tipo: articulo
+titulo: 'Prevalence of streptococcal pharyngitis and streptococcal carriage in children: a meta-analysis'
+autores:
+  - Shaikh N
+  - Leonard E
+  - Martin JM
+publicacion: Pediatrics
+anio: 2010
+volumen: 126
+paginas: e557-64
+
+identificadores:
+  pmid: 20696723
+  doi: 10.1542/peds.2009-2648
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-23
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
