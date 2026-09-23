@@ -15,7 +15,7 @@ clase: enfermedad
 termino: Meningitis aguda
 termino_en: Acute meningitis
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=meningitis-aguda-sacudida-cefalica"
-sinonimos: [meningitis bacteriana aguda, meningitis vírica aguda]
+sinonimos: []
 
 # Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
 # en tx.fhir.org: 822031000000101 «Acute meningitis», activo y en el módulo
@@ -85,7 +85,7 @@ signos:
       fuente no desglosa el cociente de cada componente por separado.
 
   - concepto: 'HM:3005'    # Rigidez de nuca
-    rol: prueba_sensible
+    rol: apoyo
     estado_lr: medido
     sensibilidad: 0.30
     lr_positivo:
@@ -99,6 +99,30 @@ signos:
       Attia 1999 (pmid:10411200) no publica su cociente aislado; este es de
       Thomas 2002. La fuente solo le halla valor en los 4 pacientes con ≥ 1000
       leucocitos en el LCR
+
+  - concepto: 'HM:3238'    # Signo de Kernig
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.05
+    lr_positivo:
+      valor: 0.97
+      ref: 'pmid:12060874'
+      poblacion: >-
+        297 adultos con sospecha de meningitis explorados antes de la punción
+        lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
+    ref: 'pmid:12060874'
+
+  - concepto: 'HM:3239'    # Signo de Brudzinski
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.05
+    lr_positivo:
+      valor: 0.97
+      ref: 'pmid:12060874'
+      poblacion: >-
+        297 adultos con sospecha de meningitis explorados antes de la punción
+        lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
+    ref: 'pmid:12060874'
 
   - concepto: 'HM:0501'    # Alteración del nivel de conciencia
     rol: prueba_sensible
@@ -130,16 +154,11 @@ pendiente:
     negativa no excluye la meningitis. Contradice la decisión actual de la
     arista. Falta que el responsable clínico decida cómo actualizarla.
   - >-
-    Thomas 2002 (pmid:12060874) mide los signos de Kernig y de Brudzinski:
-    sensibilidad 0.05 y LR+ 0.97 cada uno. Ninguno existe como concepto; la
-    procedencia decía que no se acuñarían hasta tener datos, y ya los hay.
-  - >-
     Sin probabilidad_base: Attia 1999 no publica prevalencia, y los resúmenes
     de Thomas 2002 y de Iguchi 2020 tampoco.
 
 procedencia:
   fuente: >-
     Acuñada al poblar aristas con cociente verificado. Valores del abstract de
-    pmid:10411200, no del texto completo. El signo de Kernig lo evaluó un solo
-    estudio y el de Brudzinski ninguno posterior al original, por lo que no se
-    crean sus conceptos hasta tener datos que registrar.
+    pmid:10411200, no del texto completo. Los signos de Kernig y de Brudzinski
+    se acuñaron el 2026-09-23 con los datos de Thomas 2002 (pmid:12060874).
