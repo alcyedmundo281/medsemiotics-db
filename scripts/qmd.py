@@ -290,19 +290,30 @@ def bloque_probabilidad_base(
     partes = []
     if base.get("valor") is not None:
         valor = base["valor"]
+        # Los decimales que guarda el índice, como en el rendimiento: con `:.0%`
+        # una prevalencia de 0.014 se publicaba como «1%» y 0.077 como «8%».
         texto = (
-            f"{valor:.0%}" if isinstance(valor, float) and valor <= 1 else str(valor)
+            banco._fraccion_en_porcentaje(valor)
+            if isinstance(valor, float) and valor <= 1 else str(valor)
         )
         partes.append(md_texto(texto))
     elif base.get("rango"):
-        partes.append(md_texto("–".join(str(v) for v in base["rango"])))
+        # En la misma unidad que un valor suelto: «0.02–0.9» junto a «15%»
+        # obligaba al lector a adivinar que las dos son fracciones.
+        rango = base["rango"]
+        if all(isinstance(v, float) and v <= 1 for v in rango):
+            rango = [banco._fraccion_en_porcentaje(v) for v in rango]
+        partes.append(md_texto("–".join(str(v) for v in rango)))
     linea = "**Probabilidad base.**"
     if partes:
         linea += " " + partes[0]
         if base.get("ic95"):
             a, b = base["ic95"][0], base["ic95"][1]
             pct = all(isinstance(v, float) and v <= 1 for v in (a, b))
-            rango = f"{a:.0%}–{b:.0%}" if pct else f"{a}–{b}"
+            rango = (
+                f"{banco._fraccion_en_porcentaje(a)}–{banco._fraccion_en_porcentaje(b)}"
+                if pct else f"{a}–{b}"
+            )
             linea += " " + md_texto(f"(IC95% {rango})")
         linea += "."
     if base.get("poblacion"):
