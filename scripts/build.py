@@ -26,6 +26,12 @@ ROLES = {'manifestacion', 'prueba_sensible', 'prueba_especifica', 'apoyo', 'imag
 # mañana en un pull request.
 ESTADOS_LR = {'medido', 'no_medido', 'sin_efecto', 'no_medible'}
 
+# Las claves que citan una referencia. El barrido que comprueba que resuelven y
+# el que decide qué referencias sostienen un dato (y por tanto quedan bajo el
+# candado de la errata) leen esta misma lista: una clave que solo viera uno de
+# los dos citaría una fuente sin cotejar sin que nada saltara.
+CLAVES_REF = ('ref', 'ref_rendimiento')
+
 errores, avisos = [], []
 
 
@@ -437,6 +443,40 @@ for f, d in condiciones.items():
             err(f, f'falta «{req}»')
     if d.get('clase') not in CLASES:
         err(f, f'clase «{d.get("clase")}» fuera de la taxonomía')
+
+    # Lo que la ficha deja en blanco también se cuenta. Sin esto, medsemiotics
+    # publica «No documentado» y nadie ve el hueco hasta leer el artículo.
+    codigos = d.get('codigos') or {}
+    for clave in ('cie10', 'snomed'):
+        if not codigos.get(clave):
+            avi(f, f'sin {clave}')
+    base = d.get('probabilidad_base')
+    if base is None:
+        avi(f, 'sin probabilidad_base')
+    # La probabilidad base es el número del que parte todo el cálculo de
+    # holonmed: sin procedencia no entra, igual que un LR.
+    elif not (isinstance(base, dict) and base.get('ref')):
+        err(f, 'probabilidad_base sin «ref»: un número sin procedencia no entra')
+    for fr in (d.get('factores_riesgo') or []):
+        if not (isinstance(fr, dict) and fr.get('ref')):
+            nombre = fr.get('factor') if isinstance(fr, dict) else fr
+            avi(f, f'factor de riesgo sin procedencia: «{nombre}»')
+
+    # Una búsqueda que salió vacía solo vale si otro puede repetirla. «No se
+    # hallaron estudios» sin la consulta es indistinguible de no haber buscado,
+    # y quien llegue después vuelve a empezar de cero. Formato en CLAUDE.md,
+    # «Rellenar una condición».
+    for nota in (d.get('pendiente') or []):
+        texto = ' '.join(str(nota).split())
+        if not re.match(r'b[uú]squeda en pubmed', texto, re.I):
+            continue
+        falta = [nombre for nombre, patron in (
+            ('fecha', r'\d{4}-\d{2}-\d{2}'),
+            ('consulta entre «»', r'«[^»]+»'),
+            ('número de resultados', r'\d[\d\s.]*\s+resultados'),
+        ) if not re.search(patron, texto)]
+        if falta:
+            avi(f, f'búsqueda en PubMed no reproducible: le falta {", ".join(falta)}')
     for s in (d.get('signos') or []):
         n_aristas += 1
         revisa_efecto(f, s, 'arista')
@@ -462,6 +502,21 @@ for f, d in condiciones.items():
         # holonmed no sabe interpretar.
         if estado == 'medido' and not (s.get('lr_positivo') or s.get('lr_negativo')):
             err(f, f'«{c}» está marcado medido pero no trae ningún LR')
+        # Una sensibilidad es un número igual que un cociente: sin procedencia no
+        # entra. En una arista no_medido no hay LR que lleve la ref, y la `ref`
+        # de la arista puede estar sosteniendo ya la `decision` con otra fuente;
+        # por eso el rendimiento tiene su propia clave, `ref_rendimiento`.
+        tiene_rendimiento = (s.get('sensibilidad') is not None
+                             or s.get('especificidad') is not None)
+        if tiene_rendimiento:
+            refs = [s.get('ref_rendimiento'), s.get('ref')] + [
+                s[k].get('ref') for k in ('lr_positivo', 'lr_negativo')
+                if isinstance(s.get(k), dict)]
+            if not any(refs):
+                err(f, f'«{c}» trae sensibilidad o especificidad sin procedencia: '
+                       f'declara «ref_rendimiento»')
+        elif s.get('ref_rendimiento'):
+            err(f, f'«{c}» declara «ref_rendimiento» sin sensibilidad ni especificidad')
 
         for campo in ('lr_positivo', 'lr_negativo'):
             lr = s.get(campo)
@@ -560,7 +615,7 @@ for f, d in condiciones.items():
         if isinstance(nodo, dict):
             for k, v in nodo.items():
                 aqui = f'{ruta}.{k}' if ruta else k
-                if k == 'ref' and isinstance(v, str):
+                if k in CLAVES_REF and isinstance(v, str):
                     if v not in ids_ref:
                         err(f, f'«{aqui}» cita «{v}», que no está en referencias/')
                 elif k == 'concepto' and isinstance(v, str):
@@ -584,7 +639,7 @@ for _d in list(condiciones.values()) + list(conceptos.values()):
     def _rec(n):
         if isinstance(n, dict):
             for k, v in n.items():
-                if k == 'ref' and isinstance(v, str):
+                if k in CLAVES_REF and isinstance(v, str):
                     refs_citadas.add(v)
                 else:
                     _rec(v)
@@ -648,7 +703,11 @@ RUTINA = ('sin significante', 'umbral sin procedencia', 'umbral sin unidad',
           # las alertas que sí piden decisión. Contadas dicen lo mismo, y el
           # candado que importa no es este aviso sino el error de más arriba,
           # que salta en cuanto una de ellas sostiene un dato.
-          'errata sin comprobar')
+          'errata sin comprobar',
+          # Huecos de las fichas: se cuentan para que la brecha sea visible,
+          # no se listan porque son decenas y no piden una decisión cada uno.
+          'sin cie10', 'sin snomed', 'sin probabilidad_base',
+          'factor de riesgo sin procedencia')
 rutina = [a for a in avisos if any(r in a for r in RUTINA)]
 atencion = [a for a in avisos if a not in rutina]
 

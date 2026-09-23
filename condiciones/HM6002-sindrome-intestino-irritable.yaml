@@ -13,9 +13,14 @@ sinonimos:
   - SII
   - intestino irritable
 
+# Verificados el 2026-09-23: CIE-10 contra el navegador de la OMS (versión 2019,
+# K58 «Irritable bowel syndrome», categoría con los subtipos K58.1 a K58.8; se
+# declara la categoría porque la condición no distingue subtipo); SNOMED CT
+# contra la edición internacional 20250201 en tx.fhir.org (10743008 «Irritable
+# bowel syndrome (disorder)», activo).
 codigos:
-  snomed: null
-  cie10: null    # pendiente: se declara solo con verificación, no de memoria
+  snomed: '10743008'
+  cie10: 'K58'
 
 probabilidad_base:
   valor: 0.57
@@ -24,7 +29,23 @@ probabilidad_base:
     investigación (10 estudios prospectivos, 2355 pacientes); prevalencia resumida
     de SII tras la investigación del tracto gastrointestinal bajo
   ref: 'pmid:18854541'
-factores_riesgo: []
+factores_riesgo:
+  - factor: Enteritis infecciosa en los 12 meses previos
+    ref: 'pmid:28069350'
+    nota: >-
+      riesgo relativo 4.2 (IC95% 3.1-5.7) frente a quien no la tuvo; 2.3 (IC95%
+      1.8-3.0) si fue hace más de 12 meses. Metaanálisis de 45 estudios de
+      cohortes
+  - factor: Sexo femenino
+    ref: 'pmid:22426087'
+    nota: >-
+      OR 1.67 (IC95% 1.53-1.82) frente a varones en la población general; 80
+      poblaciones, 260 960 adultos
+  - factor: Edad menor de 50 años
+    ref: 'pmid:22426087'
+    nota: >-
+      en mayores de 50 años la prevalencia es menor, OR 0.75 (IC95% 0.62-0.92)
+      frente a menores de 50
 
 # Signos que lo manifiestan. Solo se enlazan conceptos existentes en el índice.
 signos:
