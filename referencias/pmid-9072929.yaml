@@ -1,0 +1,36 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:9072929'
+clave_bibtex: lederle1997
+tipo: articulo
+titulo: Prevalence and associations of abdominal aortic aneurysm detected through screening. Aneurysm Detection and Management (ADAM) Veterans Affairs Cooperative Study Group
+autores:
+  - Lederle FA
+  - Johnson GR
+  - Wilson SE
+  - Chute EP
+  - Littooy FN
+  - Bandyk D
+  - Krupski WC
+  - Barone GW
+  - Acher CW
+  - Ballard DJ
+publicacion: Ann Intern Med
+anio: 1997
+volumen: 126
+paginas: 441-9
+
+identificadores:
+  pmid: 9072929
+  doi: 10.7326/0003-4819-126-6-199703150-00004
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-23
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

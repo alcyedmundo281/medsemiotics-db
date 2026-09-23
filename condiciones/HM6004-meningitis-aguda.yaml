@@ -1,13 +1,16 @@
 # Condición del índice. Los códigos HM: son permanentes.
 #
 # Datos de pmid:10411200 (Attia 1999, JAMA), revisión sistemática de la serie
-# Rational Clinical Examination sobre 10 estudios en adultos.
+# Rational Clinical Examination sobre 10 estudios en adultos. Desde el
+# 2026-09-23, la rigidez de nuca y los signos de Kernig y de Brudzinski salen de
+# Thomas 2002 (pmid:12060874), y la acentuación de la cefalea con la sacudida,
+# de la revisión Cochrane de 2020 (pmid:32524581), que sustituye al único
+# estudio en que se apoyaba Attia.
 #
 # Advertencia que la propia fuente hace y conviene no perder: «many of the signs
-# and symptoms of meningitis have been inadequately studied». Solo una arista
-# tiene par de cocientes publicado. Las demás traen sensibilidad sin
-# especificidad, con lo que el LR no es calculable a partir del abstract: van
-# como no_medido con el dato disponible anotado.
+# and symptoms of meningitis have been inadequately studied». Ninguna arista
+# tiene par de cocientes publicado. Las que no traen cociente van como
+# no_medido con el dato disponible anotado.
 
 id: 'HM:6004'
 tipo: condicion
@@ -15,40 +18,49 @@ clase: enfermedad
 termino: Meningitis aguda
 termino_en: Acute meningitis
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=meningitis-aguda-sacudida-cefalica"
-sinonimos: [meningitis bacteriana aguda, meningitis vírica aguda]
+sinonimos: []
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 822031000000101 «Acute meningitis», activo y en el módulo
+# central. CIE-10 contra el navegador de la OMS (versión 2019): no hay código
+# para la meningitis aguda sin causa especificada —la bacteriana es G00 y la
+# vírica A87—, así que se declara G03.9 «Meningitis, unspecified», el más
+# próximo.
+codigos:
+  snomed: '822031000000101'
+  cie10: 'G03.9'
 
 probabilidad_base: null    # pendiente: la fuente no publica prevalencia
 factores_riesgo: []
 
 signos:
   - concepto: 'HM:3006'    # Acentuación de la cefalea con la sacudida cefálica
-    rol: prueba_sensible
-    estado_lr: medido
-    sensibilidad: 1.00
-    especificidad: 0.54
-    lr_positivo:
-      valor: 2.2
-      ref: 'pmid:10411200'
-      poblacion: pacientes que ya presentan fiebre y cefalea
-    lr_negativo:
-      valor: 0.0
-      ref: 'pmid:10411200'
-      poblacion: pacientes que ya presentan fiebre y cefalea
-      nota: >-
-        un LR− de 0 procede de una sensibilidad del 100% en la serie estudiada.
-        Tratarlo como certeza absoluta sería un error de lectura: es el
-        resultado de una muestra, no una imposibilidad.
+    rol: apoyo
+    estado_lr: no_medido
+    sensibilidad: 0.653
+    ic95_sensibilidad: [0.373, 0.856]
+    especificidad: 0.704
+    ic95_especificidad: [0.477, 0.861]
+    poblacion: >-
+      pacientes con sospecha de meningitis en urgencias, 9 estudios y 1161
+      participantes; patrón de referencia, la pleocitosis en el LCR
+    ref: 'pmid:32524581'
+    motivo: >-
+      la revisión publica sensibilidad y especificidad agrupadas, con certeza muy
+      baja, pero no el cociente. No se calcula aquí
+    nota: >-
+      sin alteración de la conciencia (8 estudios, 921 participantes), Se 0.752
+      (IC95% 0.543-0.886) y Sp 0.608 (IC95% 0.434-0.759). Sustituye al LR+ 2.2 y
+      LR− 0 de Attia 1999 (pmid:10411200), que venían de un único estudio de 1991
     decision: >-
-      maniobra adjunta útil en quien ya tiene fiebre y cefalea; su negatividad
-      es lo que más ayuda
+      una prueba negativa no excluye la meningitis; no evita la punción lumbar
 
   - concepto: 'HM:0207'    # Cefalea
     rol: manifestacion
     estado_lr: no_medido
     sensibilidad: 0.50
     ic95_sensibilidad: [0.32, 0.68]
+    ref_rendimiento: 'pmid:10411200'
     motivo: >-
       la fuente publica sensibilidad agrupada pero no especificidad, así que el
       cociente no es calculable desde el abstract
@@ -58,6 +70,7 @@ signos:
     estado_lr: no_medido
     sensibilidad: 0.30
     ic95_sensibilidad: [0.22, 0.38]
+    ref_rendimiento: 'pmid:10411200'
     motivo: sensibilidad agrupada sin especificidad; LR no calculable
 
   - concepto: 'HM:0302'    # Vómitos
@@ -65,6 +78,7 @@ signos:
     estado_lr: no_medido
     sensibilidad: 0.30
     ic95_sensibilidad: [0.22, 0.38]
+    ref_rendimiento: 'pmid:10411200'
     motivo: la fuente agrupa náuseas y vómitos en una sola estimación
 
   # La tríada clásica: su fuerza está en la AUSENCIA de las tres a la vez.
@@ -77,9 +91,44 @@ signos:
       fuente no desglosa el cociente de cada componente por separado.
 
   - concepto: 'HM:3005'    # Rigidez de nuca
-    rol: prueba_sensible
-    estado_lr: no_medido
-    motivo: componente de la tríada; la fuente no publica su cociente aislado
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.30
+    lr_positivo:
+      valor: 0.94
+      ref: 'pmid:12060874'
+      poblacion: >-
+        297 adultos con sospecha de meningitis explorados antes de la punción
+        lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
+    ref: 'pmid:12060874'
+    nota: >-
+      Attia 1999 (pmid:10411200) no publica su cociente aislado; este es de
+      Thomas 2002. La fuente solo le halla valor en los 4 pacientes con ≥ 1000
+      leucocitos en el LCR
+
+  - concepto: 'HM:3238'    # Signo de Kernig
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.05
+    lr_positivo:
+      valor: 0.97
+      ref: 'pmid:12060874'
+      poblacion: >-
+        297 adultos con sospecha de meningitis explorados antes de la punción
+        lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
+    ref: 'pmid:12060874'
+
+  - concepto: 'HM:3239'    # Signo de Brudzinski
+    rol: apoyo
+    estado_lr: medido
+    sensibilidad: 0.05
+    lr_positivo:
+      valor: 0.97
+      ref: 'pmid:12060874'
+      poblacion: >-
+        297 adultos con sospecha de meningitis explorados antes de la punción
+        lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
+    ref: 'pmid:12060874'
 
   - concepto: 'HM:0501'    # Alteración del nivel de conciencia
     rol: prueba_sensible
@@ -101,9 +150,13 @@ reglas:
       la fuente matiza que ante alto riesgo clínico hay que ir directamente a la
       punción lumbar, sin apoyarse en la exploración
 
+pendiente:
+  - >-
+    Sin probabilidad_base: Attia 1999 no publica prevalencia, y los resúmenes
+    de Thomas 2002 y de Iguchi 2020 tampoco.
+
 procedencia:
   fuente: >-
     Acuñada al poblar aristas con cociente verificado. Valores del abstract de
-    pmid:10411200, no del texto completo. El signo de Kernig lo evaluó un solo
-    estudio y el de Brudzinski ninguno posterior al original, por lo que no se
-    crean sus conceptos hasta tener datos que registrar.
+    pmid:10411200, no del texto completo. Los signos de Kernig y de Brudzinski
+    se acuñaron el 2026-09-23 con los datos de Thomas 2002 (pmid:12060874).

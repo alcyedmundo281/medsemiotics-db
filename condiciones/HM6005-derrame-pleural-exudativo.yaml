@@ -16,7 +16,15 @@ termino_en: Exudative pleural effusion
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=derrame-pleural-exudado-criterios-light-colesterol"
 sinonimos: [exudado pleural, derrame pleural tipo exudado]
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-23. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 13841000119107 «Exudative pleural effusion», activo y en el
+# módulo central. CIE-10 contra el navegador de la OMS (versión 2019): no
+# distingue exudado de trasudado, así que se declara J90 «Pleural effusion, not
+# elsewhere classified», el más próximo. Cuando el derrame se debe a una
+# enfermedad clasificada en otro lugar, la OMS lo codifica como J91.
+codigos:
+  snomed: '13841000119107'
+  cie10: 'J90'
 
 probabilidad_base: null    # pendiente: depende por completo del contexto clínico
 factores_riesgo: []
@@ -72,6 +80,15 @@ signos:
     motivo: >-
       es la condición previa, no una prueba: sin derrame no hay nada que
       clasificar como exudado o trasudado
+
+pendiente:
+  - >-
+    Sin probabilidad_base. Búsqueda en PubMed del 2026-09-23 de series de
+    toracocentesis consecutivas: Porcel 2014 (pmid:24360987; 3077 pacientes) da
+    las causas del derrame pero no la proporción de exudados en su resumen, y
+    Wilcox 2014 (pmid:24938565) tampoco. Sumar las causas que suelen dar exudado
+    sería inferir la cifra, no transcribirla. Falta leer el texto completo de
+    Porcel 2014.
 
 procedencia:
   fuente: >-

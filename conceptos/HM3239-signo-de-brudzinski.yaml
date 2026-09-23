@@ -1,0 +1,19 @@
+# Concepto del índice. Acuñado al modelar HM:6004 (meningitis aguda), cuando
+# Thomas 2002 (pmid:12060874) dio los datos que su procedencia esperaba.
+
+id: 'HM:3239'
+tipo: concepto
+semantica: hallazgo
+termino: Signo de Brudzinski
+sinonimos: []
+padre: 'HM:0500'
+# SNOMED verificado el 2026-09-23 contra la edición internacional 20250201 en
+# tx.fhir.org: 82345001 «Brudzinski's sign (finding)», activo.
+codigos: {snomed: '82345001', icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: Acuñado al modelar la meningitis aguda del adulto.
