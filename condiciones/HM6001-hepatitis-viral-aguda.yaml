@@ -42,16 +42,23 @@ factores_riesgo:
 
 # Signos que la manifiestan. Solo se enlazan conceptos existentes en el índice.
 #
-# Nota sobre por qué varias aristas son no_medible: el diagnóstico de hepatitis
+# Nota sobre por qué dos aristas son no_medible: el diagnóstico de hepatitis
 # viral aguda se hace por serología (anti-VHA IgM, HBsAg), y la elevación de
-# transaminasas junto con la ictericia forman parte de su definición de caso.
+# transaminasas y la hiperbilirrubinemia forman parte de su definición de caso.
 # Medir su cociente contra un patrón de referencia que ya los contiene es sesgo
 # de incorporación. No falta literatura: el número no puede existir.
+#
+# La ictericia se sacó de ese grupo el 2026-09-23 por decisión del responsable
+# clínico: con un patrón de referencia solo serológico, como el de Jeong 2023
+# (pmid:37652984), la ictericia queda fuera de la definición de caso y su
+# cociente sí puede medirse. Nadie lo ha publicado todavía.
 signos:
   - concepto: 'HM:0305'    # Ictericia
     rol: manifestacion
-    estado_lr: no_medible
-    motivo: forma parte de la definición de caso; sesgo de incorporación
+    estado_lr: no_medido
+    motivo: >-
+      no se halló ningún estudio que la compare con hepatitis agudas no víricas
+      frente a un patrón serológico
     decision: >-
       orienta a medir bilirrubina fraccionada, pruebas hepáticas y serología de hepatitis
       infecciosa; por sí sola no cuantifica la probabilidad
@@ -117,11 +124,6 @@ pendiente:
     pero la arista de ictericia ya usa su única «ref» para la decisión
     (pmid:14765767). Ese número entra cuando el esquema admita una ref propia para
     la sensibilidad.
-  - >-
-    El motivo de no_medible de la ictericia dice que forma parte de la definición
-    de caso. En Jeong 2023 el patrón de referencia es solo serológico, así que la
-    ictericia no está dentro de él. Falta que el responsable clínico decida si la
-    arista es no_medible o no_medido.
 
 procedencia:
   fuente: >-
