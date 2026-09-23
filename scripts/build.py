@@ -26,6 +26,12 @@ ROLES = {'manifestacion', 'prueba_sensible', 'prueba_especifica', 'apoyo', 'imag
 # mañana en un pull request.
 ESTADOS_LR = {'medido', 'no_medido', 'sin_efecto', 'no_medible'}
 
+# Las claves que citan una referencia. El barrido que comprueba que resuelven y
+# el que decide qué referencias sostienen un dato (y por tanto quedan bajo el
+# candado de la errata) leen esta misma lista: una clave que solo viera uno de
+# los dos citaría una fuente sin cotejar sin que nada saltara.
+CLAVES_REF = ('ref', 'ref_rendimiento')
+
 errores, avisos = [], []
 
 
@@ -453,15 +459,21 @@ for f, d in condiciones.items():
         # holonmed no sabe interpretar.
         if estado == 'medido' and not (s.get('lr_positivo') or s.get('lr_negativo')):
             err(f, f'«{c}» está marcado medido pero no trae ningún LR')
-        # Una sensibilidad es un número igual que un cociente. En una arista
-        # no_medido no hay LR que lleve la ref, así que tiene que llevarla la
-        # arista; si no, el número entra sin procedencia y nadie lo nota.
-        if s.get('sensibilidad') is not None or s.get('especificidad') is not None:
-            refs = [s.get('ref')] + [s[k].get('ref') for k in ('lr_positivo', 'lr_negativo')
-                                     if isinstance(s.get(k), dict)]
+        # Una sensibilidad es un número igual que un cociente: sin procedencia no
+        # entra. En una arista no_medido no hay LR que lleve la ref, y la `ref`
+        # de la arista puede estar sosteniendo ya la `decision` con otra fuente;
+        # por eso el rendimiento tiene su propia clave, `ref_rendimiento`.
+        tiene_rendimiento = (s.get('sensibilidad') is not None
+                             or s.get('especificidad') is not None)
+        if tiene_rendimiento:
+            refs = [s.get('ref_rendimiento'), s.get('ref')] + [
+                s[k].get('ref') for k in ('lr_positivo', 'lr_negativo')
+                if isinstance(s.get(k), dict)]
             if not any(refs):
-                avi(f, f'rendimiento sin procedencia: «{c}» trae sensibilidad o '
-                       f'especificidad sin ninguna «ref»')
+                err(f, f'«{c}» trae sensibilidad o especificidad sin procedencia: '
+                       f'declara «ref_rendimiento»')
+        elif s.get('ref_rendimiento'):
+            err(f, f'«{c}» declara «ref_rendimiento» sin sensibilidad ni especificidad')
 
         for campo in ('lr_positivo', 'lr_negativo'):
             lr = s.get(campo)
@@ -560,7 +572,7 @@ for f, d in condiciones.items():
         if isinstance(nodo, dict):
             for k, v in nodo.items():
                 aqui = f'{ruta}.{k}' if ruta else k
-                if k == 'ref' and isinstance(v, str):
+                if k in CLAVES_REF and isinstance(v, str):
                     if v not in ids_ref:
                         err(f, f'«{aqui}» cita «{v}», que no está en referencias/')
                 elif k == 'concepto' and isinstance(v, str):
@@ -584,7 +596,7 @@ for _d in list(condiciones.values()) + list(conceptos.values()):
     def _rec(n):
         if isinstance(n, dict):
             for k, v in n.items():
-                if k == 'ref' and isinstance(v, str):
+                if k in CLAVES_REF and isinstance(v, str):
                     refs_citadas.add(v)
                 else:
                     _rec(v)
