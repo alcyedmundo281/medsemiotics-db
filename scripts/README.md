@@ -142,6 +142,24 @@ con un mensaje claro si está bloqueado, en vez de soltar 59 trazas seguidas. No
 lleva lista fija: descubre las pendientes en cada corrida, así que si alguna
 falla basta con volver a lanzarlo y solo reintenta ésas.
 
+### `10_verificar_codigos.py` — CIE-10 y SNOMED contra sus fuentes oficiales
+```bash
+python scripts/10_verificar_codigos.py                     # todo el índice
+python scripts/10_verificar_codigos.py --id HM:6006        # un registro
+python scripts/10_verificar_codigos.py --buscar-snomed "abdominal aortic aneurysm"
+python scripts/10_verificar_codigos.py --hijos-cie10 I71
+```
+Consulta el navegador CIE-10 de la OMS (versión 2019) y la edición internacional
+de SNOMED CT en tx.fhir.org. Es **error** un código que no existe o un concepto
+SNOMED inactivo; es **aviso** una categoría en vez de un código terminal, un
+concepto de extensión nacional, una etiqueta semántica inesperada o una etiqueta
+oficial sin ninguna palabra en común con `termino_en`. Sale con 2 si no hay red.
+
+**Por qué existe.** `build.py` acepta cualquier cadena como código, y uno
+escrito de memoria parece idéntico a uno comprobado. En su primera corrida
+encontró dos así en HM:6045. No va en CI por la misma razón que
+`--comprobar-web`: un fallo de red no debe volver inestable la validación local.
+
 ## Motores de Medios y Publicación
 
 ### `incorporar_medio.py` — descarga e incorpora medios de Wikimedia Commons
