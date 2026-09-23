@@ -15,9 +15,18 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Linfocitos de tamaño aumentado, con citoplasma abundante y núcleo irregular (células
+  de Downey), en el frotis de sangre periférica. Se expresa como porcentaje de los
+  leucocitos; en la valoración inicial se busca más de un 10 % de atípicos
+  (pmid:36689975).
+significado: >-
+  Expansión extraordinaria de linfocitos T CD8+ dirigidos contra los linfocitos B
+  infectados por el virus de Epstein-Barr durante la infección aguda (pmid:25774295).
+falsos_positivos:
+  - Linfocitos reactivos de otras infecciones virales, como citomegalovirus
+  - Linfocitos atípicos en reacciones a fármacos
+  - Células de una neoplasia linfoide confundidas con linfocitos reactivos
 
 medios:
   - tipo: imagen
@@ -32,4 +41,6 @@ medios:
     archivo_local: "assets/img/linfocitosis-atipica.jpg"
 
 procedencia:
-  fuente: Acuñado al modelar la mononucleosis infecciosa.
+  fuente: >-
+    Acuñado al modelar la mononucleosis infecciosa. Tríada completada al revisar la condición HM:6003,
+    sostenida sobre pmid:36689975 (Sylvester 2023) y pmid:25774295 (Balfour 2015).

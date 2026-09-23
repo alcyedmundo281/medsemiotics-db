@@ -13,9 +13,19 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Petequias en la mucosa del paladar, típicamente en la unión del paladar duro y el
+  blando; forman parte del cuadro que debe hacer sospechar mononucleosis infecciosa
+  (pmid:25822555).
+significado: >-
+  Pequeñas hemorragias de la mucosa palatina en el contexto de la inflamación faríngea
+  de la infección aguda (pmid:25822555).
+falsos_positivos:
+  - Petequias palatinas de la faringitis estreptocócica o de otras infecciones virales
+  - Petequias por traumatismo local, tos o vómitos intensos
+  - Petequias por trombocitopenia de otra causa
 
 procedencia:
-  fuente: Acuñado al modelar la mononucleosis infecciosa.
+  fuente: >-
+    Acuñado al modelar la mononucleosis infecciosa. Tríada completada al revisar la condición HM:6003,
+    sostenida sobre pmid:25822555 (Womack 2015).

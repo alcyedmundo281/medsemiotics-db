@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:36689975'
+clave_bibtex: sylvester2023
+tipo: articulo
+titulo: 'Infectious Mononucleosis: Rapid Evidence Review'
+autores:
+  - Sylvester JE
+  - Buchanan BK
+  - Silva TW
+publicacion: Am Fam Physician
+anio: 2023
+volumen: 107
+paginas: 71-78
+
+identificadores:
+  pmid: 36689975
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-22
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'

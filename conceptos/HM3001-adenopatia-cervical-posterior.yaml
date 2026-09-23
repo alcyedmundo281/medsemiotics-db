@@ -13,11 +13,22 @@ codigos:
   icd10: null
   hpo: null
 
-significante: null
-significado: null
-falsos_positivos: []
+significante: >-
+  Adenopatías palpables en la cadena cervical posterior, por detrás del músculo
+  esternocleidomastoideo; es una de las características clínicas de la mononucleosis
+  infecciosa (pmid:36689975).
+significado: >-
+  Hiperplasia ganglionar reactiva en el territorio de drenaje de la nasofaringe, sitio
+  inicial de replicación del virus de Epstein-Barr (pmid:25774295). A diferencia de la
+  adenopatía cervical anterior, más propia de la faringitis bacteriana, es la posterior
+  la que orienta a la mononucleosis (pmid:36689975).
+falsos_positivos:
+  - Adenopatía cervical anterior o submandibular confundida con la posterior
+  - Masa del músculo esternocleidomastoideo o de la piel del cuello
 
 procedencia:
   fuente: >-
     Acuñado al modelar la mononucleosis infecciosa. La distinción frente a la
     adenopatía cervical anterior importa: es la posterior la que discrimina.
+    Tríada completada al revisar la condición HM:6003, sostenida sobre
+    pmid:36689975 (Sylvester 2023) y pmid:25774295 (Balfour 2015).

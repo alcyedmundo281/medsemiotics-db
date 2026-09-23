@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:37440739'
+clave_bibtex: latimer2023
+tipo: articulo
+titulo: 'Fatigue in Adults: Evaluation and Management'
+autores:
+  - Latimer KM
+  - Gunther A
+  - Kopec M
+publicacion: Am Fam Physician
+anio: 2023
+volumen: 108
+paginas: 58-69
+
+identificadores:
+  pmid: 37440739
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-22
+  retractado: false
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'sin DOI en PubMed: la verificación CrossRef no aplica'
