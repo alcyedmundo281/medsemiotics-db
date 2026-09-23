@@ -139,6 +139,25 @@ class PublicacionTest(unittest.TestCase):
                           "Depende del cribado"):
             self.assertIn(fragmento, texto)
 
+    def test_probabilidad_base_conserva_sus_decimales(self):
+        """Con `:.0%` una prevalencia de 0.014 salía como «1%»: otra cifra."""
+        condicion = dict(
+            self.indice.condiciones_por_archivo["HM:6001"],
+            probabilidad_base=dict(valor=0.014, ic95=[0.013, 0.015], ref="pmid:1"),
+        )
+        texto = qmd.capitulo_condicion(self.indice, "HM:6001", condicion, self.citas, [])
+        self.assertIn("1.4%", texto)
+        self.assertIn("IC95% 1.3%–1.5%", texto)
+
+    def test_rango_de_probabilidad_base_en_porcentaje(self):
+        """Un rango en fracciones junto a valores en porcentaje se lee mal."""
+        condicion = dict(
+            self.indice.condiciones_por_archivo["HM:6001"],
+            probabilidad_base=dict(rango=[0.02, 0.9], ref="pmid:1"),
+        )
+        texto = qmd.capitulo_condicion(self.indice, "HM:6001", condicion, self.citas, [])
+        self.assertIn("2%–90%", texto)
+
     def test_probabilidad_base_con_clave_desconocida_aborta(self):
         condicion = dict(
             self.indice.condiciones_por_archivo["HM:6001"],
