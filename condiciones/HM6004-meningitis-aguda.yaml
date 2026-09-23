@@ -1,13 +1,16 @@
 # Condición del índice. Los códigos HM: son permanentes.
 #
 # Datos de pmid:10411200 (Attia 1999, JAMA), revisión sistemática de la serie
-# Rational Clinical Examination sobre 10 estudios en adultos.
+# Rational Clinical Examination sobre 10 estudios en adultos. Desde el
+# 2026-09-23, la rigidez de nuca y los signos de Kernig y de Brudzinski salen de
+# Thomas 2002 (pmid:12060874), y la acentuación de la cefalea con la sacudida,
+# de la revisión Cochrane de 2020 (pmid:32524581), que sustituye al único
+# estudio en que se apoyaba Attia.
 #
 # Advertencia que la propia fuente hace y conviene no perder: «many of the signs
-# and symptoms of meningitis have been inadequately studied». Solo una arista
-# tiene par de cocientes publicado. Las demás traen sensibilidad sin
-# especificidad, con lo que el LR no es calculable a partir del abstract: van
-# como no_medido con el dato disponible anotado.
+# and symptoms of meningitis have been inadequately studied». Ninguna arista
+# tiene par de cocientes publicado. Las que no traen cociente van como
+# no_medido con el dato disponible anotado.
 
 id: 'HM:6004'
 tipo: condicion
@@ -32,25 +35,25 @@ factores_riesgo: []
 
 signos:
   - concepto: 'HM:3006'    # Acentuación de la cefalea con la sacudida cefálica
-    rol: prueba_sensible
-    estado_lr: medido
-    sensibilidad: 1.00
-    especificidad: 0.54
-    lr_positivo:
-      valor: 2.2
-      ref: 'pmid:10411200'
-      poblacion: pacientes que ya presentan fiebre y cefalea
-    lr_negativo:
-      valor: 0.0
-      ref: 'pmid:10411200'
-      poblacion: pacientes que ya presentan fiebre y cefalea
-      nota: >-
-        un LR− de 0 procede de una sensibilidad del 100% en la serie estudiada.
-        Tratarlo como certeza absoluta sería un error de lectura: es el
-        resultado de una muestra, no una imposibilidad.
+    rol: apoyo
+    estado_lr: no_medido
+    sensibilidad: 0.653
+    ic95_sensibilidad: [0.373, 0.856]
+    especificidad: 0.704
+    ic95_especificidad: [0.477, 0.861]
+    poblacion: >-
+      pacientes con sospecha de meningitis en urgencias, 9 estudios y 1161
+      participantes; patrón de referencia, la pleocitosis en el LCR
+    ref: 'pmid:32524581'
+    motivo: >-
+      la revisión publica sensibilidad y especificidad agrupadas, con certeza muy
+      baja, pero no el cociente. No se calcula aquí
+    nota: >-
+      sin alteración de la conciencia (8 estudios, 921 participantes), Se 0.752
+      (IC95% 0.543-0.886) y Sp 0.608 (IC95% 0.434-0.759). Sustituye al LR+ 2.2 y
+      LR− 0 de Attia 1999 (pmid:10411200), que venían de un único estudio de 1991
     decision: >-
-      maniobra adjunta útil en quien ya tiene fiebre y cefalea; su negatividad
-      es lo que más ayuda
+      una prueba negativa no excluye la meningitis; no evita la punción lumbar
 
   - concepto: 'HM:0207'    # Cefalea
     rol: manifestacion
@@ -145,14 +148,6 @@ reglas:
       punción lumbar, sin apoyarse en la exploración
 
 pendiente:
-  - >-
-    La arista de la acentuación de la cefalea con la sacudida (HM:3006) lleva el
-    LR− 0 de Attia 1999, que viene de un único estudio de 1991. La revisión
-    Cochrane de 2020 (pmid:32524581; 9 estudios, 1161 participantes) da una
-    sensibilidad agrupada de 0.653 (IC95% 0.373-0.856) y una especificidad de
-    0.704 (IC95% 0.477-0.861), con certeza muy baja, y concluye que una prueba
-    negativa no excluye la meningitis. Contradice la decisión actual de la
-    arista. Falta que el responsable clínico decida cómo actualizarla.
   - >-
     Sin probabilidad_base: Attia 1999 no publica prevalencia, y los resúmenes
     de Thomas 2002 y de Iguchi 2020 tampoco.
