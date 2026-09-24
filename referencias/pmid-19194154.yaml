@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:19194154'
+clave_bibtex: lundstrom2009bmi
+tipo: articulo
+titulo: 'High body mass index is a weak predictor for difficult and failed tracheal intubation: a cohort study of 91,332 consecutive patients scheduled for direct laryngoscopy registered in the Danish Anesthesia Database'
+autores:
+  - Lundstrøm LH
+  - Møller AM
+  - Rosenstock C
+  - Astrup G
+  - Wetterslev J
+publicacion: Anesthesiology
+anio: 2009
+volumen: 110
+paginas: 266-74
+
+identificadores:
+  pmid: 19194154
+  doi: 10.1097/ALN.0b013e318194cac8
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

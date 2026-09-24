@@ -38,8 +38,24 @@ probabilidad_base:
 
 factores_riesgo:
   - factor: Obesidad con IMC elevado
+    ref: 'pmid:19194154'
+    nota: >-
+      IMC de 35 o más, OR 1.34 (IC95% 1.19-1.51) ajustado por las demás
+      covariables; cohorte de 91 332 pacientes consecutivos del registro danés
+      de anestesia. La fuente lo califica de predictor débil
   - factor: Movilidad cervical limitada o artropatía cervical
+    ref: 'pmid:18362772'
+    nota: >-
+      aumento estadísticamente significativo de la intubación difícil en las
+      dos franjas de edad (menores y mayores de 60 años); cohorte retrospectiva
+      de 14 053 pacientes. El resumen no da su OR
   - factor: Antecedente personal de intubación difícil
+    ref: 'pmid:19735399'
+    nota: >-
+      antecedente documentado; la fuente lo califica de predictor fuerte e
+      identifica al 30% de las intubaciones difíciles posteriores. 15 499
+      pacientes anestesiados más de una vez, registro danés de anestesia. El
+      resumen no da su OR
 
 signos:
   - concepto: 'HM:3078'
