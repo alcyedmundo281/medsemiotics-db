@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:24360987'
+clave_bibtex: porcel2014
+tipo: articulo
+titulo: 'Etiology of pleural effusions: analysis of more than 3,000 consecutive thoracenteses'
+autores:
+  - Porcel JM
+  - Esquerda A
+  - Vives M
+  - Bielsa S
+publicacion: Arch Bronconeumol
+anio: 2014
+volumen: 50
+paginas: 161-5
+
+identificadores:
+  pmid: 24360987
+  doi: 10.1016/j.arbres.2013.11.007
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'CrossRef registra un título distinto; PubMed es la autoridad'
