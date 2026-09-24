@@ -16,11 +16,33 @@ clase: enfermedad
 termino: Infección precoz por VIH
 termino_en: Early HIV infection
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=infeccion-precoz-por-vih-precision-semiotica"
-sinonimos: [primoinfección por VIH, infección aguda por VIH]
+sinonimos: [primoinfección por VIH]
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-24. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 1142045004 «Primary human immunodeficiency virus infection»,
+# activo y en el módulo central. Se prefiere a 111880001 «Acute HIV infection»,
+# que exige inicio agudo y curso breve y deja fuera la fase reciente
+# asintomática de los primeros 6 meses. CIE-10 contra el navegador de la OMS
+# (versión 2019): no tiene código para la infección precoz. B23.0 «Acute HIV
+# infection syndrome» solo cubre el síndrome agudo sintomático; por decisión
+# del responsable clínico (2026-09-24) no se declara y el campo queda vacío.
+codigos:
+  snomed: '1142045004'
+  cie10: null
 
-probabilidad_base: null    # depende por completo de la población cribada
+# Por decisión del responsable clínico (2026-09-24), limitada a la población
+# de la fuente.
+probabilidad_base:
+  valor: 0.063
+  ic95: [0.021, 0.124]
+  poblacion: >-
+    hombres que tienen sexo con hombres movilizados para cribado de infección
+    aguda y precoz por VIH; metaanálisis de 5 estudios
+  nota: >-
+    rendimiento del cribado por visita, no por paciente, con heterogeneidad muy
+    alta (I² 94.9%). Del 11.1% (IC95% 5.9-17.6) con estrategias dirigidas y del
+    1.6% (IC95% 0.8-2.4) con cribado universal. No vale para otras poblaciones
+  ref: 'pmid:33000916'
 factores_riesgo: []
 
 signos:
@@ -100,6 +122,27 @@ reglas:
     nota: >-
       calculado sobre estudios que consideraban combinaciones de 4 a 17
       hallazgos posibles
+
+pendiente:
+  - >-
+    Probabilidad base fuera de hombres que tienen sexo con hombres. Wood 2014
+    reúne 1253 casos entre 24 745 pacientes de 16 estudios, pero no publica una
+    prevalencia agrupada en su resumen, y el cociente no se calcula. Falta una
+    estimación para la población general adulta que consulta.
+  - >-
+    Búsqueda en PubMed del 2026-09-24. Consulta «(acute HIV[Title] OR early
+    HIV[Title] OR primary HIV[Title] OR acute retroviral syndrome[Title]) AND
+    (symptoms OR signs OR clinical presentation) AND (systematic review OR
+    meta-analysis)», desde 2014-06: 2 resultados, Wood 2014 y Palmer 2020.
+    Palmer 2020 evalúa escalas de riesgo y síntomas por su área bajo la curva
+    (0.51-0.88 en validación), sin cocientes por hallazgo. Ninguna revisión
+    posterior actualiza los cocientes de Wood 2014.
+  - >-
+    Factores de riesgo. Palmer 2020 enumera las variables de las escalas de
+    riesgo (edad, número de parejas sexuales, coito anal receptivo sin
+    preservativo, pareja con VIH, otra infección de transmisión sexual, drogas
+    ilícitas), pero su resumen no da OR ni RR. Falta una fuente con grupo
+    control que los cuantifique.
 
 conclusion_de_la_fuente: >-
   La utilidad limitada de la exploración clínica para detectar o descartar la
