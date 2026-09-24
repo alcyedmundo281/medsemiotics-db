@@ -34,10 +34,21 @@ probabilidad_base:
   poblacion: lactantes de 3 meses o menores cribados con examen clínico y ecografía (n = 37 859 caderas)
   ref: pmid:38619828
 
+# Factores de pmid:38355007 (Chen 2024), metaanálisis de 11 estudios de cohortes
+# con regresión logística y 979 757 lactantes. Su desenlace es la displasia del
+# desarrollo de la cadera, no solo la cadera luxada.
 factores_riesgo:
   - factor: Presentación podálica al nacer
+    ref: 'pmid:38355007'
+    nota: >-
+      OR 4.14 (IC95% 3.09-5.54) para el parto de nalgas; metaanálisis de
+      cohortes
   - factor: Sexo femenino
+    ref: 'pmid:38355007'
+    nota: OR 6.97 (IC95% 5.18-9.39); metaanálisis de cohortes
   - factor: Antecedente familiar de displasia de cadera
+    ref: 'pmid:38355007'
+    nota: OR 4.07 (IC95% 2.20-7.52); metaanálisis de cohortes
 
 signos:
   - concepto: 'HM:3075'

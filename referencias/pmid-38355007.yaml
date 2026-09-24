@@ -1,0 +1,33 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:38355007'
+clave_bibtex: chen2024
+tipo: articulo
+titulo: 'Risk factors of developmental dysplasia of the hip in infants: A meta-analysis based on cohort studies'
+autores:
+  - Chen X
+  - Liu J
+  - Xue M
+  - Zou C
+  - Lu J
+  - Wang X
+  - Teng Y
+publicacion: Orthop Traumatol Surg Res
+anio: 2024
+volumen: 110
+paginas: 103836
+
+identificadores:
+  pmid: 38355007
+  doi: 10.1016/j.otsr.2024.103836
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
