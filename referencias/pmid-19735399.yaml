@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:19735399'
+clave_bibtex: lundstrom2009previa
+tipo: articulo
+titulo: A documented previous difficult tracheal intubation as a prognostic test for a subsequent difficult tracheal intubation in adults
+autores:
+  - Lundstrøm LH
+  - Møller AM
+  - Rosenstock C
+  - Astrup G
+  - Gätke MR
+  - Wetterslev J
+publicacion: Anaesthesia
+anio: 2009
+volumen: 64
+paginas: 1081-8
+
+identificadores:
+  pmid: 19735399
+  doi: 10.1111/j.1365-2044.2009.06057.x
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
