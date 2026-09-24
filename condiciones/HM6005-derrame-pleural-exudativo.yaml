@@ -7,6 +7,12 @@
 # Población: adultos sometidos a toracocentesis por derrame pleural. Nótese que
 # la pregunta no es «¿hay derrame?» sino «¿este derrame es exudado?»: todas las
 # aristas son pruebas sobre el líquido ya obtenido, no de exploración física.
+#
+# EL LR+ DE 250 DEL COLESTEROL PLEURAL DISPARA UN AVISO DE build.py Y ESTÁ BIEN
+# QUE LO HAGA. Cotejado contra PubMed el 2026-09-24: el abstract publica «LR
+# range, 7.1-250», un rango entre estudios, y la referencia no tiene errata. El
+# aviso queda en pie a propósito: un extremo de tres cifras merece que alguien
+# lo mire cada vez, y quien lo mire encontrará aquí por qué se aceptó.
 
 id: 'HM:6005'
 tipo: condicion
@@ -38,8 +44,8 @@ signos:
       umbral: colesterol pleural > 55 mg/dL
       ref: 'pmid:24938565'
       nota: >-
-        rango entre estudios, muy amplio. El extremo superior refleja series
-        pequeñas; conviene leerlo como «desplaza mucho», no como un valor.
+        rango entre estudios, sin estimación agrupada ni intervalo de confianza
+        en el abstract. Se lee como «desplaza mucho», no como un valor
     decision: el indicador aislado más potente para clasificar el derrame
 
   - concepto: 'HM:3009'    # LDH elevada en líquido pleural
@@ -89,6 +95,11 @@ pendiente:
     Wilcox 2014 (pmid:24938565) tampoco. Sumar las causas que suelen dar exudado
     sería inferir la cifra, no transcribirla. Falta leer el texto completo de
     Porcel 2014.
+  - >-
+    Origen del rango 7.1-250 del colesterol pleural. El abstract de Wilcox 2014
+    no dice qué estudios dan cada extremo ni cuántos pacientes tienen. La nota
+    anterior lo atribuía a «series pequeñas» sin fuente, y se retiró el
+    2026-09-24. Falta leer el texto completo, que no está en PMC.
 
 procedencia:
   fuente: >-
