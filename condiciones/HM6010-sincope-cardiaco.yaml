@@ -18,9 +18,28 @@ termino_en: Cardiac syncope
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=sincope-cardiaco-vs-vasovagal-anamnesis"
 sinonimos: [síncope de origen cardíaco, síncope arrítmico]
 
-codigos: {snomed: null, cie10: null}
+# Verificados el 2026-09-24. SNOMED CT contra la edición internacional 20250201
+# en tx.fhir.org: 788877005 «Cardiac syncope», activo y en el módulo central.
+# CIE-10 contra el navegador de la OMS (versión 2019): no tiene código para el
+# síncope cardíaco. Se declara R55 «Syncope and collapse», el más próximo, que
+# no distingue la causa. La OMS saca de R55 el ataque de Stokes-Adams (I45.9),
+# que es solo una de las causas arrítmicas, así que no sirve para toda la
+# condición.
+codigos:
+  snomed: '788877005'
+  cie10: 'R55'
 
-probabilidad_base: null    # la fuente no publica prevalencia global
+# Albassam 2019 no publica prevalencia global en su resumen.
+probabilidad_base:
+  valor: 0.095
+  poblacion: >-
+    822 participantes del Framingham Heart Study que refirieron síncope durante
+    un seguimiento medio de 17 años (población general, 1971-1998)
+  nota: >-
+    proporción de síncopes atribuidos a causa cardíaca en la comunidad; el 36.6%
+    quedó sin causa identificada. No es la población de urgencias ni de consulta
+    especializada en la que se midieron los cocientes; ver pendiente
+  ref: 'pmid:12239256'
 factores_riesgo: []
 
 signos:
@@ -172,6 +191,28 @@ pendiente:
   - >-
     Los biomarcadores cardíacos muestran exactitud prometedora según la fuente,
     pero sus umbrales diagnósticos aún requieren validación. No se registran.
+  - >-
+    Probabilidad base en urgencias. Toarta 2018 (pmid:29136314; 5010 adultos
+    en seis servicios de urgencias) da un 5.4% de síncopes de presunta causa
+    cardíaca, pero es la impresión del médico al final de la visita, no un
+    diagnóstico contra un patrón de referencia. No se transcribe como
+    probabilidad base.
+  - >-
+    Búsqueda en PubMed del 2026-09-24. Consulta «syncope AND (history OR
+    clinical features OR clinical examination) AND (cardiac OR arrhythmic) AND
+    (diagnostic accuracy OR likelihood ratio)», filtrada a revisiones
+    sistemáticas y metaanálisis desde 2019-06: 16 resultados, cribados por
+    título y resumen. Ninguno actualiza la exactitud de la anamnesis para el
+    síncope cardíaco. Sweanor 2021 (pmid:33382159) evalúa escalas
+    multivariables, pero contra eventos adversos a 30 días, no contra el origen
+    cardíaco.
+  - >-
+    Factores de riesgo. Búsqueda en PubMed del 2026-09-24. Consulta «cardiac
+    syncope[Title/Abstract] AND (risk factor OR predictors)»: 97 resultados,
+    cribados por título los 20 primeros. No aparece ninguna fuente con grupo
+    control que dé OR o RR de síncope cardíaco. Lo que Albassam 2019 cuantifica
+    como cociente (edad, fibrilación auricular, cardiopatía estructural) ya
+    está en las aristas.
 
 conclusion_de_la_fuente: >-
   La exploración clínica, con el electrocardiograma dentro de puntuaciones
