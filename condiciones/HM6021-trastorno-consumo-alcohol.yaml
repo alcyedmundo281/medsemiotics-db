@@ -35,12 +35,11 @@ probabilidad_base: null
 # «Trastornos psiquiátricos comórbidos (depresión, ansiedad)» se retiró el
 # 2026-09-24 por falta de fuente con grupo control; ver pendiente.
 factores_riesgo:
-  - factor: Antecedente familiar de trastorno por consumo de sustancias
+  - factor: Antecedente parental de trastorno por consumo de alcohol
     ref: 'pmid:30689217'
     nota: >-
-      la fuente mide el trastorno por consumo de alcohol de los padres, no de
-      cualquier sustancia: HR 2.21 (IC95% 2.07-2.36) si es el padre y 2.57
-      (IC95% 2.20-3.01) si es la madre, sin otro trastorno mental asociado.
+      HR 2.21 (IC95% 2.07-2.36) si es el padre y 2.57 (IC95% 2.20-3.01) si es
+      la madre, sin otro trastorno mental asociado.
       Cohorte de registros daneses: 15 477 hijos expuestos y 154 392 de
       referencia
   - factor: Inicio precoz del consumo de alcohol en la adolescencia
