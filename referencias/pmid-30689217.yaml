@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:30689217'
+clave_bibtex: holst2019
+tipo: articulo
+titulo: Parental alcohol use disorder with and without other mental disorders and offspring alcohol use disorder
+autores:
+  - Holst C
+  - Tolstrup JS
+  - Sørensen HJ
+  - Pisinger VSC
+  - Becker U
+publicacion: Acta Psychiatr Scand
+anio: 2019
+volumen: 139
+paginas: 508-517
+
+identificadores:
+  pmid: 30689217
+  doi: 10.1111/acps.13002
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

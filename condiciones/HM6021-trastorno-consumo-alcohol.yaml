@@ -32,10 +32,23 @@ codigos:
 
 probabilidad_base: null
 
+# «Trastornos psiquiátricos comórbidos (depresión, ansiedad)» se retiró el
+# 2026-09-24 por falta de fuente con grupo control; ver pendiente.
 factores_riesgo:
   - factor: Antecedente familiar de trastorno por consumo de sustancias
+    ref: 'pmid:30689217'
+    nota: >-
+      la fuente mide el trastorno por consumo de alcohol de los padres, no de
+      cualquier sustancia: HR 2.21 (IC95% 2.07-2.36) si es el padre y 2.57
+      (IC95% 2.20-3.01) si es la madre, sin otro trastorno mental asociado.
+      Cohorte de registros daneses: 15 477 hijos expuestos y 154 392 de
+      referencia
   - factor: Inicio precoz del consumo de alcohol en la adolescencia
-  - factor: Trastornos psiquiátricos comórbidos (depresión, ansiedad)
+    ref: 'pmid:32213910'
+    nota: >-
+      OR 11.83 en mujeres y 6.24 en varones para dependencia del alcohol, sin
+      intervalo de confianza en el resumen. Cohorte de 5170 universitarios con
+      seguimiento de 3 años
 
 signos:
   - concepto: 'HM:3083'
@@ -105,6 +118,21 @@ conclusion_de_la_fuente: >-
   consumo de alcohol según el DSM-5 en adultos (LR+ 6.5; LR- 0.33). El AUDIT-C es adecuado
   para consumo de riesgo. En el postparto inmediato, el AUDIT ≥ 4 confirma (LR+ 6.4) y
   las herramientas TWEAK/T-ACE < 2 descartan con gran exactitud (LR- 0.05).
+
+pendiente:
+  - >-
+    Factor retirado: trastornos psiquiátricos comórbidos (depresión, ansiedad).
+    Búsqueda en PubMed del 2026-09-24. Consulta «(depression[Title] OR
+    anxiety[Title] OR psychiatric[Title] OR mental disorders[Title]) AND
+    (alcohol use disorder[Title] OR alcohol dependence[Title]) AND (prospective
+    OR longitudinal OR incident OR subsequent) AND meta-analysis»: 5
+    resultados, cribados por título y resumen. Ninguno da el riesgo de
+    trastorno incidente tras depresión. Dos fuentes van en contra: Miloyan 2018
+    (pmid:30054643; NESARC y NCS, metaanálisis de participantes) no halla
+    asociación entre la ansiedad social y el trastorno incidente, y Phillips
+    2017 (pmid:28260680; transversal, varones de China) da OR 0.4 (IC95%
+    0.2-0.8) con comorbilidad mental. Falta una cohorte que cuantifique la
+    depresión y la ansiedad como factores.
 
 procedencia:
   fuente: Acuñado a partir de pmid:38592385 (Wood 2024, JAMA RCE).
