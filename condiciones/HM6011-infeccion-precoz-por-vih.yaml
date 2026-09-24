@@ -23,14 +23,26 @@ sinonimos: [primoinfección por VIH]
 # activo y en el módulo central. Se prefiere a 111880001 «Acute HIV infection»,
 # que exige inicio agudo y curso breve y deja fuera la fase reciente
 # asintomática de los primeros 6 meses. CIE-10 contra el navegador de la OMS
-# (versión 2019): no tiene código para la infección precoz. Se declara B23.0
-# «Acute HIV infection syndrome», el más próximo, aunque solo cubre el síndrome
-# agudo sintomático.
+# (versión 2019): no tiene código para la infección precoz. B23.0 «Acute HIV
+# infection syndrome» solo cubre el síndrome agudo sintomático; por decisión
+# del responsable clínico (2026-09-24) no se declara y el campo queda vacío.
 codigos:
   snomed: '1142045004'
-  cie10: 'B23.0'
+  cie10: null
 
-probabilidad_base: null    # depende por completo de la población cribada
+# Por decisión del responsable clínico (2026-09-24), limitada a la población
+# de la fuente.
+probabilidad_base:
+  valor: 0.063
+  ic95: [0.021, 0.124]
+  poblacion: >-
+    hombres que tienen sexo con hombres movilizados para cribado de infección
+    aguda y precoz por VIH; metaanálisis de 5 estudios
+  nota: >-
+    rendimiento del cribado por visita, no por paciente, con heterogeneidad muy
+    alta (I² 94.9%). Del 11.1% (IC95% 5.9-17.6) con estrategias dirigidas y del
+    1.6% (IC95% 0.8-2.4) con cribado universal. No vale para otras poblaciones
+  ref: 'pmid:33000916'
 factores_riesgo: []
 
 signos:
@@ -113,13 +125,10 @@ reglas:
 
 pendiente:
   - >-
-    Probabilidad base. Wood 2014 reúne 1253 casos entre 24 745 pacientes de 16
-    estudios, pero no publica una prevalencia agrupada en su resumen, y el
-    cociente no se calcula. Palmer 2020 (pmid:33000916; 22 estudios, hombres que
-    tienen sexo con hombres) da un rendimiento agrupado del cribado del 6.3%
-    (IC95% 2.1-12.4; I² 94.9%), del 11.1% con estrategias dirigidas y del 1.6%
-    con cribado universal. Es una proporción por visita, no por paciente, y
-    solo vale para esa población. No se transcribe.
+    Probabilidad base fuera de hombres que tienen sexo con hombres. Wood 2014
+    reúne 1253 casos entre 24 745 pacientes de 16 estudios, pero no publica una
+    prevalencia agrupada en su resumen, y el cociente no se calcula. Falta una
+    estimación para la población general adulta que consulta.
   - >-
     Búsqueda en PubMed del 2026-09-24. Consulta «(acute HIV[Title] OR early
     HIV[Title] OR primary HIV[Title] OR acute retroviral syndrome[Title]) AND
