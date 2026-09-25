@@ -27,12 +27,10 @@ codigos:
   cie10: 'R18'
 
 probabilidad_base: null
-factores_riesgo:
-  - cirrosis hepática o hipertensión portal
-  - insuficiencia cardíaca congestiva
-  - síndrome nefrótico o hipoalbuminemia grave
-  - neoplasia maligna intraabdominal o carcinomatosis peritoneal
-  - pancreatitis crónica o aguda grave
+# Las causas del síndrome no son factores de riesgo: no hay grupo control
+# que dé un OR. Se retiraron el 2026-09-24 por decisión del responsable
+# clínico; ver pendiente.
+factores_riesgo: []
 
 signos:
   - concepto: 'HM:0902'    # Líquido libre abdominal en ecografía
@@ -179,3 +177,13 @@ signos:
     decision: >-
       la ausencia de edema en tobillos o piernas descarta ascitis con gran poder
       excluyente (LR- 0.10) en contexto de fallo sistémico o hipertensión portal
+
+pendiente:
+  - >-
+    Causas retiradas de factores_riesgo el 2026-09-24, por decisión del
+    responsable clínico: son causas de la ascitis, no factores con grupo
+    control, y no tenían ref. Eran: cirrosis hepática o hipertensión portal;
+    insuficiencia cardíaca congestiva; síndrome nefrótico o hipoalbuminemia
+    grave; neoplasia maligna intraabdominal o carcinomatosis peritoneal;
+    pancreatitis crónica o aguda grave. Si se registran, será con la fuente
+    que dé su frecuencia como causa, en un campo propio.
