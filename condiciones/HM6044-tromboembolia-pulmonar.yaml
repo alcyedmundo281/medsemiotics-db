@@ -20,12 +20,47 @@ codigos:
   cie10: 'I26.9'
 
 probabilidad_base: null
+# Todas las fuentes miden la enfermedad tromboembólica venosa (trombosis venosa
+# profunda o tromboembolia pulmonar), no la tromboembolia pulmonar aislada.
+# «Terapia con estrógenos o anticonceptivos orales» se separó el 2026-09-24 en
+# dos factores, uno por fuente.
 factores_riesgo:
-  - trombosis venosa profunda previa o concomitante
-  - inmovilización prolongada o reposo en cama
-  - cirugía ortopédica o abdominopélvica reciente
-  - neoplasia maligna activa
-  - terapia con estrógenos o anticonceptivos orales
+  - factor: Trombosis venosa profunda previa o concomitante
+    ref: 'pmid:31340984'
+    nota: >-
+      tras suspender la anticoagulación de una primera enfermedad
+      tromboembólica no provocada, la recurrencia es de 10.3 por 100
+      personas-año el primer año (IC95% 8.6-12.1) y la incidencia acumulada del
+      36% a los 10 años (IC95% 28-45). Metaanálisis de 18 estudios con 7515
+      pacientes; sin grupo sin antecedente, así que es un riesgo absoluto. La
+      fuente no trata la trombosis concomitante
+  - factor: Inmovilización prolongada o reposo en cama
+    ref: 'pmid:10737280'
+    nota: >-
+      la fuente mide el ingreso hospitalario o en residencia, OR 8.0 (IC95%
+      4.5-14.2), independiente de los demás factores. Casos y controles
+      poblacional anidado de Olmsted County, 625 casos y 625 controles
+  - factor: Cirugía ortopédica o abdominopélvica reciente
+    ref: 'pmid:10737280'
+    nota: >-
+      cirugía en general, OR 21.7 (IC95% 9.4-49.9); el resumen no la desglosa
+      por tipo. Traumatismo, OR 12.7 (IC95% 4.1-39.7)
+  - factor: Neoplasia maligna activa
+    ref: 'pmid:10737280'
+    nota: >-
+      OR 4.1 (IC95% 1.9-8.5) sin quimioterapia y 6.5 (IC95% 2.1-20.2) con ella
+  - factor: Anticonceptivos orales
+    ref: 'pmid:19679614'
+    nota: >-
+      OR 5.0 (IC95% 4.2-5.8) frente a no usarlos; de 3.6 con levonorgestrel a
+      7.3 con desogestrel. Casos y controles MEGA: mujeres premenopáusicas
+      menores de 50 años, 1524 casos y 1760 controles
+  - factor: Terapia hormonal de la menopausia
+    ref: 'pmid:38263123'
+    nota: >-
+      RR 1.86 (IC95% 1.39-2.50) frente a placebo o ningún tratamiento, sin
+      diferencia entre estrógeno solo y combinado con progestágeno.
+      Metaanálisis de 33 ensayos con 44 639 posmenopáusicas
 
 signos:
   - concepto: 'HM:3162'    # Ventrículo derecho dilatado en ecografía
