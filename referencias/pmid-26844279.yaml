@@ -1,0 +1,29 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:26844279'
+clave_bibtex: samokhvalov2015
+tipo: articulo
+titulo: 'Alcohol Consumption as a Risk Factor for Acute and Chronic Pancreatitis: A Systematic Review and a Series of Meta-analyses'
+autores:
+  - Samokhvalov AV
+  - Rehm J
+  - Roerecke M
+publicacion: EBioMedicine
+anio: 2015
+volumen: 2
+paginas: 1996-2002
+
+identificadores:
+  pmid: 26844279
+  doi: 10.1016/j.ebiom.2015.11.023
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

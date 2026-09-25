@@ -1,0 +1,47 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:27820614'
+clave_bibtex: pedersen2016
+tipo: articulo
+titulo: Nonfasting Mild-to-Moderate Hypertriglyceridemia and Risk of Acute Pancreatitis
+autores:
+  - Pedersen SB
+  - Langsted A
+  - Nordestgaard BG
+publicacion: JAMA Intern Med
+anio: 2016
+volumen: 176
+paginas: 1834-1842
+
+identificadores:
+  pmid: 27820614
+  doi: 10.1001/jamainternmed.2016.6875
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  errata: 'JAMA Intern Med. 2024 Apr 1;184(4):453. doi: 10.1001/jamainternmed.2024.0643.'
+  errata_corrige: Errors in the Abstract and Results Section.
+  crossref: true
+  crossref_titulo_coincide: true
+  errata_pmid: 'pmid:38497993'
+  errata_verificada: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'
+    - >-
+      COTEJO CERRADO el 2026-09-24 contra el cuerpo de la corrección, leído en
+      PMC (PMC10949145; pmid:38497993, «Published Erratum», JAMA Intern Med
+      2024;184(4):453). Cita el original por título y por su doi
+      10.1001/jamainternmed.2016.6875.
+    - >-
+      SOLO CORRIGE UNA ETIQUETA EN mg/dL: en el tramo de 3.00-3.99 mmol/L, donde
+      decía «366 mg/dL to 353 mg/dL» debe decir «266 mg/dL to 353 mg/dL». Ningún
+      HR, intervalo ni recuento de eventos cambia, así que la fuente queda
+      cotejada para cualquier cifra. Citar los tramos por sus límites en mmol/L,
+      que no tenían error.
