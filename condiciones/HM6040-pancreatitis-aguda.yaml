@@ -60,7 +60,7 @@ codigos: {snomed: '197456007', cie10: null}
 # Cada factor lleva ahora su propia fuente (2026-09-24). La litiasis biliar se
 # retiró por falta de una fuente con grupo control; ver pendiente.
 factores_riesgo:
-  - factor: Consumo de alcohol
+  - factor: Consumo de alcohol por encima de 40 g/día
     ref: 'pmid:26844279'
     nota: >-
       relación dosis-respuesta monótona en varones y no lineal en mujeres. Por
