@@ -25,11 +25,10 @@ codigos:
   cie10: 'R16.1'
 
 probabilidad_base: null
-factores_riesgo:
-  - hipertensión portal o cirrosis hepática
-  - síndrome linfoproliferativo, leucemia o linfoma
-  - infección sistémica aguda o subaguda (mononucleosis infecciosa, endocarditis bacteriana, leishmaniasis, paludismo)
-  - anemia hemolítica o hemoglobinopatía crónica
+# Las causas del síndrome no son factores de riesgo: no hay grupo control
+# que dé un OR. Se retiraron el 2026-09-24 por decisión del responsable
+# clínico; ver pendiente.
+factores_riesgo: []
 
 signos:
   - concepto: 'HM:0603'    # Esplenomegalia (bazo palpable / palpación esplénica)
@@ -93,3 +92,14 @@ signos:
       es la maniobra percutoria más sensible para detectar esplenomegalia incipiente
     advertencia: >-
       requiere percusión suave y adecuada coordinación respiratoria con el paciente
+
+pendiente:
+  - >-
+    Causas retiradas de factores_riesgo el 2026-09-24, por decisión del
+    responsable clínico: son causas de la esplenomegalia, no factores con
+    grupo control, y no tenían ref. Eran: hipertensión portal o cirrosis
+    hepática; síndrome linfoproliferativo, leucemia o linfoma; infección
+    sistémica aguda o subaguda (mononucleosis infecciosa, endocarditis
+    bacteriana, leishmaniasis, paludismo); anemia hemolítica o
+    hemoglobinopatía crónica. Si se registran, será con la fuente que dé su
+    frecuencia como causa, en un campo propio.
