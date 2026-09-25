@@ -21,11 +21,18 @@ codigos:
   cie10: 'K81.0'
 
 probabilidad_base: null
+# Sexo femenino, edad mayor de 50 años y nutrición parenteral o ayuno en el
+# paciente crítico se retiraron el 2026-09-24 por falta de fuente; ver
+# pendiente.
 factores_riesgo:
-  - colelitiasis conocida
-  - sexo femenino
-  - edad mayor de 50 años
-  - nutrición parenteral total o ayuno prolongado en paciente crítico
+  - factor: Colelitiasis conocida
+    ref: 'pmid:8480871'
+    nota: >-
+      en la litiasis asintomática aparecen síntomas graves o complicaciones en
+      el 1-2% de los pacientes al año, y en la levemente sintomática en el
+      1-3%; la colecistitis aguda es la complicación grave más frecuente.
+      Revisión de series de seguimiento sin grupo sin litiasis, así que es un
+      riesgo absoluto
 
 signos:
   - concepto: 'HM:3175'    # Signo ecográfico de colecistitis aguda
@@ -112,5 +119,17 @@ procedencia:
   fuente: >-
     Acuñada en la oleada 1 al modelar la condición asociada a los signos de
     vía biliar de biosemiotics. Cocientes de Wilson 2024 (pmid:37855790).
+
+pendiente:
+  - >-
+    Factores retirados: sexo femenino, edad mayor de 50 años y nutrición
+    parenteral total o ayuno prolongado en paciente crítico. Los dos primeros
+    son factores de riesgo de la litiasis biliar, no de la colecistitis; el
+    tercero es causa de la colecistitis alitiásica, no un factor con grupo
+    control. Búsqueda en PubMed del 2026-09-24. Consulta «(acute
+    cholecystitis[Title]) AND (risk factors[Title] OR incidence[Title]) AND
+    (cohort OR population-based OR meta-analysis)»: 7 resultados, cribados por
+    título y resumen. Ninguno cuantifica esos tres factores para la
+    colecistitis aguda en la población general.
 
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=colecistitis-aguda-precision-semiotica"
