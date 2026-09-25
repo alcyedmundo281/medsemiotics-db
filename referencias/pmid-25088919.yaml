@@ -1,0 +1,35 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:25088919'
+clave_bibtex: kochar2015
+tipo: articulo
+titulo: 'Incidence, severity, and mortality of post-ERCP pancreatitis: a systematic review by using randomized, controlled trials'
+autores:
+  - Kochar B
+  - Akshintala VS
+  - Afghani E
+  - Elmunzer BJ
+  - Kim KJ
+  - Lennon AM
+  - Khashab MA
+  - Kalloo AN
+  - Singh VK
+publicacion: Gastrointest Endosc
+anio: 2015
+volumen: 81
+paginas: 143-149.e9
+
+identificadores:
+  pmid: 25088919
+  doi: 10.1016/j.gie.2014.06.045
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

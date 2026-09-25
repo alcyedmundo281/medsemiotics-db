@@ -55,19 +55,33 @@ sinonimos:
 
 codigos: {snomed: '197456007', cie10: null}
 
+# Los multiplicadores del protocolo de holonmed (alcohol 2.8, litiasis 3.2,
+# hipertrigliceridemia 2.2, CPRE 2.5) no declaran de dónde salen y NO entran.
+# Cada factor lleva ahora su propia fuente (2026-09-24). La litiasis biliar se
+# retiró por falta de una fuente con grupo control; ver pendiente.
 factores_riesgo:
   - factor: Consumo de alcohol
+    ref: 'pmid:26844279'
     nota: >-
-      el protocolo de holonmed le asigna un multiplicador de 2.8 que no entra
-      aquí: no declara de dónde sale
-  - factor: Litiasis biliar, incluida la coledocolitiasis
-    nota: >-
-      multiplicador 3.2 en holonmed, el más alto de los cuatro, también sin
-      procedencia
+      relación dosis-respuesta monótona en varones y no lineal en mujeres. Por
+      debajo de 40 g/día no aumenta el riesgo frente a la abstención: RR 1.1
+      (IC95% 0.69-1.74) en varones y 0.76 (IC95% 0.60-0.97) en mujeres; por
+      encima, el riesgo crece. El resumen no da el RR de pancreatitis aguda a
+      dosis altas. Metaanálisis de 7 estudios con 157 026 participantes
   - factor: Hipertrigliceridemia
-    nota: multiplicador 2.2 en holonmed, sin procedencia
+    ref: 'pmid:27820614'
+    nota: >-
+      triglicéridos no en ayunas de 5 mmol/L o más frente a menos de 1 mmol/L,
+      HR 8.7 (IC95% 3.7-20.0) ajustado; ya de 2.00 a 2.99 mmol/L, HR 2.3
+      (IC95% 1.3-4.0). HR 1.17 (IC95% 1.10-1.24) por cada 1 mmol/L. Dos
+      cohortes de Copenhague con 116 550 personas y 434 casos
   - factor: Colangiopancreatografía retrógrada endoscópica previa
-    nota: multiplicador 2.5 en holonmed, sin procedencia
+    ref: 'pmid:25088919'
+    nota: >-
+      incidencia de pancreatitis tras la CPRE del 9.7% y del 14.7% en
+      pacientes de alto riesgo, en los brazos placebo o sin prótesis de 108
+      ensayos (13 296 pacientes). La fuente no tiene grupo sin CPRE, así que es
+      un riesgo absoluto, no un cociente
 
 signos:
   - concepto: 'HM:0732'    # Hiperlipasemia
@@ -150,6 +164,17 @@ notas_de_uso:
     hecho, no cuánto se mueve la probabilidad con cada hallazgo.
 
 pendiente:
+  - >-
+    Factor retirado: litiasis biliar, incluida la coledocolitiasis. Es la causa
+    más frecuente de pancreatitis aguda, pero no hay fuente con grupo control
+    que la cuantifique como factor. Búsqueda en PubMed del 2026-09-24. Consulta
+    «(gallstone disease OR gallstones OR cholelithiasis) AND (acute
+    pancreatitis) AND (hazard ratio OR relative risk OR odds ratio) AND
+    (population-based cohort OR prospective cohort OR UK Biobank OR Mendelian
+    randomization)»: 125 resultados, cribados por título los 15 primeros.
+    Ninguno da el riesgo de pancreatitis en portadores de litiasis frente a no
+    portadores. Si se registra, será como causa, con la fuente que dé su
+    frecuencia.
   - >-
     LOS COCIENTES QUE HOLONMED USA Y AQUÍ NO ENTRAN, para que quien busque la
     fuente sepa qué busca: hiperlipasemia LR+ 26.6 y LR− 0.1; hiperamilasemia
