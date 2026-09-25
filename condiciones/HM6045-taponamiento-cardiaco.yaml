@@ -31,13 +31,10 @@ codigos:
   cie10: 'I31.8'
 
 probabilidad_base: null
-factores_riesgo:
-  - neoplasia maligna con metástasis pericárdicas
-  - pericarditis aguda o recurrente
-  - insuficiencia renal crónica terminal o uremia
-  - traumatismo torácico penetrante o cerrado
-  - procedimiento invasivo cardiovascular o cirugía cardíaca reciente
-  - disección aórtica tipo A con hemopericardio retrógrado
+# Las causas del síndrome no son factores de riesgo: no hay grupo control
+# que dé un OR. Se retiraron el 2026-09-24 por decisión del responsable
+# clínico; ver pendiente.
+factores_riesgo: []
 
 signos:
   - concepto: 'HM:3163'    # Taponamiento cardíaco en ecografía
@@ -96,6 +93,18 @@ conclusion_de_la_fuente: >-
   presencia de derrame pericárdico son los pilares ecocardiográficos que definen
   la fisiología de taponamiento; integrados con la inestabilidad hemodinámica,
   guían la indicación de descompresión pericárdica urgente.
+
+pendiente:
+  - >-
+    Causas retiradas de factores_riesgo el 2026-09-24, por decisión del
+    responsable clínico: son causas del taponamiento cardíaco, no factores
+    con grupo control, y no tenían ref. Eran: neoplasia maligna con
+    metástasis pericárdicas; pericarditis aguda o recurrente; insuficiencia
+    renal crónica terminal o uremia; traumatismo torácico penetrante o
+    cerrado; procedimiento invasivo cardiovascular o cirugía cardíaca
+    reciente; disección aórtica tipo A con hemopericardio retrógrado. Si se
+    registran, será con la fuente que dé su frecuencia como causa, en un
+    campo propio.
 
 procedencia:
   fuente: >-
