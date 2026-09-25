@@ -1,0 +1,35 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:28260680'
+clave_bibtex: phillips2017
+tipo: articulo
+titulo: 'Prevalence, correlates, comorbidity, and age of onset of alcohol use disorders in adult males from five provinces in China'
+autores:
+  - Phillips MR
+  - Cheng HG
+  - Li X
+  - Zhang J
+  - Shi Q
+  - Xu G
+  - Song Z
+  - Ding Z
+  - Pang S
+publicacion: Drug Alcohol Depend
+anio: 2017
+volumen: 173
+paginas: 170-177
+
+identificadores:
+  pmid: 28260680
+  doi: 10.1016/j.drugalcdep.2016.12.026
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
