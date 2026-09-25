@@ -18,9 +18,21 @@ codigos:
   cie10: 'K35.8'
 
 probabilidad_base: null
+# Los dos factores salen de pmid:2239906 (Addiss 1990): encuesta nacional de
+# altas hospitalarias de Estados Unidos, 1979-1984, unos 250 000 casos al año.
 factores_riesgo:
-  - edad entre 10 y 30 años
-  - sexo masculino
+  - factor: Edad entre 10 y 30 años
+    ref: 'pmid:2239906'
+    nota: >-
+      la fuente sitúa la incidencia máxima entre los 10 y los 19 años, con 23.3
+      casos por 10 000 personas y año; no da una cifra para el tramo de 10 a
+      30 años
+  - factor: Sexo masculino
+    ref: 'pmid:2239906'
+    nota: >-
+      razón de tasas global de 1.4:1 frente a mujeres, mayor en todos los
+      grupos de edad; riesgo a lo largo de la vida del 8.6% en varones y del
+      6.7% en mujeres
 
 signos:
   - concepto: 'HM:3177'    # Signo ecográfico de apendicitis aguda

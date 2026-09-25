@@ -1,0 +1,30 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:2239906'
+clave_bibtex: addiss1990
+tipo: articulo
+titulo: The epidemiology of appendicitis and appendectomy in the United States
+autores:
+  - Addiss DG
+  - Shaffer N
+  - Fowler BS
+  - Tauxe RV
+publicacion: Am J Epidemiol
+anio: 1990
+volumen: 132
+paginas: 910-25
+
+identificadores:
+  pmid: 2239906
+  doi: 10.1093/oxfordjournals.aje.a115734
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
