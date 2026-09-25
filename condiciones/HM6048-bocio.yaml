@@ -22,8 +22,9 @@ codigos:
   cie10: 'E04.9'
 
 probabilidad_base: null
-# Deficiencia de yodo, sexo femenino y antecedentes familiares se retiraron el
-# 2026-09-24; ver pendiente.
+# Por decisión del responsable clínico (2026-09-24): deficiencia de yodo, sexo
+# femenino y antecedentes familiares se retiraron (ver pendiente), y se
+# añadieron la edad avanzada y el tabaquismo actual de pmid:16235152.
 factores_riesgo:
   - factor: Gestación o periodo puerperal
     ref: 'pmid:8320430'
@@ -32,6 +33,17 @@ factores_riesgo:
       gestantes tenía bocio en el parto, solo en parte reversible en el
       posparto. Sin grupo de no gestantes, así que es un riesgo absoluto en
       una zona con poco yodo
+  - factor: Edad avanzada
+    ref: 'pmid:16235152'
+    nota: >-
+      asociación independiente con el bocio ecográfico en varones y en
+      mujeres; el resumen no da su OR. SHIP, 3915 adultos de 20 a 79 años de
+      una región antes deficiente en yodo
+  - factor: Tabaquismo actual
+    ref: 'pmid:16235152'
+    nota: >-
+      asociación independiente y, según la fuente, fuerte en varones y en
+      mujeres; el resumen no da su OR. SHIP, 3915 adultos
 
 signos:
   - concepto: 'HM:3187'    # Agrandamiento tiroideo palpable en posición neutra
@@ -107,6 +119,6 @@ pendiente:
     resultados, cribados por título los 10 primeros. Völzke 2005
     (pmid:16235152; SHIP, 3915 adultos de una región antes deficiente en yodo)
     analiza por separado a varones y mujeres, y solo halla la edad avanzada y
-    el tabaquismo actual como factores independientes en ambos sexos; el
-    resumen no da sus OR. Ninguna fuente cuantifica el sexo ni el antecedente
+    el tabaquismo actual como factores independientes en ambos sexos, que
+    entran como factores; el resumen no da sus OR. Ninguna fuente cuantifica el sexo ni el antecedente
     familiar para el bocio.
