@@ -22,8 +22,10 @@ codigos:
 probabilidad_base: null
 # Todas las fuentes miden la enfermedad tromboembólica venosa (trombosis venosa
 # profunda o tromboembolia pulmonar), no la tromboembolia pulmonar aislada.
-# «Terapia con estrógenos o anticonceptivos orales» se separó el 2026-09-24 en
-# dos factores, uno por fuente.
+# Por decisión del responsable clínico (2026-09-24): «Terapia con estrógenos o
+# anticonceptivos orales» se separó en dos factores, uno por fuente, y la
+# inmovilización y la cirugía ortopédica o abdominopélvica se renombraron a lo
+# que mide la fuente.
 factores_riesgo:
   - factor: Trombosis venosa profunda previa o concomitante
     ref: 'pmid:31340984'
@@ -34,17 +36,15 @@ factores_riesgo:
       36% a los 10 años (IC95% 28-45). Metaanálisis de 18 estudios con 7515
       pacientes; sin grupo sin antecedente, así que es un riesgo absoluto. La
       fuente no trata la trombosis concomitante
-  - factor: Inmovilización prolongada o reposo en cama
+  - factor: Ingreso hospitalario o en residencia
     ref: 'pmid:10737280'
     nota: >-
-      la fuente mide el ingreso hospitalario o en residencia, OR 8.0 (IC95%
-      4.5-14.2), independiente de los demás factores. Casos y controles
+      OR 8.0 (IC95% 4.5-14.2), independiente de los demás factores. Casos y controles
       poblacional anidado de Olmsted County, 625 casos y 625 controles
-  - factor: Cirugía ortopédica o abdominopélvica reciente
+  - factor: Cirugía reciente
     ref: 'pmid:10737280'
     nota: >-
-      cirugía en general, OR 21.7 (IC95% 9.4-49.9); el resumen no la desglosa
-      por tipo. Traumatismo, OR 12.7 (IC95% 4.1-39.7)
+      OR 21.7 (IC95% 9.4-49.9); el resumen no la desglosa por tipo. Traumatismo, OR 12.7 (IC95% 4.1-39.7)
   - factor: Neoplasia maligna activa
     ref: 'pmid:10737280'
     nota: >-
