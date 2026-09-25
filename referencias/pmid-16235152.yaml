@@ -1,0 +1,33 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:16235152'
+clave_bibtex: volzke2005
+tipo: articulo
+titulo: Risk factors for goiter in a previously iodine-deficient region
+autores:
+  - Völzke H
+  - Schwahn C
+  - Kohlmann T
+  - Kramer A
+  - Robinson DM
+  - John U
+  - Meng W
+publicacion: Exp Clin Endocrinol Diabetes
+anio: 2005
+volumen: 113
+paginas: 507-15
+
+identificadores:
+  pmid: 16235152
+  doi: 10.1055/s-2005-865741
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -22,11 +22,16 @@ codigos:
   cie10: 'E04.9'
 
 probabilidad_base: null
+# Deficiencia de yodo, sexo femenino y antecedentes familiares se retiraron el
+# 2026-09-24; ver pendiente.
 factores_riesgo:
-  - deficiencia crónica de yodo en la dieta
-  - sexo femenino
-  - antecedentes familiares de patología tiroidea o autoinmune
-  - gestación o periodo puerperal
+  - factor: Gestación o periodo puerperal
+    ref: 'pmid:8320430'
+    nota: >-
+      en Bruselas, con aporte de yodo en el límite bajo, cerca del 10% de las
+      gestantes tenía bocio en el parto, solo en parte reversible en el
+      posparto. Sin grupo de no gestantes, así que es un riesgo absoluto en
+      una zona con poco yodo
 
 signos:
   - concepto: 'HM:3187'    # Agrandamiento tiroideo palpable en posición neutra
@@ -86,3 +91,22 @@ signos:
     decision: >-
       en gestantes, la ausencia de lóbulos tiroideos que superen la falange
       distal descarta bocio con excelente fiabilidad (LR- 0.08)
+
+pendiente:
+  - >-
+    Factor retirado por ser causa y no factor con grupo control: deficiencia
+    crónica de yodo en la dieta. Vanderpump 2011 (pmid:21893493) la da como la
+    causa más frecuente de enfermedad tiroidea en el mundo, que lleva al bocio,
+    sin medida de riesgo. Si se registra, será como causa.
+  - >-
+    Factores retirados: sexo femenino y antecedentes familiares de patología
+    tiroidea o autoinmune. Búsqueda en PubMed del 2026-09-24. Consulta
+    «(goiter[Title] OR goitre[Title] OR thyroid nodules[Title]) AND
+    (prevalence[Title] OR risk factors[Title]) AND (population-based OR Study of
+    Health in Pomerania OR ultrasound survey) AND (women OR female sex)»: 27
+    resultados, cribados por título los 10 primeros. Völzke 2005
+    (pmid:16235152; SHIP, 3915 adultos de una región antes deficiente en yodo)
+    analiza por separado a varones y mujeres, y solo halla la edad avanzada y
+    el tabaquismo actual como factores independientes en ambos sexos; el
+    resumen no da sus OR. Ninguna fuente cuantifica el sexo ni el antecedente
+    familiar para el bocio.
