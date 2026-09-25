@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:8320430'
+clave_bibtex: glinoer1993
+tipo: articulo
+titulo: Maternal thyroid function in pregnancy
+autores:
+  - Glinoer D
+publicacion: J Endocrinol Invest
+anio: 1993
+volumen: 16
+paginas: 374-8
+
+identificadores:
+  pmid: 8320430
+  doi: 10.1007/BF03348861
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
