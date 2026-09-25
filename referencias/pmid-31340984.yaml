@@ -1,0 +1,49 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:31340984'
+clave_bibtex: khan2019
+tipo: articulo
+titulo: 'Long term risk of symptomatic recurrent venous thromboembolism after discontinuation of anticoagulant treatment for first unprovoked venous thromboembolism event: systematic review and meta-analysis'
+autores:
+  - Khan F
+  - Rahman A
+  - Carrier M
+  - Kearon C
+  - Weitz JI
+  - Schulman S
+  - Couturaud F
+  - Eichinger S
+  - Kyrle PA
+  - Becattini C
+  - Agnelli G
+  - Brighton TA
+  - Lensing AWA
+  - Prins MH
+  - Sabri E
+  - Hutton B
+  - Pinede L
+  - Cushman M
+  - Palareti G
+  - Wells GA
+  - Prandoni P
+  - Büller HR
+  - Rodger MA
+publicacion: BMJ
+anio: 2019
+volumen: 366
+paginas: l4363
+
+identificadores:
+  pmid: 31340984
+  doi: 10.1136/bmj.l4363
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

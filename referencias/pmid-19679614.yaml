@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:19679614'
+clave_bibtex: vanhylckamavlieg2009
+tipo: articulo
+titulo: 'The venous thrombotic risk of oral contraceptives, effects of oestrogen dose and progestogen type: results of the MEGA case-control study'
+autores:
+  - van Hylckama Vlieg A
+  - Helmerhorst FM
+  - Vandenbroucke JP
+  - Doggen CJ
+  - Rosendaal FR
+publicacion: BMJ
+anio: 2009
+volumen: 339
+paginas: b2921
+
+identificadores:
+  pmid: 19679614
+  doi: 10.1136/bmj.b2921
+
+verificacion:
+  pubmed: true
+  fecha: 2026-09-24
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
