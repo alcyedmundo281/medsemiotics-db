@@ -13,11 +13,10 @@
 id: 'HM:6046'
 tipo: condicion
 clase: sindrome
-termino: Ascitis
-termino_en: Ascites
+termino: Síndrome ascítico
+termino_en: Ascitic syndrome
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=ascitis-precision-semiotica"
 sinonimos:
-  - síndrome ascítico
   - ascitis abdominal
   - acumulación de líquido peritoneal
   - líquido libre intraabdominal
