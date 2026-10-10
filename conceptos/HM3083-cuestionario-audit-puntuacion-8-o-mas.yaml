@@ -1,8 +1,8 @@
 id: HM:3083
 tipo: concepto
 semantica: hallazgo
-termino: Cuestionario AUDIT con puntuación ≥ 8
-termino_en: AUDIT score ≥ 8
+termino: Cuestionario AUDIT con puntuación de 8 o más
+termino_en: AUDIT score of 8 or more
 sinonimos:
 - test de identificación de trastornos por consumo de alcohol positivo
 - puntuación AUDIT igual o mayor a 8 puntos

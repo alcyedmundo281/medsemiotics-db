@@ -3,8 +3,8 @@
 id: 'HM:3085'
 tipo: concepto
 semantica: hallazgo
-termino: Cuestionario AUDIT con puntuación < 8
-termino_en: AUDIT score < 8
+termino: Cuestionario AUDIT con puntuación menor de 8
+termino_en: AUDIT score below 8
 sinonimos:
   - AUDIT negativo
   - puntuación AUDIT menor a 8 puntos

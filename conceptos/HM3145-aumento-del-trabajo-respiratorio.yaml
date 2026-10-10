@@ -11,7 +11,6 @@ semantica: hallazgo
 termino: Aumento del trabajo respiratorio
 termino_en: Increased work of breathing
 sinonimos:
-  - dificultad respiratoria
   - distrés respiratorio
   - quejido, aleteo y tiraje
 padre: 'HM:0400'

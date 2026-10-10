@@ -12,13 +12,11 @@
 id: 'HM:6047'
 tipo: condicion
 clase: sindrome
-termino: Esplenomegalia
-termino_en: Splenomegaly
+termino: Síndrome esplenomegálico
+termino_en: Splenomegaly syndrome
 url: "https://powersemiotics.com/medsemiotics/post.html?slug=esplenomegalia-precision-semiotica"
 sinonimos:
-  - bazo aumentado de tamaño
   - hipertrofia esplénica
-  - bazo palpable
 
 codigos:
   snomed: '16294009'
