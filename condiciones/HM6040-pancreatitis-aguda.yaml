@@ -88,12 +88,11 @@ signos:
     rol: prueba_especifica
     estado_lr: no_medido
     decision: >-
-      es el criterio de referencia de laboratorio y el que holonmed considera
-      más discriminante, por encima de la amilasa: se eleva más tiempo y es más
-      específica del páncreas
+      es el criterio de referencia de laboratorio y el más discriminante, por
+      encima de la amilasa: se eleva más tiempo y es más específica del páncreas
     nota: >-
       el corte que usa el protocolo es más de tres veces el límite alto, que es
-      también el que exige Atlanta. El cociente que holonmed le asigna no entra
+      también el que exige Atlanta. El cociente que le asigna el protocolo de origen no entra
       por falta de procedencia; ver «Fuera de alcance».
 
   - concepto: 'HM:0731'    # Hiperamilasemia
@@ -104,15 +103,14 @@ signos:
       patología salival y en otras causas, y se normaliza antes
     advertencia: >-
       no se confunde con la lipasa ni se sustituye por ella. Son enzimas
-      distintas con especificidad distinta, y el propio protocolo de holonmed
-      bloquea el emparejamiento.
+      distintas con especificidad distinta, y no se emparejan entre sí.
 
   - concepto: 'HM:0202'    # Dolor epigástrico
     rol: manifestacion
     estado_lr: no_medido
     decision: >-
       fija la sospecha de partida. Sensible y poco específico, así que lo que
-      holonmed aprovecha de él es sobre todo su ausencia
+      se aprovecha de él es sobre todo su ausencia
 
   - concepto: 'HM:0302'    # Vómitos
     rol: apoyo
@@ -130,8 +128,8 @@ signos:
     decision: >-
       raro pero llamativo: orienta a pancreatitis necrotizante o hemorrágica
     advertencia: >-
-      su AUSENCIA no descarta nada, y por eso el protocolo de holonmed no le
-      declara cociente negativo. Es infrecuente incluso dentro de la enfermedad.
+      su AUSENCIA no descarta nada, y por eso no se le declara cociente
+      negativo. Es infrecuente incluso dentro de la enfermedad.
 
   - concepto: 'HM:0901'    # Hallazgos de imagen compatibles con pancreatitis
     rol: imagen
