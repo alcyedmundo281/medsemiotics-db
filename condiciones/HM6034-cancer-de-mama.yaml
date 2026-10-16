@@ -19,7 +19,7 @@ signos:
       valor: 10.6
       ic95: [5.8, 19.2]
       ref: 'pmid:10517431'
-    decision: el hallazgo de una masa dominante o nódulo sospechoso en el examen clínico eleva marcadamente la probabilidad (LR+ 10.6)
+    decision: el hallazgo de una masa dominante o nódulo sospechoso en el examen clínico eleva marcadamente la probabilidad
 
   - concepto: 'HM:3143'    # Examen clínico reglado normal
     rol: prueba_sensible
@@ -28,7 +28,7 @@ signos:
       valor: 0.47
       ic95: [0.40, 0.56]
       ref: 'pmid:10517431'
-    decision: una palpación normal reduce la probabilidad de forma modesta (LR- 0.47) pero no excluye la necesidad de mamografía de cribado
+    decision: una palpación normal reduce la probabilidad de forma modesta pero no excluye la necesidad de mamografía de cribado
 
 conclusion_de_la_fuente: >-
   La exploración clínica mamaria (CBE) reglada y minuciosa de al menos 3 minutos

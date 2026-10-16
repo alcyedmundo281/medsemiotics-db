@@ -21,7 +21,7 @@ signos:
       valor: 0.56
       ic95: [0.46, 0.68]
       ref: 'pmid:34313682'
-    decision: una cifra elevada en consulta quintuplica aproximadamente la odds pero exige confirmación fuera de consulta por bata blanca
+    decision: una cifra elevada en consulta aumenta de forma apreciable la odds de hipertensión pero exige confirmación fuera de consulta por bata blanca
 
   - concepto: 'HM:3128'    # AMPA >= 135/85
     rol: prueba_especifica
@@ -34,7 +34,7 @@ signos:
       valor: 0.33
       ic95: [0.24, 0.46]
       ref: 'pmid:34313682'
-    decision: la automonitorización domiciliaria presenta un excelente cociente negativo (LR- 0.33) para descartar hipertensión mantenida
+    decision: una automonitorización domiciliaria por debajo del corte reduce la probabilidad de hipertensión mantenida; la fuente la presenta, junto con el MAPA, como la vía para confirmar el diagnóstico definitivo y descartar la bata blanca
 
 conclusion_de_la_fuente: >-
   La medición de la presión arterial en consulta es una prueba de cribado útil (LR+ 4.2),

@@ -66,7 +66,7 @@ signos:
     efecto: excluye
     sostiene: discriminacion_medida
     ref: 'pmid:9786377'
-    decision: las características pleuríticas reducen fuertemente la probabilidad de IAM (LR 0.2)
+    decision: las características pleuríticas reducen fuertemente la probabilidad de IAM
 
   - concepto: 'HM:3134'    # Dolor reproducible a palpación
     rol: prueba_sensible

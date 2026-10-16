@@ -3,7 +3,8 @@
 # Acuñada en la OLEADA 1 al modelar la condición correspondiente al signo de
 # sobrecarga aguda del ventrículo derecho de biosemiotics (HM:3162). Cocientes
 # de ecocardiografía transtorácica de Fields 2017 (pmid:28495379, J Am Soc Echocardiogr).
-# Cociente negativo del dímero D de Wells 2006 (pmid:16403932).
+# Cociente negativo del dímero D de Roy 2005 (pmid:16052017, BMJ). La versión anterior
+# lo atribuía a Wells 2006 (pmid:16403932), que mide la trombosis venosa profunda.
 
 id: 'HM:6044'
 tipo: condicion
@@ -95,15 +96,25 @@ signos:
   - concepto: 'HM:3144'    # Dímero D elevado
     rol: prueba_sensible
     estado_lr: medido
-    ref: 'pmid:16403932'
+    ref: 'pmid:16052017'
     lr_negativo:
-      valor: 0.10
-      ref: 'pmid:16403932'
+      valor: 0.08
+      ic95: [0.04, 0.18]
+      ref: 'pmid:16052017'
     poblacion: >-
-      pacientes con sospecha de TEP y baja o intermedia probabilidad clínica pretest
+      pacientes con sospecha de TEP; dímero D < 500 µg/L por ELISA cuantitativo
+      (revisión sistemática de estrategias diagnósticas)
     decision: >-
-      un valor de dímero D por debajo del umbral de corte ajustado por edad descarta
-      el diagnóstico sin necesidad de angiografía por tomografía
+      un dímero D por debajo de 500 µg/L por ELISA cuantitativo permite descartar
+      el diagnóstico sin angiotomografía en pacientes con probabilidad previa baja
+      o intermedia
+    nota: >-
+      Corregido: el cociente anterior (0.10, sin intervalo) se había copiado de
+      Wells 2006 (pmid:16403932), que mide la trombosis venosa profunda. El valor y
+      el intervalo de esta arista son los de Roy 2005 para el ELISA cuantitativo con
+      corte < 500 µg/L. Otros ensayos (látex cuantitativo, hemaglutinación) tienen
+      cocientes negativos mayores y solo excluyen con probabilidad previa baja. Esta
+      fuente no estudia un corte ajustado por edad.
 
   - concepto: 'HM:0401'    # Disnea
     rol: manifestacion
