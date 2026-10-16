@@ -87,17 +87,43 @@ signos:
   - concepto: 'HM:0732'    # Hiperlipasemia
     rol: prueba_especifica
     estado_lr: no_medido
+    sensibilidad: 0.79
+    ic95_sensibilidad: [0.54, 0.92]
+    especificidad: 0.89
+    ic95_especificidad: [0.46, 0.99]
+    poblacion: >-
+      personas con dolor abdominal agudo que acuden a urgencias; lipasa sérica
+      por encima de tres veces el límite normal
+    ref: 'pmid:28431198'
+    motivo: >-
+      la revisión Cochrane publica sensibilidad y especificidad agrupadas, con
+      riesgo de sesgo incierto o alto en todos los estudios, pero no el
+      cociente. No se calcula aquí
     decision: >-
       es el criterio de referencia de laboratorio y el más discriminante, por
       encima de la amilasa: se eleva más tiempo y es más específica del páncreas
     nota: >-
-      el corte que usa el protocolo es más de tres veces el límite alto, que es
-      también el que exige Atlanta. El cociente que le asigna el protocolo de origen no entra
-      por falta de procedencia; ver «Fuera de alcance».
+      el corte es más de tres veces el límite alto, que es también el que exige
+      Atlanta. Las cifras sustituyen al cociente del protocolo de origen, que no
+      declaraba procedencia. El estudio que aportó unos dos tercios de los
+      participantes quedó fuera del análisis presentado por problemas con los
+      participantes incluidos.
 
   - concepto: 'HM:0731'    # Hiperamilasemia
     rol: prueba_especifica
     estado_lr: no_medido
+    sensibilidad: 0.72
+    ic95_sensibilidad: [0.59, 0.82]
+    especificidad: 0.93
+    ic95_especificidad: [0.66, 0.99]
+    poblacion: >-
+      personas con dolor abdominal agudo que acuden a urgencias; amilasa sérica
+      por encima de tres veces el límite normal
+    ref: 'pmid:28431198'
+    motivo: >-
+      la revisión Cochrane publica sensibilidad y especificidad agrupadas, con
+      riesgo de sesgo incierto o alto en todos los estudios, pero no el
+      cociente. No se calcula aquí
     decision: >-
       el mismo papel que la lipasa pero menos específica: se eleva también en
       patología salival y en otras causas, y se normaliza antes
@@ -153,13 +179,15 @@ notas_de_uso:
   - >-
     NINGUNA DE LAS SIETE ARISTAS TRAE COCIENTE, y no es un descuido de la
     migración: es que el protocolo de origen no declara procedencia para
-    ninguno. Quien lea esta condición esperando cifras con las que mover una
-    probabilidad no las va a encontrar aquí todavía, y ésa es la respuesta
-    honesta hasta que aparezcan las fuentes.
+    ninguno. La lipasa y la amilasa traen sensibilidad y especificidad de una
+    revisión Cochrane, que no publica el cociente y aquí no se calcula; las
+    otras cinco no traen cifra alguna. Quien lea esta condición esperando
+    cociente con el que mover una probabilidad no lo va a encontrar aquí todavía.
   - >-
-    Lo único cuantificado que entra es la regla de Atlanta, que no es un
+    Lo único cuantificado como criterio es la regla de Atlanta, que no es un
     cociente sino un criterio de clasificación: dice cuándo el diagnóstico está
-    hecho, no cuánto se mueve la probabilidad con cada hallazgo.
+    hecho, no cuánto se mueve la probabilidad con cada hallazgo. Además, la
+    lipasa y la amilasa traen sensibilidad y especificidad (pmid:28431198).
 
 pendiente:
   - >-
@@ -176,8 +204,15 @@ pendiente:
   - >-
     COCIENTES DE VEROSIMILITUD: el protocolo de origen asigna un cociente a
     cada uno de los siete hallazgos, y ninguno se publica aquí porque no declara
-    procedencia verificable. Hasta que se recupere el artículo que sostiene cada
-    uno, esta condición no lleva ninguna cifra de ese tipo.
+    procedencia verificable. Para la lipasa y la amilasa se buscó en PubMed
+    (2026-10-16) y la mejor fuente es una revisión Cochrane (pmid:28431198) que
+    publica sensibilidad y especificidad con intervalos, no el cociente; esas
+    cifras ya están en las aristas. Para el dolor epigástrico, los vómitos, la
+    irritación peritoneal, el signo de Cullen y los hallazgos de imagen la
+    búsqueda no halló cociente ni sensibilidad y especificidad agrupadas
+    utilizables; el signo de Cullen solo tiene su incidencia (equimosis de la pared
+    corporal en el 3 % de 770 pacientes, Dickson 1984, pmid:6237447), que mide
+    otra cosa.
   - >-
     EL ORIGEN DE LOS COCIENTES YA NO ES UNA INCÓGNITA: GetTheDiagnosis.org,
     confirmado por el autor del protocolo el 16/09/2026. Lo que falta no es
