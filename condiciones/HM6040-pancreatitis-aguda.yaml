@@ -39,11 +39,10 @@
 # justo la puerta por la que se cuela un número sin procedencia.
 #
 # LO ÚNICO DEL PROTOCOLO QUE LLEGA CON CITA COMPLETA Y RESOLUBLE es Atlanta
-# 2012 (pmid:23100216). Y TAMPOCO ENTRA COMO REGLA TODAVÍA, porque esa
-# referencia se importó con la errata sin comprobar y el candado de build.py
-# impide que una referencia así sostenga un dato. El candado mordió este mismo
-# trabajo, que es exactamente para lo que se puso. Los criterios quedan en
-# prosa, que no exige procedencia, y la regla entra en cuanto se coteje.
+# 2012 (pmid:23100216). Al migrar esta condición la referencia estaba sin cotejar
+# y el candado de build.py impedía que sostuviera un dato; hoy ya está cotejada
+# contra PubMed y CrossRef (2026-09-17) y sin errata pendiente. Los criterios
+# siguen en prosa y la regla de clasificación aún no se ha registrado.
 
 id: 'HM:6040'
 tipo: condicion
@@ -170,12 +169,9 @@ signos:
 notas_de_uso:
   - >-
     LOS CRITERIOS DE ATLANTA NO ESTÁN AQUÍ COMO REGLA, solo descritos abajo en
-    prosa, y la razón es el propio validador. Una `regla` exige `ref`, su única
-    fuente posible es Atlanta 2012 (pmid:23100216), y esa referencia entró en el
-    índice con la errata sin comprobar porque la red desde la que se importó no
-    alcanzaba PubMed. build.py falla si una referencia así sostiene un dato, y
-    una regla de clasificación es un dato. Se añade sola en cuanto alguien corra
-    `scripts/9_desbloquear_referencias.py` desde una red que sí lo alcance.
+    prosa. Una `regla` exige `ref` y su fuente es Atlanta 2012 (pmid:23100216),
+    que ya está cotejada y sin errata pendiente, así que el validador no lo
+    impide: falta registrar la regla.
   - >-
     NINGUNA DE LAS SIETE ARISTAS TRAE COCIENTE, y no es un descuido de la
     migración: es que el protocolo de origen no declara procedencia para
@@ -226,9 +222,10 @@ pendiente:
     miden otra cosa y no sustituyen a la fuente de estos cocientes.
   - >-
     LA REGLA DE ATLANTA, que es lo único cuantificado y bien citado de todo el
-    protocolo. Está escrita y comprobada; solo espera a que se coteje la errata
-    de pmid:23100216. Sus componentes son HM:0205 y HM:0202 (dolor), HM:0731 y
-    HM:0732 (enzimas) y HM:0901 (imagen), con el criterio de dos de tres.
+    protocolo. La referencia (pmid:23100216) ya está cotejada y sin errata
+    pendiente; falta registrar la regla. Sus componentes son HM:0205 y HM:0202
+    (dolor), HM:0731 y HM:0732 (enzimas) y HM:0901 (imagen), con el criterio de
+    dos de tres.
   - >-
     Los cuatro factores de riesgo entran sin `ref`. La asociación es conocida,
     pero este índice guarda hechos con procedencia y todavía no la tienen.
