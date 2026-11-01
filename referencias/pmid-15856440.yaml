@@ -1,0 +1,28 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:15856440'
+clave_bibtex: einspieler2005
+tipo: articulo
+titulo: 'Prechtl''s assessment of general movements: a diagnostic tool for the functional assessment of the young nervous system'
+autores:
+  - Einspieler C
+  - Prechtl HF
+publicacion: Ment Retard Dev Disabil Res Rev
+anio: 2005
+volumen: 11
+paginas: 61-7
+
+identificadores:
+  pmid: 15856440
+  doi: 10.1002/mrdd.20051
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

@@ -344,6 +344,7 @@ crecer con orden. Ampliar es gratis antes del primer código e imposible despué
 | `HM:6043` | Apendicitis aguda | 1 | `pmid:34420255` |
 | `HM:6044` | Tromboembolia pulmonar | 2 (sobrecarga VD + dímero D) | `pmid:28495379` |
 | `HM:6045` | Taponamiento cardíaco | 0 (rangos Se/Sp Alerhand 2022) | `pmid:35696801` |
+| `HM:6049` | Parálisis cerebral | 0 (Se/Sp 95% de los movimientos generales, sin cociente) | `pmid:15856440` |
 
 La columna cuenta **aristas**, no cocientes: el aneurisma tiene una sola arista
 —la palpación— y trae cuatro cifras, porque cada tramo de diámetro la mide

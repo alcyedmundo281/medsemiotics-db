@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:12393130'
+clave_bibtex: amieltison2002
+tipo: articulo
+titulo: Update of the Amiel-Tison neurologic assessment for the term neonate or at 40 weeks corrected age
+autores:
+  - Amiel-Tison C
+publicacion: Pediatr Neurol
+anio: 2002
+volumen: 27
+paginas: 196-212
+
+identificadores:
+  pmid: 12393130
+  doi: 10.1016/s0887-8994(02)00436-8
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

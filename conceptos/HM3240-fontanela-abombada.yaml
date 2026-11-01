@@ -1,0 +1,25 @@
+# Concepto del índice. Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+# Acuñado el 2026-10-31 para la lección «Examen neurológico del recién nacido»
+# (medsemiotics, ADR-001, fase 1). PROPUESTA: acuñar un concepto lo decide el
+# responsable clínico al revisar el PR.
+
+id: 'HM:3240'
+tipo: concepto
+semantica: hallazgo
+termino: Fontanela anterior abombada
+termino_en: Bulging fontanelle
+sinonimos:
+  - fontanela tensa
+  - fontanela a tensión
+padre: 'HM:0500'
+# SNOMED verificado el 2026-10-31 contra la edición internacional en tx.fhir.org:
+# 103019006 «Bulging fontanelle (finding)».
+codigos: {snomed: '103019006', icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la meningitis aguda en niños (Curtis 2010, pmid:20974781) y la lección del examen del recién nacido.

@@ -1,0 +1,23 @@
+# Concepto del índice. Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+# Acuñado el 2026-10-31 para la lección «Examen neurológico del recién nacido»
+# (medsemiotics, ADR-001, fase 1). PROPUESTA: acuñar un concepto lo decide el
+# responsable clínico al revisar el PR.
+
+id: 'HM:3246'
+tipo: concepto
+semantica: hallazgo
+termino: Ausencia de movimientos generales de tipo fidgety (3-5 meses)
+termino_en: Absent fidgety general movements
+sinonimos:
+  - ausencia de fidgety
+padre: 'HM:0500'
+# SNOMED: sin concepto equivalente hallado el 2026-10-31 (la búsqueda «fidgety» solo devuelve «Fidgeting (finding)», que es otra cosa).
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado al modelar la parálisis cerebral (pmid:15856440). Los movimientos generales de Prechtl se evalúan por vídeo en el lactante de 3 a 5 meses de edad corregida.

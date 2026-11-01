@@ -130,6 +130,31 @@ signos:
         lumbar; meningitis definida como ≥ 6 leucocitos en el LCR
     ref: 'pmid:12060874'
 
+  # Añadida el 2026-10-31 para la lección del examen del recién nacido. PROPUESTA:
+  # la población es PEDIÁTRICA y el patrón de referencia es la meningitis
+  # bacteriana confirmada en laboratorio; el resto de las aristas de esta
+  # condición se midió en adultos (ver «Pendiente de decisión clínica» del PR).
+  - concepto: 'HM:3240'    # Fontanela anterior abombada
+    rol: apoyo
+    estado_lr: medido
+    lr_positivo:
+      valor: 3.5
+      ic95: [2.0, 6.0]
+      ref: 'pmid:20974781'
+      poblacion: >-
+        niños (revisión sistemática de 10 estudios prospectivos) con meningitis
+        bacteriana confirmada en laboratorio frente a niños sin ella; hallazgo
+        en la exploración
+    ref: 'pmid:20974781'
+    nota: >-
+      Curtis 2010 publica además un LR 8.00 (IC95% 2.4-26) cuando el
+      abombamiento se obtiene por la historia (referido por quien cuida al
+      niño), distinto del hallazgo explorado. La fuente no publica LR− para
+      este signo, y concluye que ningún signo aislado es diagnóstico
+    decision: >-
+      aumenta la probabilidad de meningitis bacteriana en el niño; no la
+      confirma y su ausencia no la descarta
+
   - concepto: 'HM:0501'    # Alteración del nivel de conciencia
     rol: prueba_sensible
     estado_lr: no_medido
@@ -151,6 +176,13 @@ reglas:
       punción lumbar, sin apoyarse en la exploración
 
 pendiente:
+  - >-
+    Decisión clínica (2026-10-31): la arista de la fontanela abombada
+    (pmid:20974781) es pediátrica y su patrón de referencia es la meningitis
+    bacteriana; las demás se midieron en adultos con «meningitis aguda». Si el
+    responsable clínico prefiere no mezclar poblaciones en una condición, la
+    alternativa es acuñar una condición propia («Meningitis bacteriana en el
+    niño») y mover esa arista.
   - >-
     Sin probabilidad_base: Attia 1999 no publica prevalencia, y los resúmenes
     de Thomas 2002 y de Iguchi 2020 tampoco.

@@ -1,0 +1,24 @@
+# Concepto del índice. Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+# Acuñado el 2026-10-31 para la lección «Examen neurológico del recién nacido»
+# (medsemiotics, ADR-001, fase 1). PROPUESTA: acuñar un concepto lo decide el
+# responsable clínico al revisar el PR.
+
+id: 'HM:3242'
+tipo: concepto
+semantica: hallazgo
+termino: Reflejo de prensión palmar
+termino_en: Palmar grasp reflex
+sinonimos:
+  - grasping de manos
+  - reflejo de agarre palmar
+padre: 'HM:0500'
+# SNOMED: sin código exacto hallado el 2026-10-31 (búsqueda «palmar grasp» sin resultados en tx.fhir.org); no se declara el más próximo sin decisión clínica.
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado para la lección del examen del recién nacido. Sin arista.

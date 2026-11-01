@@ -1,0 +1,31 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:20974781'
+clave_bibtex: curtis2010
+tipo: articulo
+titulo: 'Clinical features suggestive of meningitis in children: a systematic review of prospective data'
+autores:
+  - Curtis S
+  - Stobart K
+  - Vandermeer B
+  - Simel DL
+  - Klassen T
+publicacion: Pediatrics
+anio: 2010
+volumen: 126
+paginas: 952-60
+
+identificadores:
+  pmid: 20974781
+  doi: 10.1542/peds.2010-0277
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true
