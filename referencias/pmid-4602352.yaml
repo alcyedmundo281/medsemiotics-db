@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:4602352'
+clave_bibtex: prechtl1974
+tipo: articulo
+titulo: The behavioural states of the newborn infant (a review)
+autores:
+  - Prechtl HF
+publicacion: Brain Res
+anio: 1974
+volumen: 76
+paginas: 185-212
+
+identificadores:
+  pmid: 4602352
+  doi: 10.1016/0006-8993(74)90454-5
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

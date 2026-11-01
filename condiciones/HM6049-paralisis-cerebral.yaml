@@ -1,0 +1,65 @@
+# Condición del índice. Los códigos HM: son permanentes.
+#
+# Acuñada el 2026-10-31 para la lección «Examen neurológico del recién nacido»
+# (medsemiotics, ADR-001, fase 1). PROPUESTA: acuñar una condición lo decide el
+# responsable clínico al revisar el PR.
+#
+# La única cifra proviene del resumen de pmid:15856440 (Einspieler y Prechtl 2005),
+# revisión narrativa escrita por los autores del método. No trae población ni
+# diseño, así que la arista queda como no_medido: no hay cociente publicado.
+
+id: 'HM:6049'
+tipo: condicion
+clase: sindrome
+termino: Parálisis cerebral
+termino_en: Cerebral palsy
+sinonimos: []
+
+# SNOMED verificado el 2026-10-31 contra la edición internacional en tx.fhir.org:
+# 128188000 «Cerebral palsy (disorder)». CIE-10 (G80 en la versión 2019 de la OMS):
+# SIN VERIFICAR. El navegador de la OMS devolvió HTTP 404 el 2026-10-31 (también
+# para códigos ya publicados), así que no se declara de memoria. Pendiente.
+codigos:
+  snomed: '128188000'
+  cie10: null
+
+probabilidad_base: null    # pendiente: la fuente no publica prevalencia de la población evaluada
+factores_riesgo: []
+
+signos:
+  - concepto: 'HM:3246'    # Ausencia de movimientos generales de tipo fidgety
+    rol: apoyo
+    estado_lr: no_medido
+    sensibilidad: 0.95
+    especificidad: 0.95
+    ref_rendimiento: 'pmid:15856440'
+    motivo: >-
+      el resumen declara «sensibilidad y especificidad del 95% cada una» para la
+      valoración de los movimientos generales, pero no publica el cociente, la
+      población ni el diseño; no se calcula aquí
+    nota: >-
+      la valoración conjunta (movimientos generales anormales persistentes de
+      tipo cramped-synchronized o ausencia de fidgety) predice la parálisis
+      cerebral posterior según los autores del método; revisión narrativa, no
+      sistemática
+
+pendiente:
+  - >-
+    Decisión clínica: el rol de la arista (apoyo) es provisional. La
+    sensibilidad declarada permitiría prueba_sensible, pero la fuente es una
+    revisión narrativa de los autores del método y no da población.
+  - >-
+    Novak 2017 (pmid:28715518, revisión sistemática y guía de diagnóstico
+    precoz) está en referencias/ pero SIN citar: tiene una errata («Error in
+    Table», JAMA Pediatr 2017;171(9):919, doi:10.1001/jamapediatrics.2017.3169) cuyo
+    texto no se pudo leer el 2026-10-31 (jamanetwork.com devolvió 403 y
+    Europe PMC no la indexa con texto). Hasta cotejarla, no se transcriben de
+    ella las sensibilidades de la resonancia, de los movimientos generales ni del
+    HINE.
+  - >-
+    Sin CIE-10 verificado (navegador de la OMS fuera de servicio el 2026-10-31).
+
+procedencia:
+  fuente: >-
+    Acuñada para la lección del examen del recién nacido. Valores del resumen de
+    pmid:15856440, no del texto completo.

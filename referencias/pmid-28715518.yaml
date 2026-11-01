@@ -1,0 +1,71 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:28715518'
+clave_bibtex: novak2017
+tipo: articulo
+titulo: 'Early, Accurate Diagnosis and Early Intervention in Cerebral Palsy: Advances in Diagnosis and Treatment'
+autores:
+  - Novak I
+  - Morgan C
+  - Adde L
+  - Blackman J
+  - Boyd RN
+  - Brunstrom-Hernandez J
+  - Cioni G
+  - Damiano D
+  - Darrah J
+  - Eliasson AC
+  - de Vries LS
+  - Einspieler C
+  - Fahey M
+  - Fehlings D
+  - Ferriero DM
+  - Fetters L
+  - Fiori S
+  - Forssberg H
+  - Gordon AM
+  - Greaves S
+  - Guzzetta A
+  - Hadders-Algra M
+  - Harbourne R
+  - Kakooza-Mwesige A
+  - Karlsson P
+  - Krumlinde-Sundholm L
+  - Latal B
+  - Loughran-Fowlds A
+  - Maitre N
+  - McIntyre S
+  - Noritz G
+  - Pennington L
+  - Romeo DM
+  - Shepherd R
+  - Spittle AJ
+  - Thornton M
+  - Valentine J
+  - Walker K
+  - White R
+  - Badawi N
+publicacion: JAMA Pediatr
+anio: 2017
+volumen: 171
+paginas: 897-907
+
+identificadores:
+  pmid: 28715518
+  doi: 10.1001/jamapediatrics.2017.1689
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  errata: 'JAMA Pediatr. 2017 Sep 1;171(9):919. doi: 10.1001/jamapediatrics.2017.3169.'
+  errata_corrige: Error in Table.
+  crossref: true
+  crossref_titulo_coincide: false
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
+    - 'La errata afecta a DATOS: no transcribir cifras sin cotejarlas'

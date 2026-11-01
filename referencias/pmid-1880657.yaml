@@ -1,0 +1,32 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:1880657'
+clave_bibtex: ballard1991
+tipo: articulo
+titulo: 'New Ballard Score, expanded to include extremely premature infants'
+autores:
+  - Ballard JL
+  - Khoury JC
+  - Wedig K
+  - Wang L
+  - Eilers-Walsman BL
+  - Lipp R
+publicacion: J Pediatr
+anio: 1991
+volumen: 119
+paginas: 417-23
+
+identificadores:
+  pmid: 1880657
+  doi: 10.1016/s0022-3476(05)82056-6
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

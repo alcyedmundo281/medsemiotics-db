@@ -1,0 +1,27 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:5689329'
+clave_bibtex: amieltison1968
+tipo: articulo
+titulo: Neurological evaluation of the maturity of newborn infants
+autores:
+  - Amiel-Tison C
+publicacion: Arch Dis Child
+anio: 1968
+volumen: 43
+paginas: 89-93
+
+identificadores:
+  pmid: 5689329
+  doi: 10.1136/adc.43.227.89
+
+verificacion:
+  pubmed: true
+  fecha: 2026-10-31
+  retractado: false
+  crossref: true
+  crossref_titulo_coincide: true

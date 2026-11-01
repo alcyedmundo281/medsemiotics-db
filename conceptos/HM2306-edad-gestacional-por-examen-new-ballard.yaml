@@ -1,0 +1,28 @@
+# Concepto del índice. Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+# Acuñado el 2026-10-31 para la lección «Examen neurológico del recién nacido»
+# (medsemiotics, ADR-001, fase 1). PROPUESTA: acuñar un concepto lo decide el
+# responsable clínico al revisar el PR.
+
+id: 'HM:2306'
+tipo: concepto
+semantica: procedimiento
+termino: Edad gestacional por examen (New Ballard)
+termino_en: Gestational age assessment by examination (New Ballard Score)
+sinonimos:
+  - puntuación de Ballard
+  - New Ballard Score
+padre: 'HM:2300'
+# SNOMED: sin código exacto hallado el 2026-10-31. «Assessment of fetal gestational
+# age (procedure)» (709479007) es la valoración fetal, no el examen del recién
+# nacido, así que no se declara.
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: null
+significado: null
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Acuñado para la lección del examen del recién nacido. Instrumento: pmid:1880657
+    (New Ballard Score), que sustituye en la lección a signos antiguos como la
+    «bufanda» aislada. Antecedente: pmid:5689329.
