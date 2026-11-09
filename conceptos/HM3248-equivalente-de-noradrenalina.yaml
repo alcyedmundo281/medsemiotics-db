@@ -1,0 +1,31 @@
+# Concepto del índice. Propuesto al abrir las escalas del ergon (ethosemiotics, ciclo 3).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3248'
+tipo: concepto
+semantica: hallazgo
+termino: Equivalente de noradrenalina
+termino_en: Norepinephrine equivalent
+sinonimos: []
+padre: 'HM:0100'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Cantidad total de vasopresores expresada como dosis equivalente de noradrenalina,
+  ponderando la potencia de cada agente (catecolaminas, derivados y vasopresina)
+  (pmid:36670410).
+significado: >-
+  Describe el soporte vasopresor de forma estandarizada; los estudios de cuidados
+  intensivos lo usan como criterio de inclusión y como medida de resultado. Carece de
+  datos de alta calidad que validen su desempeño predictivo en todos los tipos de
+  práctica, y no tiene conversión para angiotensina II ni azul de metileno en su
+  forma clásica (pmid:36670410).
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Propuesto al abrir las escalas del ergon de ethosemiotics, sostenido sobre
+    pmid:36670410 (Kotani 2023).
+  nota: >-
+    La referencia tiene errata publicada (doi:10.1186/s13054-025-05250-9). La
+    fórmula actualizada no se transcribe hasta cotejarla contra la corrección.

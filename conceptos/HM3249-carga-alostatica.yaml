@@ -1,0 +1,30 @@
+# Concepto del índice. Propuesto al abrir las escalas del ergon (ethosemiotics, ciclo 3).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3249'
+tipo: concepto
+semantica: hallazgo
+termino: Carga alostática
+termino_en: Allostatic load
+sinonimos: []
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Número de parámetros, de 10 que reflejan la actividad de varios sistemas
+  reguladores, en los que la persona queda en el cuartil de mayor riesgo
+  (pmid:9343003).
+significado: >-
+  Índice del desgaste fisiológico acumulado por el esfuerzo de adaptarse. En adultos
+  mayores, puntuaciones más altas se asociaron a peor función cognitiva y física, a
+  mayor declive posterior y a mayor incidencia de enfermedad cardiovascular, con
+  independencia de factores sociodemográficos y del estado de salud (pmid:9343003).
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Propuesto al abrir las escalas del ergon de ethosemiotics, sostenido sobre
+    pmid:9343003 (Seeman 1997).
+  nota: >-
+    La referencia tiene errata publicada (Arch Intern Med 1999;159(11):1176). Los
+    10 parámetros no se enumeran hasta leer el texto completo y la errata.

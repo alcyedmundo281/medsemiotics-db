@@ -1,0 +1,35 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:36670410'
+clave_bibtex: kotani2023
+tipo: articulo
+titulo: 'An updated "norepinephrine equivalent" score in intensive care as a marker of shock severity'
+autores:
+  - Kotani Y
+  - Di Gioia A
+  - Landoni G
+  - Belletti A
+  - Khanna AK
+publicacion: Crit Care
+anio: 2023
+volumen: 27
+paginas: 29
+
+identificadores:
+  pmid: 36670410
+  doi: 10.1186/s13054-023-04322-y
+
+verificacion:
+  pubmed: true
+  fecha: 2026-11-08
+  retractado: false
+  errata: 'Crit Care. 2025 Mar 7;29(1):104. doi: 10.1186/s13054-025-05250-9.'
+  errata_corrige: 'Correction: An updated "norepinephrine equivalent" score in intensive care as a marker of '
+  crossref: true
+  crossref_titulo_coincide: true
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'

@@ -1,0 +1,32 @@
+# Concepto del índice. Propuesto al abrir las escalas del ergon (ethosemiotics, ciclo 3).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3247'
+tipo: concepto
+semantica: hallazgo
+termino: Score vasoactivo-inotrópico
+termino_en: Vasoactive-inotropic score
+sinonimos: []
+padre: 'HM:0100'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Puntuación que resume el soporte vasoactivo e inotrópico a partir de las dosis
+  horarias de los fármacos; en el estudio original se tomó el valor máximo de las
+  primeras 48 h tras cirugía cardíaca con circulación extracorpórea en lactantes
+  de 0 a 6 meses (pmid:19794327).
+significado: >-
+  El valor máximo alto se asoció a mala evolución (muerte, paro cardíaco, soporte
+  circulatorio mecánico, terapia de reemplazo renal o lesión neurológica) con OR
+  ajustada 8,1 (IC95 3,4–19,2) frente al valor bajo (pmid:19794327). En pacientes
+  quirúrgicos el corte óptimo varió entre 10 y 30 según el estudio (pmid:38184601).
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Propuesto al abrir las escalas del ergon de ethosemiotics, sostenido sobre
+    pmid:19794327 (Gaies 2010) y pmid:38184601 (Sun 2024).
+  nota: >-
+    Sin umbral: la revisión sistemática no da un corte único. Los coeficientes de
+    la fórmula no se transcriben porque el resumen no los trae y el texto completo
+    no se ha leído.
