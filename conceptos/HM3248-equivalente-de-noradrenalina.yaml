@@ -7,7 +7,7 @@ semantica: hallazgo
 termino: Equivalente de noradrenalina
 termino_en: Norepinephrine equivalent
 sinonimos: []
-padre: 'HM:0100'
+padre: 'HM:0001'
 codigos: {snomed: null, icd10: null, hpo: null}
 
 significante: >-
@@ -29,3 +29,9 @@ procedencia:
   nota: >-
     La referencia tiene errata publicada (doi:10.1186/s13054-025-05250-9). La
     fórmula actualizada no se transcribe hasta cotejarla contra la corrección.
+    Padre provisional en la raíz: cuantifica vasopresores administrados, no es una
+    medida del paciente como los hijos de HM:0100. Búsqueda en PubMed del 2026-11-09. Consulta
+    «"norepinephrine equivalent"[tiab] OR "norepinephrine equivalents"[tiab] OR
+    "norepinephrine equivalence"[tiab]»: 195 resultados, 130 indexados en MEDLINE;
+    MeSH Vasoconstrictor Agents 78, Shock 67, Severity of Illness Index 12, Vital
+    Signs 7. Cambia de padre si se acuña una agrupación de soporte del shock.

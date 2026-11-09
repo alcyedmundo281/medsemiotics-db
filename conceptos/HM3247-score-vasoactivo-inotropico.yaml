@@ -7,7 +7,7 @@ semantica: hallazgo
 termino: Score vasoactivo-inotrópico
 termino_en: Vasoactive-inotropic score
 sinonimos: []
-padre: 'HM:0100'
+padre: 'HM:0001'
 codigos: {snomed: null, icd10: null, hpo: null}
 
 significante: >-
@@ -29,4 +29,9 @@ procedencia:
   nota: >-
     Sin umbral: la revisión sistemática no da un corte único. Los coeficientes de
     la fórmula no se transcriben porque el resumen no los trae y el texto completo
-    no se ha leído.
+    no se ha leído. Padre provisional en la raíz: se calcula con dosis de fármacos,
+    no es una medida del paciente como los hijos de HM:0100. Búsqueda en PubMed del 2026-11-09. Consulta
+    «"vasoactive-inotropic score"[tiab] OR "vasoactive inotropic score"[tiab]»:
+    667 resultados, 465 indexados en MEDLINE; MeSH Shock 111, Severity of Illness
+    Index 54, Vasoconstrictor Agents 40, Cardiotonic Agents 31, Vital Signs 29.
+    Cambia de padre si se acuña una agrupación de soporte del shock o de gravedad.
