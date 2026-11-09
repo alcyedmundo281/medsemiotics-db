@@ -1,0 +1,54 @@
+# Concepto del índice. Propuesto al abrir las escalas del ergon (ethosemiotics, ciclo 3).
+# Los códigos HM: son permanentes: no se renumeran ni se reutilizan.
+
+id: 'HM:3248'
+tipo: concepto
+semantica: hallazgo
+termino: Equivalente de noradrenalina
+termino_en: Norepinephrine equivalent
+sinonimos: []
+padre: 'HM:0001'
+codigos: {snomed: null, icd10: null, hpo: null}
+
+significante: >-
+  Cantidad total de vasopresores expresada como dosis equivalente de noradrenalina,
+  ponderando la potencia de cada agente (catecolaminas, derivados y vasopresina)
+  (pmid:36670410).
+componentes:
+  - noradrenalina, dosis de referencia
+  - adrenalina × 1
+  - dopamina × 1/100
+  - fenilefrina × 0.06
+  - vasopresina × 2.5
+  - angiotensina II × 0.0025, dosis en ng/kg/min
+  - terlipresina × 10, dosis en µg/kg/min
+  - metaraminol × 1/8, dosis en µg/kg/min
+  - hidroxocobalamina × 0.02, dosis en g
+  - midodrina × 0.4, dosis en µg/kg/min
+  - azul de metileno × 0.2, dosis en mg/kg/h
+
+significado: >-
+  Describe el soporte vasopresor de forma estandarizada; los estudios de cuidados
+  intensivos lo usan como criterio de inclusión y como medida de resultado. Los
+  factores de conversión se fijaron con evidencia escasa, el del azul de metileno
+  de forma arbitraria, y falta validar su valor predictivo. No mide el soporte
+  circulatorio mecánico ni los fármacos de efecto predominantemente inotrópico
+  (pmid:36670410).
+falsos_positivos: []
+
+procedencia:
+  fuente: >-
+    Propuesto al abrir las escalas del ergon de ethosemiotics, sostenido sobre
+    pmid:36670410 (Kotani 2023).
+  nota: >-
+    Componentes transcritos de la fórmula actualizada que propone pmid:36670410,
+    ya con su errata (doi:10.1186/s13054-025-05250-9): el factor del metaraminol
+    es 1/8, no 8. El texto no declara la unidad de dosis de noradrenalina,
+    adrenalina, dopamina, fenilefrina ni vasopresina; está en la Tabla 1, que no
+    se ha leído, y no se completa de memoria. Padre provisional en la raíz:
+    cuantifica vasopresores administrados, no es una medida del paciente como los
+    hijos de HM:0100. Búsqueda en PubMed del 2026-11-09. Consulta
+    «"norepinephrine equivalent"[tiab] OR "norepinephrine equivalents"[tiab] OR
+    "norepinephrine equivalence"[tiab]»: 195 resultados, 130 indexados en MEDLINE;
+    MeSH Vasoconstrictor Agents 78, Shock 67, Severity of Illness Index 12, Vital
+    Signs 7. Cambia de padre si se acuña una agrupación de soporte del shock.

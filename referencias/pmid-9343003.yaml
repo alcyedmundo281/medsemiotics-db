@@ -1,0 +1,34 @@
+# Registro de referencia del índice. Verificado contra PubMed y CrossRef.
+# Generado por scripts/6_referencia_por_pmid.py. Los datos bibliográficos no se
+# editan a mano: se regeneran. El bloque `verificacion` SÍ admite anotar a mano
+# el cotejo de una errata —`errata_verificada` y sus notas—, y la regeneración
+# lo conserva en vez de pisarlo.
+
+id: 'pmid:9343003'
+clave_bibtex: seeman1997
+tipo: articulo
+titulo: Price of adaptation--allostatic load and its health consequences. MacArthur studies of successful aging
+autores:
+  - Seeman TE
+  - Singer BH
+  - Rowe JW
+  - Horwitz RI
+  - McEwen BS
+publicacion: Arch Intern Med
+anio: 1997
+volumen: 157
+paginas: 2259-68
+
+identificadores:
+  pmid: 9343003
+  doi: null
+
+verificacion:
+  pubmed: true
+  fecha: 2026-11-08
+  retractado: false
+  errata: 'Arch Intern Med 1999 Jun 14;159(11):1176.'
+  crossref: false
+  crossref_titulo_coincide: false
+  notas:
+    - 'Tiene errata publicada: comprobar las cifras contra la corrección'
